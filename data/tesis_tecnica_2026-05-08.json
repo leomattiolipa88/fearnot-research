@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-05-07",
+  "regimen_macro_aplicado": "DESCONOCIDO",
+  "contexto_tecnico_global": "VIX spot en 17.08 con term structure CONTANGO_FUERTE (VIX 3M en 20.35) indica condiciones de mercado normales sin stress agudo. VRP en 138.42 (muy positivo) sugiere seguro sobrepagado, historicamente bullish para equities (Bollerslev et al. 2009). Breadth en 64% sobre 200DMA, zona normal-alta que confirma tendencia alcista pero sin euforia extrema.",
+  "senales": [
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "QQQ cotiza 14.79% sobre 200DMA (pct_sobre_dma) con cruce SOBRE_DMA, momentum 12M en +44.49% y momentum ajustado por vol en 2.731 (Barroso & Santa-Clara: >1.5 es senal fuerte). Vol 12M en 16.29% es contenida. Tudor habilita LONG por estar sobre 200DMA.",
+      "indicador_clave": "momentum_ajust = 2.731",
+      "interaccion_macro": "Regimen DESCONOCIDO obliga a reducir conviccion: sin confirmacion macro no se puede asumir UP market de Cooper et al. 2004. Bajo de 9 a 7."
+    },
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "SPY 9.61% sobre 200DMA, momentum 12M +32.83%, momentum ajustado 2.636 (senal fuerte segun Barroso). Vol 12M 12.45% baja. VRP +138.42 refuerza bullish. Tudor habilita LONG.",
+      "indicador_clave": "momentum_ajust = 2.636",
+      "interaccion_macro": "Sin regimen claro se aplica descuento de conviccion. Si fuera GOLDILOCKS seria 9; si fuera DESACELERACION habria que reducir 50% el sizing."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 8,
+      "razonamiento": "GLD 9.62% sobre 200DMA, momentum 12M +38.92%, momentum ajustado 1.437 (en limite de senal fuerte). Vol 12M 27.07%. Oro funciona en multiples regimenes (reflacion, stagflation, desaceleracion) lo cual reduce el riesgo de regimen DESCONOCIDO.",
+      "indicador_clave": "cruce_dma SOBRE_DMA + momentum_12m +38.92%",
+      "interaccion_macro": "GLD es el activo mas robusto frente a regimen DESCONOCIDO porque opera bien tanto en stagflation como en reflacion. Mantengo conviccion alta."
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "USO 58.41% sobre 200DMA (sobreextension extrema), momentum 12M +112.52%, momentum ajustado 2.614. Vol 12M 43.04% muy elevada. Senal tecnica LONG por Tudor pero sobreextension genera riesgo de reversion.",
+      "indicador_clave": "pct_sobre_dma = +58.41% (sobreextendido)",
+      "interaccion_macro": "USO funciona en REFLACION y STAGFLATION pero podria colapsar en DESACELERACION. Sin claridad de regimen, conviccion media-baja pese a momentum fuerte."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "TLT 1.04% bajo 200DMA (cruce_dma BAJO_DMA), Tudor prohibe LONG. Momentum 12M +1.86% practicamente nulo, momentum ajustado 0.185 (zona ambigua segun Barroso, entre -0.5 y +1.5).",
+      "indicador_clave": "cruce_dma BAJO_DMA + momentum_ajust 0.185",
+      "interaccion_macro": "TLT necesita claridad de regimen (DESACELERACION lo favorece, REFLACION lo perjudica). Sin regimen definido, NEUTRAL es la posicion correcta."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY 0.29% bajo 200DMA (BAJO_DMA), momentum 12M -2.37%, momentum ajustado -0.371 (zona ambigua entre -0.5 y +1.5). Tudor prohibe LONG pero momentum bajista no es lo suficientemente fuerte para SHORT con conviccion.",
+      "indicador_clave": "momentum_ajust = -0.371 (ambiguo)",
+      "interaccion_macro": "DXY debil suele acompanar GOLDILOCKS o REFLACION. Sin claridad de regimen, mejor NEUTRAL."
+    }
+  ],
+  "alertas_tecnicas": [
+    "USO sobreextendido +58.41% sobre 200DMA con vol 43.04%, riesgo de reversion fuerte",
+    "QQQ +14.79% sobre 200DMA acercandose a zona de sobrecompra historica",
+    "TLT muy cerca del cruce 200DMA (-1.04%), un cruce alcista cambiaria la lectura completamente",
+    "VRP en +138.42 es historicamente alto, indica seguro caro pero tambien complacencia potencial",
+    "DXY en cruce bajista marginal (-0.29%) sin momentum claro, pivote tecnico en formacion"
+  ],
+  "invalidadores_tecnicos": [
+    "SPY o QQQ rompiendo 200DMA a la baja (cruce_bajista) invalidaria todos los longs en equity",
+    "VIX rompiendo a backwardation (VIX 3M < VIX spot) indicaria stress y obligaria a reducir risk-on",
+    "GLD perdiendo 200DMA (393.78) invalidaria el long de oro",
+    "Breadth cayendo bajo 30% indicaria oversold y cambiaria framework a contrarian",
+    "USO retrocediendo bajo 100 con momentum_ajust < 0 invalidaria la tesis de commodities"
+  ],
+  "confianza_general": 55,
+  "metadata": {
+    "timestamp": "2026-05-08T22:20:00.533481",
+    "modelo": "claude-opus-4-7",
+    "activos_analizados": 6,
+    "regimen_macro": "DESCONOCIDO"
+  }
+}

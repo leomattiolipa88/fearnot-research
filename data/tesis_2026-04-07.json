@@ -1,0 +1,71 @@
+{
+  "fecha": "2026-04-07",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Yield curve normalizada en +0.73% (yield_curve), labor market sólido con unemployment 4.3% (unemployment) y jobless claims bajos 202k (jobless_claims), Sahm rule muy baja 0.2 (sahm_rule). Expectativas inflacionarias controladas con breakeven 5y5y en 2.12% (breakeven_5y5y) y Michigan expectations 3.4% (michigan_inflation_exp)"
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Régimen Goldilocks con credit spreads contenidos 3.13% (hy_spread), VIX elevado pero manejable 24.17 (vix) creando oportunidad de entry. Labor market robusto sostiene consumo",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Growth favorable con curva normalizada y inflación bajo control. Tech se beneficia de ambiente sin stress financiero mostrado en hy_spread 3.13%",
+      "dato_clave": "breakeven_5y5y"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "Yield 10Y en 4.35% (yield_10y) con curva normalizándose sugiere presión alcista en rates. Goldilocks reduce demand por duration",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY fuerte en 120.66 (dxy) presiona oro, pero real rates en TIPS 1.99% (tips_yield_10y) no son prohibitivos. Señales mixtas",
+      "dato_clave": "dxy"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 7,
+      "razonamiento": "USD/JPY cerca de 160 (usdjpy_mkt 159.91) sugiere stress en carry trades. EUR/USD débil 1.1523 (eurusd). Growth diferencial favorece USD",
+      "dato_clave": "usdjpy_mkt"
+    }
+  ],
+  "tesis_principal": "Estamos en un régimen Goldilocks clásico con growth sólido y inflación controlada. La yield curve normalizó a +0.73% (yield_curve), eliminando señales de recesión, mientras el labor market permanece robusto con unemployment 4.3% (unemployment) y jobless claims apenas 202k (jobless_claims). La regla de Sahm en 0.2 (sahm_rule) confirma ausencia de stress recession. Las expectativas inflacionarias están bien ancladas con el breakeven 5y5y en 2.12% (breakeven_5y5y) y Michigan expectations en 3.4% (michigan_inflation_exp). Los credit spreads en 3.13% (hy_spread) muestran condiciones financieras normalizadas, aunque el VIX en 24.17 (vix) sugiere algo de nerviosismo que podría crear oportunidades de entry. El DXY fuerte en 120.66 (dxy) y USD/JPY cerca de 160 (usdjpy_mkt) indican que el diferencial de growth global favorece a USA, mientras que yields en 4.35% (yield_10y) ofrecen carry atractivo.",
+  "invalidadores": [
+    "Sahm rule suba por encima de 0.5 indicando inicio de recesión",
+    "Credit spreads se expandan por encima de 4% señalando stress financiero",
+    "Breakeven 5y5y rompa por encima de 2.5% por inflación persistente",
+    "USD/JPY colapse por debajo de 145 indicando unwinding masivo de carry trades",
+    "VIX explote por encima de 35 por shock geopolítico o financiero"
+  ],
+  "alertas": [
+    "USD/JPY en 159.91 está peligrosamente cerca del nivel 160 que históricamente desencadena intervención del BoJ",
+    "VIX en 24.17 está elevado para un régimen Goldilocks, sugiere tension subyacente en markets",
+    "Real rates en 1.99% están relativamente altos y podrían presionar valuaciones si suben más"
+  ],
+  "datos_insuficientes": [],
+  "confianza_general": 82,
+  "metadata": {
+    "timestamp": "2026-04-07T09:55:28.820625",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

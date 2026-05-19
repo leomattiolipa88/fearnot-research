@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-05-15",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 82,
+    "razonamiento": "Configuración macro benigna con yield curve normalizada en +0.85% (yield_curve), Sahm rule contenido en 0.13 (sahm_rule) muy por debajo del umbral recesivo de 0.5, jobless claims saludables en 211k (jobless_claims), y credit spreads comprimidos en 2.82% (hy_spread) indicando apetito por riesgo. VIX en 18.92 (vix) sugiere complacencia controlada sin euforia extrema."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 738.66 (spy) con múltiples vientos de cola: yield curve positiva eliminando presión recesiva, HY spreads comprimidos en 2.82% (hy_spread) indicando flujo hacia risk-on, y VIX moderado en 18.92 (vix) sugiriendo ambiente propicio para multiples expansion. Dow tocando 50k según WSJ amplifica momentum alcista.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "TLT en 83.79 (tlt) con yield 10Y en 4.57% (yield_10y_mkt) presenta riesgo de duration en contexto de expectativas inflacionarias elevadas. Michigan inflation expectations en 3.8% (michigan_inflation_exp) y breakeven 5y5y en 2.24% (breakeven_5y5y) sugieren presión alcista en yields. CNBC reporta 40% probabilidad de stagflation para fin de 2026.",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "Gold en 415.02 (gold) se beneficia de múltiples drivers: real yields contenidos con TIPS 10Y en 1.99% (tips_yield_10y) vs inflación esperada elevada, USD en 99.23 (dxy) sin fortaleza extrema, y incertidumbre política con renuncias en Fed (Miran) y DHS según CNBC/AP. Cobertura contra riesgo de stagflation.",
+      "dato_clave": "tips_yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 99.23 (dxy) sin tendencia clara. USDJPY extremo en 158.68 (usdjpy_mkt) cerca de niveles de intervención sugiere posible reversión, pero diferencial de tasas aún favorable. EURUSD en 1.163 (eurusd) indica EUR relativamente fuerte. Flujos cruzados sin dirección dominante.",
+      "dato_clave": "usdjpy_mkt"
+    }
+  ],
+  "tesis_principal": "Estamos en régimen Goldilocks con alta confianza basado en métricas clave: yield curve normalizada en +0.85% (yield_curve) eliminando riesgo recesivo inmediato, mercado laboral sólido con jobless claims en 211k (jobless_claims) y Sahm rule controlado en 0.13 (sahm_rule). Credit markets señalan apetito por riesgo con HY spreads comprimidos en 2.82% (hy_spread) y VIX moderado en 18.92 (vix). Sin embargo, persisten riesgos inflacionarios con Michigan expectations en 3.8% (michigan_inflation_exp) y TIPS yield real en 1.99% (tips_yield_10y) sugiriendo real rates insuficientes. La configuración favorece risk-on en equity (SPY en 738.66) mientras que duration presenta vulnerabilidad (TLT en 83.79) ante potencial re-aceleración inflacionaria. USDJPY en niveles extremos de 158.68 (usdjpy_mkt) añade elemento de inestabilidad via carry trade unwinding si BoJ interviene.",
+  "invalidadores": [
+    "Breakout del USDJPY por encima de 160 forzando intervención del BoJ y unwinding masivo de carry trades",
+    "HY spreads expandiéndose por encima de 400bps indicando stress crediticio",
+    "Sahm rule superando 0.5 confirmando entrada recesiva",
+    "VIX spike por encima de 30 sugiriendo cambio de régimen hacia risk-off",
+    "Yield curve invirtiendo nuevamente por debajo de -0.25% señalando preocupaciones recesivas renovadas"
+  ],
+  "alertas": [
+    "USDJPY en 158.68 está peligrosamente cerca de niveles que históricamente han provocado intervención del BoJ",
+    "Divergencia entre expectativas inflacionarias elevadas (Michigan 3.8%) y real yields relativamente bajos (TIPS 1.99%)",
+    "Cambios en liderazgo de Fed (renuncia de Miran) y DHS pueden introducir volatilidad política",
+    "Probabilidad de stagflation del 40% para fin de 2026 según traders merece monitoreo"
+  ],
+  "datos_insuficientes": [
+    "Datos de PCE core y CPI con 1-2 meses de retraso limitan evaluación precisa de tendencia inflacionaria actual",
+    "Unemployment rate de abril no captura dinámica laboral más reciente"
+  ],
+  "eventos_clave": [
+    "[WSJ] Dow tocando 50,000 impulsado por AI buzz — refuerza momentum alcista en equities y justifica posición long SPY",
+    "[CNBC] 40% probabilidad de stagflation para fin 2026 según traders — valida preocupaciones inflacionarias y posición short TLT",
+    "[CNBC] Renuncia del Fed Governor Miran y apoyo a Warsh — introduce incertidumbre en política monetaria favoreciendo cobertura en gold",
+    "[Investor's Business Daily] Nvidia extiende rally por demanda china de chips AI — sostiene narrativa tech que impulsa mercados",
+    "[AP News] Renuncia del jefe de Border Patrol — señala inestabilidad en implementación de políticas migratorias de Trump"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-05-15T20:58:12.765642",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

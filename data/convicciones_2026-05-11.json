@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-05-11",
+  "tipo": "WEEKLY",
+  "convicciones": [
+    {
+      "ticker": "BRENT",
+      "direccion": "LONG",
+      "horizonte": "MONTHS",
+      "conviccion": 8,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "Shock de oferta geopolitico real (guerra activa US-Iran, Estrecho de Hormuz disrumpido) genera backwardation extrema de $14.68 a 6 meses, la señal fisica mas inequivoca de tightness, mientras el regimen macro Goldilocks sostiene la demanda sin destruirla.",
+        "Brent captura el risk premium geopolitico mejor que WTI (diferencial Brent-WTI amplio en $6.17 lo confirma), y el DXY tecnicamente debil (BAJO_DMA, momentum_ajust -0.6) actua como tailwind adicional para commodities en USD.",
+        "Esta no es una apuesta especulativa sobre demanda - es una apuesta sobre que el risk premium por disrupcion fisica no se evapora hasta que haya un deal US-Iran, evento que las propias noticias describen como estancado."
+      ],
+      "fundamental_case": {
+        "macro_context": "Regimen Goldilocks confirmado (unemployment 4.3%, Sahm 0.13, HY spread 2.81%, VIX 18.38) sostiene demanda energetica robusta. Refinery utilization 90.1% confirma que no hay debilidad de consumo. DXY debilitandose (-0.62% bajo 200DMA) crea tailwind para commodities denominados en USD.",
+        "sectoral_dynamics": "Backwardation WTI 6m en $14.68 es nivel extraordinariamente elevado - señala tightness fisica real, no especulacion. Crack spread 3-2-1 en $53.89 MUY_FUERTE confirma que el flujo physical hacia refinerias esta estresado. Estrecho de Hormuz (~20% del crudo mundial) parcialmente disrumpido por hostilidades activas US-Iran con tanqueros atacados.",
+        "technical_setup": "USO momentum_ajust 2.512 con cruce SOBRE_DMA confirma tendencia tecnica intacta. Sobreextension de USO (+61.6% sobre 200DMA) es una alerta pero refleja exactamente el shock de oferta - no es momentum de demanda especulativa.",
+        "why_this_expression": "Brent vs WTI: Brent es el marcador directamente expuesto al risk premium de Hormuz (Mar del Norte/Mideast pricing), mientras WTI carga el peso de inventarios domesticos EE.UU. en 457K Mbbl (potencialmente elevados, data gap del 5-year avg). Brent expresa el shock con menos ruido. Elegimos Brent sobre el complejo de equities (XOM/CVX/CRAK/VLO) porque la apuesta pura es sobre el risk premium del barril; los equities agregan beta de mercado y stock-specific risk."
+      },
+      "agents_aligned": [
+        "O&G desk: Brent LONG conviccion 8, backwardation $14.68 + crack spread MUY_FUERTE + shock Hormuz",
+        "Macro: regimen Goldilocks con demanda sostenida, DXY long pero con DXY tecnicamente debil reconocido",
+        "Technical: USO momentum_ajust 2.512 SOBRE_DMA confirma tendencia, DXY SHORT senal (BAJO_DMA, momentum_ajust -0.6) es tailwind para commodities"
+      ],
+      "entry_strategy": "Construir posicion en 2-3 tramos. Primer tramo inmediato dado que el risk premium ya esta priceado pero el catalyst (Hormuz) sigue activo. Considerar futuros Brent o BNO ETF como vehiculos. Evitar añadir si Brent rompe sobre $115 sin nuevo catalyst (señal de blow-off).",
+      "stop_loss_logic": "Stop tactico: Brent bajo $92 (cierre del gap geopolitico, perdida de backwardation). Stop estrategico: cualquier anuncio de deal US-Iran o reapertura formal de Hormuz - cerrar inmediatamente sin esperar confirmacion tecnica.",
+      "profit_target_logic": "Target 1: $115-118 (extension del risk premium, ~10-13% upside). Target 2: $125+ si escalada (capacidad spare OPEC limitada por logistica Hormuz). Tomar parcial en target 1, dejar trailing en el resto.",
+      "invalidators": [
+        "Deal US-Iran o reapertura formal del Estrecho de Hormuz (colapso del risk premium)",
+        "Backwardation 6m colapsando bajo $5 (señal fisica de que el shock se esta resolviendo)",
+        "OPEC+ anunciando aumento de produccion efectivo con barril llegando a Asia por rutas alternativas",
+        "Quiebre del regimen Goldilocks: jobless claims sobre 300K, Sahm rule sobre 0.5, o VIX sobre 30"
+      ],
+      "what_we_could_be_wrong_about": "La principal asimetria que podriamos no estar viendo: el mercado ya priceo gran parte del risk premium de Hormuz a $104, y la backwardation extrema indica posicionamiento ya muy alcista. Un deal sorpresa US-Iran (Trump es transaccional, no ideologico) puede gappear el crudo $15-20 abajo en horas. Ademas, inventarios EE.UU. potencialmente above-average (data gap critico del 5-year avg) sugiere que el balance global no es tan tight como la curva implica - hay un componente logistico que podria resolverse mas rapido de lo esperado si se establecen corredores navales seguros."
+    },
+    {
+      "ticker": "CRAK",
+      "direccion": "LONG",
+      "horizonte": "MONTHS",
+      "conviccion": 7,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "Los refiners estan capturando crack spreads MUY_FUERTES ($53.89) con utilization al 90.1% en pleno arranque de driving season, mientras la disrupcion de Hormuz limita el input de crudo Mideast forzando reconfiguraciones que historicamente expanden margenes.",
+        "CRAK es una expresion diferenciada del trade energetico: si Brent cae por un deal geopolitico, los refiners pueden ganar (input mas barato, margenes mantenidos por demanda Goldilocks) - reduce correlacion 1:1 con la apuesta de Brent.",
+        "Este trade reemplaza la conviccion VLO publicada el 2026-05-11 con una expresion diversificada (CRAK incluye VLO, MPC, PSX, refiners globales) que elimina stock-specific risk."
+      ],
+      "fundamental_case": {
+        "macro_context": "Goldilocks con consumo robusto (unemployment 4.3%, HY spread comprimido) sostiene demanda de productos refinados. Driving season mayo-septiembre es estacionalmente bullish para gasolina. Sin señales de destruccion de demanda.",
+        "sectoral_dynamics": "Crack 3-2-1 en $53.89 (MUY_FUERTE) con refinery utilization 90.1% indica que refiners estan corriendo a maxima capacidad capturando spreads excepcionales. Disrupcion Hormuz crea escasez relativa de crudo sour Mideast vs abundancia de crudo light US, lo que beneficia a refiners US complejos (capacidad de procesar inputs variables).",
+        "technical_setup": "No tenemos indicadores tecnicos directos de CRAK ($50.24) en el dataset - data gap reconocido. El proxy mas cercano es USO SOBRE_DMA con momentum_ajust 2.512, que confirma el regimen sectorial. XLE tambien LONG segun O&G desk.",
+        "why_this_expression": "CRAK vs VLO: CRAK diversifica entre ~25 refiners globales eliminando riesgo operacional/balance sheet idiosincratico de Valero. CRAK vs XLE: CRAK es PURE PLAY en cracks (refiners), mientras XLE diluye con E&P y servicios. Queremos exposicion concentrada al spread MUY_FUERTE, no al precio del crudo subyacente. CRAK es complementario a Brent LONG (no redundante): si Brent cae moderadamente, los cracks pueden expandirse mas (input mas barato + demand intact)."
+      },
+      "agents_aligned": [
+        "O&G desk: CRAK LONG conviccion 8 explicito, crack spread MUY_FUERTE en $53.89",
+        "O&G desk: VLO, XLE, gasolina, heating oil todos LONG (señales convergentes intra-agente sobre refining)",
+        "Macro: Goldilocks sostiene demanda de productos refinados (consumer + industrial)",
+        "Technical: regimen energy alcista confirmado via USO (SOBRE_DMA, momentum 2.512) y sector sin debilidad tecnica"
+      ],
+      "entry_strategy": "Construir posicion en 2 tramos. Primer tramo inmediato. Segundo tramo en cualquier pullback de 5-7% sin cambio de tesis (cracks aun MUY_FUERTES).",
+      "stop_loss_logic": "Stop estrategico: crack spread 3-2-1 colapsando bajo $30 (perdida del regimen MUY_FUERTE). Stop tactico: refinery utilization cayendo bajo 85% sostenidamente (señal de demand destruction o margin compression).",
+      "profit_target_logic": "Target 1: +15% (captura del momentum estacional driving season). Target 2: +25% si cracks se mantienen sobre $50 hasta agosto. Salir antes de Labor Day weekend dado que cracks tipicamente se comprimen post-driving season.",
+      "invalidators": [
+        "Crack 3-2-1 cayendo bajo $30 (perdida del setup MUY_FUERTE)",
+        "Refinery utilization cayendo bajo 85% (señal de demand weakness o operational issues)",
+        "Recesion abrupta: Sahm rule sobre 0.5 o jobless claims sobre 300K destruye demanda de productos",
+        "Reapertura completa Hormuz Y aumento OPEC+ simultaneo (margin compression desde input price collapse + supply glut)"
+      ],
+      "what_we_could_be_wrong_about": "Los cracks pueden ser un indicador rezagado - si la demanda real ya esta debilitandose (señales que no veriamos hasta proximos datos EIA), los refiners pueden estar capturando un peak insostenible. Ademas, asumimos que CRAK no esta tan sobreextendido como USO, pero sin data tecnica directa del ETF no podemos confirmar. Si refiners ya recorrieron 30-40% YTD (data gap), gran parte del trade podria estar atras nuestro."
+    }
+  ],
+  "reasoning_when_no_convictions": "",
+  "synthesis_observations": "Observacion 1 - LA CONTRADICCION PRODUCTIVA DEL CRUDO: El O&G desk identifica brillantemente la coexistencia de inventarios US aparentemente elevados (457K Mbbl) con backwardation extrema ($14.68 a 6m). Esto NO es un error de mercado - es la firma de un shock LOGISTICO, no de volumen. El crudo light sweet en Cushing no puede sustituir crudo sour Mideast para refinerias asiaticas/europeas configuradas para grados especificos. Esta dislocacion fisica es exactamente lo que justifica Brent LONG sobre WTI LONG, y por que los refiners US (CRAK) tienen ventaja estructural temporal.\n\nObservacion 2 - DIVERGENCIA TERM STRUCTURE EN VIX (NO ACCIONADA): VIX 9D en 14.21 vs VIX 6M en 22.59 (spread +8.38) es muy notable. Alguien grande se cubre a 6 meses mientras el corto plazo permanece complaciente. Esto es coherente con Goldilocks maduro y nos disciplina contra position sizing CONCENTRATED. Las dos convicciones a STANDARD reflejan este respeto al hedging estructural visible en options.\n\nObservacion 3 - NO PUBLICAMOS SPY/QQQ pese a momentum_ajust de 2.615/2.856: ya tenemos QQQ CONCENTRATED LONG del 2026-05-03 y la tesis no ha cambiado materialmente. Republicar seria aggregation, no convicion incremental. Si SPY/QQQ corrigen 5-7% sin cambio macro, ahi habria oportunidad de añadir, no aqui.\n\nObservacion 4 - NATGAS COMO TRADE SETUP FUTURO: El O&G desk identifica una asimetria interesante (oversupply domestico vs disrupcion LNG global). No accionable hoy por contradicciones internas, pero monitorear LNG export data en proximas semanas - si aceleran, NatGas LONG podria ser conviction de Q3.",
+  "metadata": {
+    "timestamp": "2026-05-11T18:19:07.957731",
+    "modelo": "claude-opus-4-7",
+    "agentes_input": [
+      "macro",
+      "technical",
+      "og_energy"
+    ]
+  }
+}

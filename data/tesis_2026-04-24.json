@@ -1,0 +1,81 @@
+{
+  "fecha": "2026-04-24",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Régimen confirma crecimiento sólido sin presiones inflacionarias excesivas. Yield curve normalizada en +0.7% (yield_curve), Sahm rule bajo en 0.2 (sahm_rule), jobless claims estables en 214k (jobless_claims), y unemployment contenido en 4.3% (unemployment). Expectativas de inflación a largo plazo ancladas en 2.26% (breakeven_5y5y)."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Goldilocks + liquidez favorable. HY spread comprimido en 2.84% (hy_spread) indica apetito de riesgo. VIX moderado en 19.17 (vix) sugiere volatilidad manejable. SPY en 708.45 (spy) con soporte macro robusto.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Tech beneficiado por Goldilocks y costos de financiamiento estables. Yield 10Y en 4.32% (yield_10y_mkt) no restrictivo para múltiples. QQQ en 651.42 (qqq) con fundamentales soportivos.",
+      "dato_clave": "yield_10y_mkt"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "Yields estabilizados pero sin catalizador claro para rally de bonos. Real yield TIPS en 1.92% (tips_yield_10y) atractivo vs inflación esperada. TLT en 86.55 (tlt) en rango lateral probable.",
+      "dato_clave": "tips_yield_10y"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "Oro beneficiado por tensiones geopolíticas (guerra Irán-Israel per noticias) y real yields no excesivamente altos. GLD en 431.04 (gold). DXY fuerte en 98.68 (dxy) es viento en contra, pero conflictos apoyan demanda de refugio.",
+      "dato_clave": "dxy"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "USD/JPY en 159.49 (usdjpy) cerca de niveles de intervención históricos del BoJ. DXY en 98.68 (dxy) vulnerable a corrección si Fed pausa o si BoJ interviene. EUR/USD en 1.171 (eurusd) sugiere USD sobrevalorado vs fundamentales.",
+      "dato_clave": "usdjpy"
+    }
+  ],
+  "tesis_principal": "Los mercados operan en un régimen Goldilocks óptimo con crecimiento sólido (unemployment 4.3%, jobless claims 214k) sin presiones inflacionarias excesivas (breakeven 5y5y en 2.26%). La curva de rendimientos normalizada en +0.7% (yield_curve) elimina señales de recesión, mientras que spreads de crédito comprimidos en 2.84% (hy_spread) indican apetito de riesgo saludable. Risk-on prevalece con SPY en 708.45 y QQQ en 651.42, soportados por condiciones de liquidez favorables y VIX controlado en 19.17. El principal riesgo emerge de tensiones FX, particularmente USD/JPY en 159.49 cerca de niveles críticos de intervención del BoJ, mientras que las tensiones geopolíticas (guerra Irán-Israel impactando combustibles según Lufthansa) añaden volatilidad sin alterar el régimen macro subyacente.",
+  "invalidadores": [
+    "USD/JPY rompiendo 160+ provocaría intervención masiva del BoJ y desapalancamiento de carry trades",
+    "Escalada del conflicto Irán-Israel causando shock energético persistente (oil >$90)",
+    "Jobless claims subiendo consistentemente por encima de 250k invalidaría fortaleza laboral",
+    "HY spreads expandiéndose por encima de 400bps señalaría stress crediticio",
+    "Breakeven 5y5y rompiendo 2.5% persistentemente reactivaría temores inflacionarios"
+  ],
+  "alertas": [
+    "USD/JPY en 159.49 extremadamente cerca de niveles de intervención históricos del BoJ",
+    "Tensiones geopolíticas elevadas con impacto real en combustibles (Lufthansa cortando 20k vuelos)",
+    "Anthropic valorado en $1T en mercados secundarios sugiere posible burbuja en AI",
+    "Real yield TIPS de 1.92% podría atraer flujos institucionales a bonos si persiste"
+  ],
+  "datos_insuficientes": [
+    "Datos de inflación (CPI, PCE core) con 1-2 meses de retraso limitan evaluación de tendencias recientes",
+    "Michigan inflation expectations de febrero no capturan sentimiento actual del consumidor"
+  ],
+  "eventos_clave": [
+    "[Associated Press] Lufthansa corta 20,000 vuelos por guerra Irán — confirma impacto real en costos energéticos y supply chains",
+    "[Business Insider] Anthropic valuado en $1T — señala posible burbuja en AI que podría impactar QQQ si se desinfla",
+    "[Bloomberg] Tim Cook planea retirarse — transición de liderazgo en Apple podría generar volatilidad en tech",
+    "[Al Jazeera] Turbulencia en liderazgo militar US — escalada geopolítica apoya demanda de oro y activos refugio"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-04-24T08:12:07.486743",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

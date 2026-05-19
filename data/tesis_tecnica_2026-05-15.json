@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-05-15",
+  "regimen_macro_aplicado": "GOLDILOCKS",
+  "contexto_tecnico_global": "Mercado en condiciones risk-on confirmadas: VIX spot 18.43 vs VIX 3M 21.36 en CONTANGO_FUERTE, VRP positivo en 223.7 (seguro sobrepagado, bullish equities), y breadth en 58% sobre 200DMA (zona normal-saludable). Options flow muestra VIX 9D en 17.33 vs VIX 6M en 23.59, spread de +6.26 que indica miedo estructural mayor al inmediato (alguien se cubre lejos pese a calma actual). VIX IV percentile en 69.3 (zona alta del rango normal, cerca del umbral de fear elevado), lo que diverge ligeramente con el spot bajo: sugiere que aunque la volatilidad realizada es baja, el rango anual ha sido comprimido y estamos en el limite superior. Combinacion neta: regimen Goldilocks habilita momentum full sizing, pero el spread 9D-6M ancho recomienda no sobreapalancar.",
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 9,
+      "razonamiento": "Precio 739.17 esta 9.78% sobre 200DMA (673.34), cruce SOBRE_DMA confirmado. Momentum 12M en +26.62% con vol 12.10%, momentum ajustado de 2.201 (muy por encima del umbral de 1.5 de Barroso-Santa Clara). Senal LONG de alta conviccion.",
+      "indicador_clave": "momentum_ajust 2.201",
+      "interaccion_macro": "GOLDILOCKS habilita momentum full sizing (Cooper et al. 2004): equity momentum funciona optimamente en UP markets, no hay descuento de conviccion."
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 9,
+      "razonamiento": "Precio 708.93 esta 16.25% sobre 200DMA (609.83), zona habilitada Tudor Jones. Momentum 12M +37.19% con vol 16.02%, momentum ajustado 2.321 (lectura excelente). El nivel de sobreextension vs 200DMA es alto y amerita monitoreo, pero la senal de trend es robusta.",
+      "indicador_clave": "momentum_ajust 2.321",
+      "interaccion_macro": "Goldilocks favorece growth/tech: momentum en QQQ amplificado por el regimen, full sizing autorizado."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 8,
+      "razonamiento": "Precio 417.29 esta 4.99% sobre 200DMA (397.45), SOBRE_DMA. Momentum 12M en +40.11% con vol 26.82%, momentum ajustado 1.495 (justo en el umbral fuerte). Trend valido pero con vol mas elevada que equities.",
+      "indicador_clave": "momentum_12m +40.11%",
+      "interaccion_macro": "En GOLDILOCKS el oro no es el rol principal, pero el spread VIX 9D-6M de +6.26 sugiere hedging estructural en curso, lo cual respalda mantener exposicion a GLD."
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Precio 148.23 esta 70.13% sobre 200DMA (87.13) - sobreextension EXTREMA. Momentum 12M +119.31% con vol 43.25%, momentum ajustado 2.759. Trend muy fuerte pero el nivel sobre 200DMA es una alerta de reversion potencial; por eso reduzco horizonte a mensual y conviccion a 7.",
+      "indicador_clave": "pct_sobre_dma +70.13% (sobreextension)",
+      "interaccion_macro": "Goldilocks no es regimen tipico para commodity momentum (eso es Reflacion), pero el trend ajustado por vol es indiscutible. Mantener LONG tactico con stop ajustado."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Precio 83.66 esta 3.40% BAJO 200DMA (86.60), cruce BAJO_DMA: zona prohibida para LONG segun regla Tudor Jones. Momentum 12M apenas +1.61%, momentum ajustado 0.16 (zona ambigua entre -0.5 y +1.5). No hay senal direccional clara para SHORT tampoco dado el momentum positivo marginal.",
+      "indicador_clave": "cruce_dma BAJO_DMA + momentum_ajust 0.16",
+      "interaccion_macro": "En GOLDILOCKS los bonos largos suelen sufrir vs equities. Neutral con sesgo bajista de fondo; evitar LONG estructural."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Precio 99.27 esta 0.74% sobre 200DMA (98.55), SOBRE_DMA marginal. Momentum 12M en -1.80% con vol 6.12%, momentum ajustado -0.294 (zona ambigua). Senales contradictorias: precio justo sobre DMA pero momentum negativo. No hay edge claro.",
+      "indicador_clave": "momentum_ajust -0.294 (ambiguo)",
+      "interaccion_macro": "Goldilocks tipicamente debilita al dolar (risk-on flows out of USD). Sesgo bajista de fondo pero sin senal tecnica suficiente para SHORT."
+    }
+  ],
+  "alertas_tecnicas": [
+    "USO sobre 200DMA en +70.13% es sobreextension extrema; cualquier reversion a la media seria violenta",
+    "QQQ +16.25% sobre 200DMA tambien estirado, vigilar agotamiento de momentum",
+    "TLT en BAJO_DMA con momentum casi cero: posible base en construccion pero sin confirmacion",
+    "Spread VIX 9D-6M de +6.26 indica hedging estructural pese a VIX spot bajo: divergencia a monitorear",
+    "VIX IV percentile 69.3 cerca del umbral de fear elevado (70): proximidad a zona contrarian"
+  ],
+  "invalidadores_tecnicos": [
+    "SPY o QQQ cruzando BAJO 200DMA invalidaria todas las senales LONG de equities",
+    "VIX term structure pasando a BACKWARDATION (VIX spot > VIX 3M) indicaria stress agudo y forzaria reducir risk-on",
+    "Breadth (pct_sobre_200) cayendo bajo 30% senalaria deterioro generalizado",
+    "VRP volviendose negativo eliminaria el soporte de complacencia controlada",
+    "VIX IV percentile saltando sobre 80 con spread 9D-6M colapsando indicaria fear convergente y obligaria a hedgear"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-05-15T20:59:14.469829",
+    "modelo": "claude-opus-4-7",
+    "activos_analizados": 6,
+    "regimen_macro": "GOLDILOCKS"
+  }
+}

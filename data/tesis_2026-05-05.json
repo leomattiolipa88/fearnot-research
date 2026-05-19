@@ -1,0 +1,76 @@
+{
+  "fecha": "2026-05-05",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "El régimen Goldilocks está bien establecido: yield_curve positiva en +0.81%, VIX contenido en 17.26 (vix), HY spreads ajustados en 278bps (hy_spread), Sahm rule muy baja en 0.2 (sahm_rule) y jobless claims saludables en 189k (jobless_claims). Las expectativas de inflación están ancladas con breakeven_5y5y en 2.28% (breakeven_5y5y) y Michigan inflation exp en 3.8% (michigan_inflation_exp)."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Goldilocks perfecto: liquidez abundante con HY spreads en 278bps (hy_spread), curva empinada +0.81% (yield_curve), VIX controlado en 17.26 (vix). SPY ya en 724.13 (spy) refleja fortaleza, pero el régimen sigue intacto",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Tech se beneficia del entorno de baja volatilidad con VIX en 17.26 (vix) y yields reales contenidos con TIPS_yield_10y en 1.91% (tips_yield_10y). QQQ en 682.23 (qqq) con momentum intacto",
+      "dato_clave": "vix"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "Yield 10Y en 4.414% (yield_10y_mkt) vs TLT en 85.39 (tlt). El régimen Goldilocks mantiene presión sobre bonos largos, pero convicción moderada por tensiones geopolíticas que podrían generar flight-to-quality",
+      "dato_clave": "yield_10y_mkt"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 7,
+      "razonamiento": "DXY en 98.44 (dxy) con fortaleza relativa. USD/JPY en 157.85 (usdjpy) sugiere carry trade activo, EUR/USD en 1.1703 (eurusd) muestra debilidad del euro. Diferencial de yield favorece USD",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Oro en 418.70 (gold) en territorio neutral. Yields reales positivos con TIPS en 1.91% (tips_yield_10y) presionan, pero tensiones geopolíticas en Hormuz ofrecen soporte. Señales mixtas",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "El mercado opera en un régimen Goldilocks robusto con métricas macro excepcionalmente favorables. La yield curve empinada en +0.81% (yield_curve) junto con HY spreads contenidos en 278bps (hy_spread) y VIX en 17.26 (vix) crean el entorno ideal para activos de riesgo. El mercado laboral se mantiene sólido con jobless claims en 189k (jobless_claims) y Sahm rule en 0.2 (sahm_rule), mientras las expectativas inflacionarias permanecen ancladas con breakeven 5y5y en 2.28% (breakeven_5y5y). El SPY en 724.13 (spy) y QQQ en 682.23 (qqq) reflejan esta fortaleza estructural. Las divisas muestran USD fortaleza con DXY en 98.44 (dxy) y carry trades activos evidenciados por USD/JPY en 157.85 (usdjpy). Este régimen favorece claramente posiciones largas en equities con horizonte mensual, mientras que los bonos largos enfrentan vientos en contra por yields en 4.414% (yield_10y_mkt).",
+  "invalidadores": [
+    "Escalada significativa de tensiones en el Estrecho de Hormuz que genere flight-to-quality masivo hacia TLT",
+    "Deterioro súbito en HY spreads por encima de 350bps indicando stress crediticio",
+    "Spike del VIX por encima de 25 quebrando el régimen de baja volatilidad",
+    "Inversión de la yield curve por debajo de -0.25% señalando recesión inminente",
+    "Sahm rule por encima de 0.5 confirmando inicio de recesión"
+  ],
+  "alertas": [
+    "USD/JPY en 157.85 se acerca a niveles críticos donde BoJ históricamente interviene (160+)",
+    "Tensiones geopolíticas en Hormuz crean riesgo de shock de commodities que podría alterar el régimen",
+    "HY spreads en 278bps están en mínimos - cualquier deterioro sería señal temprana de cambio de régimen"
+  ],
+  "datos_insuficientes": [],
+  "eventos_clave": [
+    "[CNBC] Dow futures drop 150 points as oil spikes on increased Iran tensions — Riesgo geopolítico que podría generar flight-to-quality hacia TLT y presionar SPY/QQQ a corto plazo",
+    "[Bloomberg] Oil Falls as Trump Says US to Start Guiding Ships Through Hormuz — Escalada en Hormuz aumenta prima de riesgo en commodities, beneficia DXY como safe haven",
+    "[CNBC] Berkshire shares trade higher as Buffett successor Abel scores good marks — Sentiment institucional positivo refuerza tesis LONG en equities"
+  ],
+  "confianza_general": 85,
+  "metadata": {
+    "timestamp": "2026-05-05T15:55:21.614026",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

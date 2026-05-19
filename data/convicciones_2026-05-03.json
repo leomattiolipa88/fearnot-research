@@ -1,0 +1,48 @@
+{
+  "fecha": "2026-05-03",
+  "tipo": "WEEKLY",
+  "convicciones": [
+    {
+      "ticker": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "QUARTERS",
+      "conviccion": 9,
+      "position_size": "CONCENTRATED",
+      "thesis_three_sentences": [
+        "El régimen Goldilocks confirmado (yield curve normalizada +0.81%, unemployment 4.3%, breakeven 5y5y 2.27%, VIX 16.99) crea el sweet spot historico para tech: crecimiento real sin inflacion descontrolada que fuerce a la Fed.",
+        "La confluencia tecnica es excepcional: QQQ a +11.82% sobre 200DMA con momentum ajustado 2.496 (muy por encima del umbral Barroso de +1.5), VRP positivo en 157.57 que es bullish equity per Bollerslev, y term structure en CONTANGO_FUERTE confirmando regimen de baja vol.",
+        "Existe un catalyst secular fresco (expansion AI militar Nvidia/Microsoft/AWS) que valida multiples premium en el momento exacto en que el setup macro+tecnico converge - el tipo de alineacion que justifica concentracion."
+      ],
+      "fundamental_case": {
+        "macro_context": "Goldilocks pleno: labor market resiliente (jobless claims 189k, Sahm 0.2) sin sobrecalentamiento, inflacion anclada (breakeven 2.27%, Michigan 3.8%), credit spreads ajustados en 283bps. TIPS yield 10y en 1.94% es atractivo pero no restrictivo - exactamente el cost of capital que tech puede absorber sin comprimir multiples.",
+        "sectoral_dynamics": "AI capex ciclo intacto y ahora con un nuevo vector: contratos militares clasificados (Nvidia/MSFT/AWS) que son sticky, high-margin y politicamente protegidos. Esto extiende el secular story mas alla del consumer/enterprise narrative.",
+        "technical_setup": "Precio 674.15 vs 200DMA 602.86. Momentum 12M +40.64% con vol 16.28% = momentum ajustado 2.496 (top decile). Breadth 62% sobre 200DMA confirma amplitud sin extremo de sobrecompra. Cumple Tudor Jones (sobre 200DMA), Barroso (>+1.5) y Cooper (UP market amplifica momentum).",
+        "why_this_expression": "QQQ sobre SPY porque el momentum ajustado es marginalmente superior (2.496 vs 2.448), tiene mayor beta al catalyst AI militar, y la ventaja de earnings power tech compounding es donde el regimen Goldilocks paga mejor historicamente."
+      },
+      "agents_aligned": [
+        "Macro: conviction 9 LONG QQQ - real rates atractivos sin restrictividad + AI secular validado",
+        "Tecnico: conviction 9 LONG QQQ - momentum ajustado 2.496, sobre 200DMA, regimen amplifica"
+      ],
+      "entry_strategy": "Entry en niveles actuales (~674) con tranches: 60% inmediato, 40% en cualquier pullback al 5-EMA o test del breakout. No esperar dip profundo - momentum trades de esta calidad raramente dan segunda oportunidad.",
+      "stop_loss_logic": "Stop en cierre semanal bajo 200DMA (602.86). Esto es ~10.5% del precio actual - dolor aceptable dado el upside asimetrico y cumple regla Tudor Jones explicita.",
+      "profit_target_logic": "Trail con 200DMA ascendente. No fijar target arbitrario - dejar correr mientras momentum ajustado se mantenga >+1.5 y VRP positivo. Reducir 1/3 si momentum ajustado cae bajo +1.0.",
+      "invalidators": [
+        "QQQ cierra semanal bajo 200DMA (602.86)",
+        "VIX term structure cambia a BACKWARDATION o VRP a territorio negativo",
+        "Breakeven 5y5y rompe sobre 2.8% reactivando fears inflacionarios que comprimirian multiples tech",
+        "Sahm rule sube sobre 0.5 o credit spreads expanden sobre 400bps (regimen change a recesion)"
+      ],
+      "what_we_could_be_wrong_about": "El momentum ajustado de 2.496 es top decile pero tambien crowded. Si el catalyst AI militar es ya consenso (lo cual es probable dado que Bloomberg lo publica), gran parte del flow puede estar in. Ademas, USO sobreextendido +70% sobre 200DMA puede presagiar shock energetico inflacionario que rompa el regimen Goldilocks rapido. El K-shaped economy + Spirit Airlines quiebra son senales sutiles de que la fortaleza macro no es uniforme - si consumer cracks, tech earnings derivados de digital ad spend pueden defraudar."
+    }
+  ],
+  "reasoning_when_no_convictions": "",
+  "synthesis_observations": "Observacion 1 - La contradiccion productiva mas interesante esta en USO: tecnico dice LONG con momentum ajustado 2.858 pero advierte sobreextension de +70% sobre 200DMA, mientras macro no privilegia commodities en Goldilocks. Esto NO es una conviction - es una alerta. Un USO con esa sobreextension en un regimen que no lo respalda es un short setup eventual, pero sin catalyst de timing concreto en los memos (UAE-OPEC es ambiguo direccionalmente) no se publica. Vigilar para proximas semanas. Observacion 2 - SPY long tiene casi la misma alineacion que QQQ (ambos agentes, conviction 8-9) pero elegimos no duplicar exposure. QQQ captura el mismo trade con mejor expresion del catalyst AI. Observacion 3 - TLT short tiene conviccion macro 7 pero tecnico es NEUTRAL (momentum ajustado 0.09, en zona de indefinicion). Falla el filtro de convergencia: dos agentes no estan alineados. La tesis macro sobrevive pero sin confirmacion tecnica no pasa. Observacion 4 - DXY: macro dice LONG conviction 8, tecnico dice SHORT conviction 5. Contradiccion directa. Cuando tecnico (BAJO_DMA) y macro (fundamentals) divergen, la regla de Tudor Jones manda - no tomar posicion hasta que se resuelvan. Observacion lateral importante: Spirit Airlines + K-shaped economy son canaries que deberiamos monitorear. Si en 2-4 semanas vemos credit spreads empezar a ampliar selectivamente en consumer discretionary, el regimen Goldilocks puede resquebrajarse antes que los headline indicators lo muestren.",
+  "metadata": {
+    "timestamp": "2026-05-03T15:25:19.579855",
+    "modelo": "claude-opus-4-7",
+    "agentes_input": [
+      "macro",
+      "technical"
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+# === Secrets & credenciales ===
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials*
+secrets*
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+*.egg-info/
+venv/
+.venv/
+env/
+
+# === macOS ===
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# === Backups locales ===
+*.bak
+*.backup
+*.backup-*
+*.bak-*
+
+# === IDE ===
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# === Logs ===
+logs/
+*.log
+
+# === Data sensible / regenerable ===
+data/*.db
+data/*.db.backup*
+data/*.db.pre-*
+data/noticias_cache.json
+my_portfolio.json
+
+# === Data regenerable adicional ===
+data/web_data.json

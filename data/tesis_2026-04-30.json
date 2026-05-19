@@ -1,0 +1,81 @@
+{
+  "fecha": "2026-04-30",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Régimen Goldilocks confirmado por múltiples indicadores: yield curve normalizada en +0.7% (yield_curve), Sahm Rule en 0.2 indicando no-recesión (sahm_rule), jobless claims saludables en 189K (jobless_claims), y spreads de crédito contenidos en 2.82% (hy_spread). VIX moderado en 17.44 sugiere volatilidad controlada."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Condiciones macro ideales para equities: régimen Goldilocks con curva de rendimientos normalizada (+0.7%), crédito fluido (hy_spread: 2.82%), y mercado laboral sólido (jobless_claims: 189K). SPY en 714.20 con soporte macro robusto.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Tech favorecido en Goldilocks con yields reales atractivos (TIPS 10Y: 1.92%) y VIX contenido (17.44). QQQ en 663.21 se beneficia de condiciones de liquidez favorables y expectativas inflacionarias ancladas (breakeven 5y5y: 2.25%).",
+      "dato_clave": "tips_yield_10y"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "Yield 10Y market en 4.388% vs TLT en 85.84 sugiere presión bajista en bonos largos. Curva normalizada (+0.7%) indica que la Fed puede mantener política restrictiva, especialmente con expectativas inflacionarias Michigan en 3.8%.",
+      "dato_clave": "yield_10y_mkt"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 98.15 con señales mixtas: EUR/USD en 1.1734 sugiere debilidad relativa del dólar, pero USD/JPY en 156.69 indica fortaleza vs yen. Carry trades activos requieren monitoreo cercano.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "Oro en 424.27 sin catalizador claro. Yields reales en 1.92% (tips_yield_10y) no favorecen oro, pero USD/JPY extremo en 156.69 podría generar volatilidad que beneficie activos de refugio.",
+      "dato_clave": "usdjpy"
+    }
+  ],
+  "tesis_principal": "El régimen Goldilocks está plenamente establecido con la curva de rendimientos normalizada en +0.7% (yield_curve), eliminando las preocupaciones de inversión que dominaron 2022-2025. El mercado laboral se mantiene resiliente con jobless claims en 189K (jobless_claims) y Sahm Rule en 0.2 (sahm_rule), descartando riesgo recesivo inmediato. Los spreads de high yield contenidos en 2.82% (hy_spread) confirman condiciones crediticias saludables, mientras que el VIX en 17.44 (vix) sugiere apetito por riesgo controlado pero presente. La configuración macro favorece claramente risk-on assets, especialmente equities que se benefician de crecimiento sin presiones inflacionarias extremas. Sin embargo, el USD/JPY en 156.69 (usdjpy) se acerca a niveles que históricamente han provocado intervención del BoJ, representando el principal riesgo de cola para la estabilidad de carry trades que sustentan parte de la liquidez global actual.",
+  "invalidadores": [
+    "USD/JPY rompiendo 160 y forzando intervención masiva del BoJ, desarmando carry trades globales",
+    "Jobless claims subiendo consistentemente por encima de 250K, activando preocupaciones del mercado laboral",
+    "Spreads de high yield expandiéndose por encima de 4%, señalando stress crediticio",
+    "Breakeven 5y5y subiendo por encima de 3%, reavivando temores inflacionarios",
+    "Escalada geopolítica en Medio Oriente impactando materialmente precios energéticos"
+  ],
+  "alertas": [
+    "USD/JPY en 156.69 cerca de niveles críticos de intervención BoJ - monitorear intraday",
+    "Reunión Fed en curso con potencial drama si Powell sugiere continuidad más allá de mandato actual",
+    "Expectativas inflacionarias Michigan en 3.8% por encima del target Fed - seguimiento cercano",
+    "Tensiones Irán-Israel manteniendo prima geopolítica en commodities energéticos"
+  ],
+  "datos_insuficientes": [
+    "yield_10y con 6 días de retraso (4.3% vs 4.388% market) - usar datos de mercado para decisiones intraday"
+  ],
+  "eventos_clave": [
+    "[New York Times] Fed Meeting Live Updates: Wash Nomination for Fed Chair Advances Ahead of Powell's Presser — Incertidumbre sobre continuidad de Powell podría generar volatilidad en curva de rendimientos",
+    "[CNBC] Fed meeting live updates: Potential drama ahead if Powell hints he will hang around — Mercado pricing continuidad vs cambio de liderazgo Fed impacta expectativas política monetaria",
+    "[New York Times] U.S. Gas Prices Climb Further as Effects of Iran War Reverberate — Presión alcista en energía mantiene riesgo inflacionario latente",
+    "[Axios] Scoop: Trump huddles with oil execs as Iran stalemate drags on — Coordinación política-energética sugiere manejo estratégico de crisis geopolítica",
+    "[AP News] Asian stocks mostly gain and oil rises after the UAE says it will exit OPEC — Fragmentación OPEC podría alterar dinámicas de pricing petrolero"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-04-30T12:10:11.874421",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

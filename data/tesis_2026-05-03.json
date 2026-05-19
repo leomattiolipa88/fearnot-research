@@ -1,0 +1,77 @@
+{
+  "fecha": "2026-05-03",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Curva de rendimiento normalizada en +0.81% (yield_curve), VIX controlado en 16.99 (vix), spreads corporativos HY estrechos en 2.83% (hy_spread), desempleo estable en 4.3% (unemployment) y claims bajos en 189K (jobless_claims). Inflación expectativas ancladas en 2.27% (breakeven_5y5y) vs 3.8% Michigan (michigan_inflation_exp)."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Goldilocks clásico con liquidez abundante: VIX 16.99, HY spreads 2.83%, curva normalizada 0.81%. SPY en 720.65 con condiciones macro favorables",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Tech se beneficia de régimen Goldilocks y USD/JPY en 157.03 sugiere carry trade activo financiando growth. QQQ en 674.15",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "Yield 10Y en 4.40% vs TIPS 1.94% implica breakeven 2.46%. Expectativas inflacionarias mixtas entre FRED 2.27% y Michigan 3.8%. TLT en 85.61 sin dirección clara",
+      "dato_clave": "breakeven_5y5y"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "DXY fuerte en 98.21, yields reales positivos (TIPS 1.94%), y régimen Goldilocks reducen demanda de refugio. Oro en 423.18",
+      "dato_clave": "tips_yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "USD/JPY en 157.03 señala fortaleza dólar, EUR/USD débil en 1.172. Yields reales US atractivos vs resto del mundo",
+      "dato_clave": "usdjpy"
+    }
+  ],
+  "tesis_principal": "Estamos en un régimen Goldilocks textbook: curva normalizada (yield_curve: 0.81%), spreads crediticios estrechos (hy_spread: 2.83%), volatilidad contenida (vix: 16.99) y mercado laboral sólido (unemployment: 4.3%, jobless_claims: 189K). La fortaleza del USD (dxy: 98.21) y USD/JPY en 157.03 indican apetito por riesgo y carry trades activos. Las expectativas inflacionarias están divididas entre FRED (breakeven_5y5y: 2.27%) y consumidores (michigan_inflation_exp: 3.8%), pero los yields reales positivos (tips_yield_10y: 1.94%) mantienen la Fed cómoda. SPY en 720.65 y QQQ en 674.15 reflejan este entorno favorable para risk-on.",
+  "invalidadores": [
+    "Sahm Rule supere 0.5% desde actual 0.2% indicando recesión inminente",
+    "USD/JPY rompa 160+ provocando intervención BoJ y unwinding masivo de carry trades",
+    "HY spreads se expandan sobre 4% señalizando stress crediticio",
+    "VIX supere 25 por shock geopolítico o crisis de confianza",
+    "Breakeven 5y5y supere 3% confirmando desanclaje inflacionario"
+  ],
+  "alertas": [
+    "USD/JPY en 157.03 cerca de niveles críticos de intervención japonesa",
+    "Divergencia entre expectativas inflacionarias FRED (2.27%) vs Michigan (3.8%) - monitorear cual converge",
+    "Oro en 423.18 relativamente débil para contexto geopolítico actual"
+  ],
+  "datos_insuficientes": [],
+  "eventos_clave": [
+    "[WSJ] Berkshire profits more than double — Fortalece confianza en mercado doméstico y quality stocks",
+    "[Bloomberg] Pentagon expands AI partnerships with tech — Impulsa tesis secular growth para QQQ",
+    "[Forbes] UAE exits OPEC, wealth fund prioritized — Reduce riesgo geopolítico en commodities",
+    "[WSJ] 3M+ lose federal food aid — Presión deflacionaria doméstica contiene inflación"
+  ],
+  "confianza_general": 85,
+  "metadata": {
+    "timestamp": "2026-05-03T16:08:35.004675",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

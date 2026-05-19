@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-05-07",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Múltiples indicadores confirman un régimen benigno: yield curve normalizada en +0.82% (yield_curve), HY spreads contenidos en 2.77% (hy_spread), VIX moderado en 17.43 (vix), y unemployment estable en 4.3% (unemployment). Breakeven 5y5y en 2.26% indica expectativas de inflación ancladas (breakeven_5y5y)."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Goldilocks perfecto: curva positiva, spreads crediticios bajos en 2.77%, VIX contenido. SPY en 733.83 con soporte de liquidez abundante y expectativas inflacionarias ancladas",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 9,
+      "razonamiento": "Tech beneficiado por curva normalizada que mejora valuaciones de growth. QQQ en 695.77 con noticias positivas de Samsung superando $1T market cap y resolución potencial de conflictos geopolíticos",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Yield 10Y en 4.43% con curva steep sugiere presión alcista en tasas largas. Régimen Goldilocks típicamente presiona bonos largos por expectativas de crecimiento sostenido",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 97.86 con señales mixtas. USD/JPY extremo en 156.38 sugiere carry trade stress, pero EUR/USD en 1.1774 indica fortaleza europea balanceada",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Gold en 430.96 vulnerable en régimen Goldilocks con real yields positivos (TIPS 10Y en 1.96%) y expectativas inflacionarias controladas en 2.26%",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "Los mercados están navegando un régimen Goldilocks textbook con yield curve normalizada en +0.82% (yield_curve), credit spreads contenidos en 2.77% (hy_spread), y VIX moderado en 17.43 (vix). La combinación de unemployment estable en 4.3% (unemployment), jobless claims bajas en 189K (jobless_claims), y Sahm Rule en solo 0.2 (sahm_rule) confirma un mercado laboral sólido sin sobrecalentamiento. Las expectativas inflacionarias permanecen ancladas con breakeven 5y5y en 2.26% (breakeven_5y5y) y Michigan inflation expectations en 3.8% (michigan_inflation_exp), mientras real yields positivos en 1.96% (tips_yield_10y) sostienen un entorno favorable para equity risk assets. El contexto se refuerza con noticias positivas: Samsung alcanzando $1T market cap impulsa el rally tecnológico asiático, mientras reportes de posible resolución del conflicto en Medio Oriente presionan oil a la baja, reduciendo presiones inflacionarias.",
+  "invalidadores": [
+    "Escalada súbita en USD/JPY por encima de 160, forzando intervención del BoJ y unwinding masivo de carry trades",
+    "HY spreads expandiéndose por encima de 400bps, señalando stress crediticio",
+    "VIX superando 25 por shock geopolítico no previsto",
+    "Jobless claims saltando por encima de 300K, activando preocupaciones de desaceleración laboral",
+    "Breakeven 5y5y rompiendo por encima de 2.75%, indicando des-anclaje de expectativas inflacionarias"
+  ],
+  "alertas": [
+    "USD/JPY en 156.38 se acerca a niveles de intervención histórica del BoJ - monitorear 160 como línea roja",
+    "Datos de inflación (CPI, PCE core) con 2+ meses de antigüedad reducen visibilidad sobre presiones de precios actuales",
+    "Concentración de rally en tech (Samsung $1T) podría crear vulnerabilidad si rotan sectores"
+  ],
+  "datos_insuficientes": [
+    "CPI más reciente de marzo reduce certeza sobre tendencia inflacionaria actual",
+    "PCE Core con datos de marzo limita assessment de política Fed en tiempo real",
+    "Michigan inflation expectations de marzo no captura sentiment inflacionario reciente"
+  ],
+  "eventos_clave": [
+    "[CNBC] Kospi bull run rolls on con Samsung superando $1T market cap — impulsa sentiment tech global y fortalece tesis growth",
+    "[CNBC] Dow futures surge 500 points as oil dives on report Iran war nearing end — reduce presiones inflacionarias y mejora Goldilocks setup",
+    "[Associated Press] Apple $250M Siri settlement — aunque negativo para AAPL específicamente, no impacta tesis macro sectorial",
+    "[WSJ] New Disney CEO gives vision as revenue rises — confirma fortaleza en consumer discretionary, consistente con régimen Goldilocks",
+    "[NPR] Expensive flights keep vacations closer to home — señal de presión en consumer pero no suficiente para cambiar régimen"
+  ],
+  "confianza_general": 82,
+  "metadata": {
+    "timestamp": "2026-05-07T09:15:53.601510",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

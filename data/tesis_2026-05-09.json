@@ -1,0 +1,75 @@
+{
+  "fecha": "2026-05-09",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Yield curve normalizó a +0.80% (yield_curve) señalando end del ciclo recesivo. Labor market balanceado: unemployment 4.3% (unemployment) con jobless claims estables en 200K (jobless_claims). Sahm Rule en 0.13% (sahm_rule) descartando recesión inminente. HY spreads contenidos en 2.79% (hy_spread) y VIX moderado en 17.19 (vix) indican liquidez saludable. Inflación expectations ancladas en 2.28% (breakeven_5y5y)."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Perfect Goldilocks setup: yield curve normalizada, labor market balanceado, spreads contenidos en 2.79% (hy_spread), VIX bajo 20. SPY ya en 737.62 (spy) pero momentum sigue favorable con liquidez abundante.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Yield curve steepening agresivo sugiere Fed cut cycle terminando. 10Y en 4.41% (yield_10y) vs 3M en 3.61% (yield_3m). TLT vulnerable en 86.08 (tlt) ante expectativas de menos cuts.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "DXY en 97.84 (dxy) reflejando equilibrio. USD/JPY extremo en 156.62 (usdjpy) genera risk de intervention. EUR/USD en 1.1789 (eurusd) sugiere estabilidad relativa. Cross-currents balanceados.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Gold en 433.77 (gold) con real yields positivos en 1.96% (tips_yield_10y). Inflación expectations contenidas en 2.28% (breakeven_5y5y) reducen urgency hedging. Carry cost alto vs bonds.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "Estamos transitioning hacia un régimen Goldilocks sustentable post-cycle-end. La yield curve normalizó dramáticamente a +80bp (yield_curve), señalando que el mercado descuenta el fin del ciclo de recesión. El labor market encontró equilibrio en 4.3% unemployment (unemployment) con jobless claims estables en 200K (jobless_claims), mientras Sahm Rule en 0.13% (sahm_rule) descarta riesgo recesivo inmediato. La liquidez permanece abundante con HY spreads contenidos en 2.79% (hy_spread) y VIX moderado en 17.19 (vix).\n\nLas condiciones financieras se normalizaron sin generar stress sistémico. Real yields positivos en 1.96% (tips_yield_10y) con inflation expectations ancladas en 2.28% (breakeven_5y5y) sugieren un equilibrio favorable para risk assets. El payroll beat de 115K vs 55K esperado confirma labor market resilience sin overheating. SPY en 737.62 (spy) refleja este optimismo, pero la normalización de la yield curve indica que el easy money environment está terminando gradualmente.",
+  "invalidadores": [
+    "Yield curve re-inversion por debajo de -50bp indicando double-dip recession risk",
+    "HY spreads expansion por arriba de 400bp señalando credit crunch",
+    "USD/JPY break arriba de 160 triggering massive yen intervention y unwinding de carry trades",
+    "VIX spike arriba de 30 por geopolitical escalation (Iran war spillovers)",
+    "Michigan inflation expectations arriba de 4.5% rompiendo Fed credibility"
+  ],
+  "alertas": [
+    "USD/JPY en 156.62 cerca de intervention zone - risk de volatility spike sudden",
+    "Iran war shockwaves comenzando a impactar US economy según Bloomberg - monitor commodities",
+    "Real yields positivos en 1.96% creating headwinds para gold y growth stocks",
+    "CFTC investigation de $7B en oil shorts sugiere potential manipulation pre-election"
+  ],
+  "datos_insuficientes": [
+    "Faltan datos de oil/commodities para evaluar impact completo de Iran tensions",
+    "No tenemos wage growth data para confirmar labor market balance",
+    "Corporate earnings data insuficiente para validar equity valuations"
+  ],
+  "eventos_clave": [
+    "[CNBC] U.S. payrolls +115K vs 55K esperado, unemployment 4.3% — confirma labor market resilience sin overheating, supportive para risk assets",
+    "[Bloomberg] Iran War Shockwaves Spread Across US Economy — potential catalyst para commodity volatility y flight-to-quality",
+    "[Bloomberg] Sony $3B buyback tras rising memory prices — tech earnings under pressure, pero buybacks providing support",
+    "[CNBC] States targeting QSBS tax breaks — potential headwind para startup valuations y private equity exits",
+    "[OilPrice] $7B oil shorts investigation — sugiere political manipulation pre-election, watch crude volatility"
+  ],
+  "confianza_general": 82,
+  "metadata": {
+    "timestamp": "2026-05-09T11:15:44.592570",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

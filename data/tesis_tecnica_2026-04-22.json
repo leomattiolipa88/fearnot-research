@@ -1,0 +1,81 @@
+{
+  "fecha": "2026-04-22",
+  "regimen_macro_aplicado": "DESCONOCIDO",
+  "contexto_tecnico_global": "Mercado en condiciones tecnicas benignas: VIX spot 18.92 con term structure en CONTANGO_FUERTE (vix_3m 21.24) indica ausencia de stress agudo. VRP en +47.19 (vrp) es fuertemente positivo, bullish para equities segun Bollerslev. Breadth en 62% sobre 200DMA (pct_sobre_200), zona normal-saludable que confirma tendencia alcista amplia.",
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Precio 711.21 esta 7.02% sobre 200DMA de 664.58 (pct_sobre_dma), habilitando zona LONG por regla Tudor Jones. Momentum 12M en +36.44% con vol 12.9% da momentum_ajust de 2.825, muy por encima del umbral +1.5 de Barroso & Santa-Clara, senal de momentum fuerte.",
+      "indicador_clave": "momentum_ajust 2.825 + precio sobre 200DMA",
+      "interaccion_macro": "Regimen DESCONOCIDO impide aplicar full sizing. Sin confirmacion de GOLDILOCKS reduzco conviccion de 9 a 7; si fuera DESACELERACION habria que cortar size 50% por riesgo de crash momentum."
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Precio 655.11 vs 200DMA 599.03 (+9.36%, pct_sobre_dma), zona habilitada. Momentum_ajust 2.887 es el mas alto del universo, con momentum_12m +48.1% y vol 16.66%. Senal tecnica muy robusta.",
+      "indicador_clave": "momentum_ajust 2.887",
+      "interaccion_macro": "Sin regimen identificado no puedo validar si es UP market de Cooper et al. Tech momentum es especialmente vulnerable en DESACELERACION/STAGFLATION, por eso mantengo conviccion 7 y no 9."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 8,
+      "razonamiento": "Precio 435.26 esta 12.36% sobre 200DMA 387.37 (pct_sobre_dma). Momentum 12M +39.91% con vol 27.31% da momentum_ajust 1.461, justo en el limite del umbral 1.5 pero con tendencia muy consolidada (SOBRE_DMA).",
+      "indicador_clave": "pct_sobre_dma 12.36% + momentum_12m +39.91%",
+      "interaccion_macro": "Oro es el activo mas robusto al regimen DESCONOCIDO: funciona en STAGFLATION (real asset), en REFLACION (commodity) y como hedge general. Por eso elevo conviccion a 8, es la senal mas regimen-agnostica."
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Precio 129.4 esta 58.45% sobre 200DMA 81.67 (pct_sobre_dma), extension enorme que advierte sobrecompra. Momentum_ajust 2.08 es fuerte pero vol_12m 41.6% es la mas alta del universo. Senal valida pero con riesgo de mean reversion.",
+      "indicador_clave": "pct_sobre_dma 58.45% (sobreextension)",
+      "interaccion_macro": "Commodities brillan en REFLACION y STAGFLATION. Con regimen DESCONOCIDO y sobreextension tan marcada, reduzco horizonte a MENSUAL y conviccion a 6 por riesgo de correccion tecnica."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 4,
+      "razonamiento": "CRUCE_ALCISTA reciente con precio 86.74 apenas 0.04% sobre 200DMA 86.71 (pct_sobre_dma). Momentum_12m +4.85% con vol 10.23% da momentum_ajust 0.474, dentro de zona ambigua (-0.5 a +1.5) segun Barroso & Santa-Clara.",
+      "indicador_clave": "momentum_ajust 0.474 (ambiguo) + cruce recien activado",
+      "interaccion_macro": "TLT es muy sensible al regimen: bullish en DESACELERACION, bearish en REFLACION/STAGFLATION. Sin regimen identificado no puedo tomar direccion, NEUTRAL hasta confirmacion."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 4,
+      "razonamiento": "CRUCE_ALCISTA muy reciente (pct_sobre_dma solo 0.09%). Momentum_12m -1.24% con momentum_ajust -0.191, en zona neutra. Senales mixtas: cruce alcista vs momentum ligeramente negativo.",
+      "indicador_clave": "momentum_ajust -0.191 (neutro)",
+      "interaccion_macro": "DXY fuerte correlaciona con STAGFLATION/risk-off, DXY debil con REFLACION. Sin regimen confirmado, y con indicadores mixtos, NEUTRAL es la postura correcta."
+    }
+  ],
+  "alertas_tecnicas": [
+    "USO sobreextendido +58.45% sobre 200DMA (pct_sobre_dma), riesgo alto de mean reversion",
+    "TLT y DXY con CRUCE_ALCISTA muy reciente (ambos <0.1% sobre 200DMA), necesitan confirmacion",
+    "QQQ con momentum_ajust 2.887 cerca de niveles de sobrecompra historica, vigilar crash momentum",
+    "VRP en +47.19 es elevado, suele asociarse a mercados con complacencia moderada pero bullish corto plazo"
+  ],
+  "invalidadores_tecnicos": [
+    "SPY o QQQ perforando 200DMA a la baja activaria salida inmediata de longs equity",
+    "VIX term structure cambiando a BACKWARDATION indicaria stress agudo y risk-off",
+    "Breadth (pct_sobre_200) cayendo bajo 50% romperia la confirmacion de tendencia amplia",
+    "GLD perdiendo su 200DMA de 387.37 invalidaria la tesis de real asset hedge",
+    "USO corrigiendo mas de 20% desde maximos activaria stop por sobreextension previa"
+  ],
+  "confianza_general": 60,
+  "metadata": {
+    "timestamp": "2026-04-22T20:37:49.510105",
+    "modelo": "claude-opus-4-7",
+    "activos_analizados": 6,
+    "regimen_macro": "DESCONOCIDO"
+  }
+}

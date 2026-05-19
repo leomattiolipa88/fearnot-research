@@ -1,0 +1,73 @@
+{
+  "fecha": "2026-05-11",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Yield curve positiva en +0.80% (yield_curve) indica expectativas de crecimiento. Unemployment estable en 4.3% (unemployment), Sahm rule en solo 0.13 (sahm_rule), y jobless claims contenidos en 200K (jobless_claims) confirman mercado laboral sólido. HY spreads comprimidos en 2.81% (hy_spread) y VIX moderado en 18.38 (vix) indican apetito por riesgo sin exuberancia. Breakeven 5y5y en 2.27% (breakeven_5y5y) muestra expectativas inflacionarias ancladas."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Régimen Goldilocks con mercado laboral robusto (unemployment 4.3%, jobless_claims 200K), liquidez favorable (hy_spread 2.81%), y condiciones financieras acomodaticias. SPY en 737.62 con soporte macro sólido.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Yield curve normalizándose (+0.80%) y TIPS yield en 1.93% sugieren presión alcista en tasas largas. TLT en 86.08 vulnerable a steepening continuo de la curva.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "DXY en 98.00 con USD/JPY extendido en 157.10 sugiere presión sobre carry trades. Fundamentales US relativamente sólidos vs peers globales.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Gold en 433.77 en territorio neutral. TIPS yield positivo en 1.93% reduce atractivo del oro, pero USD/JPY extendido podría crear demanda de cobertura.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "El régimen macro se mantiene en territorio Goldilocks con datos frescos confirmando la narrativa. El mercado laboral permanece resiliente con unemployment en 4.3% (unemployment) y jobless claims estables en 200K (jobless_claims), mientras la Sahm rule en 0.13 (sahm_rule) descarta riesgos recesivos inmediatos. La liquidez permanece favorable con HY spreads comprimidos en 2.81% (hy_spread) y VIX contenido en 18.38 (vix), sugiriendo apetito por riesgo sin excesos. La normalización de la yield curve hacia +0.80% (yield_curve) desde territorio invertido es estructuralmente positiva para equities, aunque crea headwinds para duration. Las expectativas inflacionarias permanecen ancladas con breakeven 5y5y en 2.27% (breakeven_5y5y) y Michigan inflation expectations en 3.8% (michigan_inflation_exp), dando espacio a la Fed para mantener política acomodaticia. El principal riesgo emerge del USD/JPY extendido en 157.10 (usdjpy), nivel que históricamente ha provocado intervenciones del BoJ y unwinding de carry trades.",
+  "invalidadores": [
+    "Jobless claims saltando consistentemente sobre 300K indicando deterioro laboral",
+    "HY spreads expandiéndose sobre 400bp señalando stress crediticio",
+    "USD/JPY rompiendo 160 provocando intervención masiva del BoJ",
+    "Breakeven 5y5y escalando sobre 2.50% indicando desanclaje inflacionario",
+    "VIX saltando sobre 25 sugiriendo regime shift hacia risk-off"
+  ],
+  "alertas": [
+    "USD/JPY en 157.10 se acerca a niveles críticos donde BoJ históricamente interviene",
+    "DXY en 98.00 cerca de resistencias técnicas importantes que podrían desatar volatilidad en EM",
+    "Varios indicadores con fechas de marzo (CPI, PCE, Michigan) requieren actualización para confirmar tendencias recientes"
+  ],
+  "datos_insuficientes": [
+    "CPI y PCE core con última lectura de marzo limita visibilidad inflacionaria reciente",
+    "Falta datos de ISM manufacturing y services para evaluar momentum económico",
+    "Sin datos recientes de initial jobless claims (última lectura del 2 de mayo)"
+  ],
+  "eventos_clave": [
+    "[Associated Press] Aramco Q1 profits +25% — presión alcista en commodities energéticos podría impactar inflación core",
+    "[Associated Press] Russia-Ukraine ceasefire tensions — riesgo geopolítico contenido pero monitoreable para oil premium",
+    "[Yahoo Finance] Dell stock +14% post-Trump comments — evidencia de policy premium en tech stocks",
+    "[TheStreet] Tech firm halts 401k contributions — señal micro de corporate cost cutting que podría generalizarse"
+  ],
+  "confianza_general": 82,
+  "metadata": {
+    "timestamp": "2026-05-11T18:12:38.549137",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

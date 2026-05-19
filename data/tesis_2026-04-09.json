@@ -1,0 +1,72 @@
+{
+  "fecha": "2026-04-09",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 75,
+    "razonamiento": "Curva de rendimiento positiva en +0.71% (yield_curve) indica crecimiento saludable. Desempleo contenido en 4.3% (unemployment) con Sahm Rule en 0.2 (sahm_rule) descarta recesión. Spreads crediticios controlados en 3.12% (hy_spread). Sin embargo, expectativas inflacionarias de Michigan en 3.4% (michigan_inflation_exp) y breakeven 5y5y en 2.1% (breakeven_5y5y) sugieren presiones inflacionarias moderadas pero manejables."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Régimen Goldilocks favorable con curva positiva, crédito estable y VIX moderado en 21.31 (vix). SPY en 676.01 (spy) con soporte fundamental sólido.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "SHORT",
+      "horizonte": "SEMANAL",
+      "conviccion": 9,
+      "razonamiento": "DXY presenta cambio diario sospechoso de +21.763% a 98.89 (dxy), sugiriendo corrección técnica inminente. EUR/USD en 1.169 (eurusd) indica debilidad extrema del dólar que debe revertir.",
+      "dato_clave": "dxy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "Oro en 434.53 (gold) se beneficia de expectativas inflacionarias de 3.4% (michigan_inflation_exp) superiores al target de 2%. TIPS yield real en 1.96% (tips_yield_10y) mantiene atractivo del oro como cobertura.",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "TLT en 86.92 (tlt) con yield 10Y en 4.33% (yield_10y). Régimen Goldilocks no favorece claramente ni bonos largos ni cortos. Expectativas inflacionarias moderadas limitan rally de TLT.",
+      "dato_clave": "yield_10y"
+    }
+  ],
+  "tesis_principal": "El mercado opera en régimen Goldilocks con crecimiento sólido sin presiones inflacionarias extremas. La curva de rendimiento positiva en +0.71% (yield_curve) y desempleo estable en 4.3% (unemployment) respaldan crecimiento continuado. Los spreads de crédito en 3.12% (hy_spread) y VIX en 21.31 (vix) indican condiciones de liquidez adecuadas para risk-on. Sin embargo, las expectativas inflacionarias de Michigan en 3.4% (michigan_inflation_exp) por encima del target Fed crean vigilancia en política monetaria. La anomalía más significativa es el movimiento extremo del DXY (+21.763% diario) que requiere corrección técnica inminente.",
+  "invalidadores": [
+    "Escalada geopolítica en Medio Oriente tras ataques a pipeline saudí que dispare petróleo y inflación",
+    "Datos de empleo que muestren deterioro súbito con Sahm Rule superando 0.5",
+    "Spreads crediticios expandiéndose por encima de 4% indicando stress financiero",
+    "VIX rompiendo por encima de 30 por pánico geopolítico o macro",
+    "Fed pivoteando hawkish por expectativas inflacionarias persistentemente altas"
+  ],
+  "alertas": [
+    "DXY con movimiento diario anómalo de +21.763% requiere validación de datos",
+    "USD/JPY cerca de 158.90 (usdjpy_mkt) acercándose a niveles de intervención del BoJ",
+    "Expectativas inflacionarias de Michigan en 3.4% persistentemente por encima del target Fed",
+    "Attacks to Saudi pipeline create oil supply risk despite ceasefire announcement"
+  ],
+  "datos_insuficientes": [
+    "Datos de petróleo/energía para evaluar impacto completo de ataques geopolíticos",
+    "Positioning data para confirmar si movimiento DXY es técnico o fundamental"
+  ],
+  "eventos_clave": [
+    "[Bloomberg] Saudi Arabia's Crucial East-West Pipeline Hit by Drone Attack — Riesgo de spike inflacionario vía energía pese a ceasefire",
+    "[CNBC] Trump threatens tariffs of 50% on countries 'supplying military weapons to Iran' — Presión alcista en DXY y bajista en EM currencies",
+    "[Investing.com] Bets on Fed rate cut by year-end grow after Iran truce — Expectativas dovish que favorecen risk assets y presionan USD"
+  ],
+  "confianza_general": 75,
+  "metadata": {
+    "timestamp": "2026-04-09T10:22:34.090946",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

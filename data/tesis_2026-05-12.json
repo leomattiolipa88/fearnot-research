@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-05-12",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Yield curve normalizada en +0.78% (yield_curve) indica crecimiento económico saludable. Desempleo estable en 4.3% (unemployment) con jobless claims bajos en 200K (jobless_claims). Sahm rule en 0.13 (sahm_rule) muy por debajo del umbral recesivo. HY spreads contenidos en 2.81% (hy_spread) sugieren apetito por riesgo. VIX moderado en 18.71 (vix) refleja volatilidad controlada."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 739.30 (spy) con fundamentos sólidos: yield curve positiva, spreads crediticios bajos, empleo robusto. Goldilocks permite múltiplos altos sin presión de tasas agresivas.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "TLT en 85.56 (tlt) bajo presión por yield 10Y en 4.43% (yield_10y_mkt). Breakeven 5y5y en 2.27% (breakeven_5y5y) sugiere inflación estructural. Crecimiento sólido reduce demanda por refugio.",
+      "dato_clave": "yield_10y_mkt"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "DXY en 98.27 (dxy) con soporte del diferencial de tasas US. USD/JPY en 157.52 (usdjpy) cerca de niveles de intervención pero refuerza carry trades hacia dólar.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Gold en 434.65 (gold) enfrenta vientos cruzados: inflación de breakeven soporta pero yield real en 1.93% (tips_yield_10y) y dólar fuerte presionan. Geopolítica (Irán) ofrece soporte defensivo.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "El régimen Goldilocks se mantiene sólido con crecimiento económico saludable evidenciado por yield curve normalizada en +0.78% (yield_curve) y empleo robusto con desempleo en 4.3% (unemployment). La liquidez permanece favorable con HY spreads en 2.81% (hy_spread) y VIX controlado en 18.71 (vix). Sin embargo, las presiones inflacionarias estructurales persisten con breakeven 5y5y en 2.27% (breakeven_5y5y) y expectativas Michigan en 3.8% (michigan_inflation_exp), manteniendo las tasas largas elevadas en 4.43% (yield_10y_mkt). El dólar muestra fortaleza en 98.27 (dxy) respaldado por diferenciales de tasas, mientras que SPY en 739.30 (spy) refleja optimismo por fundamentos corporativos sólidos en este entorno de crecimiento sin recesión.",
+  "invalidadores": [
+    "Sahm rule subiendo por encima de 0.5 desde actual 0.13, señalando deterioro laboral",
+    "HY spreads expandiéndose por encima de 400bp desde actual 2.81%, indicando stress crediticio",
+    "VIX sostenido por encima de 25 desde actual 18.71, reflejando pánico sistemático",
+    "USD/JPY rompiendo por encima de 160 desde actual 157.52, forzando intervención BoJ",
+    "Yield curve invirtiendo hacia territorio negativo desde actual +0.78%"
+  ],
+  "alertas": [
+    "USD/JPY en 157.52 se acerca peligrosamente a niveles de intervención japonesa históricos",
+    "Breakeven 5y5y en 2.27% sugiere inflación estructuralmente por encima del target Fed",
+    "Discrepancia entre CPI (330.293) de marzo y expectativas actuales requiere monitoreo",
+    "Tensión geopolítica Irán-US podría escalar shocks de commodities según headlines"
+  ],
+  "datos_insuficientes": [
+    "Datos de empleo e inflación core solo hasta marzo/abril, necesitamos readings mayo",
+    "Falta data de PMI manufacturero y servicios para confirmar momentum de crecimiento"
+  ],
+  "eventos_clave": [
+    "[Associated Press] Petróleo salta 4% tras rechazo Trump a propuesta Irán — riesgo geopolítico eleva volatilidad commodities",
+    "[Bloomberg] Inflación PPI China en máximos post-Covid por shock costos — presión inflacionaria global estructural",
+    "[Financial Times] Majors europeas ganan $4.75bn trading volatilidad guerra Irán — liquidez fragmentada en energy",
+    "[Bloomberg] Nintendo se desploma por outlook débil Switch 2 — presión en tech por costos memory chips",
+    "[Financial Times] China fija yuan en máximos 3 años pre-reunión Trump-Xi — señal conciliadora pero tensión subyacente"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-05-12T09:55:05.192148",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
