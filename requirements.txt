@@ -1,0 +1,15 @@
+# Production dependencies for FearNot Research
+# Install with: pip install -r requirements.txt
+
+# Claude API
+anthropic>=0.84,<1.0
+
+# Data processing
+numpy>=2.3,<3.0
+pandas>=2.3,<3.0
+
+# Market data
+yfinance>=1.2,<2.0
+
+# HTTP requests for FRED, EIA, NewsAPI
+requests>=2.33,<3.0

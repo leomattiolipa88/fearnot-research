@@ -1,0 +1,6 @@
+# Development dependencies for FearNot Research
+# Install with: pip install -r requirements-dev.txt
+# (also install production deps: pip install -r requirements.txt)
+
+# Testing
+pytest>=9.0,<10.0
