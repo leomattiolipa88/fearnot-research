@@ -1,0 +1,161 @@
+name: Daily Pipeline
+
+# When this workflow runs
+on:
+  schedule:
+    # 10:30 UTC = 7:30 AM Buenos Aires (UTC-3)
+    # Mon-Fri only (markets closed weekends)
+    - cron: '30 10 * * 1-5'
+  workflow_dispatch:
+    # Allow manual trigger from GitHub UI for testing
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    permissions:
+      contents: write  # Required to commit data/ back to this repo
+
+    steps:
+      # ============================================================
+      # Step 1: Checkout fearnot-research (this repo)
+      # ============================================================
+      - name: Checkout fearnot-research
+        uses: actions/checkout@v4
+
+      # ============================================================
+      # Step 2: Setup Python 3.11
+      # ============================================================
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      # ============================================================
+      # Step 3: Install dependencies
+      # ============================================================
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # ============================================================
+      # Step 4: Run the pipeline
+      # ============================================================
+      - name: Run collectors and agents
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          EIA_API_KEY: ${{ secrets.EIA_API_KEY }}
+          NEWS_API_KEY: ${{ secrets.NEWS_API_KEY }}
+        run: |
+          echo "=== Macro collector ==="
+          python collector.py
+
+          echo "=== News collector ==="
+          python news_collector.py
+
+          echo "=== O&G collectors ==="
+          python og_collector.py
+          python og_news_collector.py
+
+          echo "=== Technical collector ==="
+          python technical_collector.py
+
+          echo "=== Options flow collector ==="
+          python options_flow_collector.py
+
+          echo "=== Macro agent ==="
+          python agent.py
+
+          echo "=== Technical agent ==="
+          python technical_agent.py
+
+          echo "=== O&G agent ==="
+          python og_agent.py
+
+          # Synthesizer only runs on Mondays (day-of-week = 1)
+          if [ "$(date -u +%u)" = "1" ]; then
+            echo "=== Monday detected: running Synthesizer ==="
+            python synthesizer.py
+          else
+            echo "=== Not Monday, skipping Synthesizer ==="
+          fi
+
+          echo "=== Web exporter ==="
+          python web_exporter.py
+
+      # ============================================================
+      # Step 5: Commit generated data/ back to fearnot-research
+      # ============================================================
+      - name: Commit data to fearnot-research
+        run: |
+          git config user.name "FearNot Pipeline Bot"
+          git config user.email "actions@github.com"
+
+          # Add only data files we want to keep in version control
+          # (data/macro.db and caches are in .gitignore so they wont be added)
+          git add data/*.json 2>/dev/null || true
+
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No new data files to commit"
+          else
+            FECHA=$(date -u '+%Y-%m-%d %H:%M UTC')
+            git commit -m "Daily pipeline run - $FECHA"
+            git push
+            echo "Data committed to fearnot-research"
+          fi
+
+      # ============================================================
+      # Step 6: Checkout fearnot-web (separate repo)
+      # ============================================================
+      - name: Checkout fearnot-web
+        uses: actions/checkout@v4
+        with:
+          repository: leomattiolipa88/fearnot-web
+          path: fearnot-web
+          token: ${{ secrets.WEB_REPO_PAT }}
+
+      # ============================================================
+      # Step 7: Copy web_data.json and push to fearnot-web
+      # ============================================================
+      - name: Update fearnot-web
+        run: |
+          # Verify web_data.json was generated
+          if [ ! -f "data/web_data.json" ]; then
+            echo "ERROR: data/web_data.json not found"
+            exit 1
+          fi
+
+          # Copy to fearnot-web/public/
+          cp data/web_data.json fearnot-web/public/web_data.json
+
+          # Commit and push from fearnot-web directory
+          cd fearnot-web
+          git config user.name "FearNot Pipeline Bot"
+          git config user.email "actions@github.com"
+
+          git add public/web_data.json
+
+          if git diff --staged --quiet; then
+            echo "No changes in web_data.json (already up to date)"
+          else
+            FECHA=$(date -u '+%Y-%m-%d %H:%M UTC')
+            git commit -m "Update web_data.json - $FECHA"
+            git push
+            echo "fearnot-web updated. Vercel will redeploy in ~60 seconds."
+          fi
+
+      # ============================================================
+      # Step 8: Summary
+      # ============================================================
+      - name: Pipeline summary
+        if: always()
+        run: |
+          echo "================================="
+          echo "Pipeline completed at $(date -u)"
+          echo "Job status: ${{ job.status }}"
+          echo "================================="
