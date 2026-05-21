@@ -3,7 +3,7 @@
   "regimen": {
     "clasificacion": "GOLDILOCKS",
     "confianza": 85,
-    "razonamiento": "Curva de rendimientos normalizada en +1.08% (yield_curve) indica crecimiento saludable sin presión recesiva. Credit spreads contenidos en 286bps (hy_spread) y VIX moderado en 17.44 (vix) sugieren liquidez estable. Sahm Rule en 0.13 (sahm_rule) bien por debajo del umbral recesivo de 0.5. Desempleo en 4.3% (unemployment) cerca del pleno empleo sin sobrecalentamiento."
+    "razonamiento": "Curva de rendimiento normalizada en +1.08% (yield_curve), indicando crecimiento sostenible. Spreads de crédito comprimidos en 2.8% (hy_spread) sugieren liquidez abundante. Unemployment Claims bajos en 209,000 (jobless_claims) con desempleo estable en 4.3% (unemployment). VIX contenido en 16.91 (vix). La combinación de crecimiento sólido sin presiones inflacionarias excesivas define el régimen Goldilocks."
   },
   "senales": [
     {
@@ -11,57 +11,57 @@
       "direccion": "LONG",
       "horizonte": "MENSUAL",
       "conviccion": 8,
-      "razonamiento": "SPY en 741.25 con régimen Goldilocks confirmado. VIX contenido en 17.44 y credit spreads de solo 286bps indican apetito por riesgo. Curva normalizada y liquidez estable favorecen equities.",
-      "dato_clave": "yield_curve: +1.08%"
+      "razonamiento": "SPY en 743.52 (spy) con VIX bajo en 16.91 (vix) y spreads comprimidos en 2.8% (hy_spread) sugieren apetito por riesgo sostenido. Curva normalizada en +1.08% (yield_curve) respalda múltiplos. Goldilocks favorable para equities.",
+      "dato_clave": "hy_spread"
     },
     {
       "activo": "TLT",
       "direccion": "SHORT",
       "horizonte": "TRIMESTRAL",
       "conviccion": 7,
-      "razonamiento": "TLT en 83.91 con yields 10Y en 4.67% reflejan presión alcista en tasas. Breakeven 5y5y en 2.29% indica expectativas inflacionarias ancladas pero yields reales de 2.18% en TIPS sugieren normalización de política monetaria.",
-      "dato_clave": "yield_10y: 4.67%"
+      "razonamiento": "Yield 10Y en 4.67% (yield_10y) con expectativas inflacionarias en 2.29% (breakeven_5y5y) mantienen presión vendedora en duration. TLT en 84.13 (tlt) vulnerable a normalización continua de tasas en régimen Goldilocks.",
+      "dato_clave": "yield_10y"
     },
     {
       "activo": "DXY",
-      "direccion": "NEUTRAL",
+      "direccion": "LONG",
       "horizonte": "SEMANAL",
-      "conviccion": 5,
-      "razonamiento": "DXY en 99.09 cerca de niveles neutros. EUR/USD en 1.1638 y carry trade activo con USD/JPY en 158.85 crean tensiones cruzadas. Fortaleza relativa de economía US vs divergencia de políticas monetarias.",
-      "dato_clave": "usdjpy: 158.85"
+      "conviccion": 6,
+      "razonamiento": "DXY en 99.17 (dxy) con USD/JPY extremo en 158.87 (usdjpy) sugiere fortaleza del dólar. Sin embargo, EUR/USD en 1.16 (eurusd) indica resistencia. Convicción moderada por señales mixtas en crosses.",
+      "dato_clave": "usdjpy"
     },
     {
       "activo": "GLD",
       "direccion": "NEUTRAL",
       "horizonte": "MENSUAL",
       "conviccion": 4,
-      "razonamiento": "Oro en 417.40 enfrenta vientos cruzados. Yields reales positivos en 2.18% (tips_yield_10y) reducen atractivo, pero USD/JPY extremo en 158.85 y tensiones geopolíticas mantienen demanda de refugio.",
-      "dato_clave": "tips_yield_10y: 2.18%"
+      "razonamiento": "Gold en 417.20 (gold) atrapado entre real yield positivo de 2.18% (tips_yield_10y) que presiona, y potencial hedge contra volatility de USD/JPY extremo en 158.87 (usdjpy). Régimen Goldilocks neutro para oro.",
+      "dato_clave": "tips_yield_10y"
     }
   ],
-  "tesis_principal": "El mercado opera en régimen Goldilocks con curva normalizada (+1.08%), mercado laboral sólido (unemployment 4.3%, jobless claims 211k) y condiciones de liquidez favorables (hy_spread 286bps, VIX 17.44). La fortaleza del SPY en 741.25 refleja este entorno benigno. Sin embargo, la presión en bonos (TLT 83.91, yield_10y 4.67%) indica que los mercados descuentan una Fed menos dovish ante expectativas inflacionarias estables (breakeven_5y5y 2.29%). El carry trade USD/JPY en 158.85 sugiere búsqueda de yield activa, mientras que currencies muestran patrones mixtos con EUR/USD en 1.1638 y DXY contenido en 99.09. La ausencia de señales recesivas (Sahm Rule 0.13) y spreads crediticios controlados validan el sesgo constructivo hacia risk assets.",
+  "tesis_principal": "Los mercados operan en régimen Goldilocks clásico con crecimiento sostenible sin presiones inflacionarias excesivas. La curva de rendimiento normalizada en +1.08% (yield_curve) versus el nivel comprimido de spreads de crédito en 2.8% (hy_spread) indica liquidez abundante y apetito por riesgo. El mercado laboral permanece sólido con claims en 209,000 (jobless_claims) y desempleo estable en 4.3% (unemployment), mientras la regla Sahm en 0.13 (sahm_rule) está lejos de niveles recesivos. Las expectativas inflacionarias de largo plazo ancladas en 2.29% (breakeven_5y5y) dan espacio a la Fed para mantener política acomodaticia. Sin embargo, el USD/JPY extremo en 158.87 (usdjpy) representa el principal riesgo de desestabilización vía unwinding de carry trades, especialmente con VIX aún contenido en 16.91 (vix). Los yields en 4.67% (yield_10y) versus real yield de 2.18% (tips_yield_10y) mantienen presión en duration mientras favorecen risk assets.",
   "invalidadores": [
-    "Ruptura de USD/JPY por encima de 160 que fuerce intervención del BoJ y unwind masivo de carry trades",
-    "Sahm Rule superando 0.5 por deterioro del mercado laboral",
-    "Credit spreads expandiendo por encima de 400bps por stress en financiamiento",
-    "VIX disparándose por encima de 25 ante eventos geopolíticos o crisis de liquidez",
-    "Inversión sostenida de curva de rendimientos por recortes agresivos de la Fed"
+    "USD/JPY por encima de 160 desencadenando intervención del BoJ y unwinding masivo de carry trades",
+    "VIX spike por encima de 25 rompiendo la complacencia actual de 16.91",
+    "Spreads de crédito expandiéndose por encima de 400bps desde el nivel actual de 2.8%",
+    "Jobless claims saltando por encima de 300,000 desde el nivel actual de 209,000",
+    "Breakeven 5y5y rompiendo por encima de 2.5% desde el nivel actual de 2.29%"
   ],
   "alertas": [
-    "USD/JPY en 158.85 cerca de niveles históricos que podrían provocar intervención del BoJ",
-    "Yields 10Y en 4.67% vs market 4.57% muestran tensión en curva que requiere monitoreo",
-    "Breakeven 5y5y en 2.29% relativamente bajo podría indicar complacencia inflacionaria"
+    "USD/JPY en 158.87 está en territorio de máximo riesgo para intervención del Banco de Japón",
+    "La compresión extrema de spreads en 2.8% sugiere potencial complacencia excesiva",
+    "Divergencia entre yield 10Y FRED (4.67%) y market (4.57%) requiere monitoreo"
   ],
   "datos_insuficientes": [],
   "eventos_clave": [
-    "[CNBC] Nvidia earnings tonight - Impacto directo en SPY dado peso del sector tech en índice",
-    "[WSJ] Bond selloff profundiza por temores inflacionarios - Explica presión en TLT y yields elevados",
-    "[Bloomberg] Goldman lidera IPO de SpaceX - Señal de apetito por riesgo en mercados primarios",
-    "[WSJ] Karpathy se une a Anthropic - Consolidación del sector AI mantiene momentum en tech"
+    "[Bloomberg] Nvidia Earnings Can Affirm Chip Stock Rally or Spur Market Chaos — Riesgo binario para sector tech que representa porción significativa de SPY",
+    "[CNBC] U.S. crude oil falls below $100 per barrel after Trump says Iran talks in final stages — Alivio inflacionario potencial que refuerza régimen Goldilocks",
+    "[MarketWatch] Fed minutes show increased chances of interest-rate hike — Riesgo hawkish que podría presionar TLT y beneficiar DXY",
+    "[Yahoo Finance] How soaring 30-year Treasury yields could impact your finances — Confirmación de presión en duration que respalda short TLT"
   ],
-  "confianza_general": 82,
+  "confianza_general": 78,
   "metadata": {
-    "timestamp": "2026-05-21T01:19:23.663443",
+    "timestamp": "2026-05-21T17:49:22.123060",
     "datos_usados": 24,
     "datos_totales": 25,
     "validacion_ok": true
