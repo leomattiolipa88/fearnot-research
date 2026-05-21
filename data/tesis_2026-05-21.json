@@ -1,0 +1,69 @@
+{
+  "fecha": "2026-05-21",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Curva de rendimientos normalizada en +1.08% (yield_curve) indica crecimiento saludable sin presión recesiva. Credit spreads contenidos en 286bps (hy_spread) y VIX moderado en 17.44 (vix) sugieren liquidez estable. Sahm Rule en 0.13 (sahm_rule) bien por debajo del umbral recesivo de 0.5. Desempleo en 4.3% (unemployment) cerca del pleno empleo sin sobrecalentamiento."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 741.25 con régimen Goldilocks confirmado. VIX contenido en 17.44 y credit spreads de solo 286bps indican apetito por riesgo. Curva normalizada y liquidez estable favorecen equities.",
+      "dato_clave": "yield_curve: +1.08%"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "TLT en 83.91 con yields 10Y en 4.67% reflejan presión alcista en tasas. Breakeven 5y5y en 2.29% indica expectativas inflacionarias ancladas pero yields reales de 2.18% en TIPS sugieren normalización de política monetaria.",
+      "dato_clave": "yield_10y: 4.67%"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 99.09 cerca de niveles neutros. EUR/USD en 1.1638 y carry trade activo con USD/JPY en 158.85 crean tensiones cruzadas. Fortaleza relativa de economía US vs divergencia de políticas monetarias.",
+      "dato_clave": "usdjpy: 158.85"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "Oro en 417.40 enfrenta vientos cruzados. Yields reales positivos en 2.18% (tips_yield_10y) reducen atractivo, pero USD/JPY extremo en 158.85 y tensiones geopolíticas mantienen demanda de refugio.",
+      "dato_clave": "tips_yield_10y: 2.18%"
+    }
+  ],
+  "tesis_principal": "El mercado opera en régimen Goldilocks con curva normalizada (+1.08%), mercado laboral sólido (unemployment 4.3%, jobless claims 211k) y condiciones de liquidez favorables (hy_spread 286bps, VIX 17.44). La fortaleza del SPY en 741.25 refleja este entorno benigno. Sin embargo, la presión en bonos (TLT 83.91, yield_10y 4.67%) indica que los mercados descuentan una Fed menos dovish ante expectativas inflacionarias estables (breakeven_5y5y 2.29%). El carry trade USD/JPY en 158.85 sugiere búsqueda de yield activa, mientras que currencies muestran patrones mixtos con EUR/USD en 1.1638 y DXY contenido en 99.09. La ausencia de señales recesivas (Sahm Rule 0.13) y spreads crediticios controlados validan el sesgo constructivo hacia risk assets.",
+  "invalidadores": [
+    "Ruptura de USD/JPY por encima de 160 que fuerce intervención del BoJ y unwind masivo de carry trades",
+    "Sahm Rule superando 0.5 por deterioro del mercado laboral",
+    "Credit spreads expandiendo por encima de 400bps por stress en financiamiento",
+    "VIX disparándose por encima de 25 ante eventos geopolíticos o crisis de liquidez",
+    "Inversión sostenida de curva de rendimientos por recortes agresivos de la Fed"
+  ],
+  "alertas": [
+    "USD/JPY en 158.85 cerca de niveles históricos que podrían provocar intervención del BoJ",
+    "Yields 10Y en 4.67% vs market 4.57% muestran tensión en curva que requiere monitoreo",
+    "Breakeven 5y5y en 2.29% relativamente bajo podría indicar complacencia inflacionaria"
+  ],
+  "datos_insuficientes": [],
+  "eventos_clave": [
+    "[CNBC] Nvidia earnings tonight - Impacto directo en SPY dado peso del sector tech en índice",
+    "[WSJ] Bond selloff profundiza por temores inflacionarios - Explica presión en TLT y yields elevados",
+    "[Bloomberg] Goldman lidera IPO de SpaceX - Señal de apetito por riesgo en mercados primarios",
+    "[WSJ] Karpathy se une a Anthropic - Consolidación del sector AI mantiene momentum en tech"
+  ],
+  "confianza_general": 82,
+  "metadata": {
+    "timestamp": "2026-05-21T01:19:23.663443",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
