@@ -295,6 +295,11 @@ CONCEPTOS_ESTANDAR = [
     "interest_expense",
     "depreciation_amortization",
     "net_income",
+    # Income Statement - Tech/SaaS relevant (added May 2026)
+    "research_and_development",
+    "stock_based_compensation",
+    "selling_marketing_expense",
+    "general_administrative_expense",
     # Balance Sheet
     "total_assets",
     "current_assets",
@@ -303,6 +308,9 @@ CONCEPTOS_ESTANDAR = [
     "total_liabilities",
     "long_term_debt",
     "stockholders_equity",
+    # Balance Sheet - additional (added May 2026)
+    "deferred_revenue",
+    "goodwill",
     # Cash Flow
     "operating_cash_flow",
     "capex",

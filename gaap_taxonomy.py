@@ -274,6 +274,58 @@ GAAP_TAXONOMY = {
             "TreasuryStockValueAcquiredCostMethod",                        # Sometimes reported balance-sheet-side
         ]
     },
+
+    "research_and_development": {
+        "description": "R&D expense (line item in income statement)",
+        "names": [
+            "ResearchAndDevelopmentExpense",                               # Most common
+            "ResearchAndDevelopmentExpenseExcludingAcquiredInProcessCost", # Some tech filers
+            "ResearchAndDevelopmentInProcess",                             # Rare variant
+        ]
+    },
+
+    "stock_based_compensation": {
+        "description": "Stock-based compensation expense (non-cash, cash flow statement)",
+        "names": [
+            "ShareBasedCompensation",                                      # Most common (CFS line)
+            "AllocatedShareBasedCompensationExpense",                      # Some variants
+            "StockOptionPlanExpense",                                      # Legacy
+        ]
+    },
+
+    "selling_marketing_expense": {
+        "description": "Selling and marketing expense (line item)",
+        "names": [
+            "SellingAndMarketingExpense",                                  # Standard tech/SaaS
+            "MarketingAndAdvertisingExpense",                              # Some consumer
+            "AdvertisingExpense",                                          # Subset
+        ]
+    },
+
+    "general_administrative_expense": {
+        "description": "General & Administrative expense (line item, separate from S&M)",
+        "names": [
+            "GeneralAndAdministrativeExpense",                             # Standard when split
+            "SellingGeneralAndAdministrativeExpense",                      # When combined with S&M (most common)
+        ]
+    },
+
+    "deferred_revenue": {
+        "description": "Deferred revenue (billings received but not yet earned, balance sheet liability). Critical for SaaS.",
+        "names": [
+            "ContractWithCustomerLiabilityCurrent",                        # Post-ASC 606 (current portion)
+            "ContractWithCustomerLiability",                               # Post-ASC 606 (total)
+            "DeferredRevenueCurrent",                                      # Pre-ASC 606
+            "DeferredRevenue",                                             # Generic / legacy
+        ]
+    },
+
+    "goodwill": {
+        "description": "Goodwill from acquisitions (balance sheet asset)",
+        "names": [
+            "Goodwill",
+        ]
+    },
 }
 
 

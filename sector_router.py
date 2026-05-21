@@ -24,7 +24,7 @@ from gaap_taxonomy import GAAP_TAXONOMY, get_names_for_concept as _get_general_n
 from sector_mappings import energy
 # from sector_mappings import banking   # TODO: agregar cuando se implemente
 # from sector_mappings import insurance # TODO
-# from sector_mappings import tech      # TODO
+from sector_mappings import tech
 # from sector_mappings import industrial # TODO
 # from sector_mappings import utilities # TODO
 
@@ -44,6 +44,9 @@ def detect_sector(ticker: str) -> Optional[str]:
 
     if energy.is_energy_ticker(ticker_upper):
         return "energy"
+
+    if tech.is_tech_ticker(ticker_upper):
+        return "tech"
 
     # Cuando se agreguen otros sectores:
     # if banking.is_banking_ticker(ticker_upper):
@@ -116,6 +119,13 @@ def get_sector_info(ticker: str) -> dict:
         info["has_specific_metrics"] = True
         info["sector_metrics"] = list(energy.ENERGY_SPECIFIC_METRICS.keys())
         info["validation_rules"] = list(energy.ENERGY_VALIDATION_RULES.keys())
+
+    if sector == "tech":
+        info["has_specific_metrics"] = True
+        info["subsector"] = tech.get_tech_subsector(ticker)
+        info["sector_metrics"] = list(tech.TECH_SPECIFIC_METRICS.keys())
+        info["validation_rules"] = list(tech.TECH_VALIDATION_RULES.keys())
+        info["known_limitations"] = list(tech.KNOWN_LIMITATIONS.keys())
 
     return info
 
