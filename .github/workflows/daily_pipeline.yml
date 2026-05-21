@@ -1,6 +1,7 @@
 name: Daily Pipeline
 
 # When this workflow runs
+# Last reviewed: 2026-05-21
 on:
   schedule:
     # 10:30 UTC = 7:30 AM Buenos Aires (UTC-3)
