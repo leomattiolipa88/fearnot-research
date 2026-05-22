@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-05-22",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 82,
+    "razonamiento": "Múltiples señales físicas apuntan a tightness genuina. El calendario spread WTI a 6 meses está en backwardation de $12.57, nivel significativo que indica que el mercado físico hoy vale sustancialmente más que el diferido - los compradores físicos están pagando premium por barrels inmediatos. WTI en $96.45 y Brent en $102.98 con un diferencial Brent-WTI de ~$6.53 es consistente con demanda internacional fuerte. Los inventarios de crudo EIA al 15-May están en 445,013 kbbl - no tengo el dato de 5-year average para contextualizar si esto es bajo o alto históricamente, lo cual limita mi análisis de balance. Sin ese benchmark, no puedo afirmar con certeza absoluta si los inventarios están en déficit versus histórico. Geopolíticamente, la tensión US-Iran es el driver de riesgo más importante: con supertankers monitoreados saliendo del Golfo y amenazas iraníes de guerra 'beyond the region', hay una prima de riesgo real en el precio. La diplomacia Pakistan-Iran mediando para US no parece cercana a resolución. OPEC+ acordando solo +188k bpd en Junio 7 es señal de disciplina de producción - ese número es marginalmente pequeño frente a demanda global, especialmente con Arabia Saudita importando fuel oil para generación eléctrica (señal de que producción doméstica de gas asociado está comprimida por shut-ins). El régimen macro GOLDILOCKS con 85% confianza soporta demanda sostenida de crudo. Confianza 82 y no 90 porque me falta el 5-year average de inventarios y el dato preciso de Saudi CP."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 58,
+    "razonamiento": "NatGas en $3.023/MMBtu es un precio que no señala tightness extrema ni oversupply severo. El storage de 2,391 Bcf (EIA al 15-May) está en un nivel que necesito contextualizar contra el 5-year average para determinar si estamos above o below norma - dato que no tengo, lo cual reduce mi confianza materialmente. Sin ese benchmark, el precio solo me dice que el mercado no está en crisis (ni $2 de surplus ni $5+ de tightness). La nota sobre GreenLine empujando LNG en flotas de transporte sugiere demanda creciente de gas en sectores no tradicionales. La temporada de huracanes 2026 con pronóstico de 8-14 tormentas es un wildcard: si hay hits en Gulf of Mexico, producción offshore puede verse afectada corto plazo generando spike. Macro GOLDILOCKS sugiere actividad industrial sostenida que soporta demanda baseload. Clasifico BALANCED porque el precio está en rango medio y no tengo suficiente data comparativa de storage para mover convicción en ninguna dirección."
+  },
+  "regimen_lpg": {
+    "clasificacion": "TIGHT",
+    "confianza": 45,
+    "razonamiento": "DATA LIMITADA - Clasificación con baja confianza. Lo que tengo: propane inventory en 81,567 kbbl (EIA al 15-May). No tengo el 5-year average de propano para saber si esto está bajo o alto. No tengo Saudi CP (Contract Price) para LPG, ni freight rates VLGC, ni spread FEI Asia vs US. Sin esos datos no puedo hacer un análisis físico completo del mercado LPG. Lo que sí puedo inferir indirectamente: el régimen TIGHT_BACKWARDATED de crudo generalmente arrastra LPG al alza vía correlación con crude feedstock. Arabia Saudita importando fuel oil (señal de menor gas asociado disponible) puede implicar también menor NGL/LPG disponible para exportación. La demanda GOLDILOCKS soporta petroquímica. Pero sin Saudi CP, freight rates VLGC y FEI Asia, cualquier clasificación es tentativa. Recomiendo tratar esta clasificación con cautela máxima."
+  },
+  "tesis_principal": "El mercado de energía al 22-Mayo-2026 opera en un régimen de tightness física real soportado por tres pilares convergentes: (1) disciplina de oferta OPEC+ con incrementos marginales (+188k bpd en Junio 7), (2) tensión geopolítica estructural en el Golfo Pérsico con el eje US-Iran en estado de impasse activo, y (3) demanda sostenida por el régimen macro GOLDILOCKS con 85% de confianza. El indicador más contundente es la backwardation del calendario WTI a 6 meses en $12.57 - ese spread no miente: los compradores físicos están pagando $12.57 sobre precio diferido para obtener barrels HOY, lo que indica que la oferta spot es insuficiente para satisfacer demanda inmediata. El crack spread 3-2-1 en $49.67 (clasificado MUY_FUERTE) confirma que la demanda de productos refinados es robusta - las refinerías están procesando a 91.6% de utilización y aun así el mercado de productos paga premium elevado sobre el crudo, lo que sugiere que la capacidad de refinación está encontrando demanda real fuerte downstream.\n\nLa novedad operacional crítica de la semana es Arabia Saudita importando fuel oil para generación eléctrica doméstica porque sus shut-ins de producción petrolífera están reduciendo el gas asociado disponible. Esto es simultáneamente bullish para crudo (menos barriles saudíes disponibles al mercado), bullish para fuel oil / distillates, y potencialmente bullish para LPG (menos NGL asociado). El headline 'Most Expensive Summer in Years' de GasBuddy al 20-Mayo confirma que el consumidor final ya está sintiendo los precios elevados en gasolina - esto es demanda real de productos, no especulativa.\n\nEl riesgo principal al escenario bullish es una resolución del impasse US-Iran: si la mediación paquistaní avanza hacia levantamiento de sanciones, el retorno de ~1-1.5 mbpd iraní al mercado sería un shock de oferta negativo significativo. Sin embargo, la brecha entre 'diplomacia activa' y 'barrels físicos en el mercado' típicamente es de 6-12 meses mínimo. Para el horizonte de trading de este memo, el régimen físico sigue siendo TIGHT. El UK aflojando sanciones sobre crudo ruso refinado en terceros países (India, Turquía) es un flujo a monitorear pero de impacto marginal en el balance global.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Valero en $245.52 es el mayor beneficiario directo del crack spread MUY_FUERTE. Como refiner puro, VLO convierte crack spread en earnings directamente. Con utilización al 91.6% y spread en $49.67, los márgenes de refinación son excepcionalmente elevados. El régimen GOLDILOCKS + driving season + Saudi fuel oil imports son todos tailwinds para throughput y margins. Convicción 8 - la única razón para no llegar a 9 es que VLO ya tiene múltiple de valuación que refleja parte de este escenario."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "XOM en $154.17 es el integrado más diversificado - se beneficia de crudo alto (upstream) Y crack spread alto (downstream Beaumont/Baytown). Con WTI en $96+ y crack spreads MUY_FUERTES, XOM tiene doble exposición positiva. El régimen macro GOLDILOCKS y técnico USO LONG (6/10) dan contexto favorable. Convicción 7 vs 8 porque como integrado no tiene leverage puro a ningún factor específico."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "CVX en $190.95 es similar a XOM pero con mayor exposición upstream y LNG (Gorgon, Wheatstone). En régimen TIGHT_BACKWARDATED de crudo, el upstream de CVX genera FCF elevado. La demanda LNG creciente (nota GreenLine) también favorece su portfolio de GNL. Convicción 6 vs 7 de XOM porque CVX tiene menor exposición a crack spread premium que actualmente es el factor más fuerte."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "EOG en $140.68 es puro E&P Permian/Eagle Ford. Con WTI en $96.45 y backwardation de $12.57, EOG vende su producción spot en precios spot, no diferida - la backwardation es directamente favorable para E&P productores que venden spot. La nota de Locus Bio-Energy sobre >15% EUR expansion en Delaware Basin (Wolfcamp A) es tecnología que mejora recovery factors en exactamente el tipo de roca que EOG opera. Convicción 7."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "OXY en $58.65 tiene alta beta a WTI precio y es operador significativo en Permian. Misma lógica E&P que EOG pero con más leverage financiero que reduce convicción relativa. En régimen GOLDILOCKS + WTI alto, OXY funciona bien. Convicción 6 - no 7 porque el leverage de OXY lo hace más vulnerable a cualquier spike de volatilidad."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "VIST (Vista Energy - Vaca Muerta, Argentina) en $76.03 es el pure-play Vaca Muerta con mayor exposición a precio Brent internacional. Con Brent en $102.98, los economics de Vaca Muerta son excepcionalmente atractivos. Argentina está exportando LNG/crudo a precios internacionales elevados. La demanda india de crudo (US-India energy talks con Rubio en New Delhi) abre rutas de exportación adicionales relevantes para productores de mercados emergentes como VIST. El régimen GOLDILOCKS global soporta apetito por riesgo EM. Convicción 7."
+    }
+  ],
+  "eventos_clave": [
+    "OPEC+ reunión Junio 7: confirmado incremento de 188,000 bpd - volumen marginal que no cambia balance global pero reafirma disciplina del cartel; el impacto en oferta física es limitado por bottlenecks de shipping y tensiones geopolíticas según la propia nota",
+    "Tensión US-Iran: Iran amenaza con guerra 'beyond the region' post-ataques; supertankers monitoreados saliendo del Golfo; mediación paquistaní activa pero sin resolución - prima de riesgo de Hormuz permanece elevada en el precio",
+    "Arabia Saudita importando fuel oil para generación eléctrica doméstica: señal de que shut-ins de producción están reduciendo gas asociado disponible - simultáneamente bullish para crudo (menos oferta exportable) y para distillates/fuel oil (nueva demanda incremental Saudi)",
+    "UK afloja sanciones sobre crudo ruso refinado en terceros países (India, Turquía): flujo de relajación de supply-side, marginalmente bearish pero de impacto limitado frente a la tightness estructural actual",
+    "Xi-Putin cumbre en Beijing días después de visita Trump: consolidación del eje Rusia-China en energía; Putin-Xi reafirman partnership en trade - relevante para flujos de crudo ruso hacia Asia y potencial coordinación en commodities"
+  ],
+  "contradicciones_observadas": "La contradicción más significativa: utilización de refinerías al 91.6% (operacionalmente alta, cercana al techo operativo) Y crack spread 3-2-1 en $49.67 (MUY_FUERTE). Si las refinerías están corriendo casi al máximo, el spread debería estar comprimiéndose por exceso de oferta de productos. Que el spread esté MUY_FUERTE con alta utilización sugiere que la demanda de productos refinados está superando la capacidad física de procesamiento incluso a 91.6% - o alternativamente, que hay un cuello de botella en la oferta de crudo que previene correr al 95%+. En cualquier escenario, esta contradicción es ultra-bullish para refiners (VLO, CRAK) porque sugiere que el spread no se comprimirá hasta que la utilización pueda subir más O la demanda de productos baje. Segunda contradicción: OPEC+ subiendo producción (+188k bpd) mientras Arabia Saudita importa fuel oil - Saudi está al mismo tiempo votando para aumentar cuotas del cartel Y comprando productos en el mercado spot porque su propia producción doméstica genera menos gas/NGL del necesario para cubrir demanda eléctrica de verano. Esto sugiere que el incremento de cuota OPEC+ tiene menos impacto físico real del que parece nominalmente.",
+  "invalidadores": [
+    "Avance concreto en negociaciones US-Iran hacia levantamiento de sanciones: retorno de 1.0-1.5 mbpd iraní al mercado en 6-12 meses sería el mayor shock bearish posible para el complex; cualquier headline de acuerdo firmado sería trigger inmediato de short en WTI/BRENT",
+    "Deterioro del régimen macro hacia RECESION: si el Synthesizer rebaja el régimen de GOLDILOCKS (85%) a Risk-Off o Recession proxima, la demanda energética colapsa y todos los longs sectoriales se invierten; monitorear HY spreads (actualmente 2.78%) como proxy más rápido",
+    "OPEC+ sorpresa hawkish en reunión Junio 7: si el cartel anuncia incremento sustancialmente mayor (500k+ bpd) en lugar de los 188k confirmados, el balance físico se desplazaría hacia oversupply; este escenario actualmente es de baja probabilidad dado el track record reciente del cartel"
+  ],
+  "data_gaps": "Datos críticos faltantes que limitaron este análisis: (1) 5-year average de inventarios de crudo, gasolina y distillates EIA - sin este benchmark no puedo calcular el déficit/surplus vs norma histórica, que es el indicador más importante de balance físico; (2) NatGas storage 5-year average y estacionalidad - actualmente no puedo clasificar los 2,391 Bcf como above/below norma; (3) Saudi Aramco Contract Price (CP) para LPG - dato fundamental para régimen LPG; (4) Freight rates VLGC (Very Large Gas Carriers) para rutas Middle East-Asia; (5) FEI (Far East Index) Asia LPG price para calcular arbitrage Asia vs US; (6) Curva completa de futuros WTI y NatGas más allá del spread 6M - la estructura completa de la curva da más información que un solo punto del calendario; (7) Producción actual de los miembros OPEC+ vs cuotas para evaluar compliance y capacidad de swing real del cartel; (8) Datos de flujos de importación/exportación de crudo EIA semanales para identificar cambios en trade flows Russia/Iran/Saudi",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'GASOLINA'",
+    "Senal 4: activo invalido 'HEATING_OIL'",
+    "Senal 5: activo invalido 'CRAK'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'NATGAS'"
+  ],
+  "metadata": {
+    "timestamp": "2026-05-22T17:30:21.588490",
+    "modelo": "claude-sonnet-4-6"
+  }
+}

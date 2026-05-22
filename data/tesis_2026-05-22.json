@@ -1,0 +1,71 @@
+{
+  "fecha": "2026-05-22",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Régimen Goldilocks confirmado por múltiples indicadores: yield curve positiva en +1.0% (yield_curve), HY spreads comprimidos en 2.78% (hy_spread), VIX contenido en 16.51 (vix), unemployment moderado en 4.3% (unemployment) y Sahm rule baja en 0.13 (sahm_rule). Expectativas de inflación 5y5y ancladas en 2.21% (breakeven_5y5y) sugieren crecimiento sin presiones inflacionarias extremas."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 747.67 con régimen Goldilocks sólido. VIX bajo en 16.51, HY spreads comprimidos en 2.78%, yield curve positiva +1.0% y condiciones laborales estables (jobless claims 209k, unemployment 4.3%) crean entorno favorable para equities",
+      "dato_clave": "vix"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "TLT en 84.44 con yield 10y en 4.57% y expectativas inflacionarias ancladas en 2.21% sugieren que los bonos largos están caros. Régimen Goldilocks favorece risk-on sobre duration",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "DXY en 99.22 con señales mixtas. USD/JPY extremo en 159.15 sugiere posible intervención japonesa, pero EUR/USD en 1.16 muestra fortaleza europea. Fed stance neutral con datos actuales",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Oro en 414.83 beneficiado por real yield negativo (yield 10y 4.57% vs expectativas inflación 2.21%) y tensiones geopolíticas evidentes en oil headlines. USD/JPY extremo sugiere stress en carry trades",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "Los mercados operan en un régimen Goldilocks robusto con 24/25 indicadores válidos. La yield curve positiva en +1.0% (yield_curve), HY spreads comprimidos en 2.78% (hy_spread) y VIX contenido en 16.51 (vix) confirman apetito por riesgo. El mercado laboral permanece sólido con jobless claims en 209k (jobless_claims) y unemployment en 4.3% (unemployment), mientras la Sahm rule en 0.13 (sahm_rule) descarta recesión inminente. Las expectativas inflacionarias 5y5y ancladas en 2.21% (breakeven_5y5y) vs yield 10y en 4.57% (yield_10y) sugieren que la Fed mantiene credibilidad antiinflacionaria. Sin embargo, USD/JPY en 159.15 (usdjpy) marca niveles críticos que podrían desatar intervención del BoJ y desestabilizar carry trades globales. La fortaleza en SPY (747.67) y debilidad relativa en TLT (84.44) confirman rotación hacia risk assets en este entorno de crecimiento sin inflación descontrolada.",
+  "invalidadores": [
+    "USD/JPY rompe 160 y detona intervención masiva del BoJ, desarmando carry trades globales",
+    "HY spreads se amplían por encima de 350bp indicando stress crediticio",
+    "VIX supera 25 sugiriendo deterioro en sentiment de riesgo",
+    "Jobless claims saltan por encima de 300k señalando debilidad laboral súbita",
+    "Breakeven 5y5y supera 2.8% indicando desanclaje de expectativas inflacionarias"
+  ],
+  "alertas": [
+    "USD/JPY en 159.15 cerca de niveles de intervención histórica del BoJ",
+    "Michigan inflation expectations en 4.7% significativamente por encima de breakeven 5y5y en 2.21%",
+    "Oro en niveles relativamente bajos (414.83) dado el stress geopolítico evidente en headlines de petróleo"
+  ],
+  "datos_insuficientes": [
+    "Ninguno - todos los indicadores principales tienen datos frescos y válidos"
+  ],
+  "eventos_clave": [
+    "[CNBC] Oil market could enter 'red zone' by July as stocks dwindle — Presión inflacionaria en energía podría desafiar régimen Goldilocks",
+    "[Fox News] Oil prices fall more than 6% as Trump says Iran negotiations in final stages — Alivio geopolítico reduce prima de riesgo en commodities",
+    "[WSJ] SoftBank Stock Surges on OpenAI IPO News — Momentum tecnológico sostiene apetito por growth assets",
+    "[IEA] Strait of Hormuz unconditional reopening needed — Riesgo de shock energético permanece latente"
+  ],
+  "confianza_general": 82,
+  "metadata": {
+    "timestamp": "2026-05-22T17:27:46.606922",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
