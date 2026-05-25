@@ -1,0 +1,81 @@
+{
+  "fecha": "2026-05-25",
+  "tipo": "WEEKLY",
+  "convicciones": [
+    {
+      "ticker": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MONTHS",
+      "conviccion": 8,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "Regimen Goldilocks confirmado al 82% (curva +0.98%, HY spreads 2.78%, VIX 16.59, claims 209k) crea el backdrop ideal para growth/tech: crecimiento sostenible sin inflacion descontrolada.",
+        "El setup tecnico es excepcional: QQQ +16.94% sobre 200DMA con momentum ajustado 2.511, lectura que historicamente se asocia a continuacion en regimenes UP (Cooper et al. 2004), reforzado por VRP +171 y breadth 64%.",
+        "La asimetria es razonable porque tenemos invalidador tecnico claro (200DMA en 613.60, -14.5% del spot) que limita el downside, mientras el regimen macro habilita full sizing en momentum tech."
+      ],
+      "fundamental_case": {
+        "macro_context": "Goldilocks con yields nominales 4.57% que ofrecen carry sin comprometer valuaciones, breakevens anclados en 2.26%, y unemployment 4.3% sin Sahm Rule trigger (0.13). Macro agent confianza 82% en regimen.",
+        "sectoral_dynamics": "Growth/tech outperform estructural en regimenes de crecimiento con inflacion controlada. No hay senal sectorial contradictoria desde energy desk (energy es shock idiosincratico geopolitico, no demand-driven inflation).",
+        "technical_setup": "Momentum 12M +40.27% con vol 16.04% = momentum ajustado 2.511 (lectura excepcional, top decil historico). Precio claramente sobre 200DMA, term structure VIX en CONTANGO_FUERTE confirma risk-on.",
+        "why_this_expression": "Elegimos QQQ sobre SPY por momentum ajustado superior (2.511 vs 2.445) y mayor beta al regimen Goldilocks (tech tiende a liderar). Son la misma apuesta direccional - publicamos la mejor expresion, no ambas."
+      },
+      "agents_aligned": [
+        "macro: regimen Goldilocks habilita risk-on, conviccion 8 LONG SPY (equity beneficiary)",
+        "technical: momentum ajustado 2.511, conviccion 9 LONG QQQ, full sizing habilitado"
+      ],
+      "entry_strategy": "Entrada escalonada: 60% inmediato en spot ~717, 40% en pullback hacia 700 si materializa. No perseguir gaps alcistas dado el momentum ajustado ya extendido.",
+      "stop_loss_logic": "Stop estructural en cierre bajo 200DMA (613.60, ~-14.5%). Stop tactico en VIX term structure pasando a backwardation o breadth bajo 50% sobre 200DMA.",
+      "profit_target_logic": "Sin target fijo - dejar correr mientras momentum ajustado se mantenga >1.5 y regimen Goldilocks intacto. Trim parcial si momentum ajustado supera 3.0 (zona de mean reversion historica) o si VRP vira a negativo.",
+      "invalidators": [
+        "QQQ cierra bajo 200DMA (613.60)",
+        "VIX term structure pasa a BACKWARDATION (VIX spot > VIX 3M)",
+        "HY spread expande >4% o claims >250k (regime change Goldilocks -> Recession)",
+        "USD/JPY rompe 160 con intervencion BoJ disparando unwind de carry global"
+      ],
+      "what_we_could_be_wrong_about": "El momentum ajustado >2.5 es lectura tan extendida que historicamente precede tanto continuacion como periodos de consolidacion/pullback violentos. Ademas, el VIX 6M en 22.35 vs 9D en 14.07 (spread +8.28) muestra hedging estructural visible que sugiere que alguien con tamano se esta cubriendo a 6 meses - no ignoramos esa senal, por eso STANDARD y no CONCENTRATED. Tambien: USD/JPY 158.88 cerca de intervencion es un riesgo de cola que afecta liquidez global tech."
+    },
+    {
+      "ticker": "VLO",
+      "direccion": "LONG",
+      "horizonte": "WEEKS",
+      "conviccion": 7,
+      "position_size": "SMALL",
+      "thesis_three_sentences": [
+        "Crack spread 321 en $50.05 (clasificado MUY_FUERTE) con utilizacion refinerias 91.6% genera earnings power excepcional para refinadores puros como VLO en el momento actual.",
+        "La asimetria es estructuralmente atractiva: si el deal US-Iran se concreta y el crudo cae a $70-80, los crack spreads de VLO pueden EXPANDIRSE (input mas barato, productos sticky en Goldilocks) - VLO es hedge natural contra el binario geopolitico que paraliza otras tesis energy.",
+        "Goldilocks soporta demanda sostenida de productos refinados (gasolina, destilados), y la convergencia entre energy desk (conviccion 7) y el contexto macro favorable da convergencia independiente."
+      ],
+      "fundamental_case": {
+        "macro_context": "Goldilocks con consumo robusto (unemployment 4.3%, claims 209k) sostiene demanda de productos refinados. Inflacion anclada (breakeven 2.26%) evita destruccion de demanda.",
+        "sectoral_dynamics": "Crack 321 MUY_FUERTE + utilizacion 91.6% = margenes de refineria excepcionales. VLO es la expresion mas pura del crack spread sin la exposicion direccional al precio del crudo que tienen E&P.",
+        "technical_setup": "No tenemos indicadores tecnicos especificos de VLO en los inputs - esto es debilidad explicita del setup y razon para SMALL size.",
+        "why_this_expression": "Elegimos VLO sobre XOM/CVX/EOG/VIST porque es la unica expresion energy que se beneficia en AMBOS escenarios del binario Iran: si el deal NO se concreta, cracks siguen altos; si SE concreta, crudo barato puede expandir cracks. XOM/CVX/VIST son LONG crudo disfrazados; VLO es LONG demanda de productos."
+      },
+      "agents_aligned": [
+        "energy_desk: conviccion 7 LONG VLO, crack spread 321 MUY_FUERTE driver directo de earnings",
+        "macro: Goldilocks sostiene demanda final de productos refinados (consumo solido, sin recession signals)"
+      ],
+      "entry_strategy": "Entrada en spot. Position SMALL por: (a) no tenemos indicadores tecnicos VLO, (b) binario geopolitico Iran activo, (c) sector energy con sobreextension USO +58.57%.",
+      "stop_loss_logic": "Stop si crack spread 321 cae bajo $35 (perdida de >30% del edge fundamental) o si utilizacion refinerias cae bajo 88% (debilitamiento de la tesis de demanda).",
+      "profit_target_logic": "Trim si crack spread supera $60 (zona historica de mean reversion) o si deal Iran se concreta y crack se expande violentamente en las primeras 48hs (locking gains del fade en crudo).",
+      "invalidators": [
+        "Crack spread 321 colapsa bajo $35",
+        "Regime change Goldilocks -> Recession (destruccion de demanda de productos)",
+        "Escalacion militar major que dispare crudo >$130 sin que productos sigan (margin squeeze)",
+        "Deal Iran que incluya release de productos refinados (no solo crudo) desde stocks iranianos"
+      ],
+      "what_we_could_be_wrong_about": "Asumimos que en Goldilocks los precios de productos refinados son 'sticky' mientras el input cae - esto es historicamente cierto pero no garantizado. Tambien, no tenemos data tecnica de VLO especificamente, asi que estamos largando un nombre individual basados en thesis sectorial - hay riesgo idiosincratico de la empresa que no estamos modelando. Finalmente, si el shock Iran fue tan grande que los cracks reflejan supply distortion mas que demanda real, un retorno a normalidad podria comprimir cracks rapidamente."
+    }
+  ],
+  "reasoning_when_no_convictions": "",
+  "synthesis_observations": "Patron interesante #1 - La divergencia VIX term structure (9D 14.07 vs 6M 22.35, spread +8.28) es la senal mas underappreciated del setup actual. En un mercado con VIX spot bajo y CONTANGO_FUERTE, ese hedging estructural a 6 meses sugiere que money real esta comprando proteccion para un evento que no se materializa en el tactico. Esto puede ser el deal Iran (catalyst binario), USD/JPY cracking 160, o un evento desconocido. La leccion: operar long pero NO maximizar tamano - exactamente lo que hicimos rebajando QQQ de CONCENTRATED a STANDARD.\n\nPatron interesante #2 - El setup energy es la dislocacion mas clara del semestre pero NO tradeable en expresion direccional pura. Backwardation $12.97, crack $50, Brent $100, USO +58.57% sobre 200DMA, todo apuntando a TIGHT extremo, PERO con un binario geopolitico (deal Iran reportado por Trump 23/05) que puede colapsar precios overnight. Las convicciones LONG XOM/CVX/VIST del energy desk son fundamentalmente la misma apuesta (LONG crudo) y todas se invalidan con el deal. VLO emerge como la unica expresion con asimetria honesta porque puede ganar en ambos escenarios. No tomamos SHORT USO a pesar de la sobreextension obvia porque el timing del deal es impredecible y la convexidad al alza de un cierre prolongado del Estrecho es violenta.\n\nPatron interesante #3 - Contradiccion productiva entre agentes: macro y technical convergen fuerte en risk-on, pero el energy desk introduce un risk factor sistemico (geopolitica Iran) que ningun otro agente esta pricing. Si el deal NO se concreta y el conflicto escala, el Goldilocks regime esta amenazado por stagflation shock energetico - esto no se ve en los spreads HY (2.78%) ni en el VIX spot (16.59) todavia. Reflexividad potencial: el mercado equity esta operando como si el deal fuera fait accompli; cualquier breakdown en las negociaciones podria forzar repricing simultaneo en energy (up) y equity (down).",
+  "metadata": {
+    "timestamp": "2026-05-25T17:24:41.297321",
+    "modelo": "claude-opus-4-7",
+    "agentes_input": [
+      "macro",
+      "technical",
+      "og_energy"
+    ]
+  }
+}

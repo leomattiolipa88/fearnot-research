@@ -1,0 +1,68 @@
+{
+  "fecha": "2026-05-25",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 82,
+    "razonamiento": "El régimen Goldilocks está confirmado por múltiples señales convergentes: curva de rendimientos positiva en +0.98% (yield_curve), spreads de high yield contenidos en 2.78% (hy_spread), VIX moderado en 16.59 (vix), y unemployment estable en 4.3% (unemployment). La inflación expectativa 5y5y en 2.26% (breakeven_5y5y) muestra anclas bien posicionadas, mientras claims de desempleo en 209,000 (jobless_claims) indican mercado laboral resiliente sin sobrecalentamiento."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 745.64 (spy) beneficia del régimen Goldilocks con curva normalizada +0.98% (yield_curve), VIX contenido en 16.59 (vix) y spreads crediticios sanos en 2.78% (hy_spread). La combinación de liquidez favorable y growth sin presión inflacionaria es óptima para equities.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "TLT en 84.68 (tlt) enfrenta presión con yield 10Y en 4.57% (yield_10y) y TIPS en 2.18% (tips_yield_10y). El régimen Goldilocks con crecimiento sostenido mantiene presión alcista en tasas largas. Curva empinada favorece duración corta.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 98.99 (dxy) muestra señales mixtas. EUR/USD en 1.1645 (eurusd) sugiere EUR resiliente, pero USD/JPY extremo en 158.88 (usdjpy) indica stress en carry trades. Esperamos volatilidad sin tendencia clara hasta definición de política monetaria.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "Gold en 413.82 (gold) enfrenta crosscurrents: yields reales positivos en 2.18% (tips_yield_10y) son negativos, pero USD/JPY en 158.88 (usdjpy) genera demand defensivo. Régimen Goldilocks reduce urgency por hedge inflacionario.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "El mercado opera en un régimen Goldilocks sólido, caracterizado por crecimiento sostenible sin presiones inflacionarias excesivas. La curva de rendimientos positiva en +0.98% (yield_curve) señala expectativas de crecimiento normalizado, mientras que spreads de high yield contenidos en 2.78% (hy_spread) indican condiciones crediticias saludables. El mercado laboral muestra equilibrio con unemployment en 4.3% (unemployment) y claims en 209,000 (jobless_claims), evitando tanto el sobrecalentamiento como la debilidad. \n\nLa configuración de tasas favorece risk assets: yields nominales en 4.57% (yield_10y) proporcionan carry atractivo sin comprometer valuaciones, mientras que inflación expectativa 5y5y anclada en 2.26% (breakeven_5y5y) mantiene credibilidad de política monetaria. El VIX moderado en 16.59 (vix) refleja complacencia justificada por fundamentals sólidos. Sin embargo, USD/JPY extremo en 158.88 (usdjpy) representa el principal riesgo sistémico, sugiriendo stress en carry trades globales que podría desestabilizar el equilibrio actual.",
+  "invalidadores": [
+    "USD/JPY superando 160 desencadenando intervención del BoJ y unwinding masivo de carry trades",
+    "Spreads de high yield expandiéndose por encima de 4% indicando stress crediticio",
+    "Claims de unemployment saltando por encima de 250,000 activando concerns de Sahm Rule",
+    "Breakeven 5y5y superando 2.8% señalando desanclaje de expectativas inflacionarias",
+    "VIX superando 25 indicando deterioro en sentiment de riesgo"
+  ],
+  "alertas": [
+    "USD/JPY en 158.88 está peligrosamente cerca de niveles de intervención históricos del BoJ",
+    "Michigan inflation expectations en 4.7% siguen materialmente por encima de target Fed, requiere monitoreo",
+    "La divergencia entre yields FRED (4.57%) y market (4.558%) es mínima pero debe vigilarse por volatility"
+  ],
+  "datos_insuficientes": [],
+  "eventos_clave": [
+    "[Yahoo Finance] Nuevo Chair Fed Kevin Warsh sugiere approach estilo Greenspan — podría implicar mayor discrecionalidad y menos guidance forward, aumentando volatilidad en tasas",
+    "[Yahoo Finance] Gauge inflacionario preferido de Fed aproximándose a 4% por spike energético — presión alcista en breakevens y TIPS si persiste",
+    "[Bloomberg] Esfuerzos de salud de Apple necesitan reinicio para competir — sector tech/health bajo presión, impacto marginal en SPY"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-05-25T17:20:47.163368",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
