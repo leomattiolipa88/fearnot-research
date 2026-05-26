@@ -347,6 +347,11 @@ def extraer_financials_v2(ticker: str, fiscal_year: int) -> dict:
     # Imports tardios para evitar problemas de orden
     from sector_router import detect_sector, get_names_for_concept
     from gaap_taxonomy import get_unit_for_concept
+    from ifrs_taxonomy import (
+        is_ifrs_filer,
+        get_ifrs_names_for_concept,
+        get_ifrs_unit_for_concept,
+    )
     from calculated_metrics import (
         calcular_shares_diluted,
         calcular_operating_income_aproximado,
@@ -372,11 +377,21 @@ def extraer_financials_v2(ticker: str, fiscal_year: int) -> dict:
     resultado["cik"] = cik
     resultado["sector"] = detect_sector(ticker) or "unclassified"
 
+    # Detectar taxonomia del filer (us-gaap default, ifrs-full para 20-F filers)
+    taxonomia = "ifrs-full" if is_ifrs_filer(ticker) else "us-gaap"
+    resultado["taxonomia"] = taxonomia
+
     # ===== Step 2: Extraer conceptos estandar =====
     for concepto in CONCEPTOS_ESTANDAR:
-        names = get_names_for_concept(concepto, ticker)
-        unit = get_unit_for_concept(concepto)
-        valor = extraer_fact_anual(facts, names, fiscal_year, unidad=unit)
+        # Dispatch nombres GAAP segun taxonomy
+        if taxonomia == "ifrs-full":
+            names = get_ifrs_names_for_concept(concepto)
+            unit = get_ifrs_unit_for_concept(concepto)
+        else:
+            names = get_names_for_concept(concepto, ticker)
+            unit = get_unit_for_concept(concepto)
+
+        valor = extraer_fact_anual(facts, names, fiscal_year, taxonomia=taxonomia, unidad=unit)
 
         if valor is not None:
             resultado[concepto] = valor
