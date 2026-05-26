@@ -92,20 +92,67 @@ Each limitation entry includes:
 - **Validation:** JPM FY2023 10-K XBRL exhibit.
 - **Discovered:** Iteration 1 Banking research
 
-### 8. NU — Custom IFRS extensions throughout
+### 8. NU — IFRS-full taxonomy (no custom extensions)
 
 - **Affects:** NU (Nu Holdings)
-- **Concepts:** Most concepts (interest income, transactional expenses, credit loss allowance, deposits, etc.)
-- **Root cause:** Nu Holdings uses extensive custom IFRS extensions (`nu:` prefix) because the standard IFRS taxonomy doesn't have elements specific to Brazilian digital banking conventions. Their P&L combines IFRS 9 effective-interest revenue with FVTPL gains/losses in a single custom line.
-- **Workaround:** Requires dedicated IFRS extension parser. Out of scope for v2 extractor.
-- **Validation:** Nu Holdings 20-F FY2024, SEC accession 0001292814-25-001517.
-- **Discovered:** Iteration 2 NU IFRS deep-dive
+- **Concept:** All concepts (IFRS taxonomy dispatch)
+- **Root cause:** Nu Holdings reports under IFRS via 20-F. All facts are in standard `ifrs-full` namespace - no custom `nu:` extensions exist. SEC EDGAR companyfacts API exposes 151 IFRS concepts.
+- **Workaround:** Resolved via dual taxonomy infrastructure (`ifrs_taxonomy.py` + `is_ifrs_filer()` dispatch in `financials_extractor_v2.py`). Phase 1 of Banking module complete as of May 21, 2026.
+- **Validation:** NU CIK 0001691493 companyfacts API direct query. FY2024: Revenue \$11.5B, Net Income \$1.97B, Total Assets \$49.9B - all match published 20-F.
+- **Discovered:** May 21, 2026 (empirical discovery contradicted prior research markdown which inferred ~15 UNVERIFIED `nu:` custom tags that proved non-existent)
+- **Lesson:** Research markdown that lists XBRL tags as "UNVERIFIED" requires empirical verification before code commitment. Inferred PascalCase tag names are systematically unreliable.
+
+### 9. WFC, GS — Total loan portfolio not reported as XBRL discrete fact
+
+- **Affects:** WFC (Wells Fargo), GS (Goldman Sachs)
+- **Concept:** `loans_held_for_investment`
+- **Root cause:** WFC and GS do not tag a single aggregate "total loans" value in their XBRL filings. Loan portfolio is broken down by category (commercial, residential, consumer, etc.) in MD&A notes but no roll-up XBRL fact exists. JPM, BAC, C, MS all report the aggregate via `FinancingReceivableExcludingAccruedInterestAfterAllowanceForCreditLoss` (~\$1.3T JPM, \$1.1T BAC, \$676B C, \$226B MS verified FY2024). WFC and GS only expose securities lending tags, individual loan categories, and fair value subsets - top tag is `SecuritiesLoaned...` (\$149B WFC, \$67B GS) which is NOT loans-to-customers.
+- **Workaround:** Extractor returns `not_found` for WFC and GS. Banking analysis affected: Loan-to-Deposit Ratio not calculable. Note that LDR for GS is structurally irrelevant (i-bank model, not NIM-driven) but for WFC it is a material metric.
+- **Future resolution path:** Two options when this becomes priority:
+  1. Compose total loans from sub-category tags (residential + commercial + consumer). Risk: double-counting if categories overlap. Requires per-bank verification.
+  2. MD&A scraping from 10-K. Universal solution but adds NLP dependency.
+- **Priority:** Medium. WFC LDR is the only material analytical gap. GS does not need this metric.
+- **Validation:** Empirical discovery via companyfacts API on May 26, 2026. WFC FY2024 10-K MD&A reports total loans \$910B; GS FY2024 10-K reports total loans \$190B - neither value available as discrete XBRL fact.
+- **Discovered:** May 26, 2026 (Banking US-GAAP empirical discovery)
+
+### 10. NU — Five banking concepts have tags but no FY2024 values
+
+- **Affects:** NU (Nu Holdings)
+- **Concepts:** `provision_for_credit_losses`, `general_administrative_expense`, `depreciation`, `allowance_for_credit_losses`, `expected_credit_loss_rate`
+- **Root cause:** These tags exist in NU's IFRS taxonomy (verified via companyfacts) but NU did not report FY2024 values as discrete XBRL facts. Most likely embedded inside `OperatingExpense` aggregate or only disclosed in 20-F notes (not XBRL-tagged). NU did report `IncreaseDecreaseInAllowanceAccountForCreditLossesOfFinancialAssets` for FY2023 (\$2.3B) and earlier years - the FY2024 absence is a recent disclosure change.
+- **Workaround:** Extractor returns `not_found` for these concepts on NU. Documented in `ifrs_taxonomy.py` notes per-concept. NU coverage stands at 14/24 universal concepts; Banking-specific concepts will be added in Phase 2.
+- **Future resolution path:** Parse NU 20-F notes for FY2024 specifically. Required for accurate NIM and Cost of Risk calculations on NU.
+- **Priority:** High for NIM analysis. NU is a digital bank where Cost of Risk (provisions / avg loans) is a key thesis driver.
+- **Validation:** Empirical verification via NU companyfacts API May 21, 2026. Tags present in taxonomy keys but FY2024 entries absent or zero.
+- **Discovered:** May 21, 2026 (Banking Phase 1 IFRS verification)
+
+### 11. GS — Trading revenue not reported as discrete XBRL fact
+
+- **Affects:** GS (Goldman Sachs)
+- **Concept:** `trading_revenue`
+- **Root cause:** Goldman Sachs has the largest trading operation among US banks (~\$25B annual trading revenue per disclosures) but does not tag this in standard XBRL fact namespace. Other banks report `PrincipalTransactionsRevenue` (JPM: \$24.8B, C: \$11.6B) or `TradingGainsLosses` (BAC: \$13B, WFC: \$5.3B, MS: \$16.8B). GS exposes the tags in facts but with no FY2024 value.
+- **Workaround:** Extractor returns `not_found` for GS trading revenue. For GS analysis, parse 10-K Form 10-K "Trading Results" section directly.
+- **Future resolution path:** Custom GS-specific parser, or accept that GS analysis requires manual data input.
+- **Priority:** High for GS analysis. Trading is GS's largest revenue line and core to thesis.
+- **Validation:** Empirical via companyfacts API May 26, 2026.
+- **Discovered:** May 26, 2026 (Banking US-GAAP empirical discovery)
+
+### 12. Banking — `fee_and_commission_income` not aggregated in XBRL
+
+- **Affects:** All 6 US banks (JPM, BAC, WFC, C, MS, GS) to varying degrees
+- **Concept:** `fee_and_commission_income`
+- **Root cause:** XBRL us-gaap taxonomy fragments fee income across many specific tags (`InvestmentBankingAdvisoryBrokerageAndUnderwritingFeesAndCommissions`, individual product fees, etc.) rather than one aggregate. Only Citigroup reports a sizeable aggregate via the IB-specific tag. JPM and MS have `FeesAndCommissions` tag in facts but no FY2024 value. BAC, WFC, GS don't expose any aggregate.
+- **Workaround:** Use `NoninterestIncome` (universal: \$85B JPM, \$46B BAC, \$35B WFC, \$27B C, \$53B MS, \$45B GS) as proxy for "non-interest revenue." Fee income is a major sub-component but not isolatable.
+- **Future resolution path:** When needed for fee-income trend analysis: compose from product-specific tags per bank (requires per-bank tag mapping), or parse income statement breakdown from 10-K.
+- **Priority:** Low. `NoninterestIncome` aggregate is sufficient for most analytical use cases.
+- **Validation:** Empirical via companyfacts API May 26, 2026.
+- **Discovered:** May 26, 2026 (Banking US-GAAP empirical discovery)
 
 ---
 
 ## Sector: Utilities
 
-### 9. VST — Adjusted EBITDA not in XBRL
+### 13. VST — Adjusted EBITDA not in XBRL
 
 - **Affects:** VST (Vistra Corp), all merchant power generators
 - **Concept:** `adjusted_ebitda` (the operating KPI for merchant power)
@@ -118,7 +165,7 @@ Each limitation entry includes:
 
 ## Cross-cutting: Capital Adequacy (CET1, Tier 1)
 
-### 10. Bank capital ratios are narrative-tagged only
+### 14. Bank capital ratios are narrative-tagged only
 
 - **Affects:** All banks (JPM, BAC, NU's Brazilian regulated subsidiaries)
 - **Concepts:** `cet1_ratio`, `tier_1_capital_ratio`, `total_capital_ratio`
@@ -131,18 +178,22 @@ Each limitation entry includes:
 
 ## Summary Table
 
-| # | Sector | Concept | Affects | Severity | Workaround |
-|---|--------|---------|---------|----------|------------|
+| # | Sector | Concept | Affects | Severity | Status / Workaround |
+|---|--------|---------|---------|----------|---------------------|
 | 1 | Tech | research_and_development | AMZN | Medium | Accept not_found |
 | 2 | Tech | selling_marketing_expense | NVDA, MU | Low | Captured in G&A |
 | 3 | Tech | interest_expense | CRM, NOW | Low | Accept not_found, treat as ~0 |
 | 4 | Tech | NDR, ARR | All SaaS | High | Out of scope (MD&A only) |
 | 5 | Energy | operating_income exact | XOM (likely others) | Medium | Approximation with bias flag |
 | 6 | Energy | All concepts | VIST | High | IFRS support needed |
-| 7 | Banking | CECL provision | JPM, BAC | Medium | Sector module pending |
-| 8 | Banking | All concepts | NU | High | Custom IFRS parser needed |
-| 9 | Utilities | Adjusted EBITDA | VST | High | Out of scope (non-GAAP) |
-| 10 | Banking | CET1, Tier 1 | All banks | Medium | Parse text-blocks or external data |
+| 7 | Banking | CECL provision | JPM, BAC | Medium | Fallback chain in banking.py (pending Phase 2) |
+| 8 | Banking | IFRS dispatch | NU | RESOLVED | Phase 1 complete - May 21, 2026 |
+| 9 | Banking | loans_held_for_investment | WFC, GS | Medium | Accept not_found; LDR not calculable |
+| 10 | Banking | provisions, G&A, depreciation (FY24) | NU | High | Parse 20-F notes (pending) |
+| 11 | Banking | trading_revenue | GS | High | Accept not_found; parse 10-K trading section |
+| 12 | Banking | fee_and_commission_income | All US banks | Low | Use NoninterestIncome as proxy |
+| 13 | Utilities | Adjusted EBITDA | VST | High | Out of scope (non-GAAP) |
+| 14 | Cross-cutting | CET1, Tier 1 | All banks | Medium | Parse text-blocks or external data |
 
 ---
 
