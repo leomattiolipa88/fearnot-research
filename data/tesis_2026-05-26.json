@@ -1,0 +1,75 @@
+{
+  "fecha": "2026-05-26",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Yield curve positiva en +0.98% (yield_curve), unemployment estable en 4.3% (unemployment), Sahm rule baja en 0.13 (sahm_rule), claims contenidos en 209k (jobless_claims), HY spreads controlados en 2.78% (hy_spread). Combinación de crecimiento sólido con presiones inflacionarias moderadas."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Régimen Goldilocks confirmado con yield curve normal, VIX contenido en 16.77 (vix), HY spreads estrechos y mercado laboral robusto. SPY en 745.64 muestra momentum alcista estructural.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Yield 10Y en 4.57% (yield_10y) con breakeven 5y5y en 2.26% (breakeven_5y5y) sugiere tasas reales elevadas persistentes. Expectativas inflacionarias Michigan en 4.7% presionan bonos largos.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 99.13 (dxy) cerca de equilibrio. USD/JPY extremo en 159.23 (usdjpy) sugiere intervención inminente del BoJ que podría revertir fortaleza del dólar temporalmente.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "Oro en 413.82 (gold) beneficiado por expectativas inflacionarias Michigan 4.7% y TIPS yield real 2.18% (tips_yield_10y). Hedge contra riesgo geopolítico del Estrecho de Hormuz.",
+      "dato_clave": "michigan_inflation_exp"
+    }
+  ],
+  "tesis_principal": "Los datos confirman un régimen Goldilocks robusto con crecimiento sólido y presiones inflacionarias controladas. La yield curve positiva en +0.98% (yield_curve), unemployment estable en 4.3% (unemployment) y Sahm rule contenida en 0.13 (sahm_rule) validan expansión económica sin señales recesivas. El mercado laboral muestra fortaleza con claims en 209k (jobless_claims) mientras HY spreads de 2.78% (hy_spread) reflejan condiciones crediticias favorables. Sin embargo, las expectativas inflacionarias Michigan en 4.7% (michigan_inflation_exp) superan significativamente el breakeven 5y5y de 2.26% (breakeven_5y5y), sugiriendo desconexión entre percepciones del consumidor y mercados de bonos. El USD/JPY en niveles extremos de 159.23 (usdjpy) plantea riesgo de intervención del BoJ que podría catalizar unwinding de carry trades globalmente.",
+  "invalidadores": [
+    "USD/JPY por encima de 160 disparando intervención masiva del BoJ y unwinding de carry trades",
+    "Escalada en Estrecho de Hormuz cerrando rutas comerciales críticas y disparando inflación energética",
+    "HY spreads expandiéndose por encima de 350bps señalando stress crediticio",
+    "Claims semanales por encima de 350k activando señales de debilidad laboral",
+    "Breakeven 5y5y convergiendo hacia expectativas Michigan sugiriendo inflación estructural"
+  ],
+  "alertas": [
+    "USD/JPY en 159.23 muy cerca del nivel de intervención del BoJ (160)",
+    "Divergencia crítica entre expectativas inflacionarias Michigan (4.7%) vs breakeven 5y5y (2.26%)",
+    "Yield 10Y en 4.57% presionando valuaciones de tech y growth stocks",
+    "VIX contenido en 16.77 sugiere complacencia que podría revertir violentamente"
+  ],
+  "datos_insuficientes": [
+    "Datos de empleo más recientes (unemployment de abril, claims de mayo 16)",
+    "Inflación core PCE actualizada (último dato marzo)",
+    "CPI más reciente para validar trayectoria inflacionaria"
+  ],
+  "eventos_clave": [
+    "[OilPrice.com] Expert Says Traders Should Brace for July Jump in Oil Prices — Strait of Hormuz closure amenaza con spike inflacionario que invalidaría régimen Goldilocks",
+    "[Axios] Oil prices sink on signs of U.S.-Iran deal — Alivio geopolítico reduce presiones inflacionarias y apoya tesis de crecimiento sin sobrecalentamiento",
+    "[Financial Times] Iran's top negotiators travel to Qatar — Negociaciones intensificadas podrían resolver crisis energética y estabilizar commodity complex",
+    "[Financial Times] AI guardrails stripped from Meta and Google — Riesgo regulatorio tech aumenta volatilidad sectorial pero no impacta macro estructural",
+    "[Quartz] Bond traders surrendering to inflation fears — Mercado de bonos anticipa inflación persistente, presionando yields largos y valuaciones"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-05-26T13:28:07.958566",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
