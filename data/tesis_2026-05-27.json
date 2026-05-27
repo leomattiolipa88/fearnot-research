@@ -1,0 +1,73 @@
+{
+  "fecha": "2026-05-27",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Yield curve positiva en +0.97% (yield_curve) señala crecimiento estable, VIX contenido en 16.98 (vix) sugiere baja volatilidad, HY spreads comprimidos en 2.74% (hy_spread) indican liquidez abundante, y Sahm rule en 0.13 (sahm_rule) descarta recesión inminente. Breakeven 5y5y en 2.27% (breakeven_5y5y) muestra expectativas inflacionarias ancladas."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Régimen Goldilocks sólido: liquidez abundante con HY spreads en 2.74% (hy_spread), volatilidad baja en VIX 16.98 (vix), y yield curve positiva +0.97% (yield_curve). Mercado laboral robusto con claims en 209k (jobless_claims).",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Yield 10Y en niveles elevados 4.47% (yield_10y_mkt) con curva empinándose, TIPS yield real en 2.16% (tips_yield_10y) sugiere política restrictiva persistente. Crecimiento sólido reduce demanda por refugio.",
+      "dato_clave": "yield_10y_mkt"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "USD/JPY en 159.39 (usdjpy) cerca de niveles de intervención, pero yields US elevados mantienen diferencial atractivo. EUR/USD en 1.164 (eurusd) sugiere USD relativamente fuerte.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Oro en 406.41 (gold) enfrenta vientos cruzados: yields reales altos en 2.16% (tips_yield_10y) son negativos, pero tensiones geopolíticas y expectativas inflacionarias en 4.7% (michigan_inflation_exp) brindan soporte.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "Estamos en un régimen Goldilocks sólido caracterizado por crecimiento estable sin presiones inflacionarias extremas. La yield curve positiva en +0.97% (yield_curve) señala expansión económica saludable, mientras que el VIX contenido en 16.98 (vix) y HY spreads comprimidos en 2.74% (hy_spread) confirman condiciones de liquidez abundantes. El mercado laboral se mantiene robusto con claims semanales en 209k (jobless_claims) y unemployment en 4.3% (unemployment), niveles que sugieren pleno empleo sin sobrecalentamiento. Los equities, liderados por SPY en 750.45 (spy), deberían beneficiarse de este entorno, especialmente con el momentum en tecnología y semiconductores. Sin embargo, los yields elevados en 4.47% (yield_10y_mkt) y TIPS reales en 2.16% (tips_yield_10y) mantienen presión sobre activos duration, haciendo que TLT sea vulnerable a más corrección.",
+  "invalidadores": [
+    "Escalada significativa en USD/JPY por encima de 160 forzando intervención del BoJ y desarmando carry trades",
+    "Spike en VIX por encima de 25 señalando cambio de régimen hacia aversión al riesgo",
+    "HY spreads expandiéndose por encima de 400bps indicando stress crediticio",
+    "Sahm rule disparándose por encima de 0.5 activando señal de recesión",
+    "Breakeven 5y5y rompiendo por encima de 3.0% sugiriendo desanclaje inflacionario"
+  ],
+  "alertas": [
+    "USD/JPY en 159.39 peligrosamente cerca del nivel de intervención de 160",
+    "Expectativas inflacionarias Michigan en 4.7% siguen elevadas vs target Fed de 2%",
+    "Yield real de 2.16% en TIPS mantiene presión sobre activos growth y duration"
+  ],
+  "datos_insuficientes": [
+    "Fed funds rate efectiva para evaluar stance de política monetaria actual",
+    "PMI manufacturero y servicios para confirmar momentum de crecimiento",
+    "Dollar index histórico para contextualizar nivel actual de DXY en 99.08"
+  ],
+  "eventos_clave": [
+    "[WSJ] Stock Market Today: Oil Prices Strengthen After Fresh Attacks on Iran — impacto positivo en commodities energéticos y soporte a reflation trade",
+    "[Financial Times] Hedge funds are AImaxxing - Software is out, semis are in — rotación sectorial que explica fortaleza en tech y momentum en SPY",
+    "[Stocktwits] MU Stock Draws UBS Price Target With 100% Upside — optimismo en semiconductores alinea con thesis bullish en equities growth",
+    "[IBD] Quantum Stocks Surge On U.S. Funding — flujos gubernamentales hacia tech disruptivo refuerzan Goldilocks para innovation stocks"
+  ],
+  "confianza_general": 82,
+  "metadata": {
+    "timestamp": "2026-05-27T13:58:59.800868",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
