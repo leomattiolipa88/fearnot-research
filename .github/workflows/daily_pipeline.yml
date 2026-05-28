@@ -89,6 +89,9 @@ jobs:
             echo "=== Not Monday, skipping Synthesizer ==="
           fi
 
+          echo "=== Evaluate matured convictions (path-dependent) ==="
+          python -c "from tracker import evaluar_convicciones_vencidas; evaluar_convicciones_vencidas()"
+
           echo "=== Web exporter ==="
           python web_exporter.py
 

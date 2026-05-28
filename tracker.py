@@ -251,6 +251,147 @@ def evaluar_senales_vencidas(db_path: str = DB_PATH) -> list:
     return resultados
 
 
+# ── Evaluar convicciones del Synthesizer (path-dependent) ─────────────────────
+def evaluar_convicciones_vencidas(db_path: str = DB_PATH) -> list:
+    """
+    Evalua convicciones del Synthesizer cuya fecha de evaluacion ya llego.
+
+    PATH-DEPENDENT: descarga la serie completa de precios entre entry y exit,
+    y calcula no solo el retorno final sino tambien:
+    - MFE (Maximum Favorable Excursion): el mejor momento del trade
+    - MAE (Maximum Adverse Excursion): el peor momento del trade
+    - Volatilidad realizada
+    - Dias hasta MFE/MAE
+    - Precio max/min durante el trade
+
+    Corrige bug de single-point: usa el precio del dia de vencimiento
+    (fecha_evaluacion), no el precio de HOY.
+
+    Usa el dict TICKERS para mapear nombres a tickers yfinance (BRENT -> BZ=F).
+    """
+    import pandas as pd
+
+    conn = sqlite3.connect(db_path)
+    hoy = date.today().isoformat()
+
+    vencidas = conn.execute("""
+        SELECT id, fecha, ticker, direccion, precio_entrada, fecha_evaluacion
+        FROM convicciones
+        WHERE evaluado = 0
+          AND fecha_evaluacion <= ?
+          AND precio_entrada IS NOT NULL
+    """, (hoy,)).fetchall()
+
+    resultados = []
+    for row in vencidas:
+        id_conv, fecha_entry, ticker_raw, direccion, precio_entrada, fecha_eval = row
+
+        ticker_yf = TICKERS.get(ticker_raw, ticker_raw)
+
+        try:
+            # Descargar serie completa entry -> exit (+1 dia para incluir el dia de eval)
+            end_plus = (date.fromisoformat(fecha_eval) + timedelta(days=1)).isoformat()
+            hist = yf.Ticker(ticker_yf).history(start=fecha_entry, end=end_plus)
+
+            if hist.empty or len(hist) < 1:
+                print(f"   Sin datos para {ticker_raw} ({ticker_yf}) entre {fecha_entry} y {fecha_eval} - skip")
+                continue
+
+            # Precio de salida = ultimo Close disponible <= fecha_evaluacion
+            precio_salida = float(hist["Close"].iloc[-1])
+
+            # Path-dependent metrics
+            max_high = float(hist["High"].max())
+            min_low = float(hist["Low"].min())
+            dia_max = hist["High"].idxmax().date()
+            dia_min = hist["Low"].idxmin().date()
+
+            entry_d = date.fromisoformat(fecha_entry)
+            dias_hasta_mfe = (dia_max - entry_d).days
+            dias_hasta_mae = (dia_min - entry_d).days
+            dias_trade = (date.fromisoformat(fecha_eval) - entry_d).days
+
+            # Retornos segun direccion
+            if direccion == "SHORT":
+                # Para SHORT, "favorable" es cuando el precio BAJA
+                mfe = (precio_entrada - min_low) / precio_entrada * 100
+                mae = (precio_entrada - max_high) / precio_entrada * 100
+                retorno_final = (precio_entrada - precio_salida) / precio_entrada * 100
+                # swap dias (el min_low es el mejor momento para short)
+                dias_hasta_mfe, dias_hasta_mae = dias_hasta_mae, dias_hasta_mfe
+            else:  # LONG o NEUTRAL
+                mfe = (max_high - precio_entrada) / precio_entrada * 100
+                mae = (min_low - precio_entrada) / precio_entrada * 100
+                retorno_final = (precio_salida - precio_entrada) / precio_entrada * 100
+
+            # Volatilidad realizada (std de retornos diarios de Close)
+            retornos_diarios = hist["Close"].pct_change().dropna()
+            vol = float(retornos_diarios.std() * 100) if len(retornos_diarios) > 1 else 0.0
+
+            # Acierto: final return positivo (definicion estricta)
+            if direccion == "LONG":
+                acierto = 1 if retorno_final > 0 else 0
+            elif direccion == "SHORT":
+                acierto = 1 if retorno_final > 0 else 0  # ya invertido arriba
+            else:
+                acierto = 1 if abs(retorno_final) < 2 else 0
+
+            conn.execute("""
+                UPDATE convicciones
+                SET precio_salida    = ?,
+                    retorno_pct      = ?,
+                    mfe_pct          = ?,
+                    mae_pct          = ?,
+                    dias_hasta_mfe   = ?,
+                    dias_hasta_mae   = ?,
+                    volatilidad_pct  = ?,
+                    precio_max       = ?,
+                    precio_min       = ?,
+                    dias_trade       = ?,
+                    evaluado         = 1
+                WHERE id = ?
+            """, (
+                round(precio_salida, 2),
+                round(retorno_final, 2),
+                round(mfe, 2),
+                round(mae, 2),
+                dias_hasta_mfe,
+                dias_hasta_mae,
+                round(vol, 2),
+                round(max_high, 2),
+                round(min_low, 2),
+                dias_trade,
+                id_conv,
+            ))
+
+            resultado = {
+                "ticker":         ticker_raw,
+                "direccion":      direccion,
+                "precio_entrada": precio_entrada,
+                "precio_salida":  round(precio_salida, 2),
+                "retorno_pct":    round(retorno_final, 2),
+                "mfe_pct":        round(mfe, 2),
+                "mae_pct":        round(mae, 2),
+                "volatilidad_pct": round(vol, 2),
+                "acierto":        bool(acierto),
+            }
+            resultados.append(resultado)
+
+            emoji = "WIN " if acierto else "LOSS"
+            print(f"{emoji} {ticker_raw:6s} {direccion:6s} -> "
+                  f"final: {retorno_final:+.1f}% | "
+                  f"MFE: {mfe:+.1f}% (d{dias_hasta_mfe}) | "
+                  f"MAE: {mae:+.1f}% (d{dias_hasta_mae}) | "
+                  f"vol: {vol:.1f}%")
+        except Exception as e:
+            print(f"   Error evaluando {ticker_raw}: {e}")
+            continue
+
+    conn.commit()
+    conn.close()
+    return resultados
+
+
 # ── Calcular métricas de performance ─────────────────────────────────────────
 def calcular_performance(db_path: str = DB_PATH) -> dict:
     """
@@ -340,6 +481,67 @@ def calcular_performance(db_path: str = DB_PATH) -> dict:
 
 
 # ── Imprimir reporte de performance ──────────────────────────────────────────
+def calcular_performance_convicciones(db_path: str = DB_PATH) -> dict:
+    """
+    Metricas agregadas sobre convicciones EVALUADAS del Synthesizer.
+    Disenadas para ser significativas desde poca data (no requieren
+    masa critica como Sharpe).
+
+    Returns dict con:
+    - n_evaluadas, n_aciertos, win_rate
+    - avg_return, avg_mfe, avg_mae
+    - alpha_capture: cuanto del MFE se captura en el final (final/MFE)
+    - avg_volatilidad
+    """
+    conn = sqlite3.connect(db_path)
+    conn.row_factory = sqlite3.Row
+
+    rows = conn.execute("""
+        SELECT ticker, direccion, retorno_pct, mfe_pct, mae_pct, volatilidad_pct
+        FROM convicciones
+        WHERE evaluado = 1 AND retorno_pct IS NOT NULL
+    """).fetchall()
+    conn.close()
+
+    n = len(rows)
+    if n == 0:
+        return {
+            "n_evaluadas": 0,
+            "mensaje": "Sin convicciones evaluadas todavia",
+        }
+
+    retornos = [r["retorno_pct"] for r in rows]
+    mfes = [r["mfe_pct"] for r in rows if r["mfe_pct"] is not None]
+    maes = [r["mae_pct"] for r in rows if r["mae_pct"] is not None]
+    vols = [r["volatilidad_pct"] for r in rows if r["volatilidad_pct"] is not None]
+
+    aciertos = sum(1 for r in retornos if r > 0)
+
+    avg_return = sum(retornos) / n
+    avg_mfe = sum(mfes) / len(mfes) if mfes else 0
+    avg_mae = sum(maes) / len(maes) if maes else 0
+    avg_vol = sum(vols) / len(vols) if vols else 0
+
+    # Alpha capture: que fraccion del peak (MFE) se captura en el cierre
+    # Solo para trades con MFE positivo (donde hubo oportunidad)
+    capturas = []
+    for r in rows:
+        if r["mfe_pct"] and r["mfe_pct"] > 0:
+            capturas.append(r["retorno_pct"] / r["mfe_pct"])
+    alpha_capture = (sum(capturas) / len(capturas) * 100) if capturas else None
+
+    return {
+        "n_evaluadas": n,
+        "n_aciertos": aciertos,
+        "win_rate": round(aciertos / n * 100, 1),
+        "avg_return_pct": round(avg_return, 2),
+        "avg_mfe_pct": round(avg_mfe, 2),
+        "avg_mae_pct": round(avg_mae, 2),
+        "avg_volatilidad_pct": round(avg_vol, 2),
+        "alpha_capture_pct": round(alpha_capture, 1) if alpha_capture is not None else None,
+    }
+
+
 def imprimir_reporte(db_path: str = DB_PATH):
     """Imprime el reporte completo de performance en la terminal."""
 

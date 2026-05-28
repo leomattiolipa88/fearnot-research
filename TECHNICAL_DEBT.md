@@ -1,5 +1,22 @@
 # FearNot Research — Technical Debt
 
+## Track Record Visualization (added 2026-05-27)
+
+### web_exporter filters convictions to last 4 weeks - hides historical track record
+- **Priority:** HIGH (blocks core vision of "see if the bot is right over 3 months")
+- **Where:** web_exporter.py:cargar_convicciones_recientes()
+- **Problem:** Query is WHERE fecha >= (today - 28 days). Evaluated convictions older than 4 weeks disappear from web_data.json. A conviction from 2026-05-11 evaluated at +6.7% vanishes after 2026-06-08. This defeats long-term performance tracking.
+- **Fix path:** Add a separate query for closed convictions (evaluado=1) with no date filter, or a dedicated cargar_track_record() function. Web should show "Active Convictions" (recent) AND "Track Record" (all closed) as separate sections.
+- **Discovered:** 2026-05-27 during Performance Evaluator build.
+
+### Aggregate performance metrics not included in web_data.json
+- **Priority:** MEDIUM (needed for Track Record UI summary)
+- **Where:** web_exporter.py (export logic) + tracker.py:calcular_performance_convicciones()
+- **Problem:** calcular_performance_convicciones() computes win_rate, avg_return, avg_mfe, avg_mae, alpha_capture - but web_exporter never calls it, so these never reach web_data.json.
+- **Fix path:** In web_exporter, call calcular_performance_convicciones() and add result under a performance key in web_data.json. Then render in fearnot-web.
+- **Discovered:** 2026-05-27 during Performance Evaluator build.
+
+
 This document tracks **internal code debt and improvement opportunities** that we deliberately deferred to ship faster. These are things that CAN and SHOULD be fixed eventually — they are not limits imposed by external reality.
 
 For external limitations (filer reporting choices, taxonomy gaps), see `LIMITATIONS.md`.
