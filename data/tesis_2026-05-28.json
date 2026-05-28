@@ -3,7 +3,7 @@
   "regimen": {
     "clasificacion": "GOLDILOCKS",
     "confianza": 85,
-    "razonamiento": "La yield curve está normalizada en +0.9% (yield_curve), señalando crecimiento sano. Sahm rule en 0.13 (sahm_rule) indica mercado laboral estable sin recesión. VIX contenido en 16.6 (vix) y credit spreads comprimidos a 2.72% (hy_spread) muestran liquidez abundante. Breakeven 5y5y en 2.25% (breakeven_5y5y) sugiere expectativas de inflación ancladas cerca del target de Fed."
+    "razonamiento": "Yield curve positiva en +0.9% (yield_curve), spreads de HY contenidos en 2.72% (hy_spread), VIX moderado en 16.6 (vix), y Sahm rule en 0.13 (sahm_rule) sugieren crecimiento sin presión recesiva. Expectativas de inflación controladas en 2.25% (breakeven_5y5y) y unemployment estable en 4.3% (unemployment)."
   },
   "senales": [
     {
@@ -11,59 +11,60 @@
       "direccion": "LONG",
       "horizonte": "MENSUAL",
       "conviccion": 8,
-      "razonamiento": "SPY en 750.46 (spy) cerca de máximos históricos con VIX bajo en 16.6 (vix) y credit spreads comprimidos a 2.72% (hy_spread). Régimen Goldilocks favorece equities con crecimiento sin presión inflacionaria.",
-      "dato_clave": "vix"
+      "razonamiento": "SPY en 750.46 (spy) con VIX contenido en 16.6 (vix) y yield curve normalizada +0.9% (yield_curve). HY spreads en 2.72% (hy_spread) indican liquidez saludable. Régimen Goldilocks favorable para equities.",
+      "dato_clave": "yield_curve"
     },
     {
       "activo": "TLT",
       "direccion": "SHORT",
       "horizonte": "TRIMESTRAL",
       "conviccion": 7,
-      "razonamiento": "TLT en 85.30 (tlt) con yield 10Y en 4.48% (yield_10y_mkt). Yield curve empinada en +0.9% (yield_curve) sugiere presión al alza en rates largos por expectativas de crecimiento sostenido.",
-      "dato_clave": "yield_curve"
+      "razonamiento": "Yields 10Y en 4.48% (yield_10y_mkt) elevados vs TIPS en 2.1% (tips_yield_10y). Breakeven 5y5y en 2.25% (breakeven_5y5y) sugiere inflación controlada pero yields nominales presionados por crecimiento sólido.",
+      "dato_clave": "yield_10y_mkt"
     },
     {
       "activo": "DXY",
-      "direccion": "NEUTRAL",
+      "direccion": "LONG",
       "horizonte": "SEMANAL",
-      "conviccion": 5,
-      "razonamiento": "DXY en 99.19 (dxy) en rango neutro. EUR/USD en 1.164 (eurusd) estable. Sin presiones direccionales claras en el corto plazo con datos macro balanceados.",
-      "dato_clave": "dxy"
+      "conviccion": 6,
+      "razonamiento": "DXY en 99.19 (dxy) con USD/JPY extremo en 159.33 (usdjpy) sugiere presión alcista en USD. EUR/USD en 1.164 (eurusd) cerca de resistencias técnicas. Yields US elevados apoyan fortaleza del dólar.",
+      "dato_clave": "usdjpy"
     },
     {
       "activo": "GLD",
       "direccion": "NEUTRAL",
       "horizonte": "MENSUAL",
-      "conviccion": 6,
-      "razonamiento": "Gold en 408.49 (gold) con real yields positivos a 2.1% (tips_yield_10y) pero DXY estable. Régimen Goldilocks reduce demanda de safe haven pero real yields limitan upside.",
+      "conviccion": 5,
+      "razonamiento": "Gold en 408.49 (gold) enfrenta yields reales positivos con TIPS en 2.1% (tips_yield_10y) y DXY fuerte en 99.19 (dxy). Sin embargo, USD/JPY en niveles extremos 159.33 (usdjpy) puede generar volatilidad que beneficie oro como safe haven.",
       "dato_clave": "tips_yield_10y"
     }
   ],
-  "tesis_principal": "Estamos en un régimen Goldilocks sólido con datos frescos que confirman crecimiento sin sobrecalentamiento. La yield curve normalizada en +0.9% (yield_curve), jobless claims controlados en 215K (jobless_claims) y Sahm rule bajo en 0.13 (sahm_rule) pintan un mercado laboral saludable. La liquidez permanece abundante con VIX en 16.6 (vix) y hy spreads comprimidos a 2.72% (hy_spread), mientras que las expectativas de inflación están ancladas con breakeven 5y5y en 2.25% (breakeven_5y5y). El carry trade JPY sigue activo con USD/JPY en 159.33 (usdjpy) cerca de máximos, alimentando flujos hacia risk assets. SPY en 750.46 (spy) refleja este momentum positivo con múltiples máximos históricos.",
+  "tesis_principal": "Los mercados operan en un régimen Goldilocks sólido con yield curve normalizada en +0.9% (yield_curve), spreads de crédito contenidos en 2.72% (hy_spread) y volatilidad moderada con VIX en 16.6 (vix). El mercado laboral permanece resiliente con jobless claims en 215K (jobless_claims) y unemployment en 4.3% (unemployment), mientras la Sahm rule en 0.13 (sahm_rule) descarta riesgo recesivo inmediato. Las expectativas de inflación a largo plazo se mantienen ancladas en 2.25% (breakeven_5y5y) pese a Michigan inflation exp elevada en 4.7% (michigan_inflation_exp), sugiriendo que la Fed tiene espacio para mantener política acomodativa. El USD muestra fortaleza con DXY en 99.19 (dxy) y carry trades bajo presión con USD/JPY en 159.33 (usdjpy), nivel que históricamente ha provocado intervención del BoJ. Los yields 10Y en 4.48% (yield_10y_mkt) reflejan expectativas de crecimiento robusto más que presiones inflacionarias, creando un entorno favorable para risk-on con SPY alcanzando 750.46 (spy).",
   "invalidadores": [
-    "Spike del VIX por encima de 25 indicando stress de liquidez",
-    "Ampliación de credit spreads por encima de 400bps señalando problemas de crédito",
-    "Inversión de yield curve por debajo de -50bps indicando recesión inminente",
-    "USD/JPY por debajo de 145 sugiriendo unwind masivo de carry trades",
-    "Breakeven 5y5y por encima de 3% indicando desanclaje de expectativas inflacionarias"
+    "USD/JPY rompiendo 160 podría forzar intervención del BoJ y desestabilizar carry trades globalmente",
+    "VIX superando 20 indicaría deterioro del sentimiento y posible corrección en equities",
+    "HY spreads expandiéndose por encima de 300bps señalaría stress crediticio",
+    "Yield curve invirtiendo nuevamente por debajo de cero indicaría expectativas recesivas",
+    "Jobless claims superando 250K de manera sostenida sugeriría debilitamiento laboral"
   ],
   "alertas": [
-    "USD/JPY en 159.33 cerca de niveles de intervención históricos del BoJ",
-    "Michigan inflation expectations elevadas en 4.7% vs breakeven market-based de 2.25%",
-    "Yield 10Y en 4.48% cerca de resistencias técnicas importantes"
+    "USD/JPY en 159.33 cerca del nivel de intervención histórico del BoJ en 160",
+    "Michigan inflation expectations elevadas en 4.7% vs breakeven markets en 2.25% - divergencia significativa",
+    "Datos de inflación (CPI, PCE) con 1-2 meses de antigüedad reducen visibilidad sobre tendencias recientes"
   ],
   "datos_insuficientes": [
-    "Datos de abril para unemployment, CPI y PCE core requieren actualización con cifras de mayo",
-    "Michigan inflation expectations desactualizadas desde abril afectan análisis de sentimiento"
+    "PMI manufacturero y servicios para evaluar momentum económico actual",
+    "Fed funds futures para calibrar expectativas de política monetaria",
+    "MOVE index para volatilidad en bonos"
   ],
   "eventos_clave": [
-    "[CNBC] Stock futures little changed after S&P 500 closes at another record — confirma momentum alcista en equities con SPY en máximos",
-    "[Bloomberg] Memory Chip Frenzy Sends SK Hynix, Micron Into $1 Trillion Club — impulsa sector tech y confirma narrativa AI positiva",
-    "[CNBC] Foot Locker returns to growth but weighs on Dick's Sporting Goods — señales mixtas en retail consumer sugieren selectividad"
+    "[CNBC] S&P 500, Nasdaq futures jump as oil falls, Micron continues epic run — impulso positivo en tech sostiene rally en equities",
+    "[CNBC] Your AI agent can now trade for you on Robinhood — revolución en trading algorítmico puede incrementar volatilidad intraday",
+    "[Quartz] Space stocks surge after SpaceX IPO S-1 filing — nueva clase de activos especializados puede atraer flujos desde sectores tradicionales"
   ],
-  "confianza_general": 85,
+  "confianza_general": 80,
   "metadata": {
-    "timestamp": "2026-05-28T12:59:13.539043",
+    "timestamp": "2026-05-28T14:10:38.856155",
     "datos_usados": 24,
     "datos_totales": 25,
     "validacion_ok": true
