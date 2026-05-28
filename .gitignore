@@ -40,9 +40,11 @@ logs/
 *.log
 
 # === Data sensible / regenerable ===
-data/*.db
-data/*.db.backup*
-data/*.db.pre-*
+# macro.db is versioned for persistence across GitHub Actions runs
+# (runners are ephemeral, so SQLite must be in repo to persist between days)
+# data/*.db                # COMMENTED: now versioned
+data/*.db.backup*           # local backups remain ignored
+data/*.db.pre-*             # pre-migration backups remain ignored
 data/noticias_cache.json
 my_portfolio.json
 

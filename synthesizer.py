@@ -452,6 +452,12 @@ def correr_synthesizer(max_reintentos: int = 2) -> dict:
         "agentes_input": ["macro", "technical", "og_energy"],
     }
 
+    # Persistir convicciones a SQLite (web_exporter lee desde aqui)
+    if "convicciones" in output and output["convicciones"]:
+        print(f"\n[5/5] Persistiendo {len(output['convicciones'])} convicciones a SQLite...")
+        n = registrar_convicciones(output)
+        print(f"      Registradas: {n}/{len(output['convicciones'])}")
+
     return output
 
 

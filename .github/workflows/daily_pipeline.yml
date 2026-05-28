@@ -100,9 +100,10 @@ jobs:
           git config user.name "FearNot Pipeline Bot"
           git config user.email "actions@github.com"
 
-          # Add only data files we want to keep in version control
-          # (data/macro.db and caches are in .gitignore so they wont be added)
+          # Add data files we want to keep in version control
+          # macro.db is versioned so SQLite persists across ephemeral runners
           git add data/*.json 2>/dev/null || true
+          git add data/macro.db 2>/dev/null || true
 
           # Only commit if there are changes
           if git diff --staged --quiet; then
