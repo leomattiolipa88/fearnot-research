@@ -1,0 +1,71 @@
+{
+  "fecha": "2026-05-28",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "La yield curve está normalizada en +0.9% (yield_curve), señalando crecimiento sano. Sahm rule en 0.13 (sahm_rule) indica mercado laboral estable sin recesión. VIX contenido en 16.6 (vix) y credit spreads comprimidos a 2.72% (hy_spread) muestran liquidez abundante. Breakeven 5y5y en 2.25% (breakeven_5y5y) sugiere expectativas de inflación ancladas cerca del target de Fed."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 750.46 (spy) cerca de máximos históricos con VIX bajo en 16.6 (vix) y credit spreads comprimidos a 2.72% (hy_spread). Régimen Goldilocks favorece equities con crecimiento sin presión inflacionaria.",
+      "dato_clave": "vix"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "TLT en 85.30 (tlt) con yield 10Y en 4.48% (yield_10y_mkt). Yield curve empinada en +0.9% (yield_curve) sugiere presión al alza en rates largos por expectativas de crecimiento sostenido.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 99.19 (dxy) en rango neutro. EUR/USD en 1.164 (eurusd) estable. Sin presiones direccionales claras en el corto plazo con datos macro balanceados.",
+      "dato_clave": "dxy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Gold en 408.49 (gold) con real yields positivos a 2.1% (tips_yield_10y) pero DXY estable. Régimen Goldilocks reduce demanda de safe haven pero real yields limitan upside.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "Estamos en un régimen Goldilocks sólido con datos frescos que confirman crecimiento sin sobrecalentamiento. La yield curve normalizada en +0.9% (yield_curve), jobless claims controlados en 215K (jobless_claims) y Sahm rule bajo en 0.13 (sahm_rule) pintan un mercado laboral saludable. La liquidez permanece abundante con VIX en 16.6 (vix) y hy spreads comprimidos a 2.72% (hy_spread), mientras que las expectativas de inflación están ancladas con breakeven 5y5y en 2.25% (breakeven_5y5y). El carry trade JPY sigue activo con USD/JPY en 159.33 (usdjpy) cerca de máximos, alimentando flujos hacia risk assets. SPY en 750.46 (spy) refleja este momentum positivo con múltiples máximos históricos.",
+  "invalidadores": [
+    "Spike del VIX por encima de 25 indicando stress de liquidez",
+    "Ampliación de credit spreads por encima de 400bps señalando problemas de crédito",
+    "Inversión de yield curve por debajo de -50bps indicando recesión inminente",
+    "USD/JPY por debajo de 145 sugiriendo unwind masivo de carry trades",
+    "Breakeven 5y5y por encima de 3% indicando desanclaje de expectativas inflacionarias"
+  ],
+  "alertas": [
+    "USD/JPY en 159.33 cerca de niveles de intervención históricos del BoJ",
+    "Michigan inflation expectations elevadas en 4.7% vs breakeven market-based de 2.25%",
+    "Yield 10Y en 4.48% cerca de resistencias técnicas importantes"
+  ],
+  "datos_insuficientes": [
+    "Datos de abril para unemployment, CPI y PCE core requieren actualización con cifras de mayo",
+    "Michigan inflation expectations desactualizadas desde abril afectan análisis de sentimiento"
+  ],
+  "eventos_clave": [
+    "[CNBC] Stock futures little changed after S&P 500 closes at another record — confirma momentum alcista en equities con SPY en máximos",
+    "[Bloomberg] Memory Chip Frenzy Sends SK Hynix, Micron Into $1 Trillion Club — impulsa sector tech y confirma narrativa AI positiva",
+    "[CNBC] Foot Locker returns to growth but weighs on Dick's Sporting Goods — señales mixtas en retail consumer sugieren selectividad"
+  ],
+  "confianza_general": 85,
+  "metadata": {
+    "timestamp": "2026-05-28T12:59:13.539043",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
