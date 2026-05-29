@@ -1,0 +1,73 @@
+{
+  "fecha": "2026-05-29",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 75,
+    "razonamiento": "Curva de rendimientos normalizada en +0.89% (yield_curve), HY spreads comprimidos en 2.71% (hy_spread) indicando liquidez abundante, VIX contenido en 15.7 (vix), y unemployment estable en 4.3% (unemployment). Expectativas de inflación 5y5y ancladas en 2.24% (breakeven_5y5y) sugieren crecimiento sin presiones inflacionarias severas."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Régimen Goldilocks con SPY en 757.18 (spy), curva normalizada, credit spreads comprimidos y VIX bajo. Liquidez abundante favorece risk-on.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "Yield 10Y en 4.48% (yield_10y) con curva normalizada sugiere que los bonos largos han encontrado resistencia técnica. TLT en 85.78 (tlt) vulnerable a repricing de duration.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 99.01 (dxy) en zona neutral. EUR/USD en 1.165 (eurusd) sugiere equilibrio. USD/JPY extremo en 159.28 (usdjpy) crea volatilidad cruzada que limita direccionalidad clara del índice.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Oro en 416.25 (gold) se beneficia de TIPS yield real de 2.09% (tips_yield_10y) que sigue atractivo pero no excesivo. Tensiones geopolíticas y diversificación de monedas apoyan posición defensiva.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "Los mercados operan en régimen Goldilocks clásico: crecimiento económico estable evidenciado por jobless claims en 215K (jobless_claims) y unemployment en 4.3% (unemployment), mientras la curva normalizada en +0.89% (yield_curve) elimina señales de recesión inmediata. La liquidez permanece abundante con HY spreads comprimidos en 2.71% (hy_spread) y VIX contenido en 15.7 (vix), creando ambiente propicio para risk assets. Las expectativas inflacionarias permanecen ancladas con breakeven 5y5y en 2.24% (breakeven_5y5y), aunque Michigan expectations en 4.7% (michigan_inflation_exp) sugieren vigilancia en el corto plazo. El principal punto de tensión emerge del carry trade con USD/JPY en 159.28 (usdjpy), nivel que históricamente ha provocado intervenciones del BoJ y descompresión de posiciones apalancadas. Esta configuración favorece exposición táctica a equities mientras se mantiene cobertura en oro ante potential tail risks geopolíticos.",
+  "invalidadores": [
+    "USD/JPY por encima de 160 desencadenando intervención del BoJ y unwinding masivo de carry trades",
+    "HY spreads expandiéndose por encima de 350-400 bps indicando stress crediticio",
+    "VIX rompiendo por encima de 25 en sesiones consecutivas",
+    "Jobless claims saltando por encima de 350K sugiriendo deterioro del mercado laboral",
+    "Breakeven 5y5y por encima de 2.8% indicando desanclaje de expectativas inflacionarias"
+  ],
+  "alertas": [
+    "USD/JPY en 159.28 está en zona de máximo riesgo histórico para intervención del BoJ",
+    "Michigan inflation expectations en 4.7% duplican el target de la Fed, requiere monitoreo",
+    "Datos de abril para CPI, PCE y unemployment crean lag temporal en el análisis de tendencias recientes"
+  ],
+  "datos_insuficientes": [
+    "Fed funds rate actual para calibrar posición en la curva de política",
+    "Datos de empleo más recientes que abril para confirmar fortaleza del mercado laboral",
+    "Spreads de credit investment grade para complementar análisis de liquidez"
+  ],
+  "eventos_clave": [
+    "[WSJ] Stock Market Today: Dow Futures Slip, Oil Rises as Mideast Hostilities Flare — tensión geopolítica apoya oro y crea volatilidad en commodities",
+    "[MarketWatch] Dow, S&P 500 and Nasdaq close at record highs — confirma momentum alcista en equities durante régimen Goldilocks",
+    "[Bloomberg] Caesars Entertainment Agrees to $5.7 Billion Fertitta Takeover — M&A activity señala confianza corporativa y disponibilidad de financiamiento",
+    "[Investor's Business Daily] Fed Inflation Data Due — mercados anticipan datos que podrían impactar expectativas de política monetaria"
+  ],
+  "confianza_general": 75,
+  "metadata": {
+    "timestamp": "2026-05-29T13:42:49.518370",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

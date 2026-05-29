@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-05-29",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 72,
+    "razonamiento": "La curva de futuros WTI muestra backwardation de $7.42 en el spread calendar 6M, señal física inequívoca de tightness real en el mercado spot. Brent en $90.94 y WTI en $87.38 son niveles elevados históricamente. Sin embargo, hay una contradicción importante: crude inventories en 441,686 Kbbl no son un nivel de emergencia (no tengo el 5-year average exacto para contextualizar, pero el nivel absoluto no es alarmante per se). La backwardation severa de $7.42 se explica mejor por la crisis geopolítica en Hormuz que por un verdadero drawdown secular de inventarios. El Estrecho de Hormuz tiene ~20% del tránsito global de oil/gas, y su restricción parcial o amenaza de cierre justifica el premium spot masivo. La utilización de refinerías al 94.5% confirma demanda activa de crudo. El setup es backwardated pero con un asterisco: si Hormuz se reabre, la backwardation colapsa. Confianza moderada por la incertidumbre geopolítica binaria."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 55,
+    "razonamiento": "NatGas en $3.34/MMBtu. NatGas storage en 2,483 Bcf al 22-May. No tengo el 5-year average ni el year-ago comparable exacto para esta fecha para contextualizar si estamos above/below. El precio de $3.34 es un nivel moderado, ni en zona de panic (sub-$2) ni en zona de squeeze (sobre $5). La crisis de Hormuz afecta principalmente oil y LNG de Medio Oriente, no directamente el Nat Gas doméstico USA. En régimen Goldilocks con demanda industrial estable, el balance parece neutro. Clasifico BALANCED con confianza baja por ausencia de comparativas 5-year para storage. Necesito más data para ser más preciso."
+  },
+  "regimen_lpg": {
+    "clasificacion": "TIGHT",
+    "confianza": 45,
+    "razonamiento": "DATA LIMITADA - razonamiento inferencial, no directo. Propane inventory USA en 81,185 Kbbl al 22-May. No tengo Saudi CP para propano/butano, no tengo freight rates VLGC, no tengo FEI Asia para arbitraje. Lo que sí puedo inferir: (1) El Estrecho de Hormuz es crítico para exportaciones LPG de Arabia Saudita hacia Asia - si el estrecho está bajo presión, Qatar y Saudi LPG exports están comprometidos; (2) Kuwait fue atacada con misiles/drones según noticias - Kuwait es exportador LPG relevante; (3) En Goldilocks, demanda petroquímica asiática de propano/butano como feedstock es sostenida. La combinación de disrupción de oferta del Golfo + demanda petroquímica sostenida sugiere TIGHT, pero clasifico con confianza baja por ausencia de datos físicos directos de LPG. Reconozco explícitamente que esta clasificación es la más especulativa de las tres."
+  },
+  "tesis_principal": "El mercado energético opera bajo un régimen de tightness geopolítica superpuesto sobre un fondo macro Goldilocks. La crisis de Hormuz es el event risk dominante de la semana: el Estrecho concentra ~20% del tránsito global de oil/gas, y la escalada US-Iran (sanciones a la Strait Authority, ataques mutuos, Iran imponiendo tolls de $2M por vessel) ha creado una prima de riesgo de suministro masiva en el spot. La backwardation de $7.42 en WTI 6M no refleja solo fundamentals físicos internos de USA - refleja terror de suministro en el mercado de papel. El crack 3-2-1 en $45.78 es MUY FUERTE, coherente con refinerías corriendo al 94.5% de utilización en plena temporada de driving season (gasolina a $2.99/gal RBOB, heating oil a $3.54). Estos spreads de refinación no mienten: hay demanda real de productos.\n\nLa gran contradicción del mercado es la siguiente: los precios de oil cayeron -5.55% en WTI el miércoles ante rumores de acuerdo Hormuz, pero la situación sigue siendo binaria y volátil. Trump rechazó el acuerdo, hubo nuevos strikes, negociaciones deadlocked según fuentes. Esto crea un setup asimétrico: el mercado en este momento descuenta parcialmente una reapertura que todavía no está confirmada. Si la reapertura no materializa, hay upside en WTI/Brent. Si se confirma, el colapso de la backwardation sería brutal.\n\nEn el contexto Goldilocks macro (HY spreads comprimidos, VIX 15.7, unemployment estable, yield curve normalizada), la demanda energética subyacente es sólida. Las equities energy cotizan en momentum positivo (USO +90.4% momentum 12m, sobre 200DMA en 42%). El risk aquí es geopolítico puro, no recesivo. Las señales técnicas soportan LONG energy, pero la sobreextensión de USO (+42% sobre 200DMA) requiere position sizing disciplinado.",
+  "senales": [
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "XOM $145.50. Integrado verticalmente: se beneficia de precios oil altos Y crack spreads elevados simultáneamente. En régimen Goldilocks con oil backwardated y refining margins MUY FUERTE, XOM captura valor en toda la cadena. Técnico favorable (USO sobre 200DMA, sector en momentum). Mayor capitalización = más líquido en contexto de incertidumbre geopolítica."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "CVX $181.80. Integrada similar a XOM. Exposición a precios altos de oil y gas upstream, más el beneficio de márgenes refining elevados. En Goldilocks + backwardation + crack fuerte, los integrados tienen setup atractivo. Prefiero CVX/XOM sobre E&P puras por diversificación de captura de valor."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "OXY $56.54. E&P pura con alta exposición al precio WTI - beta alto al upside en escenario de Hormuz sin resolución. Mayor leverage operativo que XOM/CVX. Downside si hay deal Iran más pronunciado que integradas. Convicción moderada por el riesgo binario geopolítico siendo amplificado en E&P puras."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "EOG $133.67. E&P Permian de alta calidad, costo de producción bajo, beneficiada por WTI elevado. En Goldilocks macro, la economía USA soporta demanda doméstica. Similar razonamiento a OXY pero con mejor calidad de balance y menor leveraje. Misma exposición al riesgo Hormuz-resolution como invalidador."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "VIST $72.48. E&P argentina Vaca Muerta. Exposición a precio WTI internacional pero operación no-Hormuz. En Goldilocks global y precios oil elevados, VIST tiene setup positivo. La noticia de Venezuela (stand-down en investigaciones Trump) podría señalar mayor pragmatismo de Trump con LatAm oil producers, potencialmente positivo para contexto regional. Riesgo país Argentina sigue siendo factor."
+    },
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "VLO $243.11. Refinería pura - es el activo más directamente beneficiado por crack 3-2-1 en $45.78 MUY FUERTE. Refinery utilization al 94.5% demuestra que la capacidad está operativa y maximizando throughput. Driving season activa. En Goldilocks la demanda de productos refinados es sostenida. VLO es el mejor vehículo para capturar el spread de refinación excepcional actual. Este es el setup más limpio del sector: no requiere que el precio del crudo suba, solo que el crack spread se mantenga elevado."
+    }
+  ],
+  "eventos_clave": [
+    "Crisis Hormuz aguda: US sanciona la Strait of Hormuz Authority de Iran, Iran impone tolls de $2M por vessel, ataques mutuos US-Iran en curso. Negociaciones reportadas como deadlocked en issues fundamentales según fuentes independientes, mientras media mainstream reporta progreso. Esto es el evento dominante.",
+    "Crude oil cae -5.55% el miércoles (27-May) por rumores de deal Hormuz que Trump luego rechazó - mercado extremadamente sensible y binario al newsflow de las negociaciones. Alta volatilidad intradía esperada.",
+    "Kuwait atacada con misiles y drones en contexto de ceasefire frágil - el conflicto se está expandiendo regionalmente más allá de Iran/US, con implicaciones para LPG y oil de la región del Golfo.",
+    "Netherlands despliega minesweeper para contingency planning Hormuz - señal de que aliados OTAN están preparando operaciones de escolta en el estrecho, lo que podría eventualmente facilitar flujos pero también indica que la situación es suficientemente seria para respuesta militar.",
+    "Refinery utilization USA al 94.5% con crack spread 3-2-1 en $45.78 MUY FUERTE y driving season activa - fundamentals físicos domésticos son sólidos independientemente de la resolución geopolítica."
+  ],
+  "contradicciones_observadas": "La contradicción principal es entre el nivel de backwardation ($7.42 a 6M, señal de tightness extrema) y los crude inventories de 441,686 Kbbl (nivel que no parece de emergencia sin el contexto 5-year, pero que tampoco está en zona de alerta crítica de por sí). Esto sugiere que la backwardation es predominantemente geopolítica/especulativa (prima por riesgo de disrupción futura) más que un reflejo de un mercado físico USA ya desprovisto de crudo. Segunda contradicción: las noticias muestran dos narrativas opuestas simultáneas - media mainstream habla de progreso en negociaciones mientras fuentes como Naked Capitalism reportan negociaciones deadlocked. El mercado el miércoles creyó el happy talk (-5.55% WTI) pero Trump lo desmintió. Esto crea un mercado que está siendo manipulado por headline risk y puede revertir violentamente. Tercera contradicción: crack spreads MUY FUERTES + alta utilización refinery son señal de demanda robusta de productos, pero si Hormuz se reabre, el crudo barato podría AMPLIAR los crack spreads temporalmente (materia prima más barata, productos sin cambio) antes de normalizar - lo que favorece refiners sobre upstream en un escenario de resolución.",
+  "invalidadores": [
+    "Acuerdo formal y verificable US-Iran que reabre Hormuz: colapsaría la backwardation y el premium geopolítico en WTI/Brent (potencial -$10 a -$15 en WTI), invalidando LONGs upstream. VLO y CRAK serían más resistentes.",
+    "Escalada mayor: ataque a infraestructura oil crítica de Arabia Saudita, Qatar o EAU - invalidaría análisis de balance físico actual y requeriría reevaluación urgente con nuevos inventarios y curva. En este caso el upside en precios sería explosivo pero impredecible.",
+    "Deterioro macro significativo: si el régimen Goldilocks se quiebra (spike en HY spreads, VIX sobre 25, deterioro jobless claims) la demanda energética colapsa y las señales LONG energía se invalidan. Actualmente VIX 15.7 y HY 2.71% están lejos de zona de alarma, pero hay que monitorearlo."
+  ],
+  "data_gaps": "Datos críticos ausentes que afectan la calidad del análisis: (1) Comparativas 5-year average para crude inventory (441,686 Kbbl - no sé si estamos over/under de forma significativa), gasoline (211,591), distillates (100,799) y natgas storage (2,483 Bcf) - sin esto no puedo determinar si el mercado físico es realmente tight o solo artificialmente backwardated por geopolítica; (2) Saudi Aramco Contract Price (CP) para propano y butano - crítico para LPG; (3) VLGC freight rates (VLGC spot day rates) - indicador físico de demanda LPG trading en Medio Oriente-Asia; (4) FEI (Far East Index) precios propano/butano Asia - para determinar el arbitraje LPG; (5) Datos de flujos de barcos a través de Hormuz en tiempo real - cuántos barcos están realmente pasando vs. capacidad normal; (6) Estructura completa de la curva de futuros (solo tengo el spread 6M, no el contango/backwardation por cada mes); (7) Producción OPEC actual breakdown por país para mayo 2026 vs. cuotas acordadas; (8) Crude import data USA por país de origen para detectar si las disrupciones de Golfo ya están en los datos físicos americanos.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'NATGAS'",
+    "Senal 4: activo invalido 'GASOLINA'",
+    "Senal 5: activo invalido 'HEATING_OIL'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'CRAK'"
+  ],
+  "metadata": {
+    "timestamp": "2026-05-29T13:45:09.206241",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
