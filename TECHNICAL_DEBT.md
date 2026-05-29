@@ -1,5 +1,26 @@
 # FearNot Research — Technical Debt
 
+## Advanced Performance Metrics (deferred until N≥10 convictions evaluated)
+
+### Risk-adjusted ratios
+- **Priority:** MEDIUM (deferred until ~10 closed convictions)
+- **Where:** tracker.py:calcular_performance_convicciones() + web_exporter export
+- **Add:** Sharpe ratio, Sortino ratio, Calmar ratio, max drawdown.
+- **Rationale:** With N<10, std is unstable and Sharpe becomes noise with appearance of a number. Code can be added now with conditional rendering ("Insufficient data, N=X, need ≥10").
+- **Discovered:** 2026-05-29 (Track Record UI build)
+
+### Monte Carlo + statistical distributions
+- **Priority:** MEDIUM-HIGH (intellectually valuable, deferred until ~20 convictions)
+- **Goal:** Mix statistics + finance + own system. Practical skills cross-applicable for BlackToro/AGM career.
+- **Add:**
+  1. Distribution fitting on conviction returns (normal? skewed? fat tails?)
+  2. Monte Carlo simulation of system returns to estimate confidence intervals on Sharpe, drawdown, etc.
+  3. Bootstrap resampling for confidence intervals on win rate
+  4. Distribution of MFE vs MAE to characterize trade shapes
+- **Why useful:** Allows statements like "with 95% confidence, system Sharpe is between X and Y" instead of single point estimates that lie when N is small.
+- **Discovered:** 2026-05-29 (Track Record UI build)
+
+
 ## Track Record Visualization (added 2026-05-27)
 
 ### web_exporter filters convictions to last 4 weeks - hides historical track record

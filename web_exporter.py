@@ -91,6 +91,91 @@ def cargar_convicciones_recientes() -> list:
     return convicciones
 
 
+def cargar_track_record() -> list:
+    """Carga TODAS las convicciones cerradas (evaluado=1), sin filtro de fecha.
+    Esto alimenta la seccion historica del Track Record en la web."""
+    convicciones = []
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        conn.row_factory = sqlite3.Row
+        rows = conn.execute("""
+            SELECT * FROM convicciones
+            WHERE evaluado = 1
+            ORDER BY fecha DESC
+        """).fetchall()
+
+        for row in rows:
+            conv = dict(row)
+            # Parsear campos JSON (ignorar si fallan)
+            for json_field, output_field in [
+                ("thesis_json", "thesis"),
+                ("fundamental_json", "fundamental_case"),
+                ("invalidators_json", "invalidators"),
+            ]:
+                try:
+                    conv[output_field] = json.loads(conv.pop(json_field, "[]") or "[]")
+                except (json.JSONDecodeError, TypeError):
+                    conv[output_field] = []
+            try:
+                conv["agents_aligned"] = json.loads(conv.pop("agents_aligned", "[]") or "[]")
+            except (json.JSONDecodeError, TypeError):
+                conv["agents_aligned"] = []
+            convicciones.append(conv)
+
+        conn.close()
+    except Exception as e:
+        print(f"   Error cargando track record: {e}")
+
+    return convicciones
+
+
+def cargar_convicciones_activas() -> list:
+    """Carga convicciones NO evaluadas (evaluado=0), sin filtro de fecha.
+    Estas son convicciones publicadas que aun no vencieron - 'pending'."""
+    convicciones = []
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        conn.row_factory = sqlite3.Row
+        rows = conn.execute("""
+            SELECT * FROM convicciones
+            WHERE evaluado = 0
+            ORDER BY fecha DESC
+        """).fetchall()
+
+        for row in rows:
+            conv = dict(row)
+            for json_field, output_field in [
+                ("thesis_json", "thesis"),
+                ("fundamental_json", "fundamental_case"),
+                ("invalidators_json", "invalidators"),
+            ]:
+                try:
+                    conv[output_field] = json.loads(conv.pop(json_field, "[]") or "[]")
+                except (json.JSONDecodeError, TypeError):
+                    conv[output_field] = []
+            try:
+                conv["agents_aligned"] = json.loads(conv.pop("agents_aligned", "[]") or "[]")
+            except (json.JSONDecodeError, TypeError):
+                conv["agents_aligned"] = []
+            convicciones.append(conv)
+
+        conn.close()
+    except Exception as e:
+        print(f"   Error cargando convicciones activas: {e}")
+
+    return convicciones
+
+
+def construir_performance_summary() -> dict:
+    """Llama a tracker.calcular_performance_convicciones() y empaqueta para el JSON."""
+    try:
+        from tracker import calcular_performance_convicciones
+        return calcular_performance_convicciones(DB_PATH)
+    except Exception as e:
+        print(f"   Error calculando performance summary: {e}")
+        return {"n_evaluadas": 0, "error": str(e)}
+
+
 def construir_senales_consensuadas(tesis_macro: dict, tesis_tecnica: dict) -> list:
     """Combina senales de macro y tecnico, marcando consenso."""
     senales_dict = {}
@@ -235,9 +320,22 @@ def exportar():
     convicciones = cargar_convicciones_recientes()
     print(f"      {len(convicciones)} convicciones activas")
 
-    print("\n[6/6] Cargando indicadores clave...")
+    print("\n[6/9] Cargando indicadores clave...")
     indicadores = cargar_indicadores_clave()
     print(f"      {len(indicadores)} indicadores")
+
+    print("\n[7/9] Cargando track record (convicciones cerradas)...")
+    track_record = cargar_track_record()
+    print(f"      {len(track_record)} convicciones evaluadas en histórico")
+
+    print("\n[8/9] Cargando convicciones pending (no evaluadas)...")
+    convicciones_pending = cargar_convicciones_activas()
+    print(f"      {len(convicciones_pending)} convicciones pending")
+
+    print("\n[9/9] Calculando performance summary...")
+    performance_summary = construir_performance_summary()
+    print(f"      n_evaluadas: {performance_summary.get('n_evaluadas', 0)} | "
+          f"win_rate: {performance_summary.get('win_rate', 'N/A')}%")
 
     regimen = tesis_macro.get("regimen", {})
 
@@ -264,6 +362,10 @@ def exportar():
         "confianza_consolidada": calcular_confianza_consolidada(
             senales, regimen.get("confianza", 50)
         ),
+        # ----- Track Record (added 2026-05-29) -----
+        "track_record": track_record,
+        "convicciones_pending": convicciones_pending,
+        "performance_summary": performance_summary,
     }
 
     Path("data").mkdir(parents=True, exist_ok=True)
@@ -277,7 +379,9 @@ def exportar():
         print(f"   Regimen natgas: {energy_pulse['regimen_natgas'].get('clasificacion', 'N/A')}")
         print(f"   Regimen lpg: {energy_pulse['regimen_lpg'].get('clasificacion', 'N/A')}")
     print(f"   Senales: {len(senales)}")
-    print(f"   Convicciones: {len(convicciones)}")
+    print(f"   Convicciones (recientes): {len(convicciones)}")
+    print(f"   Track record (cerradas): {len(track_record)}")
+    print(f"   Pending (abiertas): {len(convicciones_pending)}")
     print(f"   Confianza consolidada: {web_data['confianza_consolidada']}%")
 
 
