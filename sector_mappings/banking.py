@@ -104,13 +104,13 @@ BANKING_SPECIFIC_METRICS = {
     "efficiency_ratio": {
         "description": "Efficiency Ratio = gasto no-financiero / (NII + ingreso no-financiero). Menor = mejor.",
         "formula": "noninterest_expense / (net_interest_income + noninterest_income)",
-        "applies_to": ["JPM", "BAC", "WFC", "C", "GS", "MS", "NU"],
+        "applies_to": ["JPM", "BAC", "WFC", "C", "GS", "MS"],  # NU no: noninterest no comparable en IFRS (#15)
         "healthy_range": {
-            "universal_banks": (0.55, 0.65),    # JPM ~55, BAC ~65
-            "digital_em": (0.25, 0.45),         # NU Q3'25 ~27.7%
+            "universal_banks": (0.50, 0.70),    # recalibrado vs FY2024 (JPM 51.7%, WFC/C ~66%)
+            "investment_banks": (0.60, 0.75),   # GS 63%, MS 71% (estructura i-bank)
         },
-        "notes": "PENDIENTE: requiere noninterest_income y noninterest_expense, aun no extraidos (parte del 2do batch de conceptos).",
-        "calculable_from_xbrl": False,
+        "notes": "Calculable para 6 bancos US. Verificado FY2024: JPM 51.7%, BAC/GS 63%, WFC/C ~66%, MS 71%. NU not_found (#15).",
+        "calculable_from_xbrl": True,
     },
     "rotce": {
         "description": "Return on Tangible Common Equity = net income / avg tangible common equity. Reemplaza ROIC en banca.",

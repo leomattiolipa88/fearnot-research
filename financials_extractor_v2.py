@@ -298,6 +298,8 @@ CONCEPTOS_ESTANDAR = [
     # Banking - income statement (added 2026-05-30, Phase 2 nucleo)
     "net_interest_income",
     "provision_for_credit_losses",
+    "noninterest_income",
+    "noninterest_expense",
     # Income Statement - Tech/SaaS relevant (added May 2026)
     "research_and_development",
     "stock_based_compensation",

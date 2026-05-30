@@ -380,6 +380,26 @@ GAAP_TAXONOMY = {
         },
     },
 
+    "noninterest_income": {
+        "description": "Noninterest income (Banks). TODO ingreso no-financiero: fees+trading+comisiones. US-GAAP only; NU (IFRS) no tiene equivalente directo (ver LIMITATIONS #15).",
+        "names": [],
+        "sector_overrides": {
+            "bank": [
+                "NoninterestIncome",  # 6/6 universal US-GAAP. Verificado FY2024 (JPM 85, MS 53, BAC 50, GS 46, WFC 35, C 27).
+            ],
+        },
+    },
+
+    "noninterest_expense": {
+        "description": "Noninterest expense (Banks). Gastos operativos sin costo de intereses. US-GAAP only; NU no comparable (LIMITATIONS #15).",
+        "names": [],
+        "sector_overrides": {
+            "bank": [
+                "NoninterestExpense",  # 6/6 universal US-GAAP. Verificado FY2024 (JPM 92, BAC 67, WFC/C ~54, MS 44, GS 34).
+            ],
+        },
+    },
+
 }
 
 

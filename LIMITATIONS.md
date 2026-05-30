@@ -176,6 +176,20 @@ Each limitation entry includes:
 
 ---
 
+### 15. NU — Noninterest income/expense not comparable under IFRS
+
+- **Affects:** NU (Nu Holdings), and future IFRS-filer banks.
+- **Concepts:** `noninterest_income`, `noninterest_expense`
+- **Root cause:** US-GAAP banks report aggregate `NoninterestIncome` (all non-interest revenue: fees + trading + commissions + investments) and `NoninterestExpense`. IFRS has no equivalent aggregate. NU exposes `FeeAndCommissionIncome` ($1.9B FY2024) — a sub-component, NOT the total — and `OperatingExpense` ($2.5B) which uses a different scope than the US-GAAP noninterest definition.
+- **Workaround:** Extractor returns `not_found` for NU on both concepts. Forcing FeeAndCommissionIncome as noninterest_income would inflate efficiency_ratio (smaller denominator) and produce a false value inconsistent with NU IR reported efficiency (~27.7% Q3'25).
+- **Impact:** `efficiency_ratio` calculable for 6 US banks (JPM 51.7%, BAC/GS 63%, WFC/C ~66%, MS 71% FY2024), NOT for NU.
+- **Future resolution path:** Parse NU 20-F income statement breakdown directly, or build IFRS-specific efficiency proxy with documented non-comparability.
+- **Priority:** Medium. NU efficiency is a thesis driver for the digital bank.
+- **Validation:** Empirical verification via companyfacts API May 30, 2026.
+- **Discovered:** May 30, 2026 (Banking Phase 2, noninterest batch)
+
+
+
 ## Summary Table
 
 | # | Sector | Concept | Affects | Severity | Status / Workaround |
@@ -186,7 +200,7 @@ Each limitation entry includes:
 | 4 | Tech | NDR, ARR | All SaaS | High | Out of scope (MD&A only) |
 | 5 | Energy | operating_income exact | XOM (likely others) | Medium | Approximation with bias flag |
 | 6 | Energy | All concepts | VIST | High | IFRS support needed |
-| 7 | Banking | CECL provision | JPM, BAC | Medium | Fallback chain in banking.py (pending Phase 2) |
+| 7 | Banking | CECL provision | JPM, BAC | RESOLVED | Phase 2 - verified FY2024, both CECL tags wired May 30 |
 | 8 | Banking | IFRS dispatch | NU | RESOLVED | Phase 1 complete - May 21, 2026 |
 | 9 | Banking | loans_held_for_investment | WFC, GS | Medium | Accept not_found; LDR not calculable |
 | 10 | Banking | provisions, G&A, depreciation (FY24) | NU | High | Parse 20-F notes (pending) |
@@ -194,6 +208,7 @@ Each limitation entry includes:
 | 12 | Banking | fee_and_commission_income | All US banks | Low | Use NoninterestIncome as proxy |
 | 13 | Utilities | Adjusted EBITDA | VST | High | Out of scope (non-GAAP) |
 | 14 | Cross-cutting | CET1, Tier 1 | All banks | Medium | Parse text-blocks or external data |
+| 15 | Banking | noninterest income/expense | NU | Medium | Accept not_found; efficiency_ratio not calculable for NU |
 
 ---
 

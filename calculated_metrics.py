@@ -208,3 +208,26 @@ def calcular_cost_of_risk(provision_for_credit_losses, loans_held_for_investment
         "value": provision_for_credit_losses / loans_held_for_investment,
         "quality": "calculated_from_provisions_and_loans"
     }
+
+
+def calcular_efficiency_ratio(noninterest_expense, net_interest_income, noninterest_income) -> dict:
+    """
+    Efficiency Ratio = gasto no-financiero / (NII + ingreso no-financiero).
+    Banking-specific. MENOR es mejor (cuanto gasta el banco por dolar de ingreso).
+    Aplica a bancos US. NU no calculable: noninterest no comparable en IFRS (LIMITATIONS #15).
+    Args:
+        noninterest_expense: en USD
+        net_interest_income: en USD
+        noninterest_income: en USD
+    Returns:
+        dict con value (ratio) y quality flag. value = None si falta input.
+    """
+    if noninterest_expense is None or net_interest_income is None or noninterest_income is None:
+        return {"value": None, "quality": "missing_inputs"}
+    ingreso_total = net_interest_income + noninterest_income
+    if ingreso_total == 0:
+        return {"value": None, "quality": "missing_inputs"}
+    return {
+        "value": noninterest_expense / ingreso_total,
+        "quality": "calculated_from_noninterest_expense_and_total_revenue"
+    }

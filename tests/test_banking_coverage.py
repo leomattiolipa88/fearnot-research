@@ -30,16 +30,17 @@ from sector_router import get_names_for_concept
 from ifrs_taxonomy import is_ifrs_filer, get_ifrs_names_for_concept
 
 BANCOS = ["JPM", "BAC", "WFC", "C", "GS", "MS", "NU"]
-CONCEPTOS = ["net_interest_income", "deposits", "loans_held_for_investment", "provision_for_credit_losses"]
+CONCEPTOS = ["net_interest_income", "deposits", "loans_held_for_investment", "provision_for_credit_losses", "noninterest_income", "noninterest_expense"]
 
 # not_found ESPERADO a nivel routing (solo el filer quirk de NU;
 # a nivel routing WFC/GS SI resuelven el tag).
 ESPERADO_ROUTING = {
-    ("NU", "net_interest_income"),  # ni siquiera tiene tag (filer quirk IFRS)
+    ("NU", "net_interest_income"),       # filer quirk: ni siquiera tiene tag IFRS
+    ("NU", "noninterest_income"),        # IFRS no tiene noninterest agregado (LIMITATIONS #15)
+    ("NU", "noninterest_expense"),       # IFRS no tiene noninterest agregado (LIMITATIONS #15)
 }
 
 # Conceptos que SI resuelven tag en routing pero cuyo tag NO tiene valor en el FY actual.
-# No son "not_found" (el tag existe) ni "OK" pleno (el dato no fluye). Estado honesto aparte.
 TAG_SIN_VALOR_ACTUAL = {
     ("NU", "provision_for_credit_losses"),  # tag FY2023 presente, FY2024 ausente (LIMITATIONS #10)
 }
@@ -50,6 +51,8 @@ ESPERADO_LIVE = {
     ("GS",  "loans_held_for_investment"),  # LIMITATIONS #9
     ("NU",  "net_interest_income"),        # filer quirk IFRS
     ("NU",  "provision_for_credit_losses"), # FY2024 not_found (LIMITATIONS #10)
+    ("NU",  "noninterest_income"),          # IFRS no comparable (LIMITATIONS #15)
+    ("NU",  "noninterest_expense"),         # IFRS no comparable (LIMITATIONS #15)
 }
 
 
@@ -72,9 +75,7 @@ def test_routing():
         for concepto in CONCEPTOS:
             tags = _tags_para(banco, concepto)
             tag = tags[0] if tags else None
-            if tag and (banco, concepto) in TAG_SIN_VALOR_ACTUAL:
-                estado = "OK (sin valor FY actual)"; ok += 1; tag_str = tag[:36]
-            elif tag:
+            if tag:
                 estado = "OK"; ok += 1; tag_str = tag[:36]
             elif (banco, concepto) in ESPERADO_ROUTING:
                 estado = "-- esperado"; esperados += 1; tag_str = "not_found (documentado)"
