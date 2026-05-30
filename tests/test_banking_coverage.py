@@ -11,8 +11,8 @@ Dos modos:
   python3 tests/test_banking_coverage.py --live     -> Test A + Test B (descarga SEC, ~1-2 min)
 
 Banca verificada empiricamente FY2024 (2026-05-30):
-  - 18 valores reales, 3 not_found esperados, 0 problemas.
-  - not_found esperados: WFC/GS loans (LIMITATIONS #9), NU NII (filer quirk IFRS).
+  - 4 conceptos x 7 bancos. not_found esperados:
+    WFC/GS loans (LIMITATIONS #9), NU NII y NU provisions (filer quirk + #10).
 
 Fuente de los conceptos: gaap_taxonomy.py (sector_overrides "bank")
                          + ifrs_taxonomy.py (NU, dispatch IFRS).
@@ -30,12 +30,18 @@ from sector_router import get_names_for_concept
 from ifrs_taxonomy import is_ifrs_filer, get_ifrs_names_for_concept
 
 BANCOS = ["JPM", "BAC", "WFC", "C", "GS", "MS", "NU"]
-CONCEPTOS = ["net_interest_income", "deposits", "loans_held_for_investment"]
+CONCEPTOS = ["net_interest_income", "deposits", "loans_held_for_investment", "provision_for_credit_losses"]
 
 # not_found ESPERADO a nivel routing (solo el filer quirk de NU;
 # a nivel routing WFC/GS SI resuelven el tag).
 ESPERADO_ROUTING = {
-    ("NU", "net_interest_income"),
+    ("NU", "net_interest_income"),  # ni siquiera tiene tag (filer quirk IFRS)
+}
+
+# Conceptos que SI resuelven tag en routing pero cuyo tag NO tiene valor en el FY actual.
+# No son "not_found" (el tag existe) ni "OK" pleno (el dato no fluye). Estado honesto aparte.
+TAG_SIN_VALOR_ACTUAL = {
+    ("NU", "provision_for_credit_losses"),  # tag FY2023 presente, FY2024 ausente (LIMITATIONS #10)
 }
 
 # not_found ESPERADO a nivel dato real (lo que el test live debe confirmar).
@@ -43,6 +49,7 @@ ESPERADO_LIVE = {
     ("WFC", "loans_held_for_investment"),  # LIMITATIONS #9
     ("GS",  "loans_held_for_investment"),  # LIMITATIONS #9
     ("NU",  "net_interest_income"),        # filer quirk IFRS
+    ("NU",  "provision_for_credit_losses"), # FY2024 not_found (LIMITATIONS #10)
 }
 
 
@@ -65,7 +72,9 @@ def test_routing():
         for concepto in CONCEPTOS:
             tags = _tags_para(banco, concepto)
             tag = tags[0] if tags else None
-            if tag:
+            if tag and (banco, concepto) in TAG_SIN_VALOR_ACTUAL:
+                estado = "OK (sin valor FY actual)"; ok += 1; tag_str = tag[:36]
+            elif tag:
                 estado = "OK"; ok += 1; tag_str = tag[:36]
             elif (banco, concepto) in ESPERADO_ROUTING:
                 estado = "-- esperado"; esperados += 1; tag_str = "not_found (documentado)"

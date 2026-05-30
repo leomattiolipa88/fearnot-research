@@ -366,6 +366,20 @@ GAAP_TAXONOMY = {
         },
     },
 
+    "provision_for_credit_losses": {
+        "description": "Provision for credit losses (CECL). Gasto forward-looking, NO charge-offs realizados (LIMITATIONS pitfall #1).",
+        "names": [],  # No aplica a no-bancarias
+        "sector_overrides": {
+            "bank": [
+                # Orden verificado empiricamente contra SEC FY2024 (2026-05-30).
+                # 'AndOtherLosses' primero: es el total para JPM(10.68), WFC(4.33), GS(1.35).
+                "ProvisionForLoanLeaseAndOtherLosses",
+                # Segundo: usado por C(9.73), BAC(5.93), MS(0.15).
+                "FinancingReceivableExcludingAccruedInterestCreditLossExpenseReversal",
+            ],
+        },
+    },
+
 }
 
 
