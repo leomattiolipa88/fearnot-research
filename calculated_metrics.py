@@ -122,3 +122,89 @@ def calcular_total_liabilities(total_assets: float, stockholders_equity: float) 
         "value": total_assets - stockholders_equity,
         "quality": "calculated_from_assets_minus_equity"
     }
+
+
+def calcular_loan_to_deposit(loans_held_for_investment, deposits) -> dict:
+    """
+    Loan-to-Deposit Ratio = prestamos / depositos.
+    Banking-specific. Mide cuanto del funding (depositos) esta prestado.
+    WFC/GS no calculable (loans not_found en XBRL, LIMITATIONS #9).
+    Args:
+        loans_held_for_investment: en USD
+        deposits: en USD
+    Returns:
+        dict con value (ratio) y quality flag. value = None si falta input.
+    """
+    if loans_held_for_investment is None or deposits is None:
+        return {"value": None, "quality": "missing_inputs"}
+    if deposits == 0:
+        return {"value": None, "quality": "missing_inputs"}
+    return {
+        "value": loans_held_for_investment / deposits,
+        "quality": "calculated_from_loans_and_deposits"
+    }
+
+
+def calcular_cost_of_risk(provision_for_credit_losses, loans_held_for_investment) -> dict:
+    """
+    Cost of Risk = provisiones / prestamos.
+    Banking-specific. Proxy del riesgo crediticio del ciclo de credito.
+    Provisiones son forward-looking (CECL), NO charge-offs realizados
+    (LIMITATIONS pitfall #1). NU no calculable FY2024 (provisions not_found, #10).
+    Args:
+        provision_for_credit_losses: en USD
+        loans_held_for_investment: en USD
+    Returns:
+        dict con value (ratio) y quality flag. value = None si falta input.
+    """
+    if provision_for_credit_losses is None or loans_held_for_investment is None:
+        return {"value": None, "quality": "missing_inputs"}
+    if loans_held_for_investment == 0:
+        return {"value": None, "quality": "missing_inputs"}
+    return {
+        "value": provision_for_credit_losses / loans_held_for_investment,
+        "quality": "calculated_from_provisions_and_loans"
+    }
+
+
+def calcular_loan_to_deposit(loans_held_for_investment, deposits) -> dict:
+    """
+    Loan-to-Deposit Ratio = prestamos / depositos.
+    Banking-specific. Mide cuanto del funding (depositos) esta prestado.
+    WFC/GS no calculable (loans not_found en XBRL, LIMITATIONS #9).
+    Args:
+        loans_held_for_investment: en USD
+        deposits: en USD
+    Returns:
+        dict con value (ratio) y quality flag. value = None si falta input.
+    """
+    if loans_held_for_investment is None or deposits is None:
+        return {"value": None, "quality": "missing_inputs"}
+    if deposits == 0:
+        return {"value": None, "quality": "missing_inputs"}
+    return {
+        "value": loans_held_for_investment / deposits,
+        "quality": "calculated_from_loans_and_deposits"
+    }
+
+
+def calcular_cost_of_risk(provision_for_credit_losses, loans_held_for_investment) -> dict:
+    """
+    Cost of Risk = provisiones / prestamos.
+    Banking-specific. Proxy del riesgo crediticio del ciclo de credito.
+    Provisiones son forward-looking (CECL), NO charge-offs realizados
+    (LIMITATIONS pitfall #1). NU no calculable FY2024 (provisions not_found, #10).
+    Args:
+        provision_for_credit_losses: en USD
+        loans_held_for_investment: en USD
+    Returns:
+        dict con value (ratio) y quality flag. value = None si falta input.
+    """
+    if provision_for_credit_losses is None or loans_held_for_investment is None:
+        return {"value": None, "quality": "missing_inputs"}
+    if loans_held_for_investment == 0:
+        return {"value": None, "quality": "missing_inputs"}
+    return {
+        "value": provision_for_credit_losses / loans_held_for_investment,
+        "quality": "calculated_from_provisions_and_loans"
+    }

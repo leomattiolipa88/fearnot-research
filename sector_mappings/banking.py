@@ -74,8 +74,8 @@ BANKING_SPECIFIC_METRICS = {
         "formula": "loans_held_for_investment / deposits",
         "applies_to": ["JPM", "BAC", "WFC", "C", "NU"],  # los que tienen ambos facts
         "healthy_range": {
-            "universal_banks": (0.60, 0.90),  # comercial tipico
-            "digital_em": (0.20, 0.70),       # NU mas bajo (mucho deposito, credito unsecured selectivo)
+            "universal_banks": (0.45, 0.95),  # recalibrado vs FY2024 real (JPM/BAC/C ~52-55%, exceso depositos post-COVID)
+            "digital_em": (0.10, 0.75),       # recalibrado: NU FY2024 18.3% (credito unsecured selectivo)
         },
         "notes": "WFC/GS no calculable (loans not_found, LIMITATIONS #9). GS estructuralmente irrelevante (i-bank).",
         "calculable_from_xbrl": True,
@@ -85,7 +85,7 @@ BANKING_SPECIFIC_METRICS = {
         "formula": "provision_for_credit_losses / loans_held_for_investment",
         "applies_to": ["JPM", "BAC", "C", "MS"],  # tienen provisions Y loans
         "healthy_range": {
-            "universal_banks": (0.003, 0.015),  # 0.3%-1.5% para banca prime US
+            "universal_banks": (0.0, 0.025),  # recalibrado vs FY2024 (BAC 0.55% a C 1.44%) + margen recesion
         },
         "notes": "Provisions es forward-looking (CECL), NO charge-offs realizados (LIMITATIONS pitfall #1). WFC: provisions si pero loans no.",
         "calculable_from_xbrl": True,
@@ -138,10 +138,10 @@ BANKING_VALIDATION_RULES = {
         "all": {"min": 0.40, "max": 0.85, "notes": "Fuera de 40-85% = error o one-off (ej: FDIC special assessment)."},
     },
     "cost_of_risk": {
-        "universal_banks": {"min": 0.0, "max": 0.03, "notes": ">3% sostenido = deterioro crediticio severo."},
+        "universal_banks": {"min": 0.0, "max": 0.03, "notes": "FY2024 real 0.55%-1.44%. >3% sostenido = deterioro crediticio severo."},
     },
     "loan_to_deposit": {
-        "universal_banks": {"min": 0.40, "max": 1.10, "notes": ">110% = dependencia de wholesale funding."},
+        "universal_banks": {"min": 0.40, "max": 1.10, "notes": "Recalibrado vs FY2024: bancos US ~52-60% por exceso depositos post-COVID. >110% = wholesale funding."},
     },
 }
 
