@@ -326,6 +326,46 @@ GAAP_TAXONOMY = {
             "Goodwill",
         ]
     },
+
+    # ============================================================
+    # BANKING CONCEPTS (added 2026-05-30, Phase 2 - nucleo verificado)
+    # ============================================================
+    # Tags verificados empiricamente contra companyfacts FY2024.
+    # Fuente: SECTOR_RESEARCH_OVERVIEW.md Sector 2 + LIMITATIONS.md #7,#9,#10.
+    # NU (IFRS filer) se resuelve via ifrs_taxonomy.py, NO aca.
+    # provision_for_credit_losses queda PENDIENTE (CECL custom tags sin verificar, ver LIMITATIONS #7).
+
+    "net_interest_income": {
+        "description": "Net Interest Income (NII). Core de rentabilidad bancaria.",
+        "names": [],  # No aplica a no-bancarias; solo override bank
+        "sector_overrides": {
+            "bank": [
+                "InterestIncomeExpenseNet",  # 6/6 universal. Verificado JPM FY2023 10-K (accession 0000019617)
+            ],
+        },
+    },
+
+    "deposits": {
+        "description": "Customer deposits. Funding primario (pasivo operativo, NO deuda financiera - ver LIMITATIONS pitfall #2).",
+        "names": [],
+        "sector_overrides": {
+            "bank": [
+                "Deposits",  # 6/6 universal US-GAAP
+            ],
+        },
+    },
+
+    "loans_held_for_investment": {
+        "description": "Cartera de prestamos neta de allowance. WFC/GS no lo reportan como fact discreto (LIMITATIONS #9) -> not_found esperado.",
+        "names": [],
+        "sector_overrides": {
+            "bank": [
+                # Verificado FY2024: JPM 1.3T, BAC 1.1T, C 676B, MS 226B. WFC/GS missing (esperado, documentado).
+                "FinancingReceivableExcludingAccruedInterestAfterAllowanceForCreditLoss",
+            ],
+        },
+    },
+
 }
 
 

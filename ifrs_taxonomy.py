@@ -180,7 +180,7 @@ IFRS_TAXONOMY = {
         "names": ["CashAndCashEquivalents"],
     },
 
-    "loans_to_customers": {
+    "loans_held_for_investment": {
         "description": "Loans and advances to customers (Banks)",
         "names": [
             "LoansAndAdvancesToCustomers",
@@ -238,7 +238,7 @@ IFRS_TAXONOMY = {
         "names": ["Liabilities"],
     },
 
-    "deposits_from_customers": {
+    "deposits": {
         "description": "Customer deposits (primary funding for banks)",
         "names": [
             "DepositsFromCustomers",

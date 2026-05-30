@@ -295,6 +295,8 @@ CONCEPTOS_ESTANDAR = [
     "interest_expense",
     "depreciation_amortization",
     "net_income",
+    # Banking - income statement (added 2026-05-30, Phase 2 nucleo)
+    "net_interest_income",
     # Income Statement - Tech/SaaS relevant (added May 2026)
     "research_and_development",
     "stock_based_compensation",
@@ -311,6 +313,10 @@ CONCEPTOS_ESTANDAR = [
     # Balance Sheet - additional (added May 2026)
     "deferred_revenue",
     "goodwill",
+    # Banking - balance sheet (added 2026-05-30, Phase 2 nucleo)
+    # Solo se pueblan para tickers bank; no-bancarias dan not_found (esperado).
+    "deposits",
+    "loans_held_for_investment",
     # Cash Flow
     "operating_cash_flow",
     "capex",
