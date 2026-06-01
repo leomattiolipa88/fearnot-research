@@ -1,0 +1,83 @@
+{
+  "fecha": "2026-06-01",
+  "tipo": "WEEKLY",
+  "convicciones": [
+    {
+      "ticker": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "QUARTERS",
+      "conviccion": 8,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "Regimen Goldilocks confirmado por macro (yield curve +85bp, VIX 16, HY spreads 274bp, Sahm 0.13) crea el entorno historicamente mas favorable para momentum equity, donde Cooper et al. documenta +0.93%/mes en UP markets.",
+        "QQQ tiene el momentum ajustado mas alto del universo (2.718, muy por encima del umbral 1.5 de Barroso-Santa Clara), SOBRE_DMA por 19.89%, con momentum 12M +43.33% sobre vol 15.94% - la firma estadistica de un trend trade de alta calidad.",
+        "VRP en +163.52 (seguro sobrepagado) y VIX term structure en CONTANGO_FUERTE confirman que pagar por proteccion es caro, lo cual historicamente coincide con continuacion alcista en equities."
+      ],
+      "fundamental_case": {
+        "macro_context": "Goldilocks de manual: crecimiento (curva +85bp, unemployment 4.3%, jobless claims 215k), inflacion controlada (5y5y 2.24%), liquidez abundante (HY 274bp, VIX 16). Concentracion del mercado es una alerta pero no un invalidador inmediato.",
+        "sectoral_dynamics": "Tech/growth se beneficia de yields contenidos en breakevens y narrativa de productividad (AI). Apple buscando disrumpir mercado de lentes y deals tech siguen siendo catalizadores idiosincraticos del bucket QQQ.",
+        "technical_setup": "Momentum ajustado 2.718 es el mas alto del set. SOBRE_DMA con +19.89% es extension pero no extrema para tech en regimen Goldilocks. Stop tecnico claro en 200DMA 617.64.",
+        "why_this_expression": "QQQ sobre SPY porque (a) momentum ajustado superior 2.718 vs 2.524, (b) Goldilocks con yields controlados favorece duration de equity (growth) sobre value/broad market, (c) catalysts narrativos especificos (Apple, biotech rally) son concentrados en Nasdaq."
+      },
+      "agents_aligned": [
+        "Macro: regimen Goldilocks habilita full sizing en risk assets",
+        "Tecnico: momentum ajustado 2.718 (mejor del universo), SOBRE_DMA habilita LONG por regla Tudor Jones",
+        "Tecnico (cross-check): VRP +163.52 y CONTANGO_FUERTE en VIX confirman ambiente risk-on saludable"
+      ],
+      "entry_strategy": "Posicion ya iniciada el 25/05 con conviccion 8. Mantener tamano STANDARD. Agregar solo en pullback tactico a zona 700-710 si VIX se mantiene bajo 20. No perseguir sobre 745.",
+      "stop_loss_logic": "Stop tecnico estricto en cierre bajo 200DMA (617.64). Stop tactico en break de 700 (zona psicologica + soporte reciente) con reduccion 50%. Stop por regimen si VIX > 25 o HY spreads > 350bp.",
+      "profit_target_logic": "Sin target hard - es un trade de momentum trend-following. Trail con 200DMA ascendente. Reduccion parcial si momentum ajustado cae bajo 1.5 o si breadth (% sobre 200DMA) cae bajo 50%.",
+      "invalidators": [
+        "Cierre bajo 200DMA 617.64",
+        "VIX term structure pasa a BACKWARDATION (spot > 3M)",
+        "VRP se vuelve negativo o HY spreads expanden sobre 350bp",
+        "Sahm Rule sube sobre 0.5 confirmando recesion"
+      ],
+      "what_we_could_be_wrong_about": "El breadth en 58% sobre 200DMA y la concentracion extrema del S&P (noticia WSJ/Yahoo) sugieren que el rally es estrecho - si los mega-caps se rompen no hay segunda linea que sostenga. Ademas, el VIX 6M en 21.99 vs spot 16 muestra que hedgers institucionales pagan por proteccion lejana: alguien con mas informacion ve riesgo de cola que nosotros no vemos. Tercer punto: USDJPY 159.68 muy cerca de 160 - una intervencion BoJ puede desencadenar unwind de carry trades que afecte tech (correlacion historica)."
+    },
+    {
+      "ticker": "VLO",
+      "direccion": "LONG",
+      "horizonte": "WEEKS",
+      "conviccion": 7,
+      "position_size": "SMALL",
+      "thesis_three_sentences": [
+        "VLO es la expresion mas pura del crack spread 3-2-1 actualmente en $46.17 (MUY_FUERTE) combinado con refinery utilization al 94.5%, capturando margenes excepcionales por barril procesado en un entorno de demanda Goldilocks sostenida.",
+        "La tesis es estructuralmente menos binaria que long crude directo (USO/OXY/EOG): un eventual deal EEUU-Iran que reabra Hormuz bajaria el crudo (input cost para VLO) y podria preservar o mejorar margenes de refinacion en lugar de destruirlos.",
+        "Refiners son el unico segmento del energy desk donde tanto la tesis bullish (tightness fisica actual) como la bearish (reapertura Hormuz) producen outcomes asimetricamente favorables - el peor escenario es demanda destruction por recesion macro."
+      ],
+      "fundamental_case": {
+        "macro_context": "Goldilocks sostiene consumo de combustibles. Demanda de productos refinados elevada confirmada por crack MUY_FUERTE simultaneo con utilizacion 94.5% (sistema corriendo a limite fisico).",
+        "sectoral_dynamics": "Bloqueo Hormuz mantiene crudo apretado pero USA es self-sufficient en crudo - refiners domesticos no tienen problema de input. Crack spread $46.17 muestra que demanda de gasolina/destilados supera capacidad de procesamiento.",
+        "technical_setup": "Sin dato tecnico explicito en inputs - reconocemos data gap. Conviccion sostenida por fundamentales del crack, no por setup tecnico.",
+        "why_this_expression": "VLO sobre XOM/CVX/OXY/EOG porque (a) pure-play refinador captura el crack directamente sin diluir con upstream que tiene riesgo binario en deal Iran, (b) si Hormuz reabre, crude baja pero refiner margins pueden expandirse, (c) menos correlacionado con el binario geopolitico que cualquier E&P o integrado."
+      },
+      "agents_aligned": [
+        "O&G desk: conviccion 8, pure-play sobre crack spread MUY_FUERTE + utilizacion 94.5%",
+        "Macro: Goldilocks sostiene demanda real de combustibles, sin recesion en horizonte",
+        "Cross-asset: SPY/QQQ momentum confirma no pricing de recesion que destruya demanda energy"
+      ],
+      "entry_strategy": "Posicion ya iniciada el 11/05 (conviccion 8, STANDARD) y reforzada/mantenida el 25/05 (conviccion 7, SMALL). Mantener SMALL. No agregar - somos conscientes de fatiga del trade y de tail risk binario en deal Iran.",
+      "stop_loss_logic": "Stop si crack 3-2-1 baja bajo $30 (rompe regimen MUY_FUERTE). Stop si refinery utilization cae bajo 90% (signal de demand destruction). Stop por evento si Hormuz reabre y crack colapsa mas de 30% en una semana.",
+      "profit_target_logic": "Toma parcial si crack supera $55 (zona de extension historica). Salida total si Hormuz reabre y crack se mantiene fuerte por 2+ semanas (significa que la tesis se transforma de geopolitical a structural y exige re-underwriting).",
+      "invalidators": [
+        "Crack 3-2-1 bajo $30",
+        "Refinery utilization bajo 90% (demand destruction)",
+        "HY spreads sobre 350bp (regimen quebrandose, recesion priced)",
+        "Anuncio formal de aceleracion OPEC+ produccion combinado con reapertura Hormuz"
+      ],
+      "what_we_could_be_wrong_about": "La conviccion del O&G desk se basa en data fisica sin 5Y average para inventarios - puede haber overestimacion de tightness. Ademas, USO esta +52.83% sobre 200DMA, extension extrema que sugiere que el mercado ya esta pricing mucho del shock; si el unwind viene, refiners pueden caer con el sector aunque la tesis del crack sea valida. Tercer riesgo: estamos en tercera iteracion del mismo trade (11/05, 25/05, 01/06) - fatiga de conviccion y anchoring son riesgos reales."
+    }
+  ],
+  "reasoning_when_no_convictions": "",
+  "synthesis_observations": "Patron interesante #1: divergencia en VIX term structure. Spot 16.03 / 9D 14.04 muestran complacencia corto plazo, pero 6M en 21.99 muestra que hedgers institucionales pagan caro por proteccion lejana. Spread 9D-6M de +7.95 es notable. No amerita trade direccional, pero sugiere que comprar puts SPY 6M lejos del dinero podria ser un hedge eficiente si la tesis QQQ falla.\n\nPatron interesante #2: correlacion oculta entre tesis energy y tesis equity. Si Hormuz reabre (catalizador bajista para energy), el alivio del shock de oferta es deflacionario al margen, lo cual extenderia Goldilocks y seria ALCISTA para QQQ/SPY. Es decir, nuestros dos trades tienen una correlacion negativa parcial en el escenario binario mas importante (deal Iran) - esto es accidentalmente buena diversificacion intra-portfolio. Inversamente, si el conflicto escala, energy se beneficia pero equities sufren - exposicion balanceada.\n\nPatron interesante #3: el agente macro dice SHORT GLD (yields reales altos) pero el tecnico dice LONG GLD (momentum 12M +35%, SOBRE_DMA). Contradiccion productiva: el momentum del oro en un regimen Goldilocks con yields altos es ANOMALO y sugiere que algo estructural (de-dolarizacion, central bank buying, hedge contra cola geopolitica) esta operando bajo la superficie. No tomamos el trade porque las razones son contradictorias, pero merece monitoreo. Si yields caen y GLD se mantiene fuerte, la tesis estructural se confirma.",
+  "metadata": {
+    "timestamp": "2026-06-01T16:27:33.215824",
+    "modelo": "claude-opus-4-7",
+    "agentes_input": [
+      "macro",
+      "technical",
+      "og_energy"
+    ]
+  }
+}
