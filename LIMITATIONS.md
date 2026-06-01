@@ -190,6 +190,33 @@ Each limitation entry includes:
 
 
 
+
+### 16. NIM — Interest-earning assets not available as XBRL fact
+
+- **Affects:** All 7 banks.
+- **Concepts:** `nim` (net interest margin)
+- **Root cause:** NIM = NII / average interest-earning assets. "Interest-earning assets" is NOT exposed as an XBRL fact by any of the 7 banks (verified: InterestEarningAssets, AverageInterestEarningAssets, EarningAssets all empty across JPM/BAC/WFC/C/GS/MS/NU). It is a narrative MD&A category, not a tagged balance-sheet line.
+- **Workaround:** `nim` left calculable_from_xbrl: False in banking.py. NII is available (verified), the denominator is the blocker.
+- **Future resolution path:** Either (a) reconstruct earning assets by summing components (cash + securities + loans + fed funds sold...) — fragile, double-counting risk, and "average" requires 2 periods; or (b) parse the NIM figure directly from the MD&A rate/volume tables (banks report NIM explicitly in text).
+- **Priority:** High. NIM is THE core profitability metric for commercial banks.
+- **Validation:** Empirical verification via companyfacts API June 1, 2026 (7/7 empty).
+- **Discovered:** June 1, 2026 (Banking Phase 2, earning-assets probe)
+
+### 17. ROTCE — Tangible common equity requires 10-K parse, not XBRL facts
+
+- **Affects:** BAC, WFC, MS (blocked); NU (partial); calculable via XBRL only for JPM, C, GS.
+- **Concepts:** `rotce` (return on tangible common equity)
+- **Root cause:** ROTCE = net income / TCE. **Decided TCE formula:** equity − preferred − goodwill − (FiniteLived intangibles + Indefinite intangibles). **MSRs (mortgage servicing rights) are NOT subtracted** — validated against market convention and Seeking Alpha (which groups MSRs separately from "Other Intangibles"), and required for comparability with each bank's own reported TCE. The blocker is that the components are tagged inconsistently or missing in XBRL:
+  - **Preferred stock — three different tags across banks:** JPM `PreferredStockLiquidationPreferenceValue` ($20.2B), BAC `PreferredStockIncludingAdditionalPaidInCapital` ($23.16B), C/GS/WFC `PreferredStockValue`. MS does NOT expose preferred in XBRL at all (present in 10-K balance sheet only, $9.75B FY2024).
+  - **Intangibles missing in XBRL:** BAC and WFC do not tag intangibles ex-goodwill as a fact (WFC tags none; BAC inconsistent). JPM/MS tag FiniteLived + Indefinite separately (sum manually, exclude MSRs).
+- **Workaround:** `rotce` left calculable_from_xbrl: False in banking.py. All TCE components exist in each bank's 10-K balance sheet, but not as complete XBRL fact sets.
+- **Future resolution path:** Parse the 10-K balance sheet directly (preferred equity + intangibles lines). This analysis (formula + per-bank tag mapping + gaps) is the spec for that parser — do not re-derive.
+- **Priority:** High. ROTCE is the headline profitability/return metric for banks (replaces ROIC).
+- **Validation:** Empirical verification via companyfacts API June 1, 2026 (3 queries: intangibles, TCE components, preferred). Cross-checked against Seeking Alpha balance sheets for JPM and MS.
+- **Discovered:** June 1, 2026 (Banking Phase 2, ROTCE deep-dive)
+
+> **Note — the "10-K parse family":** Limitations #14 (CET1/Tier1 capital ratios), #16 (NIM/earning assets), and #17 (ROTCE/TCE) share a root cause: the data exists in the 10-K (text/tables) but is NOT exposed as XBRL facts. These are not wiring problems — they require a 10-K document parser, a distinct future mini-project.
+
 ## Summary Table
 
 | # | Sector | Concept | Affects | Severity | Status / Workaround |
@@ -209,6 +236,8 @@ Each limitation entry includes:
 | 13 | Utilities | Adjusted EBITDA | VST | High | Out of scope (non-GAAP) |
 | 14 | Cross-cutting | CET1, Tier 1 | All banks | Medium | Parse text-blocks or external data |
 | 15 | Banking | noninterest income/expense | NU | Medium | Accept not_found; efficiency_ratio not calculable for NU |
+| 16 | Banking | nim (earning assets) | All banks | High | 10-K parse family; reconstruct or parse MD&A |
+| 17 | Banking | rotce (tangible common equity) | BAC, WFC, MS | High | 10-K parse family; preferred/intangibles not in XBRL |
 
 ---
 
