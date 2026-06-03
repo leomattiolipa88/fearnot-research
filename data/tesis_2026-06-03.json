@@ -1,0 +1,71 @@
+{
+  "fecha": "2026-06-03",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Yield curve positiva en +0.84% (yield_curve) con unemployment controlado en 4.3% (unemployment) y Sahm rule en 0.13 (sahm_rule) — muy por debajo del umbral de recesión de 0.5. Jobless claims estables en 215K (jobless_claims). Inflación expectativas ancladas en 2.24% (breakeven_5y5y). Credit spreads HY en 2.74% (hy_spread) señalan liquidez saludable."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 756.04 (spy) con VIX bajo en 16.08% (vix) y régimen goldilocks confirmado. Credit spreads comprimidos en 2.74% (hy_spread) y yield curve normalizada sugieren expansión sostenible sin presiones inflacionarias.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 85.28 (tlt) con yield 10Y en 4.47% (yield_10y). Expectativas inflacionarias ancladas en 2.24% (breakeven_5y5y) pero USD fuerte en 99.43 (dxy) puede limitar rally de bonos. Posición balanceada hasta mayor claridad Fed.",
+      "dato_clave": "breakeven_5y5y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "DXY en 99.43 (dxy) con diferencial de tasas favorable. USDJPY en 159.98 (usdjpy) cerca de niveles de intervención sugiere USD strength persistente. EURUSD en 1.1606 (eurusd) bajo presión por divergencia de crecimiento.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Gold en 408.10 (gold) con USD fuerte en 99.43 (dxy) y yields reales altos. Yield 10Y en 4.47% (yield_10y) vs breakeven 5y5y en 2.24% (breakeven_5y5y) implica real yield atractivo de ~2.2%, desfavorable para oro.",
+      "dato_clave": "dxy"
+    }
+  ],
+  "tesis_principal": "Estamos en un régimen goldilocks textbook: crecimiento sólido sin presiones inflacionarias. La yield curve normalizada en +0.84% (yield_curve) con unemployment en 4.3% (unemployment) y Sahm rule en 0.13 (sahm_rule) confirma expansión sostenible. Credit spreads HY comprimidos en 2.74% (hy_spread) y VIX bajo en 16.08% (vix) señalan apetito de riesgo saludable. El USD mantiene fortaleza en 99.43 (dxy) respaldado por diferenciales de tasas, con USDJPY en 159.98 (usdjpy) acercándose a niveles críticos de intervención del BoJ. Las expectativas inflacionarias permanecen ancladas en 2.24% (breakeven_5y5y), dando espacio a la Fed para mantener postura actual. SPY en máximos en 756.04 (spy) refleja fundamentos sólidos, mientras que TLT en 85.28 (tlt) enfrenta headwinds por yields reales atractivos de ~2.2%.",
+  "invalidadores": [
+    "Deterioro abrupto en jobless claims por encima de 300K o activación de Sahm rule sobre 0.5",
+    "USDJPY rompiendo 160 triggering intervención masiva del BoJ que desestabilice carry trades",
+    "Widening significativo en credit spreads HY por encima de 400bps señalando stress de liquidez",
+    "Breakeven 5y5y escalando por encima de 2.8% sugiriendo desanclaje de expectativas inflacionarias",
+    "VIX spike por encima de 25 indicando deleveraging institucional generalizado"
+  ],
+  "alertas": [
+    "USDJPY en 159.98 peligrosamente cerca del umbral de intervención de 160 — riesgo de volatility spike",
+    "Michigan inflation expectations elevadas en 4.7% vs breakeven markets en 2.24% — divergencia preocupante",
+    "Datos de unemployment y PCE core con 2 meses de retraso — visibility limitada sobre trends recientes"
+  ],
+  "datos_insuficientes": [
+    "TIPS yield 10Y con 5 días de retraso — impacta cálculo preciso de real yields",
+    "Datos de empleo y inflación core con 2 meses de lag — trends recientes no capturados"
+  ],
+  "eventos_clave": [
+    "[Bloomberg] SpaceX IPO con fees comprimidos — señal de mercado primario robusto, apoya risk-on",
+    "[CNBC] S&P 500 en nuevos máximos — confirma momentum alcista en régimen goldilocks",
+    "[Investor's Business Daily] HPE earnings beat con guidance raised — fortaleza en sector tech enterprise"
+  ],
+  "confianza_general": 82,
+  "metadata": {
+    "timestamp": "2026-06-03T15:14:40.961332",
+    "datos_usados": 23,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
