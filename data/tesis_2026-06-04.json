@@ -1,0 +1,72 @@
+{
+  "fecha": "2026-06-04",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Yield curve positiva en +0.83% (yield_curve), HY spreads contenidos en 271bps (hy_spread), VIX en niveles bajos de 16.35 (vix), y expectativas de inflación 5y5y estables en 2.23% (breakeven_5y5y). Sahm rule en solo 0.13 (sahm_rule) indica ausencia de señales recesivas. Combinación óptima de crecimiento sostenible con inflación controlada."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 753.11 (spy) con VIX contenido en 16.35 (vix) y yield curve normalizada +0.83% (yield_curve). HY spreads en 271bps (hy_spread) sugieren condiciones crediticias favorables. Régimen Goldilocks ideal para equities.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Yield 10Y en 4.46% (yield_10y) con TIPS yield real en 2.07% (tips_yield_10y). TLT en 85.62 (tlt). Curva normalizada y expectativas de inflación estables sugieren presión vendedora en bonos largos por normalización de política monetaria.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "DXY en 99.26 (dxy) con USD/JPY extremo en 159.86 (usdjpy). EUR/USD recuperándose a 1.164 (eurusd). Divergencia entre fortaleza del dólar vs yen y debilidad vs euro sugiere corrección técnica del DXY.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "GLD en 413.79 (gold) con yield real 10Y en 2.07% (tips_yield_10y) y DXY en 99.26 (dxy). Oro atrapado entre yields reales altos (negativo) y potencial debilidad del dólar (positivo). Esperando definición direccional.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "Los mercados operan en un régimen Goldilocks óptimo con yield curve normalizada en +0.83% (yield_curve), que elimina riesgos recesivos, mientras la Sahm rule en 0.13 (sahm_rule) confirma ausencia de deterioro laboral. El VIX contenido en 16.35 (vix) y HY spreads en 271bps (hy_spread) reflejan apetito de riesgo saludable. Las expectativas de inflación 5y5y estables en 2.23% (breakeven_5y5y) y jobless claims contenidas en 225K (jobless_claims) sostienen este escenario benigno. Sin embargo, USD/JPY en niveles extremos de 159.86 (usdjpy) plantea riesgos de intervención que podrían desestabilizar carry trades globales. El yield 10Y en 4.46% (yield_10y) vs TIPS yield de 2.07% (tips_yield_10y) sugiere un premio real atractivo que mantiene presión en bonos largos, favoreciendo equities en el corto plazo.",
+  "invalidadores": [
+    "USD/JPY superando 160 provocando intervención del BoJ y unwinding masivo de carry trades",
+    "VIX rompiendo por encima de 20 señalando deterioro del apetito de riesgo",
+    "HY spreads expandiéndose por encima de 350bps indicando stress crediticio",
+    "Jobless claims superando consistentemente 250K sugiriendo debilidad laboral",
+    "Expectativas de inflación 5y5y cayendo por debajo de 2.0% señalando riesgo deflacionario"
+  ],
+  "alertas": [
+    "USD/JPY en 159.86 muy cerca de niveles de intervención históricos del BoJ",
+    "Michigan inflation expectations en 4.7% significativamente por encima del target de 2%",
+    "Datos de empleo y PCE core con 2 meses de antigüedad reducen visibilidad del régimen actual"
+  ],
+  "datos_insuficientes": [
+    "PCE core más reciente para confirmar tendencia inflacionaria",
+    "Datos de empleo actualizados para validar fortaleza del mercado laboral",
+    "Expectativas de inflación del consumidor más frescas que abril"
+  ],
+  "eventos_clave": [
+    "[CNBC] Macy's posts strongest Q1 growth in four years, raises guidance — señal positiva de resistencia del consumo en retail",
+    "[BBC News] US announces new tariffs over forced labour concerns — presión inflacionaria adicional y tensión comercial",
+    "[Barron's] Palo Alto Earnings Just Proved AI Skeptics Wrong About Cybersecurity — fortaleza sectorial en tech mantiene momentum en growth stocks"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-06-04T13:39:39.965868",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
