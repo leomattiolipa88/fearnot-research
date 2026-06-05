@@ -512,3 +512,62 @@ if __name__ == "__main__":
         _print_resultado(resultado)
 
     print()
+
+
+# ============================================================
+# EXTRACCION TRIMESTRAL (aditivo - no toca el camino anual)
+# ============================================================
+
+def extraer_fact_trimestral(
+    facts: dict,
+    posibles_nombres: list,
+    frame: str,
+    taxonomia: str = "us-gaap",
+    unidad: str = "USD"
+) -> Optional[float]:
+    """
+    Extrae el valor de un fact para un trimestre dado, identificado por su 'frame'.
+    Flujos: "CY2024Q2" (periodo discreto). Stocks: "CY2024Q2I" (I = Instant).
+    Los YTD no tienen frame, asi que filtrar por frame da el trimestre puro.
+    Generica: cualquier sector. Aditiva: no toca extraer_fact_anual.
+    """
+    if not facts or "facts" not in facts:
+        return None
+    taxonomia_facts = facts["facts"].get(taxonomia, {})
+    for nombre in posibles_nombres:
+        if nombre not in taxonomia_facts:
+            continue
+        fact = taxonomia_facts[nombre]
+        if unidad not in fact.get("units", {}):
+            continue
+        records = fact["units"][unidad]
+        matching = [r for r in records if r.get("frame") == frame]
+        if not matching:
+            continue
+        matching.sort(key=lambda r: r.get("filed", ""), reverse=True)
+        return float(matching[0]["val"])
+    return None
+
+
+def extraer_fact_trimestral_auto(
+    facts: dict,
+    posibles_nombres: list,
+    anio: int,
+    quarter: int,
+    taxonomia: str = "us-gaap",
+    unidad: str = "USD"
+) -> tuple:
+    """
+    Prueba ambos frames (flujo "CYxxxxQn" y stock "CYxxxxQnI"), usa el que traiga
+    dato. No necesitas saber de antemano si el concepto es stock o flujo.
+    Returns: (valor, es_stock) o (None, None).
+    """
+    frame_flujo = f"CY{anio}Q{quarter}"
+    frame_stock = f"CY{anio}Q{quarter}I"
+    val = extraer_fact_trimestral(facts, posibles_nombres, frame_flujo, taxonomia, unidad)
+    if val is not None:
+        return val, False
+    val = extraer_fact_trimestral(facts, posibles_nombres, frame_stock, taxonomia, unidad)
+    if val is not None:
+        return val, True
+    return None, None
