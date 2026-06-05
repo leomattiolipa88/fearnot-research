@@ -571,3 +571,80 @@ def extraer_fact_trimestral_auto(
     if val is not None:
         return val, True
     return None, None
+
+
+# ============================================================
+# SERIE TRIMESTRAL con reconstruccion de Q4 (Pieza 2, aditivo)
+# ============================================================
+
+def _frames_recientes(anio_actual: int, quarter_actual: int, n: int) -> list:
+    """Ultimos n (anio, quarter) hacia atras, incluyendo el actual. Reciente primero."""
+    out = []
+    a, q = anio_actual, quarter_actual
+    for _ in range(n):
+        out.append((a, q))
+        q -= 1
+        if q == 0:
+            q = 4
+            a -= 1
+    return out
+
+
+def extraer_trimestre_con_q4(facts, posibles_nombres, anio, quarter, taxonomia="us-gaap") -> tuple:
+    """
+    Extrae un trimestre. Si es Q4 de un FLUJO (sin frame propio), reconstruye:
+    Q4 = anual - (Q1+Q2+Q3). Stocks usan Q4I directo. Si falta componente -> None.
+    Returns: (valor, es_stock, metodo). metodo: direct | reconstructed_q4 | not_found.
+    """
+    val, es_stock = extraer_fact_trimestral_auto(facts, posibles_nombres, anio, quarter, taxonomia)
+    if val is not None:
+        return val, es_stock, "direct"
+    if quarter == 4:
+        anual = extraer_fact_anual(facts, posibles_nombres, anio, taxonomia)
+        if anual is None:
+            return None, None, "not_found"
+        q1, s1 = extraer_fact_trimestral_auto(facts, posibles_nombres, anio, 1, taxonomia)
+        q2, s2 = extraer_fact_trimestral_auto(facts, posibles_nombres, anio, 2, taxonomia)
+        q3, s3 = extraer_fact_trimestral_auto(facts, posibles_nombres, anio, 3, taxonomia)
+        if any(s for s in (s1, s2, s3) if s):
+            return None, None, "not_found"
+        if None in (q1, q2, q3):
+            return None, None, "not_found"
+        return anual - (q1 + q2 + q3), False, "reconstructed_q4"
+    return None, None, "not_found"
+
+
+def extraer_serie_trimestral(ticker, conceptos, anio_actual, quarter_actual, n_trimestres=4) -> dict:
+    """
+    Serie de los ultimos n_trimestres para un ticker. Generica (cualquier sector).
+    Reconstruye Q4 de flujos. Reciente primero. Usa el router para nombres GAAP/IFRS.
+    """
+    from sector_router import get_names_for_concept
+    from ifrs_taxonomy import is_ifrs_filer, get_ifrs_names_for_concept
+
+    resultado = {"ticker": ticker.upper(), "serie": []}
+    cik = obtener_cik(ticker)
+    if cik is None:
+        resultado["error"] = f"CIK no encontrado para {ticker}"
+        return resultado
+    facts = obtener_facts(cik)
+    if facts is None:
+        resultado["error"] = f"No se pudieron descargar facts para {ticker}"
+        return resultado
+    taxonomia = "ifrs-full" if is_ifrs_filer(ticker) else "us-gaap"
+    resultado["taxonomia"] = taxonomia
+
+    for (anio, q) in _frames_recientes(anio_actual, quarter_actual, n_trimestres):
+        trimestre = {"frame_label": f"CY{anio}Q{q}", "anio": anio, "quarter": q, "concepts": {}}
+        for concepto in conceptos:
+            if taxonomia == "ifrs-full":
+                names = get_ifrs_names_for_concept(concepto)
+            else:
+                names = get_names_for_concept(concepto, ticker)
+            if not names:
+                trimestre["concepts"][concepto] = {"value": None, "es_stock": None, "metodo": "no_tag"}
+                continue
+            val, es_stock, metodo = extraer_trimestre_con_q4(facts, names, anio, q, taxonomia)
+            trimestre["concepts"][concepto] = {"value": val, "es_stock": es_stock, "metodo": metodo}
+        resultado["serie"].append(trimestre)
+    return resultado
