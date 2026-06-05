@@ -1,0 +1,71 @@
+{
+  "fecha": "2026-06-02",
+  "regimen_credito": {
+    "clasificacion": "EXPANSION",
+    "confianza": 62,
+    "razonamiento": "Los bancos universales muestran cost_of_risk contenido: BAC en 0.55%, JPM en 0.81%, C en 1.44% (el unico que provisiona con cierta agresividad, coherente con su mix de tarjetas y exposicion EM). Estos niveles son consistentes con un ciclo de credito sano y todavia expansivo, alineado con el regimen GOLDILOCKS del fondo (HY spreads en 2.71%, curva normalizada +0.89%, VIX 15.7). Pero el dato que define la fase es el apetito de prestamo: loan_to_deposit ESTRUCTURALMENTE BAJO en todos los universales (BAC 0.55, C 0.53, JPM 0.55). Esto NO es euforia crediticia -- es lo contrario: los bancos estan sentados sobre liquidez y prestan con cautela relativa a su base de depositos. Marks diria: cuando todos prestan sin miedo es tarde en el ciclo; aca el loan_to_deposit bajo sugiere que NO estamos en esa fase terminal. Es expansion con disciplina, no euforia. La ausencia de un repunte de provisiones descarta CONTRACCION."
+  },
+  "tesis_principal": "Los bancos universales senalan una economia que sigue en expansion crediticia ordenada, no eufórica. Provisiones contenidas (cost_of_risk 0.55%-1.44%) confirman que NO huelen recesion -- coherente con el GOLDILOCKS del fondo. La señal mas interesante es defensiva: el loan_to_deposit bajo y uniforme (~0.55) indica que los grandes bancos prefieren liquidez sobre crecimiento agresivo de balance, lo cual es saludable pero tambien sugiere demanda de credito tibia o suscripcion conservadora. Esto encaja con un ciclo maduro-pero-no-tardio. C es el outlier de riesgo (cost_of_risk casi 3x el de BAC), señalando que su libro es mas sensible al deterioro. Los investment banks (GS, MS) confirman el risk-on: noninterest_income domina sus ingresos (GS 45.5bn vs NII 8bn; MS 53bn vs 8.6bn), lo que en un VIX bajo y momentum de equities fuerte (SPY/QQQ momentum_ajust >2.5) es viento de cola para trading y banca de inversion. CRITICO: me faltan NIM, ROTCE y CET1 (no disponibles via XBRL, LIMITATIONS #14/#16/#17), por lo que NO puedo evaluar calidad de capital ni rentabilidad ajustada -- esta lectura es de CICLO, no de solvencia.",
+  "senales": [
+    {
+      "activo": "JPM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "El mejor posicionado de los universales: efficiency_ratio de 0.52 (muy superior al ~0.66 del peer group), NII de 92.6bn dominante, y cost_of_risk de 0.81% que provisiona razonablemente sin asfixiar resultados. En expansion crediticia con risk-on de equities, JPM captura tanto banca comercial como sus fees. Eficiencia lograda con escala, no con recorte de costos defensivo -- eso es calidad real, no fragilidad Mayo. Conviccion moderada por falta de CET1/ROTCE para confirmar."
+    },
+    {
+      "activo": "BAC",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Cost_of_risk de 0.55%, el mas bajo de los universales. Aqui activo el escepticismo Mayo: en ciclo maduro un cost_of_risk tan bajo puede ser provision insuficiente (riesgo diferido) tanto como fortaleza genuina. Efficiency_ratio de 0.66 es mediocre vs JPM. Loan_to_deposit de 0.55 con base de depositos enorme (1.97tn) = mucha liquidez ociosa, sensibilidad a tasas en su cartera de bonos. LONG debil, sesgado por el regimen benigno, no por excelencia operativa."
+    },
+    {
+      "activo": "WFC",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "Datos incompletos: no tengo cost_of_risk ni loan_to_deposit (loans_held_for_investment = not_found). Solo veo efficiency_ratio de 0.66 (en linea con peers) y provision de 4.3bn. Sin la metrica clave de apetito de prestamo y sin poder ubicar su cost_of_risk en el ciclo, no puedo dar direccion con conviccion. NEUTRAL por insuficiencia de datos, no por tesis negativa."
+    },
+    {
+      "activo": "C",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "El outlier de riesgo: cost_of_risk de 1.44%, casi 3x BAC y ~2x JPM. Provisiones de 9.7bn sobre un libro de prestamos menor (676bn) revela un mix mas riesgoso (tarjetas/EM). En GOLDILOCKS esto puede ser solo el perfil de su libro, pero es el banco que primero mostraria stress si el ciclo gira. Efficiency_ratio de 0.665 sin brillo. Es el canario en la mina del grupo: NEUTRAL ahora, pero el primer SHORT candidato si cost_of_risk acelera."
+    },
+    {
+      "activo": "GS",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Investment bank -- no se lee por cost_of_risk (loan_to_deposit y loans = not_found, correcto, casi no presta). Se lee por trading/fees: noninterest_income de 45.5bn vs NII de 8bn confirma el motor correcto. Efficiency_ratio de 0.63, el mejor de los IBs. Con VIX contenido (15.7), equities en momentum extremo (QQQ momentum_ajust 2.69) y liquidez abundante (HY spreads 2.71%), el entorno favorece banca de inversion y trading. LONG coherente con la tesis tecnica risk-on del fondo."
+    },
+    {
+      "activo": "MS",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "Investment bank con el mismo viento de cola que GS (noninterest_income 53bn vs NII 8.6bn), pero efficiency_ratio de 0.71 -- el PEOR del grupo entero. Mayo aqui: esa ineficiencia limita la conversion del ciclo favorable en rentabilidad. Cost_of_risk de 0.065% es irrelevante (apenas presta). NEUTRAL: el entorno es bueno pero la maquina es cara de operar; prefiero GS para expresar la misma tesis de IB."
+    },
+    {
+      "activo": "NU",
+      "direccion": "NEUTRAL",
+      "conviccion": 3,
+      "razonamiento": "Digital EM (Brasil), otro animal. Datos casi vacios: NII, provisiones, cost_of_risk y efficiency_ratio = not_found/missing. Lo unico legible es loan_to_deposit de 0.18 -- extremadamente bajo, tipico de un banco que capta depositos rapido pero todavia presta poco relativo a su base. No puedo evaluar el cost_of_risk de su credito unsecured (su variable mas critica). Cobertura insuficiente para tomar direccion. NEUTRAL por falta de datos."
+    }
+  ],
+  "contradicciones": [
+    "BAC tiene el cost_of_risk mas bajo (0.55%) del grupo pese a tener el balance de prestamos mas grande despues de JPM. En ciclo maduro esto huele a provision conservadora vs realidad del libro -- o el libro es genuinamente prime, o el riesgo esta diferido. No puedo distinguir sin NIM/charge-offs detallados.",
+    "C provisiona casi 3x mas que BAC en proporcion a sus prestamos. O C ve algo que BAC no ve en su segmento (tarjetas/EM), o BAC esta sub-provisionando. Dos universales del mismo ciclo no deberian divergir tanto sin explicacion en el mix.",
+    "Loan_to_deposit uniformemente bajo (~0.55) en GOLDILOCKS con liquidez abundante: si el regimen es tan benigno y el credito tan barato (HY 2.71%), por que los bancos no expanden mas su libro? O la demanda de credito es mas tibia de lo que el regimen sugiere, o la suscripcion es mas cautelosa -- ambas son señales sutiles de que la expansion no es eufórica.",
+    "MS con efficiency_ratio de 0.71 en el mejor entorno posible de mercados (VIX bajo, equities en maximos): si no puede ser eficiente AHORA, cuando podra? Eficiencia que no mejora en el pico del ciclo es bandera amarilla."
+  ],
+  "eventos_clave": [
+    "Direccion del cost_of_risk de C en el proximo trimestre: si acelera por encima de 1.5%, es el primer canario de giro de ciclo.",
+    "Movimiento del loan_to_deposit de los universales: si sube hacia 0.65+, confirma euforia tardia; si cae, señala contraccion temprana de apetito.",
+    "Noninterest_income de GS/MS vs trimestre previo: la sostenibilidad del motor de trading depende de que VIX y momentum de equities se mantengan.",
+    "Cualquier repunte de provision_for_credit_losses agregado: en GOLDILOCKS no deberia subir; si lo hace sin deterioro macro visible, los bancos estan oliendo algo que la macro aun no muestra."
+  ],
+  "invalidadores": [
+    "Subida coordinada de cost_of_risk en >=2 universales = giro de EXPANSION hacia CONTRACCION; invalidaria todos los LONG.",
+    "Ampliacion de HY spreads por encima de 4% o VIX sostenido >25 = fin del entorno risk-on; invalidaria los LONG de GS y la tesis de banca de inversion.",
+    "Acceso a CET1/ROTCE/NIM (actualmente faltantes, LIMITATIONS #14/#16/#17) que revele capital debil o margenes comprimidos cambiaria materialmente la lectura de calidad -- esta tesis es de CICLO, no de solvencia.",
+    "Caida de NII en universales sin baja correspondiente de provisiones = señal de complacencia (margen cae pero no reconocen riesgo), giraria la lectura hacia cautela."
+  ]
+}
