@@ -1,0 +1,75 @@
+{
+  "fecha": "2026-06-05",
+  "periodo_analizado": "CY2025Q3",
+  "regimen_credito": {
+    "clasificacion": "EXPANSION",
+    "direccion_ciclo": "ACELERANDO",
+    "confianza": 70,
+    "razonamiento": "La fotografia de tendencias es benigna y coherente con el regimen Goldilocks del fondo, pero con matices Mayo. Cost_of_risk baja o se mantiene plano en casi toda la muestra universal (BAC -23%, C -10.3% con 3 trimestres consecutivos bajando), provisiones en retroceso (BAC -15%, WFC -44.9%, C -4.2%), y apetito de prestamo (loan_to_deposit) subiendo sin alarma (BAC +5.4%, JPM +2.1%, MS +3.4%). Esto es la firma clasica de expansion media: el credito todavia no se deteriora y los bancos relajan provisiones porque no ven morosidad entrante. La direccion es ACELERANDO porque NII crece de forma generalizada (BAC +11.2%, C +10.7%, JPM +5.4%, MS +20.5%, GS +93.6%) y el apetito de prestamo sube en paralelo. NO clasifico EUFORIA porque el L/D sube de forma moderada (+2 a +5%), no parabolica, y las rachas consecutivas son cortas (2 trimestres), no la aceleracion sin freno que marca el final de ciclo. La unica grieta visible es JPM, que rema en direccion contraria al sector (ver contradicciones)."
+  },
+  "tesis_principal": "Dos tendencias dominan. PRIMERA: relajacion generalizada de provisiones y cost_of_risk en la banca universal mientras los prestamos crecen; esto confirma el Goldilocks macro (HY spreads 2.75%, Sahm 0.13, sin senal recesiva) y dice que los bancos no anticipan deterioro de credito a 1-2 trimestres. SEGUNDA: el motor de ganancias migro de margen a volumen y a NII, especialmente en los investment banks (GS NII +93.6%, MS +20.5%) consistente con mercados de capital activos bajo VIX 15.94 y SPY/QQQ en momentum fuerte. El matiz Mayo: JPM es el unico universal que SUBE cost_of_risk (+2.7%) y provisiones (+11.5%) mientras el resto las baja. O JPM esta provisionando con disciplina temprana (lo cual seria la senal adelantada del ciclo), o el resto del sector esta soltando reservas demasiado rapido. Esa divergencia es la informacion mas valiosa del trimestre.",
+  "senales": [
+    {
+      "activo": "BAC",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "La tendencia mas limpia del grupo: cost_of_risk bajando -23% en 6 trimestres, provisiones -15%, efficiency mejorando -4% (gasto bajo control, no solo NII), y NII subiendo +11.2% con loan_to_deposit acelerando +5.4% (2 trimestres consecutivos). Apetito de prestamo creciente sin deterioro de credito = expansion saludable. La mejora de eficiencia es genuina porque acompana caida de costo de riesgo, no solo viento de cola de tasas."
+    },
+    {
+      "activo": "C",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Cost_of_risk bajando -10.3% con 3 trimestres consecutivos a la baja (la racha mas consistente del grupo), provisiones -4.2% y NII +10.7%. L/D estable (-1.4%) indica que la mejora NO viene de apalancar el balance, sino de calidad de credito. Eficiencia volatil (termina en 0.6469, peor que su minimo de 0.6216) resta conviccion: la mejora operativa no es lineal."
+    },
+    {
+      "activo": "JPM",
+      "direccion": "NEUTRAL",
+      "conviccion": 6,
+      "razonamiento": "El divergente. Unico universal que SUBE cost_of_risk (+2.7%) y provisiones (+11.5%) mientras el resto las baja, con eficiencia DETERIORANDO +10.7% (de 0.4724 a 0.523). NII crece solo +5.4%, el mas debil de los universales. Lectura Marks: si JPM provisiona temprano puede estar viendo algo que el sector ignora. No es SHORT (sigue siendo el mejor operado), pero su trayectoria contradice el optimismo del grupo y merece neutralidad hasta confirmar si es prudencia o deterioro."
+    },
+    {
+      "activo": "WFC",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "Datos insuficientes para tesis fuerte: cost_of_risk y loan_to_deposit sin datos via XBRL. Lo que hay: provisiones bajando -44.9% (la caida mas agresiva del grupo) pero con NII y efficiency PLANOS (cambios <0.5%). Mayo flag: soltar reservas casi a la mitad sin crecimiento de ingresos ni de prestamos sugiere que el alivio de provisiones esta inflando earnings sin motor de negocio detras. Sin cost_of_risk ni L/D no puedo confirmar si el riesgo se esta reconociendo. Neutral por falta de visibilidad."
+    },
+    {
+      "activo": "GS",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Investment bank: se lee por eficiencia y motor de ingresos, no por cost_of_risk (sin datos, esperado). NII +93.6% con 3 trimestres consecutivos subiendo y efficiency mejorando -7.1%. Provisiones suben +20.2% pero sobre una base minima e irrelevante para su modelo (no es prestamista tradicional). Coherente con mercados de capital activos bajo VIX 15.94 y momentum SPY/QQQ. Beta alta al regimen Goldilocks: lo que lo hace LONG ahora lo haria SHORT si VIX gira."
+    },
+    {
+      "activo": "MS",
+      "direccion": "NEUTRAL",
+      "conviccion": 5,
+      "razonamiento": "Investment bank con eficiencia mejorando -7.5% y NII +20.5%, buena trayectoria. Pero cost_of_risk (-94.1%) y provisiones (-92.9%) muestran cifras tan minusculas (provisiones de USD 6M vs 138M) que el riesgo de credito es ruido, no senal: irrelevante para su modelo. La serie de cost_of_risk es erratica (sube y baja sin patron), no una tendencia. LONG-leaning por eficiencia, pero neutral porque la mejora depende del ciclo de mercados de capital igual que GS, sin la magnitud de NII de GS."
+    },
+    {
+      "activo": "NU",
+      "direccion": "NEUTRAL",
+      "conviccion": 2,
+      "razonamiento": "Digital EM (Brasil, unsecured) - animal aparte. Cobertura XBRL trimestral esencialmente nula: todas las metricas 'sin datos' salvo un unico punto de L/D (0.1844). Imposible leer tendencia. No emito tesis con un solo dato. Dato faltante declarado."
+    }
+  ],
+  "contradicciones": [
+    "JPM vs el resto de universales: JPM sube cost_of_risk (+2.7%) y provisiones (+11.5%) mientras BAC, C y WFC las bajan. O JPM ve un deterioro que el sector niega, o el sector esta soltando reservas demasiado pronto. Divergencia = senal adelantada del ciclo a vigilar.",
+    "WFC: provisiones cayendo -44.9% con NII y efficiency planos. Reducir reservas a la mitad sin crecimiento de negocio infla earnings de calidad fragil; podria estar no reconociendo riesgo. Sin cost_of_risk ni L/D para verificar.",
+    "BAC y C mejoran eficiencia mientras NII sube fuerte: parte de la mejora de efficiency_ratio puede ser viento de cola de NII (tasas) mas que control de costos estructural. En BAC el cost_of_risk cae en paralelo, lo que la respalda; en C la eficiencia es volatil, lo que la cuestiona.",
+    "Provisiones del sector bajando de forma generalizada en un punto del ciclo donde el momentum macro y de mercado esta extremadamente extendido (SPY +28% 12m, USO +92%): el optimismo de credito coincide con el pico de complacencia (VIX 15.94). Goldilocks tardio se parece a euforia temprana."
+  ],
+  "eventos_clave": [
+    "JPM Q4: confirmar si cost_of_risk y provisiones siguen subiendo. Tercer trimestre consecutivo al alza convertiria la divergencia en senal de giro de ciclo, no ruido.",
+    "WFC: necesito el cost_of_risk y loan_to_deposit (faltan via XBRL) para juzgar si la caida de provisiones es disciplina o subprovisionamiento. Buscar en 10-K.",
+    "Loan_to_deposit del grupo universal: si BAC/JPM aceleran de +5% a doble digito y las rachas consecutivas se alargan, eso seria la firma de fin de ciclo (apetito sin freno = tarde en el ciclo, Marks).",
+    "NII de GS/MS: si la racha de subidas se rompe, es la primera senal de que el ciclo de mercados de capital se enfria - leading indicator para los IB.",
+    "Cost_of_risk de C: lleva 3 trimestres bajando; vigilar si toca suelo y rebota, marcaria inflexion."
+  ],
+  "invalidadores": [
+    "Dos o mas universales empiezan a SUBIR cost_of_risk de forma sincronizada (no solo JPM): invalida la lectura de expansion benigna y adelanta giro a contraccion.",
+    "HY spreads se abren por encima de ~3.5% o Sahm Rule cruza al alza: el soporte macro Goldilocks se rompe y las provisiones a la baja pasarian de prudencia a negacion.",
+    "Reversion de la tendencia de NII (caida 1-2 trimestres) con efficiency deteriorando: confirmaria que las mejoras de eficiencia eran viento de tasas, no estructurales.",
+    "Loan_to_deposit acelera a rachas largas (4+ trimestres) y doble digito: invalida 'EXPANSION media' y mueve la clasificacion hacia EUFORIA / fin de ciclo.",
+    "VIX rompe al alza desde 15.94 y SPY/QQQ pierden 200DMA: invalida especificamente las tesis LONG de GS/MS, cuyo motor depende de mercados de capital activos."
+  ]
+}
