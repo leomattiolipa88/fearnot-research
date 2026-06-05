@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-06-05",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 88,
+    "razonamiento": "Multiples señales fisicas convergentes apuntan a tightness real, no especulativa. (1) WTI calendar spread 6M en +11.91 USD = backwardation severa: el mercado fisico paga premium masivo por barril hoy vs. futuro. Esto no es posicionamiento especulativo - es señal de que el barril escasea ahora. (2) Crude inventories EIA (dato 29-May): 433,712 kbbl. Sin el dato de 5-year average en mis inputs, no puedo calcular el deficit exacto, pero la noticia confirmada de prensa ('US oil stockpiles hit lowest level since 2004') indica deficit estructural severo respecto al rango historico. Si el titular es preciso, estamos ante el nivel mas bajo de inventarios en ~22 años - señal fisica extraordinaria. (3) Crack spread 321 en $42.78 = MUY_FUERTE. Las refinerias estan generando margenes excepcionales, lo que indica que la demanda de productos refinados es robusta y la utilizacion al 94.7% confirma que la industria esta corriendo a full capacity para abastecer esa demanda. (4) Brent $94.28 / WTI $91.78: diferencial Brent-WTI de $2.50 normal, precios absolutos en zona de tight market. (5) Geopolitica: guerra con Iran mencionada en multiples noticias, lo que implica disrupciones en Estrecho de Hormuz (el articulo 'A Barrel Trapped Behind Hormuz Isn't Spare Capacity' es clave - la capacidad spare de Arabia Saudita pierde valor si no puede transitar Hormuz). Ukraine strikes St. Petersburg oil terminal = supply disruption rusa adicional. Saudi-Russia cooperacion profunda = OPEC+ con disciplina renovada. El regimen es inequivocamente TIGHT_BACKWARDATED con soporte tanto fisico (inventarios) como geopolitico (Hormuz, war disruptions)."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 55,
+    "razonamiento": "Natural gas storage EIA al 29-May: 2,578 Bcf. Sin el dato de 5-year average en mis inputs no puedo determinar si estamos above/below promedio historico. Precio NATGAS en $3.289/MMBtu: nivel moderado que no señala ni escasez extrema ni oversupply severo - zona de equilibrio. No tengo datos de curva de futuros de gas (summer/winter spread), ni datos de LNG export flows, ni Henry Hub basis diferentials para los distintos hubs, ni demanda de power generation desagregada. A $3.29 y con storage en 2,578 Bcf, y estando en regimen GOLDILOCKS macro (demanda industrial sostenida, cooling demand veraniega aproximandose en el hemisferio norte), califico como BALANCED con baja confianza por gaps de data importantes. Un verano caliente podria mover rapido a TIGHT; un summer fresco mantendria equilibrio o presionaria a la baja."
+  },
+  "regimen_lpg": {
+    "clasificacion": "BALANCED",
+    "confianza": 35,
+    "razonamiento": "DATA LIMITADA - confianza baja deliberada. Propane inventory EIA: 83,316 kbbl al 29-May. No tengo: (a) comparacion vs 5-year average para propano; (b) Saudi CP (Contract Price oficial de Aramco para LPG) - dato critico para traders de LPG que no tengo; (c) freight rates VLGC en rutas Middle East-Asia; (d) FEI Asia pricing; (e) demanda petroquimica Asia (PDH plants China); (f) spreads propano vs naphtha para crackers. Con solo el dato de inventario de propano en aislamiento, no puedo hacer una lectura de regimen confiable para LPG. Lo clasifico BALANCED por default dado que no hay señal directa de tightness o oversupply en los datos disponibles, pero esta clasificacion tiene conviccion muy baja y NO deberia usarse para sizing de posiciones en LPG sin datos adicionales."
+  },
+  "tesis_principal": "El mercado de petroleo fisico en junio 2026 presenta la combinacion mas bullish que hemos visto en años: inventarios USA en minimos de 22 años, backwardation 6M de casi $12/bbl, crack spreads en territorio MUY_FUERTE ($42.78), y refinerias corriendo al 94.7% de utilizacion. No hay desconexion entre la señal de precios ($91-94/bbl) y los fundamentals fisicos - al contrario, los fisicos justifican y potencialmente anticipan precios aun mas altos. El catalizador geopolitico es igualmente poderoso: la guerra con Iran (mencionada como activa en las noticias) coloca el Estrecho de Hormuz en zona de riesgo real, y el articulo 'A Barrel Trapped Behind Hormuz Isn't Spare Capacity' captura perfectamente la nueva realidad: Arabia Saudita puede tener barrels en tierra, pero si Hormuz esta bajo riesgo, esa capacidad spare es ilusoria para el mercado fisico. Adicionalmente, el strike ucraniano sobre la terminal de petroleo de San Petersburgo es un evento con impacto operacional real en la infraestructura de exportacion rusa del Baltico.\n\nEl contexto macro GOLDILOCKS (85% confianza del fondo) es el backdrop perfecto para este setup energetico: crecimiento sostenido sin recesion implica demanda energetica no solo estable sino creciente. El desempleo en 4.3%, claims en 225k, y Sahm Rule en 0.13 descartan el escenario de destruction of demand que typicamente rompe los rallies en commodities. Los spreads de credito ajustados (HY spread 2.75%) implican que las empresas energeticas tienen acceso a capital barato para mantener produccion, pero la backwardation extrema desincentiva el carry de inventarios y acelera la liquidacion del stock existente, profundizando el tightness.\n\nLa unica contradiccion que observo y que merece vigilancia: el USO tecnicamente esta sobreextendido (+46.85% sobre 200DMA segun el analisis tecnico del fondo) lo que crea riesgo de mean-reversion en el corto plazo independientemente de los fundamentals. Esto no cambia el regimen fisico - los inventarios en minimos de 2004 no desaparecen - pero si sugiere que el timing de entrada en exposicion cruda directa debe ser cuidadoso y que vehicles como equities de E&P o refiners (donde la sobreextension no es tan extrema) pueden ofrecer mejor risk/reward inmediato.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Crack spread 321 en $42.78 (MUY_FUERTE) + refinery utilization al 94.7% = Valero en su sweetspot operacional. Las refinerias son el activo que captura el spread entre crude barato-relativo y productos caros - exactamente lo que el mercado muestra ahora. Precio de VLO en $258.50. A diferencia del crudo en si, VLO no carga el riesgo de sobreextension especulativa al mismo grado; el crack spread en $42+ justifica valuation. Este es el trade mas limpio del sector en terminos de risk/reward."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "ExxonMobil en $151.49. Integrated major con exposicion upstream (beneficia de WTI alto) y downstream (beneficia de crack spreads fuertes). En este entorno ambos segmentos están disparados simultaneamente - es raro y poderoso. XOM tiene balance solido para soportar volatilidad y paga dividendo que actua como soporte en drawdowns."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "CVX en $188.63. Misma logica que XOM como integrated major. CVX tiene exposicion a Permian (EOG-like upstream growth) y operaciones internacionales. En regimen TIGHT_BACKWARDATED los integrated majors son los mejores vehiculos para capturar el upside sin la volatilidad de pure-play E&P. No tengo datos especificos de produccion CVX para el periodo para mayor granularidad."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "EOG en $141.69. Pure-play E&P de alta calidad con activos Permian/Eagle Ford de bajo costo de produccion. En WTI $91+, los margins para EOG son excepcionales. La backwardation extrema ($12 6M spread) incentiva produccion maxima hoy, favoreciendo E&P con capacidad de execution. Conviccion 6 vs. 7 de majors porque pure-play E&P tiene mas beta y la sobreextension tecnica del sector pesa mas."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "OXY en $58.59. Significativamente mas barata en terminos absolutos que CVX/XOM, con alto leverage operacional a precio del crudo (lo que es positivo en este regimen). Berkshire backing da soporte. Sin embargo, mayor apalancamiento financiero que majors implica mas riesgo en escenario de reversal macro. Conviccion 6."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Vista Energy (VIST) en $75.85 - E&P argentina con exposicion a Vaca Muerta. El play aqui es combinacion de: (1) WTI alto mejora realizaciones de precio aunque VIST vende con descuento al benchmark internacional; (2) Vaca Muerta sigue en fase de ramp-up de produccion, con crecimiento de volumes que actua como multiplicador del precio alto; (3) Argentina macro ha mejorado bajo Milei (dato externo al sector pero relevante para multiple). El riesgo especifico es cambiario/politico argentino y el diferencial de realizacion vs. WTI. No tengo datos especificos de produccion VIST reciente para este analisis. Conviccion 6."
+    }
+  ],
+  "eventos_clave": [
+    "Guerra con Iran activa: multiples noticias confirman conflicto que disrumpe suministros de crudo en region del Golfo y pone en riesgo el transito por el Estrecho de Hormuz - el chokepoint mas critico del mundo (20% del oil global). 'A Barrel Trapped Behind Hormuz Isn't Spare Capacity' resume el riesgo clave: la capacidad spare de OPEC+ es inutilizable si Hormuz esta comprometido.",
+    "Strike ucraniano sobre terminal de petroleo de San Petersburgo (3-Jun-2026): drones ucranianos incendiaron terminal en St. Petersburg y atacaron base naval. Impacto directo en infraestructura de exportacion rusa del Baltico - potencial reduccion de exports rusos de crudo/productos hacia Europa.",
+    "Inventarios USA en minimos de 2004: EIA confirma 433,712 kbbl de crudo con nota de prensa indicando minimos de 22 años. Deficit estructural de inventarios es el driver fisico mas importante del regimen de backwardation severa.",
+    "Venezuela-India energy talks: Delcy Rodriguez visita India para discutir suministros de crudo mientras India busca diversificar tras disrupciones por guerra con Iran. Señala reconfiguración de flujos fisicos globales de crudo - Venezuela como proveedor alternativo para Asia.",
+    "Saudi Arabia y Russia profundizan cooperacion 'amid OPEC upheaval': alineacion renovada entre los dos mayores productores sugiere disciplina de oferta mantenida o incluso reducida, solidificando el piso de precios en un mercado ya tight."
+  ],
+  "contradicciones_observadas": "La principal contradiccion/dislocacion observada es la siguiente: el sistema tecnico del fondo marca USO en LONG conv 6 pero con sobreextension extrema de +46.85% sobre 200DMA. Esto crea una tension entre el regimen fisico (que justifica precios altos y potencialmente mas altos) y el posicionamiento tecnico (que sugiere que el mercado de futuros ya priceó mucho del buen news). Esta dislocacion no invalida el regimen - los inventarios en minimos de 2004 son un dato fisico inapelable - pero sugiere que el mercado de futuros puede haber corrido delante de los fundamentals en el corto plazo, creando riesgo de violenta correccion tecnica incluso sin cambio en fundamentals. La implicacion operacional: las equities energeticas (VLO, XOM, CVX) que NO estan en la misma sobreextension tecnica que USO pueden ofrecer mejor entry point que los futuros directos para expresar la tesis bullish. Segunda observacion: el crack spread MUY_FUERTE ($42.78) con refinery utilization al 94.7% levanta una pregunta: si las refinerias ya corren near-full, no hay mucho upside adicional en throughput para satisfacer demanda adicional de productos. Esto podria implicar que el producto refinado (gasolina, heating oil) se tightens adicionalmente por incapacidad de incrementar produccion - bullish para crack spreads pero crea un techo fisico a la respuesta de oferta de productos.",
+  "invalidadores": [
+    "Acuerdo de paz o cese al fuego en conflicto con Iran que reabra el Estrecho de Hormuz sin restricciones: liberaria inmediatamente el riesgo geopolitico premium incorporado en el precio y devolveria capacidad spare efectiva al mercado. Este es el invalidador de mayor impacto potencial.",
+    "Build sorpresivo y sostenido en inventarios EIA de crudo en proximas 2-3 semanas: si la tendencia de draw se revierte hacia build significativo (digamos >3 mmbbl en una semana), señalaria que la demanda fisica esta underperforming las expectativas o que oferta surprises al alza. Monitorear reporte EIA semanal como leading indicator critico.",
+    "Deterioro macro rapido: si los proximos datos de empleo (NFP) o claims muestran deterioro brusco que lleve al fondo a revisar el regimen de GOLDILOCKS hacia RECESSION_RISK, la destruction of demand que esto implica colapsaria el crack spread y la backwardation independientemente de los factores geopoliticos. Este es el invalidador macro sistemico."
+  ],
+  "data_gaps": "Los siguientes datos son criticos para un analisis mas completo y no estaban disponibles en los inputs: (1) Comparacion de inventarios EIA vs. 5-year seasonal average para crudo, gasolina y distillates - sin esto no puedo cuantificar el deficit exacto en terminos de dias de cobertura; (2) Saudi Arabia Official Selling Price (OSP) y Saudi CP para LPG (Aramco Contract Price) - fundamental para LPG trading; (3) VLGC freight rates (rutas AG-Japan, AG-Houston) para LPG; (4) FEI (Far East Index) pricing para LPG Asia; (5) Curva completa de futuros de WTI y Brent (no solo 6M spread) para ver la estructura completa de backwardation; (6) Curva de futuros de Natural Gas para ver winter strip vs. summer strip; (7) LNG export volumes USA y precios spot LNG en Asia/Europa; (8) Produccion diaria de OPEC+ pais por pais con comparacion vs. targets; (9) Freight rates para crudo (VLCC Mideast Gulf-China, Suezmax, Aframax) que son leading indicators de flujos fisicos; (10) Detalle del impacto operacional del strike ucraniano en St. Petersburg (volumenes afectados, timeline de reparacion); (11) Datos de produccion reciente de VIST (Vista Energy) para el analisis de esa posicion especifica.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 4: activo invalido 'CRAK'",
+    "Senal 5: activo invalido 'HEATING_OIL'",
+    "Senal 6: activo invalido 'GASOLINA'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'NATGAS'"
+  ],
+  "metadata": {
+    "timestamp": "2026-06-05T13:35:16.207540",
+    "modelo": "claude-sonnet-4-6"
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "fecha": "2026-06-05",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Curva de rendimientos positiva en +0.86% (yield_curve), desempleo estable en 4.3% (unemployment) con claims controlados en 225k (jobless_claims), Sahm Rule bajo en 0.13 (sahm_rule), y spreads de crédito contenidos en 2.75% (hy_spread). VIX moderado en 15.94 (vix) sugiere mercados complacientes con crecimiento sostenible."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Régimen Goldilocks con SPY en 752.28 (spy), liquidez abundante evidenciada por hy_spread de solo 2.75% y VIX controlado en 15.94. Curva normalizada y empleo sólido favorecen equities.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 8,
+      "razonamiento": "Yield 10Y en 4.53% (yield_10y_mkt) con curva positiva sugiere presión alcista continua en tasas. TLT en 85.01 vulnerable a repricing por crecimiento persistente y expectativas inflacionarias en 2.24% (breakeven_5y5y).",
+      "dato_clave": "yield_10y_mkt"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "DXY en 99.52 con USD/JPY extremo en 160.15 (usdjpy) sugiere fortaleza del dólar. Differentials de tasas favorables con yield 10Y en 4.53% vs perspectiva de recortes globales.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "GLD en 403.93 (gold) con real yields positivos en 2.11% (tips_yield_10y) limita atractivo. Sin embargo, USD/JPY en niveles extremos y tensiones geopolíticas por petróleo crean demanda defensiva offsetting.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "El mercado opera en un régimen Goldilocks clásico: crecimiento económico sólido evidenciado por desempleo estable en 4.3% (unemployment) y claims contenidos en 225k (jobless_claims), mientras la Sahm Rule en 0.13 (sahm_rule) descarta riesgo recesivo inmediato. La curva de rendimientos normalizada en +0.86% (yield_curve) con yields 10Y en 4.53% (yield_10y_mkt) refleja expectativas de crecimiento sostenible sin pánico inflacionario. Los spreads de crédito apretados en 2.75% (hy_spread) y VIX controlado en 15.94 (vix) confirman apetito por riesgo, favoreciendo equities como SPY que cotiza en máximos en 752.28 (spy). Sin embargo, el USD/JPY en niveles extremos de 160.15 (usdjpy) y las tensiones geopolíticas por petróleo introducen factores de volatilidad que requieren monitoreo cercano, especialmente dado que los real yields positivos en 2.11% (tips_yield_10y) mantienen presión sobre activos sin rendimiento como oro.",
+  "invalidadores": [
+    "Deterioro súbito en jobless claims por encima de 350k o escalada en Sahm Rule",
+    "Inversión de curva de rendimientos o colapso en hy_spreads por encima de 4%",
+    "Intervención del Banco de Japón en USD/JPY causando unwinding masivo de carry trades",
+    "Escalada geopolítica en Medio Oriente disparando petróleo y expectativas inflacionarias",
+    "VIX por encima de 25 indicando deterioro en sentiment de riesgo"
+  ],
+  "alertas": [
+    "USD/JPY en 160.15 cerca de niveles de intervención histórica del BoJ",
+    "Tensiones geopolíticas elevando precios de petróleo según headlines",
+    "Diferencial significativo entre yield 10Y FRED (4.49) vs market (4.53) sugiere volatilidad intraday",
+    "Expectativas inflacionarias Michigan en 4.7% considerablemente por encima de target Fed del 2%"
+  ],
+  "datos_insuficientes": [
+    "No hay datos de PCE Core recientes (último abril), limitando análisis de tendencias inflacionarias actuales",
+    "Ausencia de datos de PMI manufacturero y servicios para evaluar momentum económico",
+    "Falta información sobre posiciones especulativas en USD/JPY para calibrar riesgo de reversión"
+  ],
+  "eventos_clave": [
+    "[CNBC] S&P 500 futures fall after index snaps 9-day win streak amid rising Middle East tensions — presión bajista por geopolítica y yields",
+    "[WSJ] Stock Market Today: Broadcom Earnings Weigh on Markets, Oil Slips — sector tech bajo presión específica",
+    "[Politico] Oil industry warning Trump administration that drained inventories threaten to spike gasoline prices — riesgo inflacionario por supply constraints",
+    "[CNBC] Broadcom leads chip stocks lower — rotación sectorial away from mega-cap tech",
+    "[Financial Times] Nvidia takes AI battle from data centre to laptop — intensificación competencia en AI ecosystem"
+  ],
+  "confianza_general": 75,
+  "metadata": {
+    "timestamp": "2026-06-05T13:32:32.840315",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
