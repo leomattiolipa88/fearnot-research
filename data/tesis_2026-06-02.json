@@ -1,0 +1,66 @@
+{
+  "fecha": "2026-06-02",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "La yield curve está positiva en +0.85% (yield_curve), indicando expectativas de crecimiento. El VIX bajo en 16.0 (vix) refleja complacencia. El desempleo estable en 4.3% (unemployment) con jobless claims saludables en 215,000 (jobless_claims). La regla de Sahm en 0.13 (sahm_rule) está muy por debajo del umbral de recesión. HY spreads comprimidos en 2.74% (hy_spread) indican liquidez abundante."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 758.61 (spy) con VIX suprimido en 16.0 (vix) y credit spreads en mínimos de 2.74% (hy_spread). El régimen Goldilocks favorece equities con liquidez abundante y ausencia de stress sistémico.",
+      "dato_clave": "vix"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Yield 10Y en 4.45% (yield_10y) con curva empinada +0.85% (yield_curve) sugiere presión alcista en rates. TLT en 85.71 (tlt) vulnerable a repricing de duration con expectativas de crecimiento sostenido.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 99.17 (dxy) en rango medio. USD/JPY extremo en 159.85 (usdjpy) sugiere riesgo de intervención del BoJ. EUR/USD en 1.1647 (eurusd) estable. Fuerzas cruzadas sin dirección clara en el corto plazo.",
+      "dato_clave": "usdjpy"
+    }
+  ],
+  "tesis_principal": "Estamos en un régimen Goldilocks clásico con crecimiento sólido y inflación contenida. La yield curve positiva en +0.85% (yield_curve) refleja expectativas de crecimiento robusto, mientras que el VIX suprimido en 16.0 (vix) y HY spreads comprimidos en 2.74% (hy_spread) indican liquidez abundante y complacencia generalizada. Los datos laborales confirman solidez económica con desempleo en 4.3% (unemployment), jobless claims en 215,000 (jobless_claims) y la regla de Sahm en 0.13 (sahm_rule), muy lejos del umbral de recesión de 0.5.\n\nEl mercado equity en SPY 758.61 (spy) se beneficia de este entorno con múltiples expansion justificado por fundamentals. Los bonds largos enfrentan presión con yield 10Y en 4.45% (yield_10y) y curva empinada, sugiriendo que el mercado está pricing correctamente expectativas de crecimiento. Las monedas muestran dinámica interesante con USD/JPY en 159.85 (usdjpy) acercándose a niveles de intervención, mientras que el DXY en 99.17 (dxy) se mantiene relativamente estable.",
+  "invalidadores": [
+    "USD/JPY supera 160 y dispara intervención masiva del BoJ, generando unwinding de carry trades globales",
+    "VIX explota por encima de 25 por shock geopolítico o credit event no anticipado",
+    "HY spreads se expanden por encima de 4% indicando stress en credit markets",
+    "Yield curve se invierte nuevamente por debajo de -0.25% señalizando recesión inminente",
+    "Jobless claims superan 300,000 de forma sostenida indicando deterioro del mercado laboral"
+  ],
+  "alertas": [
+    "USD/JPY en 159.85 está peligrosamente cerca de niveles que históricamente han disparado intervención del BoJ",
+    "VIX en 16.0 refleja complacencia extrema que podría amplificar cualquier shock exógeno",
+    "Expectativas de inflación de Michigan en 4.7% (michigan_inflation_exp) están elevadas vs meta de Fed del 2%"
+  ],
+  "datos_insuficientes": [
+    "TIPS yield 10Y con 4 días de antigüedad (tips_yield_10y) limita cálculo preciso de real rates"
+  ],
+  "eventos_clave": [
+    "[CNBC] 'Disrupted or dead': AI crushing pre-ChatGPT startups — Continúa la rotación hacia large cap tech con moats de AI",
+    "[Bloomberg] China tightens outbound investment rules — Podría limitar flujos de capital y fortalecer CNY vs USD",
+    "[Barron's] Dow falls as oil spikes on Iran fears — Tensiones geopolíticas aumentan prime de riesgo en energy",
+    "[CNBC] U.S. intercepted Iranian missiles in Kuwait — Escalada militar podría disparar flight-to-quality hacia bonds y gold"
+  ],
+  "confianza_general": 78,
+  "advertencias_validacion": [
+    "Senal GLD: falta campo 'conviccion'"
+  ],
+  "metadata": {
+    "timestamp": "2026-06-02T14:37:08.986069",
+    "datos_usados": 23,
+    "datos_totales": 25,
+    "validacion_ok": false
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-06-01",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "La yield curve está en territorio positivo en +0.85% (yield_curve), indicando crecimiento sólido. VIX contenido en 16.04 (vix) y high yield spreads comprimidos en 274bp (hy_spread) señalan liquidez abundante. Inflación expectativas 5y5y en 2.24% (breakeven_5y5y) sugieren control inflacionario, mientras el unemployment en 4.3% (unemployment) y Sahm Rule en 0.13 (sahm_rule) confirman mercado laboral saludable sin sobrecalentamiento."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Régimen Goldilocks perfecto con VIX en 16.04 (vix) y HY spreads apretados en 274bp (hy_spread). SPY ya en 756.44 (spy) pero condiciones macro soportan extensión con yield curve positiva (yield_curve) y liquidez abundante.",
+      "dato_clave": "vix"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "10Y en 4.5% (yield_10y_mkt) con curva empinada en +85bp (yield_curve) indica presión alcista en yields. Régimen de crecimiento con inflación controlada mantiene sesgo hacia yields más altos, presionando TLT en 84.98 (tlt).",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 99.28 (dxy) con USDJPY extremo en 159.68 (usdjpy) cerca de niveles de intervención. EUR/USD en 1.1623 (eurusd) sugiere equilibrio. Sin catalistas direccionales claros a corto plazo, prefiero neutralidad hasta definición.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Oro en 409.90 (gold) bajo presión por yields reales altos (10Y en 4.5% vs inflación expectativas 2.24%). DXY firme en 99.28 (dxy) y régimen de crecimiento reduce atractivo del oro como refugio.",
+      "dato_clave": "yield_10y_mkt"
+    }
+  ],
+  "tesis_principal": "Estamos en un régimen Goldilocks casi perfecto: crecimiento sólido evidenciado por la yield curve en +85bp (yield_curve) y desempleo estable en 4.3% (unemployment), con inflación bajo control según expectativas 5y5y en 2.24% (breakeven_5y5y). La liquidez permanece abundante con VIX contenido en 16.04 (vix) y HY spreads comprimidos en 274bp (hy_spread), creando un entorno favorable para risk assets. El SPY en 756.44 (spy) refleja esta narrativa optimista.\n\nSin embargo, emergen tensiones en FX con USDJPY en 159.68 (usdjpy) tocando niveles críticos que podrían forzar intervención del BoJ. Los yields elevados (10Y en 4.5%) mantienen presión sobre duration trades como TLT en 84.98 (tlt), mientras que el oro en 409.90 (gold) sufre por yields reales altos y dólar firme. El momentum macro favorece equities y penaliza bonos/oro hasta que surjan catalizadores de cambio de régimen.",
+  "invalidadores": [
+    "USDJPY rompiendo 160 y forzando intervención masiva del BoJ, desestabilizando carry trades globales",
+    "Sorpresa inflacionaria que empuje expectativas 5y5y por encima de 2.5%, forzando hawkishness Fed",
+    "HY spreads expandiéndose por encima de 350bp, señalando stress crediticio",
+    "VIX saltando por encima de 25 por shock geopolítico o crisis bancaria regional",
+    "Datos laborales deteriorándose rápidamente, llevando Sahm Rule por encima de 0.5"
+  ],
+  "alertas": [
+    "USDJPY en 159.68 está peligrosamente cerca de niveles de intervención históricos (~160)",
+    "Concentración extrema del mercado según noticias - solo 60% del S&P 500 por encima de MA200",
+    "Divergencia entre yields FRED (4.45%) y market (4.5%) sugiere volatilidad intradiaria",
+    "Michigan inflation expectations en 4.7% significativamente por encima de Fed target"
+  ],
+  "datos_insuficientes": [
+    "TIPS yield 10Y con 5 días de retraso (tips_yield_10y) limita cálculo preciso de yields reales",
+    "Algunos datos macro (CPI, PCE, unemployment) con fechas de abril, perdiendo granularidad reciente"
+  ],
+  "eventos_clave": [
+    "[WSJ] Kevin Warsh quiere que la Fed piense diferente sobre inflación — podría señalar cambio en targeting, impacto neutral-bajista para bonds",
+    "[Bloomberg] Apple busca disrumpir mercado de lentes como hizo con watches — impulso tecnológico adicional para tech stocks",
+    "[Yahoo Finance] Concentración del mercado crea 'fragilidad' con solo 60% del S&P sobre MA200 — riesgo de corrección sharp si se rompe momentum",
+    "[CNBC] Drug experimental reduce mortalidad 34% en China — boost para biotech pero impacto macro limitado",
+    "[TheStreet] SpaceX consigue deal de $4B pre-IPO — señal de apetito de riesgo en private markets"
+  ],
+  "confianza_general": 82,
+  "metadata": {
+    "timestamp": "2026-06-01T16:23:52.767718",
+    "datos_usados": 23,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-06-04",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 88,
+    "razonamiento": "Tres señales físicas convergentes confirman tightness real. Primero, la curva WTI muestra backwardation de +$12.37 en el spread calendar 6 meses — esto es estructuralmente muy severo y refleja que el mercado spot está siendo presionado por demanda inmediata mientras el forward descuenta eventual normalización de oferta. Segundo, WTI en $93.02 y Brent en $95.28 son niveles elevados que, en combinación con backwardation extrema, no son price discovery especulativo sino señal de balance físico muy ajustado. Tercero, el contexto geopolítico dominante es la disrupción del Estrecho de Hormuz en el marco de la guerra con Irán (día 96 según noticias), que está bloqueando flujos físicos críticos — no es riesgo de cola sino evento en curso. Los inventarios de crudo EIA a 433,712 Kbbl son un número absoluto que sin el 5-year average no puedo comparar con precisión, pero la coexistencia de inventarios que no parecen excesivos con backwardation extrema sugiere que los draws son reales o están siendo anticipados por el mercado físico. La utilización de refinerías al 94.7% es muy alta — las refinerías están corriendo a máxima capacidad para procesar todo el crudo disponible, lo que confirma que la demanda downstream es genuinamente fuerte. Sin datos de 5-year average para inventarios, descuento levemente la confianza de 95 a 88."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 60,
+    "razonamiento": "NATGAS en $3.31/MMBtu es un precio moderado — ni en territorio de tightness severa (>$4.50) ni en oversupply profundo (<$2.50). El storage de gas natural está en 2,483 Bcf al 22 de mayo. Sin el 5-year average ni los datos estacionales detallados, no puedo clasificar si esto es draw o build en términos relativos al normal estacional. A priori, en junio en el hemisferio norte, la demanda de gas se mantiene por cooling demand y LNG exports — el Goldilocks macro sugiere actividad industrial sostenida que debe ser positiva para gas industrial. La disrupción del Hormuz afecta LNG flows globales (hay noticias explícitas sobre el gas trade empujado a las sombras), lo que podría crear dislocaciones regionales. La falta del 5-year average y de datos de LNG export utilization me impide clasificar con mayor confianza. BALANCED con sesgo a TIGHT si el storage está bajo average estacional."
+  },
+  "regimen_lpg": {
+    "clasificacion": "TIGHT",
+    "confianza": 50,
+    "razonamiento": "DATA LIMITADA — clasificación tentativa. Propano en inventarios EIA: 83,316 Kbbl. Sin 5-year average para comparar, no puedo determinar si esto es surplus o deficit. Sin embargo, hay factores cualitativos fuertes para TIGHT: (1) La disrupción del Estrecho de Hormuz está bloqueando exportaciones de LPG del Golfo Pérsico — Middle East es el mayor exportador de LPG hacia Asia; (2) Las noticias específicamente mencionan que 'key fuel and fertilizer exports have been blocked by disruption in the Strait of Hormuz' — LPG encaja en esta categoría como combustible doméstico y feedstock petroquímico; (3) En régimen Goldilocks, la demanda petroquímica asiática de propano/butano como feedstock debería ser robusta. No tengo Saudi CP (Contract Price de Aramco para LPG), freight rates en rutas del Golfo, ni FEI Asia para confirmar el balance físico asiático. La confianza se limita al 50% por gaps de data críticos."
+  },
+  "tesis_principal": "El sector energético opera en un régimen de tightness física real impulsado por la convergencia de tres factores: disrupción activa del Estrecho de Hormuz (día 96 de guerra con Irán), demanda robusta sostenida por macro Goldilocks, y refinerías corriendo a 94.7% de capacidad. La backwardation de $12.37 en WTI a 6 meses es el dato más revelador — el mercado físico está pagando un premium masivo por barril inmediato, lo que solo ocurre cuando los compradores están genuinamente cortos de suministro y no pueden esperar. Este no es un rally de papel.\n\nEl crack spread 3-2-1 en $42.53 clasificado como MUY_FUERTE es la segunda señal crítica. Las refinerías están ganando margen extraordinario transformando crudo en productos, lo que indica que la demanda de gasolina y heating oil al consumidor final es genuinamente fuerte — consistente con el Goldilocks macro donde el empleo es robusto (Sahm 0.13) y los consumidores siguen manejando. VLO en $257 es el beneficiario directo de este entorno. La combinación de crack spread alto + utilización alta de refinerías contradice cualquier narrativa de demanda débil.\n\nEl riesgo bilateral más importante es la negociación EEUU-Irán: Rubio está diciendo que la guerra podría estar terminando, y Trump habló de 'talks ongoing'. Si el Hormuz se reabre, el primer movimiento sería un colapso violento de la backwardation y un selloff de $10-15 en WTI. Pero mientras el bloqueo persiste y las negociaciones son inciertas, el balance físico justifica precios elevados y estructuras backwardated. El setup es LONG oil/refiners con stop definido en resolución diplomática.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Crack spread 3-2-1 en $42.53 MUY_FUERTE + utilización de refinerías al 94.7% = ambiente de margen extraordinario para refinadores. VLO es el pure-play refinador de mayor calidad. A $257.26, el precio refleja ganancias altas pero el entorno físico sugiere que los márgenes se mantienen mientras el Hormuz esté bloqueado. Dos factores simultáneos (crack alto + run rates altos) dan convicción 8."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "XOM en $151.81 como major integrada se beneficia de precio alto de crudo (upstream) y crack spread alto (downstream Beaumont). Balance sheet sólido, dividendo defensivo. En régimen Goldilocks + tightness física, las majors integradas capturan valor en toda la cadena. Sin data específica de volúmenes de producción XOM en el período."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "CVX en $188.95. Similar tesis que XOM. Convicción levemente menor porque CVX tiene exposición a Kazajistán/TCO que puede tener disrupciones propias no cubiertas por noticias disponibles, y su leverage al crack spread downstream es menor que XOM. Goldilocks + $93 WTI son soportes claros."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "EOG en $140.74 es E&P puro con foco en Permian. En $93 WTI, los márgenes de EOG son excepcionales (break-even Permian bien por debajo de $60). Operador de bajo costo con crecimiento de producción disciplinado. Convicción 6 en lugar de 7 porque EOG no tiene upside adicional del crack spread como VLO — es solo upstream leverage."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "OXY en $58.56. Alta sensibilidad al precio del petróleo por su estructura de deuda y perfil de producción. Con WTI a $93 genera cash flow muy fuerte para deleveraging. Berkshire backing como floor de soporte. Convicción 6 — es más levered play que CVX/XOM, apropiado para exposure agresiva pero con mayor riesgo si WTI cae."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "VIST en $76.13 como proxy de Vaca Muerta (Argentina upstream). Se beneficia del precio global del crudo. En Goldilocks global + WTI alto, Vaca Muerta tiene viento de cola en precios. Riesgo específico Argentina (macro doméstica, tipo de cambio, regulación) que no tengo cubierto con data actual — esto limita la convicción a 6. No tengo data de producción ni diffs locales."
+    }
+  ],
+  "eventos_clave": [
+    "GUERRA IRAN - DÍA 96: Bloqueo activo del Estrecho de Hormuz causando disrupción masiva de exportaciones de petróleo, LNG y fertilizantes desde el Golfo Pérsico. 20,000 marineros atrapados según BBC. Este es el driver dominante del mercado físico actual.",
+    "NEGOCIACIONES EEUU-IRÁN: Rubio indica que Irán acordó negociar 'aspectos del programa nuclear' previamente fuera de límites. Trump menciona talks ongoing. EEUU rechaza deal vinculado al Hormuz, exige entrega de uranio enriquecido. La resolución diplomática es el mayor risk event bilateral del mercado.",
+    "CRACK SPREAD 3-2-1 EN $42.53 (MUY_FUERTE): Señal física de que la demanda de productos refinados está extremadamente robusta, consistente con Goldilocks macro. Refinerías operando al 94.7% de capacidad — el sistema está corriendo al límite para satisfacer demanda.",
+    "BACKWARDATION WTI CALENDAR 6M DE +$12.37: Señal estructural de tightness física severa. El mercado spot está pagando premium masivo sobre el forward — los compradores no pueden esperar y necesitan crudo ya. Confirma que el bloqueo del Hormuz está generando escasez real en el mercado físico.",
+    "VENEZUELA POST-MADURO: Cambio de régimen con sector petrolero 'mismanaged' pero producción 'rising' según noticias. Podría ser fuente de oferta adicional en el mediano plazo si se restaura el acceso de operadoras internacionales, aunque el timelines es largo e incierto."
+  ],
+  "contradicciones_observadas": "La contradicción más interesante es la coexistencia de inventarios de crudo EIA en 433,712 Kbbl con backwardation de $12.37 a 6 meses. En teoría, backwardation severa implica que los inventarios son escasos. Si 433K Kbbl es un nivel alto relativo al 5-year average, entonces el precio spot está siendo inflado por disrupción de flujos (no por escasez de inventarios existentes) — lo que significa que una reapertura del Hormuz podría generar un selloff más violento de lo que el mercado anticipa, porque los inventarios físicos disponibles son más abundantes de lo que la estructura de la curva sugiere. No tengo el 5-year average para resolver esta contradicción — es el data gap más crítico. Segunda contradicción: precios de heating oil en $3.73 (muy altos) en pleno junio, fuera de temporada de calefacción. Esto sugiere o bien acumulación anticipada de inventarios para invierno por actores previsores, o compra industrial/petroquímica de destilados medios, o simplemente que el crack spread en middle distillates está siendo impulsado por substitución de otros combustibles en mercados afectados por la guerra. Tercera: Rubio dice 'la guerra está casi terminada' pero los precios no están descuento esto plenamente — el mercado puede estar sobre-discountando persistencia del conflicto.",
+  "invalidadores": [
+    "RESOLUCIÓN DIPLOMÁTICA HORMUZ: Un acuerdo EEUU-Irán que reabra el Estrecho de Hormuz sería el invalidador principal de toda la tesis LONG oil. Un movimiento de -$10 a -$15 en WTI en una sola sesión sería plausible. Las señales de Rubio sobre negociaciones activas hacen este escenario no trivial — seguir diariamente.",
+    "DETERIORO MACRO GOLDILOCKS → RECESIÓN: Si el VIX escala sobre 25, HY spreads se amplían significativamente, o los jobless claims saltan por encima de 300K, el régimen macro cambia y la demanda energética proyectada colapsa. Actualmente Sahm en 0.13 está muy lejos de la zona de alerta, pero es el indicador a monitorear semanalmente.",
+    "PRODUCCIÓN ADICIONAL INESPERADA: Reactivación rápida de producción venezolana (post-Maduro con apoyo de majors internacionales), o decisión de OPEC+ de aumentar cuotas de producción de manera agresiva para compensar pérdida iraní, podrían romper la backwardation y revertir el setup. El artículo sobre Venezuela señala que la producción ya está rising a pesar del caos político."
+  ],
+  "data_gaps": "Críticos: (1) 5-year average para inventarios de crudo, gasolina, destilados y propano EIA — sin esto no puedo determinar si los draws/builds son anómalos o normales estacionalmente. Es el gap más importante para calibrar el régimen real. (2) Saudi Aramco CP (Contract Price) para LPG propano/butano — fundamental para régimen LPG físico. (3) Freight rates en rutas del Golfo Pérsico (VLCC, LNG carriers) — proxy directo del impacto físico del bloqueo del Hormuz. (4) FEI Asia (Far East Index) para LPG — para entender el differential Asia vs US. (5) Volúmenes de exportación iraní de crudo y LNG pre vs post bloqueo — para cuantificar el supply loss real. (6) Spreads calendario específicos de gas natural (Henry Hub M1-M2, winter strip) para clasificar mejor el régimen natgas. (7) LNG export utilization en terminales US (Sabine Pass, Freeport, Corpus Christi) — impacto del rerouting post-Hormuz. (8) Datos de producción VIST (Vaca Muerta) y diferenciales WTI Medanito para calibrar la señal VIST con mayor precisión.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 4: activo invalido 'CRAK'",
+    "Senal 5: activo invalido 'GASOLINA'",
+    "Senal 6: activo invalido 'HEATING_OIL'",
+    "Senal 7: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'NATGAS'"
+  ],
+  "metadata": {
+    "timestamp": "2026-06-04T13:42:05.407608",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
