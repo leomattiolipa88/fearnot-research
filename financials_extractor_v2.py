@@ -590,16 +590,46 @@ def _frames_recientes(anio_actual: int, quarter_actual: int, n: int) -> list:
     return out
 
 
+def _anual_termina_en_diciembre(facts, posibles_nombres, anio, taxonomia="us-gaap"):
+    """
+    Detecta si el fiscal year es calendar-year (termina en diciembre) mirando
+    el 'end' del registro anual (FY). True=calendar, False=no-calendario, None=no encontrado.
+    Resuelve FIX 1: solo reconstruir Q4 para calendar-year (la resta cross-ano
+    da basura en no-calendario como NVDA/MSFT/MU).
+    """
+    if not facts or "facts" not in facts:
+        return None
+    tax = facts["facts"].get(taxonomia, {})
+    for nombre in posibles_nombres:
+        if nombre not in tax:
+            continue
+        for unidad, recs in tax[nombre].get("units", {}).items():
+            for r in recs:
+                if r.get("fp") == "FY" and r.get("fy") == anio and "start" in r:
+                    try:
+                        return int(r.get("end", "").split("-")[1]) == 12
+                    except (ValueError, IndexError):
+                        continue
+    return None
+
+
 def extraer_trimestre_con_q4(facts, posibles_nombres, anio, quarter, taxonomia="us-gaap") -> tuple:
     """
-    Extrae un trimestre. Si es Q4 de un FLUJO (sin frame propio), reconstruye:
-    Q4 = anual - (Q1+Q2+Q3). Stocks usan Q4I directo. Si falta componente -> None.
-    Returns: (valor, es_stock, metodo). metodo: direct | reconstructed_q4 | not_found.
+    Extrae un trimestre. Si es Q4 de un FLUJO calendar-year (sin frame propio),
+    reconstruye: Q4 = anual - (Q1+Q2+Q3). Stocks usan Q4I directo.
+    FIX 1: para empresas NO-calendario (fiscal year no termina en dic), NO reconstruye
+    (la resta cross-ano da basura) -> deja hueco honesto.
+    Returns: (valor, es_stock, metodo). metodo: direct|reconstructed_q4|not_found|skip_noncalendar.
     """
     val, es_stock = extraer_fact_trimestral_auto(facts, posibles_nombres, anio, quarter, taxonomia)
     if val is not None:
         return val, es_stock, "direct"
     if quarter == 4:
+        es_calendar = _anual_termina_en_diciembre(facts, posibles_nombres, anio, taxonomia)
+        if es_calendar is False:
+            return None, None, "skip_noncalendar"
+        if es_calendar is None:
+            return None, None, "not_found"
         anual = extraer_fact_anual(facts, posibles_nombres, anio, taxonomia)
         if anual is None:
             return None, None, "not_found"
