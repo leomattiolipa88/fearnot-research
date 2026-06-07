@@ -231,3 +231,40 @@ def calcular_efficiency_ratio(noninterest_expense, net_interest_income, noninter
         "value": noninterest_expense / ingreso_total,
         "quality": "calculated_from_noninterest_expense_and_total_revenue"
     }
+
+
+# ============================================================
+# METRICAS TECH (margenes + FCF) - aditivo
+# ============================================================
+
+def calcular_margen_operativo(operating_income, revenue) -> dict:
+    """Margen operativo = operating_income / revenue. Ratio (0-1)."""
+    if operating_income is None or revenue is None:
+        return {"value": None, "quality": "missing_inputs"}
+    if revenue == 0:
+        return {"value": None, "quality": "division_by_zero"}
+    return {"value": operating_income / revenue, "quality": "calculated"}
+
+
+def calcular_margen_bruto(gross_profit, revenue, cost_of_revenue=None) -> dict:
+    """
+    Margen bruto = gross_profit / revenue. Si no hay gross_profit directo
+    pero si revenue y cost_of_revenue, lo deriva.
+    """
+    if revenue is None or revenue == 0:
+        return {"value": None, "quality": "missing_inputs" if revenue is None else "division_by_zero"}
+    if gross_profit is not None:
+        return {"value": gross_profit / revenue, "quality": "calculated"}
+    if cost_of_revenue is not None:
+        return {"value": (revenue - cost_of_revenue) / revenue, "quality": "calculated_derived"}
+    return {"value": None, "quality": "missing_inputs"}
+
+
+def calcular_free_cash_flow(operating_cash_flow, capex) -> dict:
+    """
+    FCF = operating_cash_flow - capex. capex viene positivo en XBRL
+    (PaymentsToAcquire...), por eso se resta su valor absoluto.
+    """
+    if operating_cash_flow is None or capex is None:
+        return {"value": None, "quality": "missing_inputs"}
+    return {"value": operating_cash_flow - abs(capex), "quality": "calculated"}
