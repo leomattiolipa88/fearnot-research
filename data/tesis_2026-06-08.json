@@ -1,0 +1,72 @@
+{
+  "fecha": "2026-06-08",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Régimen Goldilocks confirmado por yield curve positiva en +0.84% (yield_curve), spreads de crédito contenidos en 2.76% (hy_spread), VIX moderado en 18.82 (vix), y Sahm Rule muy baja en 0.1 (sahm_rule). Inflación bajo control con breakeven 5y5y en 2.24% (breakeven_5y5y)."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 742.81 (spy) beneficiándose del régimen Goldilocks. VIX contenido en 18.82 (vix) y spreads de crédito bajos en 2.76% (hy_spread) apoyan el carry de riesgo.",
+      "dato_clave": "yield_curve positiva en +0.84%"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "TLT en 84.96 (tlt) presionado por yield 10Y en 4.55% (yield_10y_mkt). Curva empinada y expectativas de inflación estables sugieren poco valor en duration larga.",
+      "dato_clave": "yield_10y_mkt en 4.546%"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 99.997 (dxy) cerca de niveles técnicos clave. EUR/USD en 1.1542 (eurusd) sugiere equilibrio. Carry trades activos con USD/JPY en 160.12 (usdjpy) mantienen demanda por USD.",
+      "dato_clave": "usdjpy en 160.123"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "GLD en 396.83 (gold) enfrentando vientos contrarios por yields reales positivos. TIPS yield 10Y en 2.11% (tips_yield_10y) reduce el atractivo del oro como cobertura.",
+      "dato_clave": "tips_yield_10y en 2.11%"
+    }
+  ],
+  "tesis_principal": "El mercado opera en régimen Goldilocks clásico con yield curve normalizada en +0.84% (yield_curve), condiciones financieras acomodaticias evidenciadas por spreads de HY en 2.76% (hy_spread), y stress limitado con VIX en 18.82 (vix). El mercado laboral permanece sólido con jobless claims en 225K (jobless_claims) y Sahm Rule en apenas 0.1 (sahm_rule). Los yields nominales en 4.55% (yield_10y_mkt) con breakevens contenidos en 2.24% (breakeven_5y5y) ofrecen real yields atractivos que benefician a riesgo sobre duration. USD/JPY en 160.12 (usdjpy) señala carry trades activos que amplifican el apetito por riesgo. SPY en 742.81 (spy) refleja este entorno benigno donde crecimiento sólido coexiste con inflación bajo control.",
+  "invalidadores": [
+    "Escalada geopolítica que lleve VIX por encima de 25 y dispare spreads de crédito",
+    "Ruptura de USD/JPY por debajo de 155 que fuerce unwinding masivo de carry trades",
+    "Inversión de yield curve que señale recesión inminente",
+    "Sahm Rule por encima de 0.5 indicando deterioro del mercado laboral",
+    "Breakeven 5y5y por encima de 3% sugiriendo pérdida de anclaje inflacionario"
+  ],
+  "alertas": [
+    "USD/JPY en 160.12 cerca de niveles que históricamente provocan intervención del BoJ",
+    "Michigan inflation expectations elevadas en 4.7% vs. breakevens del mercado",
+    "Algunos datos macro tienen rezago de 2+ meses (CPI, PCE Core desde abril)"
+  ],
+  "datos_insuficientes": [
+    "PMI manufacturero para confirmar momentum de crecimiento",
+    "Datos de retail sales para validar fortaleza del consumidor",
+    "Fedspeak reciente para calibrar probabilidades de política monetaria"
+  ],
+  "eventos_clave": [
+    "[Financial Times] OpenAI plots biggest ChatGPT overhaul — continúa impulsando optimismo tech que beneficia al SPY",
+    "[Bloomberg] China's PBOC adds gold again — presión adicional sobre oro por demanda central bank pero no cambia fundamentals de yields reales",
+    "[CNBC] 100 days Iran war impact on markets — geopolítica contenida evidenciada por VIX moderado, pero riesgo latente"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-06-08T14:33:58.260226",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
