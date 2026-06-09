@@ -1,0 +1,70 @@
+{
+  "fecha": "2026-06-09",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 82,
+    "razonamiento": "Yield curve normalizada en +0.92% (yield_curve), VIX controlado en 17.96 (vix), spreads credit tight en 2.76% (hy_spread), y Sahm rule muy bajo en 0.1 (sahm_rule). Expectativas inflacionarias ancladas en 2.23% 5y5y (breakeven_5y5y) vs 4.7% Michigan (michigan_inflation_exp). Unemployment estable en 4.3% (unemployment) con claims contenidos en 225k (jobless_claims)."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Goldilocks perfecto: yield curve normalizada, VIX bajo, credit spreads tight, labor market sano pero no sobrecalentado. SPY en 739.22 (spy) con fundamentales sólidos.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Yields en 4.55% (yield_10y) con expectativas inflacionarias desancladas en Michigan 4.7% (michigan_inflation_exp) vs 2.23% 5y5y (breakeven_5y5y). TLT en 84.62 (tlt) vulnerable a repricing.",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "USD/JPY en nivel crítico 160.18 (usdjpy) sugiere intervención inminente del BoJ. DXY en 99.68 (dxy) podría beneficiarse de flight-to-quality si hay volatility en carry trades.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Oro en 397.27 (gold) enfrentando yields reales positivos de 2.19% TIPS (tips_yield_10y). Régimen Goldilocks no favorece oro, pero divergencia inflacionaria crea incertidumbre.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "Estamos en un régimen Goldilocks textbook: yield curve normalizada en +0.92% (yield_curve) después de años invertida, VIX contenido en 17.96 (vix), credit spreads en mínimos en 2.76% (hy_spread), y labor market en equilibrio con unemployment 4.3% (unemployment) y claims estables en 225k (jobless_claims). El Sahm rule en 0.1 (sahm_rule) confirma ausencia de señales recesivas.\n\nSin embargo, hay tensión inflacionaria bajo la superficie. Mientras expectativas 5y5y están ancladas en 2.23% (breakeven_5y5y), Michigan consumer expectations están desancladas en 4.7% (michigan_inflation_exp). Esta divergencia, combinada con yields en 4.55% (yield_10y) y TIPS reales en 2.19% (tips_yield_10y), sugiere que el mercado no está completamente convencido del control inflacionario.\n\nEn FX, USD/JPY en 160.18 (usdjpy) es una bomba de tiempo que podría desestabilizar carry trades globalmente. DXY en 99.68 (dxy) mantiene fortaleza pero vulnerable a intervenciones coordinadas. La estabilidad actual depende de que la Fed mantenga el balance perfecto entre growth y inflation control.",
+  "invalidadores": [
+    "USD/JPY rompe 161+ desatando unwinding masivo de carry trades y volatilidad global",
+    "Michigan inflation expectations rompen 5%+ confirmando desanclaje de expectativas",
+    "Credit spreads se amplían >3.5% sugiriendo stress en funding markets",
+    "VIX explota >25 por algún shock geopolítico no contemplado",
+    "Sahm rule dispara >0.5 indicando deterioro laboral acelerado"
+  ],
+  "alertas": [
+    "USD/JPY en 160.18 está en territorio de intervención crítica del BoJ",
+    "Divergencia peligrosa entre expectations: 5y5y 2.23% vs Michigan 4.7%",
+    "Yields reales de 2.19% en TIPS presionan activos sin yield como oro",
+    "SPY en 739.22 podría estar vulnerable a profit-taking si algún invalidador se activa"
+  ],
+  "datos_insuficientes": [],
+  "eventos_clave": [
+    "[CNBC] WWDC 2026 live updates con foco en AI — podría impulsar tech rally si hay sorpresas positivas",
+    "[WSJ] Dow Futures Edge Lower — sugiere cautela institucional pese a fundamentales sólidos",
+    "[Yahoo Finance] Oil prices pares gains after Iran announcement — reduce premium geopolítico y pressure inflacionaria",
+    "[CNBC] United CEO brushes off airline mergers — señal de confianza en growth orgánico vs consolidación defensiva"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-06-09T13:23:51.142644",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
