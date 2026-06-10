@@ -1,0 +1,72 @@
+{
+  "fecha": "2026-06-10",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Régimen favorable con yield curve normalizada en +0.91% (yield_curve), inflación expectativas ancladas en 2.22% (breakeven_5y5y), desempleo estable en 4.3% (unemployment), y Sahm rule en niveles tranquilos de 0.1 (sahm_rule). HY spreads contenidos en 2.75% (hy_spread) indican liquidez saludable."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "SPY en 735.28 (spy) con VIX moderado en 20.53 (vix) y HY spreads en 2.75% (hy_spread) sugieren condiciones favorables para equities. Jobless claims estables en 225K (jobless_claims) apoyan la tesis de crecimiento sin sobrecalentamiento.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Yield 10Y en 4.56% (yield_10y) con TIPS yield en 2.21% (tips_yield_10y) implica breakeven de ~2.35%, consistente con expectativas inflacionarias. Curva empinada favorece cortos en duration.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "DXY en 99.74 (dxy) con EUR/USD en 1.157 (eurusd) sugiere equilibrio. USD/JPY en 160.38 (usdjpy) está en niveles críticos que podrían atraer intervención del BoJ.",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Gold en 383.60 (gold) se beneficia de yields reales controlados (TIPS yield 2.21%) y incertidumbre geopolítica implícita. USD/JPY extremo en 160.38 (usdjpy) sugiere stress potencial en carry trades.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "Los datos apuntan a un régimen Goldilocks sólido con crecimiento estable y inflación controlada. La yield curve normalizada en +0.91% (yield_curve) elimina señales de recesión, mientras que las expectativas inflacionarias de largo plazo en 2.22% (breakeven_5y5y) se mantienen ancladas cerca del target de la Fed. El desempleo en 4.3% (unemployment) con jobless claims en 225K (jobless_claims) sugiere un mercado laboral en equilibrio, confirmado por el Sahm rule en 0.1 (sahm_rule). Los credit spreads HY en 2.75% (hy_spread) indican liquidez saludable, mientras que el VIX en 20.53 (vix) refleja complacencia controlada. Sin embargo, el USD/JPY en 160.38 (usdjpy) está en niveles críticos que han históricamente generado intervención del BoJ, representando un riesgo latente para los carry trades globales.",
+  "invalidadores": [
+    "USD/JPY por encima de 162 disparando intervención agresiva del BoJ y unwinding masivo de carry trades",
+    "Breakeven 5y5y por encima de 2.5% señalando desanclaje de expectativas inflacionarias",
+    "HY spreads expandiendo por encima de 350bps indicando stress crediticio",
+    "Sahm rule por encima de 0.5 activando señales de recesión",
+    "VIX por encima de 30 con SPY rompiendo soporte técnico crítico"
+  ],
+  "alertas": [
+    "USD/JPY en 160.38 está peligrosamente cerca de niveles de intervención históricos del BoJ",
+    "Michigan inflation expectations en 4.7% están significativamente por encima del target, requiere monitoreo"
+  ],
+  "datos_insuficientes": [
+    "PCE core con datos de abril (pce_core) - necesitamos lectura más reciente para confirmar tendencia deflacionaria",
+    "Michigan inflation expectations de abril (michigan_inflation_exp) - dato clave para sentimiento inflacionario está desactualizado"
+  ],
+  "eventos_clave": [
+    "[CNBC] Stocks rise as chip rebound continues — impulso alcista en tech apoya la tesis long SPY",
+    "[CNBC] JPMorgan Chase plans to deploy more powerful AI agents — adopción corporativa de AI refuerza narrativa de productividad",
+    "[CNBC] Bitcoin's brutal sell-off sparks trading flurry — volatility crypto podría extenderse a risk assets tradicionales",
+    "[BBC] US army helicopter crash near Strait of Hormuz — tensión geopolítica apoya posición defensiva en gold",
+    "[Bloomberg] Apple's iOS 27 hints at foldable iPhone — innovación tech mantiene momentum en growth stocks"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-06-10T13:55:30.889390",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
