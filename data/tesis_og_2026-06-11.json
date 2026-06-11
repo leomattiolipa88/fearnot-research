@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-06-11",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 88,
+    "razonamiento": "Multiples señales físicas convergentes apuntan a tightness real. Primero, la curva de futuros WTI muestra backwardation de $8.34 en el spread 6M — esto no es ruido, es el mercado físico diciéndonos que el barrel de hoy vale significativamente más que el de noviembre. A $8.34 de backwardation, los holders de inventario no son compensados por almacenar; el mercado está incentivando la entrega inmediata. Segundo, el crack spread 3-2-1 en $46.48 es clasificado como MUY_FUERTE, señalando que la demanda de productos refinados (gasolinas, heating oil) está presionando activamente sobre el crudo físico — las refinerías están comprando crudo porque sus márgenes son sólidos. Tercero, la utilización de refinerías al 95.3% es excepcionalmente alta, lo que significa que el sistema está operando near-capacity y cualquier disrupción de suministro de crudo tiene impacto inmediato. Los inventarios de crudo en 426,485 Mbbl — sin contexto de 5-year average — no permiten determinar si estamos above/below la media histórica, pero el backwardation pronunciado sugiere que el mercado físico no percibe exceso de oferta. El contexto geopolítico es el factor dominante esta semana: US-Iran en conflicto activo con intercambio de strikes y un helicóptero Apache derribado cerca del Estrecho de Hormuz. El Estrecho de Hormuz transporta aproximadamente 20-21 MMbbl/día de crudo y productos — cualquier perturbación seria colapsa el suministro global instantáneamente. El régimen stagflacionario macro amplifica el bid a crudo como hedge inflacionario real. WTI en $89.72 y Brent en $92.54 con spread Brent-WTI de $2.82, lo cual es estructuralmente normal y coherente con mercado funcionando."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 58,
+    "razonamiento": "Natural gas presenta señales mixtas que dificultan clasificación fuerte. El precio en $3.109/MMBtu es moderado — ni los niveles de tightness extrema (>$4.5) ni los de oversupply severo (<$2.00) que vimos en años anteriores. El storage de gas natural en 2,578 Bcf (dato al 29-mayo) requiere contexto de 5-year average para interpretar correctamente — no tengo ese dato en los inputs, lo cual limita mi convicción. Lo que sí puedo decir: $3.11 en pleno inicio de verano (alta demanda de power generation para A/C) sugiere que el mercado no está en stress severo de suministro. La noticia de Nord Stream como debate político en Alemania es relevante para LNG europeo pero impacto indirecto en Henry Hub. Sin datos de curva forward de NatGas, spreads Henry Hub vs Waha/Permian, o LNG export utilization, mi lectura de régimen tiene limitaciones importantes. Clasifico BALANCED con baja convicción. El régimen stagflacionario con demanda industrial moderada es consistente con precios contenidos en natgas."
+  },
+  "regimen_lpg": {
+    "clasificacion": "TIGHT",
+    "confianza": 42,
+    "razonamiento": "DATA LIMITADA — convicción baja. El único dato disponible para LPG es el inventario de propano/propileno en 84,460 Mbbl (al 5-junio). Sin Saudi Contract Price (CP) para propano/butano de julio 2026, sin freight rates VLGC en las rutas clave (Middle East Gulf → Far East), sin FEI (Far East Index) Asia, y sin spreads CP vs FEI, es imposible hacer una lectura física robusta del mercado LPG. Lo que indirectamente señala tightness: (1) el conflicto US-Iran activo directamente afecta el flujo LPG desde el Golfo Pérsico — Irán es exportador material de LPG y las rutas pasan por Hormuz; (2) el régimen de backwardation pronunciado en crude generalmente se transmite, con lag, a los mercados LPG exportados; (3) el propano en 84,460 Mbbl — si está below 5-year seasonal average (no tengo esa cifra) — implicaría draw activo. Clasifico TIGHT con convicción baja, basado principalmente en la inferencia geopolítica de Hormuz y la correlación estructural con crude. Para mejorar esta clasificación necesito Saudi CP julio, freight rates VLGC, y comparación de propano vs 5-year average."
+  },
+  "tesis_principal": "El sector energético está operando en un régimen de tightness física pronunciada, amplificado por el shock geopolítico más significativo de los últimos años: un conflicto armado activo entre EEUU e Irán con intercambio de strikes y operaciones militares en las inmediaciones del Estrecho de Hormuz. Esta no es una tensión especulativa — hay un Apache derribado, hay strikes cruzados confirmados, y el régimen macro del fondo ya priceaba un shock geopolítico Iran-US en su tesis de stagflación. El mercado físico de crudo está diciéndonos algo claro: backwardation de $8.34 en 6M + crack spread MUY_FUERTE de $46.48 + utilización de refinerías al 95.3% = sistema energético global corriendo sin slack. Esta combinación en un entorno de conflicto activo sobre el choke point más crítico del planeta es el setup físico más poderoso para crudo largo que podemos observar.\n\nEl régimen stagflacionario del fondo (85% probabilidad, inflación de expectativas al 4.7%, debilidad laboral incipiente) es coherente y amplificador del bull case energético. En stagflación, los commodities energéticos son tanto causa como síntoma — el crudo caro alimenta la inflación que el mercado ya está descontando. La señal técnica de USO (long, conv 8/10, +44% sobre 200DMA con momentum_ajust 1.766) y la lectura macro convergen con la lectura física del desk. No hay contradicción macro-sectorial aquí.\n\nEl riesgo principal es una de-escalation súbita US-Iran o la apertura del Estrecho mediante garantías navales (que ya está siendo discutida públicamente). Trump mencionó 'optimismo negociador' simultáneamente a hablar de 'robar el petróleo iraní' — la señal política es ambigua y crea volatilidad de cola en ambas direcciones. Para refinerías (VLO, CRAK), el setup es particularmente sólido: márgenes históricos + utilización máxima + suministro de crudo doméstico relativamente aislado de Hormuz en el caso de los refiners US-centricos.",
+  "senales": [
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Exxon en $150.65 con exposición integrada que beneficia del doble impacto: crudo alto + crack spread MUY_FUERTE en el downstream. En stagflación, las majors integradas son un hedge inflacionario con flujo de caja real. XOM tiene operaciones internacionales que se benefician de Brent alto. Sin ver balances o guidance reciente (no tengo datos financieros específicos), la lectura sectorial soporta LONG."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "CVX en $190.18. Similar tesis a XOM — integrada con upstream y downstream. CVX tiene exposición significativa a Permian (shale doméstico) que se beneficia de WTI alto con mayor aislamiento de Hormuz que operadores del Golfo Pérsico. El régimen de backwardation es el mejor ambiente de captura de margen para upstream. Convicción igual a XOM sin distinción diferenciadora en mis datos."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "OXY en $57.32 es un pure-play Permian con alta palanca operacional al precio del crudo. En backwardation pronunciada ($8.34 en 6M), OXY como productor activo captura el precio spot alto. La deuda de OXY (resultado de la adquisición de Anadarko) hace que sea el nombre más levered del sector — en bull market de crudo esto amplifica retornos. Berkshire lo tiene en cartera por razones similares. WTI en $89.72 es un nivel donde OXY genera free cash flow agresivo."
+    },
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "VLO en $259.30 con crack 3-2-1 en $46.48 MUY_FUERTE y refinery utilization en 95.3%. Valero es el refinador puro más grande de EEUU y es el nombre más directamente expuesto a la rentabilidad de las refinerías. En este setup — márgenes históricos altos, utilización near-capacity, y demanda de productos robusta — VLO es el nombre con mayor convicción del sector. Los refinadores US se benefician adicionalmente porque procesan crudo WTI (más barato que Brent) y venden productos en mercados domésticos. El spread Brent-WTI de $2.82 les da una ventaja estructural adicional hoy."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "EOG en $140.44 es otro E&P de alta calidad con Permian y Eagle Ford exposure. Baja deuda, alta eficiencia operacional, disciplina de capital. Se beneficia del backwardation estructural en WTI. En stagflación con crudo >$85, EOG genera free cash flow sustancial. Menos levered que OXY, por eso convicción similar pero perfil de riesgo más bajo."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Vista Energy (VIST) en $75.67 es exposición a Vaca Muerta, Argentina. Se beneficia de WTI alto como referencia de precio, aunque opera en un contexto regulatorio/FX argentino que agrega riesgo idiosincrático. En régimen de crudo tight y stagflación global, los shale plays de alta productividad como Vaca Muerta son atractivos. El riesgo Argentina (tipo de cambio, política energética doméstica) baja la convicción versus un E&P US puro. Convicción 6 vs 7 de EOG refleja esta diferencia de riesgo país."
+    }
+  ],
+  "eventos_clave": [
+    "US-Iran exchange of strikes con helicóptero Apache derribado cerca del Estrecho de Hormuz — escalation confirmada del conflicto que pone en riesgo directo los flujos de ~20 MMbbl/día que transitan Hormuz",
+    "Trump sugirió 'tomar la mitad del petróleo iraní' como compensación de guerra — señal de que el conflicto podría tener objetivos de recursos energéticos, ampliando la incertidumbre sobre duración y alcance",
+    "Ex-Secretary of Defense declaró que la US Navy 'podría abrir el Estrecho de Hormuz' — señal de que EEUU tiene capacidad para garantizar tránsito pero implica que actualmente está en riesgo",
+    "Debate sobre restauración del Nord Stream en Alemania (AfD) resurgiendo en contexto de guerra Iran — el shock energético global reactiva conversaciones sobre seguridad energética europea y potencial diversificación de rutas",
+    "Trans-Caspian Pipeline reviviendo como foco diplomático ante disrupciones de rutas energéticas tradicionales por la guerra Iran — señal de que el mercado físico ya está buscando alternativas de routing"
+  ],
+  "contradicciones_observadas": "La única contradicción que identifico no es una dislocación sino una COHERENCIA EXCESIVA que merece atención: todas las señales apuntan en la misma dirección (crudo LONG) con fuerza inusual — backwardation, crack spread alto, utilización alta, geopolítica extrema, y señal técnica USO conv 8/10. Cuando todo converge tan perfectamente, hay que preguntarse si el mercado ya priceó el escenario. WTI en $89.72 no es un precio de pánico por Hormuz — si el mercado REALMENTE creyera que Hormuz se cierra, WTI estaría >$110 en horas. Esto sugiere que el mercado está poniendo baja probabilidad a un cierre real del Estrecho, pricing-in una apertura naval rápida (como el ex-SecDef insinuó). La contradicción está aquí: los datos físicos gritan TIGHTNESS pero el nivel de precio absoluto de WTI ($89.72) parece subestimar el riesgo de Hormuz si el conflicto escala. O el mercado tiene información que no tengo sobre los planes de apertura del Estrecho, o hay un gap de pricing que puede cerrarse rápidamente al alza si la situación empeora. Adicionalmente, inventarios de crudo en 426,485 Mbbl sin referencia al 5-year average impide determinar si estamos en draw real — esta es una data gap crítica que impide confirmar o refutar la lectura de tightness desde el lado de inventarios.",
+  "invalidadores": [
+    "De-escalation súbita US-Iran: cualquier anuncio de cese de fuego, acuerdo diplomático o garantías navales que aseguren el libre tránsito por el Estrecho de Hormuz colapsaría la prima geopolítica en WTI y Brent en cuestión de horas. Trump ya mencionó 'optimismo negociador' — esto es el tail risk más material.",
+    "OPEC+ sorpresa dovish: si Arabia Saudita o UAE anuncian aumento de producción para compensar riesgo de disrupción iraní (como hicieron en otros conflictos regionales), esto suavizaría el backwardation y presionaría los precios a la baja. No tengo noticias de reunión OPEC+ en los inputs pero es un riesgo latente.",
+    "Recesión demand destruction: el régimen macro del fondo es STAGFLATION (85%) pero tiene componente de debilidad económica. Si los datos del mercado laboral deterioran rápido (Sahm Rule escalando sobre 0.5), la demanda de energía colapsa y el crack spread se comprime aunque la geopolítica permanezca tensa. Este sería el scenario donde LONG energía pierde a pesar de todos los factores actuales."
+  ],
+  "data_gaps": "1) Inventarios EIA sin comparación con 5-year average estacional — este es el gap más crítico para confirmar si 426,485 Mbbl de crudo está below o above norma histórica (el backwardation sugiere below, pero no tengo confirmación directa). 2) Saudi Contract Price (CP) julio 2026 para propano y butano — indispensable para lectura LPG. 3) Freight rates VLGC en rutas Middle East Gulf → Far East (Japan/Korea/China) — clave para régimen LPG. 4) FEI (Far East Index) LPG Asia — sin esto no puedo calcular arb y la lectura LPG es incompleta. 5) Natural gas storage vs 5-year average — sin este comparativo el dato de 2,578 Bcf es difícil de interpretar. 6) Curva forward completa de NYMEX NatGas (contango vs backwardation) — no tengo este dato en los inputs. 7) LNG export utilization rates USA — relevante para entender el balance NatGas doméstico. 8) Status real de flujos a través del Estrecho de Hormuz hoy — las noticias confirman conflicto pero no cuantifican disrupción real de barriles. 9) Datos financieros/guidance reciente de XOM, CVX, OXY para reforzar señales equity.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'NATGAS'",
+    "Senal 4: activo invalido 'GASOLINA'",
+    "Senal 5: activo invalido 'HEATING_OIL'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'CRAK'"
+  ],
+  "metadata": {
+    "timestamp": "2026-06-11T14:18:14.405653",
+    "modelo": "claude-sonnet-4-6"
+  }
+}

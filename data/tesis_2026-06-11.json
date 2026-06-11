@@ -1,0 +1,75 @@
+{
+  "fecha": "2026-06-11",
+  "regimen": {
+    "clasificacion": "STAGFLATION",
+    "confianza": 85,
+    "razonamiento": "Los datos muestran presión inflacionaria persistente con breakeven_5y5y en 2.24% y expectativas de inflación de Michigan en 4.7%, mientras que la economía muestra debilidad con Sahm Rule en 0.1% y desempleo en 4.3%. La yield curve positiva en 0.89% sugiere que no estamos en recesión, pero la combinación de inflación alta y crecimiento débil apunta a stagflación."
+  },
+  "senales": [
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 9,
+      "razonamiento": "El oro en 372.57 se beneficia del entorno stagflacionario con inflación persistente (michigan_inflation_exp: 4.7%) y stress geopolítico por el conflicto Iran-US que impulsa demanda de refugio seguro",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Los bonos largos en 85.31 enfrentan presión con yields 10Y en 4.53% y expectativas inflacionarias elevadas. El breakeven_5y5y en 2.24% sugiere que la Fed mantendrá política restrictiva",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "SPY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "Equity en 728.24 con VIX en 21.02 refleja incertidumbre. HY spreads contenidos en 2.78% limitan downside, pero el entorno stagflacionario no favorece múltiplos de expansión",
+      "dato_clave": "vix"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "USD en 100.15 se fortalece por diferencial de yields elevado con 10Y en 4.53% y stress geopolítico que favorece flight-to-quality. USDJPY en 160.50 cerca de niveles de intervención",
+      "dato_clave": "usdjpy"
+    }
+  ],
+  "tesis_principal": "El régimen macro ha migrado hacia stagflación con inflación persistente evidenciada por expectativas de Michigan en 4.7% y breakeven_5y5y en 2.24%, mientras que indicadores laborales como Sahm Rule en 0.1% y desempleo en 4.3% señalan debilitamiento económico incipiente. El shock geopolítico Iran-US agrava las presiones inflacionarias vía commodities mientras genera flight-to-quality hacia USD y oro. La Fed enfrenta un dilema policy con yields 10Y en 4.53% y curva positiva en 0.89%, sugiriendo que el mercado no anticipa cortes agresivos. Los credit spreads contenidos en 2.78% y VIX en 21.02 indican stress moderado pero creciente, mientras que USDJPY en 160.50 se acerca a niveles críticos de intervención del BoJ. Este entorno favorece activos reales como oro y penaliza duration risk en bonos largos.",
+  "invalidadores": [
+    "CPI de junio muestra desaceleración significativa por debajo de 3.5% anual que desmiente persistencia inflacionaria",
+    "Jobless claims caen por debajo de 200k indicando fortaleza laboral que invalida señales de Sahm Rule",
+    "Resolución diplomática del conflicto Iran-US que elimine risk premium geopolítico",
+    "Intervención coordinada G7 en USDJPY que revierta presión sobre carry trades",
+    "HY spreads se expanden por encima de 400bps señalando stress crediticio severo"
+  ],
+  "alertas": [
+    "USDJPY en 160.50 está en niveles extremos que históricamente han provocado intervención del BoJ",
+    "Expectativas inflacionarias de Michigan en 4.7% son significativamente superiores a target Fed del 2%",
+    "Sahm Rule en 0.1% está activándose, históricamente precede recesiones en 2-6 meses",
+    "Breakeven 5y5y en 2.24% sugiere que mercados no creen en capacidad Fed de anclar inflación long-term"
+  ],
+  "datos_insuficientes": [
+    "NFIM data para confirmar tendencias en mercado laboral",
+    "PMI manufacturero para validar debilidad económica",
+    "Commodities específicos (petróleo, gas) para medir impacto geopolítico",
+    "Credit default swaps para evaluar stress sistémico"
+  ],
+  "eventos_clave": [
+    "[CNBC] Consumer prices rose 4.2% annually in May, highest in three years — confirma persistencia inflacionaria que justifica postura hawkish Fed",
+    "[CNBC] U.S. launches 'self-defense strikes' against Iran — escalada geopolítica impulsa flight-to-quality y presión en commodities",
+    "[Bloomberg] China Taps Commercial Oil Stockpiles to Help Weather Gulf Shock — indica severidad del supply shock energético por conflicto Iran",
+    "[Financial Times] China factory gate prices rise at fastest rate in 4 years — confirma presiones inflacionarias globales vía supply chains"
+  ],
+  "confianza_general": 85,
+  "metadata": {
+    "timestamp": "2026-06-11T14:15:27.812325",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

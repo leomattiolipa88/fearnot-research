@@ -1,0 +1,81 @@
+{
+  "fecha": "2026-06-11",
+  "regimen_macro_aplicado": "STAGFLATION",
+  "contexto_tecnico_global": "Mercado en aparente fortaleza con SPY/QQQ sobre 200DMA y breadth saludable en 64% (pct_sobre_200), VIX spot 21.06 vs VIX 3M 22.41 en CONTANGO_NORMAL y VRP en +264.33 (bullish marginal para equities). Sin embargo, el options flow muestra divergencia critica: VIX 9D en 23.01 vs VIX 6M en 23.89 (spread de solo 0.88, term structure plana en el frente) y VIX IV percentile en 85.3 (fear historicamente elevado), lo cual indica que pese al VIX spot moderado, el mercado de opciones esta pricing stress estructural. En regimen STAGFLATION (Cooper et al. 2004) las senales de momentum en equities deben tomarse con escepticismo: solo trend-following en real assets (USO con momentum 78.66%) es estrategia validada empiricamente.",
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "SPY sobre 200DMA (+6.48%, pct_sobre_dma) con momentum 12M en +22.41% y momentum_ajust 1.839 (>1.5, senal LONG tecnica fuerte). Pero VIX IV percentile 85.3 indica fear estructural escondido y regimen STAGFLATION invalida momentum en equities.",
+      "indicador_clave": "momentum_ajust 1.839 vs regimen STAGFLATION",
+      "interaccion_macro": "STAGFLATION historicamente destruye momentum en equity (Cooper 2004). Aunque la tecnica grita LONG, el regimen exige reducir o evitar exposicion long en SPY. Neutralidad forzada."
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "QQQ con la senal tecnica mas fuerte: precio +12.45% sobre 200DMA, momentum_12m 32.36% y momentum_ajust 1.914 (>1.5, conviccion alta). Pero stagflation castiga duramente tech/growth por compresion de multiplos ante tasas reales altas.",
+      "indicador_clave": "pct_sobre_dma +12.45% (sobreextension) + regimen",
+      "interaccion_macro": "En STAGFLATION los multiplos de growth colapsan. La sobreextension de +12.45% sobre 200DMA es vulnerabilidad, no fortaleza. Senal tecnica anulada por macro."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "GLD BAJO 200DMA (-8.29%, cruce_dma=BAJO_DMA) lo cual segun regla universal de Tudor Jones prohibe LONG. Sin embargo, momentum_12m sigue positivo en +20.8% con momentum_ajust 0.764 (zona ambigua). Conflicto: tendencia larga positiva pero correccion reciente fuerte.",
+      "indicador_clave": "cruce_dma BAJO_DMA invalida LONG pese a momentum 12M positivo",
+      "interaccion_macro": "GLD es real asset que historicamente brilla en STAGFLATION, pero la regla de Tudor Jones es no negociable: bajo 200DMA no se compra. Esperar cruce alcista para reactivar LONG."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "TLT bajo 200DMA (-1.18%, cruce_dma=BAJO_DMA) lo cual habilita SHORT. Momentum_ajust 0.371 es debil pero no negativo. En STAGFLATION los bonos largos son el peor activo (inflacion erosiona + Fed restrictiva).",
+      "indicador_clave": "cruce_dma BAJO_DMA + regimen STAGFLATION",
+      "interaccion_macro": "STAGFLATION es el regimen mas hostil para duracion larga. Refuerza fuertemente la senal SHORT tecnica. Convergencia macro-tecnica."
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "USO con la senal mas potente: sobre 200DMA en +44.01% (pct_sobre_dma), momentum_12m extraordinario en +78.66% y momentum_ajust 1.766 (>1.5). Trend-following clasico en commodity energetico.",
+      "indicador_clave": "momentum_ajust 1.766 + cruce_dma SOBRE_DMA + regimen aligned",
+      "interaccion_macro": "STAGFLATION valida explicitamente trend-following en real assets (USO, GLD). Esta es exactamente la senal que el system prompt indica como UNICA estrategia robusta en stagflation. Alerta: +44% sobre 200DMA es sobreextension, riesgo de mean-reversion violenta."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY sobre 200DMA (+1.53%, pct_sobre_dma) habilita LONG. Pero momentum_ajust 0.261 es debil (zona ambigua -0.5 a +1.5). Senal tecnica moderada.",
+      "indicador_clave": "cruce_dma SOBRE_DMA con momentum debil",
+      "interaccion_macro": "En STAGFLATION USA con Fed restrictiva tiende a soportar DXY, pero si la stagflation es global el dolar puede debilitarse vs commodity currencies. Soporte moderado del regimen."
+    }
+  ],
+  "alertas_tecnicas": [
+    "USO sobreextendido +44.01% sobre 200DMA con vol_12m 44.54%: riesgo de correccion brusca tipo blow-off top",
+    "QQQ sobreextendido +12.45% sobre 200DMA en regimen hostil para growth: setup de reversal",
+    "Divergencia critica options flow: VIX spot 21.06 (moderado) vs VIX IV percentile 85.3 (extremo). El mercado de vol grita stress que el VIX spot no refleja",
+    "GLD bajo 200DMA pese a regimen STAGFLATION: anomalia que merece monitoreo, posible falsa ruptura bajista"
+  ],
+  "invalidadores_tecnicos": [
+    "SPY/QQQ rompiendo 200DMA a la baja activaria SHORT con alta conviccion (alineamiento macro-tecnico)",
+    "GLD cruzando 200DMA al alza (cruce_alcista) reactivaria LONG con conviccion alta dado regimen STAGFLATION",
+    "USO perdiendo momentum_ajust por debajo de 1.5 o cerrando bajo soporte tecnico invalidaria el unico LONG de alta conviccion",
+    "VIX term structure pasando a BACKWARDATION (VIX spot > VIX 3M) forzaria reducir todo risk-on",
+    "TLT cruzando 200DMA al alza invalidaria SHORT y sugeriria cambio de regimen (slowdown sobre stagflation)"
+  ],
+  "confianza_general": 62,
+  "metadata": {
+    "timestamp": "2026-06-11T14:16:09.541961",
+    "modelo": "claude-opus-4-7",
+    "activos_analizados": 6,
+    "regimen_macro": "STAGFLATION"
+  }
+}
