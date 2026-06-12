@@ -1,0 +1,72 @@
+{
+  "fecha": "2026-06-12",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 75,
+    "razonamiento": "La yield curve positiva en +0.91% (yield_curve) y el Sahm Rule bajo en 0.1% (sahm_rule) indican expansión sin riesgo recesivo inmediato. Las expectativas de inflación 5Y5Y en 2.18% (breakeven_5y5y) están cerca del target de la Fed. Credit spreads contenidos en 2.8% (hy_spread) confirman liquidez estable."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 7,
+      "razonamiento": "VIX bajo en 19.26 (vix) y credit spreads estrechos en 2.8% (hy_spread) favorecen risk-on. SPY en 736.40 (spy) con soporte macro del régimen Goldilocks",
+      "dato_clave": "vix"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Yield 10Y elevado en 4.55% (yield_10y) con real yield TIPS en 2.21% (tips_yield_10y). Guerra Irán presiona inflación energética según headlines. TLT en 85.48 (tlt) vulnerable a repricing alcista de tasas",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "DXY en 99.75 (dxy) con diferencial de tasas favorable. USDJPY extremo en 160.53 (usdjpy) sugiere carry trades bajo presión. ECB sube tasas pero desde niveles más bajos que Fed",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Gold en 384.68 (gold) enfrenta real yields altos de 2.21% (tips_yield_10y) que penalizan activos sin yield, pero tensiones geopolíticas de Irán brindan soporte defensivo",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "El régimen Goldilocks se mantiene sólido con yield curve positiva en +0.91% (yield_curve), Sahm Rule contenido en 0.1% (sahm_rule) y expectativas de inflación ancladas en 2.18% 5Y5Y (breakeven_5y5y). Sin embargo, emerge presión inflacionaria por el shock petrolero de Irán, evidenciado en el yield 10Y alto de 4.55% (yield_10y) y real yields TIPS de 2.21% (tips_yield_10y). El mercado laboral permanece robusto con jobless claims en 229K (jobless_claims) y desempleo estable en 4.3% (unemployment). USDJPY extremo en 160.53 (usdjpy) señala tensión en carry trades que podría catalizar volatilidad si el BoJ interviene. La liquidez se mantiene favorable con HY spreads de 2.8% (hy_spread) y VIX contenido en 19.26 (vix), favoreciendo activos de riesgo a corto plazo pero con vigilancia sobre repricing de duration risk.",
+  "invalidadores": [
+    "USDJPY por encima de 165 forzando intervención del BoJ y unwinding masivo de carry trades",
+    "Credit spreads HY expandiendo por encima de 4% por contagio geopolítico",
+    "Sahm Rule superando 0.5% en próximos datos de empleo",
+    "Breakeven 5Y5Y subiendo por encima de 2.8% por escalada en Irán",
+    "VIX por encima de 30 por crisis de liquidez en mercados EM"
+  ],
+  "alertas": [
+    "USDJPY en 160.53 cerca de zona de intervención histórica del BoJ",
+    "Michigan inflation expectations en 4.7% muy por encima del target Fed",
+    "Yield 10Y en 4.55% presiona valuaciones de growth stocks",
+    "Amenazas de Irán a empresas de Musk podrían afectar sentiment tech"
+  ],
+  "datos_insuficientes": [
+    "Datos de PCE Core de abril (pce_core) y Michigan expectations (michigan_inflation_exp) están algo rezagados para evaluar tendencia inflacionaria reciente"
+  ],
+  "eventos_clave": [
+    "[CNBC] ECB sube tasas por primera vez desde 2023 por shock petrolero de Irán — fortalece EUR pero desde base más baja que USD",
+    "[Bloomberg] IPO de SpaceX recibe $70B en órdenes retail — podría drenar liquidez del mercado secundario",
+    "[CNN] Inflación mayorista de EEUU sube por shock petrolero de Irán — presiona expectativas de política Fed",
+    "[CNBC] Irán amenaza empresas de Musk como objetivos militares — riesgo geopolítico en sector tech"
+  ],
+  "confianza_general": 75,
+  "metadata": {
+    "timestamp": "2026-06-12T13:46:33.264775",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
