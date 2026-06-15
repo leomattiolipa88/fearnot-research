@@ -1,0 +1,74 @@
+{
+  "fecha": "2026-06-15",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 85,
+    "razonamiento": "Yield curve normalizada en +0.82% (yield_curve), VIX contenido en 16.32 (vix), HY spreads comprimidos en 2.71% (hy_spread), y Sahm Rule en 0.1 (sahm_rule) indica mercado laboral saludable. Breakeven 5Y5Y en 2.23% (breakeven_5y5y) sugiere expectativas inflacionarias ancladas."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 8,
+      "razonamiento": "Condiciones Goldilocks sólidas con yield curve normalizada (yield_curve: +0.82%), liquidez abundante evidenciada por HY spreads en 2.71% (hy_spread) y VIX bajo en 16.32 (vix). Mercado laboral saludable con Sahm Rule en 0.1 (sahm_rule).",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Yields 10Y en 4.45% (yield_10y) con curva normalizada sugiere presión alcista continua en tasas. TIPS yield real en 2.16% (tips_yield_10y) indica retornos reales atractivos vs bonos nominales.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "USD/JPY en 160.18 (usdjpy) cerca de niveles críticos de intervención del BoJ. DXY en 99.59 (dxy) beneficiado por diferencial de tasas con yields 10Y en 4.45% (yield_10y).",
+      "dato_clave": "usdjpy"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Oro en 399.67 (gold) enfrenta vientos cruzados: yields reales positivos en 2.16% (tips_yield_10y) son negativos, pero expectativas inflacionarias ancladas en 2.23% (breakeven_5y5y) limitan upside.",
+      "dato_clave": "tips_yield_10y"
+    }
+  ],
+  "tesis_principal": "Los mercados operan en régimen Goldilocks óptimo con yield curve normalizada en +0.82% (yield_curve), liquidez abundante evidenciada por HY spreads comprimidos en 2.71% (hy_spread) y VIX contenido en 16.32 (vix). El mercado laboral permanece saludable con desempleo en 4.3% (unemployment) y Sahm Rule en 0.1 (sahm_rule), mientras jobless claims en 229k (jobless_claims) sugieren estabilidad. Las expectativas inflacionarias están bien ancladas con breakeven 5Y5Y en 2.23% (breakeven_5y5y), creando el entorno ideal para múltiplos de equity expandidos. El principal riesgo proviene del USD/JPY en 160.18 (usdjpy), nivel crítico que podría desatar intervención del BoJ y deshacer carry trades globalmente. Los yields 10Y en 4.45% (yield_10y) con TIPS yield real en 2.16% (tips_yield_10y) mantienen presión en duration pero apoyan selectividad en credit.",
+  "invalidadores": [
+    "USD/JPY rompe 161+ desatando intervención masiva del BoJ y unwinding de carry trades",
+    "VIX explota por encima de 25 por shock geopolítico o crisis crediticia",
+    "HY spreads se amplían por encima de 400bps indicando stress de liquidez",
+    "Sahm Rule salta por encima de 0.5 activando alerta de recesión",
+    "Breakeven 5Y5Y rompe 2.75% por shock inflacionario"
+  ],
+  "alertas": [
+    "USD/JPY en 160.18 extremadamente cerca del nivel de intervención del BoJ",
+    "Expectativas inflacionarias Michigan en 4.7% significativamente por encima del target Fed",
+    "Ausencia de datos frescos de PCE Core y CPI limita visibilidad inflacionaria"
+  ],
+  "datos_insuficientes": [
+    "PCE Core con última lectura de abril (pce_core: abril 2026)",
+    "Michigan inflation expectations de abril (michigan_inflation_exp: abril 2026)",
+    "Desempleo y Sahm Rule de mayo (unemployment, sahm_rule: mayo 2026)"
+  ],
+  "eventos_clave": [
+    "[WSJ] Siri's New Brain — Aceleración en adopción de AI podría impulsar múltiplos tech y demanda de semiconductores",
+    "[CNBC] JetBlue expansion en Fort Lauderdale — Indicador de confianza en demanda de viajes y consumo resiliente",
+    "[Axios] Amazon-White House vs Anthropic — Regulación AI podría impactar valuaciones tech y capex corporativo",
+    "[Al Jazeera] UK seizes Russian tanker — Escalada geopolítica podría impactar precios energía y risk-off flows",
+    "[CNN] Raw milk controversy — Indicador de desconfianza institucional que podría afectar policy uncertainty"
+  ],
+  "confianza_general": 78,
+  "metadata": {
+    "timestamp": "2026-06-15T16:08:12.628972",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

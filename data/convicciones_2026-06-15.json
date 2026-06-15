@@ -1,0 +1,50 @@
+{
+  "fecha": "2026-06-15",
+  "tipo": "WEEKLY",
+  "convicciones": [
+    {
+      "ticker": "VLO",
+      "direccion": "LONG",
+      "horizonte": "MONTHS",
+      "conviccion": 8,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "Valero es el unico pure-play refinador donde las dos tesis geopoliticas opuestas convergen en bullish: si el acuerdo US-Iran se firma, el feedstock crudo baja y los cracks se expanden; si Hormuz sigue cerrado, la demanda de productos refinados domesticos USA se mantiene tight con utilization al 95.3%.",
+        "El crack spread 3-2-1 en 45.86 USD (MUY_FUERTE) combinado con macro Goldilocks (Sahm 0.1, HY spreads 2.71%) confirma demanda robusta de gasolina/diesel, mientras el potencial supply shock bajista del retorno irani favorece el lado refinador del trade vs E&P.",
+        "Es la unica expresion energy donde el riesgo asimetrico Iran funciona como hedge natural del propio trade en lugar de invalidador."
+      ],
+      "fundamental_case": {
+        "macro_context": "Regimen Goldilocks (confianza 85%) con mercado laboral saludable, HY spreads comprimidos y VIX en 16.32 - entorno ideal para demanda sostenida de productos refinados. Yields reales positivos (TIPS 2.16%) no afectan demanda de combustibles.",
+        "sectoral_dynamics": "Crack spread 3-2-1 en 45.86 USD calificado MUY_FUERTE por el O&G desk, refinery utilization al 95.3% indica oferta refinada al limite. El acuerdo US-Iran inminente bajaria feedstock cost manteniendo demanda - tail risk asimetrico favorable. Hormuz cerrado mantiene tension en crudo sin afectar demanda final.",
+        "technical_setup": "El technical agent no cubre VLO directamente, pero el contexto SPY +28% YoY con momentum ajustado 2.265 y breadth 70% confirma risk-on equity environment que favorece large caps energy. Sin senal tecnica adversa.",
+        "why_this_expression": "VLO es el unico ticker donde el evento binario Iran (mayor riesgo del setup) trabaja A FAVOR del trade en uno de los escenarios. XOM/CVX/VIST tienen upside en backwardation pero downside material si Iran se firma. OXY/EOG son puro downside al evento Iran. VLO captura el spread, no el precio direccional del crudo."
+      },
+      "agents_aligned": [
+        "O&G desk: conviccion 7 LONG VLO - pure play crack spread MUY_FUERTE 45.86 + refinery util 95.3% + hedge natural al evento Iran",
+        "Macro agent: regimen Goldilocks 85% confianza sostiene demanda de productos refinados (consumo resiliente, Sahm 0.1, HY 2.71%)",
+        "Technical agent: contexto risk-on confirmado (VRP +8.28, breadth 70%, SPY momentum ajustado 2.265) habilita full sizing en equity large caps"
+      ],
+      "entry_strategy": "Entry en niveles actuales (~246 USD). Si hay pullback a soporte tecnico por pre-announcement Iran deal, escalar hasta STANDARD. Evitar perseguir si rompe a nuevos maximos sin pullback.",
+      "stop_loss_logic": "Stop si crack spread 3-2-1 cae bajo 30 USD (perdida del catalyst fundamental) o si SPR release masivo se anuncia formalmente. Stop tecnico secundario: cierre semanal bajo 220 USD.",
+      "profit_target_logic": "Target primario si Iran deal se firma y crack spread se expande adicionalmente por feedstock cheaper - upside hacia 290-300 USD en horizonte 2-3 meses. Trim 50% si crack spread comprime bajo 35 USD sin invalidacion completa.",
+      "invalidators": [
+        "Firma del acuerdo US-Iran SIN expansion de cracks (escenario donde feedstock baja pero precios producto bajan paralelo por presion politica)",
+        "Liberacion masiva de SPR anunciada formalmente por administracion Trump - comprime cracks artificialmente",
+        "Crack spread 3-2-1 cayendo bajo 30 USD por cualquier razon",
+        "Cierre semanal SPY bajo 200DMA invalidando regimen Goldilocks subyacente"
+      ],
+      "what_we_could_be_wrong_about": "El crack spread MUY_FUERTE en 45.86 podria ser pico ciclico cerca de mean reversion - estamos comprando el peak del setup, no el inicio. Ademas, la administracion Trump tiene incentivos politicos explicitos (Burgum ya posicionando el discurso) para deprimir precios al consumidor de gasolina, lo que historicamente se traduce en SPR release o presion regulatoria sobre refinadores. Tercero, hemos publicado VLO 3 semanas consecutivas - hay riesgo de overconfidence en una sola tesis."
+    }
+  ],
+  "reasoning_when_no_convictions": "",
+  "synthesis_observations": "Observacion clave 1: La contradiccion mas interesante del setup esta en el sector energy. El O&G desk identifica una dislocacion entre narrativa geopolitica (Hormuz cerrado ~100 dias) y precio (Brent solo 82.72 USD). Esto sugiere que el mercado ya descuenta la resolucion via deal Iran. El trade asimetrico NO es LONG crude (XOM/CVX/OXY/EOG/VIST son todas la misma apuesta direccional) sino LONG el spread refinador (VLO) que se beneficia en ambos escenarios binarios. Por eso publicamos solo VLO y descartamos las 5 senales LONG energy correlacionadas del O&G desk.\n\nObservacion clave 2: QQQ tiene momentum ajustado de 2.401 (el mas alto del universo) y macro lo apoya, pero +19% sobre 200DMA es sobreextension significativa y ya lo publicamos 3 semanas consecutivas. La marginal conviction de publicarlo cuarta vez consecutiva es baja - el trade ya esta on. Mejor preservar dry powder.\n\nObservacion clave 3: El spread VIX 6M - VIX 9D en +6.5 puntos con IV percentile bajo (30.3) es la senal mas interesante que NADIE esta tradeando explicitamente: alguien paga coberturas estructurales lejos en el tiempo mientras la vol corta esta deprimida. Esto es consistente con Goldilocks maduro - no quebrado pero con señal temprana de fatiga. No amerita conviction propia (no hay expresion clean), pero condiciona el position sizing general a STANDARD en lugar de CONCENTRATED en cualquier trade publicado.",
+  "metadata": {
+    "timestamp": "2026-06-15T16:11:27.727071",
+    "modelo": "claude-opus-4-7",
+    "agentes_input": [
+      "macro",
+      "technical",
+      "og_energy"
+    ]
+  }
+}
