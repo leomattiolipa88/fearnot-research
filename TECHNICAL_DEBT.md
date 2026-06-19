@@ -208,3 +208,86 @@ Each debt entry includes:
 
 - **Weekly:** review HIGH priority items, decide if any move up to active work
 - **Monthly:** review MEDIUM and LOW, re-prioritize based on system evolution
+
+## SEC Frame Extraction — Audit Findings & Verified State (added 2026-06-08)
+
+### Audit conclusions REFUTED by raw-JSON verification
+- **Priority:** N/A (documentation — prevents future confusion)
+- **Context:** A Claude Code audit (Opus 4.7, AUDIT_REPORT.md) concluded the quarterly
+  extractor was "structurally broken" and recommended replacing the frame filter with a
+  duration filter. The audit could NOT download SEC JSONs (its bash hung, SEC returned 403),
+  so it reasoned from code + documented SEC rules + stockanalysis.com dates — i.e. deduction,
+  not data. We then verified every critical claim against raw companyfacts JSON. Three of its
+  most severe findings were FALSE:
+  1. Audit: "NVDA/CRM/MU never match CY{Y}Q{n}, structurally impossible, 0/6 recovery."
+     Reality: NVDA revenue extracts 5/6 (direct), hole only at Q4'24 (correct skip_noncalendar).
+     SEC assigns the frame by PROXIMITY to the calendar quarter, not exact date match. NVDA's
+     fiscal Q ending Jul 28 still gets frame CY2024Q2.
+  2. Audit: "META Q1 2026 OCF ($32,226M) exists without frame."
+     Reality: it has frame CY2026Q1. (Older copies Q1'24/Q1'25 lack frame; the recent one has it.)
+  3. Audit: "filter-by-frame is broken, rewrite the extractor core."
+     Reality: income statement (revenue, op_income, margins) works for all 8 tech tickers,
+     calendar and non-calendar. The extractor core was NOT touched.
+- **How the frame actually works (verified):** the original 10-Q of a quarter is filed WITHOUT
+  a frame. When that quarter reappears as a comparative in the next year's 10-Q, that copy gets
+  the frame (same value). So most quarters have a framed record (recent-original OR comparative),
+  which extraer_fact_trimestral_auto finds. This is why banking populated correctly.
+- **Lesson:** an authorized audit reasoning from deduction (no data access) was wrong on its
+  central findings. Verifying against raw SEC JSON before changing code prevented rewriting the
+  most delicate part of the system to fix a non-existent problem.
+- **Discovered:** 2026-06-08 (post-audit raw-JSON verification)
+
+### Verified-healthy (do NOT "fix")
+- banking_financials_q: values correct. NU is an IFRS source limitation (its XBRL exposes no
+  recognizable NetInterestIncome tag — only ComprehensiveIncomeAttributableToNoncontrollingInterests
+  — and reports in USD, so NOT a unit bug), same class as ROTCE/NIM gaps. Not recoverable by us.
+- Income statement quarterly extraction: works for calendar AND non-calendar filers.
+- FIX 1 (skip_noncalendar Q4): correct and confirmed by the audit too.
+
+### Latent bug: quarterly path hardcodes unidad="USD"
+- **Priority:** MEDIUM (latent — not triggered by any current concept)
+- **Where:** extraer_fact_trimestral (unidad default "USD"), extraer_fact_trimestral_auto,
+  extraer_trimestre_con_q4 (no unidad param at all), called by extraer_serie_trimestral.
+- **Problem:** the whole quarterly chain is wired to USD. Concepts whose canonical unit is not
+  USD — EPS (USD/shares), shares (shares), or IFRS filers reporting in non-USD currencies —
+  would return None for every quarter. NU does NOT trigger this (it reports USD); it's latent
+  until EPS/shares or a non-USD IFRS filer is added to the quarterly path.
+- **Fix path:** add unidad param to extraer_fact_trimestral_auto and extraer_trimestre_con_q4;
+  resolve unidad per concept in extraer_serie_trimestral (mirror the annual path's
+  get_ifrs_unit_for_concept dispatch) and propagate it.
+- **Discovered:** 2026-06-08 (audit finding, verified latent)
+
+### Latent bug: dedup ranks by filed-desc (may pick restated over original)
+- **Priority:** LOW-MEDIUM (mitigated in practice; original and comparative usually share the value)
+- **Where:** extraer_fact_trimestral (matching.sort by filed reverse) and extraer_fact_anual (same).
+- **Problem:** among duplicate records for the same period, sorting by filed desc picks the most
+  recent — i.e. a restated/comparative copy over the original 10-Q/10-K. Usually identical
+  (verified: JPM Q2'24 original-no-frame and comparative-CY2024Q2 both = 22746). Pathological
+  cases (genuine restatement, reclassification, rounding) would silently take the restated value.
+- **Fix path:** prefer record whose form matches the period (10-Q for quarters, 10-K for FY), then
+  earliest filed (the original); optionally expose restatements as metadata, not silent overwrite.
+- **Discovered:** 2026-06-08 (audit finding)
+
+### Latent bug: is_flow detection reads only records[0]
+- **Priority:** LOW
+- **Where:** extraer_fact_anual, is_flow = bool(records) and "start" in records[0].
+- **Problem:** decides flow-vs-stock from the FIRST record only. If records[0] is an atypical
+  stock-style snapshot, the whole concept gets misclassified. Unlikely for standard taxonomy;
+  possible for custom-extension concepts with mixed record types in one bucket.
+- **Fix path:** use modal type (>=80% of records have "start") or a per-concept type map.
+- **Discovered:** 2026-06-08 (audit finding)
+
+### REAL pending problem: quarterly cash-flow (OCF/capex) coverage is uneven
+- **Priority:** HIGH (blocks FCF — a core tech metric; FCF is the check on whether growth is
+  real cash or accounting/SBC, the Chanos-layer question)
+- **Where:** extraer_serie_trimestral for operating_cash_flow and capex on tech tickers.
+- **Problem:** NOT a frame issue. Some tech filers report the cash-flow statement only as YTD
+  cumulative (no discrete-quarter record), so the discrete quarter must be DERIVED:
+  Q_n = YTD_n - YTD_(n-1). AMZN reports discrete quarters (6/6 OK); others report YTD and need
+  derivation. Non-calendar filers complicate it (their YTD starts at the fiscal-year start).
+  Measured coverage: AMZN 6/6, CRM 5/6, MSFT 4/6, META/GOOGL/NOW/NVDA/MU ~1/6 for OCF & capex.
+- **Fix path (design against raw data, NOT deduction):** per-ticker, inspect how OCF/capex are
+  reported (discrete-quarter vs YTD). Where YTD-only, derive discrete quarter by subtracting
+  consecutive YTDs, aligning periods correctly (watch non-calendar fiscal starts — same trap that
+  produced the -30.2 NVDA Q4). Verify each derived quarter against an independent source.
+- **Discovered:** 2026-06-08 (tech vertical build); to be tackled next.
