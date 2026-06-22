@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-06-22",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 62,
+    "razonamiento": "La curva de futuros WTI muestra backwardation de $2.71 en el spread 6M, confirming tightness fisica real en el spot. El crack 3-2-1 a $49.95 es clasificado como MUY_FUERTE, indicando demanda robusta de productos refinados que presiona al upstream. Refineria utilization al 96.7% es excepcionalmente alto, señal de que las refinerias estan corriendo a tope para satisfacer demanda de productos — esto no deja colchon operacional y es bullish para crude input demand. Sin embargo, hay tension: el WTI a $73.57 y Brent a $77.54 son niveles moderados, no de crisis. Goldman Sachs bajo su outlook especificamente porque el Strait of Hormuz reabre segun acuerdo Trump-Iran (Islamabad MOU del 17-Jun). Esto implica que el mercado YA esta descontando un supply recovery. Crude inventories USA en 418,222 kbbl — no tengo el 5-year average exacto para contextualizar si esto es un deficit o surplus historico, lo cual limita la conviccion. La backwardation real mas el crack fuerte mas la utilizacion de refineria alta apuntan a tightness genuina, pero el deal Hormuz es un risk bearish de primer orden que comprime la conviccion hacia 62 y no mas alto."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 55,
+    "razonamiento": "NatGas a $3.275/MMBtu. Storage Lower 48 en 2,759 Bcf al 12-Jun. No tengo el 5-year average de storage para esta fecha para comparar si estamos en surplus o deficit relativo historico — dato critico ausente. $3.275 es un precio que no señala ni stress severo (que tipicamente empujaría hacia $4+ en verano) ni oversupply extremo (que nos llevaria bajo $2.50). Sin catalogo de noticias especificas de NatGas en los inputs (las noticias se focalizan en oil y geopolitica), y sin datos de LNG export flows o produccion shale actual, no puedo clasificar con alta conviccion. El contexto macro esta como N/A lo cual no ayuda a calibrar la demanda electrica industrial. Clasifico BALANCED con conviccion moderada."
+  },
+  "regimen_lpg": {
+    "clasificacion": "TIGHT",
+    "confianza": 40,
+    "razonamiento": "DATA LIMITADA — conviccion baja, usar con precaucion. Propane inventory USA en 87,429 kbbl al 12-Jun. No tengo el 5-year average de propano para esta fecha, ni Saudi CP (el benchmark global para LPG pricing), ni freight rates VLGC para rutas Middle East-Asia, ni spreads FEI Asia. Lo que SI tengo: (1) OPEC projecting India LPG demand to double to 2M bbl/day by 2050, indicando demanda estructural creciente en Asia. (2) Strait of Hormuz disruption: aunque se anuncio acuerdo, los flujos LPG desde el Golfo Persico (Qatar, Saudi, UAE representan ~40% del LPG trade global) estuvieron bajo presion durante el conflicto US-Iran. Con el Hormuz reabriendo, hay relief en supply — pero la question es si los inventarios se vaciaron durante la crisis. (3) Ukraine strikes on Russian refineries (incluyendo Moscow Oil Refinery) podrian haber disruptado produccion de associated LPG. Clasifico TIGHT con conviccion MUY BAJA por data insuficiente. El Synthesizer debe tomar esta clasificacion con alta incertidumbre."
+  },
+  "tesis_principal": "El evento dominante de la semana es el Islamabad MOU (17-Jun-2026): Trump e Iran firmaron un acuerdo que abre 60 dias de negociaciones, levanta sanciones, y segun Goldman Sachs, acelera la recuperacion de supply via reapertura del Strait of Hormuz. Este es un evento bearish estructural para oil: el Hormuz movia ~20% del supply global cuando estaba bajo tension, y su reapertura libera supply que el mercado habia risk-premium'd. Goldman ya bajo sus forecasts de 2026 y 2027 en respuesta. Sin embargo — y aqui esta la contradiccion central del mercado — los indicadores fisicos actuales siguen leyendo tight: backwardation $2.71, crack 3-2-1 a $49.95 MUY_FUERTE, refinery utilization al 96.7% (nivel excepcional), y WTI todavia en $73.57. Esto sugiere que el mercado fisico spot no ha capitulado aun. El tension entre el forward supply recovery (bearish, Hormuz deal) y la demanda fisica actual (bullish, crack spreads, utilizacion) crea un setup complejo: corto plazo los fisicos aguantan el precio, pero el vector de 2-3 meses apunta a loosening con Iraq buscando 3M bbl/day y Iran volviendo al mercado.\n\nEn paralelo, el frente ruso es un wildcard: Ukraine ataco la refineria de Moscow (18-Jun) causando disrupciones, y Russia restringio ventas de combustible en Crimea post-strikes. Esto es bearish para Russian refined products output pero bullish para crack spreads globales (menos oferta de productos refinados rusos al mercado). Iraq declarando objetivo de 3M bbl/day es bearish para crude precio a 6-12 meses.\n\nContexto macro del fondo: el regimen macro esta marcado como N/A (0%), lo cual significa que no tengo una lectura clara del ciclo economico para calibrar la demanda. USO tecnicamente habilitado para LONG por el equipo tecnico (18.56% sobre 200DMA) pero con momentum ajustado bajo por alta volatilidad. TLT en SHORT indica mercado de rates bajo presion — normalmente negativo para capex energetico pero no determinante a corto plazo.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Valero es el play directo en crack spreads. Crack 3-2-1 a $49.95 MUY_FUERTE + refinery utilization 96.7% = refinerias corriendo a maxima capacidad con margen excepcional. Valero como refiner puro capta directamente este spread. Russia strikes reducen competencia de productos refinados rusos en mercados atlanticos. Esta es la senal de mayor conviccion del memo: multiples factores fisicos alineados. Precio VLO $238.59."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "XOM es integrada: gana en refining (crack fuerte positivo) pero su upstream se ve presionado por Hormuz deal y potential Iran/Iraq supply returning. El neteo es aproximadamente neutro. A $137.79, sin contexto de valuacion relativa no puedo hacer un call de conviccion."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "CVX integrada, mismo razonamiento que XOM. A $174.24. CVX tiene mayor exposicion a Permian/upstream que a refining vs XOM, lo cual en este contexto (crude prices under Hormuz pressure) es ligeramente mas negativo. Pero sin conviction suficiente para SHORT."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "SHORT",
+      "conviccion": 5,
+      "razonamiento": "OXY es E&P puro con alta sensibilidad al precio del crude. A $51.58 con WTI en $73.57. El riesgo bearish en crude (Hormuz reapertura, Iraq +3M bbl/day, Iran supply return en 60 dias) pesa mas sobre un pure-play E&P que sobre las integradas. Tecnico USO sobre 200DMA no alcanza para compensar el fundamental bearish vector. Conviccion moderada — no tengo leverage metrics de OXY ni breakeven de produccion para ser mas preciso."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "NEUTRAL",
+      "conviccion": 3,
+      "razonamiento": "EOG es E&P de alta calidad en shale. Misma presion bearish que OXY en crude price. Sin embargo EOG tiene lower breakeven y mejor balance sheet que OXY, lo que limita el SHORT thesis. A $131.27. Insuficiente informacion para diferenciar del mercado."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Vista Energy, E&P argentino con exposicion a Vaca Muerta. A $67.845. El crack spread fuerte es positivo para su output. Argentina tiene dinamica propia: el riesgo pais argentino y el ritmo de desarrollo de Vaca Muerta son los drivers primarios, no el Hormuz. Puede ser un hedge relativo contra el bearish crude macro global ya que su growth story es mas idiosincratica. Conviccion moderada, limitada por falta de datos especificos de produccion VIST."
+    }
+  ],
+  "eventos_clave": [
+    "Islamabad MOU (17-Jun-2026): Trump-Iran firman acuerdo de 60 dias que levanta sanciones y abre negociaciones — reopening del Strait of Hormuz acelera supply recovery, Goldman baja forecasts 2026-2027",
+    "Vance en Switzerland (21-Jun): US-Iran talks en Lucerne mediados por Qatar y Pakistan — Lebanon en agenda, deal en proceso pero frágil, riesgo de ruptura persiste",
+    "Ukraine drone strike en Moscow Oil Refinery (18-Jun): 'Oil rain' sobre Moscu, destruccion de capacidad de refinacion rusa — bearish para supply de productos rusos, bullish para crack spreads globales",
+    "Russia restricts fuel sales in Crimea: Rationing de combustible post-strikes Ucranianos — confirma presion sobre downstream ruso, indirectamente supportivo para HO y gasoil",
+    "Iraq targets 3M bbl/day: Declaracion de objetivo de produccion post-deal Hormuz — bearish para precio crude a 6-12 meses si infraestructura lo permite"
+  ],
+  "contradicciones_observadas": "La contradiccion central y mas interesante: los indicadores fisicos spot leen TIGHT (backwardation $2.71, crack 3-2-1 $49.95 MUY_FUERTE, refinery utilization 96.7% — nivel excepcional) mientras que el vector forward apunta a LOOSENING (Hormuz deal, Iraq +3M bbl/day, Iran supply return). El precio spot de WTI a $73.57 parece ya estar incorporando parte del bearish forward (no estamos en $85-90 donde podriamos estar en un mundo sin deal). Esto sugiere que el mercado fisico esta siendo sostenido por demanda genuina de productos (ver crack fuerte) mientras el crude spot se reprecia a la baja por el repricing del geopolitical risk premium. La segunda contradiccion: si refinery utilization esta al 96.7% (maximos historicos), las refinerias estan comprando crude a ritmo agresivo, pero el crude spot no esta subiendo — esto solo hace sentido si el forward supply increase ya esta siendo anticipado y los refiners estan locking in margins via crack spreads mientras pueden. Tercera contradiccion menor: Ukraine esta atacando refinerias rusas (bearish para productos rusos, supportivo para crack global) mientras simultaneamente se esta negociando el fin del conflicto Iran-US (bearish para risk premium en Hormuz). Dos geopolitical events en direcciones opuestas para el crack.",
+  "invalidadores": [
+    "Colapso del Islamabad MOU o ruptura de negociaciones US-Iran en los proximos 60 dias: reversaria el bearish supply thesis, enviaria crude hacia $85+ y validaria mantener LONG crude",
+    "EIA print mostrando draw masivo en crude inventories (>5M bbl) en proximas semanas: invalidaria la narrativa de supply recovery y confirmaria tightness fisica, cambio a LONG WTI/BRENT con mayor conviccion",
+    "Refinery utilization cayendo significativamente de 96.7% sin causa operacional clara: señal de demand destruction no visible aun en los datos, cambio a SHORT en toda la cadena energia"
+  ],
+  "data_gaps": "Criticos: (1) 5-year average para crude inventory (418,222 kbbl vs historical norm), gasoline inventory (214,235 kbbl), distillate inventory (103,052 kbbl) y propane inventory (87,429 kbbl) — sin este contexto no puedo decir si estamos en surplus o deficit relativo. (2) Saudi CP (Contract Price) para LPG — benchmark critico para el regimen LPG. (3) VLGC freight rates para rutas Middle East-Asia — indicador de tightness LPG real. (4) FEI Asia (Far East Index) para LPG pricing. (5) Macro regime del fondo marcado como N/A 0% — sin esto no puedo calibrar demanda ciclica para 6-12 meses. (6) WTI futures curve completa (solo tengo 6M spread, necesitaria curva completa para ver forma de backwardation). (7) Iran actual production pre/post sanctions para cuantificar el supply return potencial. (8) LNG export volumes USA — relevante para NatGas balance. (9) Senales tecnicas especificas de VLO, OXY, XOM, EOG, VIST — solo tengo precios spot, no 200DMA ni momentum de estos nombres.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'NATGAS'",
+    "Senal 4: activo invalido 'GASOLINA'",
+    "Senal 5: activo invalido 'HEATING_OIL'",
+    "Senal 7: activo invalido 'CRAK'",
+    "Senal 13: activo invalido 'XLE'"
+  ],
+  "metadata": {
+    "timestamp": "2026-06-22T15:41:15.510123",
+    "modelo": "claude-sonnet-4-6"
+  }
+}

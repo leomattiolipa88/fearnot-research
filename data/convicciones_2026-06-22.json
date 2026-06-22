@@ -1,0 +1,49 @@
+{
+  "fecha": "2026-06-22",
+  "tipo": "WEEKLY",
+  "convicciones": [
+    {
+      "ticker": "VLO",
+      "direccion": "LONG",
+      "horizonte": "WEEKS",
+      "conviccion": 7,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "Valero captura el crack spread 3-2-1 a $49.95 (MUY_FUERTE) con refinerias corriendo al 96.7% de utilizacion - nivel excepcional historicamente.",
+        "El doble shock al downstream global - Ukraine destruyendo refinerias rusas (Moscow Refinery 18-Jun) + Russia racionando combustible en Crimea - elimina oferta de productos refinados rusos del mercado atlantico, ampliando margenes a refiners americanos.",
+        "La contradiccion entre crude spot bajo presion bearish (Hormuz deal) y crack spreads MUY_FUERTES es exactamente el setup ideal para refiners puros: input crude se abarata mientras output products mantienen premium."
+      ],
+      "fundamental_case": {
+        "macro_context": "Regimen macro DESCONOCIDO (clasificador devolvio N/A) limita confianza, pero indicadores generales (VIX 17.6, HY spread 2.63, jobless claims 226k, unemployment 4.3% con Sahm 0.1) son consistentes con risk-on moderado sin signs de recesion - demanda de productos refinados sostenida.",
+        "sectoral_dynamics": "Crack 3-2-1 MUY_FUERTE + refinery utilization 96.7% (excepcional) = refiners en sweet spot. Russia downstream disruption (drone strikes en Moscow Oil Refinery, racionamiento en Crimea) reduce competencia rusa en productos refinados. Forward crude se reprecia a la baja por Hormuz deal pero spot products no capitulan - geometria perfecta para refining margins.",
+        "technical_setup": "USO sobre 200DMA (+18.56%) confirma que el complejo energetico mantiene tendencia. No tengo tecnicos especificos de VLO en los inputs (data gap reconocido). El precio spot de VLO $238.59 segun el energy desk.",
+        "why_this_expression": "VLO es refiner puro, captura directamente el crack spread sin la dilucion de upstream exposure que tienen XOM/CVX. OXY o EOG (E&P puros) sufren el lado opuesto de esta tesis (crude bearish forward). VLO es la expresion mas limpia de la tesis 'physical products tight + Russian downstream destruction + crude forward soft'."
+      },
+      "agents_aligned": [
+        "energy_desk: crack 3-2-1 $49.95 MUY_FUERTE + refinery util 96.7% + Russia downstream destruction = highest conviction signal del memo (7/10)",
+        "tecnico (indirecto): USO SOBRE_DMA +18.56% confirma momentum en el complejo; TLT SHORT consistente con risk-on que sostiene demand de productos"
+      ],
+      "entry_strategy": "Mantener position size STANDARD ya iniciada en semanas previas. Si VLO retrocede 3-5% sin invalidacion fundamental, considerar add. No perseguir si gappea up.",
+      "stop_loss_logic": "Stop fundamental: crack 3-2-1 cayendo bajo $35 (zona FUERTE-NORMAL) o refinery utilization bajando de 90% sin razon estacional. Stop precio: -8% desde entrada en cualquier semana individual.",
+      "profit_target_logic": "Tomar parcial si crack vuelve a zona NORMAL (<$30) o si Ukraine-Russia conflict cesa removiendo el supportive supply shock ruso. Horizonte primario 4-8 semanas - despues el Hormuz deal puede empezar a comprimir cracks tambien.",
+      "invalidators": [
+        "EIA print mostrando build masivo en gasoline/distillate inventories (>5M bbl combinado) - señalaria demand destruction",
+        "Refinery utilization cayendo significativamente de 96.7% sin causa estacional clara",
+        "Resolucion del conflicto Ukraine-Russia que restablezca production rusa de productos refinados",
+        "Crack 3-2-1 colapsando bajo $35 - perdida del MUY_FUERTE regime"
+      ],
+      "what_we_could_be_wrong_about": "Cuatro semanas consecutivas LONG VLO es una posicion ya madura - el risk/reward marginal de mantener es menor que cuando se inicio. Si el Hormuz deal acelera no solo crude supply sino tambien products via Iran/Iraq exports, los cracks pueden comprimirse rapido. Ademas, refinery utilization al 96.7% es techo historico - cualquier mean reversion operacional es bajista. La tesis sigue siendo valida pero el edge esta erosionandose, por eso conviccion 7 y no 8 esta semana."
+    }
+  ],
+  "reasoning_when_no_convictions": "",
+  "synthesis_observations": "Tres observaciones importantes esta semana. PRIMERO: el regimen macro vino N/A/DESCONOCIDO (fallo el agente macro), lo cual contamina TODA la cartera de senales tecnicas - el equipo tecnico explicitamente redujo conviccion en QQQ de 8-9 a 6 por esta razon. Sin macro regime no puedo publicar QQQ/SPY LONG con la conviccion que tenia las semanas previas, pese a que momentum ajustado es excepcional (QQQ 2.297, SPY 2.157). Esto justifica DROPPEAR QQQ del libro esta semana - no porque la tesis cambio, sino porque perdimos un input critico. SEGUNDO: la contradiccion mas rica del set de inputs es el spread VIX 9D vs 6M de +5.52 (hedging estructural elevado) coexistiendo con VIX spot calmo en 17.6 y VRP +53.5 (complacencia inmediata). Alguien sofisticado se esta cubriendo lejos en la curva mientras el spot duerme - esto es exactamente el patron pre-eventos de 2018 Q4 y 2020 Q1. No amerita una conviction direccional, pero amerita REDUCIR position size en cualquier LONG nuevo y NO concentrar. TERCERO: el setup VLO sigue siendo el unico trade donde 2+ agentes convergen con cadena causal clara (energy desk explicito + tecnico via USO confirmation), pero es la cuarta semana consecutiva - el edge marginal esta erosionando. TLT SHORT del tecnico no tiene confirmacion macro independiente (sin regimen, no se si el cruce bajista es secular o ruido), no califica para publicar.",
+  "metadata": {
+    "timestamp": "2026-06-22T15:42:06.533423",
+    "modelo": "claude-opus-4-7",
+    "agentes_input": [
+      "macro",
+      "technical",
+      "og_energy"
+    ]
+  }
+}
