@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-06-23",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 62,
+    "razonamiento": "La curva de futuros muestra backwardation de $2.66 a 6 meses, señal de tightness fisica real en el prompt. Los inventarios de crudo en USA estan en 418,222 Mbbl (dato al 12-Jun); no tengo el 5-year average exacto para contextualizar si estamos por encima o debajo del promedio historico, lo cual es un gap relevante. Sin embargo, la combinacion de backwardation + utilizacion de refinerias en 96.7% (nivel extremadamente alto, indicativo de demanda de crudo robusta) soporta un regimen de balance ajustado. La gran contradiccion y fuente de incertidumbre es el contexto geopolitico dual: el Estrecho de Hormuz estaba bloqueado (crisis que explica el spike en precios y la estructura backwardated), pero hay senales ACTIVAS de reapertura - Iran rampeando exportaciones por Hormuz abiertamente, negociaciones EEUU-Iran en Suiza, Goldman Sachs rebajando su outlook de precios citando exactamente la recuperacion de oferta por reapertura de Hormuz. Kuwait anunciando produccion de 2M bpd en una semana. Esto significa que el regimen TIGHT_BACKWARDATED actual esta siendo desafiado por un inminente supply recovery. La backwardation puede aplanarse rapidamente si la oferta iraní y del Golfo se normaliza. Clasifico TIGHT_BACKWARDATED como el estado PRESENTE, pero con vector de cambio hacia BALANCED en horizonte de 4-8 semanas. Confianza reducida a 62 por la dinamica de transicion activa."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 50,
+    "razonamiento": "Storage de gas natural en 2,759 Bcf al 12-Jun. No tengo el 5-year average exacto para determinar si estamos por encima o debajo de la norma estacional - este es un gap critico. El precio de $3.23/MMBtu es moderado, ni en panic ni en surplus extremo. Sin noticias especificas de natgas en los inputs de esta semana. Es temporada de transicion pre-verano en USA donde la demanda de power generation empieza a acelerar. Sin datos suficientes para clasificar con alta confianza - doy BALANCED con confianza baja de 50. Necesito el dato de surplus/deficit vs 5-year average para mejorar esta lectura."
+  },
+  "regimen_lpg": {
+    "clasificacion": "BALANCED",
+    "confianza": 30,
+    "razonamiento": "Data muy limitada para LPG. Tengo unicamente el inventario de propano en USA: 87,429 Mbbl al 12-Jun. No tengo: Saudi CP (precio de referencia contractual Arabia Saudita para propano/butano), freight rates VLGC, FEI Asia, spreads CP vs NYMEX, ni datos de demanda petroquimica asiatica (China/India PDH). Las noticias de LPG/petrochem son escasas en los inputs. La crisis del Estrecho de Hormuz habra impactado significativamente los flujos LPG de Middle East hacia Asia (Qatar, Saudi Arabia son exportadores criticos por esa ruta), pero con la reapertura en curso el regimen podria estar normalizandose. Clasifico BALANCED con confianza extremadamente baja de 30 - esta es esencialmente una clasificacion por defecto ante ausencia de datos. Este activo requiere datos adicionales antes de generar senales confiables."
+  },
+  "tesis_principal": "El mercado de energia global esta atravesando una transicion critica desde un regimen de crisis-tightness inducida por el bloqueo del Estrecho de Hormuz hacia una normalizacion progresiva de la oferta. El shock de supply fue real y violento - el bloqueo de Hormuz interrumpio ~20% de los flujos globales de crudo y LNG, generando backwardation fuerte, crack spreads historicamente elevados ($49.27 crack 3-2-1, clasificado MUY FUERTE), y utilizacion de refinerias en USA al 96.7% operando casi a capacidad maxima. Estos son indicadores de un mercado fisico que realmente estuvo y sigue ajustado en el prompt.\n\nSin embargo, el regimen esta siendo activamente desafiado por la diplomacia. Iran esta rampeando exportaciones por Hormuz abiertamente por primera vez desde que comenzo la guerra. Las negociaciones EEUU-Iran en Suiza avanzan. Kuwait anuncia 2M bpd en dias. Goldman Sachs ya bajo su forecast citando la recuperacion de oferta. India volvio a comprar crudo ruso masivamente (lo que libera oferta de otras fuentes para el mercado global). Estos son flujos fisicos reales que van a impactar balances en 4-8 semanas. El riesgo asimetrico en oil es a la baja desde los niveles actuales en el mediano plazo si la normalizacion del Golfo continua.\n\nLa unica contra-tesis de soporte alcista es la disrupcion en refinacion rusa (Ukraine golpeando refinerias en Crimea y Moscu, con racionamiento de combustible ya implementado) y la posibilidad de ruptura de las negociaciones Iran-EEUU. El crack spread MUY FUERTE podria sostenerse si la capacidad de refinacion rusa sigue deteriorandose y el crude se vuelve mas abundante que los productos. Esta dislocacion crudo barato / productos caros es algo para monitorear.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Valero es el refinero puro mas grande de USA. Con crack spread en $49.27 MUY FUERTE y utilizacion de refinerias al 96.7%, Valero esta en un entorno operativo excepcional. Si el crudo baja (reapertura Hormuz) pero los precios de productos se mantienen, el margen de refinacion se EXPANDE adicionalmente. Valero es el beneficiario directo del escenario de normalizacion del crudo con productos aun ajustados. LONG conviccion 6. Riesgo: caida abrupta en crack spreads si la demanda de productos cede."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "Integrada con exposicion tanto a upstream (oil prices) como downstream (crack spreads). El riesgo bajista en crudo por reapertura del Hormuz compensa parcialmente el beneficio de crack spreads altos. Balance mixto. Noticia de '6 High-Yielding Integrateds as Strong Buys' en el feed sugiere sentiment positivo pero es opinion de analista, no dato fisico. NEUTRAL conviccion 4."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "Similar logica a XOM. Integrada con exposicion mixta. CVX tiene mayor exposicion al Golfo Persico (Kazakhstan, Middle East assets) lo cual podria verse afectado por la normalizacion geopolitica de la region de manera bidireccional. NEUTRAL conviccion 4."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "SHORT",
+      "conviccion": 5,
+      "razonamiento": "OXY es principalmente E&P upstream con alta correlacion al precio del crudo. Si la tesis de reapertura del Hormuz + Kuwait + Iran normalizacion se materializa, los precios de crudo tienen headwind bajista. OXY es uno de los mas leveraged al precio del crudo en el universo. Con el regimen de oil cambiando de TIGHT hacia potencialmente BALANCED, el riesgo es a la baja para los E&P puros. Conviccion 5 - no es un short agresivo porque la backwardation todavia existe y hay riesgo de ruptura diplomatica."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "EOG es E&P con mejor calidad de activos (Permian) y balance conservador. Similar a OXY pero mas resistente a caida de crudo por su cost structure bajo. La señal tecnica del fondo es LONG en USO (proxy petroleo) con conviccion 6, lo cual va contra un SHORT en EOG. Conflicto entre señal tecnica (alcista) y fundamentals fisicos (oferta subiendo). NEUTRAL conviccion 4."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "NEUTRAL",
+      "conviccion": 3,
+      "razonamiento": "Vista Energy, E&P Argentina (Vaca Muerta). Menor exposicion directa al Hormuz pero correlacionada al precio global del WTI. No tengo noticias especificas de Argentina o Vaca Muerta en los inputs de esta semana. Sin informacion adicional especifica, NEUTRAL conviccion 3."
+    }
+  ],
+  "eventos_clave": [
+    "Negociaciones EEUU-Iran en Suiza (Burgenstock): delegaciones activas buscando acuerdo permanente - evento de mayor impacto potencial en el mercado de crudo global, podria liberar 1-2 Mbpd de crudo irani al mercado en semanas",
+    "Iran rampea exportaciones de crudo por Hormuz abiertamente: primera vez desde inicio de guerra que flujos transitan abiertamente - señal de que la reapertura practica ya comenzó independientemente del acuerdo formal",
+    "Kuwait anuncia produccion de 2 Mbpd en menos de una semana segun KPC CEO: incremento de oferta inmediato del Golfo que presiona precios a la baja",
+    "Ukraine ataca refineria de Moscu con drones causando 'lluvia de petroleo' + racionamiento de combustible en Crimea: disrupcion significativa de la capacidad de refinacion rusa soportando precios de productos refinados globalmente",
+    "Goldman Sachs baja su outlook de precios de petroleo citando reapertura del Hormuz y recuperacion de oferta: señal de que el mercado ya esta incorporando la normalizacion del supply en las expectativas de precio"
+  ],
+  "contradicciones_observadas": "La contradiccion principal y mas tradeable del momento es la DIVERGENCIA entre crudo y productos refinados. El crudo (WTI $73.69, Brent $77.30) enfrenta un headwind bajista claro por la normalizacion de oferta del Golfo Persico. Pero el crack spread 3-2-1 en $49.27 (MUY FUERTE) con refinerias USA al 96.7% y ataques ucranianos destruyendo refinacion rusa indica que la TIGHTNESS en PRODUCTOS persiste o incluso se intensifica. Esta dislocacion crudo/productos es la oportunidad mas interesante: si el crudo cae y los productos se mantienen, el crack spread se EXPANDE. CRAK long y VLO long son las expresiones mas limpias de este trade. Segunda contradiccion: India incrementa compras de crudo ruso en junio 'a pesar del vencimiento del waiver de sanciones de USA' segun RT - esto sugiere que la arquitectura de sanciones sobre Russia sigue siendo porosa, lo cual mantiene flujos de crudo ruso al mercado global a precios con descuento, presionando los benchmarks a la baja. Tercera observacion: la backwardation de $2.66 a 6M coexiste con noticias de supply recovery inminente - esto normalmente seria contradictorio. La explicacion es que el mercado todavia no esta totalmente convencido de que la reapertura es permanente (risk premium de ruptura del acuerdo diplomatico mantiene la curva en backwardation).",
+  "invalidadores": [
+    "Ruptura de las negociaciones EEUU-Iran en Suiza y re-bloqueo del Estrecho de Hormuz: este evento convertiria todos los NEUTRAL/SHORT en oil en fuertes LONG y dispararía precios de crudo $10-20 al alza en cuestion de dias",
+    "Caida abrupta del crack spread 3-2-1 por debajo de $35 (colapso de la demanda de productos o entrada masiva de capacidad de refinacion): invalidaria las posiciones LONG en GASOLINA, HEATING_OIL, CRAK y VLO",
+    "Acuerdo formal EEUU-Iran que libere >1.5 Mbpd de crudo irani al mercado simultaneamente con produccion incremental de Kuwait/OPEC: escenario de oversupply que colapsaria la backwardation y podria llevar WTI hacia $65-68, invalidando el regimen TIGHT_BACKWARDATED por completo"
+  ],
+  "data_gaps": "1) 5-year average para inventarios de crudo, gasolina, destilados y propano USA - sin este dato no puedo determinar si los niveles actuales son deficit o surplus historico. 2) Saudi Arabia Official Selling Price (OSP) / Saudi CP para propano y butano - critico para la tesis LPG. 3) VLGC freight rates (Baltic Exchange LPG Index) - necesario para entender el economics del trade LPG Middle East a Asia. 4) FEI Asia (Far East Index) para LNG/LPG - no tengo dato. 5) Curva completa de futuros de WTI y Brent (solo tengo el spread 6M, no la forma completa de la curva). 6) Datos de produccion OPEC+ actualizados post-crisis Hormuz para entender cuanto ha subido efectivamente el grupo. 7) Inventarios comerciales en Cushing, Oklahoma (no solo total USA) para entender el differential WTI fisico. 8) Dato de demanda de gasolina semana a semana EIA (implied demand) para validar la fortaleza del crack spread con demanda real. 9) Regimen macro del fondo (N/A 0%) - la ausencia de clasificacion macro dificulta calibrar si la demanda de energia tiene soporte o riesgo de colapso por ciclo economico.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'NATGAS'",
+    "Senal 4: activo invalido 'GASOLINA'",
+    "Senal 5: activo invalido 'HEATING_OIL'",
+    "Senal 6: activo invalido 'CRAK'",
+    "Senal 13: activo invalido 'XLE'"
+  ],
+  "metadata": {
+    "timestamp": "2026-06-23T13:23:44.504365",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
