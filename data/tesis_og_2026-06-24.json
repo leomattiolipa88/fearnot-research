@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-06-24",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 72,
+    "razonamiento": "Multiples señales fisicas apuntan a tightness real pero con presion bajista emergente. La curva WTI muestra backwardation de $1.89 a 6 meses, señal fisica de que el mercado spot valora el barril HOY mas que en el futuro - consumidores pagan premium por entrega inmediata. El crack 3-2-1 de $50.66 es clasificado como MUY_FUERTE, indicando que los refinadores extraen margenes excepcionales sobre el crudo, lo cual refleja demanda real de productos finales robusta. La utilizacion de refinerias al 96.7% es extremadamente alta - cerca del techo operacional, lo que explica por que los inventarios de gasolina (214,235 Mb) y destilados (103,052 Mb) no estan creciendo a pesar del alto throughput. Inventario crudo de 418,222 Mb - no tengo el 5-year average EIA para contextualizar si esto es under/over, pero el nivel absoluto mas la backwardation sugieren que no hay exceso. Sin embargo, dos fuerzas bajistas importantes: (1) Iran reanuda exportaciones via Hormuz al nivel mas alto desde el inicio del conflicto - paz electronica firmada en junio 2026 abre caudal de oferta reprimida. (2) Precios cayeron -2.32% el lunes 22/6 ante recesion de miedos de supply. La tension es: fisica tight hoy, pero con pipeline de oferta iranian abriendo. Confianza moderada por la incertidumbre sobre velocidad de retorno Iranian y la ausencia de datos 5-year average EIA."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 45,
+    "razonamiento": "Storage de gas natural en 2,759 Bcf al 12/6. No tengo el 5-year average del EIA para gas natural para contextualizar este nivel - es el dato critico que me falta. El precio spot de $3.224/MMBtu es moderado, ni en niveles de crisis ($5+) ni en oversupply severo ($2-). Sin noticias especificas sobre gas natural en el feed de las ultimas 36hs - ningun evento disruptivo en LNG, noreste, o produccion Permian/Haynesville mencionado. La ausencia de señal fuerte me lleva a BALANCED con baja confianza. Factores a monitorear: calor veraniego que dispara cooling demand, exportaciones LNG (no tengo utilization rates de terminales), y produccion asociada del shale que sigue alta. Clasifico BALANCED pero con honestidad sobre los gaps de data."
+  },
+  "regimen_lpg": {
+    "clasificacion": "TIGHT",
+    "confianza": 55,
+    "razonamiento": "DATA LIMITADA - razonamiento basado en señales indirectas. Propano en inventario USA: 87,429 Mb al 12/6. No tengo Saudi CP (contrato referencia para LPG), no tengo freight rates VLGC, no tengo FEI Asia - estos son los tres datos criticos para el mercado LPG fisico y no estan en mis inputs. Lo que SI tengo es una noticia de alta relevancia: India importa LPG de USA a volumen RECORD en junio, reemplazando supply de Medio Oriente que sigue constrained post-guerra Iran. Esto implica: (1) Medio Oriente sigue bajo en exportaciones LPG, (2) arbitraje USA-Asia abierto y activo, (3) India willing to pay premium por US LPG a pesar de precios mas altos. El cierre del Estrecho de Hormuz durante el conflicto iran disrumpio flujos de LPG desde Kuwait/Saudi/UAE hacia Asia - aunque Rubio viaja a UAE/Kuwait/Bahrain (22-25 junio) para normalizar relaciones, la normalizacion de flujos toma tiempo. Clasifico TIGHT con confianza moderada, reconociendo que sin Saudi CP y freight rates VLGC mi conviction es limitada."
+  },
+  "tesis_principal": "El mercado energetico enfrenta una transicion critica entre dos regimenes: el mercado fisico tight que domino durante el conflicto Iran (backwardation, crack spreads excepcionales, refinerias a plena capacidad) y el regimen post-conflicto que comienza a emerger con la apertura del Estrecho de Hormuz y el retorno de exportaciones iranesas. La tension central es timing: el crudo fisico HOY sigue tight como demuestra la backwardation de $1.89 y el crack 3-2-1 de $50.66 (MUY_FUERTE), pero el mercado adelanta la oferta que viene con Iran volviendo a exportar al nivel mas alto desde el inicio de la guerra. El precio ya reacciono: WTI bajo -2.32% el lunes 22/6 a medida que los supply fears retroceden. El viaje de Rubio a UAE/Kuwait/Bahrain (23-25 junio) para discutir el MoU con Iran y las prioridades de Hormuz es el evento diplomatico de la semana - cualquier señal de normalizacion aceleraria la presion bajista sobre el crudo.\n\nLa segunda tesis critica es el LPG: India importando US LPG a record absoluto reemplazando Middle East supply es una señal estructural de que los flujos del Golfo siguen disrumpidos incluso con el ceasefire. Esto crea una oportunidad asimetrica en LPG USA (propano Mont Belvieu vs exportacion) - el arbitraje Asia esta abierto y US exporters son los beneficiarios directos. La utilizacion de refinerias al 96.7% con crack spreads en $50.66 es extraordinaria y beneficia directamente a los refinadores independientes como VLO.\n\nEl regimen macro del fondo aparece como N/A en los inputs - esto es un gap significativo para mi analisis. USO muestra LONG tecnico con precio sobre 200DMA +18%, lo que es coherente con la backwardation fisica. Sin embargo, el momentum ajustado de USO de 1.028 esta en zona ambigua segun el analisis tecnico del fondo, lo que refleja exactamente la tension fisica que describes: tight hoy, pero oferta iranian en camino.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Setup excepcional para refinadores independientes. Crack 3-2-1 en $50.66 MUY_FUERTE combinado con refinerias al 96.7% (maxima capacidad de conversion) significa que VLO esta convirtiendo crudo barato (WTI $70.98, bajando) en productos caros (gasolina, heating oil). El margin capture es maximo cuando crudo baja y productos mantienen precio. Si Iran trae mas crudo al mercado y el crudo cae otro 5-10%, mientras la demanda de productos se mantiene, el crack spread para VLO se EXPANDE. Este es exactamente el entorno que maximiza refinery margins. Alta conviccion."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "Integrada con exposicion tanto a upstream (presionado por retorno Iranian) como downstream (beneficiado por crack spreads). Los efectos se compensan parcialmente. Prefiero el pure-play refiner VLO sobre la integrada en este entorno especifico de crudo bajando pero productos fuertes."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "Mismo razonamiento que XOM. Integrada con exposicion Venezuela (noticia de revival de produccion venezolana potencial) agrega otra fuente de oferta futura. Net net neutral dado la combinacion de efectos."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "SHORT",
+      "conviccion": 5,
+      "razonamiento": "Pure-play E&P Permian. Si WTI cae hacia $65-67 con retorno Iranian acelerando, OXY con su estructura de costos y deuda es mas vulnerable que las integradas. No tengo el breakeven de OXY en mis inputs pero el perfil de pure-play upstream en un mercado con oferta adicional entrando es bearish. Conviccion moderada, no tengo datos de balance sheet especificos."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "NEUTRAL",
+      "conviccion": 3,
+      "razonamiento": "E&P con mejor balance que OXY historicamente, pero sigue expuesta al precio WTI. Sin datos especificos de EOG en mis inputs. Neutral hasta tener mas claridad sobre velocidad de retorno Iranian y su impacto en WTI."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "NEUTRAL",
+      "conviccion": 3,
+      "razonamiento": "E&P argentina Vaca Muerta. Sin noticias especificas sobre Argentina en mis inputs de las ultimas 36hs. Expuesta a WTI price y tipo de cambio ARS/USD. Insuficiente data sectorial especifica para VIST en este memo. Neutral por default."
+    }
+  ],
+  "eventos_clave": [
+    "GUERRA IRAN-USA TERMINADA: Conflict de 15 semanas finalizado con acuerdo electronico junio 2026 - cambio de regimen geopolitico fundamental que abre retorno de oferta Iranian al mercado",
+    "HORMUZ REAPERTURA: Iran reanuda exportaciones via Hormuz al nivel mas alto desde inicio del conflicto - el cuello de botella fisico mas critico del mundo en hidrocarbonos se normaliza",
+    "RUBIO DIPLOMACIA: Secretario de Estado viaja a UAE, Kuwait y Bahrain (23-25 junio) para discutir MoU con Iran y prioridades de Hormuz - proximas 72hs son criticas para el outlook de oferta Middle East",
+    "INDIA LPG RECORD: India importa LPG de USA a volumen record en junio reemplazando Middle East supply constrained - señal de que los flujos del Golfo en LPG siguen disrumpidos post-conflicto",
+    "UCRANIA STRIKES REFINERIAS RUSAS: Ataques continuos de Ucrania disrumpen exportaciones de petroleo rusas - factor offsetting parcial al retorno de oferta Iranian, particularmente para crudo Urals que va a India"
+  ],
+  "contradicciones_observadas": "La contradiccion principal y mas interesante: el crack spread 3-2-1 en $50.66 (MUY_FUERTE) y backwardation de $1.89 señalan un mercado fisico TIGHT, pero el precio WTI bajo -2.32% en una sola sesion y hay noticias de Iran aumentando exportaciones via Hormuz. Fisicamente, el barril spot es escaso HOY (refinerias al 96.7%, backwardation, crack enorme), pero el mercado de futuros ya esta descontando la oferta que viene. Esto crea una ventana de oportunidad: si Iran tarda mas en normalizar exportaciones de lo que el mercado precio el lunes (la caida del -2.32%), hay un rebote en crudo. Si la normalizacion es rapida, el crack spread SUBE porque el crudo barato maximiza los margenes de refinacion. En ambos escenarios el crack spread y los refiners ganan - esa es la asimetria que vale capturar. Segunda contradiccion: Russia sigue siendo disruptiva (Ucrania strikes refinerias rusas, Crimea suspende actividades por falta de combustible) MIENTRAS India aumenta imports de crudo ruso al record. El volumen ruso llega a India a pesar de las sanciones, pero la calidad/tipo de crudo puede estar degradada por las infraestructuras danadas. Esto no altera el balance global dramaticamente pero es señal de que el crudo ruso sigue fluyendo via shadow fleet hacia mercados emergentes.",
+  "invalidadores": [
+    "IRAN RETORNO ACELERADO: Si las negociaciones de Rubio resultan en levantamiento rapido de sanciones y Iran vuelve a 2.5-3 Mb/d en 60 dias, el oversupply presionaria WTI hacia $60-65 y colapsaria la backwardation - invalidaria LONG en crudo y presionaria crack spreads eventualmente",
+    "DEMAND DESTRUCTION MACRO: Si el regimen macro del fondo (actualmente N/A en inputs) confirma recesion proxima o hard landing USA, la demanda de gasolina/diesel colapsa y el crack spread de $50.66 es insostenible - invalidaria LONG en refiners y CRAK",
+    "RETORNO COMPLETO HORMUZ + SAUDI AUMENTO: Si Arabia Saudita aprovecha el fin del conflicto Iranian para aumentar produccion OPEC+ agresivamente mientras Hormuz se normaliza, el doble shock de oferta podria llevar WTI bajo $65 rapidamente - invalida cualquier posicion LONG en crudo o E&P"
+  ],
+  "data_gaps": "Datos criticos ausentes que limitaron mi analisis: (1) 5-year average EIA para crudo, gasolina, destilados y gas natural - sin esto no puedo determinar si los inventarios estan above/below norma estacional, lo cual es fundamental para confirmar o invalidar el regimen TIGHT. (2) Saudi Aramco Contract Price (CP) para LPG julio 2026 - referencia global del mercado LPG, esencial para sizing el regimen LPG. (3) Freight rates VLGC (Very Large Gas Carrier) en rutas Medio Oriente-Asia y USA-Asia - indica si el arbitraje LPG esta abierto y en que magnitud. (4) FEI Asia (Far East Index) para LPG - precio Asian spot del propano/butano para comparar con Mont Belvieu y determinar spread de arbitraje. (5) Produccion OPEC+ actual vs cuota - especialmente Saudi, UAE, Iraq para entender headroom de oferta. (6) LNG export terminal utilization rates USA (Sabine Pass, Corpus Christi, etc.) - critico para regimen NatGas. (7) Volumen exacto de exportaciones iranesas actuales (Mb/d) pre y post ceasefire - clave para sizing el impacto en balance global. (8) Regimen macro del fondo - aparece N/A en el input, lo que es un gap enorme para contextualizar la demanda energetica global. (9) WTI price de los contratos M2-M6 para construir la curva completa y verificar la forma exacta del contango/backwardation mas alla del spread 6M reportado.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'GASOLINA'",
+    "Senal 4: activo invalido 'HEATING_OIL'",
+    "Senal 5: activo invalido 'NATGAS'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'CRAK'"
+  ],
+  "metadata": {
+    "timestamp": "2026-06-24T12:35:44.889659",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
