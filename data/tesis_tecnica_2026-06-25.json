@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-06-25",
+  "regimen_macro_aplicado": "DESCONOCIDO",
+  "contexto_tecnico_global": "Mercado en risk-on moderado: VIX spot 18.08 vs VIX 3M 19.57 en CONTANGO_NORMAL, VRP positivo en 57.69 (seguro sobrepagado, bullish equities segun Bollerslev), y breadth saludable con 72% sobre 200DMA confirmando amplitud de tendencia. Sin embargo, options flow muestra senal mixta: VIX 9D en 13.93 vs VIX 6M en 21.99 da un spread de +8.06 (miedo estructural significativamente mayor al inmediato, alguien se cubre lejos), mientras el VIX IV percentile en 66.7 esta en zona alta-normal. La divergencia entre complacencia de corto (9D bajo) y cobertura estructural (6M alto + IV pct elevado) sugiere que el mercado descuenta calma inmediata pero hay demanda de proteccion a mediano plazo.",
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "SPY 6.89% sobre 200DMA (pct_sobre_dma), momentum_12m +22.18% con vol_12m 12.47% da momentum_ajust 1.778 (>1.5, senal LONG alta conviccion segun Barroso & Santa-Clara). VRP +57.69 y breadth 72% confirman. Descuento conviccion por regimen DESCONOCIDO y spread 9D-6M de +8 (hedging estructural).",
+      "indicador_clave": "momentum_ajust 1.778",
+      "interaccion_macro": "Regimen DESCONOCIDO impide aplicar Cooper et al. full sizing; reduzco conviccion de 9 a 7 hasta clarificar si es Goldilocks o Desaceleracion."
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "QQQ 12.92% sobre 200DMA (sobreextendido pero alcista), momentum_12m +32.28% con vol 17.95% da momentum_ajust 1.799 (>1.5, senal LONG fuerte). Tudor Jones: zona habilitada. Riesgo: sobreextension del 12.92% sugiere posible mean-reversion tactica.",
+      "indicador_clave": "momentum_ajust 1.799",
+      "interaccion_macro": "Sin regimen confirmado, momentum tech vulnerable si entrante es Desaceleracion (Cooper: reducir 50%). Mantengo LONG pero sin oversizing."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "GLD -10.49% BAJO 200DMA (regla Tudor Jones: zona prohibida para LONG), pero momentum_12m +19.51% sigue positivo con momentum_ajust 0.703 (zona ambigua). Conflicto entre tendencia larga rota y momentum residual. NEUTRAL hasta resolucion.",
+      "indicador_clave": "cruce_dma BAJO_DMA + momentum_ajust 0.703 ambiguo",
+      "interaccion_macro": "Si regimen DESCONOCIDO resulta Stagflation, GLD seria LONG por real assets; si Goldilocks, GLD seguiria debil. Esperar definicion macro."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en CRUCE_ALCISTA (cruce_dma), apenas 1.1% sobre 200DMA, momentum_12m +4.54% con momentum_ajust 0.474 (zona ambigua). El cruce reciente es la senal mas fuerte segun framework Tudor Jones. Conviccion moderada porque momentum no confirma con fuerza.",
+      "indicador_clave": "cruce_dma CRUCE_ALCISTA",
+      "interaccion_macro": "Bonos largos en cruce alcista podrian senalizar Desaceleracion incipiente, lo cual seria coherente con spread 9D-6M de +8 (hedging estructural)."
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "USO 12.58% sobre 200DMA, momentum_12m +45.6% impresionante pero vol_12m 43.82% muy alta da momentum_ajust 1.041 (zona ambigua, por debajo de +1.5). Tendencia clara pero vol excesiva castiga el sizing.",
+      "indicador_clave": "momentum_ajust 1.041 + alta vol_12m 43.82%",
+      "interaccion_macro": "Crudo fuerte coexistiendo con DXY fuerte es inusual; podria indicar Reflacion o shock de oferta. En regimen DESCONOCIDO, USO solo seria full LONG bajo Reflacion/Stagflation."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY 3.0% sobre 200DMA (SOBRE_DMA), momentum_12m +4.13% con vol 5.81% da momentum_ajust 0.711 (zona ambigua). Tendencia alcista modesta pero sin fuerza explosiva.",
+      "indicador_clave": "momentum_ajust 0.711",
+      "interaccion_macro": "DXY fuerte + USO fuerte simultaneamente es anomalia; sin regimen claro, la senal pierde robustez."
+    }
+  ],
+  "alertas_tecnicas": [
+    "TLT en CRUCE_ALCISTA reciente: senal de compra fuerte segun Tudor Jones, monitorear confirmacion.",
+    "QQQ sobreextendido 12.92% sobre 200DMA: riesgo de mean-reversion tactica pese a momentum fuerte.",
+    "Divergencia options flow: VIX 9D 13.93 vs VIX 6M 21.99 (spread +8.06) indica hedging estructural elevado mientras corto plazo esta complaciente.",
+    "GLD bajo 200DMA pero con momentum_12m aun positivo (+19.51%): divergencia que sugiere quiebre de tendencia secular.",
+    "Co-movimiento atipico DXY+USO+SPY al alza: configuracion inusual sin regimen macro definido."
+  ],
+  "invalidadores_tecnicos": [
+    "SPY o QQQ rompen 200DMA a la baja: invalida todos los LONG de equities (regla Tudor Jones).",
+    "VIX term structure pasa a BACKWARDATION (VIX spot > VIX 3M): senal de stress agudo, cerrar risk-on.",
+    "VRP se vuelve negativo: indicaria complacencia rota, bearish para equities.",
+    "Breadth cae bajo 50% sobre 200DMA: deterioro de amplitud invalida tesis de tendencia.",
+    "TLT pierde el CRUCE_ALCISTA y vuelve bajo 200DMA: invalida LONG bonos y senalaria reaceleracion inflacionaria."
+  ],
+  "confianza_general": 55,
+  "metadata": {
+    "timestamp": "2026-06-25T12:38:07.653327",
+    "modelo": "claude-opus-4-7",
+    "activos_analizados": 6,
+    "regimen_macro": "DESCONOCIDO"
+  }
+}
