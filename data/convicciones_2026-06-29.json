@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-06-29",
+  "tipo": "WEEKLY",
+  "convicciones": [
+    {
+      "ticker": "VLO",
+      "direccion": "LONG",
+      "horizonte": "WEEKS",
+      "conviccion": 8,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "El crack 3-2-1 en 55.03 USD clasificado MUY FUERTE junto con utilizacion de refinerias al 96.1% coloca a Valero en el sweet spot absoluto del ciclo de refining, capturando margenes excepcionales.",
+        "La escalada activa Iran-EEUU en el Strait of Hormuz agrega una opcionalidad asimetrica: si hay disrupciones en crudo medio-oriental pesado, las refinerias optimizadas para crudo ligero (shale) como VLO ganan ventaja comparativa adicional.",
+        "El backdrop tecnico de equity (SPY momentum_ajust 1.697, breadth 66%, VRP +91.83) provee viento de cola para que el mercado siga premiando earnings power, y VLO esta en su momento de earnings power maximo del ciclo."
+      ],
+      "fundamental_case": {
+        "macro_context": "Macro indicators benignos para risk-on: HY spread 2.78 (tight), VIX 19.28, yield curve apenas 0.71 (steepening modesto), Sahm rule 0.1, jobless claims 215k. No hay senal de recesion que destruya demanda de productos refinados. Caveat: el agente macro no entrego output, asi que el contexto se infiere de indicadores crudos.",
+        "sectoral_dynamics": "Crack 3-2-1 en 55 USD es excepcional. Utilizacion 96.1% confirma absorcion fisica de produccion. Gasolina en 2.89 USD/gal y heating oil 3.18 USD/gal validan demanda final robusta. Backwardation del crudo (1.47 USD a 6M) implica que el mercado fisico esta tight pero el WTI en 70 mantiene los costos de input contenidos: combinacion ideal para refiners (input barato, output caro).",
+        "technical_setup": "USO sobre 200DMA +12.74% con momentum 12M +46% confirma que el complejo energy esta en tendencia alcista sin invalidacion tecnica. Tudor Jones rule habilitada para el complejo. El agente tecnico no analizo VLO directamente, pero el regimen energy es supportive.",
+        "why_this_expression": "VLO es la expresion mas pura del crack spread excepcional. Long crudo (USO, OXY, EOG) tiene downside si hay desescalada Iran-US rapida (perdes la prima geopolitica). VLO en cambio se beneficia si: (a) sube crudo por Hormuz, (b) se mantiene crack por demanda, (c) baja crudo por desescalada pero crack se mantiene. Es el trade con downside mas acotado dentro del complejo energy LONG."
+      },
+      "agents_aligned": [
+        "energy_desk: crack 3-2-1 MUY FUERTE 55.03 USD + utilizacion 96.1% + tightness fisica (backwardation) = sweet spot refining, conviccion 8",
+        "tecnico: regimen energy alcista (USO +12.74% sobre 200DMA, momentum 12M +46%), Tudor Jones habilita LONG en complejo",
+        "macro_inferido: HY spread 2.78 tight + jobless claims 215k + Sahm 0.1 = no hay senal de demand destruction que invalide crack spread"
+      ],
+      "entry_strategy": "Mantener/agregar a posicion existente (ya tenemos VLO LONG 4 semanas consecutivas). Entrada en debilidad si VLO retrocede a 255-260 USD seria optimo. No perseguir si hay spike a 280+.",
+      "stop_loss_logic": "Stop si VLO cierra debajo de 245 USD (aprox -9% desde 268), o si crack 3-2-1 colapsa debajo de 35 USD, o si utilizacion refinerias baja de 90%.",
+      "profit_target_logic": "Target 295-310 USD en horizonte 4-8 semanas si crack se mantiene >50 USD. Trim parcial si crack hace pico tipo 65+ USD (zona de mean reversion estacional post-driving season).",
+      "invalidators": [
+        "Crack 3-2-1 colapsa debajo de 35 USD por build de inventarios de gasolina/destilados sobre 5-year average",
+        "Desescalada total Iran-EEUU + OPEC+ anuncia aumento material de produccion que aplasta crudo a 60 USD sin que crack se beneficie",
+        "Recesion signal: jobless claims sobre 280k sostenido o Sahm rule sobre 0.5, indicando demand destruction de productos refinados",
+        "VLO cierra debajo de 245 USD (stop tecnico)"
+      ],
+      "what_we_could_be_wrong_about": "El crack en 55 USD puede estar en su pico estacional (driving season) y mean-revertir agresivamente en agosto-septiembre cuando termina la temporada. Tambien podriamos estar wrong sobre la duracion del evento Hormuz: si se resuelve en 1-2 semanas via diplomacia, perdemos la opcionalidad geopolitica y VLO podria consolidar lateralmente. Ademas, hemos publicado VLO LONG 4 semanas consecutivas - existe riesgo de anchoring y de subestimar que el trade ya se materializo parcialmente."
+    },
+    {
+      "ticker": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MONTHS",
+      "conviccion": 7,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "SPY tiene momentum_ajust 1.697 (zona fuerte por Barroso & Santa-Clara), precio 7.22% sobre 200DMA, breadth amplio (66% sobre 200DMA) y VRP +91.83 confirmando que el seguro esta sobrepagado.",
+        "El backdrop macro es benigno: HY spread 2.78 (no hay stress credit), Sahm rule 0.1, jobless claims 215k, VIX en CONTANGO_NORMAL - todos consistentes con risk-on sostenible.",
+        "Eleccion de SPY sobre QQQ es deliberada: QQQ esta sobreextendido +13% sobre 200DMA con vol mas alta, mientras SPY tiene mejor risk/reward dada la amplitud del rally (no es solo mega-caps tech)."
+      ],
+      "fundamental_case": {
+        "macro_context": "HY spread 2.78 indica no hay stress credit. Jobless claims 215k estables. Sahm rule 0.1 lejos de trigger recesivo. Yield 10Y 4.40 estable. DXY 101 contenido. Breakeven 5Y5Y 2.19 ancladas. Caveat fuerte: agente macro fallo y no clasifico el regimen explicitamente; el tecnico clasifico DESCONOCIDO. Esto limita la conviccion.",
+        "sectoral_dynamics": "Breadth 66% sobre 200DMA = el rally es amplio, no concentrado. Esto reduce el riesgo de un colapso tipo 2021-2022 donde solo 7 stocks sostenian el indice.",
+        "technical_setup": "Momentum_ajust 1.697 (>1.5 = fuerte). Precio sobre 200DMA. VIX term en CONTANGO_NORMAL. VRP positivo y elevado. Tudor Jones habilita LONG. SPY menos sobreextendido que QQQ.",
+        "why_this_expression": "SPY tiene mejor amplitud que QQQ (que esta sobreextendido +13%) y mejor risk/reward que apuestas sectoriales puntuales. Si el regimen es DESCONOCIDO, la diversificacion del indice amplio reduce path risk."
+      },
+      "agents_aligned": [
+        "tecnico: momentum_ajust 1.697, breadth 66%, VRP +91.83, Tudor Jones LONG habilitado",
+        "macro_inferido: HY spread 2.78 + Sahm 0.1 + jobless claims 215k = no hay senal de recesion que invalide trend",
+        "energy_desk_indirecto: la tesis de refining strong + demanda robusta de gasolina/destilados confirma que la actividad economica real es saludable, supportive del bull case equity"
+      ],
+      "entry_strategy": "Mantener exposicion. Agregar en pullbacks a 710-720 USD. No perseguir spike sobre 745.",
+      "stop_loss_logic": "Stop si SPY cierra debajo de 200DMA (687 USD) - invalidaria Tudor Jones rule. Reducir 50% si breadth cae bajo 55% o si VIX term pasa a BACKWARDATION.",
+      "profit_target_logic": "Target 770-790 en horizonte trimestral si momentum se sostiene. Trim si VIX IV percentile cruza 90 o si VRP colapsa a <40.",
+      "invalidators": [
+        "SPY rompe 200DMA (687) a la baja",
+        "VIX term structure pasa a BACKWARDATION (VIX spot > VIX 3M)",
+        "Breadth cae bajo 50% sobre 200DMA",
+        "HY spread se ensancha sobre 4.0 (credit stress aparece)",
+        "Sahm rule cruza 0.5 (recesion signal)"
+      ],
+      "what_we_could_be_wrong_about": "El agente macro fallo - estoy infiriendo regimen de indicadores crudos. Podria haber dinamicas que no veo (inflation re-acceleration, fiscal stress, election dynamics). Ademas, el VIX IV percentile en 75.7 y el spread VIX 9D-6M de +3.56 sugieren que alguien sofisticado esta pagando proteccion estructural - puede haber un catalyst que no estamos viendo. La complacencia (VRP 91.83) historicamente precede shocks. El regimen DESCONOCIDO explicito del tecnico es una bandera amarilla."
+    }
+  ],
+  "reasoning_when_no_convictions": "",
+  "synthesis_observations": "Patron interesante #1 - la contradiccion productiva del crudo: WTI en 70 USD con Hormuz bajo ataque activo, crack 3-2-1 excepcional (55 USD), backwardation y utilizacion refinerias 96.1% es altamente inusual. Historicamente threats serias a Hormuz generaron spikes de 5-10 USD inmediatos. O el mercado descuenta resolucion rapida, o hay floating storage absorbiendo, o el upside esta represado y la asimetria favorece LONG crudo/refiners. Elegimos la expresion VLO porque captura el upside del crack independientemente del path del crudo, evitando dependencia del timing geopolitico.\n\nPatron interesante #2 - divergencia en options flow ignorada: VIX IV percentile 75.7 (historicamente alto) coexiste con VIX spot 19.35 y CONTANGO_NORMAL. Spread VIX 9D-6M de +3.56 sugiere que money sofisticada paga proteccion lejana mientras el spot esta contenido. Esto es exactamente el tipo de senal que precedio episodios de volatilidad (Aug 2015, Feb 2018, Feb 2020). No amerita un SHORT vol o LONG VIX explicito porque no hay catalyst datable, pero justifica position size STANDARD (no CONCENTRATED) en los LONGs equity y mantener algo de polvora seca.\n\nNon-conviction notable: el agente O&G publico 6 senales LONG en energy (VLO, XOM, CVX, OXY, EOG, VIST) - todas son la misma apuesta direccional correlacionada. Aplicamos la regla anti-correlacion y seleccionamos solo VLO como mejor expresion (mejor downside protection via crack spread, menor dependencia del path geopolitico). XOM/CVX/OXY/EOG son trades validos pero redundantes con VLO. GLD, TLT, DXY no pasan los filtros: GLD bajo 200DMA (Tudor Jones prohibe), TLT en zona neutral sin claridad de regimen, DXY con momentum modesto sin convergencia de agentes.",
+  "metadata": {
+    "timestamp": "2026-06-29T14:37:48.379516",
+    "modelo": "claude-opus-4-7",
+    "agentes_input": [
+      "macro",
+      "technical",
+      "og_energy"
+    ]
+  }
+}
