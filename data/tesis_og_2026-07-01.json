@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-07-01",
+  "regimen_oil": {
+    "clasificacion": "BALANCED",
+    "confianza": 55,
+    "razonamiento": "Señales mixtas que no permiten clasificacion limpia. Por un lado, la curva WTI muestra backwardation a 6 meses (spread +$0.78), lo que fisicamente indica preferencia por barril spot sobre forward - señal de tightness fisica real. El crack 3-2-1 en $58.91 es MUY_FUERTE, indicando que los refinadores estan pagando premiums altos por crudo para satisfacer demanda de productos. La utilizacion de refinerias en 96.1% es excepcionalmente alta - cercana al limite operacional. Sin embargo, WTI en $69.24 y Brent en $72.26 son niveles moderados, muy por debajo de los picos de triple digito que mencionan las noticias durante el pico de la crisis Iran. Los inventarios de crudo en 412,134 Mbbls requieren contexto historico (5-year average) que no tengo para determinar si estan en draw o build significativo. El escenario geopolitico post-ceasefire US-Iran introdujo una caida de >20% en Brent en el ultimo mes segun las noticias, sugiriendo que el mercado habia incorporado una prima de guerra que ahora se deshace parcialmente. El Estrecho de Hormuz esta funcionando (los productores mantienen loadings segun gcaptain) pero la situacion no esta resuelta. La combinacion de backwardation modesta + crack fuerte + alta utilizacion de refinerias vs. precio spot bajo y potencial vuelta de barrels iranies crea un balance tenso."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 60,
+    "razonamiento": "Storage de gas natural en 2,835 Bcf al 19-Jun. Sin el 5-year average exacto no puedo determinar si esto representa surplus o deficit respecto a norma estacional. Historicamente, para fines de junio el rango tipico es 2,600-3,100 Bcf, lo que pondria 2,835 Bcf en zona media. El precio NATGAS en $3.263/MMBtu es moderado - ni excesivamente bajo (señal de oversupply) ni elevado (señal de tightness). La ola de calor en Europa (1,300+ muertos segun noticias) sugiere demanda de cooling que podria presionar los mercados de gas europeos y potencialmente impactar LNG exports US via precio de oportunidad. No tengo datos de Henry Hub forward curve para analizar estructura temporal de natgas. La demanda de power generation por calor en verano US seria el driver principal a corto plazo. Clasifico BALANCED con baja confianza porque me falta el comparativo historico critico de storage y la curva forward."
+  },
+  "regimen_lpg": {
+    "clasificacion": "BALANCED",
+    "confianza": 35,
+    "razonamiento": "DATA LIMITADA - clasificacion de baja confianza. Solo tengo propane/propylene inventory USA en 90,047 Mbbls al 19-Jun. Sin 5-year average para este periodo, sin Saudi CP (Contract Price para propano/butano - no tengo ese dato), sin freight rates VLGC (rutas Middle East-Asia, US Gulf-Asia), y sin FEI Asia pricing, no puedo determinar tightness fisica del mercado LPG global. Lo que si observo: el deal ADNOC-Argentina LNG es relevante para el mercado a largo plazo (ADNOC tomando 32% en bloques upstream que alimentaran el primer terminal LNG export de Argentina), lo que refleja apetito de Middle East NOCs por diversificacion de supply chains lejos del Hormuz risk. Las interrupciones en el Estrecho de Hormuz impactan directamente LPG exports de Middle East que representan ~40% del comercio global. Los loadings continuan segun gcaptain pero el riesgo premium permanece. Necesito: Saudi CP julio, VLGC freight rates, propane FEI Asia vs Mt Belvieu spread para dar una clasificacion con confianza real."
+  },
+  "tesis_principal": "El mercado energetico global esta en un momento de transicion post-crisis-Iran donde el precio refleja un deshacimiento de guerra premium pero la estructura fisica subyacente mantiene tensiones reales. Brent cayo mas de 20% desde triple digitos durante el pico del conflicto Iran-US hasta $72.26 hoy, pero esto no significa que la crisis termino - el ceasefire es fragil (US y Iran se acusaron mutuamente de violarlo el fin de semana, con reunion en Qatar anunciada para esta semana). El Hormuz sigue siendo un punto de stress con ship attacks continuos aunque los loadings persisten.\n\nLa gran contradiccion del mercado es esta: el crack spread 3-2-1 en $58.91 (clasificado MUY_FUERTE) con utilizacion de refinerias al 96.1% - practicamente al tope de capacidad operacional - señalan una demanda de productos refinados excepcionalmente robusta. Esto deberia soportar precios de crudo mucho mas altos que $69-72. Que el crudo este relativamente deprimido mientras los refinadores operan a full throttle y los crack spreads son historicamente fuertes sugiere que el mercado esta correctamente priceando el riesgo de vuelta de barrels iranies y/o incremento de produccion OPEC+, pero que los refinadores ya comprometieron throughput y tienen demanda fisica real de productos. El beneficiario inmediato de este spread es el sector refining.\n\nPara el gas natural, la ola de calor europea con mas de 1,300 muertos es un evento de demanda significativo que podria tensionar el mercado global de LNG y generar oportunidades en gas US si los cargos se redirigen a Europa. El deal ADNOC-Argentina LNG indica que los grandes actores estan posicionando capital para infraestructura de largo plazo lejos de la vulnerabilidad Hormuz, lo cual es una tesis estructural multianio mas que una senal de trading a corto plazo.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Valero es el mejor proxy para el crack spread excepcional. Con crack 3-2-1 en $58.91 MUY_FUERTE y utilizacion de refinerias al 96.1%, VLO deberia estar generando margins historicos. El articulo de OilPrice.com cita explicitamente a Valero como una de las 5 stocks setup para el 'Fragile Hormuz Truce' - la tesis es que crudo bajo + demanda de producto fuerte = refining margin expansion. El desk tecnico no tiene señal especifica sobre VLO pero la señal fundamental es clara. Mejor conviction del grupo: el beneficiario directo del dislocamiento crack vs. crudo."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "XOM tiene exposicion integrada upstream-downstream. El upstream se beneficia de cualquier rebote en crudo si el Hormuz vuelve a tensionarse. El downstream se beneficia del crack spread fuerte. Empresa de mayor escala para resistir volatilidad geopolitica. Señal moderada - menos pura que VLO para el crack trade."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Similar a XOM pero con mayor exposicion a Permian Basin y menos refining puro. El backwardation en WTI marginalmente favorable para productores con costos fijos. Conviccion menor que XOM por menor leverage al crack spread que es el driver mas fuerte identificado."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "E&P puro con alta exposicion a precio WTI. El backwardation soporta produccion sell-forward a precios spot. Pero con WTI en $69 y OXY con breakevens relativamente altos, el upside es moderado salvo que el crudo suba materialmente. Lean LONG debil siguiendo la señal tecnica de USO."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "NEUTRAL",
+      "conviccion": 3,
+      "razonamiento": "EOG es un E&P de alta calidad pero con la mayor parte del valor en Permian y Eagle Ford - pure play WTI. Con WTI en $69 y regimen geopolitico incierto, prefiero neutralidad. No hay señal especifica de outperformance de EOG sobre sus pares en este contexto. El crack spread no impacta directamente a los E&Ps."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Vista Energy (Argentina) tiene un angulo unico: el deal ADNOC-Argentina LNG publicado ayer (ADNOC/XRG tomando 32% en bloques upstream que alimentaran el primer terminal LNG export de Argentina) es directamente relevante para el ecosistema E&P argentino. VIST opera en Vaca Muerta - la misma cuenca que abastecera ese LNG terminal. La participacion de ADNOC valida la calidad del recurso y podria atraer capital adicional. Adicionalmente, Argentina como productor no-Hormuz gana relevancia estrategica cuando el Estrecho esta bajo stress. El unico riesgo es el macro argentino local (FX, regulatorio). Sin datos de precio actual de VIST no puedo validar señal tecnica pero el fundamental es constructivo."
+    }
+  ],
+  "eventos_clave": [
+    "Ceasefire US-Iran fragil: ambas partes se acusaron de violaciones el fin de semana, reunion Trump-Iran anunciada en Qatar para esta semana - evento binario maximo para precio del crudo",
+    "Brent cayo >20% desde triple digitos hasta $72 en el ultimo mes por deshacimiento de guerra premium - el mercado ya priceó mucha resolucion, el riesgo asimetrico ahora es al alza si las negociaciones fallan",
+    "ADNOC/XRG toma 32% en bloques upstream Argentina para suministrar primer terminal LNG export del pais - señal de diversificacion estrategica de supply chains lejos del Hormuz por parte de productores del Golfo",
+    "Ola de calor Europa con 1,300+ muertos - driver de demanda de cooling y potencial tension en mercado de gas europeo con implicaciones para LNG exports y precio de natgas global",
+    "Productores Middle East mantienen loadings de petroleo y LNG a pesar de ship attacks en Hormuz - flujos fisicos resistentes al stress geopolitico por ahora, pero la vulnerabilidad operacional persiste"
+  ],
+  "contradicciones_observadas": "La contradiccion principal y mas explotable: crack spread 3-2-1 en $58.91 (MUY_FUERTE) con utilizacion de refinerias al 96.1% mientras el crudo WTI cotiza apenas a $69. Fisicamente, si los refinadores estan operando a casi plena capacidad con margins excepcionales, la demanda de producto final (gasolina, distillates) es real y robusta. Normalmente esto jalaría el crudo al alza por demanda de throughput. Que el crudo este contenido sugiere que el mercado esta sobreestimando el riesgo de vuelta de barrels suprimidos (Iran, potencial OPEC+ aumento) vs. la demanda spot real. Esta dislocacion entre margin de refinacion excepcionalmente alto y precio de crudo moderado es exactamente donde esta la oportunidad - largo crack spread/refiners, potencialmente corto crudo o neutral crudo. Una segunda contradiccion menor: el Hormuz esta bajo stress con ship attacks pero los loadings continuan - el mercado del seguro maritimo y los freight rates (que no tengo) probablemente capturan este premium mejor que el precio del crudo en si.",
+  "invalidadores": [
+    "Reunion Qatar US-Iran resulta en acuerdo nuclear/normalizacion: barrels iranies (estimados 1-1.5 MMbbl/d suprimidos) vuelven al mercado en semanas - crudo cae $5-10, crack spreads se comprimen, señales LONG oil se invalidan",
+    "Escalada militar en Hormuz que bloquee fisicamente el estrecho: spike de crudo a triple digitos nuevamente, destruccion de demanda por shock de precio, los crack spreads colapsan porque los refinadores no consiguen feedstock - invalidaria el trade de crack spread aunque crea un trade diferente en crudo spot",
+    "EIA muestra crude inventory build significativo (>5 MMbbls) en el reporte semanal: señal de que la demanda fisica es menor que lo que los crack spreads sugieren, invalidaria el argumento de tightness subyacente y la tesis LONG refining"
+  ],
+  "data_gaps": "1) Saudi CP (Contract Price) para propano y butano julio 2026 - critico para regimen LPG y señal VIST/sector LPG. 2) VLGC freight rates (rutas ME Gulf-Japan, US Gulf-Asia) - necesario para entender economics de LNG/LPG trade. 3) FEI Asia pricing (Far East Index) para LNG y LPG - sin este dato no puedo calcular spreads de arbitraje US-Asia. 4) 5-year average de inventarios EIA para crudo, gasolina, distillates y propano - sin esto los numeros absolutos (412K Mbbls crudo, 216K gasolina, 106K distillates, 90K propano) no dicen si estamos en surplus o deficit historico. 5) WTI forward curve completa (M1 a M12 al menos) - solo tengo el spread a 6M, necesito ver toda la estructura para identificar inflection points. 6) Regimen macro del fondo (aparece N/A 0%) - sin esto no puedo validar si el contexto de demanda global es compatible con un LONG energetico sostenido. 7) Produccion OPEC+ actual vs. quota y cualquier decision reciente de reunion - critico para balance de oferta. 8) Iran exports actuales estimados y impacto del conflicto en produccion real de campos iranies.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'GASOLINA'",
+    "Senal 4: activo invalido 'HEATING_OIL'",
+    "Senal 5: activo invalido 'NATGAS'",
+    "Senal 7: activo invalido 'XLE'",
+    "Senal 8: activo invalido 'CRAK'"
+  ],
+  "metadata": {
+    "timestamp": "2026-07-01T13:19:57.475111",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
