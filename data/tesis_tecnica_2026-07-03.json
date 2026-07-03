@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-07-03",
+  "regimen_macro_aplicado": "DESCONOCIDO",
+  "contexto_tecnico_global": "VIX spot en 15.91 vs VIX 3M en 20.13 muestra CONTANGO_FUERTE (term structure normal, risk-on). VRP en -49.75 (negativo, complacencia extrema, bearish para equities segun Bollerslev et al. 2009). Breadth en 68% sobre 200DMA, zona alta pero aun no eufórica. Options flow: VIX 9D 16.8 vs VIX 6M 22.26 = spread +5.46 (miedo estructural mayor al inmediato, alguien se cubre lejos), y VIX IV percentile en 23.8 (VIX historicamente bajo, complacencia en el corto plazo). Divergencia relevante: complacencia inmediata + hedging estructural = potencial mispricing de riesgo a plazo.",
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Precio 744.78 sobre 200DMA 688.74 (+8.14%, SOBRE_DMA), momentum 12M +21.37% con vol 12.55%, momentum ajustado 1.703 (>1.5, senal fuerte segun Barroso & Santa-Clara). Breadth 68% confirma tendencia. Contra: VRP -49.75 marca complacencia y hedging estructural en VIX 6M.",
+      "indicador_clave": "momentum_ajust 1.703 + precio sobre 200DMA",
+      "interaccion_macro": "Regimen DESCONOCIDO impide validar hipotesis Cooper et al. 2004 (momentum solo funciona en UP markets); por eso conviccion recortada de 8 a 6 pese a senales tecnicas alineadas."
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Precio 712.6 sobre 200DMA 633.49 (+12.49%), momentum 12M +30.0%, vol 18.31%, momentum ajustado 1.638 (>1.5, fuerte). Sobreextension moderada (+12.49% sobre DMA), riesgo de mean-reversion tactica.",
+      "indicador_clave": "momentum_ajust 1.638",
+      "interaccion_macro": "Sin regimen confirmado, no se puede aplicar full sizing tipo Goldilocks. Ademas VRP negativo advierte crash risk en tech (beta alta)."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Precio 378.13 BAJO 200DMA 409.9 (-7.75%, cruce BAJO_DMA) invalida LONG por regla Tudor Jones. Sin embargo momentum 12M +22.27% y momentum ajustado 0.803 aun positivos: divergencia entre trend de largo (roto) y momentum residual. No hay setup limpio ni para LONG ni SHORT.",
+      "indicador_clave": "conflicto cruce_dma BAJO_DMA vs momentum_12m +22.27%",
+      "interaccion_macro": "En regimen DESCONOCIDO no se puede validar tesis stagflation/reflation que justificaria overweight en real assets."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Precio 85.51 apenas BAJO 200DMA 86.11 (-0.69%), momentum 12M +2.09% con vol 9.56%, momentum ajustado 0.218 (dentro de zona ambigua -0.5 a +1.5). Sin edge direccional.",
+      "indicador_clave": "momentum_ajust 0.218 (ambiguo) + precio en linea con 200DMA",
+      "interaccion_macro": "TLT es el activo mas sensible al regimen macro; sin identificacion clara (goldilocks vs stagflation) no hay conviccion direccional."
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Precio 103.98 sobre 200DMA 95.38 (+9.01%, SOBRE_DMA), momentum 12M +37.56% pero vol muy alta 43.94%, momentum ajustado solo 0.855 (zona ambigua). La alta volatilidad diluye la senal pese al trend positivo.",
+      "indicador_clave": "momentum_ajust 0.855 (ambiguo por vol alta)",
+      "interaccion_macro": "Sin confirmacion de reflation/stagflation, no se puede overweight commodities. Conviccion baja."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Precio 100.76 sobre 200DMA 98.86 (+1.91%, SOBRE_DMA marginal), momentum 12M +3.68%, momentum ajustado 0.636 (zona ambigua). Trend debil.",
+      "indicador_clave": "momentum_ajust 0.636",
+      "interaccion_macro": "DXY es termometro macro; sin regimen definido no hay tesis clara."
+    }
+  ],
+  "alertas_tecnicas": [
+    "VRP en -49.75 (fuerte negativo) es senal de complacencia extrema, historicamente asociada a crash risk en equities (Bollerslev et al. 2009).",
+    "VIX 9D 16.8 vs VIX 6M 22.26 (spread +5.46): mercado paga por hedges a 6 meses mientras ignora corto plazo. Divergencia bearish.",
+    "VIX IV percentile 23.8 confirma complacencia en volatilidad de corto plazo.",
+    "QQQ +12.49% sobre 200DMA: sobreextension tactica, riesgo mean-reversion.",
+    "GLD rompio 200DMA a la baja pero mantiene momentum 12M positivo (+22.27%): divergencia estructural."
+  ],
+  "invalidadores_tecnicos": [
+    "SPY o QQQ cierran BAJO 200DMA -> cancelar todas las senales LONG por regla Tudor Jones.",
+    "VIX term structure pasa a BACKWARDATION -> reducir risk-on inmediatamente.",
+    "Breadth cae bajo 50% sobre 200DMA -> deterioro de amplitud invalida LONG.",
+    "Momentum ajustado de SPY/QQQ cae bajo 1.0 -> perdida de la senal fuerte de Barroso.",
+    "VRP se profundiza bajo -60 o VIX 9D supera VIX 6M -> stress inminente, cerrar longs."
+  ],
+  "confianza_general": 45,
+  "metadata": {
+    "timestamp": "2026-07-03T12:25:05.898579",
+    "modelo": "claude-opus-4-7",
+    "activos_analizados": 6,
+    "regimen_macro": "DESCONOCIDO"
+  }
+}
