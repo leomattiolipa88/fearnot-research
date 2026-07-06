@@ -1,0 +1,49 @@
+{
+  "fecha": "2026-07-06",
+  "tipo": "WEEKLY",
+  "convicciones": [
+    {
+      "ticker": "VLO",
+      "direccion": "LONG",
+      "horizonte": "WEEKS",
+      "conviccion": 7,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "El complejo energetico esta bifurcado: crudo bajo presion OPEC+ (WTI 68.68) mientras el crack 3-2-1 esta en 56 USD/bbl (MUY_FUERTE) con refinerias USA al 96.6% de utilizacion, situacion que beneficia doblemente a los refinadores puros (input barato, output caro).",
+        "La destruccion del 25%+ de capacidad refinadora rusa por drones ucranianos tightening estructuralmente los spreads globales de productos refinados, y VLO es el refinador puro mas eficiente y directo para capturar esta anomalia.",
+        "El setup tecnico del mercado sigue risk-on (SPY momentum ajustado 1.674, breadth 64%, VIX 16.25) lo que valida mantener exposicion sectorial larga en energia via el eslabon donde los margenes son excepcionales."
+      ],
+      "fundamental_case": {
+        "macro_context": "Macro agent no disponible esta semana - gap de informacion importante. Indicadores macro observables: yield curve +0.77 (normalizada), HY spread 2.75 (sin stress), Sahm 0.07 (sin recesion), jobless claims 215k (mercado laboral estable). No hay red flags macro que invaliden risk-on.",
+        "sectoral_dynamics": "Crack 3-2-1 en 56 USD/bbl clasificado MUY_FUERTE. Utilizacion refinerias USA en 96.6% (techo operacional). Destruccion capacidad refino Rusia tightening global product spreads. OPEC+ subiendo cuotas presiona crudo (input) a la baja - favorable para margenes de refino.",
+        "technical_setup": "USO SOBRE_DMA (+9.47%) confirma sector energetico direccionalmente sano. SPY/QQQ ambos con momentum ajustado >1.5 (umbral Barroso). Breadth 64%. VIX term structure en contango fuerte - risk-on intacto.",
+        "why_this_expression": "VLO expresa el trade especifico del crack spread sin tomar direccional en crudo (que tiene headwind OPEC+). XOM/CVX diluyen la tesis mezclando upstream (perjudicado) con downstream. OXY/EOG/VIST son pure-play crudo, direccion equivocada. VLO es la unica expresion limpia del edge observado."
+      },
+      "agents_aligned": [
+        "energy_desk: VLO LONG conv 8 - crack MUY_FUERTE, refinerias 96.6%, capacidad rusa destruida, setup multi-factor",
+        "technical: USO LONG conv 6 (SOBRE_DMA +9.47%, momentum 12M +39%) valida sector; SPY LONG conv 8 valida risk-on general que soporta ciclicos"
+      ],
+      "entry_strategy": "Mantener posicion existente (ya publicada 4 semanas consecutivas). No agregar a niveles actuales (273.14). Solo add en pullback a 255-260 zone.",
+      "stop_loss_logic": "Salida si crack 3-2-1 cae bajo 40 USD/bbl (normalizacion de margenes) o si VLO pierde 240 USD (nivel psicologico y probable soporte tecnico).",
+      "profit_target_logic": "Trim parcial en 300-310 USD (extension del rally). Full exit si crack sostiene bajo 45 durante 2 semanas consecutivas o si utilizacion refinerias cae bajo 92%.",
+      "invalidators": [
+        "Crack 3-2-1 contrayendose bajo 45 USD/bbl consecutivamente 2 semanas",
+        "Utilizacion refinerias USA cae bajo 92% (fin driving season o demand destruction)",
+        "Compliance OPEC+ real materializa mayor supply de crudo y este cae bajo 60 - paradojicamente inicialmente bueno para refiners pero indica demand weakness subyacente",
+        "SPY pierde 200DMA (689.21) invalidando risk-on"
+      ],
+      "what_we_could_be_wrong_about": "Este trade lleva 4 publicaciones consecutivas - riesgo de crowding y complacencia. El crack spread es mean-reverting historicamente y estamos en la parte alta del ciclo estacional (driving season peak). VLO a 273 ya refleja muchos de estos factores; el edge marginal disminuye con cada semana que pasa sin nueva informacion. Ademas, macro agent unavailable esta semana genera blind spot importante - no puedo confirmar que no haya deterioro en demanda agregada que impacte productos refinados post-verano."
+    }
+  ],
+  "reasoning_when_no_convictions": "",
+  "synthesis_observations": "Observacion 1 - Blind spot macro: El agente macro fallo esta semana (error 404). Esto es material. Publico solo 1 conviction (vs multiple posibles) porque no puedo confirmar regimen macro. El tecnico marca DESCONOCIDO explicitamente y reduce sus convicciones por eso mismo. Actuar con humildad.\n\nObservacion 2 - Divergencia crudo vs productos: La observacion mas rica del memo energy es la bifurcacion WTI-vs-crack. Crudo bajo presion (OPEC+ supply) mientras productos escasos (destruccion refino Rusia + refinerias USA al tope). Esto es exactamente el tipo de anomalia estructural que Druckenmiller/Soros buscarian: mercado esta pricing dos cosas incompatibles y el vehiculo correcto (refiner) captura ambas patas favorablemente. VLO es la expresion pura.\n\nObservacion 3 - Complacencia en options: VRP -41.88 (opciones baratas vs vol realizada) + VIX IV percentile 29.5 + spread VIX 9D-6M de +7.16 sugieren que alguien esta comprando cobertura estructural barata a 6M mientras corto plazo duerme. No amerita conviction (no puedo identificar catalyst especifico) pero es una senal de que el momentum tardio del rally puede estar madurando. QQQ sobreextendido +13.89% sobre 200DMA refuerza esta lectura de late-cycle.\n\nObservacion 4 - GLD divergencia: Momentum 12M en +23.78% pero cruce BAJO_DMA. Clasica senal de posible cambio de trend. No es actionable aun (necesitamos regimen macro), pero worth watching - si regimen macro define hacia Stagflation, GLD recuperando 410 seria fat pitch.\n\nObservacion 5 - Repeticion VLO: 5ta semana consecutiva publicando VLO. La tesis sigue intacta pero el edge marginal decae. Reduzco conviction a 7 (vs 8 previa) por: (a) crowding risk, (b) driving season peak, (c) macro blind spot esta semana. Si el crack no expande materialmente o si aparece cualquier deterioro, hay que rotar fuera.",
+  "metadata": {
+    "timestamp": "2026-07-06T14:08:32.179975",
+    "modelo": "claude-opus-4-7",
+    "agentes_input": [
+      "macro",
+      "technical",
+      "og_energy"
+    ]
+  }
+}
