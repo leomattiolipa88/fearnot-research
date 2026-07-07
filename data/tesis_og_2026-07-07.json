@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-07-07",
+  "regimen_oil": {
+    "clasificacion": "BALANCED",
+    "confianza": 55,
+    "razonamiento": "El mercado de crudo presenta señales mixtas que impiden una clasificación clara. Por el lado de la tightness: la curva muestra BACKWARDATION a 6 meses (spread de +0.60 USD, aunque moderada), lo que indica algún grado de tensión física en el front end. Sin embargo, los inventarios de crudo EIA de 408,359 Mbbls son relevantes: no tengo el 5-year average exacto para comparar, pero históricamente niveles por encima de 400 Mbbls en PADD national son considerados cómodos. Refinery utilization al 96.6% es excepcionalmente alta, lo que implica que la demanda de crudo es fuerte a nivel de refinería. Por el lado de la oferta: OPEC+ acaba de acordar el quinto mes consecutivo de incrementos de producción (+188,000 bpd en agosto), lo que presiona el mercado a la baja. La pérdida de suministro iraní (guerra activa, Hormuz bajo disputa) fue absorbida según Reuters, pero con inventarios globales depletados que crean riesgo latente. El precio WTI a $69.03 y Brent a $72.57 sugieren un mercado que descuenta más oferta OPEC+ pero con piso geopolítico. La backwardation modesta (+$0.60 a 6 meses) no señala tightness severa. Clasifico BALANCED con bias hacia TIGHT si el conflicto Irán-Hormuz escala nuevamente."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 50,
+    "razonamiento": "Natural gas storage: 2,922 Bcf al 26 de junio. No tengo el 5-year average exacto ni los datos de inyección/retiro semanal para determinar si estamos above/below average. El precio de $3.19/MMBtu está en un rango moderado-neutral: no indica oversupply severa (que sería <$2.50) ni tightness extrema (que sería >$4.00). Una noticia relevante es el dip en LNG imports de EE.UU. a la UE en junio, lo que podría indicar menor presión exportadora o disrupciones logísticas, pero no tengo suficiente data específica para cuantificar el impacto. Sin datos de curva forward de natgas ni información de producción/demanda actual, la clasificación BALANCED refleja incertidumbre genuina más que convicción. El régimen macro es N/A, lo que no aporta dirección de demanda industrial."
+  },
+  "regimen_lpg": {
+    "clasificacion": "BALANCED",
+    "confianza": 25,
+    "razonamiento": "DATA LIMITADA - BAJA CONFIANZA. Solo dispongo de inventarios de propano/propileno EIA: 91,306 Mbbls al 26 de junio. Sin contexto de 5-year average para propano, sin Saudi CP (Contract Price) para agosto, sin freight rates VLGC (Very Large Gas Carrier), sin datos de demanda asiática (China/India PDH), no puedo clasificar el régimen LPG con convicción. El conflicto en Hormuz es material para LPG dado que una fracción significativa del LPG global (Qatar, UAE, Kuwait) transita ese estrecho. La 'recuperación' de Hormuz mencionada en las noticias de OPEC+ podría ser positiva para flujos LPG regionales. Clasifico BALANCED únicamente por default, reconociendo que la verdadera clasificación requiere: Saudi Aramco CP agosto, FEI Asia, Baltic LPG Index, y datos de inventarios europeos de butano/propano con contexto estacional."
+  },
+  "tesis_principal": "El mercado de energía al 7 de julio de 2026 opera en un entorno de tensión geopolítica estructural que ya fue parcialmente absorbida por el mercado, pero con riesgos asimétricos vigentes. El evento dominante es la guerra con Irán y la situación del Estrecho de Hormuz: según Reuters, el mundo absorbió la pérdida de más de mil millones de barriles de suministro iraní 'con sorprendente facilidad', pero a costa de inventarios globales depletados. Esta depleción de buffers es el riesgo clave subestimado: en un mercado con inventarios ajustados, cualquier re-escalada en Hormuz no tendría el amortiguador que existía en 2023-2024.\n\nEl setup de crack spreads es la señal más bullish del análisis: un 3-2-1 crack spread de $54.18/bbl clasificado como MUY_FUERTE, con refinery utilization al 96.6% (prácticamente al tope operacional), indica que la demanda de productos refinados es excepcionalmente robusta. La contradicción clave es que el precio del crudo cae (WTI $69) mientras los crack spreads están en zona MUY_FUERTE: esto sugiere que el mercado teme más oferta de crudo (vía OPEC+) pero la demanda real de productos finales (gasolina, heating oil) está muy fuerte. Esta divergencia beneficia a los refiners sobre el crudo flat.\n\nEl quinto mes consecutivo de incrementos OPEC+ (+188,000 bpd agosto) es el headwind principal para WTI/Brent en el corto plazo, pero la diplomacia Saudi-US deteriorada (Arabia Saudita bloqueando acceso a airspace para operación militar en Hormuz, pérdida de confianza del MBS en Trump) introduce incertidumbre sobre si OPEC+ continuará la estrategia de volumen de forma sostenida. La postura de Irán 'endureciéndose' post-funerales del Líder Supremo es el wildcard geopolítico más importante.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Valero es el proxy más puro del crack spread entre los activos que trackeamos. Con 3-2-1 crack en $54.18 (MUY_FUERTE) y refinery utilization al 96.6%, los márgenes de refinación de VLO están en zona de máximos. Los refiners son los grandes ganadores cuando: (1) crack spreads altos, (2) utilización alta (eficiencia operacional), (3) crudo relativamente barato ($69 WTI). Esta combinación es exactamente lo que vemos hoy. La señal más alta convicción del análisis para equities."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "XOM es integrada: se beneficia parcialmente de crack spreads (downstream fuerte) y tiene exposición a upstream (crudo presionado por OPEC+). El beneficio neto es positivo dado el crack spread MUY_FUERTE que más que compensa la debilidad del crudo flat. Técnicamente USO en LONG (conv 5) soporta el sector. Señal positiva pero menos pura que VLO para el trade de refinación."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Similar a XOM pero CVX tiene mayor exposición relativa al upstream que XOM. Con crudo presionado por OPEC+, el mix es menos favorable que XOM. La exposición a LNG de CVX podría ser un wildcard si los precios de natgas se mueven. Convicción moderada."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "NEUTRAL",
+      "conviccion": 3,
+      "razonamiento": "OXY es principalmente E&P con alta exposición a precio de crudo. Con WTI en $69 y presión OPEC+ a la baja, el upside para OXY es limitado en el corto plazo. No hay señal clara para posicionarse. Si el conflicto Irán/Hormuz escala, OXY sería un beneficiario puro de spike en crudo, pero no es una tesis base accionable hoy."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "NEUTRAL",
+      "conviccion": 3,
+      "razonamiento": "EOG es E&P de alta calidad en Permian/Eagle Ford, pero con WTI a $69 y presión de OPEC+, el catalizador de precios más altos de crudo no está presente. EOG tiene bajo costo de breakeven (~$40-45 WTI) por lo que sigue siendo rentable, pero sin catalizador de precio, la señal es neutral. No tengo data específica de guidance EOG para este análisis."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "NEUTRAL",
+      "conviccion": 3,
+      "razonamiento": "Vista Energy (Vaca Muerta, Argentina). No tengo datos específicos de producción VIST, precios locales del crudo en Argentina, ni contexto macro argentino actual en los inputs. Puedo decir que VIST es un proxy de WTI con factor Argentina (riesgo país, tipo de cambio, política energética local). Con WTI neutral/presionado, la señal base es neutral. El contexto macro Argentina es un wildcard que no puedo evaluar sin más data."
+    }
+  ],
+  "eventos_clave": [
+    "OPEC+ 5to mes consecutivo de incrementos: +188,000 bpd en agosto acordado por 7 miembros (Saudi Arabia, Russia, Iraq, Kuwait, Kazakhstan, Algeria, Oman). Presión bajista sobre crudo flat.",
+    "Guerra Irán - Estrecho de Hormuz: El mundo absorbió la pérdida de >1 billion barriles de suministro iraní pero con inventarios globales depletados. Postura iraní se 'endurece' post-funerales del Líder Supremo - riesgo de re-escalada latente.",
+    "Fractura Saudi-US: MBS perdió confianza en Trump post-campaña fallida en Hormuz. Arabia Saudita bloqueó acceso a airspace de EEUU para operación militar. Esta fractura diplomática introduce incertidumbre sobre la cohesión OPEC+ y la política de volumen saudí.",
+    "Refinerías rusas bajo ataque de drones ucranianos: Escasez de combustible severa en Rusia con racionamiento civil. Reduce oferta rusa de productos refinados al mercado global (diesel, gasoil), soportando crack spreads.",
+    "Dip en LNG exports EEUU a UE en junio: Por debajo de expectativas, potencialmente presionando negociaciones de trade deal EU-EEUU y dando señal mixta para natgas doméstico."
+  ],
+  "contradicciones_observadas": "La contradicción más interesante es la DIVERGENCIA entre crack spreads (MUY_FUERTE, $54.18/bbl) y el precio del crudo (WTI $69, relativamente bajo y presionado). En un mercado normal, crack spreads altos deberían eventualmente jalarse al alza por mayor demanda de crudo por parte de refinerías. Sin embargo, el crudo está siendo presionado por OPEC+ al mismo tiempo que las refinerías corren al 96.6% de utilización. Esto crea una oportunidad de captura: LONG refinación (VLO, CRAK) sobre NEUTRAL/SHORT crudo flat. El mercado está premiando la transformación (refinación) sobre la materia prima (crudo). Segunda contradicción: OPEC+ sube producción justo cuando Arabia Saudita muestra fricciones con EEUU y cuando Irán 'endurece' postura - esto podría ser un movimiento político de Riyadh para recuperar market share aprovechando la debilidad post-guerra de otros productores, o una señal de que Riyadh cree que el mercado puede absorber el volumen. El mercado de crudo no parece creer que Hormuz vaya a cerrarse nuevamente (de lo contrario, WTI no estaría en $69).",
+  "invalidadores": [
+    "Re-cierre del Estrecho de Hormuz: Si Irán reactiva el bloqueo o ejecuta ataques contra infraestructura de tránsito, WTI puede spike $10-15/bbl en horas, invalidando cualquier sesgo neutral/bajista en crudo. Monitear postura iraní post-funerales.",
+    "Reversión de OPEC+: Si Arabia Saudita revierte la política de volumen (dado el deterioro de la relación con EEUU y la presión de ingresos fiscales con WTI en $69), el incremento de oferta se detiene y el crudo rebota. Invalidaría el headwind principal bajista.",
+    "Colapso de crack spreads: Si la demanda de gasolina/distillates decepciona en el reporte EIA semanal (dato siguiente importante: semana del 9-11 julio), o si refinery utilization baja por turnarounds inesperados, la tesis de LONG VLO/CRAK se invalida rápidamente. El nivel a monitorear: si el 3-2-1 crack cae por debajo de $40/bbl, revisar el trade."
+  ],
+  "data_gaps": "1) 5-year average EIA para crude inventories, gasoline, distillates y propano - crítico para determinar si estamos above/below el rango histórico. 2) Saudi Aramco CP (Contract Price) agosto 2026 para LPG - clave para régimen LPG. 3) FEI (Far East Index) precios LPG spot Asia. 4) Baltic LPG Freight Index (VLGC rates) - para arb Asia/Middle East. 5) Curva forward completa de WTI y Brent (solo tengo el spread a 6m, no la forma completa de la curva). 6) Curva forward de Natural Gas (Henry Hub) - solo tengo el front month. 7) Datos de producción OPEC+ actual vs quota (compliance rate) - para saber si el incremento de 188k bpd es incremental real o solo en papel. 8) Datos de flujos de exportación iraní post-guerra - cuánto está en el mercado vs pre-conflicto. 9) Contexto macro Argentina y operacional de VIST específicamente. 10) EIA weekly report más reciente (el dato disponible es del 26 de junio, ya 10+ días de lag - el próximo reporte EIA será el input más importante para calibrar).",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'GASOLINA'",
+    "Senal 4: activo invalido 'HEATING_OIL'",
+    "Senal 5: activo invalido 'NATGAS'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'CRAK'"
+  ],
+  "metadata": {
+    "timestamp": "2026-07-07T12:44:34.392554",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
