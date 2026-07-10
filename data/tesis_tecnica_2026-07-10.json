@@ -1,0 +1,81 @@
+{
+  "fecha": "2026-07-10",
+  "regimen_macro_aplicado": "DESCONOCIDO",
+  "contexto_tecnico_global": "Mercado en modo risk-on estructural: VIX spot 15.81 vs VIX 3M 19.04 en CONTANGO_FUERTE, VRP positivo en +14.9 (seguro sobrepagado, bullish equities segun Bollerslev), y breadth en 64% sobre 200DMA (zona normal-alta, confirma tendencia sin ser eufórico). Options flow amplia el cuadro: VIX 9D en 12.37 vs VIX 6M en 21.50 arroja un spread de +9.13, muy alto, indicando miedo estructural a mediano plazo bien superior al inmediato (alguien se cubre lejos en la curva). En paralelo, VIX IV percentile 1-year en 23.4 confirma complacencia en el spot pese al hedging lejano: divergencia clasica que sugiere operar tendencia pero sin sobre-apalancar, porque el mercado esta pagando proteccion 6M que el spot no refleja. Con regimen macro DESCONOCIDO, reduzco conviccion en todas las senales aunque el setup tecnico sea limpio.",
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Precio 751.71 vs 200DMA 690.63 (+8.84%, SOBRE_DMA, zona habilitada Tudor Jones). Momentum 12M +21.79% con vol 12.56% -> momentum ajustado 1.735, sobre el umbral +1.5 de Barroso-Santa Clara para alta conviccion. VRP +14.9 y contango fuerte apoyan.",
+      "indicador_clave": "momentum_ajust 1.735 (el mas alto del universo junto con QQQ)",
+      "interaccion_macro": "Regimen DESCONOCIDO impide aplicar full sizing tipo Goldilocks. Cooper et al: sin confirmar UP market no puedo asumir premio positivo de momentum. Bajo conviccion de 9 a 7."
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Precio 723.28 vs 200DMA 636.0 (+13.72% sobre DMA). Momentum 12M +30.65% con vol 18.48% -> momentum_ajust 1.659, arriba del umbral 1.5. SOBRE_DMA claro.",
+      "indicador_clave": "momentum_ajust 1.659 + pct_sobre_dma 13.72%",
+      "interaccion_macro": "Sobreextension de +13.72% sobre 200DMA es riesgo en regimen no confirmado. Si el macro resulta DESACELERACION, tech momentum sufre crash risk (Barroso). Mantengo LONG pero conviccion moderada."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Precio 378.18 BAJO 200DMA 410.7 (-7.92%): regla Tudor Jones prohibe LONG. Pero momentum 12M +23.78% sigue positivo con momentum_ajust 0.856 (zona ambigua entre -0.5 y +1.5). Conflicto entre tendencia larga rota y momentum residual.",
+      "indicador_clave": "cruce_dma BAJO_DMA vetando el momentum positivo",
+      "interaccion_macro": "En regimen DESCONOCIDO no puedo asignar rol defensivo claro al oro. Si emerge STAGFLATION, GLD volveria; si es GOLDILOCKS, sigue debil. NEUTRAL hasta clarificar."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Precio 84.49 BAJO 200DMA 86.37 (-2.17%): no habilitado para LONG. Momentum 12M +1.22% con momentum_ajust 0.128, practicamente plano. Sin señal.",
+      "indicador_clave": "momentum_ajust 0.128 (zona neutral Barroso)",
+      "interaccion_macro": "TLT es el activo mas sensible al regimen macro. Sin identificar (DESACELERACION seria LONG, REFLACION SHORT), no puedo tomar direccion. NEUTRAL."
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Precio 109.01 vs 200DMA 96.06 (+13.48% SOBRE_DMA). Momentum 12M +41.70% muy fuerte, pero vol 44.25% castiga: momentum_ajust 0.942, en zona ambigua (<1.5).",
+      "indicador_clave": "cruce SOBRE_DMA + momentum crudo +41.7%, pero volatilidad diluye la señal",
+      "interaccion_macro": "Commodities son el trade preferido en REFLACION y STAGFLATION. En DESCONOCIDO mantengo LONG por tendencia limpia pero conviccion 6 por vol elevada y sobreextension +13.48%."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Precio 100.86 vs 200DMA 98.94 (+1.94% SOBRE_DMA, apenas). Momentum 12M +3.29% con vol 5.77% -> momentum_ajust 0.57, zona ambigua Barroso.",
+      "indicador_clave": "momentum_ajust 0.57 (ambiguo) y proximidad al 200DMA",
+      "interaccion_macro": "DXY es termometro macro puro; sin regimen definido no puedo direccionar. Cerca del 200DMA implica que un pequeño movimiento redefine todo el setup del USD."
+    }
+  ],
+  "alertas_tecnicas": [
+    "Divergencia options flow: VIX IV percentile 23.4 (complacencia spot) vs spread VIX 9D-6M +9.13 (miedo estructural). Alguien paga hedges lejanos.",
+    "QQQ y USO sobreextendidos: +13.72% y +13.48% sobre 200DMA respectivamente, vulnerables a mean reversion.",
+    "GLD rompio 200DMA a la baja (-7.92%) pero momentum 12M sigue en +23.78%: divergencia clasica que suele resolver a la baja.",
+    "TLT y DXY ambos cerca de sus 200DMA con momentum plano: cualquier movimiento macro los saca de indefinicion rapido."
+  ],
+  "invalidadores_tecnicos": [
+    "SPY o QQQ perdiendo 200DMA en cierre semanal -> cerrar LONGs automaticamente (regla Tudor Jones).",
+    "VIX term structure pasando a BACKWARDATION (VIX spot > VIX 3M) -> stress agudo, reducir todo riesgo.",
+    "Breadth cayendo bajo 50% sobre 200DMA -> deterioro interno, invalida narrativa risk-on.",
+    "VRP volviendose negativo -> complacencia extrema, bearish para equities.",
+    "VIX IV percentile saltando sobre 70 con spread 9D-6M colapsando -> el miedo estructural se materializa en el spot."
+  ],
+  "confianza_general": 55,
+  "metadata": {
+    "timestamp": "2026-07-10T12:41:08.271442",
+    "modelo": "claude-opus-4-7",
+    "activos_analizados": 6,
+    "regimen_macro": "DESCONOCIDO"
+  }
+}
