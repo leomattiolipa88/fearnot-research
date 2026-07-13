@@ -1,0 +1,49 @@
+{
+  "fecha": "2026-07-13",
+  "tipo": "WEEKLY",
+  "convicciones": [
+    {
+      "ticker": "VLO",
+      "direccion": "LONG",
+      "horizonte": "WEEKS",
+      "conviccion": 8,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "Valero es la expresion mas pura y directa de dos fuerzas convergentes: crack spread 3-2-1 en $57.46 (clasificado MUY_FUERTE por el energy desk) y utilizacion de refinerias USA al 95.8% - un nivel practicamente maximo que significa que VLO esta capturando cada dolar de margen a full capacity.",
+        "El shock geopolitico en Hormuz (Iran declara cierre, EEUU en tercera ronda de strikes, contraataques Iran sobre Qatar/UAE/Bahrain) genera una prima de riesgo sobre productos refinados donde VLO como pure-play refiner es beneficiario directo, mientras que su exposure USA elimina el riesgo de activos en Medio Oriente.",
+        "El setup tecnico general (SPY momentum_ajust 1.75, breadth 70%, VRP +35, contango fuerte en VIX) confirma un mercado risk-on que soporta beta cyclicals como refiners, sin señales de recesion inminente que destruirian la tesis de demanda downstream."
+      ],
+      "fundamental_case": {
+        "macro_context": "Regimen macro DESCONOCIDO por falla del agente macro, pero indicadores duros muestran ausencia de stress: HY spread 2.7% (comprimido), Sahm 0.07 (lejos de recesion), jobless claims 215k (bajos), curva 10y-2y en +0.85 (positiva). No hay señales de destruccion de demanda energetica en el horizonte de semanas.",
+        "sectoral_dynamics": "Crack spread MUY_FUERTE ($57.46) + refining utilization 95.8% + WTI en backwardation $1.94 en el spread 6m = tightness fisica pre-existente. Cualquier disrupcion adicional de crudo Middle East ampliaria mas el crack (los productos ya construidos en inventario ganan valor). El energy desk confirma explicitamente que VLO es 'aproximadamente lineal al crack spread'.",
+        "technical_setup": "USO en SOBRE_DMA (+12.95%), momentum_12m +44.18%, señal LONG tecnica del sector energy. SPY/QQQ en momentum_ajust >1.5 confirma bid general por cyclicals. No hay señal tecnica bearish sobre refiners.",
+        "why_this_expression": "Frente a un menu de longs energy correlacionados (XOM, CVX, OXY, EOG, VIST, VLO), VLO es el que mejor captura ESPECIFICAMENTE la señal mas fuerte y verificable: el crack spread. E&Ps dependen del precio spot del crudo (mas volatil, mas expuesto a mean reversion si Hormuz se resuelve). VLO captura el margen refinero que se mantendria elevado incluso si crudo baja (input cheaper = mejor margen). Es la expresion asimetrica dentro del complejo energy."
+      },
+      "agents_aligned": [
+        "energy_desk: crack spread MUY_FUERTE $57.46, refining utilization 95.8%, senal LONG VLO conviccion 8 (la mas alta del desk)",
+        "technical: USO SOBRE_DMA con momentum_12m +44%, breadth 70%, VRP +35 confirma risk-on general que soporta cyclicals",
+        "macro (indicadores duros): ausencia de stress crediticio (HY 2.7%), empleo solido (claims 215k, Sahm 0.07) descarta destruccion de demanda near-term"
+      ],
+      "entry_strategy": "Mantener/agregar a posicion existente (ya publicada 4 semanas consecutivas). Sin datos de precio VLO en inputs, entrar en niveles actuales sin chase. Si el mercado abre gap up por escalada Hormuz, esperar retest.",
+      "stop_loss_logic": "Salir si crack spread 3-2-1 cae bajo $40 (destruccion de tesis fundamental), o si crude curve gira a contango sostenido (indica que tightness se resuelve), o si utilizacion refinerias cae bajo 90% (demand destruction real).",
+      "profit_target_logic": "Horizonte weeks. Tomar profit parcial si crack spread bate $65 (extremo historico y probable techo de expansion), o si desescalada Hormuz colapsa la prima geopolitica de un dia para otro. Trailing stop sobre precio si sube 15% desde entrada.",
+      "invalidators": [
+        "Desescalada diplomatica Hormuz con normalizacion naval en dias: la prima geopolitica de $5-10 en Brent se evapora y el crack spread se comprime rapidamente",
+        "OPEC+ anuncia incremento sorpresivo de produccion, curva WTI pasa de backwardation a contango, señalando fin de tightness fisica",
+        "EIA weekly muestra build inesperado de inventarios crudo >+5M bbls Y utilizacion refinerias cae bajo 92%: señal de demand destruction downstream real"
+      ],
+      "what_we_could_be_wrong_about": "Riesgo #1: la tesis lleva 5 semanas publicada, el crack spread ya esta en niveles historicamente extremos ($57.46 MUY_FUERTE) - podriamos estar en el pico del ciclo refinero justo cuando lo publicamos. Riesgo #2: si Hormuz genera crude spike violento SIN passthrough a productos (por demand destruction gasoline via price), el crack se COMPRIME (input caro sin outlet), lastimando VLO exactamente cuando el complejo oil sube. Riesgo #3: falla del agente macro implica ceguera sobre regimen - un giro a Stagflation/Recesion oculta destruiria refining margins con lag. Riesgo #4: reflexividad negativa - si el trade ya es consenso (SPY LONG + energy LONG generalizado), el edge se erosionó."
+    }
+  ],
+  "reasoning_when_no_convictions": "",
+  "synthesis_observations": "Observacion #1 - Divergencia silenciosa en options flow: VIX 9D en 11.15 (calma extrema corta) vs VIX 6M en 21.09 (hedging estructural lejano), spread +9.94. Alguien esta pagando proteccion a plazo mientras el spot duerme. Combinado con breadth 70% (limite superior de 'normal'), sugiere que estamos en la fase madura del rally donde los profesionales cubren riesgo lejano. No amerita trade direccional pero recomienda NO agregar leverage. Observacion #2 - Contradiccion productiva no resuelta: crack spread MUY_FUERTE ($57.46, demanda downstream robusta) coexiste con NatGas $2.89 en pleno verano (demanda gas floja). Esto sugiere que la fortaleza economica es asimetrica - mobility/transport strong, power/industrial gas soft. Podria ser señal temprana de que la economia real esta bifurcada, con transporte tirando y manufactura/utilities debil. Observacion #3 - GLD rompio 200DMA hacia abajo (-8.24%) manteniendo momentum_12m +23%: clasica señal de fin de tendencia segun Tudor Jones. Combinado con DXY firme (+2.01% sobre 200DMA) es consistente. No hay trade aqui pero descarta la tesis 'reflation/debasement' que muchos macro tourists estan repitiendo. Observacion #4 - Concentracion de riesgo: el fondo lleva 5 semanas long VLO. Esta es una posicion madura, no una nueva idea. El honesto reconocimiento es que estamos re-underwritten no re-descubriendo. Si en las proximas 2 semanas el crack spread no bate $60 o Hormuz no escala mas, se debe considerar tomar profit y rotar.",
+  "metadata": {
+    "timestamp": "2026-07-13T12:48:18.650152",
+    "modelo": "claude-opus-4-7",
+    "agentes_input": [
+      "macro",
+      "technical",
+      "og_energy"
+    ]
+  }
+}
