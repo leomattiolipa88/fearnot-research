@@ -1,0 +1,85 @@
+{
+  "fecha": "2026-07-14",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 88,
+    "razonamiento": "Multiples señales fisicas convergentes apuntan a tightness real. (1) Curva WTI: calendar spread 6M en +$5.60 BACKWARDATION - mercado fisico pagando premium por barrel HOY vs futuro, señal clasica de escasez presente. (2) Crack 3-2-1 en $58.66 clasificado MUY_FUERTE - refiners captando spread extraordinario, lo que indica que la demanda de productos refinados absorbe el crudo disponible con fuerza. (3) Inventarios EIA crudo USA: 411,357 Mbbls - necesito el 5-year average para contexto preciso pero el nivel absoluto, combinado con la backwardation y el crack alto, es consistente con draws sostenidos. (4) Utilizacion de refinerias USA al 95.8% - operacion near-capacity, demanda fisica de crudo robusta desde el lado de la refinacion. (5) GEOPOL CRITICO: US strikes sobre Iran por tercera noche consecutiva + Iran cierre del Estrecho de Hormuz reportado + ataque iraniano sobre vessels en el Estrecho (+5% oil spike). El Estrecho de Hormuz maneja ~20% del oil global y ~30% del LNG. Cualquier cierre sostenido es supply shock de primera magnitud. (6) Russia bane exportaciones de diesel tras ataques ucranianos a refinerias - supply disruption adicional en productos. (7) Nigeria produciendo 74-month high a 1.74mbpd superando quota OPEC por cuarto mes consecutivo - contrarresta parcialmente el tightness pero no alcanza para compensar el riesgo Hormuz. Regimen TIGHT_BACKWARDATED con sesgo geopolitico extremo activo."
+  },
+  "regimen_natgas": {
+    "clasificacion": "OVERSUPPLIED",
+    "confianza": 65,
+    "razonamiento": "NATGAS spot en $2.869/MMBtu - precio en zona historicamente deprimida para verano de demanda pico. Storage USA en 2,983 Bcf al 3-julio. Sin el 5-year average exacto no puedo confirmar surplus vs deficit de manera precisa, pero el precio spot a $2.87 en pleno peak cooling demand de julio 2026 señala que el storage build estacional esta siendo suficiente para mantener precio deprimido. La señal tecnica del fondo tiene USO LONG pero no hay referencia directa a NATGAS en el contexto tecnico. Confianza moderada - si estuvieramos tight, precio deberia estar materialmente mas alto en julio. El regimen Hormuz impacta LNG export capacity desde Middle East pero USA es net exporter por LNG; el cierre potencial de Hormuz beneficiaria precio NATGAS USA via re-routing demand hacia exportaciones americanas - esta dinamica podria cambiar el regimen rapidamente. Clasifico OVERSUPPLIED con baja confianza y alerta de posible flip por geopol."
+  },
+  "regimen_lpg": {
+    "clasificacion": "TIGHT",
+    "confianza": 55,
+    "razonamiento": "DATA LIMITADA - reconocimiento explicito: no tengo Saudi CP (Contract Price para propano/butano), no tengo freight rates VLGC especificos (VLGC spot Ras Tanura-Chiba), no tengo FEI Asia arbitrage window. Lo que tengo: (1) Propane inventory USA: 90,461 Mbbls al 3-julio - necesito 5-year average para calificar si es surplus o deficit; (2) Pertamina importando 45,900 toneladas de LPG desde USA - señal de demanda asiatica activa y arbitraje transoceanico abierto, lo que implica que el precio USA esta competitivo vs otras fuentes y que el spread US-Asia justifica el flete; (3) CRITICO: cierre del Estrecho de Hormuz impacta directamente LPG - Saudi Aramco exporta masivamente LPG via Ras Tanura que sale por el Estrecho. Cualquier disruption real en Hormuz genera supply shock severo en LPG global porque Saudi Arabia es el mayor exportador mundial de LPG. La noticia de Iran cerrando Hormuz, si se sostiene, convierte este regimen en EXTREMELY TIGHT rapidamente. Clasifico TIGHT con confianza 55 por data gaps, pero con asimetria al alza si el escenario Hormuz se materializa."
+  },
+  "tesis_principal": "El evento dominante del periodo analizado es la escalada militar US-Iran con ataques americanos por tercera noche consecutiva e Iran reportando cierre del Estrecho de Hormuz. Este es un tail risk geopolitico de primera magnitud que tiene el potencial de re-pricear todo el complejo energetico global en cuestion de dias. El Estrecho de Hormuz es el cuello de botella mas critico del suministro global de energia - 20% del oil, 30% del LNG, y una fraccion critica de LPG exportado por Arabia Saudita y UAE pasan por ahi. Un cierre sostenido (no solo el anuncio) representaria un supply shock de escala comparable a los grandes eventos historicos del Golfo Persico.\n\nFuera del escenario geopolitico, los fundamentales fisicos ya estaban apuntando a tightness antes de la escalada: WTI calendar spread en $5.60 backwardation, crack 3-2-1 en $58.66 MUY FUERTE, utilizacion de refinerias USA al 95.8% near-capacity, y Russia baneando exportaciones de diesel tras ataques ucranianos a refinerias rusas - comprimiendo aun mas el mercado global de middle distillates. Nigeria sobrepasando su quota OPEC es el unico factor offsetting meaningful en el lado de la oferta. El contexto macro del fondo no está definido (N/A), lo que limita la integracion macro-sectorial, pero las señales tecnicas muestran USO en LONG conv 6/10 con precio muy sobre 200DMA, consistente con la lectura de tight fundamentals.\n\nEl risk/reward en crude y productos refinados es asimetrico al alza en el corto plazo: los fundamentales fisicos eran positivos ANTES del evento geopolitico, y ahora se agrega la prima de riesgo Hormuz. La contradiccion a monitorear es si el precio de WTI a $79.67 y Brent a $86.01 ya refleja adecuadamente el riesgo Hormuz o si hay mas upside si el conflicto escala. Dado que el mercado ya priceó un +5% spike por el ataque iraniano a vessels, los niveles actuales incluyen alguna prima pero probablemente no el escenario de cierre sostenido completo.",
+  "senales": [
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Exxon es la mayor oil major americana con exposicion a upstream, downstream y chemicals. Crack spreads altos benefician refining. Produccion upstream USA record (EE.UU. es top producer segun noticias). Backwardation beneficia productores que venden spot. Correlacion alta con Brent/WTI en regimen TIGHT. Riesgo: exposicion a activos globales incluyendo operaciones que podrian ser impactadas por geopol."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Similar a XOM. CVX tiene exposicion al Golfo Persico via Tengiz (Kazakhstan, sale por diferente ruta) y operaciones globales. Crack alto beneficia su downstream. Dividendo defensivo en ambiente volatile. Conviccion igual a XOM."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Pure-play upstream con mayor leverage al precio del crudo que XOM/CVX. En regimen TIGHT_BACKWARDATED con potencial escalada geopolitica, names con alta beta al precio del WTI outperforman. OXY tiene exposicion significativa en Permian donde produccion USA sigue en record. Beneficia directamente de precio WTI alto y backwardation (sell spot, no forward). Conviccion alta en este regimen."
+    },
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Valero es el refiner puro americano mas grande. Crack 3-2-1 en $58.66 MUY FUERTE es el driver principal de VLO earnings. Utilizacion de refinerias 95.8% indica throughput maximo. Russia diesel ban comprime global distillate supply, ampliando crack HO. VLO tiene exposicion a distillates que beneficia directamente. En regimen de crack spreads extraordinarios, refiners son el mejor vehicle de la tesis. Maxima conviccion en el sector."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "EOG Resources - shale producer US con bajo cost of supply. USA es top oil producer (noticias), shale growth continua. Backwardation beneficia productores con hedge rolls o venta spot. Menos leverage geopolitico directo que OXY por ser domestic, pero en ambiente tight prices, low-cost producers capturan margin expansion. Conviccion menor que OXY por menor beta al precio spot."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Vista Energy - E&P Argentina (Vaca Muerta). Beneficia de precios WTI altos como producer. Tiene descuento por riesgo pais Argentina que en ambiente tight crude puede comprimirse. Brent $86 da headroom para margenes positivos en Vaca Muerta. No tengo data especifica de produccion ni hedge book de VIST en los inputs - esta conviccion es mas basada en correlacion sectorial que en data fundamental propia. Conviccion 6 refleja esto."
+    }
+  ],
+  "eventos_clave": [
+    "US military tercer ataque consecutivo sobre Iran - escalada activa del conflicto con impacto directo sobre supply perception del Golfo Persico y potencial cierre sostenido del Estrecho de Hormuz (~20% del oil global en riesgo)",
+    "Iran reporta cierre del Estrecho de Hormuz + ataque a vessels en el Estrecho generando spike de +5% en precios oil - si se sostiene, es el supply shock geopolitico mas severo desde la invasion de Kuwait 1990",
+    "Russia impone ban inmediato sobre exportaciones de diesel tras ataques ucranianos a refinerias rusas - supply shock directo en distillates globales, comprimiendo inventarios HO/diesel en Europa y Asia",
+    "Nigeria produccion record 74-month high a 1.74mbpd, superando quota OPEC por cuarto mes consecutivo - unico factor bearish offset en oferta, pero insuficiente para compensar disruptions Hormuz + Russia diesel",
+    "Saudi Energy Minister expande rol a Industry and Mineral Resources - señal de consolidacion de poder energetico-industrial en Arabia Saudita, potencialmente relevante para decisiones OPEC+ futuras y para politica de LPG export pricing (Saudi CP)"
+  ],
+  "contradicciones_observadas": "La contradiccion principal y mas interesante es el PRECIO DE WTI a $79.67 y BRENT a $86.01 vs la severidad del escenario geopolitico reportado. Si el Estrecho de Hormuz esta realmente cerrado con ataques militares en curso, historicamente ese evento llevaría crude materialmente por encima de $100. El precio actual implica que el mercado esta discounting el escenario como temporal/parcial o no creible en su completitud - o que el spike de +5% ya ocurrió desde niveles previos. Esta discrepancia entre severidad del headline geopolitico y precio spot es una señal importante: o el mercado tiene razon (desescalada inminente) o es una oportunidad de compra antes de que el mercado re-pricee. Segunda contradiccion: NATGAS a $2.87 en peak cooling demand de julio mientras LNG demand global deberia estar alta - sugiere que produccion shale USA esta sobreabasteciendo el mercado domestico a pesar de la demanda, lo cual es bearish para NATGAS pero bullish para USA como LNG exporter. Tercera contradiccion: Refinery utilization 95.8% near-capacity pero necesitaria ver la semana anterior para saber si fue up o down - si fue down desde higher levels, hay disrupcion operacional; si fue up, hay demanda creciente.",
+  "invalidadores": [
+    "Desescalada diplomatica rapida US-Iran con acuerdo de alto el fuego y apertura del Estrecho de Hormuz - eliminaria la prima geopolitica y podria generar selloff de $5-10 en Brent/WTI rapidamente",
+    "Reversion de inventarios EIA con build inesperado grande en crude y/o products - si el proximo reporte EIA muestra build significativo vs draws esperados, invalidaria la tesis de tightness fisica y sugeriria que la demanda es mas debil de lo que los crack spreads indican",
+    "OPEC+ decision de aumentar produccion significativamente para compensar disruptions Hormuz - Arabia Saudita tiene capacidad spare pero actualmente tiene incentivo de precio alto; si deciden flood el mercado por razones politicas, cambia el balance",
+    "Deterioro macro severo y rapido (recession signals) que destruya demand outlook - con regimen macro N/A en el fondo, este riesgo existe; si el contexto macro gira a recesion, la demand destruction puede superar cualquier supply tightness geopolitica"
+  ],
+  "data_gaps": "Criticos para mejor analisis: (1) 5-year average de inventarios EIA para crude, gasolina, distillates y propano - sin esto no puedo cuantificar el deficit/surplus relativo a norma estacional; (2) Saudi CP (Official Selling Price) para propano y butano - fundamental para LPG trade economics; (3) VLGC freight rates spot (Ras Tanura-Chiba corridor) - necesario para calcular si el arbitraje LPG USA-Asia esta abierto o cerrado; (4) FEI Asia (Far East Index) para LPG precios Asia - sin esto el regimen LPG es semi-ciego; (5) WTI curve completa (M1 a M12) - solo tengo el 6M spread, la forma completa de la curva da mas informacion sobre expectativas de duration del tightness; (6) Iran production actual y capacidad de flujo por Hormuz pre-conflicto para cuantificar el supply at risk; (7) Russian oil export volumes post-sanctions para entender el actual baseline; (8) Regimen macro del fondo - N/A limita significativamente la integracion macro-sectorial; (9) Precio spot propano USA (Mont Belvieu) para comparar vs inventarios propano; (10) Crack spread HO especifico separado del 3-2-1 composite para calibrar la señal de distillates con precision.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'BRENT'",
+    "Senal 2: activo invalido 'WTI'",
+    "Senal 3: activo invalido 'HEATING_OIL'",
+    "Senal 4: activo invalido 'GASOLINA'",
+    "Senal 5: activo invalido 'NATGAS'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'CRAK'"
+  ],
+  "metadata": {
+    "timestamp": "2026-07-14T11:55:49.373392",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
