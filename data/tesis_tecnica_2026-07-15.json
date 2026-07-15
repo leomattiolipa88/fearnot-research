@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-07-15",
+  "regimen_macro_aplicado": "DESCONOCIDO",
+  "contexto_tecnico_global": "VIX spot en 16.35 con VIX 3M en 18.57 marca CONTANGO_FUERTE, condiciones aparentemente normales. VRP en +58.64 (seguro sobrepagado, bullish estructural para equities), pero breadth muy debil con solo 4% sobre 200DMA (pct_sobre_200), lo que contradice la lectura benigna del VIX y sugiere un mercado internamente destruido. En options flow, VIX 9D en 11.15 vs VIX 6M en 21.09 da spread de +9.94 (miedo estructural muy superior al inmediato, alguien se cubre lejos), mientras VIX IV percentile esta en 31.9 (zona normal-baja): divergencia clave, hay complacencia de corto plazo pero hedging pesado a 6 meses.",
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "SPY marca CRUCE_BAJISTA en 200DMA (cruce_dma), regla de Tudor Jones prohibe LONG. Precio actual y momentum no disponibles en snapshot, pero el cruce bajista + breadth de 4% sobre 200DMA (pct_sobre_200) confirma deterioro estructural. Vol 12M en 12.57 (baja) reduce tamano de posicion pero no invalida el sesgo.",
+      "indicador_clave": "cruce_dma = CRUCE_BAJISTA + breadth 4%",
+      "interaccion_macro": "Regimen DESCONOCIDO reduce conviccion; sin claridad macro no puedo aplicar filtro Cooper et al., pero el cruce bajista es incondicional segun Tudor Jones."
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "QQQ tambien en CRUCE_BAJISTA (cruce_dma), replica el patron de SPY. Precio, DMA200 y momentum no disponibles. Vol 12M en 18.57 mayor que SPY, tamano de posicion ajustado inversamente a vol.",
+      "indicador_clave": "cruce_dma = CRUCE_BAJISTA",
+      "interaccion_macro": "Regimen DESCONOCIDO impide confirmar si es DESACELERACION o STAGFLATION; ambos escenarios serian bearish para tech, pero mantengo conviccion moderada."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 3,
+      "razonamiento": "GLD marca BAJO_DMA (cruce_dma), lo que segun Tudor Jones prohibe LONG. Precio, DMA200 y momentum_12m no disponibles en snapshot, no puedo confirmar magnitud ni direccion clara. Vol 12M en 27.9 elevada.",
+      "indicador_clave": "cruce_dma = BAJO_DMA",
+      "interaccion_macro": "Sin claridad de regimen, no puedo justificar LONG en real assets (que seria tesis STAGFLATION). Neutral por datos insuficientes."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 3,
+      "razonamiento": "TLT en BAJO_DMA (cruce_dma), prohibido LONG. Precio y momentum no disponibles. Vol 12M en 9.38 (la mas baja del universo). Sin lectura macro clara, no puedo definir si tasas suben o bajan estructuralmente.",
+      "indicador_clave": "cruce_dma = BAJO_DMA",
+      "interaccion_macro": "Regimen DESCONOCIDO impide diferenciar entre reflacion (SHORT TLT) o desaceleracion (LONG TLT). Neutral."
+    },
+    {
+      "activo": "USO",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "USO en CRUCE_BAJISTA (cruce_dma), senal bajista fresca segun Tudor Jones. Precio y momentum no disponibles. Vol 12M en 44.89 (extremadamente alta), obliga a tamano de posicion muy reducido.",
+      "indicador_clave": "cruce_dma = CRUCE_BAJISTA",
+      "interaccion_macro": "Regimen DESCONOCIDO; si fuera REFLACION la senal se invalidaria, pero el cruce bajista domina hasta tener claridad."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "DXY es el unico activo con datos completos: precio 100.98 sobre DMA200 en 98.97 (+2.03% sobre_dma), SOBRE_DMA habilita LONG (Tudor Jones). Momentum 12M +2.96% con vol 12M 5.78 da momentum ajustado 0.511 (momentum_ajust), zona ambigua segun Barroso & Santa-Clara (entre -0.5 y +1.5), lo que limita la conviccion.",
+      "indicador_clave": "cruce_dma SOBRE_DMA + momentum_ajust 0.511",
+      "interaccion_macro": "Regimen DESCONOCIDO; DXY fuerte suele acompanar risk-off o tightening, consistente con el cruce bajista de SPY/QQQ y hedging en VIX 6M."
+    }
+  ],
+  "alertas_tecnicas": [
+    "CRUCE_BAJISTA reciente en SPY, QQQ y USO simultaneamente: senal de deterioro tecnico amplio",
+    "Breadth colapsada: solo 4% de activos sobre 200DMA (pct_sobre_200), contradice el VIX benigno en 16.35",
+    "Divergencia VIX 9D (11.15) vs VIX 6M (21.09): spread +9.94 indica hedging estructural pese a calma inmediata",
+    "GLD y TLT ambos BAJO_DMA: ningun refugio tradicional funciona, sugiere regimen atipico",
+    "Datos de precio y momentum ausentes en 5 de 6 activos: analisis limitado, alta incertidumbre"
+  ],
+  "invalidadores_tecnicos": [
+    "SPY o QQQ recuperando 200DMA con CRUCE_ALCISTA invalidaria los shorts",
+    "VIX spot subiendo sobre 20 con backwardation (VIX 9D > VIX 6M) invalidaria lectura benigna y aceleraria shorts",
+    "Breadth expandiendose sobre 30% (pct_sobre_200) romperia la tesis bajista estructural",
+    "DXY perdiendo 200DMA (98.97) invalidaria el LONG dolar",
+    "VRP colapsando a negativo cambiaria el sesgo estructural bullish equities de fondo"
+  ],
+  "confianza_general": 45,
+  "metadata": {
+    "timestamp": "2026-07-15T11:57:44.419735",
+    "modelo": "claude-opus-4-7",
+    "activos_analizados": 6,
+    "regimen_macro": "DESCONOCIDO"
+  }
+}
