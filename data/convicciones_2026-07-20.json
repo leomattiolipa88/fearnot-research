@@ -1,0 +1,49 @@
+{
+  "fecha": "2026-07-20",
+  "tipo": "WEEKLY",
+  "convicciones": [
+    {
+      "ticker": "VLO",
+      "direccion": "LONG",
+      "horizonte": "WEEKS",
+      "conviccion": 8,
+      "position_size": "STANDARD",
+      "thesis_three_sentences": [
+        "El crack spread 3-2-1 en $63.44 clasificado MUY_FUERTE con refinerias operando al 96.2% de utilizacion configura el nirvana operacional para un pure play refiner como Valero.",
+        "La backwardation WTI 6M de $5.48 permite a VLO comprar crudo spot a precios relativamente contenidos ($81.62 WTI) mientras vende productos a margenes extraordinarios sostenidos por la disrupcion geopolitica del Golfo Persico y Mar Negro.",
+        "La senal tecnica corrobora indirectamente: USO SOBRE_DMA con momentum ajustado 1.393 confirma que el mercado esta pricing tightness fisica, y el regimen risk-on general (SPY momentum ajustado 1.557, breadth 76%, VIX 18) elimina el headwind de multiple compression sobre equities cíclicas."
+      ],
+      "fundamental_case": {
+        "macro_context": "Regimen macro formal DESCONOCIDO (macro agent fallo), pero indicadores hard disponibles muestran entorno benigno: HY spread 2.71, VIX 18.21, jobless claims 208k, unemployment 4.2, Sahm 0.07. No hay señales de recesion inminente que amenacen demand destruction de productos refinados en el horizonte de semanas.",
+        "sectoral_dynamics": "Crack 3-2-1 $63.44 MUY_FUERTE + utilizacion refinerias 96.2% (near-max) + backwardation curva WTI = refiner independiente captura maximo spread. Disrupciones geopoliticas simultaneas (blockade naval a Iran, ataques IRGC a Kuwait/Bahrain/Saudi/Jordan, Ukraine strikes a tankers Black Sea) mantienen prima geopolitica sobre productos.",
+        "technical_setup": "USO +27.33% sobre 200DMA con momentum 12M +62.76% confirma trend energy. SPY/QQQ SOBRE_DMA elimina headwind de risk-off para equity expression. VRP +173.61 y contango VIX validan risk-on para posicionar cíclicas.",
+        "why_this_expression": "VLO es superior a XOM/CVX/OXY/EOG en este setup porque captura DOS asimetrias simultaneas: (1) precios de producto altos por tightness, (2) backwardation que le da input cost advantage. Los E&P (OXY, EOG) tienen mayor beta a WTI pero sufren si el precio sube demasiado y catalyst demand destruction. VLO es beneficiario tanto del regimen actual como de una moderacion del crudo (crack se expandiria aun mas si crude cae y productos se mantienen)."
+      },
+      "agents_aligned": [
+        "energy_desk: conviccion 9, señala VLO como 'la señal de mayor conviccion del memo' por combinacion crack MUY_FUERTE + refinerias 96.2% + backwardation",
+        "tecnico: USO LONG conviccion 7 con momentum ajustado 1.393 confirma trend energy fisico; SPY LONG conviccion 7 valida risk-on para equity cíclica"
+      ],
+      "entry_strategy": "Mantener posicion existente (trade recurrente desde 2026-06-22). Si no hay posicion, entrada scaled: 60% inmediato, 40% en pullback tecnico. Evitar chase en dias de spike geopolitico.",
+      "stop_loss_logic": "Cerrar si crack 3-2-1 cae bajo $45 (perdida de premisa central) o si utilizacion refinerias cae bajo 88% (demand destruction o crudo feedstock cortado). Stop tecnico secundario: USO cerrando bajo 200DMA (97.35) invalida trend energy.",
+      "profit_target_logic": "Sin target de precio explicito. Reducir en dos escenarios: (a) crack comprime bajo $50 sostenido 2 semanas, (b) ceasefire Iran-EEUU verificable que elimine prima geopolitica. Trail via crack spread, no via precio de accion.",
+      "invalidators": [
+        "Ceasefire Iran-EEUU en proximas 2-4 semanas que restaure flujos Strait of Hormuz y elimine blockade",
+        "EIA weekly reporte con build de inventarios de gasolina y distillate mayor a expectativas por 2 semanas consecutivas (señal demand destruction downstream)",
+        "Strait of Hormuz cierre total: paradojicamente invalida VLO porque feedstock crude se corta y refinerias no pueden operar - riesgo cola opuesto",
+        "SPY cerrando bajo 200DMA (693.44): risk-off generalizado arrastra cíclicas independientemente de fundamentales sectoriales"
+      ],
+      "what_we_could_be_wrong_about": "El trade VLO ya lleva 5 semanas en el book. El riesgo principal es que estamos anclados a una tesis que el mercado ya priced-in - VLO puede haber corrido y el edge marginal se agoto. Segundo, el crack MUY_FUERTE ($63.44) es historicamente extremo y tiende a mean-revertir; podemos estar entrando a topping process sin darnos cuenta. Tercero, la contradiccion del energy desk sobre gasolina inventarios altos (210k Mbbl) sugiere que el crack esta sesgado por distillate tightness - si distillate normaliza (fin verano trucking season), el 3-2-1 comprime rapido. Cuarto, ausencia de memo macro nos deja ciegos a probabilidad de recesion que destruiria demand refinado."
+    }
+  ],
+  "reasoning_when_no_convictions": "",
+  "synthesis_observations": "Observacion 1 (correlacion energy): El energy desk emitio 6 señales LONG (XOM, CVX, OXY, VLO, EOG, VIST) que son fundamentalmente la misma apuesta direccional sobre tightness de oil por shock geopolitico. Publicar mas de una seria falso diversification. Selecciono VLO como mejor expresion por su asimetria doble (crack + backwardation) que ningun E&P captura. OXY con conviccion 8 del desk es la alternativa E&P pero ya tenemos exposicion al trade y OXY tiene mayor beta downside si crude mean-reverts. Observacion 2 (contradiccion productiva): El energy desk señala que crude esta underpriced dado tail risk Hormuz - Roubini logic - pero el mercado NO esta pricing eso. Dos lecturas posibles: (a) mercado en denial (edge para nosotros), (b) mercado ve algo que nosotros no vemos - probablemente que ceasefire es mas probable que lo que asumimos, o que SPR/OPEC spare capacity es mayor. Esta contradiccion me hace REDUCIR sizing en OXY/E&P puros (mayor beta a este mispricing) y PREFERIR VLO que es agnostico al precio absoluto y depende del spread. Observacion 3 (divergencia options): VIX 9D 16.85 vs VIX 6M 22.28 spread +5.43 - alguien esta comprando proteccion lejana barata. Combinado con GLD BAJO_DMA pero momentum 12M aun +19.77% (rompio tendencia pero no colapsa), y macro agent que fallo (no tenemos regimen), sugiere que hay algo estructural que el consenso no ve. No amerita un trade concreto pero justifica NO agregar riesgo direccional beyond VLO. Observacion 4 (SPY/QQQ pass): momentum ajustado SPY 1.557 y QQQ 1.299 son señales tecnicamente validas, pero sin regimen macro confirmado y con emision reciente (SPY LONG 2026-06-29), no aporta edge marginal republicar. La tesis no cambio significativamente vs hace 3 semanas.",
+  "metadata": {
+    "timestamp": "2026-07-20T12:35:20.240369",
+    "modelo": "claude-opus-4-7",
+    "agentes_input": [
+      "macro",
+      "technical",
+      "og_energy"
+    ]
+  }
+}
