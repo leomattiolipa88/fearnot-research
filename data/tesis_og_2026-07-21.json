@@ -1,0 +1,86 @@
+{
+  "fecha": "2026-07-21",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 88,
+    "razonamiento": "Multiples señales fisicas convergen en tightness severa. (1) WTI calendar spread 6M en +7.05 USD — backwardation fuerte que refleja escasez fisica inmediata, no especulacion. El mercado spot paga premium significativo sobre el diferido. (2) Crack spread 3-2-1 en 62.22 USD — catalogado 'MUY_FUERTE', refinerias maxando margen, demanda real de productos refinados solida. (3) Utilizacion de refinerias en 96.2% — near-max, no hay slack operacional. Si las refinerias pueden correr, corren, lo que implica demanda de crudo sostenida. (4) Inventarios de crudo USA en 409,665 kbbl — necesito el comparativo 5-year average para precisar cuanto bajo del rango historico, pero el contexto de backwardation fuerte sugiere que estan en zona baja o cayendo. (5) EVENTOS GEOPOLITICOS CRITICOS: CPC (Caspian Pipeline Consortium) halt de loadings post drone strike en Novorossiysk — esto es +1% oferta global disrumpida, 80% exportaciones Kazakhstan afectadas. Iran reportadamente cerro el Estrecho de Hormuz post-airstrikes USA — si esto es real y sostenido, es el evento de oferta mas disruptivo en decadas. Houthis declaran embargo maritimo a Arabia Saudita y amenazan Bab el-Mandeb. La convergencia de tres disrupciones de infraestructura simultaneas es fisicamente extraordinaria. WTI en 83.92 y Brent en 90.79 — el diferencial Brent/WTI de ~6.87 USD refleja mayor premium en crudo internacional por las disrupciones maritimas."
+  },
+  "regimen_natgas": {
+    "clasificacion": "OVERSUPPLIED",
+    "confianza": 65,
+    "razonamiento": "NATGAS en 2.867 USD/MMBtu — nivel históricamente bajo que sugiere balance aun holgado domesticamente en USA. Storage en 3,024 Bcf al 10-Jul — no tengo el comparativo exacto 5-year average para esta fecha, pero en julio el storage tipicamente busca acercarse a 3,800-4,000 Bcf para el invierno; estar en 3,024 en julio no es alarmante pero tampoco es deficit severo. El precio bajo confirma que no hay tightness inmediata. CONTRATENDENCIA POSITIVA: Mitsubishi finalizo compra de $7.5B en activos Haynesville — señal estructural de demanda LNG futura, pero no impacta el balance spot inmediato. China e India reportaron mayor caida en importaciones LNG en 2025 — presion sobre precios globales de gas. La crisis de combustible en zonas rurales de Rusia es operacional local, no mueve precio global. RIESGO UPSIDE: El cierre del Hormuz afecta exportaciones LNG del Golfo Persico, podria tensar el mercado global de GNL aunque el NATGAS Henry Hub es menos sensible a esto que el JKM asiatico o el TTF europeo. Tropical storm watch en Florida Panhandle — si escala a huracan puede impactar produccion offshore Gulf. Bajo conviccion en OVERSUPPLIED porque los riesgos geopoliticos podrian tightear el mercado rapidamente."
+  },
+  "regimen_lpg": {
+    "clasificacion": "TIGHT",
+    "confianza": 45,
+    "razonamiento": "DATA LIMITADA - razonamiento inferencial. Propane inventory USA en 93,489 kbbl al 10-Jul — no tengo el 5-year average para esta fecha ni los Saudi CP (Contract Price) que son el benchmark global de LPG, ni freight rates VLGC para rutas Middle East-Asia. Lo que puedo inferir: (1) Si el Estrecho de Hormuz esta efectivamente cerrado o severamente restringido, Arabia Saudita no puede exportar LPG al mercado asiatico — esto seria TIGHT extremo para LPG de refinery, particularmente propano y butano. (2) El CPC halt afecta crudo kazakho pero no LPG directamente. (3) El crack spread muy fuerte implica que los refinados en general tienen demanda solida, lo que incluye LPG como subproducto. (4) Los inventarios de propane USA en 93,489 kbbl son el unico dato duro disponible — sin el comparativo historico no puedo clasificar si es bajo/alto/normal. DATO CRITICO FALTANTE: Saudi Aramco CP para agosto 2026, VLGC freight rates, precios FEI Asia, e inventarios LPG Europa. Con el cierre del Hormuz como hipotesis activa, inclino hacia TIGHT pero la confianza es baja por data gaps significativos."
+  },
+  "tesis_principal": "El mercado de crudo esta experimentando una convergencia de disrupciones de oferta de magnitude excepcional en julio 2026. Tres eventos simultaneos amenazan la infraestructura de transporte global: el halt del CPC en el Mar Negro post-drone strike (>1% oferta global, 80% exportaciones Kazakhstan), el cierre reportado del Estrecho de Hormuz por Iran post-airstrikes USA, y el embargo maritimo Houthi contra Arabia Saudita con amenaza sobre Bab el-Mandeb. Si las tres disrupciones son simultaneas y sostenidas, el mercado spot enfrenta un shock de oferta sin precedentes recientes. Los fundamentos fisicos PREVIOS a estos eventos ya eran bullish: backwardation 6M de +7.05 USD, crack spreads en zona MUY_FUERTE (62.22 USD), utilizacion de refinerias al 96.2%, todo indicando demanda robusta y mercado ajustado. El hecho de que WTI este en 83.92 y Brent en 90.79 — niveles que aun no reflejan un cierre total del Hormuz — sugiere que o bien el mercado descuenta que las disrupciones son temporales/parciales, o hay lag en el precio discovery. Esta es la contradiccion central: los precios actuales no parecen estar priceando completamente el escenario de cierre del Hormuz. El diferencial Brent/WTI de ~6.87 USD ya muestra algun premio internacional, pero un Hormuz cerrado historicamente lleva WTI a rangos de 120-150 USD. El gas natural es el outlier bearish del complejo energetico — 2.867 USD refleja balance holgado domestico USA, con LNG exports potencialmente disrumpidos si el Hormuz permanece cerrado afectando reexportacion global.",
+  "senales": [
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "ExxonMobil como integrado tiene leverage directo a Brent via upstream internacional + beneficio de crack spreads fuertes en downstream refining. Con utilizacion de refinerias al 96.2% y crack en zona MUY_FUERTE, los margenes de refining son excepcionales. Las disrupciones geopoliticas benefician a majors integrados con diversificacion geografica. El regimen tecnico del fondo es constructivo en equities (SPY LONG, QQQ LONG) lo que reduce el headwind macro para posiciones largas en energy equities."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Similar tesis a XOM. Chevron tiene exposure significativa a produccion del Golfo Persico — el cierre del Hormuz es NEGATIVO para sus operaciones fisicas pero POSITIVO para el precio del crudo que produce en otros lugares. Net effect tipicamente bullish para el stock en shocks de oferta. Crack spreads fuertes benefician su segmento downstream USA."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Occidental es pure-play E&P con alto leverage operativo al precio del WTI. Con WTI potencialmente subevaluado dado el escenario geopolitico, OXY tiene el mayor upside relativo entre los nombres que trackeamos si el precio se mueve al alza. Sus costos de produccion en Permian son fijos — cada dolar adicional de WTI es leverage directo al EPS."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "EOG Resources — Permian/Eagle Ford pure-play. Mismo razonamiento que OXY: leverage directo a WTI con balance sheet solido que les permite aguantar volatilidad. La backwardation fuerte no desincentiva la produccion en Permian porque los costos son bajos. Señal tecnica del fondo muestra equities generalmente en modo LONG, supportive para el nombre."
+    },
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Valero es el refiner puro del grupo — crack spread de 62.22 USD MUY_FUERTE es literalmente su P&L. Con utilizacion de refinerias al 96.2%, Valero esta corriendo a full capacity capturando margenes excepcionales. Si los disrupciones geopoliticas tensionan el supply de crudo pero la demanda de productos permanece fuerte (que es lo que el crack spread dice hoy), Valero se beneficia del diferencial. Esta es la señal de mas alta conviccion en equities energeticos."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Vista Energy (Argentina — Vaca Muerta) es interesante porque su produccion es domestica Argentina, no expuesta directamente al Hormuz ni al CPC. Sin embargo, su realizacion de precio esta indexada a Brent internacional. Si Brent sube por disrupciones globales, VIST captura ese upside con produccion no interrumpida. El riesgo es macro Argentina (FX, regulatorio) que no tengo en este memo pero debe considerarse. Conviccion moderada — el trade es Brent upside sin el riesgo geopolitico Middle East directo."
+    }
+  ],
+  "eventos_clave": [
+    "IRAN CIERRE ESTRECHO DE HORMUZ: El evento mas critico. Si confirmado y sostenido, es el mayor shock de oferta en decadas — 20-21% del petroleo global transita por Hormuz. Los precios actuales (WTI 83.92, Brent 90.79) NO parecen pricear un cierre real y prolongado.",
+    "CPC HALT - DRONE STRIKE EN NOVOROSSIYSK: La disrupcion del Caspian Pipeline Consortium es REAL y confirmada — halt de loadings afecta +1% oferta global y 80% exportaciones de Kazakhstan. Este es un evento fisico verificable que ya impacta el mercado spot.",
+    "HOUTHIS - EMBARGO MARITIMO SAUDI Y AMENAZA BAB EL-MANDEB: Yemen's Houthis declararon embargo a Arabia Saudita y Iran les pidio prepararse para bloquear Bab el-Mandeb si USA ataca infraestructura iran. Si se ejecuta, cierra la salida del Mar Rojo para el petroleo del Golfo.",
+    "TROPICAL STORM WATCH FLORIDA PANHANDLE: Potencial impacto en infraestructura energetica offshore Gulf of Mexico — produccion de crudo y gas. Si escala a huracan categoria 2+, disrupcion material en produccion americana.",
+    "MITSUBISHI $7.5B HAYNESVILLE ACQUISITION: Señal estructural de que el capital japones busca asegurar LNG supply chain a largo plazo desde USA. Bullish para Haynesville producers y el corredor LNG del Golfo, pero no impacta balance spot inmediato."
+  ],
+  "contradicciones_observadas": "La contradiccion principal y mas importante: WTI en 83.92 USD con el Estrecho de Hormuz reportadamente cerrado. Historicamente, un cierre del Hormuz (o amenaza creible) lleva WTI a 120-150+ USD en cuestion de dias. El mercado esta o bien descreyendo el cierre como temporal/parcial, o hay un lag en price discovery. Esta dislocacion entre el evento geopolitico (si es real) y el precio es la oportunidad mas interesante para el fondo. Segunda contradiccion: crack spread MUY_FUERTE (62.22 USD) con utilizacion de refinerias al 96.2% — normalmente un crack tan alto incentivaria mas throughput, pero ya estamos near-maximum. Esto implica que el spread no puede ser arbitrado via mas produccion de productos: la capacidad instalada esta maximizada. El crack deberia mantenerse elevado estructuralmente hasta que baje la demanda de productos o baje el precio del crudo feedstock. Tercera contradiccion menor: NATGAS en 2.867 USD (bearish, oversupplied domestico) mientras se construye infraestructura masiva de LNG (Mitsubishi deal) — el mercado spot no ve el rebalanceo estructural que el capital privado ya esta posicionando a largo plazo.",
+  "invalidadores": [
+    "DEESCALATION IRAN/USA rapida: Si se confirma que el cierre del Hormuz fue temporal (horas/dias) o parcial con paso seguro para tankers, el premium geopolitico colapsa y WTI puede corregir 10-15 USD rapidamente. Este es el mayor riesgo para posiciones long.",
+    "CPC RESUME OPERATIONS RAPIDO: Si la infraestructura en Novorossiysk se repara en dias y Kazakhstan reanuda exportaciones, se elimina uno de los tres shocks de oferta. El mercado ya priceó parcialmente la disrupcion — normalizacion seria bearish marginal.",
+    "OPEC+ decision de aumentar produccion emergency: Si Arabia Saudita (asumiendo que puede exportar) y otros miembros OPEC+ acuerdan abrir las canillas para compensar disrupciones, el balance de oferta mejora. Saudi tiene capacidad de spare production estimada en 2-3 mbpd segun estimados historicos — no tengo dato exacto actual.",
+    "Datos EIA proxima semana muestran BUILD inesperado en crudo: Si los inventarios suben significativamente (build de 5+ mbbl) contra la narrativa de tightness, seria señal de que la demanda es mas debil de lo que indica el crack spread o que produccion USA sorprende al alza.",
+    "Recesion macro USA se confirma: El regimen macro del fondo esta marcado N/A — si emergiera señal recesiva clara, la demanda energetica colapsaria y todos los longs energeticos necesitarian ser revisados. El contexto tecnico actual (SPY LONG, QQQ LONG) no indica recesion inminente, pero es el invalidador macro sistémico."
+  ],
+  "data_gaps": "Datos criticos faltantes para analisis completo: (1) Saudi Aramco CP (Contract Price) para propano y butano agosto 2026 — esencial para regimen LPG. (2) VLGC freight rates (rutas Ras Tanura/Jubail a Chiba/Pyongtaek) — confirma o niega tightness en LPG transporte. (3) Precios FEI (Far East Index) LPG Asia — necesario para entender demanda asiática real. (4) Comparativo inventarios EIA vs 5-year average para crudo, gasolina, distillates y propano — sin este contexto historico los numeros absolutos son limitados. (5) Confirmacion oficial y alcance real del cierre del Estrecho de Hormuz — las noticias disponibles son de fuentes mixtas (Crypto Briefing, Naturalnews) y necesitan validacion de fuentes primarias (USGC, Lloyd's, Reuters oficiales). (6) Spreads WTI M1/M2, M2/M3 para entender la forma completa de la curva — solo tengo el spread 6M. (7) Produccion OPEC+ real julio 2026 vs targets — critico para entender compliance y spare capacity. (8) Posicionamiento COT (Commitment of Traders) en WTI y Brent — para saber si el mercado ya esta largo o si hay room para squeeze adicional.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'GASOLINA'",
+    "Senal 4: activo invalido 'HEATING_OIL'",
+    "Senal 5: activo invalido 'NATGAS'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'CRAK'"
+  ],
+  "metadata": {
+    "timestamp": "2026-07-21T12:11:04.486872",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
