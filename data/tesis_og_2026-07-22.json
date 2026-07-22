@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-07-22",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 92,
+    "razonamiento": "Multiples señales físicas apuntan a tightness genuina y severa. (1) WTI en $87.36 y Brent en $85.13 con spread WTI-Brent invertido positivo, inusual, señal de disrupcion en rutas de exportacion que afecta diferenciales. (2) Calendar spread 6M en BACKWARDATION de $10.13 — esto no es especulacion: el mercado fisico esta pagando premium masivo por barril spot vs forward, señal de escasez real near-term. (3) Crack 3-2-1 en $62.06 clasificado MUY_FUERTE — los refinadores estan pagando premium por crudo porque la demanda de productos finales es robusta o la oferta de crudo procesable esta comprometida. (4) Inventarios crudos EIA en 409,665 Kbbl (dato al 10-Jul) — no tengo el 5-year average exacto para comparar, pero el contexto geopolitico sugiere draws inminentes. (5) Utilizacion de refinerias al 96.2% — cerca del techo operacional, sin slack para absorber shocks de oferta. (6) Geopoliticamente: US-Iran en conflicto activo, Houthis declararon bloqueo maritimo a Arabia Saudita, Strait of Hormuz con actividad reducida segun noticias, Kazakhstan interrumpio exportaciones CPC por ataques de drones a terminal Novorossiysk, Qatar acusa a Iran por ataques a Ras Laffan. Son CUATRO disrupciones simultaneas de oferta fisica. (7) SPR de USA en minimo de 43 años — no hay buffer estrategico disponible para amortiguar shocks. La convergencia de backwardation extrema, crack spreads elevados, utilizacion de refinerias al limite y disrupciones multiples de infraestructura configura el regimen mas tight que puedo clasificar con alta confianza."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 52,
+    "razonamiento": "NATGAS en $2.908/MMBtu — nivel historicamente moderado-bajo, no señala tightness severa. Storage en 3,024 Bcf al 10-Jul. No tengo el 5-year average exacto para comparar este nivel, lo cual limita mi clasificacion. Sin embargo, el ataque a Ras Laffan (Qatar, LNG facility) es el dato mas relevante: si las instalaciones de LNG de Qatar estan dañadas, el impacto seria en LNG global, no directamente en Henry Hub. El conflicto US-Iran podria afectar exportaciones de LNG de Qatar hacia Asia/Europa, potencialmente redirigiendo demanda hacia US LNG exports y apretando el mercado domestico. Pero sin datos de flujos de exportacion LNG actuales, draws semanales recientes vs historico, o spread Henry Hub vs TTF/JKM, no puedo clasificar con alta confianza. El precio actual de $2.908 no señala crisis, pero los riesgos upside son asimetricos dado el contexto geopolitico. Clasifico BALANCED con sesgo hacia TIGHT si el conflicto escala y afecta LNG flows globales."
+  },
+  "regimen_lpg": {
+    "clasificacion": "TIGHT",
+    "confianza": 45,
+    "razonamiento": "DATA LIMITADA — mi clasificacion tiene confianza reducida. Lo que tengo: Propane inventory USA en 93,489 Kbbl al 10-Jul. No tengo Saudi CP (Contract Price de Aramco para propano/butano), no tengo freight rates VLGC, no tengo FEI Asia (Far East Index), no tengo el 5-year average de propano para comparar. Lo que sí puedo inferir: (1) El bloqueo maritimo Houthi a Arabia Saudita es DIRECTAMENTE relevante para LPG — Saudi Arabia es el mayor exportador de LPG del mundo y las rutas desde Ras Tanura pasan por el area de influencia Houthi en el Mar Rojo/Bab Al-Mandeb. Si el bloqueo se hace efectivo, las exportaciones de Saudi LPG hacia Asia se interrumpiran o encareceren significativamente via rerouting alrededor del Cabo. (2) Los ataques a Ras Laffan (Qatar) pueden afectar produccion de LPG asociado a LNG. (3) Inventarios propano US no parecen extremos en valor absoluto, pero sin benchmark historico no puedo confirmar. Clasifico TIGHT por los disruption risks de supply-side, no por data de inventarios confirmada."
+  },
+  "tesis_principal": "El mercado energetico fisico global esta experimentando una convergencia de shocks de oferta simultaneos sin precedente reciente. Cuatro disrupciones criticas ocurren en paralelo: (1) conflicto US-Iran activo que comprime el Strait of Hormuz — 20% del petroleo global pasa por ahi; (2) bloqueo maritimo Houthi a Arabia Saudita por Bab Al-Mandeb — cerrando la ruta Red Sea; (3) suspension de exportaciones Kazakhstan por CPC pipeline/Novorossiysk — quitando volumen Black Sea; (4) ataques a Ras Laffan Qatar — golpeando LNG y LPG. El mercado fisico ya esta respondiendo: backwardation de $10.13 en 6 meses no es opinion, es el precio al que operadores reales pagan por barril spot vs delivery futuro. Con refinerias corriendo al 96.2% no hay capacidad de procesamiento adicional. Con SPR en minimo de 43 años no hay colchon estrategico. El crack 3-2-1 en $62 señala que la demanda de productos finales (gasolina, heating oil/diesel) sigue siendo robusta a pesar de precios elevados — es un mercado donde la demanda no ha cedido todavia. El riesgo principal es un escalamiento adicional que cierre efectivamente el Hormuz, lo cual seria un evento de racionamiento energetico global. La unica presion bajista real es la posibilidad de un acuerdo de mediacion US-Iran, que las noticias mencionan pero que por ahora parece secundario frente a la escalada. Para nuestros activos: el setup favorece posiciones LONG en crudo fisico y productos refinados, con mayor conviccion en heating oil/diesel (backwardation + demand inelastica) que en gasolina (demanda mas elastica a precio), y largo en equities de E&P con produccion fuera de la zona de conflicto.",
+  "senales": [
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Exxon tiene produccion diversificada con exposicion significativa a Permian (fuera de zona de conflicto) y a LNG via joint ventures. En entorno de precios altos y crack spreads fuertes, el flujo de caja de refining mas E&P es muy favorable. Downside: si acuerdo US-Iran se materializa, reversion de precios rapida. Conviccion 7 dado que la exposicion de Exxon a refining captura el crack spread elevado."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Chevron con posicion fuerte en Permian y Tengiz (Kazakhstan). NOTA: el shutdown del CPC pipeline (Kazakhstan) es riesgo especifico para CVX dado que opera en Tengiz. Pero el beneficio neto del entorno de precios elevados supera el riesgo operacional de Tengiz en el corto plazo mientras la disrupcion no sea permanente. Conviccion igual a XOM."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "OXY con alta exposicion a Permian y a Midland crude — produccion domestica lejos del conflicto. En entorno WTI elevado, OXY tiene alto beta a precios de crudo dado su estructura de costos y leverage operativo. Setup favorable para upside captura si WTI continua subiendo. Similar conviccion al sector pero con mayor beta."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "EOG Resources — productor de bajo costo con exposicion Permian/Eagle Ford. Mismo razonamiento que OXY: produccion domestica fuera de zona de conflicto, se beneficia del entorno de precios altos sin riesgo geopolitico directo en sus activos operacionales."
+    },
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Valero es el mayor refiner independiente de USA. Crack 3-2-1 en $62.06 MUY_FUERTE es directamente su margen operativo. Refinery utilization al 96.2% significa que el sistema esta corriendo al limite — no hay oferta adicional de productos a menos que abran capacidad nueva. VLO captura directamente el spread entre crudo input y productos output. Este es el trade mas limpio para capturar el crack spread elevado sin riesgo E&P. Conviccion alta."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Vista Energy — E&P con operaciones en Vaca Muerta, Argentina. Produccion totalmente alejada de zona de conflicto Middle East. Se beneficia de precios WTI elevados en sus realizaciones. El riesgo es el diferencial Argentina vs WTI y factores macro locales (tipo de cambio, politica energetica argentina). Conviccion moderada dado que el driver es precio WTI (favorece LONG) pero con ruido argentino que limita la conviction."
+    }
+  ],
+  "eventos_clave": [
+    "US-Iran en conflicto activo con escalada de hostilidades — Strait of Hormuz bajo presion, actividad maritima en corredor energetico critico reduciendose (Fortune report sobre propuesta de 'tolls' señala paralisis operacional)",
+    "Houthis declaran bloqueo maritimo a Arabia Saudita via Bab Al-Mandeb — amenaza directa a exportaciones de petroleo y LPG saudita hacia Asia y Europa, nueva ruta de disrupcion superpuesta al Hormuz",
+    "Kazakhstan suspende exportaciones CPC pipeline hacia Black Sea despues de ataques de drones ucranianos al terminal Novorossiysk — volumen estimado 1.4 MBD+ fuera del mercado temporalmente",
+    "Qatar acusa formalmente a Iran por ataques a Ras Laffan LNG facility en la ONU — infraestructura critica de LNG/LPG golpeada, impacto en exportaciones de gas de Qatar pendiente de cuantificar",
+    "SPR de USA en minimo de 43 años — sin buffer estrategico disponible para respuesta gubernamental ante shocks de oferta adicionales"
+  ],
+  "contradicciones_observadas": "La contradiccion mas interesante es el spread WTI-Brent: WTI ($87.36) cotiza SOBRE Brent ($85.13) por $2.23, lo cual es inusual historicamente — Brent suele tener premium sobre WTI por su rol de benchmark global y mayor facilidad de exportacion maritima. Esta inversion señala una de dos cosas: (1) la disrupcion de rutas maritimas globales (Hormuz, Red Sea) esta deprimiendo el valor FOB de Brent exportable relativo al crudo domestico US que no necesita cruzar zonas de conflicto, O (2) hay demanda spot excepcional de WTI por compradores que priorizan supply security sobre precio. Esta dislocacion merece atencion — si persiste o se amplifica, el arb entre WTI y Brent es un trade de estructura atractivo. Segunda contradiccion: los precios cayeron ligeramente el martes 21-Jul por 'mediation efforts' a pesar de que objetivamente las disrupciones fisicas (Kazakhstan CPC shutdown, Qatar Ras Laffan attack) ocurrieron ese mismo dia. El mercado esta dando mas peso a la narrativa diplomatica que a los flows fisicos interrumpidos — esto es una dislocacion si los flujos fisicos no se restituyen rapidamente.",
+  "invalidadores": [
+    "Acuerdo de cesacion de hostilidades US-Iran con apertura real del Strait of Hormuz — reversion inmediata y violenta de backwardation y crack spreads; seria el invalidador mas brutal y rapido",
+    "Restitucion del flujo CPC Kazakhstan mas acuerdo Houthi-Saudi para permitir paso maritimo — eliminaria dos de las cuatro disrupciones simultaneas y relajaria el balance fisico significativamente",
+    "Build inesperado en inventarios EIA esta semana (datos al 17-Jul, proxima publicacion) — si los inventarios de crudo muestran build grande a pesar del contexto geopolitico, sugeriria que la demanda es mas debil de lo implicado por el crack spread y revisaria mi regimen a la baja; tambien podria señalar que el mercado estaba sobreestimando el impacto fisico de las disrupciones"
+  ],
+  "data_gaps": "Datos criticos que no tengo y que limitaron mi analisis: (1) 5-year average para todos los inventarios EIA (crudo, gasolina, destilados, propano, natgas storage) — sin este benchmark no puedo clasificar si estamos above/below historico, que es el dato mas importante para determinar balance fisico real; (2) Saudi Aramco CP (Contract Price) para propano y butano del mes en curso — fundamental para regimen LPG; (3) VLGC freight rates (Very Large Gas Carrier) — señal de demanda de transporte de LPG; (4) FEI Asia (Far East Index) para propano — benchmark de precio LPG en mercado mas liquido del mundo; (5) JKM vs Henry Hub spread — para evaluar si el ataque a Ras Laffan esta siendo priced in en LNG global; (6) TTF vs Henry Hub spread — mismo objetivo; (7) Volumen real interrumpido de CPC Kazakhstan en MBD; (8) Estado real de daños en Ras Laffan Qatar y capacidad de produccion afectada; (9) Datos de tanker tracking (AIS) para flujos a traves del Hormuz y Red Sea — el dato mas fisico posible para verificar si las disrupciones son reales o amenazas; (10) Draws/builds semanales de natgas storage de las ultimas 4 semanas vs 5-year average para clasificar regimen natgas con mayor confianza.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'HEATING_OIL'",
+    "Senal 4: activo invalido 'GASOLINA'",
+    "Senal 5: activo invalido 'NATGAS'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'CRAK'"
+  ],
+  "metadata": {
+    "timestamp": "2026-07-22T12:14:15.229585",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
