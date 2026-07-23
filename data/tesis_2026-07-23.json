@@ -1,3 +1,83 @@
 {
-  "error": "Error code: 404 - {'type': 'error', 'error': {'type': 'not_found_error', 'message': 'model: claude-sonnet-4-20250514'}, 'request_id': 'req_011CdJxwRqe5CWSu5YLWHDB6'}"
+  "fecha": "2026-07-23",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 62,
+    "razonamiento": "El mercado laboral se mantiene sólido: unemployment en 4.2% (unemployment), jobless_claims en 208k (jobless_claims) y sahm_rule en apenas 0.07 (sahm_rule), muy lejos del umbral recesivo de 0.50. La yield_curve está positiva en +0.89% (yield_curve, 10Y-3M), lo que descarta señal de recesión inminente. VIX en 18.17 (vix) indica volatilidad contenida y hy_spread en 2.69% (hy_spread) refleja crédito benigno sin stress. Sin embargo, matizo el 'Goldilocks': la inflación forward no está domada — breakeven_5y5y en 2.26% (breakeven_5y5y) es aceptable, pero michigan_inflation_exp en 4.8% (michigan_inflation_exp) y tips_yield_10y en 2.37% (tips_yield_10y, real yield elevado) sugieren condiciones monetarias todavía restrictivas. El yield_10y en 4.63% (yield_10y) con el noticiero mencionando el 30Y acercándose a 5% agrega presión estructural sobre duración. Es un Goldilocks con cola inflacionaria/de tasas."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Régimen Goldilocks con crédito benigno (hy_spread 2.69%, hy_spread), VIX contenido en 18.17 (vix) y mercado laboral sólido (jobless_claims 208k, unemployment 4.2%). SPY en 747.41 (spy). El riesgo idiosincrático es la ola de earnings de Big Tech (Alphabet/Tesla) que puede generar volatilidad de corto plazo, por eso convicción moderada.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "yield_10y en 4.63% (yield_10y) y yield_10y_mkt en 4.66% (yield_10y_mkt) con presión estructural al alza: el noticiero de MarketWatch señala que el 30Y se acerca a un techo de 5% no visto desde 2007. Real yields elevados (tips_yield_10y 2.37%) y expectativas de inflación de consumidores altas (michigan 4.8%) dan viento de cola a tasas más altas. TLT en 83.44 (tlt) sigue vulnerable.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "GLD en 379.12 (gold). Con michigan_inflation_exp en 4.8% (michigan_inflation_exp) y tensión geopolítica (oil tocando $95 por war supply squeeze, WSJ), el oro funciona como cobertura contra inflación persistente y shock geopolítico. Contra el oro juega el real yield alto (tips 2.37%), por eso convicción moderada.",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "El titular tier-1 del WSJ reporta oil tocando $95 por war-squeezed supply. No tengo precio de crudo en el JSON, por lo que la señal se basa exclusivamente en la noticia geopolítica y no en un indicador validado — convicción limitada por falta de dato macro directo.",
+      "dato_clave": "sin dato en JSON — basado en headline WSJ"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 101.27 (dxy) con eurusd en 1.1396 (eurusd) — dólar moderado. usdjpy en 163.46 (usdjpy) muy elevado sostiene el carry trade activo sin señal de desarme abrupto. Divisas EM estables: usdmxn 17.46 (usdmxn), usdbrl 5.07 (usdbrl), usdcny 6.76 (usdcny). Sin catalizador claro direccional para el dólar.",
+      "dato_clave": "dxy"
+    }
+  ],
+  "tesis_principal": "El régimen dominante es GOLDILOCKS pero con matices que impiden convicción alta. El lado del crecimiento es constructivo: unemployment en 4.2% (unemployment), jobless_claims en 208k (jobless_claims) y sahm_rule en 0.07 (sahm_rule) muestran un mercado laboral robusto sin señales de deterioro recesivo. La yield_curve positiva en +0.89% (yield_curve) confirma la ausencia de recesión inminente. La liquidez es benigna: hy_spread en 2.69% (hy_spread) y VIX en 18.17 (vix) reflejan apetito por riesgo sin stress crediticio.\n\nEl lado incómodo es tasas e inflación. El yield_10y en 4.63% (yield_10y) y yield_10y_mkt en 4.66% (yield_10y_mkt) están altos, con el mercado de Treasuries acercándose a un hito preocupante (MarketWatch: 30Y cerca de 5% por primera vez en 19 años). Los real yields siguen restrictivos (tips_yield_10y 2.37%) y aunque el breakeven_5y5y está anclado en 2.26% (breakeven_5y5y), las expectativas de inflación del consumidor Michigan en 4.8% (michigan_inflation_exp) son incómodamente altas. Esto sostiene un sesgo SHORT en duración (TLT 83.44).\n\nEn divisas, el usdjpy en 163.46 (usdjpy / usdjpy_mkt) sigue extremo, manteniendo el carry trade JPY vivo — la clave a vigilar es cualquier señal de desarme brusco que golpearía activos de riesgo globalmente. El DXY en 101.27 (dxy) y eurusd en 1.1396 (eurusd) reflejan un dólar de rango medio. El overlay de riesgo del día es doble: earnings de Big Tech (Alphabet/Tesla) como prueba del AI trade, y la geopolítica energética con oil tocando $95 (WSJ), que introduce riesgo alcista de inflación por el lado de la oferta. Netamente: LONG risk equity moderado, SHORT duración, LONG oro y crudo como cobertura de cola inflacionaria/geopolítica.",
+  "invalidadores": [
+    "Un salto abrupto del sahm_rule por encima de 0.30-0.50 o jobless_claims rompiendo sostenidamente >250k invalidaría el Goldilocks hacia DESACELERACION.",
+    "Una caída brusca de usdjpy (desarme violento del carry trade desde 163.46) golpearía SPY y activaría risk-off global, invalidando la señal LONG equity.",
+    "Yield_10y superando decisivamente 5% (o el 30Y confirmando el hito que menciona MarketWatch) aceleraría la re-pricing de valuaciones equity y validaría más el SHORT TLT pero dañaría el LONG SPY.",
+    "Escalada geopolítica que dispare oil sostenidamente por encima de $95 (WSJ) empujaría inflación y expectativas (michigan ya en 4.8%), moviendo el régimen hacia STAGFLATION.",
+    "Earnings de Big Tech decepcionantes (Alphabet/Tesla) que gatillen sell-off del AI trade y suban el VIX desde 18.17 invalidarían la tesis pro-riesgo de corto plazo."
+  ],
+  "alertas": [
+    "michigan_inflation_exp en 4.8% (michigan_inflation_exp) está muy por encima del target del 2% y desacoplado del breakeven_5y5y de mercado (2.26%): divergencia entre expectativas de consumidores y mercado que merece seguimiento.",
+    "Oil en ~$95 por war supply squeeze (WSJ) es un shock de oferta inflacionario que el régimen pre-calculado GOLDILOCKS no captura — riesgo de re-clasificación a STAGFLATION.",
+    "El 30Y Treasury acercándose a >5% sostenido (MarketWatch) es una señal estructural de deterioro fiscal/de duración que puede contaminar todo el complejo de riesgo.",
+    "usdjpy en 163.46 (usdjpy) es un nivel históricamente extremo; el carry trade está sobre-extendido y es la principal fuente de riesgo de cola sistémica."
+  ],
+  "datos_insuficientes": [
+    "No hay precio de crudo/USO en el JSON — la señal LONG USO se basa solo en el headline del WSJ, no en un indicador validado.",
+    "No hay dato de QQQ ni breakdown sectorial tech pese a que los earnings de Big Tech son el evento clave del día.",
+    "El pce_core (130.082) es un índice de nivel sin tasa de variación calculada en el JSON, lo que limita la lectura directa de la trayectoria inflacionaria core."
+  ],
+  "eventos_clave": [
+    "[The Wall Street Journal] Nasdaq Slips, Oil Price Touches $95 as War Squeezes Supply — shock de oferta energética que presiona inflación al alza y justifica cobertura en oro/crudo; riesgo de re-clasificación de régimen.",
+    "[The Wall Street Journal] AMD and Anthropic Sign Major Chips-and-Investment Deal — refuerza el capex del AI trade, soporte estructural para semiconductores y sentimiento tech.",
+    "[Yahoo Finance] Dow, S&P 500, Nasdaq diverge with Alphabet, Tesla earnings on deck — la prueba de la próxima ronda de Big Tech earnings es el catalizador de volatilidad de corto plazo para SPY/QQQ.",
+    "[MarketWatch] Treasury market on verge of worrying milestone not seen since 2007 — el 30Y acercándose a >5% sostenido valida el SHORT TLT y añade riesgo estructural sobre duración y valuaciones equity.",
+    "[Atlanta Journal Constitution] OpenAI plans $20 billion data center near Georgia coast — confirma el ciclo de capex masivo en infraestructura AI, soporte de mediano plazo para el complejo tech/energía."
+  ],
+  "confianza_general": 60,
+  "metadata": {
+    "timestamp": "2026-07-23T11:57:47.857856",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
 }
