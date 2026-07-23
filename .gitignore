@@ -50,3 +50,4 @@ my_portfolio.json
 
 # === Data regenerable adicional ===
 data/web_data.json
+*.db.pre-*
