@@ -1,0 +1,91 @@
+{
+  "fecha": "2026-07-24",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 62,
+    "razonamiento": "El desempleo está en 4.2% (unemployment) con jobless_claims muy bajos en 187k, señal de mercado laboral sólido. La Sahm Rule en 0.07 (sahm_rule) está muy por debajo del umbral de recesión de 0.50, descartando desaceleración inminente. La yield curve se desinvirtió a +0.92% (yield_curve, 10Y-3M), consistente con crecimiento. Los HY spreads están comprimidos en 2.68% (hy_spread) y el VIX en 18.88 (vix) es moderado, señal de risk appetite. SIN EMBARGO, matizo el Goldilocks: el breakeven_5y5y en 2.27% (breakeven_5y5y) está controlado, pero las expectativas de inflación de Michigan están elevadas en 4.8% (michigan_inflation_exp) y las yields a 10Y en 4.67% (yield_10y) son altas. El titular de FT sobre petróleo hacia $100 amenaza el pilar de baja inflación, por lo que reduzco confianza del régimen puro."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Régimen Goldilocks con jobless_claims en 187k, Sahm en 0.07 y HY spreads en 2.68% (hy_spread) apoyan risk-on en renta variable amplia. SPY en 738.18 (spy). VIX moderado en 18.88 (vix). Rebajo convicción porque el shock de petróleo (FT: Brent hacia $100) y el sell-off de bonos amenazan múltiplos.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "QQQ en 691.96 (qqq) pero las yields a 10Y en 4.67% (yield_10y) y el yield de mercado en 4.70% (yield_10y_mkt) presionan valuaciones de duración larga en tech. Titulares (CNBC) muestran preocupación por capex de Alphabet y AI spending. Señales mixtas justifican neutral.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 83.17 (tlt) con yields a 10Y en 4.67% (yield_10y) y mercado en 4.70% (yield_10y_mkt) al alza. El titular de FT sobre petróleo impulsando sell-off global de bonos y reseteo de expectativas de tasas refuerza presión bajista en bonos largos. TIPS 10Y real en 2.39% (tips_yield_10y) es elevado.",
+      "dato_clave": "yield_10y_mkt"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "GLD en 371.52 (gold). Con Michigan inflation exp en 4.8% (michigan_inflation_exp) y riesgo de inflación por petróleo (FT), el oro funciona como cobertura. DXY relativamente contenido en 101.41 (dxy) no es headwind fuerte.",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "No tengo el precio del crudo en el JSON, por lo que la señal se basa solo en noticias (FT: Brent hacia $100; American Airlines recorta guidance por costos de combustible). Convicción limitada por falta de dato directo de precio de petróleo.",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 101.41 (dxy) con EURUSD en 1.1378 (eurusd). USDJPY muy alto en 163.79 (usdjpy) indica carry trade activo y JPY débil, pero sin señal de cambio brusco. Neutral por ausencia de catalizador claro.",
+      "dato_clave": "usdjpy"
+    }
+  ],
+  "tesis_principal": "El panorama macro es fundamentalmente Goldilocks pero con una amenaza inflacionaria emergente. Los datos de crecimiento son sólidos: desempleo en 4.2% (unemployment), jobless_claims en 187k y Sahm Rule en apenas 0.07 (sahm_rule), muy lejos del umbral recesivo. La liquidez es benigna con HY spreads comprimidos en 2.68% (hy_spread) y VIX moderado en 18.88 (vix). La curva 10Y-3M se normalizó a +0.92% (yield_curve), históricamente compatible con expansión. Este set-up favorece risk-on: SPY en 738.18 (spy) y QQQ en 691.96 (qqq).\n\nEl riesgo dominante es la inflación por commodities. El titular de FT sobre Brent hacia $100 impulsando un sell-off global de bonos es coherente con las yields a 10Y en 4.67% (yield_10y) y 4.70% en mercado (yield_10y_mkt), y con el TIPS real en 2.39% (tips_yield_10y). Aunque el breakeven_5y5y está anclado en 2.27% (breakeven_5y5y), las expectativas de Michigan en 4.8% (michigan_inflation_exp) están muy calientes. American Airlines recortando guidance por combustible confirma el pass-through del petróleo al sector real. Esto crea vientos en contra para bonos largos (TLT en 83.17) y para tech de duración larga.\n\nEn divisas, USDJPY en 163.79 (usdjpy/usdjpy_mkt) refleja carry trade robusto y JPY estructuralmente débil; DXY en 101.41 (dxy) está contenido con EURUSD en 1.1378 (eurusd). Los EM se ven razonables: USDBRL en 5.08 (usdbrl), USDMXN en 17.47 (usdmxn) y USDCNY en 6.76 (usdcny). Neto: mantener sesgo pro-riesgo en equity amplio pero corto en duración y largo en oro como cobertura al riesgo inflacionario del petróleo.",
+  "invalidadores": [
+    "Brent supera $100 de forma sostenida (FT) y dispara breakeven_5y5y por encima de 2.6%, rompiendo el pilar de baja inflación del Goldilocks",
+    "HY spreads (hy_spread) se amplían por encima de 3.5% o VIX (vix) supera 25, señalando deterioro de liquidez y risk-off",
+    "Jobless claims (jobless_claims) suben sostenidamente por encima de 250k o Sahm Rule (sahm_rule) sube hacia 0.30-0.50, activando riesgo de desaceleración",
+    "Yields 10Y (yield_10y_mkt) rompen decisivamente por encima de 5.0%, invalidando el LONG SPY y forzando derating de QQQ",
+    "USDJPY (usdjpy) cae bruscamente (unwind de carry trade), que suele coincidir con deleveraging global y venta de risk assets"
+  ],
+  "alertas": [
+    "Divergencia crítica: régimen pre-calculado marca 0 señales de inflación, pero michigan_inflation_exp en 4.8% y el shock de petróleo de las noticias sugieren riesgo inflacionario subestimado por el modelo",
+    "USDJPY en 163.79 es un nivel históricamente extremo; el carry trade está muy estirado y es vulnerable a reversiones violentas",
+    "Yields altas (10Y en 4.67%) coexistiendo con VIX bajo (18.88) — complacencia potencial ante un sell-off de bonos en curso",
+    "Titular AP sobre modelos de AI 'fuera de control' podría generar volatilidad de sentimiento en el sector tech si escala mediáticamente"
+  ],
+  "datos_insuficientes": [
+    "No hay precio directo del petróleo/crudo (WTI/Brent) en el JSON, lo que limita la convicción en la señal de USO pese a ser el driver narrativo del día",
+    "No hay dato de nivel del PMI manufacturero/servicios para confirmar el momentum de crecimiento",
+    "pce_core y cpi vienen como índices de nivel sin variación interanual explícita, dificultando lectura directa de tendencia inflacionaria"
+  ],
+  "eventos_clave": [
+    "[Financial Times] Oil price surge drives global bond sell-off — Brent hacia $100 amenaza reactivar inflación y resetear expectativas de tasas; refuerza SHORT TLT y LONG GLD",
+    "[CNBC] American Airlines slashes 2026 earnings outlook as fuel costs spike — confirmación del pass-through del petróleo a márgenes corporativos reales, headwind para earnings",
+    "[CNBC] Stock futures slip as investors eye earnings; Alphabet falls on higher capex outlook — preocupación por AI spending y petróleo justifica NEUTRAL en QQQ",
+    "[Associated Press] OpenAI dice que modelos de AI rompieron control humano — riesgo de sentimiento/regulación para el sector tech, monitorear",
+    "[Bloomberg] Samsung smart glasses con Google — desarrollo de producto en el ecosistema AI hardware, impacto macro menor"
+  ],
+  "confianza_general": 60,
+  "metadata": {
+    "timestamp": "2026-07-24T12:00:54.345400",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
