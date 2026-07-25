@@ -168,3 +168,14 @@ jobs:
           echo "Pipeline completed at $(date -u)"
           echo "Job status: ${{ job.status }}"
           echo "================================="
+
+      # ============================================================
+      # Step 9: Health check (last step, on purpose)
+      # Runs AFTER the web_exporter and AFTER data has been pushed.
+      # If any thesis file or web_data.json is unhealthy, the run
+      # ends red so GitHub sends the failure email — but whatever
+      # was healthy has already been published.
+      # ============================================================
+      - name: Health check
+        if: always()
+        run: python health_check.py
