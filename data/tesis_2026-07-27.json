@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-07-27",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 68,
+    "razonamiento": "El crecimiento se mantiene sólido: jobless_claims en 187k (jobless_claims) es muy bajo, unemployment en 4.2% (unemployment) y sahm_rule en 0.07 (sahm_rule), muy lejos del umbral de recesión de 0.5. La liquidez es benigna: hy_spread en 2.77% (hy_spread) señala apetito de riesgo pleno y VIX en 17.73 (vix) indica volatilidad contenida. La yield_curve está positiva en +0.90% (yield_curve, 10Y-3M), sin señal de inversión. Sin embargo, la inflación NO es totalmente benigna: breakeven_5y5y en 2.28% (breakeven_5y5y) es aceptable pero tips_yield_10y en 2.43% (tips_yield_10y) es elevado y michigan_inflation_exp en 4.8% (michigan_inflation_exp) es una señal de alerta que impide confianza plena en el cuadrante Goldilocks. El régimen pre-calculado marca 0 señales de riesgo e inflación, pero recorto confianza por las expectativas de inflación del consumidor y por yields reales altos."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Régimen Goldilocks con hy_spread en 2.77% (hy_spread) y VIX en 17.73 (vix) apoyan risk-on. Mercado laboral fuerte (jobless_claims 187k, sahm_rule 0.07) sostiene ganancias corporativas. Recorto convicción porque el dato de SPY (738.18, spy) tiene 3 días de antigüedad (es_fresco=false) y porque yields reales altos (tips_yield_10y 2.43%) limitan expansión de múltiplos.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "Semana de earnings de hyperscalers según Yahoo Finance actúa como catalizador binario. VIX en 17.73 (vix) es moderado. El dato de QQQ (691.96, qqq) es_fresco=false (3 días). Yields reales elevados (tips_yield_10y 2.43%) presionan valuaciones de duración larga tech; convicción baja por incertidumbre de resultados.",
+      "dato_clave": "vix"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "yield_10y en 4.71% (yield_10y) y yield_10y_mkt en 4.65% (yield_10y_mkt) con tips_yield_10y en 2.43% (tips_yield_10y) muy alto reflejan yields reales restrictivos. michigan_inflation_exp en 4.8% (michigan_inflation_exp) presiona el extremo largo. Con crecimiento fuerte y sin señal recesiva (sahm_rule 0.07), pocos catalizadores para rally de bonos largos. TLT (83.17, tlt) es_fresco=false.",
+      "dato_clave": "tips_yield_10y"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 5,
+      "razonamiento": "michigan_inflation_exp en 4.8% (michigan_inflation_exp) y tensiones en Medio Oriente (Yahoo Finance, escalada + $100 oil) dan cobertura. Contrapeso: DXY en 101.39 (dxy) y tips_yield_10y en 2.43% (tips_yield_10y) son vientos en contra por yields reales altos. GLD (371.52, gold) es_fresco=false (3 días). Convicción moderada.",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 101.39 (dxy) con eurusd en 1.1384 (eurusd) refleja dólar en rango medio. usdjpy en 163.69 (usdjpy) está extremadamente alto, sostenido por yields USA elevados (yield_10y 4.71%), lo que mantiene el carry trade activo y apoya al dólar. Sin catalizador claro direccional; convicción insuficiente para tomar lado.",
+      "dato_clave": "usdjpy"
+    }
+  ],
+  "tesis_principal": "El panorama macro es de un GOLDILOCKS con matices inflacionarios. El lado del crecimiento es inequívocamente sólido: jobless_claims en 187k (jobless_claims) es de los niveles más bajos del ciclo, unemployment en 4.2% (unemployment) y sahm_rule en apenas 0.07 (sahm_rule) descartan riesgo recesivo inminente. La liquidez y el apetito de riesgo son plenos: hy_spread comprimido en 2.77% (hy_spread) y VIX en 17.73 (vix) reflejan mercados de crédito y volatilidad tranquilos. La yield_curve positiva en +0.90% (yield_curve) confirma normalización tras la desinversión histórica.",
+  "invalidadores": [
+    "hy_spread rompiendo por encima de ~3.5-4% señalaría deterioro de crédito y quiebre del régimen Goldilocks",
+    "sahm_rule subiendo hacia 0.50 desde el actual 0.07 (sahm_rule) activaría señal de recesión y anularía longs de equity",
+    "breakeven_5y5y y michigan_inflation_exp (hoy 2.28% y 4.8%) acelerando hacia arriba forzarían un giro hawkish y validarían STAGFLATION en lugar de Goldilocks",
+    "usdjpy (163.69) superando niveles de intervención podría gatillar unwind del carry trade y venta abrupta de risk assets globales",
+    "Escalada en Medio Oriente con oil hacia $100 (Yahoo Finance) reavivaría inflación de energía y golpearía la tesis desinflacionaria"
+  ],
+  "alertas": [
+    "michigan_inflation_exp en 4.8% (michigan_inflation_exp) es incómodamente alto y contradice el régimen Goldilocks benigno del cálculo; expectativas de inflación del consumidor desancladas",
+    "usdjpy en 163.69 (usdjpy) está en niveles extremos históricos — riesgo latente de intervención del BoJ o unwind súbito del carry",
+    "tips_yield_10y en 2.43% (tips_yield_10y) representa un yield real restrictivo que puede erosionar valuaciones de equity y oro simultáneamente",
+    "Nuevo Fed chair Kevin Warsh (Washington Post) mantiene comunicación opaca sobre tasas, elevando incertidumbre de política monetaria en semana de reunión FOMC"
+  ],
+  "datos_insuficientes": [
+    "spy (es_fresco=false, 3 días) — limita lectura precisa de equity",
+    "qqq (es_fresco=false, 3 días) — afecta señal tech en semana de earnings",
+    "tlt (es_fresco=false, 3 días) — precio de bonos largos rancio",
+    "gold (es_fresco=false, 3 días) — señal de oro con retraso",
+    "No hay dato de precio de crudo/USO en el JSON pese a titulares sobre $100 oil — convicción insuficiente para señal energética directa"
+  ],
+  "eventos_clave": [
+    "[Yahoo Finance] 4 Big Tech earnings, Fed meeting y $100 oil en la semana más ocupada del trimestre — triple catalizador: earnings de hyperscalers moverán QQQ/SPY, FOMC define trayectoria de yield_10y (4.71%), y escalada geopolítica presiona energía/GLD",
+    "[Washington Post] El nuevo Fed chair Warsh comunica lo mínimo sobre tasas e inflación — eleva incertidumbre en el FOMC de esta semana y amplía primas de riesgo en la curva",
+    "[Yahoo Finance] Modelos de IA chinos, más baratos y abiertos, ganan terreno en EE.UU. — riesgo estructural de compresión de márgenes para tech USA, viento en contra de mediano plazo para QQQ",
+    "[Business Insider] Ola de calor récord en Europa impulsa demanda de AC — presión marginal alcista sobre consumo energético y potencial soporte inflacionario en Q3"
+  ],
+  "confianza_general": 62,
+  "metadata": {
+    "timestamp": "2026-07-27T13:24:58.638828",
+    "datos_usados": 21,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
