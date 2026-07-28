@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-07-28",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 68,
+    "razonamiento": "El mercado laboral se muestra sólido: jobless_claims en 187k (jobless_claims) y unemployment en 4.2% (unemployment), con sahm_rule en apenas 0.07 (sahm_rule), muy lejos del umbral recesivo de 0.50. La yield_curve está positiva y empinándose a +0.88% (yield_curve = 10Y 4.69% menos 3M 3.81%), señal de normalización sin estrés recesivo inmediato. Los credit spreads HY están muy comprimidos en 2.79% (hy_spread) y el VIX en 18.77 (vix) indica apetito de riesgo controlado. Esto valida el régimen GOLDILOCKS. La cautela: breakeven_5y5y en 2.24% (breakeven_5y5y) es moderado, pero michigan_inflation_exp en 4.8% (michigan_inflation_exp) sigue elevado y el tips_yield_10y real en 2.43% (tips_yield_10y) es históricamente alto, lo que resta algo de pureza al escenario goldilocks — hay tasas reales restrictivas."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Régimen goldilocks con hy_spread comprimido en 2.79% (hy_spread) y VIX contenido en 18.77 (vix) respaldan continuidad del riesgo. SPY en 739.09 (spy) con mercado laboral firme (jobless_claims 187k) y sahm_rule en 0.07 sin señal recesiva. Los futuros suben por el pause Iran-EEUU que baja el petróleo, favoreciendo equities.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "QQQ en 682.12 (qqq) se beneficia del régimen goldilocks y baja volatilidad (vix 18.77). Sin embargo, el tips_yield_10y real en 2.43% (tips_yield_10y) es un viento en contra para duración larga tech; convicción moderada por tasas reales restrictivas.",
+      "dato_clave": "tips_yield_10y"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "GLD en 374.63 (gold) con DXY debilitándose a 101.55 (dxy) y expectativas de inflación de consumidores altas en 4.8% (michigan_inflation_exp). La noticia de Investing.com confirma oro subiendo por dólar débil. Sirve de hedge frente a tasas reales elevadas y riesgo geopolítico latente.",
+      "dato_clave": "dxy"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "TLT en 83.75 (tlt) con yield_10y en 4.69% (yield_10y) y tasa real 2.43% (tips_yield_10y). La curva empinándose (+0.88%, yield_curve) sugiere presión sobre el tramo largo; sin recesión inminente (sahm_rule 0.07), no hay catalizador claro para un rally de bonos largos.",
+      "dato_clave": "yield_curve"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 101.55 (dxy) con EURUSD en 1.1369 (eurusd) mostrando dólar en debilidad relativa. El apetito de riesgo goldilocks resta demanda de refugio. Convicción moderada: el USDJPY en 163.92 (usdjpy) sigue muy alto, sosteniendo carry y fuerza estructural del dólar frente al yen.",
+      "dato_clave": "eurusd"
+    }
+  ],
+  "tesis_principal": "El régimen es claramente GOLDILOCKS: crecimiento estable con inflación controlada. El mercado laboral está robusto con jobless_claims en 187k (jobless_claims) y unemployment en 4.2% (unemployment), mientras el sahm_rule en 0.07 (sahm_rule) descarta señal recesiva. La yield_curve positiva de +0.88% (yield_curve), derivada de yield_10y 4.69% (yield_10y) y yield_3m 3.81% (yield_3m), refleja normalización monetaria sin inversión de curva. Los credit spreads HY comprimidos a 2.79% (hy_spread) y el VIX en 18.77 (vix) confirman condiciones financieras acomodaticias y apetito por riesgo. Esto favorece equities: SPY en 739.09 (spy) y QQQ en 682.12 (qqq).\n\nEl matiz clave es el frente inflacionario/tasas reales. El breakeven_5y5y de 2.24% (breakeven_5y5y) está anclado cerca del objetivo, pero michigan_inflation_exp en 4.8% (michigan_inflation_exp) evidencia expectativas de consumidores desancladas al alza, y el tips_yield_10y en 2.43% (tips_yield_10y) marca tasas reales restrictivas que limitan el upside de la duración larga (TLT en 83.75). El pce_core en 130.082 (pce_core) y cpi en 332.568 (cpi) requieren monitoreo de su tasa de variación intermensual, no del nivel.\n\nEn divisas, el USDJPY en 163.92 (usdjpy/usdjpy_mkt) permanece extremadamente elevado, sosteniendo el carry trade global — un riesgo latente si el BoJ o intervención lo revierte abruptamente. El DXY se debilita a 101.55 (dxy) con EURUSD en 1.1369 (eurusd), favoreciendo oro (gold 374.63) y emergentes: usdmxn 17.48 (usdmxn), usdbrl 5.11 (usdbrl) y usdcny 6.76 (usdcny) estables. El pause Iran-EEUU alivia la prima geopolítica del petróleo, dando soporte adicional a equities.",
+  "invalidadores": [
+    "Un salto en jobless_claims por encima de ~250k o subida abrupta del sahm_rule hacia 0.50 invalidaría la solidez laboral del régimen goldilocks.",
+    "Un repunte del breakeven_5y5y (2.24%) por encima de 2.5% junto a michigan_inflation_exp acelerando desde 4.8% reavivaría el riesgo de stagflation y presionaría equities.",
+    "Ampliación del hy_spread desde 2.79% hacia 4%+ señalaría deterioro de liquidez y credit stress, invalidando las señales LONG en SPY/QQQ.",
+    "Ruptura del pause Iran-EEUU con re-escalada que dispare el petróleo y el VIX por encima de 25 invalidaría el apetito de riesgo.",
+    "Un desarme desordenado del carry trade vía USDJPY (163.92) — apreciación brusca del yen por acción del BoJ — golpearía activos de riesgo globalmente."
+  ],
+  "alertas": [
+    "USDJPY en 163.92 (usdjpy) en niveles extremos históricos: riesgo de intervención o unwind de carry trade que puede desencadenar volatilidad global repentina.",
+    "michigan_inflation_exp en 4.8% (michigan_inflation_exp) marca expectativas de consumidor muy elevadas frente a un breakeven_5y5y de solo 2.24% — divergencia entre percepción minorista y pricing de mercado.",
+    "tips_yield_10y en 2.43% (tips_yield_10y) implica tasas reales restrictivas que pueden erosionar valuaciones de crecimiento pese al régimen goldilocks.",
+    "WSJ reporta que Singapur (MAS) tensó política monetaria por sorpresa e Indonesia sufrió renuncia de su jefe de banco central por presión sobre el rupiah — señales de estrés cambiario en Asia que podrían contagiar EM."
+  ],
+  "datos_insuficientes": [
+    "No hay dato fresco de tasa de variación intermensual/interanual de cpi (332.568) ni pce_core (130.082) — solo niveles, lo que limita la lectura de tendencia inflacionaria reciente.",
+    "Falta un dato explícito de VIX term structure o volatilidad de FX para calibrar mejor el riesgo del carry trade en USDJPY."
+  ],
+  "eventos_clave": [
+    "[CNBC] Stock futures climb, oil prices fall as U.S. and Iran pause attacks — el alivio geopolítico baja la prima del petróleo y da soporte a equities (SPY 739.09), reduciendo presión inflacionaria vía energía.",
+    "[Investing.com] Gold rises on weaker dollar; traders weigh Middle East pause, Fed outlook — confirma la debilidad del DXY (101.55) como driver del alza del oro (gold 374.63), validando la señal LONG GLD.",
+    "[WSJ] Singapore Central Bank Tightens Again in Surprise Move — señal de que bancos centrales asiáticos endurecen ante presiones cambiarias/inflacionarias, riesgo de contagio EM.",
+    "[Financial Times] Indonesia central bank chief resigns amid rupiah weakness — evidencia estrés en divisas emergentes asiáticas, a monitorear frente a usdcny 6.76.",
+    "[Financial Times] China's industrial profits grow at slowest pace this year — debilidad de demanda china que pesa sobre commodities y sentimiento de crecimiento global, con usdcny en 6.76 estable pero vigilado."
+  ],
+  "confianza_general": 66,
+  "metadata": {
+    "timestamp": "2026-07-28T12:21:01.555235",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-07-28",
+  "regimen_macro_aplicado": "GOLDILOCKS",
+  "contexto_tecnico_global": "Mercado en modo risk-on confirmado: VIX spot 18.77 vs VIX 3M 20.20 en CONTANGO_NORMAL (vix_term_struct), VRP en +229.12 (VRP muy positivo, seguro sobrepagado, bullish para equities segun Bollerslev), y breadth en 70% sobre 200DMA (pct_sobre_200, limite alto de zona normal confirmando amplitud). Sin embargo, options flow muestra divergencia importante: VIX 9D en 18.13 vs VIX 6M en 22.11 (spread +3.98, dentro de rango 0-5 = term structure normal en contango pero con leve tilt de miedo estructural), mientras VIX IV percentile esta en 71 (vix_iv_pct, historicamente alto en su rango anual, fear elevado pese al spot bajo). Esta divergencia sugiere que hay hedging estructural a plazo aunque el spot no lo refleje; interpretacion: en GOLDILOCKS operamos LONG momentum con full sizing pero con conciencia de que la complacencia no es total.",
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 9,
+      "razonamiento": "SPY en 739.09 con precio 6.22% sobre 200DMA de 695.81 (pct_sobre_dma), cruce SOBRE_DMA (zona habilitada Tudor Jones), momentum 12M +17.29% con vol 12.68% y momentum ajustado 1.363 (momentum_ajust > 1.5 casi, senal fuerte segun Barroso & Santa-Clara). Todas las senales alineadas al alza.",
+      "indicador_clave": "momentum_ajust 1.363 + SOBRE_DMA",
+      "interaccion_macro": "GOLDILOCKS habilita momentum full sizing en equities (Cooper 2004: UP market +0.93%/mes), SPY es el vehiculo canonico."
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 8,
+      "razonamiento": "QQQ en 682.12 con 6.20% sobre 200DMA (pct_sobre_dma), SOBRE_DMA, momentum 12M +21.02% con vol 18.96%, momentum ajustado 1.108 (momentum_ajust). Senal fuerte pero vol mayor que SPY reduce conviccion relativa.",
+      "indicador_clave": "momentum_ajust 1.108 + SOBRE_DMA",
+      "interaccion_macro": "GOLDILOCKS favorece growth/tech con momentum, sizing pleno permitido."
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "USO en 124.76 con 25.89% sobre 200DMA (pct_sobre_dma, fuerte sobreextension), SOBRE_DMA, momentum 12M +66.68% con vol 46.43%, momentum ajustado 1.436 (momentum_ajust, el mas alto del universo). Trend intacto pero sobreextension pide horizonte mas corto.",
+      "indicador_clave": "momentum_ajust 1.436",
+      "interaccion_macro": "GOLDILOCKS no es el regimen ideal para commodities (mas propio de reflacion), pero el trend tecnico es demasiado fuerte para ignorar; sizing reducido por mismatch macro."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 101.55 con 2.46% sobre 200DMA (pct_sobre_dma), SOBRE_DMA habilita LONG, pero momentum 12M solo +3.99% con vol 5.70%, momentum ajustado 0.70 (momentum_ajust en rango ambiguo -0.5 a +1.5 segun Barroso). Senal debil.",
+      "indicador_clave": "momentum_ajust 0.70 (zona ambigua)",
+      "interaccion_macro": "GOLDILOCKS clasicamente debilita al dolar (risk-on, capital sale a activos de riesgo); la senal tecnica tibia se anula con el contexto macro."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "GLD en 374.63 con -9.04% BAJO 200DMA de 411.84 (pct_sobre_dma, cruce_dma BAJO_DMA), regla Tudor Jones prohibe LONG. Sin embargo momentum 12M todavia +21.87% con vol 28.09% y momentum ajustado 0.779 (momentum_ajust positivo pero ambiguo). Conflicto entre tendencia larga positiva y ruptura de 200DMA reciente.",
+      "indicador_clave": "cruce BAJO_DMA (regla universal Tudor Jones)",
+      "interaccion_macro": "GOLDILOCKS es historicamente adverso a oro (real rates estables/al alza, sin inflacion, sin stress); la ruptura de 200DMA es coherente con el regimen."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 83.75 con -2.55% BAJO 200DMA de 85.94 (pct_sobre_dma, cruce_dma BAJO_DMA), regla Tudor Jones prohibe LONG. Momentum 12M apenas +1.31% con vol 9.34%, momentum ajustado 0.141 (momentum_ajust ~0, sin senal). No hay tesis SHORT fuerte tampoco.",
+      "indicador_clave": "cruce BAJO_DMA + momentum_ajust 0.141",
+      "interaccion_macro": "GOLDILOCKS es adverso a duration larga (crecimiento sano + rates estables/al alza no favorecen bonos largos); tesis SHORT sesgada pero conviccion limitada por momentum plano."
+    }
+  ],
+  "alertas_tecnicas": [
+    "USO con +25.89% sobre 200DMA (pct_sobre_dma) muestra sobreextension severa; riesgo de mean reversion tactica pese al trend intacto.",
+    "GLD rompio 200DMA a la baja (-9.04%, cruce_dma BAJO_DMA) pese a momentum 12M todavia positivo (+21.87%): divergencia clasica que suele preceder cambios de regimen en el metal.",
+    "Divergencia en options flow: VIX IV percentile en 71 (fear estructural elevado) coexiste con VIX spot 18.77 y VRP muy positivo (+229.12); hay hedging institucional silencioso.",
+    "Spread VIX 9D-6M en +3.98 dentro de contango normal, pero el tilt hacia miedo lejano vale monitoreo semanal.",
+    "Breadth en exactamente 70% (pct_sobre_200) es el limite superior de zona normal; una expansion a >70% confirmaria melt-up, una contraccion seria primer warning."
+  ],
+  "invalidadores_tecnicos": [
+    "SPY o QQQ pierden su 200DMA (cruce_dma BAJO_DMA) -> salir de todos los LONG equity sin excepcion.",
+    "VIX term structure pasa de CONTANGO_NORMAL a BACKWARDATION -> reducir risk-on inmediatamente.",
+    "Breadth (pct_sobre_200) cae bajo 50% -> primera senal de deterioro amplio, revaluar convicciones.",
+    "VRP se vuelve negativo (actualmente +229.12) -> complacencia rompe, bearish para equities segun Bollerslev.",
+    "USO pierde su 200DMA de 99.11 (actualmente 124.76) -> commodity trend roto, cerrar posicion completa."
+  ],
+  "confianza_general": 76,
+  "metadata": {
+    "timestamp": "2026-07-28T12:21:44.505663",
+    "modelo": "claude-opus-4-7",
+    "activos_analizados": 6,
+    "regimen_macro": "GOLDILOCKS"
+  }
+}

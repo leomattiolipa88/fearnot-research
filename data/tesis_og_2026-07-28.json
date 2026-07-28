@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-07-28",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 72,
+    "razonamiento": "Los datos físicos apuntan a tightness real pero con señales mixtas que requieren matices. La curva de futuros muestra backwardation de $7.30 en el spread 6M — eso es una señal física potente: el mercado spot vale significativamente más que el futuro, indicando que los compradores están pagando premium por barril hoy. Esto no es ruido especulativo. El crack spread 3-2-1 en $64.08 está clasificado como MUY_FUERTE, señalando que las refinerías generan margen excepcional por barril procesado — demanda real de productos terminados robusta. Refinery utilization al 96.1% confirma que las refinerías están corriendo near-capacity para satisfacer esa demanda. Sin embargo, hay una contradicción relevante: crude inventories en 411,675 kbbl no es un número que pueda contextualizar sin el 5-year average del EIA (dato que no tengo). A priori parece nivel elevado en términos absolutos. La caída de precios del 5% el lunes 27/07 post-ceasefire US-Iran sugiere que parte del precio tenía embedded un geopolitical risk premium que se está deflando. WTI a $81.47 y Brent a $86.85 siguen siendo precios respetables que implican mercado balanceado-ajustado, no colapso. El USO técnicamente está 25.89% sobre 200DMA con momentum 12M de +66.68% — ese nivel de sobreextensión técnica es una bandera amarilla para nuevas entradas. La confianza en TIGHT_BACKWARDATED está moderada (72) precisamente porque el ceasefire US-Iran introduce un posible relajamiento del geopolitical premium que podría llevar el mercado hacia BALANCED en semanas si la diplomacia avanza."
+  },
+  "regimen_natgas": {
+    "clasificacion": "OVERSUPPLIED",
+    "confianza": 65,
+    "razonamiento": "NATGAS en $2.74 es un precio estructuralmente bajo. Natural gas storage en 3,056 Bcf al 17 de julio — no tengo el 5-year average exacto del EIA para comparar, pero a $2.74 el mercado está comunicando que no hay tightness física. Este precio sugiere storage cómodo. No tengo data de curva de futuros de gas ni spreads de gas específicos en mis inputs. Lo que sí observo: no hay noticias de disrupciones de producción de gas doméstico en el news feed. La noticia sobre el potencial LNG en Newfoundland es un proyecto de largo plazo, irrelevante para el balance spot. La demanda de India (India gas demand growth nota) depende de infraestructura y reforma regulatoria — también largo plazo. En contexto GOLDILOCKS con verano norteamericano, esperaría algo de demand pull por cooling, pero el precio bajo sugiere que la oferta lo está absorbiendo cómodamente. Sin spreads de gas, sin comparación vs 5-year storage average, mantengo confianza moderada en OVERSUPPLIED."
+  },
+  "regimen_lpg": {
+    "clasificacion": "BALANCED",
+    "confianza": 35,
+    "razonamiento": "DATA MUY LIMITADA PARA LPG. Propane inventory USA en 99,776 kbbl al 17 de julio — sin 5-year average no puedo decir si es draw o build vs estacional. No tengo Saudi CP para propano/butano (dato crítico para arbitraje Asia), no tengo FEI Asia prices, no tengo freight rates VLGC. La noticia de tanker explosion en Strait of Hormuz y disrupciones en rutas shipping del Middle East son potencialmente MUY relevantes para LPG dado que Arabia Saudita es el exportador dominante y el Golfo Pérsico es la ruta principal. Sin embargo no puedo cuantificar el impacto sin precios spot y freight data. Clasifico BALANCED por default con confianza muy baja (35) — esta clasificación debe ser tratada como placeholder. El Synthesizer debe ponderar esta señal con mínimo peso."
+  },
+  "tesis_principal": "El contexto físico del mercado de crudo presenta una estructura bullish subyacente (backwardation $7.30, crack spreads en $64.08 MUY_FUERTE, utilización refinerías 96.1%) que colisiona con un evento geopolítico bajista de corto plazo: el ceasefire US-Iran del fin de semana del 26-27 julio causó una caída del 5% en los precios. Esto genera la pregunta central: ¿estamos viendo un deflate de risk premium sobre una base física genuinamente tight, o el mercado estaba sobrecomprado especulativamente y el ceasefire fue el catalizador de corrección? Los datos físicos sugieren lo primero — backwardation real y cracks fuertes no son fenómenos especulativos. Pero la sobreextensión técnica de USO (25.89% sobre 200DMA) indica que parte de la subida desde los mínimos fue momentum/especulativo.\n\nEl régimen macro GOLDILOCKS (68% convicción del fondo) es constructivo para demanda energética: mercado laboral sólido, curva de yields normalizada, spreads crediticios comprimidos implican actividad económica sostenida y consumo de energía estable. Este backdrop respalda los niveles de crack spreads actuales como estructurales, no transitorios.\n\nLa historia geopolítica no está cerrada. La nota de Standard Chartered alertando que el mercado debe 'price two Middle East chokepoints' es relevante: el Strait of Hormuz (tanker explosion por mina naval) y el CPC/Black Sea (ataques de drones a terminales kazajsas). Ambos disruption points se resolvieron parcialmente (CPC retomó operaciones, ceasefire US-Iran), pero las vulnerabilidades estructurales permanecen. El mercado reducirá el risk premium pero no lo eliminará. Net-net: estamos en un mercado tight con geopolitical premium parcialmente deflándose — el setup correcto es LONG con selectividad, priorizando activos con exposición a crack spreads (refiners) sobre exposición pura a precio de crudo dado el riesgo de mayor deflate del premium iraní.",
+  "senales": [
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Exxon tiene exposición integrada: upstream (beneficia de crudo $81+), refining (crack spreads $64 MUY_FUERTE beneficia directamente), LNG (exposición a gas global). En régimen GOLDILOCKS con cracks fuertes, los integrated majors son la manera más conservadora de capturar el upside energético. USO técnicamente sobreextendido pero las equities de energía pueden tener beta más razonable. El setup macro (GOLDILOCKS 68%) es favorable para equities."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Similar al caso XOM pero con menor exposición directa a refining. Chevron tiene exposición al Permian (WTI) y operaciones en Kazakhstan — la resolución de la disruption CPC es constructiva para sus operaciones. Convicción 1 punto menor que XOM por menor exposición a crack spread que es el driver más fuerte actualmente."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Pure-play Permian con alto leverage al precio del WTI. En backwardation, los productores eficientes de shale ganan — pueden vender spot a premium. Régimen GOLDILOCKS respalda demanda. El leverage al precio de crudo es doble filo si el geopolitical premium continúa deflándose. Convicción 6."
+    },
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Valero es el activo más directamente posicionado para capturar un crack spread de $64.08 MUY_FUERTE. Como refiner puro, su economics son: comprar crudo, vender productos. Crack alto + utilización 96.1% = márgenes excepcionales Q3 2026. En régimen GOLDILOCKS con driving season activo y empleo sólido (jobless claims 187k), la demanda de gasolina y destilados no colapsa. El ceasefire US-Iran baja el precio del crudo (input cost) sin necesariamente bajar el precio de gasolina al mismo ritmo — eso puede EXPANDIR el crack spread temporalmente. Este es el setup más limpio. Convicción 8."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "EOG es uno de los productores de shale más eficientes del mundo con break-even bajo. Backwardation de $7.30 favorece a productores que pueden monetizar producción hoy a precios spot elevados vs entregar a futuro más barato. Régimen GOLDILOCKS respalda. Convicción 6 — sin data específica de hedge book de EOG, el leverage al precio de crudo post-ceasefire es un riesgo."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Vista Energy es el proxy de Vaca Muerta (Argentina). Con WTI en $81.47 y crack spreads fuertes, los márgenes de producción en Vaca Muerta son robustos. El peso argentino y el contexto macro local añaden una capa de complejidad que no está en mis inputs, pero el precio del crudo a estos niveles hace que Vaca Muerta sea económicamente muy atractiva. La sobreextensión técnica de USO (25.89% sobre 200DMA) no necesariamente se refleja igual en VIST si tiene su propio driver de valuación relativa. Convicción 7 — sería 8 si tuviera data macroeconómica argentina actualizada."
+    }
+  ],
+  "eventos_clave": [
+    "Ceasefire US-Iran del fin de semana 26-27 julio: caída del 5% en precios del crudo, deflate parcial del geopolitical risk premium. El conflicto había durado ~2 semanas con ataques militares. La pausa es frágil — negociaciones diplomáticas en curso pero sin resolución final.",
+    "Tanker explosion en Strait of Hormuz por mina naval: incluso con ceasefire, la infraestructura física del Hormuz muestra daños reales. Las minas navales no desaparecen con un ceasefire. Riesgo residual de disruption en el chokepoint más crítico del mundo (20% del oil supply global pasa por allí).",
+    "Reanudación del CPC Terminal (Kazakhstan): la terminal principal de exportación de crudo kazajo retomó operaciones tras ataques de drones que cortaron suministros. Alivio temporal de oferta, pero la noticia confirma que la infraestructura de la región es target activo.",
+    "Standard Chartered alerta sobre 'two Middle East chokepoints': análisis institucional señalando que el mercado debe incorporar simultáneamente Hormuz Y las rutas del Black Sea/CPC como variables de riesgo — no son eventos aislados sino parte de un patrón de presión sobre logística energética global.",
+    "India August crude imports en riesgo por disrupciones rusas y Red Sea: India es el segundo mayor importador de crudo del mundo. Si su acceso a crudo ruso barato se ve comprometido (ya sea por drones en puertos del Mar Negro o por sanciones/disruptions), podría competir por crudo de otras fuentes, presionando precios al alza."
+  ],
+  "contradicciones_observadas": "La contradicción más interesante es la siguiente: crack spread en $64.08 MUY_FUERTE + refinery utilization 96.1% indica demanda excepcional de productos refinados y márgenes altísimos para las refinerías. Pero el precio del crudo cayó 5% el lunes post-ceasefire. Si la demanda de productos es tan fuerte (crack spread no miente — es un spread físico real), ¿por qué el crudo cae? La respuesta es que el crudo tenía incorporado un geopolitical risk premium por el conflicto US-Iran que el ceasefire está removiendo, mientras la demanda física de productos (gasolina, destilados) es más inelástica y estructural. Esta divergencia crudo-crack es la oportunidad: si el crudo baja por deflate de premium geopolítico pero los crack spreads se mantienen (o se expanden porque el input cost baja), los refiners como VLO y el ETF CRAK son el trade más limpio — ganas en ambos escenarios. Segunda contradicción: USO técnicamente sobreextendido 25.89% sobre 200DMA (momentum ajustado 1.436 que es el más alto del portfolio técnico del fondo) mientras el precio acaba de caer 5%. Esto podría representar una corrección saludable hacia la 200DMA o el inicio de una reversión más profunda — sin ver el chart intraday no puedo distinguir. El nivel de sobreextensión previo al ceasefire sugería que el mercado ya había priced in mucho del riesgo geopolítico.",
+  "invalidadores": [
+    "Acuerdo nuclear US-Iran definitivo o levantamiento de sanciones a exportaciones iraníes: Iran tiene capacidad de añadir 1.5-2.0 MMbbl/d al mercado si las sanciones se levantan. Eso pasaría el régimen de TIGHT_BACKWARDATED a BALANCED o incluso OVERSUPPLIED_CONTANGO rápidamente. El ceasefire actual es una pausa, no un acuerdo — pero si la diplomacia avanza hacia un deal real, la señal de SHORT en crudo se vuelve alta convicción.",
+    "OPEC+ decide aumentar producción en la próxima reunión: no tengo data de la agenda de la próxima reunión OPEC+ ni de las posiciones de Arabia Saudita en este contexto. Si Arabia Saudita interpreta el ceasefire como oportunidad para recuperar market share y eleva cuotas, el efecto sobre el precio sería bajista. Adicionalmente, si el Saudi CP de propano para agosto cae significativamente (dato que no tengo), cambia el régimen LPG.",
+    "Deterioro macro: si el régimen GOLDILOCKS (68%) migra hacia STAGFLATION o RECESION (por ejemplo, si los próximos jobless claims suben abruptamente o si el yield curve se invierte nuevamente), la demanda energética colapsa y los crack spreads se comprimen. En ese escenario, todos los LONGs de energía son inválidos independientemente de la dinámica física actual."
+  ],
+  "data_gaps": "Datos críticos ausentes que limitaron la calidad del análisis: (1) Comparación de todos los inventarios EIA vs 5-year seasonal average — sin este contexto, los números absolutos de crude (411,675 kbbl), gasoline (211,294 kbbl), distillate (109,570 kbbl) y propane (99,776 kbbl) no me dicen si estamos en draw o build vs estacional. Es el dato más importante que me falta. (2) Saudi CP para propano y butano agosto 2026 — esencial para determinar el régimen LPG y los flujos de arbitraje Asia. (3) FEI Asia (Far East Index) para LPG — sin este precio no puedo calcular el arbitraje Arabia Saudita → Asia que es el driver principal del mercado global de LPG. (4) VLGC freight rates — el costo de flete impacta directamente la economics del arbitraje LPG. (5) Curva de futuros de Natural Gas (spreads calendar para gas) — solo tengo el precio spot. Sin la forma de la curva no puedo confirmar si el gas está en contango (implica storage fácilmente disponible = oversupplied) o en backwardation. (6) Hedge books y production guidance de las equities energéticas (XOM, CVX, OXY, EOG, VIST) — sin saber qué porcentaje de su producción está hedgeado a qué precio, el leverage al precio spot varía significativamente. (7) Posiciones especulativas en futuros (CFTC COT data) — para entender si la caída post-ceasefire fue una liquidación de longs especulativos (que podría haber terminado) o el inicio de una rotación más profunda.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'GASOLINA'",
+    "Senal 4: activo invalido 'HEATING_OIL'",
+    "Senal 5: activo invalido 'NATGAS'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'CRAK'"
+  ],
+  "metadata": {
+    "timestamp": "2026-07-28T12:23:47.697009",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
