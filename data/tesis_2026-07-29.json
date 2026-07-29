@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-07-29",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 68,
+    "razonamiento": "El mercado laboral está firme: jobless_claims en 187000 (jobless_claims) y unemployment en 4.2% (unemployment), con sahm_rule en apenas 0.07 (sahm_rule), muy lejos del umbral recesivo de 0.50. La curva 10Y-3M está positiva en +0.83% (yield_curve), señal de normalización sin estrés. Los credit spreads HY en 2.81% (hy_spread) son estrechos, y el VIX en 18.46 (vix) es benigno. Esto valida el régimen GOLDILOCKS. Sin embargo, hay tensión inflacionaria latente: michigan_inflation_exp en 4.8% (michigan_inflation_exp) es elevado y breakeven_5y5y en 2.24% (breakeven_5y5y), con yields reales altos (tips_yield_10y 2.44%). El yield_10y en 4.65% (yield_10y) presiona valuaciones, por lo que la confianza no es máxima."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Régimen GOLDILOCKS con spreads HY estrechos (hy_spread 2.81%) y VIX contenido (vix 18.46) favorecen renta variable. SPY en 740.86 (spy). El riesgo es el yield_10y en 4.65% (yield_10y) que limita la expansión de múltiplos.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "QQQ en 675.49 (qqq) se beneficia del entorno de baja volatilidad (vix 18.46), pero es el activo más sensible a duración y el yield real alto (tips_yield_10y 2.44%) es un viento en contra directo. Convicción moderada.",
+      "dato_clave": "tips_yield_10y"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 84.24 (tlt) con yield_10y en 4.65% (yield_10y) y curva positiva (yield_curve +0.83%). Expectativas de inflación pegajosas (michigan_inflation_exp 4.8%) y yields reales altos sostienen presión al alza en tasas largas, presionando el precio del bono.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 5,
+      "razonamiento": "GLD en 369.37 (gold) actúa como cobertura ante expectativas inflacionarias elevadas (michigan_inflation_exp 4.8%). El obstáculo es el yield real alto (tips_yield_10y 2.44%) que encarece mantener oro. Señal mixta.",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "DXY en 101.49 (dxy) con eurusd en 1.1382 (eurusd). El diferencial de tasas favorece al USD (yield_10y 4.65%) pero el régimen risk-on limita la demanda de refugio. Convicción insuficiente para dirección clara.",
+      "dato_clave": "dxy"
+    }
+  ],
+  "tesis_principal": "El panorama macro es consistente con un régimen GOLDILOCKS: crecimiento sostenido sin señales de recesión ni de aceleración inflacionaria descontrolada. El mercado laboral se mantiene sólido con jobless_claims en 187000 (jobless_claims), unemployment en 4.2% (unemployment) y sahm_rule en 0.07 (sahm_rule), muy por debajo del disparador recesivo. Los indicadores de estrés financiero son benignos: hy_spread en 2.81% (hy_spread) y vix en 18.46 (vix), lo que respalda un sesgo pro-riesgo en renta variable, con SPY en 740.86 (spy) y QQQ en 675.49 (qqq).\n\nEl principal matiz es la parte de tasas. El yield_10y está en 4.65% (yield_10y) —confirmado por yield_10y_mkt en 4.60% (yield_10y_mkt)— con la curva 10Y-3M positiva en +0.83% (yield_curve) tras el des-invertido, señal de normalización. El yield_3m en 3.82% (yield_3m) sugiere que el mercado ya descuenta un ciclo de recortes moderado. Sin embargo, tips_yield_10y en 2.44% (tips_yield_10y) implica yields reales elevados que presionan a los bonos largos (tlt en 84.24) y limitan la expansión de múltiplos en tech. Las expectativas de inflación siguen firmes: michigan_inflation_exp en 4.8% (michigan_inflation_exp) y breakeven_5y5y en 2.24% (breakeven_5y5y), lo que justifica cautela en cualquier apuesta larga en duración.\n\nEn divisas, el DXY en 101.49 (dxy) y eurusd en 1.1382 (eurusd) reflejan un dólar equilibrado. El usdjpy en 163.77 (usdjpy), confirmado por usdjpy_mkt en 163.74 (usdjpy_mkt), indica que el carry trade sigue muy vivo con el yen extremadamente débil; esto es un factor de riesgo latente porque una reversión abrupta del yen podría desencadenar deleveraging global. El terremoto de magnitud 7.1 en Kyushu (AP News) es un riesgo de cola para Japón que vigilar. En EM, usdbrl en 5.12 (usdbrl), usdmxn en 17.44 (usdmxn) y usdcny en 6.76 (usdcny) muestran monedas estables, coherente con el entorno risk-on.",
+  "invalidadores": [
+    "Un salto del yield_10y (actual 4.65%) por encima de ~5% desataría re-pricing de acciones y confirmaría el 'bond market danger zone' citado por Yahoo Finance, invalidando los longs en SPY/QQQ.",
+    "Reversión abrupta del usdjpy (163.77) hacia niveles de intervención del BoJ desarmaría el carry trade global y generaría deleveraging, invalidando el sesgo risk-on.",
+    "Un repunte del hy_spread (2.81%) por encima de 4% o del vix (18.46) por encima de 25 señalaría deterioro de liquidez y régimen de riesgo.",
+    "Una lectura de sahm_rule (0.07) o jobless_claims (187000) que se deteriore fuerte cambiaría el régimen a DESACELERACIÓN.",
+    "Un rebrote de inflación que empuje michigan_inflation_exp (4.8%) y breakeven_5y5y (2.24%) al alza forzaría postura hawkish de la Fed y viraría a STAGFLATION."
+  ],
+  "alertas": [
+    "michigan_inflation_exp en 4.8% (michigan_inflation_exp) es anómalamente alto para un régimen goldilocks — divergencia con breakeven_5y5y de 2.24% que sugiere que el mercado no cree esas expectativas de encuesta.",
+    "usdjpy en 163.77 (usdjpy) refleja debilidad extrema del yen; riesgo de intervención y de desarme de carry trade.",
+    "Terremoto 7.1 en Kyushu, Japón (AP News) — riesgo de cola geofísico para activos japoneses y potencial catalizador de volatilidad en yen.",
+    "Yields reales altos (tips_yield_10y 2.44%) coexistiendo con equities en máximos: valuaciones tensionadas que se romperían ante cualquier sorpresa hawkish."
+  ],
+  "datos_insuficientes": [
+    "Todos los 25 indicadores están marcados es_fresco=true y es_valido=true; no hay datos rancios que limiten el análisis.",
+    "No se dispone de datos de PMI/ISM ni de nóminas no agrícolas frescas para confirmar dinámica de crecimiento en tiempo real."
+  ],
+  "eventos_clave": [
+    "[AP News] Terremoto magnitud 7.1 en Kyushu, Japón — riesgo de cola para activos japoneses; combinado con usdjpy en 163.77 puede añadir volatilidad al yen.",
+    "[Yahoo Finance] 'The bond market's danger zone is becoming the new normal' — coherente con yield_10y en 4.65%; confirma presión de tasas sobre equities y refuerza el short en TLT.",
+    "[CNBC] Coca-Cola supera estimaciones y sube su guía anual (+19% YTD) — señal de demanda de consumo resiliente, consistente con régimen goldilocks.",
+    "[CNBC] UPS bate expectativas y sube guía — proxy de actividad logística saludable, respalda el crecimiento sin recesión.",
+    "[CNBC] Boeing reporta pérdida mayor a lo esperado por costos del Air Force One — impacto idiosincrático, no macro; poco efecto sistémico."
+  ],
+  "confianza_general": 64,
+  "metadata": {
+    "timestamp": "2026-07-29T12:28:34.340388",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
