@@ -19,6 +19,8 @@ import anthropic
 from datetime import datetime, date, timedelta
 from pathlib import Path
 
+from config import MODEL
+
 DB_PATH = "data/macro.db"
 
 
@@ -416,7 +418,7 @@ def correr_synthesizer(max_reintentos: int = 2) -> dict:
             print(f"      Reintento {intento}/{max_reintentos}...")
         try:
             response = client.messages.create(
-                model="claude-opus-4-7",
+                model=MODEL,
                 max_tokens=8000,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}]
@@ -448,7 +450,7 @@ def correr_synthesizer(max_reintentos: int = 2) -> dict:
 
     output["metadata"] = {
         "timestamp": datetime.now().isoformat(),
-        "modelo": "claude-opus-4-7",
+        "modelo": MODEL,
         "agentes_input": ["macro", "technical", "og_energy"],
     }
 

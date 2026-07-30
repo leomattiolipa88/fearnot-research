@@ -12,6 +12,7 @@ import os
 import anthropic
 from datetime import datetime
 from pathlib import Path
+from config import MODEL
 from technical_collector import obtener_snapshot_tecnico
 
 
@@ -284,7 +285,7 @@ def correr_agente_tecnico(db_path: str = "data/macro.db",
             print(f"      Reintento {intento}/{max_reintentos}...")
         try:
             response = client.messages.create(
-                model="claude-opus-4-7",
+                model=MODEL,
                 max_tokens=3000,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}]
@@ -325,7 +326,7 @@ def correr_agente_tecnico(db_path: str = "data/macro.db",
 
     tesis["metadata"] = {
         "timestamp": datetime.now().isoformat(),
-        "modelo": "claude-opus-4-7",
+        "modelo": MODEL,
         "activos_analizados": len(snapshot["activos"]),
         "regimen_macro": regimen_macro,
     }

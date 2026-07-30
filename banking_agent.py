@@ -20,6 +20,8 @@ from pathlib import Path
 
 import anthropic
 
+from config import MODEL
+
 DB_PATH = "data/macro.db"
 
 
@@ -267,7 +269,7 @@ def correr_banking_agent(fiscal_year: int = 2024, max_reintentos: int = 2) -> di
     for intento in range(max_reintentos + 1):
         try:
             response = client.messages.create(
-                model="claude-opus-4-8",
+                model=MODEL,
                 max_tokens=4000,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}],

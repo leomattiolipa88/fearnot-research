@@ -16,6 +16,7 @@ import sqlite3
 import anthropic
 from datetime import datetime, date, timedelta
 from pathlib import Path
+from config import MODEL
 from tracker import registrar_senales
 
 DB_PATH = "data/macro.db"
@@ -363,7 +364,7 @@ def correr_og_agent(max_reintentos: int = 2) -> dict:
             print(f"      Reintento {intento}/{max_reintentos}...")
         try:
             response = client.messages.create(
-                model="claude-sonnet-4-6",
+                model=MODEL,
                 max_tokens=8000,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}]
@@ -404,7 +405,7 @@ def correr_og_agent(max_reintentos: int = 2) -> dict:
 
     output["metadata"] = {
         "timestamp": datetime.now().isoformat(),
-        "modelo": "claude-sonnet-4-6",
+        "modelo": MODEL,
     }
 
     return output

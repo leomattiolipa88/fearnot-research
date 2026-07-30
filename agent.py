@@ -9,6 +9,7 @@ import os
 import anthropic
 from datetime import datetime
 from collector import obtener_snapshot
+from config import MODEL
 from news_collector import obtener_contexto_noticias
 from tracker import registrar_senales, init_tracker
 
@@ -236,7 +237,7 @@ def correr_agente(db_path: str = "data/macro.db",
 
         try:
             response = client.messages.create(
-                model="claude-opus-4-8",
+                model=MODEL,
                 max_tokens=8192,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}]
