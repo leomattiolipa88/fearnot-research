@@ -1,0 +1,86 @@
+{
+  "fecha": "2026-07-30",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 88,
+    "razonamiento": "Multiples señales fisicas convergentes apuntan a tightness real. WTI calendar spread 6M en +8.86 USD en backwardation es señal fisica contundente: el mercado paga premium por barril hoy versus futuro, lo que refleja demanda spot que excede oferta disponible inmediata. Inventarios crudos EIA al 24-Jul en 404,508 Mbbls - no tengo el 5-year average exacto para contextualizar el deficit, pero la magnitud del backwardation sugiere que estan below comfortable levels. Utilizacion de refinerias al 97.2% es excepcionalmente alta - las refinerias estadounidenses estan corriendo a plena capacidad, absorbiendo crudo agresivamente. Brent en 89.74 y WTI en 83.66, spread Brent-WTI de ~6 USD, amplio pero consistente con logistica y calidad diferencial en entorno tensionado. El contexto geopolitico es el factor de riesgo primario: Hormuz bajo presion activa (Iran propone arreglo parcial con mayor control sobre transito), ataque de drones reportado en Abqaiq (el hub mas critico de Arabia Saudita), y trafico en Bab el-Mandeb aun recuperandose aunque con señales de mejora. La combinacion de backwardation fuerte + utilizacion refinerias record + disrupciones de oferta activas = regimen TIGHT inequivoco. Unico matiz: inventarios crudos absolutos de 404M bbl no son criticos en terminos absolutos historicos, lo que modera la confianza de 100 a 88."
+  },
+  "regimen_natgas": {
+    "clasificacion": "OVERSUPPLIED",
+    "confianza": 72,
+    "razonamiento": "NATGAS spot en 2.706 USD/MMBtu es nivel estructuralmente bajo. Storage de gas natural al 17-Jul en 3,056 Bcf - sin el dato exacto del 5-year average no puedo calcular el surplus/deficit preciso, pero el precio spot en 2.70 USD en pleno verano (pico de demanda cooling) sugiere que el mercado no esta experimentando tightness real. En GOLDILOCKS con crecimiento estable, la demanda industrial y residencial deberia ser solida, pero el precio no confirma tightness. La noticia de Russia enviando el primer LNG carrier convencional a Arctic LNG 2 (proyecto sancionado) sugiere que Moscu sigue buscando mantener flujos de gas incluso bajo presion. UAE presiona exportaciones LNG desde Golfo Persico a pesar de tensiones en Hormuz, indicando que el mercado global de LNG no esta en panico de suministro. Sin datos de spread prompt/deferred para natgas no puedo confirmar estructura de curva, pero el precio bajo en verano apunta a OVERSUPPLIED o a lo sumo BALANCED. Clasifico OVERSUPPLIED con confianza 72 reconociendo que sin 5-year storage comparison el diagnostico tiene incertidumbre."
+  },
+  "regimen_lpg": {
+    "clasificacion": "BALANCED",
+    "confianza": 40,
+    "razonamiento": "DATA LIMITADA - clasificacion con baja confianza. Propano inventory EIA al 24-Jul en 102,286 Mbbls. No tengo Saudi CP (Contract Price) para propano/butano, no tengo freight rates VLGC (Very Large Gas Carrier) para rutas Middle East-Asia, no tengo FEI Asia pricing, y no tengo estructura de curva de futuros LPG. Lo que si se: el entorno Hormuz tensionado (Iran controlando parcialmente transito, ataque Abqaiq) es critico para LPG ya que Arabia Saudita es el exportador dominante via Ras Tanura/Jubail, y cualquier restriccion de transito por Hormuz impacta directamente los flujos hacia Asia (mayor consumidor de LPG). Sin embargo, UAE sigue exportando LNG (y presumiblemente NGL/LPG) a pesar de las tensiones, lo que sugiere que los flujos no estan completamente cortados. Inventarios propano US de 102K bbl no son signal de crisis. Clasifico BALANCED por default dado que no tengo suficiente data LPG especifica para justificar TIGHT o OVERSUPPLIED con conviccion."
+  },
+  "tesis_principal": "El mercado de petroleo crudo esta en el regimen fisico mas tenso que he visto en este ciclo, con tres factores convergiendo simultaneamente: (1) backwardation calendar 6M de casi 9 USD en WTI senalando tightness fisica real en el spot, (2) utilizacion de refinerias en 97.2% - practicamente en capacidad maxima operacional - absorbiendo crudo a maxima velocidad posible, y (3) un cluster de riesgos geopoliticos activos en las arterias criticas del suministro global. El ataque de drones en Abqaiq - el mayor hub de procesamiento de crudo del planeta, responsable de ~7% del suministro mundial - es el evento de mayor severidad potencial si se confirma dano material. La situacion en Hormuz es igualmente critica: Iran propone arreglos de transito que le darian mayor control sobre el estrecho, mientras UAE y otros actores presionan para mantener flujos. El trafico en Bab el-Mandeb en recuperacion parcial no elimina el riesgo. En el contexto macro GOLDILOCKS del fondo (crecimiento estable, mercado laboral solido, sin recesion inminente), la demanda energetica deberia sostenerse. USO tecnicamente en LONG con +29.8% sobre su 200DMA y momentum ajustado fuerte valida que el trend de crudo esta intacto. El unico elemento que modera el bullishness es el 'Great Chinese Oil Mystery' - China aparentemente absorbiendo volumen masivo sin que el mercado entienda completamente los flujos, lo que introduce incertidumbre en el balance demanda global. Las sanciones rusas avanzando en el Senado americano (86-12) con amenaza de tariffs a compradores de crudo ruso (India, China) son una cuña adicional de oferta que podria reorientar flujos globalmente y presionar precios al alza si efectivamente reducen compras rusas.",
+  "senales": [
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "ExxonMobil como integrated major se beneficia de: (1) precios crudo altos, (2) crack spreads record que mejoran margen de refining, (3) portafolio diversificado que incluye upstream, downstream y chemicals. En regimen GOLDILOCKS con petroleo TIGHT, los integrated majors generan cash flow excepcional. Sin datos especificos de precio actual XOM para verificar posicion tecnica - el razonamiento es fundamentalmente sectorial."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Similar logica a XOM. CVX tiene exposicion significativa a produccion Permian (WTI-linked) y operaciones internacionales incluyendo Kazakhstan/Tengiz (exporta por BTC pipeline, no Hormuz-dependiente, lo que reduce su riesgo geopolitico directo). Beneficiario de precios altos y crack spreads elevados. Conviccion 6 por falta de datos tecnicos especificos del precio de la accion."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Occidental es pure-play E&P con alta sensibilidad al precio del crudo. En WTI a 83.66 con backwardation fuerte, OXY genera FCF elevado. Alta leverage operacional al precio del crudo hace que sea el mas sensible al upside entre los nombres que seguimos. Riesgo: si hay compression del precio (OPEC suministro, China misterio), OXY sufre desproporcionadamente. Sin datos tecnicos del precio de la accion para confirmar setup."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "EOG Resources como E&P premium en Permian y Eagle Ford. Misma logica de WTI alto y backwardation sosteniendo FCF. EOG tiene balance sheet solido y disciplina de capital que le permite outperform en ciclos de precio alto. Conviccion 6 por ausencia de datos tecnicos de la accion."
+    },
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Valero es el nombre con mayor conviccion en el espacio equity. El crack spread 321 en 62.93 USD MUY_FUERTE es directamente el margen de Valero. Con refinerias corriendo al 97.2% en el sector, la capacidad de procesar mas crudo es limitada, lo que sostiene los spreads. VLO como mayor refinador independiente de EE.UU. captura directamente el diferencial. La tesis es fisica: crudo disponible + demanda productos elevada + capacidad limitada = margen refinero record. Modera: si crack spread comprime desde niveles extremos podria haber mean reversion."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Vista Energy (Vaca Muerta, Argentina) como E&P Latin America con exposicion a Brent-linked pricing. En regimen de petroleo TIGHT y Brent en 89.74, VIST genera FCF elevado. Su produccion es Vaca Muerta shale, alejada de disrupciones Medio Oriente, lo que la hace un 'safe harbor' dentro del espacio E&P en terminos de supply risk. Regimen macro GOLDILOCKS favorece apetito por riesgo en mercados emergentes. Conviccion 6 por falta de datos especificos de la accion y riesgo macro Argentina."
+    }
+  ],
+  "eventos_clave": [
+    "ATAQUE DE DRONES EN ABQAIQ (Arabia Saudita): El hub de procesamiento de crudo mas grande del mundo reporta daños con imagenes satelitales mostrando humo y instalaciones quemadas. Si el dano es material y prolongado, podria sacar del mercado capacidad de procesamiento critica para el suministro global. Este es el evento de mayor severidad potencial de la semana.",
+    "PROPUESTA IRAN SOBRE HORMUZ: Iran propone a Oman arreglo temporal para reapertura del estrecho bajo el cual controlaria una de las direcciones de trafico. Esto implica que Hormuz sigue parcialmente restringido y que Iran busca institucionalizar su control. El API se opone a peajes/tasas de transito. La resolucion de este issue es el determinante principal del riesgo de suministro global.",
+    "SENADO USA AVANZA SANCIONES RUSSIA (86-12): Voto bipartidista abrumador para legislacion que incluye tariffs a compradores de crudo ruso (India, China). Si se convierte en ley, podria forzar reorientacion masiva de flujos de crudo ruso y presionar precios al alza globalmente al reducir oferta efectivamente disponible en mercados transparentes.",
+    "THE GREAT CHINESE OIL MYSTERY: China aparentemente absorbiendo volumen masivo de crudo de fuentes no claras, 'avertiendo una crisis energetica global'. Este es el wildcard del balance: si China esta comprando agresivamente en shadow markets (Iran, Russia), podria estar creando demanda latente que sostiene precios, o podria estar construyendo stocks estrategicos que eventualmente amortiguen shocks de oferta.",
+    "UAE MANTIENE EXPORTACIONES LNG VIA GOLFO PERSICO: ADNOC continua exportaciones a pesar de tensiones en Hormuz. Señal de que los flujos energeticos del Golfo no estan completamente interrumpidos, lo que modera el tail risk extremo. Simulteneamente, Russia intenta primer envio LNG convencional a Arctic LNG 2 (proyecto sancionado), señalando que Moscu sigue buscando monetizar sus reservas."
+  ],
+  "contradicciones_observadas": "La contradiccion mas interesante es el divergente comportamiento entre Oil y NatGas. En regimen GOLDILOCKS con crecimiento solido, ambos deberian estar bajo demanda sostenida. Sin embargo, el crack 321 en 62.93 MUY_FUERTE y la backwardation de 8.86 en WTI señalan tightness severa en crudo/productos, mientras NatGas en 2.706 USD sugiere que el mercado de gas esta bien suministrado o incluso con exceso. Esto podria indicar que el tightness en crudo es mas de naturaleza geopolitica/supply-side que de demanda genuina, o bien que hay sustitusion de gas por liquidos en ciertos mercados. Segunda contradiccion: refinerias corriendo al 97.2% (maximo operacional) deberia eventualmente crear bottleneck de demanda de crudo que soporte el precio, pero si los inventarios crudos de 404M bbl son suficientes para ese ritmo de procesamiento, la signal de tightness podria ser temporal. Tercera contradiccion: China 'avertiendo una crisis global' mientras los precios en Brent estan en 89.74 y no en 100+. Si China esta realmente siendo el comprador marginal que equilibra el mercado, podria estar acumulando stocks a precios actuales que eventualmente resulten muy baratos si Hormuz se cierra completamente.",
+  "invalidadores": [
+    "RESOLUCION DIPLOMATICA RAPIDA DE HORMUZ: Si Iran y los paises del Golfo alcanzan un acuerdo formal de libre transito en las proximas 48-72hs, la prima de riesgo de suministro colapsa y los precios podrian corregir 8-12 USD en sesiones. El trafico ya se esta normalizando en Bab el-Mandeb (28 vessels, 4-day high), lo que sugiere que la resolucion diplomatica es posible.",
+    "DANO ABQAIQ NO MATERIAL O REPARADO RAPIDAMENTE: Si Saudi Aramco confirma que el dano al complejo de Abqaiq es menor y la capacidad de procesamiento no esta afectada significativamente, desaparece el mayor risk premium de suministro. En 2019 Abqaiq fue atacado y se recupero en semanas.",
+    "DEBILITAMIENTO MACRO SUBITO: Si el proximo dato de jobless claims o un leading indicator macro clave señala deterioro rapido del crecimiento, la demanda energetica anticipada colapsa y el regimen GOLDILOCKS del fondo se degrada. Con Sahm Rule en 0.07 actualmente esto no es el caso base, pero un salto a 0.3-0.4 cambiaria el cuadro completamente.",
+    "OPEC+ DECISION DE AUMENTAR PRODUCCION ADICIONAL: Si Arabia Saudita u otro productor key decide compensar la tightness con aumentos de produccion por encima de los incrementos ya acordados, la backwardation puede comprimir rapidamente. No tengo datos de la ultima decision OPEC+ y sus compromisos exactos.",
+    "RESOLUCION DE LA 'MYSTERY' CHINA: Si China deja de ser el comprador marginal misterioso (por acumulacion de stocks suficiente, por acuerdo diplomatico, o por desaceleracion economica interna), la demanda global spot podria caer materialmente sin que el mercado lo anticipe."
+  ],
+  "data_gaps": "Datos ausentes que limitaron la calidad del analisis: (1) Saudi Aramco Official Selling Prices (OSP) y Saudi CP para LPG - criticos para entender posicionamiento del mayor exportador; (2) VLGC freight rates (rutas Ras Tanura-Chiba, Middle East-Asia) - proxy directo de tightness LPG; (3) FEI Asia LPG pricing - para entender el spread Arabia-Asia que mueve los flujos; (4) 5-year average para todos los inventarios EIA (crudo, gasolina, distilados, propano, storage natgas) - sin este contexto no puedo determinar si los inventarios estan en deficit o surplus relativo historico; (5) Estructura completa de la curva de futuros WTI y Brent (solo tengo spread 6M) - los spreads prompt/1M/3M/6M/12M cuentan una historia mas completa del backwardation; (6) Precios actuales de las acciones (XOM, CVX, OXY, VLO, EOG, VIST, XLE, CRAK) y su posicion relativa a 200DMA - sin esto las señales equity son puramente fundamentales sin confirmacion tecnica; (7) Detalles del dano real en Abqaiq y confirmacion oficial de Saudi Aramco - la noticia viene de RT y reportes de imagenes satelitales sin confirmacion independiente robusta; (8) Decision y compromisos actuales de OPEC+ para produccion en H2 2026; (9) Datos de produccion USA actuales (barrels/dia) para entender el balance domestico; (10) Nat gas spread curva (M+1 vs M+6) para determinar estructura contango/backwardation que complementaria el precio spot.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'GASOLINA'",
+    "Senal 4: activo invalido 'HEATING_OIL'",
+    "Senal 5: activo invalido 'XLE'",
+    "Senal 12: activo invalido 'CRAK'",
+    "Senal 13: activo invalido 'NATGAS'"
+  ],
+  "metadata": {
+    "timestamp": "2026-07-30T12:14:42.631194",
+    "modelo": "claude-sonnet-4-6"
+  }
+}

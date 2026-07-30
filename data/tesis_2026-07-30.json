@@ -1,0 +1,83 @@
+{
+  "fecha": "2026-07-30",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 68,
+    "razonamiento": "El régimen es consistente con GOLDILOCKS: crecimiento estable y sin señales de recesión inminente (sahm_rule en 0.07, muy por debajo del umbral de 0.50; jobless_claims en 187000, nivel históricamente bajo; unemployment en 4.2%). La curva 10Y-3M está positiva en +0.84% (yield_curve), lo que aleja el escenario de recesión inmediata. Los credit spreads high yield están comprimidos en 2.84% (hy_spread), señal de apetito de riesgo saludable, y el VIX en 19.06 (vix) refleja volatilidad moderada, no estrés. El matiz de cautela: TIPS 10Y en 2.41% (tips_yield_10y) implica tasas reales elevadas y el yield_10y en 4.61% pesa sobre duración. La inflación de largo plazo está anclada (breakeven_5y5y en 2.28%), pero michigan_inflation_exp en 4.8% muestra expectativas de corto plazo aún incómodas."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Régimen GOLDILOCKS con hy_spread comprimido en 2.84% y VIX contenido en 19.06 favorece renta variable. SPY en 729.46 se sostiene con jobless_claims bajos (187000) y sahm_rule en 0.07. Convicción moderada por tasas reales altas (tips_yield_10y 2.41%) y VIX no en zona de complacencia total.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "QQQ en 661.73 enfrenta señales cruzadas: el régimen benigno apoya, pero las noticias del sector semiconductores muestran estrés ('El chip crash expone el costo brutal del apalancamiento', Yahoo Finance; SK Hynix falló earnings, Barron's). Tasas reales elevadas (tips_yield_10y 2.41%) presionan valuaciones de duración larga tech. Además Fed decision pendiente (Yahoo Finance) genera incertidumbre binaria.",
+      "dato_clave": "tips_yield_10y"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 82.85 con yield_10y en 4.61% (confirmado por yield_10y_mkt 4.62%) y curva positiva de +0.84% (yield_curve). Tasas reales altas (tips_yield_10y 2.41%) y expectativas inflación corto plazo pegajosas (michigan_inflation_exp 4.8%) limitan el rally de bonos largos. En GOLDILOCKS sin recesión, poca prima de refugio.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "GLD en 371.08 se beneficia de expectativas de inflación de corto plazo elevadas (michigan_inflation_exp 4.8%) y como cobertura ante riesgo geopolítico (posible reescalada con Irán mencionada por Yahoo Finance). El DXY en 100.67 es moderado, no un viento en contra fuerte. Riesgo: tasas reales altas (tips_yield_10y 2.41%) suelen ser adversas al oro.",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 100.67 con EURUSD en 1.148. El diferencial de tasas favorece al USD (yield_10y 4.61%) y el carry via usdjpy en 162.93 sigue muy extendido. Sin catalizador claro de dirección pre-Fed; convicción insuficiente para un sesgo direccional fuerte.",
+      "dato_clave": "dxy"
+    }
+  ],
+  "tesis_principal": "El cuadro macro del 30-07-2026 apunta a un régimen GOLDILOCKS con 25/25 datos frescos y válidos. El mercado laboral no muestra grietas: sahm_rule en 0.07 está muy lejos del umbral recesivo de 0.50, jobless_claims en 187000 es históricamente bajo y unemployment en 4.2% se mantiene contenido. La curva de rendimientos 10Y-3M es positiva en +0.84% (yield_curve), con yield_3m en 3.77% y yield_10y en 4.61%, lo que descarta señal de recesión inminente vía inversión de curva. La liquidez de riesgo está sana: hy_spread comprimido en 2.84% y VIX en 19.06 reflejan apetito de riesgo sin estrés sistémico.\n\nEl frente de inflación es de dos velocidades: el breakeven_5y5y en 2.28% muestra expectativas de largo plazo bien ancladas cerca del target, pero michigan_inflation_exp en 4.8% señala que el consumidor todavía percibe presión de precios en el corto plazo (coherente con la nota de WSJ sobre P&G intentando vender Tide/Bounty a consumidores 'exprimidos por la inflación'). Las tasas reales son el verdadero protagonista: tips_yield_10y en 2.41% es restrictivo, presiona valuaciones de duración larga y explica la debilidad estructural de TLT en 82.85. Esto genera un entorno donde la renta variable puede subir por fundamentos de crecimiento, pero con techo por costo de capital elevado.\n\nEn divisas, el usdjpy en 162.93 confirma un carry trade extremadamente extendido — la principal fuente de riesgo de cola: cualquier movimiento hawkish del BoJ o risk-off abrupto podría gatillar un unwind violento. El DXY en 100.67 es moderado, con EURUSD en 1.148, usdcny en 6.74, usdmxn en 17.39 y usdbrl en 5.10, todos consistentes con un dólar estable y monedas EM sin estrés. El catalizador binario del día es la decisión de la Fed (Yahoo Finance) combinada con earnings de AI y tensión geopolítica con Irán. Posicionamiento: sesgo pro-riesgo moderado (LONG SPY, LONG GLD como cobertura), SHORT TLT por tasas reales altas, y NEUTRAL en QQQ dado el estrés de semiconductores apalancados.",
+  "invalidadores": [
+    "Fed hawkish sorpresivo en la decisión de hoy (Yahoo Finance) que empuje yield_10y por encima de 4.85% invalidaría LONG SPY y reforzaría SHORT TLT como cover.",
+    "Unwind del carry trade JPY: si usdjpy (162.93) rompe bruscamente a la baja hacia 155, gatilla risk-off global y anula todas las señales LONG.",
+    "Expansión de hy_spread por encima de 3.5% desde el actual 2.84% señalaría deterioro de crédito y quiebre del régimen GOLDILOCKS.",
+    "Reescalada militar con Irán (Yahoo Finance) dispararía VIX por encima de 25 desde 19.06 y energía, invalidando el sesgo pro-riesgo pero reforzando LONG GLD.",
+    "Profundización del 'chip crash' apalancado (Yahoo Finance) arrastrando QQQ (661.73) con contagio a SPY invalidaría el LONG en equities."
+  ],
+  "alertas": [
+    "usdjpy en 162.93 refleja un carry trade en niveles extremos — máximo riesgo de cola del portafolio ante cualquier unwind.",
+    "Divergencia inflacionaria: breakeven_5y5y (2.28%) anclado vs michigan_inflation_exp (4.8%) muy elevado — el mercado y el consumidor no coinciden.",
+    "tips_yield_10y en 2.41% son tasas reales restrictivas que pueden erosionar valuaciones aun en régimen benigno.",
+    "Estrés en semiconductores: 'chip crash' y apalancamiento (Yahoo Finance) + miss de SK Hynix (Barron's) — riesgo idiosincrático para QQQ pre-Fed.",
+    "cpi (332.568, junio) y pce_core (130.082, mayo) tienen fechas de publicación más rezagadas que los datos de mercado; el pulso inflacionario reciente podría no estar capturado."
+  ],
+  "datos_insuficientes": [
+    "Todos los indicadores están marcados es_valido=true y es_fresco=true (25/25), pero cpi (publicado 2026-06-01), pce_core (2026-05-01) y michigan_inflation_exp (2026-05-01) reflejan períodos anteriores y pueden no capturar la dinámica inflacionaria más reciente.",
+    "No hay dato directo de PIB/growth en tiempo real; el régimen de crecimiento se infiere de empleo (jobless_claims, sahm_rule, unemployment)."
+  ],
+  "eventos_clave": [
+    "[Yahoo Finance] Dow, S&P 500, Nasdaq futures steady en la cuenta regresiva a la decisión de la Fed — catalizador binario del día que puede reprecificar yield_10y (4.61%) y todo el complejo de riesgo.",
+    "[Yahoo Finance] El chip crash expone el costo brutal del apalancamiento — riesgo de contagio para QQQ (661.73) por venta forzada apalancada en semiconductores.",
+    "[Barron's] Micron sube pese a que SK Hynix falla earnings — divergencia intra-sector semis, refuerza la señal NEUTRAL en QQQ.",
+    "[WSJ] Cómo P&G intenta vender Tide y Bounty a consumidores exprimidos por la inflación — confirma la presión inflacionaria de corto plazo del consumidor (coherente con michigan_inflation_exp 4.8%).",
+    "[Yahoo Finance] Potencial reescalada de la guerra con Irán — riesgo geopolítico que soporta LONG GLD (371.08) y podría elevar VIX desde 19.06."
+  ],
+  "confianza_general": 64,
+  "metadata": {
+    "timestamp": "2026-07-30T12:11:56.986220",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
