@@ -291,3 +291,16 @@ Each debt entry includes:
   consecutive YTDs, aligning periods correctly (watch non-calendar fiscal starts — same trap that
   produced the -30.2 NVDA Q4). Verify each derived quarter against an independent source.
 - **Discovered:** 2026-06-08 (tech vertical build); to be tackled next.
+
+## TD — es_fresco marca como frescos datos vencidos (series mensuales)
+- **Detectado:** 2026-07-31 — por el propio agente macro (Opus 5) en su tesis del día.
+- **Síntoma:** `michigan_inflation_exp` con fecha de publicación 2026-05-01 (3 meses de rezago) llegó al agente con `es_fresco=true`.
+- **Causa probable:** la validación de frescura por `max_dias` no contempla series mensuales con lag de publicación (MICH publica mensual con ~1 mes de rezago).
+- **Impacto:** el agente recibe datos vencidos marcados como confiables. Hoy mitigado porque Opus 5 lo detecta y baja la confianza solo — pero el régimen pre-calculado (que no razona) los consume ciego.
+- **Fix sugerido:** revisar `max_dias` por serie en el collector; incluir `fecha_publicacion` en el snapshot y validar contra la frecuencia esperada de cada serie.
+
+## TD — clasificador de noticias archiva temas ajenos bajo POLÍTICA MONETARIA
+- **Detectado:** 2026-07-31 — por el agente macro (titular de boicot FIFA clasificado como política monetaria).
+- **Causa probable:** clasificación por keywords débiles o categoría default cuando no hay match.
+- **Impacto:** contamina el contexto del prompt con ruido; el agente lo declaró, pero gasta tokens y erosiona la señal.
+- **Fix sugerido:** categoría "OTROS" como default estricto, o clasificar con una llamada barata al modelo en el news_collector.
