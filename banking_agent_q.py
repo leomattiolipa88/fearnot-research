@@ -23,7 +23,7 @@ from pathlib import Path
 
 import anthropic
 
-from config import MODEL
+from config import MODEL, extract_text
 from tendencia import analizar_tendencia
 
 DB_PATH = "data/macro.db"
@@ -311,7 +311,7 @@ def correr_banking_agent_q(anio_actual: int = 2025, quarter_actual: int = 3, max
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}],
             )
-            texto = response.content[0].text.strip()
+            texto = extract_text(response).strip()
             if texto.startswith("```"):
                 texto = texto.split("```")[1]
                 if texto.startswith("json"):

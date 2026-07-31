@@ -19,7 +19,7 @@ import anthropic
 from datetime import datetime, date, timedelta
 from pathlib import Path
 
-from config import MODEL
+from config import MODEL, extract_text
 
 DB_PATH = "data/macro.db"
 
@@ -423,7 +423,7 @@ def correr_synthesizer(max_reintentos: int = 2) -> dict:
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}]
             )
-            texto = response.content[0].text.strip()
+            texto = extract_text(response).strip()
             if texto.startswith("```"):
                 texto = texto.split("```")[1]
                 if texto.startswith("json"):

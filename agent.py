@@ -9,7 +9,7 @@ import os
 import anthropic
 from datetime import datetime
 from collector import obtener_snapshot
-from config import MODEL
+from config import MODEL, extract_text
 from news_collector import obtener_contexto_noticias
 from tracker import registrar_senales, init_tracker
 
@@ -243,7 +243,7 @@ def correr_agente(db_path: str = "data/macro.db",
                 messages=[{"role": "user", "content": prompt}]
             )
 
-            texto = response.content[0].text.strip()
+            texto = extract_text(response).strip()
 
             # Limpiar posibles backticks de markdown
             if texto.startswith("```"):

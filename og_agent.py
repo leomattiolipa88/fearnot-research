@@ -16,7 +16,7 @@ import sqlite3
 import anthropic
 from datetime import datetime, date, timedelta
 from pathlib import Path
-from config import MODEL
+from config import MODEL, extract_text
 from tracker import registrar_senales
 
 DB_PATH = "data/macro.db"
@@ -369,7 +369,7 @@ def correr_og_agent(max_reintentos: int = 2) -> dict:
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}]
             )
-            texto = response.content[0].text.strip()
+            texto = extract_text(response).strip()
             if texto.startswith("```"):
                 texto = texto.split("```")[1]
                 if texto.startswith("json"):

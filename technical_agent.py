@@ -12,7 +12,7 @@ import os
 import anthropic
 from datetime import datetime
 from pathlib import Path
-from config import MODEL
+from config import MODEL, extract_text
 from technical_collector import obtener_snapshot_tecnico
 
 
@@ -290,7 +290,7 @@ def correr_agente_tecnico(db_path: str = "data/macro.db",
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}]
             )
-            texto = response.content[0].text.strip()
+            texto = extract_text(response).strip()
             if texto.startswith("```"):
                 texto = texto.split("```")[1]
                 if texto.startswith("json"):

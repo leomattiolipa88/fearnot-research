@@ -20,7 +20,7 @@ from pathlib import Path
 
 import anthropic
 
-from config import MODEL
+from config import MODEL, extract_text
 
 DB_PATH = "data/macro.db"
 
@@ -274,7 +274,7 @@ def correr_banking_agent(fiscal_year: int = 2024, max_reintentos: int = 2) -> di
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}],
             )
-            texto = response.content[0].text.strip()
+            texto = extract_text(response).strip()
             # Limpiar posibles fences
             if texto.startswith("```"):
                 texto = texto.split("```")[1]
