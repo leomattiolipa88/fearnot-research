@@ -1,0 +1,91 @@
+{
+  "fecha": "2026-07-31",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 62,
+    "razonamiento": "El régimen es de crecimiento sólido con inflación contenida en superficie: jobless_claims en 197k (jobless_claims) refleja un mercado laboral fuerte, unemployment en 4.2% (unemployment) y sahm_rule en 0.07 (sahm_rule) muy lejos del umbral recesivo de 0.50. La yield_curve está positiva en +0.97% (yield_curve) tras des-invertirse. hy_spread en 2.87% (hy_spread) es estrecho, sin estrés crediticio, y vix en 17.08 (vix) señala complacencia moderada. Sin embargo, reduzco la confianza porque las expectativas de inflación NO son benignas: michigan_inflation_exp en 4.8% (michigan_inflation_exp) y tips_yield_10y en 2.41% (tips_yield_10y) son elevados, y el yield_10y en 4.67% (yield_10y) con un bond selloff en curso (WSJ) genera fricción con la etiqueta pura de Goldilocks. Hay tensión hacia el cuadrante reflacionario."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "spy en 741.69 (spy) con vix en 17.08 (vix) y hy_spread estrecho en 2.87% (hy_spread) apoyan el riesgo, pero el bond selloff (yield_10y 4.67%, yield_10y) y la rotación fuera de AI (AP News: 'investors sell AI stocks', Kospi -16% en dos días) introducen riesgo de corrección de corto plazo. Señales mixtas.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "SHORT",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "qqq en 683.55 (qqq) enfrenta presión: Meta cae fuerte por earnings débiles (Barron's), venta global de acciones AI (AP News) y Kospi colapsando. Con yields al alza (yield_10y 4.67%, yield_10y) los múltiplos de tech de alta duración se comprimen. Microsoft/Samsung fuertes matizan, por eso convicción media y no alta.",
+      "dato_clave": "qqq"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "tlt en 82.80 (tlt) con yield_10y en 4.67% (yield_10y) y bond selloff extendiéndose (WSJ). El shock petrolero por la guerra de Irán (CNBC/Shell) presiona breakevens al alza y las expectativas de inflación (michigan_inflation_exp 4.8%, michigan_inflation_exp) limitan cualquier rally de duración.",
+      "dato_clave": "yield_10y"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "gold en 377.16 (gold) se beneficia del entorno reflacionario/geopolítico: guerra de Irán elevando petróleo (CNBC), breakeven_5y5y en 2.3% (breakeven_5y5y) y expectativas Michigan en 4.8% (michigan_inflation_exp). DXY moderado en 100.35 (dxy) no representa gran viento en contra. Hedge natural al riesgo de cola geopolítico.",
+      "dato_clave": "michigan_inflation_exp"
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Aunque no hay dato de precio de crudo en el JSON (convicción limitada por eso), múltiples fuentes tier 1 confirman impulso alcista: Shell 'best quarterly profit in four years as Iran war boosts oil' (CNBC) y 'Oil Ticks Higher' (WSJ). Sesgo largo por prima de riesgo geopolítico.",
+      "dato_clave": "hy_spread"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "dxy en 100.35 (dxy) con eurusd en 1.1489 (eurusd). usdjpy en 160.36 (usdjpy) sigue extremadamente alto, favoreciendo el carry trade pero con riesgo latente de intervención del BoJ. Sin catalizador direccional claro tras el Fed hold.",
+      "dato_clave": "usdjpy"
+    }
+  ],
+  "tesis_principal": "El régimen base es GOLDILOCKS pero con crecientes fricciones reflacionarias. Los fundamentos de crecimiento son robustos: jobless_claims en 197k (jobless_claims), unemployment en 4.2% (unemployment) y sahm_rule en 0.07 (sahm_rule) descartan recesión inminente. El crédito no muestra estrés — hy_spread en 2.87% (hy_spread) — y vix en 17.08 (vix) indica mercados relativamente calmos. La yield_curve se ha normalizado a +0.97% (yield_curve), coherente con un aterrizaje suave más que con recesión.\n\nEl problema es la inflación y las tasas. El yield_10y en 4.67% (yield_10y, confirmado por yield_10y_mkt en 4.663) está en pleno bond selloff (WSJ), tips_yield_10y en 2.41% (tips_yield_10y) es un real yield alto, y las expectativas del consumidor Michigan en 4.8% (michigan_inflation_exp) son incómodas frente al breakeven_5y5y de 2.3% (breakeven_5y5y). El shock geopolítico — guerra de Irán empujando el petróleo (CNBC/Shell), oil ticking higher (WSJ) — amenaza con reavivar la inflación headline, lo cual justifica el hold del Fed y sesga hacia el cuadrante reflacionario.\n\nEn renta variable, la señal es de rotación más que de colapso: Meta cae por earnings débiles (Barron's) y hay venta global de AI stocks con el Kospi -16% en dos días (AP News), mientras Samsung y Microsoft (Azure >$100B) siguen fuertes. Esto favorece cautela en QQQ (683.55, qqq) y neutralidad táctica en SPY (741.69, spy). El mejor risk/reward está en activos reales: GLD (377.16, gold) y crudo como hedge simultáneo de reflación y geopolítica, mientras se penaliza la duración vía TLT (82.80, tlt). En FX, usdjpy en 160.36 (usdjpy) mantiene vivo el carry pero con creciente riesgo de intervención.",
+  "invalidadores": [
+    "Que el petróleo revierta bruscamente (des-escalada de la guerra de Irán) — invalidaría las señales LONG en USO y GLD y aliviaría la presión inflacionaria sobre TLT.",
+    "Que yield_10y (4.67%) rompa por encima de 5.0% de forma desordenada — dejaría de ser Goldilocks para volverse un shock de tasas que golpearía SPY/QQQ severamente.",
+    "Que jobless_claims (197k) o sahm_rule (0.07) se deterioren en próximos releases — cambiaría el régimen hacia DESACELERACION y volaría el short en TLT.",
+    "Que la venta de AI stocks (AP News, Kospi) se transforme en contagio sistémico con hy_spread (2.87%) ampliándose >4% — invalidaría la neutralidad en SPY hacia SHORT.",
+    "Que el BoJ intervenga con usdjpy (160.36) desarmando el carry trade globalmente — introduciría volatilidad de riesgo-off transversal."
+  ],
+  "alertas": [
+    "usdjpy en 160.36 (usdjpy) está en zona históricamente sensible a intervención del BoJ; un movimiento súbito puede desatar unwind de carry global.",
+    "michigan_inflation_exp en 4.8% (michigan_inflation_exp) está muy por encima del breakeven_5y5y de 2.3% (breakeven_5y5y): divergencia importante entre expectativas del consumidor y del mercado.",
+    "Kospi -16% en dos días (AP News) es un movimiento de magnitud recesiva localizada en tech/semis — vigilar contagio a QQQ.",
+    "tips_yield_10y en 2.41% (tips_yield_10y) es un real yield elevado que endurece condiciones financieras pese al Fed hold."
+  ],
+  "datos_insuficientes": [
+    "No hay precio directo de crudo (WTI/Brent) en el JSON: la señal LONG USO se apoya solo en noticias, reduciendo su convicción.",
+    "No hay dato de tasa de fondos federales ni proyección de recortes explícita más allá del hold reportado por CNBC.",
+    "No hay VIX term structure ni put/call ratio para calibrar mejor el timing de la corrección en QQQ."
+  ],
+  "eventos_clave": [
+    "[CNBC] Shell posts best quarterly profit in four years as Iran war boosts oil — confirma shock de oferta energética alcista para USO/GLD y presión inflacionaria sobre TLT.",
+    "[AP News] Oil prices gain and Asian shares mostly lower as investors sell AI stocks; Kospi -16% en dos días — señal de rotación fuera de tech, sesga QQQ a SHORT táctico.",
+    "[Barron's] Meta Stock Falls Sharply on Weak Earnings, recorta capex 2026 — deterioro de narrativa de gasto AI, refuerza cautela en QQQ.",
+    "[CNBC] Fed holds rates steady — coherente con yields altos (yield_10y 4.67%) y con un Fed que prioriza la inflación de expectativas (Michigan 4.8%).",
+    "[Yahoo/CNBC] Microsoft Q4 récord, Azure >$100B; Samsung supera estimaciones por demanda de chips AI — matiz alcista que impide un SHORT de alta convicción en tech."
+  ],
+  "confianza_general": 60,
+  "metadata": {
+    "timestamp": "2026-07-31T12:26:33.314242",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}

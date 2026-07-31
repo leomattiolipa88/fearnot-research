@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-07-31",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 88,
+    "razonamiento": "Múltiples señales físicas convergentes apuntan a tightness estructural. El calendario spread WTI a 6 meses en +$10.28 de backwardation es una señal inequívoca de mercado físico apretado: el mercado paga prima por barril inmediato, lo que refleja demanda spot superior a oferta disponible. BRENT en $90.36 y WTI en $85.31 (spread Brent-WTI de ~$5.05, normal para calidad/logística). El crack 3-2-1 en $60.67 clasificado como MUY_FUERTE indica que la demanda de productos refinados es extraordinariamente robusta, lo que presiona la demanda de crudo upstream. Utilización de refinerías USA al 97.2% — nivel cercano al techo operacional — confirma que el sistema refinador está corriendo a capacidad máxima para satisfacer demanda de productos. Inventarios de crudo en 404,508 Mbbls: no tengo el promedio de 5 años para calibrar si está sobre/bajo benchmark, pero el contexto de backwardation pronunciada sugiere que los inventarios no son suficientemente holgados para aplanar la curva. En el frente geopolítico: US lanzó ataques militares sobre Iran (incluyendo Qeshm Island, estratégica para Hormuz), Corea del Sur considera importar crudo venezolano por disrupciones en el Estrecho de Hormuz, e Iran lanzó ataques 'sorpresa' sobre bases US en Jordania. El Estrecho de Hormuz en juego es el evento de tail risk más severo del mercado energético global — por allí transita ~20% del petróleo mundial. El Senado US avanzó sanciones ampliadas contra Rusia e Iran con voto 86-12. Todos los vectores — físico, técnico, geopolítico — apuntan en la misma dirección: TIGHT_BACKWARDATED con riesgo de escalada."
+  },
+  "regimen_natgas": {
+    "clasificacion": "OVERSUPPLIED",
+    "confianza": 65,
+    "razonamiento": "NATGAS Henry Hub en $2.799/MMBtu es un precio estructuralmente bajo que históricamente señala oferta abundante relativa a demanda doméstica USA. El storage de gas natural en 3,084 Bcf (Lower 48, al 24-Jul): no tengo el promedio de 5 años para comparar con precisión, pero el precio en $2.80 sugiere que el storage está en niveles confortables o por encima de la media estacional. Sin embargo, hay tensiones relevantes: Europa reporta gas storage 'well below target' y escasez de diesel amenazando el invierno — esto crea demanda incremental de LNG exportaciones USA hacia Europa, lo que podría tensar el balance doméstico forward. La contradicción interesante: precio bajo en USA ($2.80) mientras Europa enfrenta crisis de storage. Esto podría resolverse vía LNG exports acelerando, lo que eventualmente tiraría el precio USA al alza. Por ahora clasifico OVERSUPPLIED en el balance doméstico USA, con la salvedad de que la demanda europea podría reequilibrar el mercado en H2 2026. Confianza moderada por ausencia de datos de spread Henry Hub vs TTF europeo y datos de capacidad LNG export en operación."
+  },
+  "regimen_lpg": {
+    "clasificacion": "TIGHT",
+    "confianza": 45,
+    "razonamiento": "DATA LIMITADA — clasificación tentativa. Propano USA en 102,286 Mbbls de inventario: no tengo el promedio de 5 años para saber si esto es déficit, normal o surplus. No tengo Saudi CP (precio de referencia OPEC para LPG), ni freight rates VLGC, ni datos de demanda petchem Asia. Sin embargo, el contexto sugiere TIGHT por varias razones indirectas: (1) el Estrecho de Hormuz disrupto afecta directamente los flujos de LPG del Golfo Pérsico hacia Asia — Arabia Saudita, Kuwait e Iraq son exportadores masivos de LPG por esa ruta; (2) el régimen de oil TIGHT_BACKWARDATED tiende a correlacionar con tightness en LPG dado que son co-productos de refinación y gas processing; (3) inventarios de propano en 102k Mbbls no parecen holgados pero no puedo confirmarlo sin benchmark. Reconozco explícitamente que esta clasificación tiene baja confianza por ausencia de datos críticos: Saudi CP, FEI Asia, VLGC freight, y comparación con 5-year average de propano."
+  },
+  "tesis_principal": "El mercado energético global está atravesando un episodio de tightness físico agudo amplificado por un shock geopolítico de primer orden. El conflicto US-Iran ha escalado a strikes militares directos sobre territorio iraní incluyendo Qeshm Island — posición estratégica adyacente al Estrecho de Hormuz — mientras Iran responde con ataques sobre bases US en Jordania. Esta dinámica pone en riesgo real el transit del Estrecho, que es el cuello de botella más crítico del sistema energético global. Corea del Sur ya está buscando diversificar hacia crudo venezolano en respuesta a disrupciones de shipping, señal de que los flujos comerciales están siendo afectados hoy, no en un escenario hipotético futuro.\n\nEl contexto macro GOLDILOCKS (62% de probabilidad según el fondo) es el entorno más favorable para la demanda energética: crecimiento robusto sin recesión, mercado laboral fuerte (jobless claims 197k, unemployment 4.2%). Esto implica demanda industrial, transporte y petroquímica sostenida. La utilización de refinerías al 97.2% y crack spreads en $60.67 (MUY_FUERTE) confirman que la demanda de productos refinados es real y fuerte, no especulativa. El spread de calendario WTI a 6 meses en +$10.28 de backwardation es el sello de confirmación físico: el mercado no tiene suficiente barril hoy.\n\nLa contradicción más interesante del momento es el NATGAS USA en $2.80 con Europa en crisis de storage de gas. Esta dislocación no puede persistir indefinidamente: los LNG exports USA son el mecanismo de arbitraje, y si Europa entra en invierno con storage bajo objetivo, veremos demanda pull que eventualmente presionará el precio doméstico USA al alza. Para oil y productos refinados, la señal es unívoca: setup fuerte para activos upstream y downstream en un entorno donde el riesgo geopolítico puede remover oferta física de manera súbita.",
+  "senales": [
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Integrated major con exposición upstream (se beneficia de WTI/Brent altos y backwardation) y downstream (refining margins MUY_FUERTE en crack spread $60.67). En entorno GOLDILOCKS con geopolítica alcista para oil, XOM es el vehículo de menor riesgo específico para capturar el trade. No tengo precio actual ni métricas técnicas específicas de XOM en los inputs, pero el setup sectorial es favorable. Convicción 7 refleja ausencia de datos técnicos específicos del nombre."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Similar lógica que XOM — integrated major beneficiaria de precios altos y márgenes de refining fuertes. CVX tiene exposición al Permian Basin y activos de LNG (Gorgon/Wheatstone) que serían beneficiados si la demanda europea de LNG escala. Sin datos técnicos específicos del nombre en los inputs. Convicción 6 por ausencia de data específica."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "OXY es pure-play upstream con alta sensibilidad al precio del crudo — en backwardation pronunciada con WTI en $85+, el modelo de negocio de OXY maximiza free cash flow. Mayor leverage operativo que los integrados. El riesgo es mayor también: si el precio cae, OXY sufre más que XOM/CVX. El setup actual justifica el leverage. Sin datos técnicos específicos en los inputs."
+    },
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Valero es el activo más directamente expuesto al crack spread — su modelo de negocio es refinación pura. Con crack 3-2-1 en $60.67 (MUY_FUERTE) y refinery utilization al 97.2%, VLO está operando en el mejor entorno de márgenes posible. La combinación de backwardation (crudo barato spot relativo a futuro) más crack spreads altos (productos caros) es el estado de máxima rentabilidad para un refiner. La escasez de diesel europeo es un positive read-through para VLO que exporta distillates. Setup más fuerte del sector para convicción."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "EOG es E&P Permian de alta calidad — beneficiario de WTI alto con balance sheet fuerte y bajo costo de producción. En backwardation, EOG captura el precio spot elevado vendiendo producción inmediata a premium. Menos atractivo que VLO en este entorno específico de crack spreads MUY_FUERTE, pero sólido. Sin datos técnicos específicos del nombre."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Vista Energy — E&P argentina con exposición a Vaca Muerta. Se beneficia de WTI/Brent altos directamente. Exposición adicional a riesgo Argentina (macro, regulatorio, FX) que no está en el scope de este análisis sectorial. El setup de oil prices es favorable. Riesgo específico del nombre no cuantificable desde mis datos sectoriales. Convicción moderada."
+    }
+  ],
+  "eventos_clave": [
+    "US lanza ataques militares sobre Iran incluyendo Qeshm Island (estratégica en Estrecho de Hormuz) — riesgo real de cierre o disrupción del paso de ~20% del oil global (30-Jul-2026)",
+    "Iran lanza ataque 'sorpresa' sobre bases US en Jordania rompiendo periodo de calma — nueva escalada activa del conflicto, señal de apetito de riesgo iraní (29-Jul-2026)",
+    "Senado US vota 86-12 para avanzar sanciones severas contra Rusia e Iran con autoridad de tariffs 100% a compradores de crudo ruso — India y China en la mira, potencial reconfiguración de flujos globales (28-29 Jul-2026)",
+    "Corea del Sur considerando importar crudo venezolano para diversificar suministro ante disrupciones de shipping en Hormuz — confirmación de que los flujos comerciales están siendo afectados operacionalmente hoy (30-Jul-2026)",
+    "Europa con gas storage 'well below target' y diesel en mínimos históricos enfrentando invierno — crisis dual de suministro que presiona precios de distillates y LNG globalmente (29-Jul-2026)"
+  ],
+  "contradicciones_observadas": "La contradicción más significativa es el NATGAS USA en $2.799/MMBtu (implica oversupply doméstico) coexistiendo con Europa reportando gas storage 'well below target' y escasez de diesel amenazando el invierno. Esta dislocación precio USA vs. crisis europea no puede sostenerse indefinidamente — el mecanismo de arbitraje LNG debería tender puentes entre ambos mercados. Si las exportaciones LNG USA aceleran para satisfacer Europa, el balance doméstico USA se tensa y el precio sube. Estoy observando un posible lag en la señal de precio de NATGAS USA que no está capturando todavía la demanda pull europea. Segunda contradicción: refinery utilization al 97.2% (máxima capacidad) con crack spreads MUY_FUERTE ($60.67) simultáneamente — si el sistema refinador corre al máximo, ¿por qué los crack spreads no se comprimieron? La respuesta más probable es que la demanda de productos está creciendo más rápido que la capacidad de refining USA puede satisfacer, y/o que los inventarios de productos (gasolina 211k Mbbls, distillate 110k Mbbls) están en niveles insuficientes para amortiguar la demanda.",
+  "invalidadores": [
+    "Desescalada US-Iran: cualquier acuerdo de cese al fuego o negociación diplomática que quite el riesgo de cierre de Hormuz eliminaría la prima geopolítica de $15-20 potencialmente incorporada en el precio — el trade LONG oil se revertiría rápidamente",
+    "OPEC+ decisión de incremento de producción masivo no anticipado: si Arabia Saudita decide aumentar output significativamente (como lo hizo en episodios anteriores para recuperar market share), el balance físico puede cambiar de tight a oversupplied en semanas. No hay noticias de OPEC en los inputs del día que sugieran esto, pero es el riesgo estructural del lado de la oferta",
+    "Deterioro macro hacia recesión: si jobless claims escalaran por encima de 250-300k sostenidamente o la Sahm Rule superara 0.50, el régimen cambiaría de GOLDILOCKS a RECESION y la demanda de oil colapsaría — el crack spread se comprimiría y el backwardation se aplanaría. Hoy ese riesgo es bajo (Sahm Rule 0.07) pero es el invalidador macro principal del trade"
+  ],
+  "data_gaps": "Datos críticos ausentes que limitaron la calidad del análisis: (1) 5-year average para crude inventory (404,508 Mbbls), gasoline (211,301), distillate (110,632), propane (102,286) y natgas storage (3,084 Bcf) — sin benchmark histórico no puedo cuantificar el déficit o surplus relativo con precisión; (2) Saudi Aramco CP (Contract Price) para LPG — referencia esencial para régimen LPG; (3) VLGC freight rates (freight Ras Tanura-Chiba) para entender el costo de transporte LPG Asia-bound; (4) FEI (Far East Index) LPG Asia para spreads de arbitraje; (5) TTF natural gas europeo precio spot para cuantificar el spread Henry Hub vs TTF y el incentivo de exportación LNG USA; (6) Capacidad LNG export USA utilización actual (Sabine Pass, Freeport, Corpus Christi); (7) Datos de shipping en Estrecho de Hormuz — cuántos VLCCs, VLGCs, LNG carriers transitaron en últimas 48hs vs. promedio; (8) Precios de acciones individuales (XOM, CVX, OXY, VLO, EOG, VIST) y sus métricas técnicas (200DMA, momentum) para poder calibrar señales con mayor precisión; (9) Saldo de producción OPEC+ vs. quota acordada para julio 2026.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'GASOLINA'",
+    "Senal 4: activo invalido 'HEATING_OIL'",
+    "Senal 5: activo invalido 'NATGAS'",
+    "Senal 12: activo invalido 'XLE'",
+    "Senal 13: activo invalido 'CRAK'"
+  ],
+  "metadata": {
+    "timestamp": "2026-07-31T12:29:10.036865",
+    "modelo": "claude-sonnet-4-6"
+  }
+}
