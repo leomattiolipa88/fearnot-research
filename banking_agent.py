@@ -21,6 +21,7 @@ from pathlib import Path
 import anthropic
 
 from config import MODEL, extract_text
+from tracker import registrar_senales
 
 DB_PATH = "data/macro.db"
 
@@ -357,3 +358,9 @@ if __name__ == "__main__":
     with open(archivo, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)
     print(f"\nGuardado en: {archivo}")
+
+    # Registrar senales en el tracker (fuente: banking_desk, horizonte TRIMESTRAL)
+    # Mismo patron que og_agent.py.
+    if "error" not in output and output.get("senales"):
+        tesis_adaptada = adaptar_para_tracker(output)
+        registrar_senales(tesis_adaptada)

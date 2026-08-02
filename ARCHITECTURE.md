@@ -113,28 +113,22 @@ Estado: **ACTIVO** = llamado en pipeline de producción o import in-graph desde 
 | `web_exporter.py` | Compone `data/web_data.json` para el frontend | Diario (`daily_pipeline.yml:96`) | ACTIVO |
 | `health_check.py` | Valida outputs del día (tamaño, JSON, claves, fecha) | Diario, último paso (`daily_pipeline.yml:179-181`) | ACTIVO |
 | `config.py` | `MODEL` + `extract_text(response)` (parser thinking-safe) | Import compartido por los 6 agentes | ACTIVO |
-| `banking_collector.py` | SEC EDGAR → `banking_financials` (anual). Universo 7 bancos | **No invocado por el pipeline** (`daily_pipeline.yml`) | DORMIDO |
-| `banking_collector_q.py` | SEC EDGAR → `banking_financials_q` (trimestral) | **No invocado por el pipeline** | DORMIDO |
-| `banking_agent.py` | Claude sobre `banking_financials` anual | **No invocado** — su `if __name__ == "__main__"` (`banking_agent.py:345-357`) espera CLI manual | DORMIDO |
-| `banking_agent_q.py` | Claude sobre `banking_financials_q` trimestral | **No invocado** — CLI manual (`banking_agent_q.py:381-393`) | DORMIDO |
-| `tendencia.py` | Analiza pendiente de una serie trimestral (subiendo/bajando/estable + racha) | Import de `banking_agent_q.py:27` | DORMIDO (viaja con banking_q) |
-| `financials_extractor_v2.py` | Extractor SEC EDGAR con dispatch us-gaap/ifrs; nucleo del workstream bancos+SEC | Import de `banking_collector.py` (implícito por docstring `banking_collector.py:6`); usado como CLI manual (`financials_extractor_v2.py:19-22`) | DORMIDO (ejecutado sólo cuando corren los banking_collectors, que están dormidos) |
-| `financials_extractor.py` | Extractor v1 basado en yfinance | Reemplazado por v2 según `TECHNICAL_DEBT.md#9` (líneas 155-163) | DUPLICADO (v1 legacy) |
-| `gaap_taxonomy.py` | Mapeo concepto→[tags us-gaap] con `sector_overrides` inline | Import de `sector_router.py:21` | DORMIDO (soporta workstream SEC) |
-| `ifrs_taxonomy.py` | Ídem para IFRS (NU) | Import de v2 (implícito por docstring `ifrs_taxonomy.py:1-15`) | DORMIDO |
-| `sector_router.py` | Detecta sector del ticker y decide qué tags GAAP probar | Import de v2 | DORMIDO |
-| `sector_mappings/__init__.py` | Vacío (`sector_mappings/__init__.py:1`, marcado por Read como 1 línea) — sin `__all__` | — | DORMIDO / documentado en `TECHNICAL_DEBT.md#5` |
-| `sector_mappings/energy.py` | Overrides GAAP + métricas energy | Import de `sector_router.py:24` | DORMIDO |
-| `sector_mappings/tech.py` | Overrides + métricas tech | Import de `sector_router.py:27` | DORMIDO |
-| `sector_mappings/banking.py` | Descripción de métricas bank | Docstring lo cita (`sector_mappings/banking.py:1-27`), pero `sector_router.py:25` deja el import comentado (`# TODO`) — no lo carga | DORMIDO (imports comentados) |
-| `calculated_metrics.py` | Métricas derivadas de facts SEC (ej. shares diluted XOM, operating income XOM) | Import citado por `banking_collector.py:11-12` | DORMIDO (parte del workstream SEC) |
-| `debug_sec.py` | Script one-off de exploración | Manual, sin caller | MUERTO (listado en `TECHNICAL_DEBT.md#8:147`) |
-| `patch_agent_options.py` | Script que **patcheaba** `technical_agent.py` para meter options flow — ya aplicado | Manual, sin caller | MUERTO (líneas 1-15) |
-| `patch_options_flow.py` | Idem para `technical_collector.py` — ya aplicado | Manual, sin caller | MUERTO (`patch_options_flow.py:1-15`) |
-| `test_cik.py` | Test exploratorio SEC | Manual | MUERTO (listado en `TECHNICAL_DEBT.md#8`) |
-| `test_financials.py` | Test exploratorio yfinance | Manual | MUERTO |
-| `test_sec.py` | Test exploratorio SEC | Manual | MUERTO |
-| `limpiar_duplicados.py` | Script one-off (Modelo B dedup) — la lógica ya está en tracker (`tracker.py:124-136`) | Manual, DRY RUN por default | MUERTO (`TECHNICAL_DEBT.md#8`) |
+| `banking_collector.py` | SEC EDGAR → `banking_financials` (anual). Universo 7 bancos | Mensual (`banking_pipeline.yml:47-48`) | ACTIVO (monthly) |
+| `banking_collector_q.py` | SEC EDGAR → `banking_financials_q` (trimestral) | Mensual (`banking_pipeline.yml:50-51`) | ACTIVO (monthly) |
+| `banking_agent.py` | Claude sobre `banking_financials` anual; registra señales en tracker (fix 2026-08-02) | Mensual (`banking_pipeline.yml:53-54`) | ACTIVO (monthly) |
+| `banking_agent_q.py` | Claude sobre `banking_financials_q` trimestral; registra señales en tracker (fix 2026-08-02) | Mensual (`banking_pipeline.yml:56-57`) | ACTIVO (monthly) |
+| `tendencia.py` | Analiza pendiente de una serie trimestral (subiendo/bajando/estable + racha) | Import de `banking_agent_q.py:28` | ACTIVO |
+| `financials_extractor_v2.py` | Extractor SEC EDGAR con dispatch us-gaap/ifrs; nucleo del workstream bancos+SEC | Import indirecto por `banking_collector*.py`; también CLI manual (`financials_extractor_v2.py:19-22`) | ACTIVO (monthly, indirecto) |
+| `gaap_taxonomy.py` | Mapeo concepto→[tags us-gaap] con `sector_overrides` inline | Import de `sector_router.py:21` | ACTIVO |
+| `ifrs_taxonomy.py` | Ídem para IFRS (NU) | Import de v2 (implícito por docstring `ifrs_taxonomy.py:1-15`) | ACTIVO |
+| `sector_router.py` | Detecta sector del ticker y decide qué tags GAAP probar | Import de v2 | ACTIVO |
+| `sector_mappings/__init__.py` | Vacío (`sector_mappings/__init__.py:1`, marcado por Read como 1 línea) — sin `__all__` | — | ACTIVO (paquete) / documentado en `TECHNICAL_DEBT.md#5` |
+| `sector_mappings/energy.py` | Overrides GAAP + métricas energy | Import de `sector_router.py:24` | ACTIVO |
+| `sector_mappings/tech.py` | Overrides + métricas tech | Import de `sector_router.py:27` | ACTIVO |
+| `sector_mappings/banking.py` | Descripción de métricas bank | Import activo en `sector_router.py:25` desde 2026-08-02 | ACTIVO |
+| `calculated_metrics.py` | Métricas derivadas de facts SEC (ej. shares diluted XOM, operating income XOM) | Import citado por `banking_collector.py:11-12` | ACTIVO (monthly, indirecto) |
+| `financials_extractor.py` (v1) | Extractor v1 basado en yfinance | **Movido a `scripts/legacy/` en 2026-08-02** — v2 es el vigente | LEGACY (fuera de root) |
+| `debug_sec.py`, `patch_agent_options.py`, `patch_options_flow.py`, `test_cik.py`, `test_financials.py`, `test_sec.py`, `limpiar_duplicados.py` | Scripts one-off + patches ya aplicados | **Movidos a `scripts/legacy/` en 2026-08-02** | LEGACY (fuera de root) |
 | `tests/test_collector.py` | Tests unitarios/integración del collector | Manual (pytest) — **no** se corre en Actions (`daily_pipeline.yml` no llama pytest) | DORMIDO |
 | `tests/test_tech_coverage.py` | Regression del tech SEC coverage | Manual — `python3 -m tests.test_tech_coverage` (`tests/test_tech_coverage.py:11`) | DORMIDO |
 | `tests/test_banking_coverage.py` | Verifica routing + cobertura de los 3 conceptos nucleo de banca (NII, deposits, loans) para los 7 bancos (`tests/test_banking_coverage.py:1-20`). Dos modos: sin red (Test A) y `--live` que baja SEC | Manual — `python3 tests/test_banking_coverage.py [--live]` (`tests/test_banking_coverage.py:10-11`). No corre en Actions | DORMIDO |
@@ -184,36 +178,44 @@ Componentes verificados por Read directo o por import:
   7. Copiar `data/web_data.json` a `fearnot-web/public/`, commit + push (`daily_pipeline.yml:134-159`)
   8. Summary + `health_check.py` con `if: always()` (`daily_pipeline.yml:164-181`)
 
+### GitHub Actions — `.github/workflows/banking_pipeline.yml` (added 2026-08-02)
+
+- **Cron:** `0 12 3 * *` (`banking_pipeline.yml:10`) → día 3 de cada mes, 12:00 UTC. Separado del daily porque los fundamentals SEC EDGAR (10-K/10-Q) no cambian a diario.
+- **Manual trigger:** `workflow_dispatch` (`banking_pipeline.yml:11`).
+- **Secrets:** mismos que el daily (comparte el `.env`-equivalente vía Actions secrets — `banking_pipeline.yml:37-40`).
+- **Pasos:** `banking_collector.py` → `banking_collector_q.py` → `banking_agent.py` → `banking_agent_q.py` → commit `data/*.json` + `data/macro.db` → `health_check.py --include-banking` (`banking_pipeline.yml:43-77`).
+- El health_check bancario chequea `tesis_banking_{fecha}` y `tesis_banking_q_{fecha}` contra hoy UTC (los bancos no siguen calendario de mercado — el `last_business_day` del daily no aplica).
+
 ### Vercel
 
 - Deploy del repo `fearnot-web` es implícito: el `if: always()` mode del step 7 pushea `public/web_data.json`; Vercel redeploya en 30-60s (`daily_pipeline.yml:158`, `README.md:41-45`).
+- La sección `banking` del `web_data.json` (poblada por `web_exporter.py` cuando hay tesis bancaria en `data/`) recién aparece en el frontend el día del daily siguiente al banking pipeline — el banking pipeline en sí no pushea a `fearnot-web`, sólo persiste al repo research.
 - **No determinable:** configuración exacta de Vercel (branch, build command custom) — no hay `vercel.json` verificado.
 
 ### Local
 
-- `update_web.sh` duplica el pipeline local. Hardcodea paths `~/Desktop/macro_agent` y `~/Desktop/fearnot-web` (`update_web.sh:32, 43, 87, 93`). Documentado como deuda en `TECHNICAL_DEBT.md#2` (líneas 73-81).
+- `update_web.sh` duplica el pipeline local. Hardcodea paths `~/Desktop/macro_agent` y `~/Desktop/fearnot-web` (`update_web.sh:32, 43, 87, 93`). Documentado como deuda en `TECHNICAL_DEBT.md#2` (líneas 73-81). El bloque banking del pipeline mensual no está replicado en `update_web.sh` — se puede invocar manualmente con `python banking_agent.py [FY]`.
 - Los agentes leen `.env` con parser ad-hoc (ej. `og_agent.py:26-33`, `technical_agent.py:42-46`, `synthesizer.py:28-34`) — deuda `TECHNICAL_DEBT.md#1`.
 - El colector macro toma la key de env directamente (`collector.py:609`), sin `.env`. Inconsistente con los agentes.
 
 ### Manual
 
-- Todo lo del workstream bancos/SEC (`banking_collector*.py`, `banking_agent*.py`, `financials_extractor*.py`). Nadie los llama; corren desde CLI si el usuario lo pide.
 - `tracker.py reporte` (CLI, `tracker.py:610-615`).
-- `debug_sec.py`, `test_cik.py`, `test_financials.py`, `test_sec.py`, `limpiar_duplicados.py`: scripts sueltos.
-- `patch_agent_options.py`, `patch_options_flow.py`: ya aplicados (los patches viven ya en `technical_agent.py`/`technical_collector.py`). No deberían volver a correrse.
-- Tests en `tests/`: no hay wiring de CI (`daily_pipeline.yml` no invoca pytest).
+- `financials_extractor_v2.py` — CLI directa por ticker (útil para exploración ad-hoc de bancos/tech que ya no están en el universo bancario del cron).
+- Tests en `tests/`: no hay wiring de CI (ni `daily_pipeline.yml` ni `banking_pipeline.yml` invocan pytest).
+- Scripts legacy movidos a `scripts/legacy/` en la limpieza del 2026-08-02 (`debug_sec.py`, `test_cik.py`, `test_financials.py`, `test_sec.py`, `limpiar_duplicados.py`, `patch_agent_options.py`, `patch_options_flow.py`, `financials_extractor.py` v1) — quedan ahí para historia, no se corren.
 
 ---
 
 ## 4. Workstream Bancos / SEC — estado exacto
 
-**Diagnóstico corto:** este workstream está construido y documentado con profundidad, pero **totalmente desconectado del pipeline diario**. Es la mitad del sistema que quedó a medio hacer.
+**Diagnóstico corto (actualizado 2026-08-02):** el workstream ya no está desconectado — se despertó en un cron mensual separado (`banking_pipeline.yml`, día 3 UTC). Los agentes registran señales en el tracker, el health_check valida los outputs con `--include-banking`, y `web_exporter` publica una sección `banking` opcional en `web_data.json`. Los bugs latentes del extractor SEC v2 documentados abajo siguen abiertos (son de calidad de datos, no de wiring).
 
 ### 4.1 Estado por archivo
 
 - `financials_extractor_v2.py` (`financials_extractor_v2.py:1-45`)
   - Descarga SEC EDGAR companyfacts JSON, mapea concepto→tag vía `gaap_taxonomy.py`/`ifrs_taxonomy.py` con dispatch por sector (`sector_router.py`).
-  - Reemplaza `financials_extractor.py` v1 (yfinance-based, `financials_extractor.py:1-15`). El coexistir de v1+v2 es deuda `TECHNICAL_DEBT.md#9`.
+  - Reemplaza `financials_extractor.py` v1 (yfinance-based). v1 fue movido a `scripts/legacy/` en la limpieza 2026-08-02 (`TECHNICAL_DEBT.md#9` cerrado).
   - **Auditoría 2026-06-08:** un audit de Opus 4.7 declaró que el extractor trimestral estaba "estructuralmente roto"; verificación contra JSON crudo refutó tres de sus hallazgos más severos (`TECHNICAL_DEBT.md:212-238`). El core no fue tocado.
   - Bug latente #1: `unidad="USD"` hardcodeado en toda la cadena trimestral (`TECHNICAL_DEBT.md:247-258`) — no dispara hoy porque NU reporta en USD; latente si se agrega EPS/shares o filer IFRS no-USD.
   - Bug latente #2: dedup por `filed desc` puede preferir restated sobre original (`TECHNICAL_DEBT.md:260-269`).
@@ -222,50 +224,54 @@ Componentes verificados por Read directo o por import:
 
 - `banking_collector.py` (`banking_collector.py:1-58`)
   - Anual. Extrae 6 conceptos crudos (`banking_collector.py:29-36`) para 7 bancos (`banking_collector.py:19`), calcula 3 métricas derivadas via `calculated_metrics.py`, persiste en `banking_financials` (long format, `banking_collector.py:44-56`).
-  - **No corre en producción.**
+  - **ACTIVO (mensual):** `banking_pipeline.yml:47-48`.
 
 - `banking_collector_q.py` (`banking_collector_q.py:1-56`)
   - Trimestral. Mismos 6 conceptos, usa `extraer_serie_trimestral` con reconstrucción Q4 (`banking_collector_q.py:9-15`).
   - Tabla `banking_financials_q` con `period` TEXT (`banking_collector_q.py:40-53`) — puede convivir con anual.
-  - **No corre en producción.**
+  - **ACTIVO (mensual):** `banking_pipeline.yml:50-51`.
 
 - `banking_agent.py` (`banking_agent.py:1-73`)
   - Analista Claude (Marks + Mayo) del ciclo de crédito. Lee `banking_financials` anual + tesis macro/tecnica de disco.
-  - Output: `data/tesis_banking_{fecha}.json` (`banking_agent.py:353`). `health_check.py:19-38` **no lo valida** (sólo valida `tesis_`, `tesis_tecnica_`, `tesis_og_`).
-  - Tiene `adaptar_para_tracker` que asigna horizonte TRIMESTRAL + fuente `banking_desk` (`banking_agent.py:319-342`), pero el `__main__` (`banking_agent.py:345-357`) sólo hace print + save — **no llama al tracker**. Es huérfano incluso a nivel de tracker.
-  - Recibe el fix de este mes: `from config import MODEL, extract_text` (`banking_agent.py:23`), `model=MODEL` (`banking_agent.py:272`), `extract_text(response)` (`banking_agent.py:277`).
+  - Output: `data/tesis_banking_{fecha}.json`. `health_check.py --include-banking` lo valida (contra hoy UTC, ver §3).
+  - `__main__` ahora llama al tracker vía `registrar_senales(adaptar_para_tracker(output))` (fix 2026-08-02) — mismo patrón que `og_agent.py`.
+  - **ACTIVO (mensual):** `banking_pipeline.yml:53-54`.
 
 - `banking_agent_q.py` (`banking_agent_q.py:1-16`)
   - Evolución trimestral: lee la SERIE de trimestres y le da al modelo la tendencia pre-procesada por `tendencia.py` (`banking_agent_q.py:135-138`), no valores sueltos.
-  - Mismo destino: `data/tesis_banking_q_{fecha}.json` (`banking_agent_q.py:389`). `adaptar_para_tracker` con fuente `banking_desk_q` (`banking_agent_q.py:337-353`). `__main__` (`banking_agent_q.py:381-393`) no llama al tracker.
-  - Fix de este mes aplicado (`banking_agent_q.py:26`, `banking_agent_q.py:309`, `banking_agent_q.py:314`).
+  - Output: `data/tesis_banking_q_{fecha}.json`. Fuente para tracker: `banking_desk_q`, horizonte TRIMESTRAL.
+  - `__main__` llama al tracker (fix 2026-08-02).
+  - **ACTIVO (mensual):** `banking_pipeline.yml:56-57`.
 
-- `tendencia.py` (`tendencia.py:4-88`): utilidad pura sin efectos. Usada solo por `banking_agent_q.py:27`.
+- `tendencia.py` (`tendencia.py:4-88`): utilidad pura sin efectos. Usada solo por `banking_agent_q.py:27`. **ACTIVO** (import in-graph desde algo activo).
 
-- `sector_mappings/banking.py` (`sector_mappings/banking.py:1-27`): descripción de sub-tipos + métricas. **El import está comentado** en `sector_router.py:25` (`# TODO: agregar cuando se implemente`) — el router no lo carga. Existe pero es descriptivo/documental hoy.
+- `sector_mappings/banking.py` (`sector_mappings/banking.py:1-27`): descripción de sub-tipos + métricas. Import activo en `sector_router.py:25` desde 2026-08-02. **ACTIVO**.
 
 - `gaap_taxonomy.py` (`gaap_taxonomy.py:1-17`), `ifrs_taxonomy.py` (`ifrs_taxonomy.py:1-15`): mapeos activos usados por `sector_router.py` + v2.
 
 - `calculated_metrics.py` (`calculated_metrics.py:1-16`): reconstrucciones (ej. shares diluidas XOM). Import citado por `banking_collector.py:11`.
 
-- `sector_mappings/tech.py`, `sector_mappings/energy.py`: overrides GAAP tech/energy usados por `sector_router.py:24,27`. **Energy overrides no se usan en el pipeline** porque el pipeline no hace extracciones SEC; sólo los usaría si se corre `financials_extractor_v2.py` manualmente sobre tickers energy.
+- `sector_mappings/tech.py`, `sector_mappings/energy.py`: overrides GAAP tech/energy usados por `sector_router.py:24,27`. Se ejercen sólo cuando corre `financials_extractor_v2.py` sobre tickers de esos sectores (hoy ninguno de los dos está en cron; corren desde CLI).
 
 ### 4.2 TODOs, deuda y código comentado
 
-- `sector_router.py:25-29`: 4 `# TODO` sin resolver (banking, insurance, industrial, utilities).
-- `TECHNICAL_DEBT.md` (documento completo): 11 ítems abiertos + sección post-audit SEC + 2 latentes + 1 real pendiente (coverage OCF/capex quarterly).
+- `sector_router.py:25-29`: 3 `# TODO` sin resolver (insurance, industrial, utilities). Banking cerrado 2026-08-02.
+- `TECHNICAL_DEBT.md` (documento completo): ítems 1-11 abiertos + sección post-audit SEC (bugs latentes) + real pendiente (coverage OCF/capex quarterly). Los ítems TD del 2026-07-31 (es_fresco y clasificador de noticias) están marcados RESUELTO 2026-08-01.
 - `LIMITATIONS.md` documenta 17 limitaciones estructurales (`LIMITATIONS.md:222-240`), varias con status "10-K parse family" que requieren un parser aparte que no existe (`LIMITATIONS.md:218`).
 - `AUDIT_REPORT.md` está en el repo (`AUDIT_REPORT.md:1-10`) — la refutación vive en `TECHNICAL_DEBT.md:212-238` (deberían mergearse, o el AUDIT debería marcarse como "REFUTED").
-- Scripts patch ya aplicados que siguen en repo (`patch_agent_options.py`, `patch_options_flow.py`) — visualmente sugieren código no aplicado, pero ya lo está.
+- Scripts patch ya aplicados (`patch_agent_options.py`, `patch_options_flow.py`) y one-offs (`debug_sec.py`, `limpiar_duplicados.py`, `test_cik.py`, `test_financials.py`, `test_sec.py`, `financials_extractor.py` v1) movidos a `scripts/legacy/` en 2026-08-02.
 
-### 4.3 Qué falta para conectar bancos al pipeline
+### 4.3 Qué faltaba para conectar bancos al pipeline — CERRADO 2026-08-02
 
-1. Agregar `python banking_collector.py` + `python banking_collector_q.py` a `daily_pipeline.yml` (o hacerlos trimestrales, dado que los 10-K/10-Q no cambian a diario).
-2. Agregar `python banking_agent.py` + `_q.py` con schedule realista (trimestral/mensual, no diario).
-3. Extender `health_check.py:19-38` con `tesis_banking` y `tesis_banking_q`.
-4. Hacer que `banking_agent*.py.__main__` llame al tracker (`registrar_senales(adaptar_para_tracker(output))`) — hoy no lo hacen.
-5. Extender `web_exporter.py` para incluir el memo bancario. Hoy no lo mira (`web_exporter.py:24-48` sólo conoce `"macro"`, `"tecnica"`, `"og"`).
-6. Descomentar `from sector_mappings import banking` en `sector_router.py:25` cuando esté listo para producción.
+Los 6 ítems originales de esta sección están resueltos:
+1. ✅ `banking_collector.py` + `banking_collector_q.py` invocados en `banking_pipeline.yml:47-51` (cron mensual día 3 UTC, no diario — SEC 10-K/10-Q no cambian a diario).
+2. ✅ `banking_agent.py` + `_q.py` en el mismo cron (`banking_pipeline.yml:53-57`).
+3. ✅ `health_check.py --include-banking` valida `tesis_banking_{fecha}` y `tesis_banking_q_{fecha}` (contra hoy UTC, no día hábil — los bancos no siguen calendario de mercado).
+4. ✅ Ambos `banking_agent*.__main__` llaman `registrar_senales(adaptar_para_tracker(output))` — mismo patrón que og_agent.
+5. ✅ `web_exporter.py` incluye sección `banking` opcional (annual + quarterly) via `construir_banking_pulse`. Ausente si no hay ninguna tesis bancaria en `data/`.
+6. ✅ `from sector_mappings import banking` descomentado en `sector_router.py:25`.
+
+Pendiente derivado: el `banking_pipeline.yml` NO pushea `web_data.json` a `fearnot-web` — la sección banking recién aparece en el frontend con el daily del día siguiente al banking pipeline. Si se necesita publicación inmediata, agregar un step de web_exporter + push a `fearnot-web` en el banking pipeline.
 
 ---
 
@@ -338,15 +344,15 @@ Ordenado por *impacto × urgencia*. Cada ítem cita el ancla en el código o en 
 
 1. ~~**Arreglar `verificar_freshness` para usar `fecha_publicacion`.**~~ **RESUELTO 2026-08-01** — `collector.py:verificar_freshness` ahora compara contra `fecha_publicacion` con fallback defensivo a `fecha_descarga` + WARNING (`TECHNICAL_DEBT.md:295-303`).
 
-2. **Wirear el workstream bancos al pipeline o marcarlo `DEPRECATED`.** Hoy `banking_collector*.py` y `banking_agent*.py` están dormidos (§4). O agregar steps a `daily_pipeline.yml` (probablemente con schedule trimestral aparte, no diario) + extender `health_check.py:19-38` + hacer que `banking_agent*.__main__` llame al tracker; o mover todo a `scripts/deferred/`.
+2. ~~**Wirear el workstream bancos al pipeline o marcarlo `DEPRECATED`.**~~ **RESUELTO 2026-08-02** — `banking_pipeline.yml` (cron mensual día 3 UTC) corre los 4 archivos + health_check con `--include-banking`. Ver §4.3.
 
-3. **Eliminar `banking_agent.py` no-tracker gap.** Los `__main__` de banking_agent y banking_agent_q **no** llaman al tracker (contraste con `agent.py:365-371`, `technical_agent.py:385-388`, `og_agent.py:494-497`). Cualquier ejecución manual pierde las señales.
+3. ~~**Eliminar `banking_agent.py` no-tracker gap.**~~ **RESUELTO 2026-08-02** — ambos `__main__` importan `registrar_senales` y llaman `registrar_senales(adaptar_para_tracker(output))` al final, matcheando el patrón de `og_agent.py`.
 
 4. **Unificar la carga de `.env`.** `TECHNICAL_DEBT.md#1`: reemplazar los mini-parsers en `agent.py`, `technical_agent.py:42-46`, `og_agent.py:26-33`, `synthesizer.py:28-34`, `og_collector.py:29-35`, `og_news_collector.py:24-30`, `banking_agent*.py` por `python-dotenv`. Además hoy `collector.py:609` no usa `.env` — inconsistente.
 
 5. ~~**Corregir el clasificador de noticias.**~~ **RESUELTO 2026-08-01** — `news_collector.py:clasificar` usa word-boundary regex + default `OTROS` explícito (`TECHNICAL_DEBT.md:305-314`). Clasificación por LLM barato queda pendiente como iteración futura si el default honesto no basta.
 
-6. **Limpiar dead code del root.** `debug_sec.py`, `patch_agent_options.py`, `patch_options_flow.py`, `test_cik.py`, `test_financials.py`, `test_sec.py`, `limpiar_duplicados.py` a `scripts/legacy/` (`TECHNICAL_DEBT.md#8`). Además decidir entre `financials_extractor.py` v1 y v2 (`TECHNICAL_DEBT.md#9`).
+6. **Limpiar dead code del root.** ~~`debug_sec.py`, `patch_agent_options.py`, `patch_options_flow.py`, `test_cik.py`, `test_financials.py`, `test_sec.py`, `limpiar_duplicados.py`, `financials_extractor.py` (v1) → `scripts/legacy/`.~~ **EN CURSO 2026-08-02** — comandos `git mv` entregados al usuario para ejecución (movimiento de archivos es operación del usuario). El texto en las tablas de §2/§4 asume que los `git mv` fueron corridos; si no lo fueron, revertir esa parte.
 
 7. ~~**Corregir `FRESHNESS_MAX_DIAS` duplicado.**~~ **RESUELTO 2026-08-01** — dict re-escrito con toda serie fetched declarada explícitamente; duplicado eliminado; monthlies con `max_dias=40` (`collector.py:63-102`, `TECHNICAL_DEBT.md:295-303`).
 

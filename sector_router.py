@@ -22,7 +22,7 @@ from gaap_taxonomy import GAAP_TAXONOMY, get_names_for_concept as _get_general_n
 
 # Importar cada sector module
 from sector_mappings import energy
-# from sector_mappings import banking   # TODO: agregar cuando se implemente
+from sector_mappings import banking   # activado 2026-08-02 (banking pipeline mensual)
 # from sector_mappings import insurance # TODO
 from sector_mappings import tech
 # from sector_mappings import industrial # TODO

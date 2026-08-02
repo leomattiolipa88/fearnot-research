@@ -34,6 +34,12 @@ def cargar_tesis_mas_reciente(prefijo: str) -> dict:
         archivos = sorted(data_dir.glob("tesis_tecnica_*.json"), reverse=True)
     elif prefijo == "og":
         archivos = sorted(data_dir.glob("tesis_og_*.json"), reverse=True)
+    elif prefijo == "banking":
+        # Anual: tesis_banking_YYYY-MM-DD.json (arranca con "tesis_banking_2")
+        archivos = sorted(data_dir.glob("tesis_banking_2*.json"), reverse=True)
+    elif prefijo == "banking_q":
+        # Trimestral: tesis_banking_q_YYYY-MM-DD.json
+        archivos = sorted(data_dir.glob("tesis_banking_q_*.json"), reverse=True)
     else:
         return {}
 
@@ -250,6 +256,36 @@ def construir_energy_pulse(tesis_og: dict) -> dict:
     }
 
 
+def construir_banking_pulse(tesis_banking: dict, tesis_banking_q: dict) -> dict:
+    """Estructura las tesis bancarias (anual + trimestral) para la web.
+    Retorna None si no hay NINGUNA disponible — asi el web_data.json no
+    incluye la clave 'banking' y el frontend puede detectar ausencia
+    con un simple `if 'banking' in data`.
+    """
+    if not tesis_banking and not tesis_banking_q:
+        return None
+
+    def _snapshot(t: dict) -> dict:
+        return {
+            "fecha": t.get("fecha", ""),
+            "regimen_credito": t.get("regimen_credito", {}),
+            "tesis_principal": t.get("tesis_principal", ""),
+            "senales": t.get("senales", []),
+            "eventos_clave": t.get("eventos_clave", []),
+            "contradicciones": t.get("contradicciones", []),
+            "invalidadores": t.get("invalidadores", []),
+        }
+
+    pulse = {}
+    if tesis_banking:
+        pulse["annual"] = _snapshot(tesis_banking)
+    if tesis_banking_q:
+        snap_q = _snapshot(tesis_banking_q)
+        snap_q["periodo_analizado"] = tesis_banking_q.get("periodo_analizado", "")
+        pulse["quarterly"] = snap_q
+    return pulse
+
+
 def cargar_indicadores_clave() -> dict:
     """Carga los ultimos valores de indicadores macro clave."""
     indicadores = {}
@@ -309,12 +345,23 @@ def exportar():
     tesis_og = cargar_tesis_mas_reciente("og")
     print(f"      Fecha: {tesis_og.get('fecha', 'N/A')}")
 
-    print("\n[4/6] Construyendo senales y energy pulse...")
+    print("\n[3b/6] Cargando tesis bancarias (Banking Desk, monthly)...")
+    tesis_banking = cargar_tesis_mas_reciente("banking")
+    tesis_banking_q = cargar_tesis_mas_reciente("banking_q")
+    print(f"      Anual:      {tesis_banking.get('fecha', 'N/A')}")
+    print(f"      Trimestral: {tesis_banking_q.get('fecha', 'N/A')}")
+
+    print("\n[4/6] Construyendo senales y energy/banking pulse...")
     senales = construir_senales_consensuadas(tesis_macro, tesis_tecnica)
     energy_pulse = construir_energy_pulse(tesis_og)
+    banking_pulse = construir_banking_pulse(tesis_banking, tesis_banking_q)
     print(f"      {len(senales)} senales macro/tecnico")
     if energy_pulse:
         print(f"      Energy Pulse: {len(energy_pulse['senales'])} senales O&G")
+    if banking_pulse:
+        n_ann = len(banking_pulse.get("annual", {}).get("senales", [])) if "annual" in banking_pulse else 0
+        n_q = len(banking_pulse.get("quarterly", {}).get("senales", [])) if "quarterly" in banking_pulse else 0
+        print(f"      Banking Pulse: {n_ann} senales anual + {n_q} senales trimestral")
 
     print("\n[5/6] Cargando convicciones del Synthesizer...")
     convicciones = cargar_convicciones_recientes()
@@ -368,6 +415,12 @@ def exportar():
         "performance_summary": performance_summary,
     }
 
+    # Banking (added 2026-08-02): sección opcional. Solo presente si al menos
+    # una tesis bancaria (anual o trimestral) existe en data/. Ausencia = no
+    # rompe el frontend (chequea `if 'banking' in data`).
+    if banking_pulse is not None:
+        web_data["banking"] = banking_pulse
+
     Path("data").mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         json.dump(web_data, f, indent=2, ensure_ascii=False)
@@ -378,6 +431,13 @@ def exportar():
         print(f"   Regimen oil: {energy_pulse['regimen_oil'].get('clasificacion', 'N/A')}")
         print(f"   Regimen natgas: {energy_pulse['regimen_natgas'].get('clasificacion', 'N/A')}")
         print(f"   Regimen lpg: {energy_pulse['regimen_lpg'].get('clasificacion', 'N/A')}")
+    if banking_pulse:
+        if "annual" in banking_pulse:
+            rc = banking_pulse["annual"].get("regimen_credito", {})
+            print(f"   Regimen credito (anual): {rc.get('clasificacion', 'N/A')}")
+        if "quarterly" in banking_pulse:
+            rc_q = banking_pulse["quarterly"].get("regimen_credito", {})
+            print(f"   Regimen credito (trim): {rc_q.get('clasificacion', 'N/A')} — {banking_pulse['quarterly'].get('periodo_analizado', '')}")
     print(f"   Senales: {len(senales)}")
     print(f"   Convicciones (recientes): {len(convicciones)}")
     print(f"   Track record (cerradas): {len(track_record)}")

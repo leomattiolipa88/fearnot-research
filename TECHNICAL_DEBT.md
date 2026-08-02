@@ -319,3 +319,25 @@ Each debt entry includes:
 - **Mitigación actual:** umbral calendario elevado a 4 días para el tier diario (`collector.py:FRESHNESS_MAX_DIAS`). Cubre el peor gap normal; un dato genuinamente estancado dispara a los 5+.
 - **Fix sugerido (no urgente):** reemplazar el umbral calendario por un cálculo en días hábiles (`numpy.busday_count` o similar) para el tier de mercado, con calendario NYSE (o al menos excluyendo weekends + feriados US). El tier mensual FRED puede seguir en calendario, la semántica ya es la correcta.
 - **Prioridad:** LOW. El umbral de 4 días calendario es honesto; el refinamiento sólo ajusta el margen entre "cubre feriado largo" y "detecta stall real".
+
+## Sesión "despertar bancos" — RESUELTO 2026-08-02
+
+Sesión que cerró la mayoría del gap del workstream bancos/SEC (documentado en ARCHITECTURE.md §4.3 pre-sesión y en items #2, #3 del backlog).
+
+- **Nuevo:** `.github/workflows/banking_pipeline.yml` — cron mensual día 3, 12:00 UTC. Pasos: `banking_collector.py` → `banking_collector_q.py` → `banking_agent.py` → `banking_agent_q.py` → commit `data/` → `health_check.py --include-banking`. Separado del daily porque los 10-K/10-Q no cambian a diario.
+- **`banking_agent.py` y `banking_agent_q.py`:** `__main__` ahora llama `registrar_senales(adaptar_para_tracker(output))` al final, matcheando el patrón de `og_agent.py`. Sin este fix, las señales bancarias no llegaban al tracker aunque los `adaptar_para_tracker` existieran.
+- **`health_check.py`:** flag `--include-banking` que suma la validación de `tesis_banking_{fecha}.json` y `tesis_banking_q_{fecha}.json` contra hoy UTC (los bancos no siguen calendario de mercado — el `last_business_day` del daily no aplica). Sin el flag el comportamiento actual queda intacto.
+- **`web_exporter.py`:** nueva función `construir_banking_pulse` + soporte para prefijos `"banking"` y `"banking_q"` en `cargar_tesis_mas_reciente`. Si al menos una tesis bancaria existe en `data/`, `web_data.json` incluye una clave `banking` con `annual` y/o `quarterly` como sub-secciones. Si no existe ninguna, la clave está ausente — el frontend chequea `if 'banking' in data`.
+- **`sector_router.py:25`:** `from sector_mappings import banking` descomentado.
+
+Nota operacional: el `banking_pipeline.yml` NO pushea a `fearnot-web`. La sección `banking` recién aparece en el frontend con el daily del día siguiente. Si se necesita publicación inmediata, agregar step de web_exporter + push a `fearnot-web` en el banking pipeline (`daily_pipeline.yml:124-159` como referencia).
+
+## Limpieza de scripts legacy — EN CURSO 2026-08-02
+
+Backlog #6 (`TECHNICAL_DEBT.md#8`): mover a `scripts/legacy/`:
+- `debug_sec.py`, `patch_agent_options.py`, `patch_options_flow.py`
+- `test_cik.py`, `test_financials.py`, `test_sec.py`
+- `limpiar_duplicados.py`
+- `financials_extractor.py` (v1 — reemplazado por v2, `TECHNICAL_DEBT.md#9`)
+
+Movimiento de archivos es operación del usuario (comandos `git mv` entregados en la sesión). Verificar que ningún módulo del pipeline los importa antes de mover — inspección estática sugiere que ninguno lo hace (ninguno aparece en imports de agentes/collectors activos), pero validar con `grep -R "from financials_extractor import" .` u equivalente antes de confirmar.

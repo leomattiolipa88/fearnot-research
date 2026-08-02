@@ -37,6 +37,20 @@ THESIS_SPECS = [
     },
 ]
 
+# Specs bancarios — sólo se validan con --include-banking porque el pipeline
+# bancario corre mensual (día 3), no diario. Contra la fecha web (hoy UTC) o
+# la fecha forzada por --date, no contra el último día hábil.
+BANKING_SPECS = [
+    {
+        "prefix": "tesis_banking",
+        "required_keys": ["fecha", "regimen_credito", "tesis_principal", "senales"],
+    },
+    {
+        "prefix": "tesis_banking_q",
+        "required_keys": ["fecha", "regimen_credito", "tesis_principal", "senales"],
+    },
+]
+
 
 def last_business_day(today: date) -> date:
     d = today
@@ -113,6 +127,16 @@ def parse_args() -> argparse.Namespace:
             "Sin el flag: hoy UTC para web_data y ultimo dia habil para tesis."
         ),
     )
+    p.add_argument(
+        "--include-banking",
+        action="store_true",
+        help=(
+            "Sumar validacion de tesis_banking_{fecha} y tesis_banking_q_{fecha}. "
+            "Usado por banking_pipeline.yml (cron mensual dia 3). Contra hoy UTC "
+            "o --date, no contra ultimo dia habil (los bancos no siguen calendario "
+            "de mercado)."
+        ),
+    )
     return p.parse_args()
 
 
@@ -144,6 +168,16 @@ def main() -> int:
     mark = "OK " if ok else "FAIL"
     print(f"[{mark}] web_data.json — {msg}")
     all_ok = all_ok and ok
+
+    if args.include_banking:
+        # Los bancos guardan con la fecha del run (today UTC), no dia habil.
+        banking_date = args.date if args.date is not None else web_date
+        print(f"-- banking (contra {banking_date.isoformat()}) --")
+        for spec in BANKING_SPECS:
+            ok, msg = check_thesis_file(spec, banking_date)
+            mark = "OK " if ok else "FAIL"
+            print(f"[{mark}] {spec['prefix']}_{banking_date.isoformat()}.json — {msg}")
+            all_ok = all_ok and ok
 
     print("-" * 60)
     if all_ok:
