@@ -298,9 +298,24 @@ Each debt entry includes:
 - **Causa probable:** la validación de frescura por `max_dias` no contempla series mensuales con lag de publicación (MICH publica mensual con ~1 mes de rezago).
 - **Impacto:** el agente recibe datos vencidos marcados como confiables. Hoy mitigado porque Opus 5 lo detecta y baja la confianza solo — pero el régimen pre-calculado (que no razona) los consume ciego.
 - **Fix sugerido:** revisar `max_dias` por serie en el collector; incluir `fecha_publicacion` en el snapshot y validar contra la frecuencia esperada de cada serie.
+- **RESUELTO 2026-08-01:**
+  - `verificar_freshness` (collector.py) ahora compara `(hoy − fecha_publicacion)` contra `max_dias`, no `(hoy − fecha_descarga)`. La columna ya existía en la tabla (`indicadores.fecha_publicacion NOT NULL`), no hizo falta ALTER TABLE. Fallback defensivo a `fecha_descarga` + WARNING si por algún motivo la columna llega vacía.
+  - `FRESHNESS_MAX_DIAS` re-escrito: toda serie fetched por `correr_colector()` tiene entrada explícita, el default 5 pasa a ser sólo red de seguridad. Mensuales (unemployment, sahm_rule, cpi, pce_core, michigan_inflation_exp) fijados en 40 días para cubrir el rezago normal de publicación (~1 mes desde el mes observado). Duplicado de `breakeven_5y5y` eliminado.
 
 ## TD — clasificador de noticias archiva temas ajenos bajo POLÍTICA MONETARIA
 - **Detectado:** 2026-07-31 — por el agente macro (titular de boicot FIFA clasificado como política monetaria).
 - **Causa probable:** clasificación por keywords débiles o categoría default cuando no hay match.
 - **Impacto:** contamina el contexto del prompt con ruido; el agente lo declaró, pero gasta tokens y erosiona la señal.
 - **Fix sugerido:** categoría "OTROS" como default estricto, o clasificar con una llamada barata al modelo en el news_collector.
+- **RESUELTO 2026-08-01:**
+  - `clasificar` en `news_collector.py` ahora hace matching con `re.search(r"\b<kw>\b", texto)` (word boundary) en vez de `if kw in texto` (substring). Esto corta el caso "fed" ⊂ "federation" que llevó a que "FIFA federation boycott" cayera en POLÍTICA MONETARIA.
+  - Default explícito `OTROS` cuando ningún keyword calza como palabra completa (antes: `MACRO GLOBAL`, que le prestaba peso macro a un titular sin match).
+  - Lista de categorías + keywords movida a constante módulo `_CATEGORIAS_KEYWORDS` para separarla de la lógica.
+  - No se agregó clasificación por LLM — decisión explícita: primero validar el default honesto en prod.
+
+## TD (FUTURO) — freshness por días hábiles para series de mercado
+- **Detectado:** 2026-08-02 — durante re-test del `FRESHNESS_MAX_DIAS` recalibrado.
+- **Contexto:** las series diarias de mercado (yfinance intraday, FRED daily) no publican fines de semana ni feriados. Un pipeline corriendo lunes a la mañana ve toda la data del viernes → 3 días calendario de edad, aunque el mercado esté "al día". Post-feriado (ej. lunes feriado + lunes de test = viernes previo) llega a 4.
+- **Mitigación actual:** umbral calendario elevado a 4 días para el tier diario (`collector.py:FRESHNESS_MAX_DIAS`). Cubre el peor gap normal; un dato genuinamente estancado dispara a los 5+.
+- **Fix sugerido (no urgente):** reemplazar el umbral calendario por un cálculo en días hábiles (`numpy.busday_count` o similar) para el tier de mercado, con calendario NYSE (o al menos excluyendo weekends + feriados US). El tier mensual FRED puede seguir en calendario, la semántica ya es la correcta.
+- **Prioridad:** LOW. El umbral de 4 días calendario es honesto; el refinamiento sólo ajusta el margen entre "cubre feriado largo" y "detecta stall real".

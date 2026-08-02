@@ -4,6 +4,7 @@ Usa /v2/top-headlines de NewsAPI (compatible con plan gratuito).
 DNA: Soros — los mercados se mueven por narrativas antes que por datos.
 """
 
+import re
 import requests
 import json
 import os
@@ -123,6 +124,19 @@ def evaluar_impacto(titulo: str, descripcion: str) -> str:
     return "BAJO"
 
 
+_CATEGORIAS_KEYWORDS = [
+    # Orden = prioridad. El primer keyword que matchea como palabra completa gana.
+    # Fix 2026-08-01: antes usábamos `in` (substring), y "fed" matcheaba
+    # "federation" — titulares tipo "FIFA federation boycott" caían en
+    # POLÍTICA MONETARIA. Ahora requerimos word boundary con regex.
+    ("POLÍTICA MONETARIA",        ["fed", "central bank", "rate", "inflation", "cpi"]),
+    ("TECH Y AI",                 ["ai", "nvidia", "chip", "tech", "robot", "semiconductor"]),
+    ("COMMODITIES Y GEOPOLÍTICA", ["oil", "gold", "commodity", "opec", "energy"]),
+    ("MERCADOS",                  ["stock", "market", "dow", "nasdaq", "s&p", "rally", "selloff"]),
+    ("FX Y TASAS",                ["dollar", "yield", "bond", "treasury", "currency"]),
+]
+
+
 def formatear_para_agente(noticias: list) -> str:
     if not noticias:
         return (
@@ -130,21 +144,16 @@ def formatear_para_agente(noticias: list) -> str:
             "Reducir confianza general en 15 puntos."
         )
 
-    # Clasificar por fuerza macro
+    # Clasificar por fuerza macro. Default OTROS explícito: un titular sin
+    # match claro no es "macro global", es simplemente no clasificable —
+    # y el agente lo debería tratar como ruido, no como señal macro.
     def clasificar(art):
         texto = (art["titulo"] + " " + art["descripcion"]).lower()
-        if any(k in texto for k in ["fed", "central bank", "rate", "inflation", "cpi"]):
-            return "POLÍTICA MONETARIA"
-        elif any(k in texto for k in ["ai", "nvidia", "chip", "tech", "robot", "semiconductor"]):
-            return "TECH Y AI"
-        elif any(k in texto for k in ["oil", "gold", "commodity", "opec", "energy"]):
-            return "COMMODITIES Y GEOPOLÍTICA"
-        elif any(k in texto for k in ["stock", "market", "dow", "nasdaq", "s&p", "rally", "selloff"]):
-            return "MERCADOS"
-        elif any(k in texto for k in ["dollar", "yield", "bond", "treasury", "currency"]):
-            return "FX Y TASAS"
-        else:
-            return "MACRO GLOBAL"
+        for categoria, keywords in _CATEGORIAS_KEYWORDS:
+            for kw in keywords:
+                if re.search(r"\b" + re.escape(kw) + r"\b", texto):
+                    return categoria
+        return "OTROS"
 
     por_fuerza = {}
     for art in noticias:

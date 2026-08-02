@@ -272,16 +272,19 @@ Componentes verificados por Read directo o por import:
 ## 5. Calidad de datos por fuente
 
 ### FRED (Federal Reserve Economic Data)
-- **Series consumidas:** `DGS10`, `DTB3`, `DFII10`, `T5YIFR`, `BAMLH0A0HYM2`, `ICSA`, `UNRATE`, `SAHMREALTIME`, `CPIAUCSL`, `PCEPILFE`, `MICH` (`collector.py:435-482`).
-- **Frecuencia real:** diaria (yields, spreads), semanal (jobless_claims), mensual (unemployment, sahm, PMI, CPI, PCE, michigan).
+- **Series consumidas:** `DGS10`, `DTB3`, `DFII10`, `T5YIFR`, `BAMLH0A0HYM2`, `ICSA`, `UNRATE`, `SAHMREALTIME`, `CPIAUCSL`, `PCEPILFE`, `MICH` (`collector.py:472-519`, orden real de fetch).
+- **Frecuencia real:** diaria (yields, spreads), semanal (jobless_claims), mensual (unemployment, sahm, CPI, PCE, michigan).
 - **Validación:**
   - Rango histórico por serie (`collector.py:34-57`).
-  - Cambio máximo diario absoluto/relativo (`collector.py:192-216`).
-  - Verificación cruzada FRED vs yfinance para `yield_10y` (30 bps) y `usdjpy` (1 yen) (`collector.py:521-524`).
-- **Freshness:** `FRESHNESS_MAX_DIAS` (`collector.py:60-80`), pero `verificar_freshness` compara contra `fecha_descarga` no `fecha_publicacion` (`collector.py:230-232`). **Ahí es donde miente `es_fresco`**: si el colector corrió hoy y bajó un dato mensual de hace 3 meses, `fecha_descarga=hoy` → aparece fresco.
-  - **Caso documentado:** `TECHNICAL_DEBT.md:295-300` (2026-07-31, detectado por el propio Opus 5): `michigan_inflation_exp` con `fecha_publicacion=2026-05-01` llegó con `es_fresco=true`.
-  - Además `FRESHNESS_MAX_DIAS` tiene `breakeven_5y5y` duplicado (líneas 74 y 79) — la segunda entrada gana y anula la primera (misma value=2, sin efecto práctico hoy, pero code smell).
-  - `MICH` (`michigan_inflation_exp`) no está en `FRESHNESS_MAX_DIAS` (`collector.py:60-80`), cae al default `5` (`collector.py:232`). Suma al bug documentado.
+  - Cambio máximo diario absoluto/relativo (`collector.py:212-238`).
+  - Verificación cruzada FRED vs yfinance para `yield_10y` (30 bps) y `usdjpy` (1 yen) (`collector.py:561-564`).
+- **Freshness (fix 2026-08-01):** `verificar_freshness` (`collector.py`) compara `(hoy − fecha_publicacion)` contra `FRESHNESS_MAX_DIAS`. Antes usaba `fecha_descarga` y hacía aparecer datos vencidos como frescos (`TECHNICAL_DEBT.md:295-303`, caso `michigan_inflation_exp` de 2026-05-01). La columna `fecha_publicacion` ya existía NOT NULL en la tabla `indicadores` (`collector.py:104`); no hizo falta migración de schema. Fallback defensivo a `fecha_descarga` + WARNING si por algún motivo la columna llega vacía.
+- **`FRESHNESS_MAX_DIAS` (fix 2026-08-01):** toda serie fetched por `correr_colector()` tiene entrada explícita — el default 5 pasa a ser sólo red de seguridad. Bandas:
+  - Diarios (yfinance / FRED daily): 1 día.
+  - FRED con rezago típico: 2 días (`hy_spread`, `tips_yield_10y`, `breakeven_5y5y`).
+  - Semanales (`jobless_claims`): 8 días.
+  - Mensuales (`unemployment`, `sahm_rule`, `cpi`, `pce_core`, `michigan_inflation_exp`): 40 días para cubrir el rezago normal de publicación (~1 mes desde el mes observado).
+  - Duplicado de `breakeven_5y5y` eliminado.
 
 ### EIA (Energy Information Administration)
 - **Series consumidas:** inventarios crude/gasoline/distillate/propane, refining utilization, natgas storage — descriptas en `og_collector.py:1-15` (docstring). **No determinable en detalle:** no llegué a leer el fetch loop completo por longitud del archivo.
@@ -289,16 +292,17 @@ Componentes verificados por Read directo o por import:
 - **Validación:** persiste en `indicadores_eia` (leída por `og_agent.py:184-195`). El agente recibe fecha de publicación y descripción — puede razonar sobre frescura textualmente, no hay flag `es_fresco`.
 
 ### yfinance
-- **Series:** FX (DXY, USDJPY, EURUSD, USDCNY, USDBRL, USDMXN), equities (SPY, QQQ, TLT, GLD, VIX), yield_10y_mkt, usdjpy_mkt (`collector.py:487-517`); técnicos (200DMA, momentum 12M) para 6 activos + muestra de 50 tickers para breadth (`technical_collector.py:38-63`); OG futures + equities (`og_collector.py:39-53`); options flow (VIX9D/6M, put/call) (`options_flow_collector.py:1-15`); tracker (precios entrada/salida de señales y convicciones, `tracker.py:143-146, 205-209`); banking N/A (SEC).
-- **Validación:** rango + cambio diario (`collector.py:172-218`) sólo en `collector.py`. `technical_collector.py`, `og_collector.py`, `options_flow_collector.py` no aplican el mismo framework — validación implícita ("si empty, log warning").
+- **Series:** FX (DXY, USDJPY, EURUSD, USDCNY, USDBRL, USDMXN), equities (SPY, QQQ, TLT, GLD, VIX), yield_10y_mkt, usdjpy_mkt (`collector.py:524-557`); técnicos (200DMA, momentum 12M) para 6 activos + muestra de 50 tickers para breadth (`technical_collector.py:38-63`); OG futures + equities (`og_collector.py:39-53`); options flow (VIX9D/6M, put/call) (`options_flow_collector.py:1-15`); tracker (precios entrada/salida de señales y convicciones, `tracker.py:143-146, 205-209`); banking N/A (SEC).
+- **Validación:** rango + cambio diario (`collector.py:192-240`) sólo en `collector.py`. `technical_collector.py`, `og_collector.py`, `options_flow_collector.py` no aplican el mismo framework — validación implícita ("si empty, log warning").
 - **Riesgo típico:** yfinance devuelve NaN silenciosamente en fines de semana/holidays; el DXY tiene gaps (`technical_collector.py:107-108` compensa con más días de descarga).
 
 ### NewsAPI (news_collector.py + og_news_collector.py)
-- **Endpoint:** `/v2/top-headlines` free-tier (`news_collector.py:13-16`).
-- **Categorías:** business, technology, general (`news_collector.py:16`).
-- **Filtro:** keyword-based sobre título+descripción (`news_collector.py:26-42, 72-73`). Bug documentado: temas ajenos caen bajo "POLÍTICA MONETARIA" porque el clasificador es débil (`TECHNICAL_DEBT.md:302-306`, ejemplo boicot FIFA).
-- **Cache:** 30 min (`news_collector.py:194`).
-- **Tiering:** hardcoded (`news_collector.py:19-23`).
+- **Endpoint:** `/v2/top-headlines` free-tier (`news_collector.py:14`).
+- **Categorías (query):** business, technology, general (`news_collector.py:17`).
+- **Filtro de inclusión:** keyword-based sobre título+descripción (`news_collector.py:27-43, 73-74`) — decide si la noticia pasa el umbral de relevancia macro.
+- **Clasificación (fix 2026-08-01):** matching con word boundary (`re.search(r"\b<kw>\b", texto)`) contra la constante `_CATEGORIAS_KEYWORDS` a nivel módulo. Default `OTROS` explícito cuando ningún keyword calza como palabra completa (antes: `MACRO GLOBAL`). Corta el caso "fed" ⊂ "federation" que llevaba titulares tipo "FIFA federation boycott" a POLÍTICA MONETARIA (`TECHNICAL_DEBT.md:305-314`).
+- **Cache:** 30 min (`news_collector.py:203`).
+- **Tiering:** hardcoded (`news_collector.py:20-24`).
 - **Freshness:** no explícita; se descarga fresh o cache <30 min.
 
 ### SEC EDGAR (workstream banking/SEC, hoy dormido)
@@ -332,7 +336,7 @@ Escala 1-10 donde 5 = "aceptable para prototipo personal", 8+ = "mantenible por 
 
 Ordenado por *impacto × urgencia*. Cada ítem cita el ancla en el código o en la deuda existente.
 
-1. **Arreglar `verificar_freshness` para usar `fecha_publicacion`.** Hoy compara contra `fecha_descarga` (`collector.py:230-232`) y marca frescos datos vencidos. El bug ya fue detectado en producción (`TECHNICAL_DEBT.md:295-300`). Fix propuesto por el propio ítem de deuda.
+1. ~~**Arreglar `verificar_freshness` para usar `fecha_publicacion`.**~~ **RESUELTO 2026-08-01** — `collector.py:verificar_freshness` ahora compara contra `fecha_publicacion` con fallback defensivo a `fecha_descarga` + WARNING (`TECHNICAL_DEBT.md:295-303`).
 
 2. **Wirear el workstream bancos al pipeline o marcarlo `DEPRECATED`.** Hoy `banking_collector*.py` y `banking_agent*.py` están dormidos (§4). O agregar steps a `daily_pipeline.yml` (probablemente con schedule trimestral aparte, no diario) + extender `health_check.py:19-38` + hacer que `banking_agent*.__main__` llame al tracker; o mover todo a `scripts/deferred/`.
 
@@ -340,11 +344,11 @@ Ordenado por *impacto × urgencia*. Cada ítem cita el ancla en el código o en 
 
 4. **Unificar la carga de `.env`.** `TECHNICAL_DEBT.md#1`: reemplazar los mini-parsers en `agent.py`, `technical_agent.py:42-46`, `og_agent.py:26-33`, `synthesizer.py:28-34`, `og_collector.py:29-35`, `og_news_collector.py:24-30`, `banking_agent*.py` por `python-dotenv`. Además hoy `collector.py:609` no usa `.env` — inconsistente.
 
-5. **Corregir el clasificador de noticias.** `news_collector.py:134-148` y `TECHNICAL_DEBT.md:302-306` (POLÍTICA MONETARIA cazando titulares de FIFA). Fix propuesto: default "OTROS" + eventualmente clasificación por LLM barato.
+5. ~~**Corregir el clasificador de noticias.**~~ **RESUELTO 2026-08-01** — `news_collector.py:clasificar` usa word-boundary regex + default `OTROS` explícito (`TECHNICAL_DEBT.md:305-314`). Clasificación por LLM barato queda pendiente como iteración futura si el default honesto no basta.
 
 6. **Limpiar dead code del root.** `debug_sec.py`, `patch_agent_options.py`, `patch_options_flow.py`, `test_cik.py`, `test_financials.py`, `test_sec.py`, `limpiar_duplicados.py` a `scripts/legacy/` (`TECHNICAL_DEBT.md#8`). Además decidir entre `financials_extractor.py` v1 y v2 (`TECHNICAL_DEBT.md#9`).
 
-7. **Corregir `FRESHNESS_MAX_DIAS` duplicado.** `breakeven_5y5y` aparece en `collector.py:74` y `collector.py:79`; agregar entrada para `MICH`/`michigan_inflation_exp`, `cpi`, `pce_core` (hoy caen al default `5` porque no están listadas).
+7. ~~**Corregir `FRESHNESS_MAX_DIAS` duplicado.**~~ **RESUELTO 2026-08-01** — dict re-escrito con toda serie fetched declarada explícitamente; duplicado eliminado; monthlies con `max_dias=40` (`collector.py:63-102`, `TECHNICAL_DEBT.md:295-303`).
 
 8. **Cobertura de OCF/capex quarterly en tech.** `TECHNICAL_DEBT.md:281-293`. Bloquea FCF, que es la métrica de verificación de "growth real vs SBC/acct". Derivar Q_n = YTD_n − YTD_(n-1) por ticker; cuidado con non-calendar filers (mismo trap que produjo el -30.2 en NVDA Q4 según la nota).
 

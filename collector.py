@@ -56,27 +56,60 @@ RANGOS_VALIDOS = {
     "pmi_services":    (25.0,  70.0),
 }
  
-# Cuántos días puede tener un dato antes de considerarse "viejo"
+# Cuántos días puede tener un dato desde su fecha de PUBLICACIÓN antes de
+# considerarse "viejo". Toda serie fetched por correr_colector() debe tener
+# entrada explícita — el default 5 (en verificar_freshness) es red de
+# seguridad, no configuración implícita. Ver TECHNICAL_DEBT.md (2026-08-01).
 FRESHNESS_MAX_DIAS = {
-    "yield_10y":      1,
-    "yield_3m":       1,
-    "vix":            1,
-    "dxy":            1,
-    "usdjpy":         1,
-    "eurusd":         1,
-    "gold":           1,
-    "spy":            1,
-    "qqq":            1,
-    "tlt":            1,
-    "hy_spread":      2,
-    "tips_yield_10y": 2,
-    "breakeven_5y5y": 2,
-    "jobless_claims": 8,   # semanal
-    "unemployment":   35,  # mensual
-    "sahm_rule":      35,
-    "pmi_manuf":      35,
-    "pmi_services":   35,
-    "breakeven_5y5y": 2,
+    # ── Diarios (yfinance intraday / FRED daily series) + FRED con rezago + derivados ──
+    # 4 días calendario cubre el peor gap normal de mercado: viernes → martes
+    # post-feriado. Un dato genuinamente estancado dispara a los 5+.
+    # (Refinamiento futuro: umbral en días hábiles — ver TECHNICAL_DEBT.md.)
+    "yield_10y":              4,
+    "yield_3m":               4,
+    "vix":                    4,
+    "dxy":                    4,
+    "usdjpy":                 4,
+    "eurusd":                 4,
+    "usdcny":                 4,
+    "usdbrl":                 4,
+    "usdmxn":                 4,
+    "gold":                   4,
+    "spy":                    4,
+    "qqq":                    4,
+    "tlt":                    4,
+    "yield_10y_mkt":          4,  # confirmación yfinance del yield_10y (^TNX)
+    "usdjpy_mkt":             4,  # confirmación yfinance del usdjpy
+
+    # FRED con 1-2 días hábiles de rezago típico (mismo umbral: dentro del gap normal)
+    "hy_spread":              4,  # BAMLH0A0HYM2 - publicado al día siguiente
+    "tips_yield_10y":         4,  # DFII10
+    "breakeven_5y5y":         4,  # T5YIFR
+
+    # Derivado (recalculado en cada corrida si las bases están frescas)
+    "yield_curve":            4,  # spread 10Y-3M
+
+    # ── Semanales ──
+    "jobless_claims":         8,  # ICSA - publicado los jueves, +1 día de gracia
+
+    # ── Mensuales ──
+    # Nota semántica (calibrado 2026-08-02 tras test en vivo):
+    # FRED reporta fecha_publicacion = fecha del PERÍODO OBSERVADO, no del
+    # comunicado. Ej: el CPI de junio tiene fecha 2026-06-01 aunque se
+    # publique ~15 de julio. Un dato mensual "al día", justo antes del
+    # release del siguiente, tiene naturalmente 30-60 días de edad medida
+    # por observación; con pce_core (release a fin del mes siguiente) llega
+    # a ~89. El umbral cubre el ciclo mensual + rezago de publicación
+    # (max ≈ frecuencia + lag_release + margen).
+    "unemployment":          75,  # UNRATE - release primer viernes del mes siguiente
+    "sahm_rule":             75,  # SAHMREALTIME - depende de UNRATE, mismo calendario
+    "cpi":                   75,  # CPIAUCSL - release ~10-15 del mes siguiente
+    "pce_core":              95,  # PCEPILFE - release hacia fin del mes siguiente (el más tardío)
+    "michigan_inflation_exp": 75, # MICH - quincenal U.Michigan, lag ~15-30 días
+
+    # ── Series declaradas para futuro (no fetched hoy por correr_colector) ──
+    "pmi_manuf":             75,  # ISM Manuf. PMI - mensual, release primer día hábil
+    "pmi_services":          75,  # ISM Services PMI - mensual, release ~3er día hábil
 }
  
  
@@ -220,22 +253,40 @@ def validar(nombre: str, valor: float, anterior: Optional[float],
  
 def verificar_freshness(conn: sqlite3.Connection, nombre: str) -> tuple[bool, int]:
     """
-    Verifica que el dato más reciente no sea demasiado viejo.
+    Verifica que el dato más reciente no sea demasiado viejo comparando
+    contra la fecha de PUBLICACIÓN del dato (no contra cuándo lo bajamos).
+    Un dato mensual publicado en mayo, bajado hoy, es de hace 3 meses —
+    no de hoy. Antes del fix 2026-08-01 usábamos fecha_descarga y esa
+    diferencia hacía aparecer datos vencidos como frescos (ver
+    TECHNICAL_DEBT.md).
     Retorna (es_fresco, dias_de_antiguedad).
     """
     ultimo = obtener_ultimo(conn, nombre)
     if not ultimo:
         return False, 999
- 
-    fecha_descarga = datetime.fromisoformat(ultimo.fecha_descarga).date()
-    dias = (date.today() - fecha_descarga).days
+
+    # Fallback defensivo: si por algún motivo no hay fecha_publicacion
+    # (la columna es NOT NULL, pero por si migran una DB vieja) caemos
+    # al comportamiento previo con un WARNING para que sea visible.
+    if ultimo.fecha_publicacion:
+        fecha_referencia = datetime.fromisoformat(ultimo.fecha_publicacion).date()
+    else:
+        log.warning(
+            f"{nombre}: sin fecha_publicacion, usando fecha_descarga como fallback"
+        )
+        fecha_referencia = datetime.fromisoformat(ultimo.fecha_descarga).date()
+
+    dias = (date.today() - fecha_referencia).days
     max_dias = FRESHNESS_MAX_DIAS.get(nombre, 5)
- 
+
     if dias > max_dias:
-        registrar_alerta(conn, "WARNING", nombre,
-                         f"Dato tiene {dias} días de antigüedad (máx permitido: {max_dias})")
+        registrar_alerta(
+            conn, "WARNING", nombre,
+            f"Dato tiene {dias} días desde publicación ({ultimo.fecha_publicacion}); "
+            f"máx permitido: {max_dias}"
+        )
         return False, dias
- 
+
     return True, dias
  
  
