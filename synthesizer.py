@@ -1,5 +1,5 @@
 """
-FearNot - Synthesizer Agent (Opus 4.7)
+FearNot - Synthesizer Agent
 
 El CIO del fondo. NO genera mas analisis individual.
 LEE los memos de los agentes especializados (macro, technical, O&G)
@@ -19,7 +19,7 @@ import anthropic
 from datetime import datetime, date, timedelta
 from pathlib import Path
 
-from config import MODEL, extract_text
+from config import MODEL, MAX_TOKENS, extract_text
 
 DB_PATH = "data/macro.db"
 
@@ -391,7 +391,7 @@ def registrar_convicciones(output: dict) -> int:
 # ----------------- Funcion principal -----------------
 def correr_synthesizer(max_reintentos: int = 2) -> dict:
     print("=" * 60)
-    print(f"Synthesizer Agent (Opus 4.7) - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"Synthesizer Agent ({MODEL}) - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 60)
 
     print("\n[1/4] Cargando inputs de los agentes...")
@@ -409,7 +409,7 @@ def correr_synthesizer(max_reintentos: int = 2) -> dict:
     print("\n[2/4] Construyendo prompt para Opus...")
     prompt = construir_prompt(inputs)
 
-    print("\n[3/4] Llamando a Claude Opus 4.7 (puede tardar 1-2 min)...")
+    print(f"\n[3/4] Llamando a {MODEL} (puede tardar 1-2 min)...")
     client = get_client()
     output = None
 
@@ -419,7 +419,7 @@ def correr_synthesizer(max_reintentos: int = 2) -> dict:
         try:
             response = client.messages.create(
                 model=MODEL,
-                max_tokens=8000,
+                max_tokens=MAX_TOKENS,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}]
             )

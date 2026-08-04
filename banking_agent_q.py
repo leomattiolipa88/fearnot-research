@@ -23,7 +23,7 @@ from pathlib import Path
 
 import anthropic
 
-from config import MODEL, extract_text
+from config import MODEL, MAX_TOKENS, extract_text
 from tendencia import analizar_tendencia
 from tracker import registrar_senales
 
@@ -308,7 +308,7 @@ def correr_banking_agent_q(anio_actual: int = 2025, quarter_actual: int = 3, max
         try:
             response = client.messages.create(
                 model=MODEL,
-                max_tokens=4000,
+                max_tokens=MAX_TOKENS,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}],
             )

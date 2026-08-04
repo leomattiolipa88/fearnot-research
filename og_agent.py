@@ -1,5 +1,5 @@
 """
-FearNot - O&G + LPG Agent (Sonnet 4.6)
+FearNot - O&G + LPG Agent (Claude; modelo en config.MODEL)
 
 Head trader del energy desk. DNA Trafigura.
 Lee data sectorial (precios, spreads, EIA, noticias) + tesis macro y tecnica.
@@ -16,7 +16,7 @@ import sqlite3
 import anthropic
 from datetime import datetime, date, timedelta
 from pathlib import Path
-from config import MODEL, extract_text
+from config import MODEL, MAX_TOKENS, extract_text
 from tracker import registrar_senales
 
 DB_PATH = "data/macro.db"
@@ -338,7 +338,7 @@ def validar_output(output: dict) -> tuple[bool, list, list]:
 # ----------------- Main -----------------
 def correr_og_agent(max_reintentos: int = 2) -> dict:
     print("=" * 60)
-    print(f"O&G Agent (Sonnet 4.6) - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"O&G Agent ({MODEL}) - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 60)
 
     print("\n[1/4] Cargando inputs...")
@@ -355,7 +355,7 @@ def correr_og_agent(max_reintentos: int = 2) -> dict:
     print("\n[2/4] Construyendo prompt...")
     prompt = construir_prompt(inputs)
 
-    print("\n[3/4] Llamando a Claude Sonnet 4.6...")
+    print(f"\n[3/4] Llamando a {MODEL}...")
     client = get_client()
     output = None
 
@@ -365,7 +365,7 @@ def correr_og_agent(max_reintentos: int = 2) -> dict:
         try:
             response = client.messages.create(
                 model=MODEL,
-                max_tokens=8000,
+                max_tokens=MAX_TOKENS,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}]
             )

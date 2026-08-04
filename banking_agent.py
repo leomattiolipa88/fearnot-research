@@ -20,7 +20,7 @@ from pathlib import Path
 
 import anthropic
 
-from config import MODEL, extract_text
+from config import MODEL, MAX_TOKENS, extract_text
 from tracker import registrar_senales
 
 DB_PATH = "data/macro.db"
@@ -271,7 +271,7 @@ def correr_banking_agent(fiscal_year: int = 2024, max_reintentos: int = 2) -> di
         try:
             response = client.messages.create(
                 model=MODEL,
-                max_tokens=4000,
+                max_tokens=MAX_TOKENS,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}],
             )

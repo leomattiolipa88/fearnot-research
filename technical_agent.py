@@ -1,5 +1,5 @@
 """
-Macro Agent — Technical Agent (Opus 4.7)
+Macro Agent — Technical Agent (Claude; modelo en config.MODEL)
 Analiza indicadores tecnicos y los combina con el regimen macro
 para generar senales tecnicas con conviccion calibrada.
 
@@ -12,7 +12,7 @@ import os
 import anthropic
 from datetime import datetime
 from pathlib import Path
-from config import MODEL, extract_text
+from config import MODEL, MAX_TOKENS, extract_text
 from technical_collector import obtener_snapshot_tecnico
 
 
@@ -256,7 +256,7 @@ def correr_agente_tecnico(db_path: str = "data/macro.db",
                           max_reintentos: int = 2) -> dict:
     """Corre el agente tecnico completo."""
     print("=" * 60)
-    print(f"Agente tecnico (Opus 4.7) iniciado: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
+    print(f"Agente tecnico ({MODEL}) iniciado: {datetime.now().strftime('%Y-%m-%d %H:%M')}")
     print("=" * 60)
 
     # Paso 1: Snapshot tecnico
@@ -274,8 +274,8 @@ def correr_agente_tecnico(db_path: str = "data/macro.db",
     regimen_macro = leer_regimen_macro()
     print(f"      Regimen aplicado: {regimen_macro}")
 
-    # Paso 3: Llamar a Opus 4.7
-    print("\n[3/4] Llamando a Claude Opus 4.7...")
+    # Paso 3: Llamar a Claude
+    print(f"\n[3/4] Llamando a Claude ({MODEL})...")
     prompt = construir_prompt(snapshot, regimen_macro, options_flow=cargar_options_flow())
     client = get_client()
     tesis = None
@@ -286,7 +286,7 @@ def correr_agente_tecnico(db_path: str = "data/macro.db",
         try:
             response = client.messages.create(
                 model=MODEL,
-                max_tokens=3000,
+                max_tokens=MAX_TOKENS,
                 system=SYSTEM_PROMPT,
                 messages=[{"role": "user", "content": prompt}]
             )
@@ -340,7 +340,7 @@ def imprimir_tesis_tecnica(tesis: dict):
         return
 
     print("\n" + "=" * 60)
-    print("TESIS TECNICA DEL DIA (Opus 4.7)")
+    print(f"TESIS TECNICA DEL DIA ({MODEL})")
     print("=" * 60)
 
     print(f"\nRegimen macro aplicado: {tesis.get('regimen_macro_aplicado')}")
