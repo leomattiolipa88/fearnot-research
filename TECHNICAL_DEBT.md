@@ -341,3 +341,12 @@ Backlog #6 (`TECHNICAL_DEBT.md#8`): mover a `scripts/legacy/`:
 - `financials_extractor.py` (v1 — reemplazado por v2, `TECHNICAL_DEBT.md#9`)
 
 Movimiento de archivos es operación del usuario (comandos `git mv` entregados en la sesión). Verificar que ningún módulo del pipeline los importa antes de mover — inspección estática sugiere que ninguno lo hace (ninguno aparece en imports de agentes/collectors activos), pero validar con `grep -R "from financials_extractor import" .` u equivalente antes de confirmar.
+
+## TD (FUTURO) — separar DBs por pipeline para evitar overwrite en merge concurrente
+- **Detectado:** 2026-08-04 — al endurecer el paso commit del `daily_pipeline.yml` para tolerar corridas concurrentes con el `banking_pipeline.yml`.
+- **Contexto:** ambos pipelines commitean `data/macro.db` al mismo repo. Si se solapan (día 3 del mes con banking a 15:00 UTC vs daily que tipicamente termina 12:00-12:30, el margen es amplio pero no infinito), el push del segundo falla por conflicto en el binario SQLite. El fix aplicado hoy en `daily_pipeline.yml` (`git fetch` + `git merge -X ours`) resuelve el conflicto **descartando** el lado del otro pipeline en el binario. En el caso concreto de banking corriendo al mismo tiempo, las filas SEC recién insertadas por el banking pipeline se pierden del `macro.db` del commit del daily; se re-fetchean en el próximo run mensual (no hay data perdida real, sólo trabajo repetido). Los JSONs de tesis nunca chocan porque tienen nombres distintos.
+- **Mitigación actual:** merge con `-X ours` en `daily_pipeline.yml`. Trade-off documentado en el comentario del paso commit.
+- **Fix definitivo:** separar la persistencia por pipeline. Opciones:
+  1. `data/macro.db` para daily (macro/tech/energy) y `data/banking.db` para banking (SEC). Cada pipeline commitea sólo su DB → cero conflicto binario. Requiere refactor de los collectors bancarios (`banking_collector.py`, `banking_collector_q.py`) y del `banking_agent*.py` para apuntar a la nueva DB.
+  2. Mover `macro.db` fuera del repo (S3 / SQLite Cloud / Turso) y versionar sólo los JSONs. Descarta el modelo actual de "DB versionada para persistencia entre runners ephemeral" que está documentado en `.gitignore:43-45`.
+- **Prioridad:** LOW. Con el schedule actual (daily 10:30 UTC → termina ~12:00-12:30; banking día 3 a 15:00 UTC) los solapamientos son improbables. El fix `-X ours` cubre el caso raro sin data loss real. Priorizar sólo si se agrega otro pipeline concurrente o si el volumen SEC crece al punto que re-fetchear salga caro.

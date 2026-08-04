@@ -114,6 +114,19 @@ jobs:
           else
             FECHA=$(date -u '+%Y-%m-%d %H:%M UTC')
             git commit -m "Daily pipeline run - $FECHA"
+
+            # Integrar cualquier commit concurrente (típicamente banking_pipeline
+            # el día 3 si se solapa) antes de pushear. `-X ours` = ante conflicto,
+            # gana la versión de este runner. Trade-off aceptado:
+            #   - JSONs de tesis: nunca chocan (nombres distintos por prefijo/fecha).
+            #   - macro.db (binario SQLite): si chocó con una corrida bancaria
+            #     concurrente, las filas SEC recién insertadas por esa corrida se
+            #     pierden del binario aquí; se re-fetchean en el próximo run
+            #     bancario (mensual). Fix definitivo = separar DBs por pipeline
+            #     (ver TECHNICAL_DEBT.md).
+            git fetch origin main
+            git merge -X ours origin/main -m "merge: integrate concurrent pipeline commits"
+
             git push
             echo "Data committed to fearnot-research"
           fi
