@@ -1,0 +1,96 @@
+{
+  "fecha": "2026-08-04",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 68,
+    "razonamiento": "Crecimiento estable sin señales de recesión: unemployment 4.2% (FRED:UNRATE), sahm_rule 0.07 (FRED:SAHMREALTIME, muy lejos del umbral de 0.50) y jobless_claims 197.000 (FRED:ICSA, es_fresco=false, 10 días de antigüedad — señal degradada pero direccionalmente muy fuerte). Liquidez y crédito benignos: hy_spread 2.78% (FRED:BAMLH0A0HYM2) y vix 16.5 (^VIX), ambos frescos y consistentes con apetito de riesgo. Curva positiva y con pendiente sana: yield_curve +0.95% (10Y 4.70% FRED:DGS10 vs 3M 3.75% FRED:DTB3), sin inversión. Expectativas de inflación de mercado ancladas: breakeven_5y5y 2.31% (FRED:T5YIFR). Reduzco la confianza desde el régimen pre-calculado (que reporta 0 señales de riesgo y 0 de inflación) por tres motivos: (1) michigan_inflation_exp 4.6% (FRED:MICH) está muy por encima del breakeven de mercado 2.31% — divergencia encuestas vs mercado no trivial; (2) tips_yield_10y 2.43% (FRED:DFII10) es un nivel de tasa real restrictivo que históricamente comprime múltiplos; (3) todo el bloque de datos duros macro (CPI 332.568, PCE core 130.266, unemployment, Sahm, Michigan) tiene fecha_publicacion 2026-06-01, es decir 64 días de antigüedad: el régimen se apoya en fotos de junio mientras los precios de mercado son de hoy. Hay una cola reflacionaria (gold 374.16 en GLD, curva empinándose, 10Y 4.70%) que no descarto."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Combinación clásica de risk-on: hy_spread 2.78% (crédito no valida ningún estrés), vix 16.5, sahm_rule 0.07 y unemployment 4.2%. La curva está positiva en +0.95% (yield_curve). SPY 771.33 (yfinance:SPY) con el mercado hoy empujando hacia máximos según [MarketWatch] por de-escalación EE.UU.-Irán y caída de yields (yield_10y_mkt 4.627% vs FRED:DGS10 4.70% de ayer). El único freno es tips_yield_10y 2.43%: tasa real alta que limita expansión de múltiplos, por eso no llevo la convicción por encima de 7.",
+      "dato_clave": "hy_spread 2.78%"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Mismo soporte macro que SPY (vix 16.5, hy_spread 2.78%) y caída del yield_10y_mkt a 4.627% desde 4.70% (yield_10y), lo que favorece duration equity. Convicción un punto menor que SPY porque el JSON no contiene precio de QQQ (no puedo verificar nivel ni momentum) y porque el flujo de noticias regulatorias sobre IA ([Fox Business] AGs republicanos sobre OpenAI; [Politico] marco de supervisión de la Casa Blanca) introduce riesgo idiosincrático de titulares sobre el liderazgo del índice, con Palantir reportando hoy [MarketWatch].",
+      "dato_clave": "yield_10y_mkt 4.627%"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "Señales contradictorias. A favor de duration: yields bajando hoy (yield_10y_mkt 4.627% vs yield_10y 4.70%) por de-escalación geopolítica [MarketWatch], y breakeven_5y5y 2.31% anclado. En contra: tips_yield_10y 2.43% implica que el mercado exige prima real alta; la economía no se está deteriorando (sahm_rule 0.07, unemployment 4.2%, claims 197k aunque rancios) por lo que no hay catalizador de rally por recesión; y michigan_inflation_exp 4.6% es un riesgo latente. TLT en 82.82 (yfinance:TLT). Sin catalizador claro, convicción insuficiente para tomar dirección.",
+      "dato_clave": "tips_yield_10y 2.43%"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "GLD 374.16 (yfinance:GLD) sostenido pese a tasas reales de 2.43% (tips_yield_10y), lo cual es anómalo bajo el modelo clásico oro-vs-real-yields: indica un bid estructural (debasement/reservas oficiales) que no depende del ciclo. Refuerzo: michigan_inflation_exp 4.6% muy por encima del breakeven_5y5y 2.31%, y la intervención coordinada en el yen reportada por [Axios] con participación de EE.UU. — intervención cambiaria es históricamente favorable al oro. Contra: la de-escalación EE.UU.-Irán [MarketWatch] quita prima geopolítica en el corto plazo. Horizonte trimestral, no semanal.",
+      "dato_clave": "tips_yield_10y 2.43% vs gold 374.16"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY 99.86 (yfinance:DX-Y.NYB) con eurusd 1.1535 (yfinance:EURUSD=X). La nota de [Axios] sobre participación estadounidense en la intervención del yen sugiere tolerancia oficial a un dólar más débil, especialmente contra JPY (usdjpy 157.715, yfinance:USDJPY=X, nivel de estrés de carry trade). Además yields cayendo hoy (yield_10y_mkt 4.627%) reducen el diferencial de soporte del dólar. Modero la convicción a 5 porque el diferencial 3M sigue alto (yield_3m 3.75%) y los EM cross del JSON no muestran debilidad del dólar generalizada (usdbrl 5.1263, usdmxn 17.3268, usdcny 6.7527 — todos en niveles de dólar contenido, no colapsando).",
+      "dato_clave": "usdjpy 157.715 + intervención coordinada [Axios]"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 3,
+      "razonamiento": "Convicción insuficiente: el JSON no contiene ningún precio de crudo ni de USO, por lo que cualquier señal sería inventada. La única referencia es cualitativa: [MarketWatch] reporta caída del petróleo por de-escalación EE.UU.-Irán. Direccionalmente eso es bajista de corto plazo y desinflacionario (consistente con breakeven_5y5y 2.31%), pero sin dato verificable no tomo posición.",
+      "dato_clave": "sin dato de crudo en el JSON"
+    }
+  ],
+  "tesis_principal": "El régimen es Goldilocks pero de una variedad cara: crecimiento sin fisuras y crédito impecable, financiado con tasas reales altas. Del lado del crecimiento, unemployment 4.2% (FRED:UNRATE), sahm_rule 0.07 (FRED:SAHMREALTIME) y jobless_claims 197.000 (FRED:ICSA, es_fresco=false, 10 días) no dejan lugar a una narrativa de recesión inminente; la curva 10Y-3M está positiva en +0.95% (yield_curve, calculado con DGS10 4.70% y DTB3 3.75%), es decir, ya se normalizó tras el ciclo de inversión y lo hizo por bull-steepening del tramo corto, no por deterioro. Del lado de la inflación, el mercado está tranquilo: breakeven_5y5y 2.31% (FRED:T5YIFR) y un breakeven 10Y implícito de ~2.27% (yield_10y 4.70% menos tips_yield_10y 2.43%). El precio del riesgo lo confirma: hy_spread 2.78% (FRED:BAMLH0A0HYM2) y vix 16.5 son niveles de complacencia estructural, no de estrés. Sobre eso, SPY 771.33 hace máximos y hoy el tape mejora por la de-escalación EE.UU.-Irán, con petróleo y yields cayendo ([MarketWatch]); yield_10y_mkt 4.627% ya cotiza 7pb por debajo del cierre oficial de ayer.\n\nLa grieta de la tesis está en tres números. Primero, tips_yield_10y 2.43%: una tasa real de largo plazo en ese nivel es un impuesto permanente sobre múltiplos de equity y sobre la refinanciación corporativa; con hy_spread en 2.78% el mercado de crédito no está compensando ese costo de capital, es decir, la parte más frágil del complejo no es el equity sino el spread. Segundo, michigan_inflation_exp 4.6% (FRED:MICH) contra breakeven_5y5y 2.31%: el hogar mediano y el mercado de bonos viven en universos distintos; si el dato de julio/agosto de CPI (último disponible: 332.568 al 2026-06-01) o de PCE core (130.266, misma fecha) sorprende al alza, la convergencia se resuelve contra los bonos y el régimen migra de Goldilocks a Reflación o Stagflation en cuestión de semanas. Tercero, usdjpy 157.715: el nota de [Axios] indica que hubo intervención en el yen con participación estadounidense, explícitamente diseñada para que Japón suavice el tipo de cambio sin verse forzado a vender Treasuries. Eso es el reconocimiento oficial de que el carry trade yen-dólar está en zona de fragilidad y de que el canal de transmisión hacia el tramo largo de la curva americana es la preocupación de los policymakers. Un desarme desordenado del carry es el evento con mayor asimetría negativa del tablero actual, y no aparece en ningún indicador de riesgo del JSON porque los indicadores de riesgo (vix, hy_spread) son coincidentes, no anticipatorios.\n\nOperativamente: mantengo sesgo largo de riesgo (SPY 7, QQQ 6) porque nunca se pelea contra crédito tight y desempleo bajo, pero con convicción calibrada, no máxima. Largo GLD (6) como cobertura del régimen equivocado: el oro en 374.16 subiendo contra tasas reales de 2.43% está diciendo algo que ni el VIX en 16.5 ni el spread en 2.78% están diciendo, y en la experiencia histórica el oro suele tener razón antes. Neutral en TLT (4): sin recesión no hay rally de duration, y con michigan_inflation_exp en 4.6% tampoco quiero estar corto de bonos de forma agresiva. Corto táctico y modesto de DXY (5) apoyado en la intervención coordinada. Advertencia metodológica: todo el bloque macro duro tiene 64 días de antigüedad (fecha_publicacion 2026-06-01) — estoy clasificando el régimen de agosto con datos de junio, y esa es la limitación central del análisis de hoy.",
+  "invalidadores": [
+    "hy_spread (FRED:BAMLH0A0HYM2) rompiendo por encima de 3.50-4.00% desde 2.78%: sería la señal de que las tasas reales de 2.43% (tips_yield_10y) empezaron a morder el crédito corporativo. Anularía todas las señales largas de equity.",
+    "Desarme desordenado del carry trade: usdjpy quebrando fuerte a la baja desde 157.715 tras la intervención coordinada reportada por [Axios]. Un movimiento violento de yen fuerte con VIX saltando desde 16.5 invalida SPY/QQQ largos y probablemente también GLD en la fase de liquidación de margen.",
+    "Sorpresa inflacionaria en el próximo CPI/PCE (últimos datos: CPI 332.568 y PCE core 130.266, ambos al 2026-06-01, 64 días de antigüedad) que empuje breakeven_5y5y por encima de 2.60% desde 2.31% y valide michigan_inflation_exp 4.6%. Cambia el régimen a REFLACION/STAGFLATION: mata TLT, mata QQQ, refuerza GLD.",
+    "Deterioro laboral: sahm_rule (0.07) subiendo por encima de 0.30 o jobless_claims saltando materialmente desde 197.000 (dato ya rancio, 10 días). Con unemployment en 4.2%, dos décimas de suba cambian el cuadrante a DESACELERACION y dan vuelta la señal de TLT a LONG.",
+    "Reversión de la de-escalación EE.UU.-Irán reportada por [MarketWatch]: reactivación del conflicto devuelve la prima geopolítica al crudo, revierte la caída de yields (yield_10y_mkt 4.627%) y reintroduce presión inflacionaria por el canal de energía.",
+    "Endurecimiento regulatorio sobre IA que exceda lo esperado ([Politico] marco de la Casa Blanca; [Fox Business] investigación de 15 AGs a OpenAI): riesgo concentrado en el liderazgo de QQQ, invalidaría esa señal específica sin cambiar el régimen macro."
+  ],
+  "alertas": [
+    "DIVERGENCIA CRÍTICA: michigan_inflation_exp 4.6% (FRED:MICH) vs breakeven_5y5y 2.31% (FRED:T5YIFR). Gap de ~230pb entre expectativas de hogares y de mercado. El régimen pre-calculado marca 0 señales de inflación; a mi juicio eso subestima el riesgo.",
+    "ANOMALÍA ORO: GLD 374.16 sostenido con tips_yield_10y en 2.43%. La relación inversa histórica oro/tasas reales está rota — típicamente indica demanda oficial/debasement hedge, no flujo cíclico. Es información, no ruido.",
+    "USDJPY 157.715 con intervención confirmada y participación de EE.UU. según [Axios]. El detalle relevante de la nota es el motivo: evitar que Japón deba vender Treasuries. Eso implica que las autoridades ven fragilidad en la demanda del tramo largo americano, algo que no se ve en vix 16.5 ni en hy_spread 2.78%.",
+    "COMPLACENCIA: vix 16.5 + hy_spread 2.78% simultáneamente en niveles bajos y SPY en 771.33 cerca de máximos. Configuración de baja compensación por riesgo de cola; el coste de cobertura es barato — conviene aprovecharlo.",
+    "Discrepancia menor de tasas: yield_10y 4.70% (FRED, del 2026-08-03) vs yield_10y_mkt 4.627% (^TNX, hoy). Uso el dato de mercado como referencia intradía; la caída de ~7pb es consistente con el flight-from-safety inverso por la de-escalación geopolítica."
+  ],
+  "datos_insuficientes": [
+    "jobless_claims 197.000 (FRED:ICSA): es_fresco=false, 10 días de antigüedad. Es mi indicador laboral de mayor frecuencia y está desactualizado — reduce la confianza en el pilar de crecimiento del régimen.",
+    "Todo el bloque macro duro tiene fecha_publicacion 2026-06-01 (64 días): cpi 332.568, pce_core 130.266, unemployment 4.2%, sahm_rule 0.07, michigan_inflation_exp 4.6%. El sistema los marca es_fresco=true, pero operativamente estoy clasificando el régimen de agosto con la foto de junio.",
+    "No hay precio de petróleo/USO en el JSON pese a que las noticias del día lo mencionan explícitamente como driver ([MarketWatch]). Por eso la señal de USO queda en NEUTRAL con convicción 3.",
+    "No hay precio de QQQ en el JSON — la señal se deriva por proxy de SPY 771.33 y de las tasas, no de datos propios del activo.",
+    "Faltan 2 de 25 indicadores según el header (23/25 confiables); no puedo identificar cuáles ni evaluar su impacto sobre el análisis.",
+    "No hay datos de M2/liquidez del sistema, ni de yield 2Y, ni de spread IG. La evaluación de liquidez descansa exclusivamente en hy_spread y vix."
+  ],
+  "eventos_clave": [
+    "[MarketWatch] 'Dow surges 600 points toward a record high... oil prices, Treasury yields fall on signs of U.S.-Iran war de-escalation; Palantir earnings on tap' — Explica de forma directa por qué yield_10y_mkt cotiza en 4.627% contra el 4.70% de yield_10y de ayer y por qué vix está en 16.5: salida de prima geopolítica. Es un impulso desinflacionario vía energía que refuerza el ancla de breakeven_5y5y en 2.31% y valida el sesgo largo en SPY (771.33) en el margen. Riesgo: es un catalizador reversible, no estructural.",
+    "[Axios] 'The message beneath the yen intervention — U.S. participation may have been an effort to enable the Japanese to smooth gyrations in their currency without creating more market pressure for Treasury bonds' — El evento macro más importante del día. Con usdjpy en 157.715, confirma que el carry trade yen está bajo gestión oficial y que la preocupación real es la demanda japonesa de Treasuries (relevante con yield_10y en 4.70% y tips_yield_10y en 2.43%). Sostiene el corto de DXY (99.86) y es argumento estructural para GLD (374.16). Es también el principal invalidador de las posiciones largas de riesgo si la intervención falla.",
+    "[Fox Business] 'GOP AGs warn OpenAI's Altman to preserve records in AI agent hacking probe' (15 fiscales generales tras un incidente de un agente de IA) — Riesgo regulatorio idiosincrático sobre el liderazgo de mega-cap tech. No cambia el régimen macro (hy_spread 2.78%, vix 16.5 sin reacción) pero justifica mantener la convicción de QQQ en 6 y no en 8.",
+    "[Politico] 'White House finalizes artificial intelligence oversight framework' — La administración briefeará a las principales empresas de IA sobre su marco de revisión de modelos avanzados. Combinado con la nota anterior, define un régimen regulatorio emergente para el sector que concentra el peso de los índices: fuente de dispersión y de volatilidad de sector, no de riesgo sistémico por ahora.",
+    "[CBS News] 'JPMorgan Chase to invest $750 billion in increasing the U.S. housing supply and homeownership' (financiamiento para 1 millón de unidades asequibles y asistencia a 500.000 compradores) — Impulso de crédito privado al sector más sensible a tasas, en un contexto donde tips_yield_10y 2.43% mantiene el costo real del financiamiento hipotecario alto. Marginalmente pro-crecimiento y consistente con hy_spread comprimido en 2.78%; también marginalmente inflacionario vía shelter si la demanda se activa antes que la oferta — un punto a vigilar dado michigan_inflation_exp 4.6%."
+  ],
+  "confianza_general": 65,
+  "metadata": {
+    "timestamp": "2026-08-04T20:41:23.788128",
+    "datos_usados": 23,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
