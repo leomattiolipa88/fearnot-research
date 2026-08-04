@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-08-04",
+  "periodo_analizado": "CY2025Q3",
+  "regimen_credito": {
+    "clasificacion": "EXPANSION",
+    "direccion_ciclo": "ACELERANDO",
+    "confianza": 66,
+    "razonamiento": "La pendiente dominante del sector es de credito abaratandose y apetito de prestamo despertando, que es la definicion operativa de expansion, no de giro. Cinco de los seis bancos con datos muestran provisiones bajando: BAC -15.0%, C -4.2% (2 trimestres consecutivos bajando), WFC -44.9%, MS -92.9% (distorsionado, ver contradicciones); y el cost_of_risk cae en BAC (-23.0%) y C (-10.3%, 3 trimestres consecutivos bajando). Simultaneamente el apetito sube: loan_to_deposit de BAC +5.4% con 2 trimestres consecutivos al alza (0.5516->0.5636->0.5757), JPM +2.1% con 2 consecutivos (0.5331->0.5413->0.5531) y MS +3.4%. NII sube en todos los que tienen serie: BAC +11.2%, C +10.7%, JPM +5.4%, MS +20.5%, GS +93.6%; solo WFC esta plano (+0.2%). Eso es ACELERANDO, no ESTABLE: la combinacion de LTD subiendo dos trimestres seguidos en los dos universales mas grandes con provisiones cayendo es el patron clasico de fase media-tardia de expansion. Lo que aun NO justifica clasificar EUFORIA es que las rachas son cortas (2-3 trimestres, no 5-6) y que los niveles de loan_to_deposit siguen bajos (0.52-0.58 en universales), es decir el apetito esta creciendo desde una base defensiva. La unica pendiente que va en direccion contraria al sector es JPM: cost_of_risk +2.7% y provisiones +11.5% (serie en dientes de sierra 2.631->3.305->2.849->3.403e9), y esa divergencia es la senal mas informativa del panel. No hay ninguna metrica en el panel que indique contraccion de credito. Faltan ROTCE, NIM y CET1/Tier1 (no disponibles via XBRL, LIMITATIONS #14/#16/#17): sin ellos no puedo juzgar si la expansion se esta financiando con capital o con apalancamiento, que es la pregunta clave de esta fase."
+  },
+  "tesis_principal": "Las tendencias del banking desk son COHERENTES con el regimen GOLDILOCKS del fondo (hy_spread 2.84%, curva +0.99%, VIX 15.98): el credito bancario no muestra deterioro, lo muestra abaratandose. La pendiente que manda es doble: (1) cost_of_risk y provisiones cayendo en casi todo el panel, (2) NII expandiendo a doble digito en 4 de 6 bancos. Pero la lectura Marks obliga a decir la segunda mitad: cuando las provisiones caen AL MISMO TIEMPO que el loan_to_deposit sube dos trimestres seguidos, el sector no esta reconociendo riesgo nuevo mientras acumula exposicion nueva. Eso no es peligro inmediato, es la firma de que estamos en la mitad tardia de la expansion, no al principio. La divergencia mas util para el Synthesizer: JPM es el unico que aprovisiona MAS mientras crece, y el unico cuyo efficiency_ratio se DETERIORA (+10.7%, 0.4724->0.5230); el sector entero mejora eficiencia (BAC -4.0%, GS -7.1%, MS -7.5%) pero esa mejora coincide con NII subiendo, lo que la hace fragil y dependiente de tasas, no de control de costos. Segunda divergencia: WFC entrega NII plano (+0.2%) con provisiones -44.9%, la combinacion de menor calidad de resultado del panel. Traduccion para el fondo: el ciclo de credito confirma el Goldilocks pero ya no esta barato en terminos de riesgo asumido; el sesgo debe ser LONG selectivo hacia coherencia de tendencia (BAC, GS), NEUTRAL hacia quien mejora resultado por liberacion de reservas (WFC) o hacia quien esta desacelerando internamente (JPM), y explicitamente sin opinion en NU por falta total de datos trimestrales.",
+  "senales": [
+    {
+      "activo": "BAC",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "El unico banco del panel con las cinco tendencias alineadas en la misma direccion virtuosa: cost_of_risk -23.0% (1497->1152 bps*10^-6, caida sostenida), provisiones -15.0%, efficiency_ratio -4.0% mejorando (0.6427->0.6172, y mejorando en los ultimos 3 trimestres seguidos: 0.6291->0.6261->0.6172), NII +11.2% con 2 trimestres consecutivos subiendo, y loan_to_deposit +5.4% con 2 consecutivos al alza. La mejora de eficiencia acompana pero no depende solo del NII: el ratio ya venia bajando desde 0.6623. Es el perfil que un regimen GOLDILOCKS deberia producir. Caveat Mayo que baja la conviccion de 8 a 7: provisiones cayendo mientras el LTD acelera es exactamente la combinacion que subestima riesgo acumulado; si el ciclo gira, BAC entra con la reserva mas delgada del panel en pendiente. Sin CET1 ni NIM (LIMITATIONS #16/#17) no puedo verificar si el margen sostiene el NII o si es volumen."
+    },
+    {
+      "activo": "GS",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Sub-tipo investment bank: se lee por eficiencia y por generacion, no por cost_of_risk (que ademas viene sin datos, igual que loan_to_deposit, y no lo invento). Ahi las dos pendientes disponibles son buenas: efficiency_ratio -7.1% (0.6703->0.6226) y NII +93.6% con 3 trimestres consecutivos subiendo (2.895->3.104->3.852e9), la racha mas limpia de todo el panel. Rebaja de conviccion por dos motivos: el NII de un IB es una porcion menor del ingreso y su duplicacion refleja mix de balance/funding tanto como negocio, y el efficiency_ratio no es monotono (mejoro a 0.5956 y despues se deterioro a 0.6337 antes de volver a 0.6226), o sea la mejora es volatil, no estructural. Las provisiones (+20.2% nominal) son en realidad una serie lateral 282-397e6 que termina bajando a 339e6: no leo tendencia de deterioro ahi."
+    },
+    {
+      "activo": "C",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "La mejor pendiente de credito del panel entre universales: cost_of_risk bajando 3 trimestres consecutivos (0.003792->0.003748->0.003507->0.003161, -10.3%) y provisiones bajando 2 consecutivos (-4.2%), con NII +10.7%. Pero la conviccion se topa en 6 por dos incoherencias de trayectoria: (a) el loan_to_deposit esta ESTABLE (-1.4%, banda 0.512-0.526), o sea Citi mejora su costo de riesgo sin ampliar apetito, lo que es prudente pero significa que la mejora es de calidad de cartera vieja y no de franquicia creciendo; (b) el efficiency_ratio nominalmente baja -2.2% pero la serie se DA VUELTA en los ultimos dos trimestres (0.6216->0.6266->0.6469), es decir la eficiencia se esta deteriorando ahora mismo mientras el NII sube, que es la peor combinacion posible: costos creciendo mas rapido que un ingreso favorecido por tasas. Si el NII se aplana, ese efficiency se va arriba de 0.66."
+    },
+    {
+      "activo": "JPM",
+      "direccion": "NEUTRAL",
+      "conviccion": 6,
+      "razonamiento": "Es la contra-tendencia del panel y por eso la senal mas cargada de informacion, pero apunta a NEUTRAL, no a LONG. Unico banco con cost_of_risk subiendo (+2.7%) y provisiones subiendo (+11.5%, 3.052->3.403e9) mientras el loan_to_deposit sube 2 trimestres consecutivos (+2.1%): esta creciendo credito Y reservando mas, lo que o bien es la conducta correcta y conservadora de fin de ciclo, o bien es que ve deterioro en su cartera que el resto todavia no reporta. Honestidad Mayo: la serie de cost_of_risk es dientes de sierra (0.002352->0.001988->0.002484->0.002054->0.002414) y +2.7% en 6 trimestres es ruido, no una racha; no voy a construir una historia de deterioro sobre eso. Lo que si es una tendencia real y negativa es el efficiency_ratio: +10.7%, de 0.4724 a 0.5230, el unico que empeora estructuralmente, y encima con el NII creciendo mas lento del grupo de universales (+5.4% vs +11.2% BAC y +10.7% C). Franquicia superior con pendiente relativa desmejorando: NEUTRAL."
+    },
+    {
+      "activo": "MS",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Sub-tipo investment bank: la lectura valida es eficiencia y NII, y ambas son positivas: efficiency_ratio -7.5% (0.7237->0.6692, el mejor delta del panel) y NII +20.5%, con loan_to_deposit +3.4% (0.6104->0.6310, el nivel mas alto del panel, coherente con su libro de prestamos a wealth). Rechazo explicitamente la lectura literal del cost_of_risk -94.1% y de las provisiones -92.9%: eso NO es una tendencia, es un unico trimestre outlier (138e6 -> 6e6) despues de una serie que venia SUBIENDO (18->65->81->138e6). Un lector de pendientes no extrapola un punto. Conviccion 5 porque la mejora de eficiencia coincide con el salto de NII y no puedo separar cuanto es control de costos y cuanto es tasas (falta NIM, LIMITATION #14)."
+    },
+    {
+      "activo": "WFC",
+      "direccion": "NEUTRAL",
+      "conviccion": 5,
+      "razonamiento": "Sesgo negativo dentro de neutral. La combinacion de tendencias es la de peor calidad del panel: NII ESTABLE/plano (+0.2%, 11.92->11.95e9, sin crecimiento real en 6 trimestres) y efficiency_ratio ESTABLE (+0.5%, banda 0.6416-0.6894 sin mejora), mientras las provisiones caen -44.9% (1.236e9 -> 681e6). Traduccion Mayo: en un banco donde el ingreso no crece y los costos no bajan, una caida del 45% en provisiones es la palanca que sostiene el resultado, y esa palanca se agota. Ademas no tengo cost_of_risk ni loan_to_deposit (datos insuficientes), asi que NO puedo verificar si esa caida de provisiones esta respaldada por una cartera efectivamente mejor o si es liberacion de reservas sobre un libro que no crece; sin esas dos series y sin CET1 (LIMITATION #17) no hay base para un LONG."
+    },
+    {
+      "activo": "NU",
+      "direccion": "NEUTRAL",
+      "conviccion": 2,
+      "razonamiento": "Sin opinion por falta de datos, y lo declaro explicitamente en vez de inventar. Cuatro de las cinco metricas vienen 'datos insuficientes' y la quinta es un unico punto aislado de loan_to_deposit (0.1844) sin serie que permita medir pendiente. La cobertura trimestral XBRL de un emisor digital EM (Brasil, credito unsecured, dinamica de cost_of_risk completamente distinta a la de un universal US) es estructuralmente limitada. No corresponde extender la lectura de ciclo de credito US a NU: es otro animal, otro pais y otra moneda. Cualquier posicion en NU debe venir de otro desk."
+    }
+  ],
+  "contradicciones": [
+    "SECTORIAL (la principal): provisiones bajando mientras el apetito de prestamo sube. BAC baja provisiones -15.0% y cost_of_risk -23.0% mientras su loan_to_deposit sube +5.4% con 2 trimestres consecutivos al alza. No se puede estar acumulando exposicion nueva y reconociendo menos riesgo salvo que se asuma que la cartera nueva es de mejor calidad que la vieja, cosa que nadie demuestra. Es la firma clasica de complacencia de mitad-tardia de ciclo.",
+    "JPM vs el resto del sector: JPM sube provisiones +11.5% y cost_of_risk +2.7% mientras BAC (-15.0%), C (-4.2%) y WFC (-44.9%) las bajan, todos operando en la misma economia y bajo el mismo Goldilocks. O JPM esta viendo un deterioro en su libro que el resto todavia no reporta, o BAC/C/WFC estan provisionando tarde. Las dos lecturas no pueden ser ciertas a la vez y la divergencia es la senal, no el nivel.",
+    "MEJORA DE EFICIENCIA FRAGIL: BAC (-4.0%), GS (-7.1%) y MS (-7.5%) mejoran efficiency_ratio exactamente en los mismos trimestres en que su NII sube +11.2%, +93.6% y +20.5%. Un ratio mejora tanto por numerador (costos) como por denominador (ingreso); con el NII disparado no se puede atribuir la mejora a disciplina de costos. Si el ciclo de tasas gira y el NII se aplana, esos efficiency ratios se revierten mecanicamente. Sin NIM (LIMITATION #14) no puedo desglosarlo, y lo declaro como el punto ciego mas grande de este memo.",
+    "CITI: efficiency_ratio reportado como 'bajando -2.2%' pero la serie se invierte en los ultimos dos trimestres (0.6216->0.6266->0.6469). La direccion agregada de 6 trimestres esconde un deterioro activo de 2 trimestres. La pendiente reciente contradice la pendiente larga.",
+    "WFC: calidad de resultado. NII plano (+0.2%) y eficiencia plana (+0.5%) con provisiones -44.9%. El unico motor de la ultima linea es la reduccion de cargos por credito, en un banco que ni siquiera reporta el cost_of_risk ni el loan_to_deposit que permitirian validarla. Bandera roja de sostenibilidad.",
+    "MS: el -94.1% de cost_of_risk y el -92.9% de provisiones son artefactos de un solo trimestre (138e6 -> 6e6) que ademas interrumpe una serie que venia subiendo (18->65->81->138e6). Cualquier lectura que tome ese -94% como tendencia de mejora crediticia esta leyendo un outlier. Lo marco para que el Synthesizer no lo agregue como senal positiva.",
+    "GS: reportado como provisiones 'subiendo +20.2%' pero la serie (282-397-351-287-384-339e6) es lateral y termina bajando. Ni tendencia de deterioro ni de mejora: lateral es la lectura honesta.",
+    "MACRO vs SECTOR: el regimen GOLDILOCKS (68%) con hy_spread en 2.84% y VIX 15.98 es coherente con provisiones cayendo, pero el fondo mismo describe el lado de tasas como RESTRICTIVO (yield_3m 3.69%, 10Y 4.68%). Un entorno de tasas restrictivo sostenido normalmente aparece con retraso en el cost_of_risk de las carteras de consumo y CRE. Que cinco de seis bancos bajen provisiones bajo tasas restrictivas es o bien confirmacion de un aterrizaje suave, o bien reconocimiento tardio. JPM es el unico cuyo comportamiento es consistente con la segunda hipotesis."
+  ],
+  "eventos_clave": [
+    "Si el loan_to_deposit de BAC marca un TERCER trimestre consecutivo al alza (>0.5757) sin que las provisiones dejen de caer, la clasificacion pasa de EXPANSION-ACELERANDO a EUFORIA temprana. Esa es la racha a vigilar por encima de cualquier otro dato del panel.",
+    "Si JPM registra un tercer trimestre de provisiones al alza (>3.403e9) y el cost_of_risk sale del rango 0.0020-0.0025 hacia arriba, deja de ser ruido y pasa a ser el indicador adelantado del giro sectorial. Es el canario del panel.",
+    "Efficiency_ratio de C: si supera 0.65 en Q4 (viene 0.6216->0.6266->0.6469) confirma que su mejora de credito no compensa un problema de costos, y la senal LONG cae a NEUTRAL.",
+    "Normalizacion de las provisiones de MS: si Q4 vuelve a la banda 80-140e6 desde los 6e6 de Q3, confirma que el ultimo dato fue un outlier contable y no una mejora de credito.",
+    "WFC: aparicion de las series de cost_of_risk y loan_to_deposit (hoy ausentes) es la unica forma de validar o refutar la hipotesis de que su resultado se apoya en liberacion de reservas. Sin eso, WFC se queda en NEUTRAL por defecto.",
+    "Continuidad de la racha de NII de GS (3 trimestres consecutivos): un cuarto trimestre al alza valida el LONG; una reversion lo desarma, porque el efficiency ratio de GS no es monotono por si solo.",
+    "Cualquier deterioro del hy_spread desde 2.84% hacia arriba de 4% seria la senal macro que precede a la reversion de todas estas pendientes de provisiones a la vez; el credito HY gira antes que el bancario.",
+    "Disponibilidad de ROTCE / NIM / CET1 via parse de 10-K (LIMITATIONS #14/#16/#17): sin ellos no se puede juzgar si esta expansion de credito esta financiada con capital o con apalancamiento, ni cuanto del NII es margen vs volumen."
+  ],
+  "invalidadores": [
+    "Dos trimestres consecutivos de cost_of_risk SUBIENDO en BAC o C (rompiendo rachas de -23.0% y -10.3% respectivamente): invalida EXPANSION-ACELERANDO y obliga a reclasificar a NEUTRAL con sesgo a CONTRACCION.",
+    "Provisiones subiendo simultaneamente en 3 o mas bancos del panel en el mismo trimestre: el giro deja de ser idiosincratico de JPM y pasa a ser sectorial. Ese es el invalidador duro de todo este memo.",
+    "Loan_to_deposit bajando en BAC y JPM a la vez despues de sus rachas de 2 trimestres al alza: significa que el apetito se retrae, que es el primer sintoma de contraccion aunque el cost_of_risk todavia se vea bajo.",
+    "NII girando a la baja en 2+ bancos: desarmaria automaticamente las mejoras de efficiency_ratio de BAC, GS y MS, que estan apoyadas en el denominador. Invalida las tres senales LONG de golpe.",
+    "Cambio del regimen macro del fondo desde GOLDILOCKS hacia RECESION PROXIMA (sahm_rule cruzando su umbral, curva reinvirtiendose desde +0.99%, hy_spread ampliando desde 2.84%): en ese escenario las provisiones cayendo del panel dejan de ser una senal benigna y pasan a leerse como reconocimiento tardio, y BAC/WFC pasarian de LONG/NEUTRAL a SHORT candidatos.",
+    "Que el dato Q3 de MS (provisiones 6e6) NO se revierta y ademas se acompane de cost_of_risk igual de bajo en Q4: obligaria a revisar si hubo un cambio metodologico o de perimetro contable, no una mejora de credito.",
+    "Reversion del efficiency_ratio de JPM hacia 0.48 o menos: eliminaria la principal razon del NEUTRAL y devolveria a JPM a LONG pese a sus provisiones al alza."
+  ]
+}
