@@ -23,6 +23,8 @@ import sqlite3
 from datetime import date, datetime
 from pathlib import Path
 
+from config import fiscal_year_actual
+
 DB_PATH = "data/macro.db"
 
 # Conceptos crudos que extraemos de SEC (los 6 verificados en Phase 2)
@@ -146,5 +148,5 @@ def recolectar_todos(fiscal_year: int, db_path: str = DB_PATH):
 # ----------------- Entry point -----------------
 if __name__ == "__main__":
     import sys
-    fy = int(sys.argv[1]) if len(sys.argv) > 1 else 2024
+    fy = int(sys.argv[1]) if len(sys.argv) > 1 else fiscal_year_actual()
     recolectar_todos(fy)

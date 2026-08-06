@@ -23,7 +23,7 @@ from pathlib import Path
 
 import anthropic
 
-from config import MODEL, MAX_TOKENS, extract_text
+from config import MODEL, MAX_TOKENS, extract_text, trimestre_actual
 from tendencia import analizar_tendencia
 from tracker import registrar_senales
 
@@ -88,8 +88,10 @@ REGLAS NO NEGOCIABLES:
 
 
 # ----------------- Cargar inputs (trimestral) -----------------
-def cargar_inputs_q(anio_actual: int = 2025, quarter_actual: int = 3) -> dict:
+def cargar_inputs_q(anio_actual: int = None, quarter_actual: int = None) -> dict:
     """Carga tesis macro/tecnica (JSON) + SERIES trimestrales con tendencia (DB)."""
+    if anio_actual is None or quarter_actual is None:
+        anio_actual, quarter_actual = trimestre_actual()
     data_dir = Path("data")
     inputs = {
         "fecha_analisis": date.today().isoformat(),
@@ -295,7 +297,9 @@ def validar_output(output: dict) -> tuple:
 
 
 # ----------------- Main -----------------
-def correr_banking_agent_q(anio_actual: int = 2025, quarter_actual: int = 3, max_reintentos: int = 2) -> dict:
+def correr_banking_agent_q(anio_actual: int = None, quarter_actual: int = None, max_reintentos: int = 2) -> dict:
+    if anio_actual is None or quarter_actual is None:
+        anio_actual, quarter_actual = trimestre_actual()
     inputs = cargar_inputs_q(anio_actual, quarter_actual)
     if not inputs["bancos"]:
         return {"error": "No hay datos en banking_financials_q. Corre banking_collector_q.py primero."}
@@ -333,6 +337,7 @@ def correr_banking_agent_q(anio_actual: int = 2025, quarter_actual: int = 3, max
         elif intento >= max_reintentos:
             output["_validacion_errores"] = errores
 
+    output["modelo"] = MODEL
     return output
 
 
@@ -382,8 +387,9 @@ def imprimir_memo(output: dict):
 
 if __name__ == "__main__":
     import sys
-    anio = int(sys.argv[1]) if len(sys.argv) > 1 else 2025
-    q = int(sys.argv[2]) if len(sys.argv) > 2 else 3
+    anio_default, q_default = trimestre_actual()
+    anio = int(sys.argv[1]) if len(sys.argv) > 1 else anio_default
+    q = int(sys.argv[2]) if len(sys.argv) > 2 else q_default
     output = correr_banking_agent_q(anio, q)
     imprimir_memo(output)
     from datetime import datetime

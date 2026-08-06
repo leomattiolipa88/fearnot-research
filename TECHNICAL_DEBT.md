@@ -350,3 +350,51 @@ Movimiento de archivos es operación del usuario (comandos `git mv` entregados e
   1. `data/macro.db` para daily (macro/tech/energy) y `data/banking.db` para banking (SEC). Cada pipeline commitea sólo su DB → cero conflicto binario. Requiere refactor de los collectors bancarios (`banking_collector.py`, `banking_collector_q.py`) y del `banking_agent*.py` para apuntar a la nueva DB.
   2. Mover `macro.db` fuera del repo (S3 / SQLite Cloud / Turso) y versionar sólo los JSONs. Descarta el modelo actual de "DB versionada para persistencia entre runners ephemeral" que está documentado en `.gitignore:43-45`.
 - **Prioridad:** LOW. Con el schedule actual (daily 10:30 UTC → termina ~12:00-12:30; banking día 3 a 15:00 UTC) los solapamientos son improbables. El fix `-X ours` cubre el caso raro sin data loss real. Priorizar sólo si se agrega otro pipeline concurrente o si el volumen SEC crece al punto que re-fetchear salga caro.
+
+## Sesión "reloj del desk bancario" — RESUELTO 2026-08-06
+
+Cerró la deuda silenciosa de los defaults congelados en el workstream bancario:
+`banking_collector*.py` y `banking_agent*.py` tenían `fiscal_year=2024` y
+`(anio=2025, quarter=3)` hardcodeados en cada `__main__` + firmas de funciones.
+El desk analizaba los mismos filings FY2024 y CY2025Q3 mes tras mes aunque los
+bancos ya hubieran presentado el trimestre siguiente. Sin señal roja: pipeline
+en verde y tesis generadas — sólo que sobre data envejeciendo.
+
+- **`config.py`:** dos funciones nuevas que definen "el ahora" para el desk:
+  - `fiscal_year_actual()` — devuelve el año calendario anterior (los 7 bancos
+    del universo cierran 31-dic, así que el último FY completo es `year - 1`).
+  - `trimestre_actual()` — devuelve `(anio, quarter)` del último trimestre
+    calendario cuyos 10-Q ya están presentados. Fórmula: `ref = today − 45`;
+    último trimestre completo a esa fecha. Los 45 días cubren la ventana
+    normal de ~30-40 días entre cierre y presentación.
+- **`banking_collector.py`, `banking_collector_q.py`, `banking_agent.py`,
+  `banking_agent_q.py`:** los seis defaults hardcodeados reemplazados por
+  las funciones nuevas. `sys.argv[i]` sigue overridiando para análisis
+  históricos manuales; las firmas de funciones aceptan `None` y resuelven
+  al momento del call (no al import — importa por si el módulo cruza el
+  cambio de año/trimestre).
+- **`banking_agent.py` y `banking_agent_q.py`:** el dict de salida ahora
+  incluye `"modelo": MODEL` — provenance de qué modelo generó cada tesis
+  (útil cuando cambie de Opus 5 a lo que venga).
+- **`health_check.py`:** flag nuevo `--banking-only` que valida SOLO las dos
+  tesis bancarias. `--include-banking` (2026-08-02) suma banking al daily;
+  útil para debug local pero incorrecto para el banking pipeline, que no
+  debería fallar por outputs desalineados del pipeline vecino. Evidencia: el
+  run del 2026-08-04 dio falsa alarma porque `--include-banking` re-corría la
+  validación del daily contra la fecha del banking. `banking_pipeline.yml`
+  ahora usa `--banking-only`.
+
+### Refinamiento futuro — probe-and-fallback en `trimestre_actual()`
+
+- **Priority:** LOW-MEDIUM (funciona hoy con la aproximación de 45 días).
+- **Contexto:** los 45 días son un colchón estático. Un banco lento (o el bug
+  latente de coverage OCF/capex) puede dejar el frame más nuevo vacío aunque
+  teóricamente ya esté presentado. En sentido inverso, en la ventana entre
+  ~día 40 y día 45 post-cierre podemos estar analizando el trimestre viejo
+  cuando el nuevo ya está en SEC.
+- **Fix path:** en vez de resolver `(anio, quarter)` de forma puramente
+  calendaria, sondear con una llamada barata a SEC EDGAR el frame más
+  reciente y caer al anterior si viene vacío para el universo bancario.
+  Requiere una helper en `financials_extractor_v2.py` que responda "el frame
+  CY{Y}Q{n} tiene facts para al menos K de los 7 bancos".
+- **Descubierto:** 2026-08-06 (mientras se cerraban los defaults congelados).

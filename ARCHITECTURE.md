@@ -224,23 +224,27 @@ Componentes verificados por Read directo o por import:
 
 - `banking_collector.py` (`banking_collector.py:1-58`)
   - Anual. Extrae 6 conceptos crudos (`banking_collector.py:29-36`) para 7 bancos (`banking_collector.py:19`), calcula 3 métricas derivadas via `calculated_metrics.py`, persiste en `banking_financials` (long format, `banking_collector.py:44-56`).
+  - Reloj (fix 2026-08-06): sin `sys.argv[1]`, el fiscal year se resuelve al momento del run via `config.fiscal_year_actual()` (año calendario anterior). Antes había un `else 2024` que congelaba el desk en FY2024 para siempre.
   - **ACTIVO (mensual):** `banking_pipeline.yml:47-48`.
 
 - `banking_collector_q.py` (`banking_collector_q.py:1-56`)
   - Trimestral. Mismos 6 conceptos, usa `extraer_serie_trimestral` con reconstrucción Q4 (`banking_collector_q.py:9-15`).
   - Tabla `banking_financials_q` con `period` TEXT (`banking_collector_q.py:40-53`) — puede convivir con anual.
+  - Reloj (fix 2026-08-06): sin args, `(anio, quarter)` se resuelven via `config.trimestre_actual()` (último trimestre completo a `today − 45 días`, para cubrir la ventana de presentación de los 10-Q). Antes había `else 2025`/`else 3` congelados.
   - **ACTIVO (mensual):** `banking_pipeline.yml:50-51`.
 
 - `banking_agent.py` (`banking_agent.py:1-73`)
   - Analista Claude (Marks + Mayo) del ciclo de crédito. Lee `banking_financials` anual + tesis macro/tecnica de disco.
-  - Output: `data/tesis_banking_{fecha}.json`. `health_check.py --include-banking` lo valida (contra hoy UTC, ver §3).
-  - `__main__` ahora llama al tracker vía `registrar_senales(adaptar_para_tracker(output))` (fix 2026-08-02) — mismo patrón que `og_agent.py`.
+  - Output: `data/tesis_banking_{fecha}.json` con campo `modelo` (provenance, fix 2026-08-06). `health_check.py --banking-only` lo valida (contra hoy UTC, ver §3).
+  - `__main__` llama al tracker vía `registrar_senales(adaptar_para_tracker(output))` (fix 2026-08-02) — mismo patrón que `og_agent.py`.
+  - Reloj (fix 2026-08-06): `cargar_inputs`, `correr_banking_agent`, `__main__` reciben `fiscal_year=None` y resuelven con `fiscal_year_actual()` al call time.
   - **ACTIVO (mensual):** `banking_pipeline.yml:53-54`.
 
 - `banking_agent_q.py` (`banking_agent_q.py:1-16`)
   - Evolución trimestral: lee la SERIE de trimestres y le da al modelo la tendencia pre-procesada por `tendencia.py` (`banking_agent_q.py:135-138`), no valores sueltos.
-  - Output: `data/tesis_banking_q_{fecha}.json`. Fuente para tracker: `banking_desk_q`, horizonte TRIMESTRAL.
+  - Output: `data/tesis_banking_q_{fecha}.json` con campo `modelo` (fix 2026-08-06). Fuente para tracker: `banking_desk_q`, horizonte TRIMESTRAL.
   - `__main__` llama al tracker (fix 2026-08-02).
+  - Reloj (fix 2026-08-06): `cargar_inputs_q`, `correr_banking_agent_q`, `__main__` reciben `(None, None)` y resuelven con `trimestre_actual()` al call time.
   - **ACTIVO (mensual):** `banking_pipeline.yml:56-57`.
 
 - `tendencia.py` (`tendencia.py:4-88`): utilidad pura sin efectos. Usada solo por `banking_agent_q.py:27`. **ACTIVO** (import in-graph desde algo activo).
@@ -266,7 +270,7 @@ Componentes verificados por Read directo o por import:
 Los 6 ítems originales de esta sección están resueltos:
 1. ✅ `banking_collector.py` + `banking_collector_q.py` invocados en `banking_pipeline.yml:47-51` (cron mensual día 3 UTC, no diario — SEC 10-K/10-Q no cambian a diario).
 2. ✅ `banking_agent.py` + `_q.py` en el mismo cron (`banking_pipeline.yml:53-57`).
-3. ✅ `health_check.py --include-banking` valida `tesis_banking_{fecha}` y `tesis_banking_q_{fecha}` (contra hoy UTC, no día hábil — los bancos no siguen calendario de mercado).
+3. ✅ `health_check.py` valida `tesis_banking_{fecha}` y `tesis_banking_q_{fecha}` (contra hoy UTC, no día hábil — los bancos no siguen calendario de mercado). Actualización 2026-08-06: `banking_pipeline.yml` pasa a `--banking-only` (valida solo las dos tesis del run). `--include-banking` queda para debug local combinado con el daily; corría al banking pipeline al inicio y disparó falsa alarma el 2026-08-04 por outputs desalineados del pipeline vecino.
 4. ✅ Ambos `banking_agent*.__main__` llaman `registrar_senales(adaptar_para_tracker(output))` — mismo patrón que og_agent.
 5. ✅ `web_exporter.py` incluye sección `banking` opcional (annual + quarterly) via `construir_banking_pulse`. Ausente si no hay ninguna tesis bancaria en `data/`.
 6. ✅ `from sector_mappings import banking` descomentado en `sector_router.py:25`.
@@ -311,9 +315,10 @@ Pendiente derivado: el `banking_pipeline.yml` NO pushea `web_data.json` a `fearn
 - **Tiering:** hardcoded (`news_collector.py:20-24`).
 - **Freshness:** no explícita; se descarga fresh o cache <30 min.
 
-### SEC EDGAR (workstream banking/SEC, hoy dormido)
+### SEC EDGAR (workstream banking/SEC, activo mensual día 3 UTC)
 - Ver §4. Contrato de calidad por concepto en `LIMITATIONS.md` (17 casos documentados).
 - Cada valor extraído lleva `quality` flag: `direct`, `calculated_from_*`, `not_found`, `approximation_with_known_bias` (`banking_agent.py:51`, `LIMITATIONS.md:16-19`).
+- Reloj (fix 2026-08-06): el fiscal year y el trimestre a consultar los define `config.fiscal_year_actual()` / `config.trimestre_actual()` — el desk deja de anclarse a un período congelado. Los 45 días de colchón cubren la ventana normal de presentación de 10-Q; refinamiento probe-and-fallback pendiente en `TECHNICAL_DEBT.md`.
 
 ---
 

@@ -37,9 +37,9 @@ THESIS_SPECS = [
     },
 ]
 
-# Specs bancarios — sólo se validan con --include-banking porque el pipeline
-# bancario corre mensual (día 3), no diario. Contra la fecha web (hoy UTC) o
-# la fecha forzada por --date, no contra el último día hábil.
+# Specs bancarios — se validan solos con --banking-only (usado por el cron
+# mensual, día 3) o sumados al daily con --include-banking (util para debug
+# local). Contra hoy UTC o --date, nunca contra ultimo día hábil.
 BANKING_SPECS = [
     {
         "prefix": "tesis_banking",
@@ -131,10 +131,18 @@ def parse_args() -> argparse.Namespace:
         "--include-banking",
         action="store_true",
         help=(
-            "Sumar validacion de tesis_banking_{fecha} y tesis_banking_q_{fecha}. "
-            "Usado por banking_pipeline.yml (cron mensual dia 3). Contra hoy UTC "
-            "o --date, no contra ultimo dia habil (los bancos no siguen calendario "
-            "de mercado)."
+            "Sumar validacion de tesis_banking_{fecha} y tesis_banking_q_{fecha} "
+            "a los checks del daily. Util para debug local."
+        ),
+    )
+    p.add_argument(
+        "--banking-only",
+        action="store_true",
+        help=(
+            "Validar SOLO las tesis bancarias (tesis_banking_{fecha} + "
+            "tesis_banking_q_{fecha}). No corre THESIS_SPECS ni web_data.json. "
+            "Usado por banking_pipeline.yml: el pipeline bancario no debe fallar "
+            "por outputs desalineados del pipeline diario vecino."
         ),
     )
     return p.parse_args()
@@ -142,6 +150,26 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+
+    # Modo banking-only: valida solo las dos tesis bancarias contra la fecha
+    # del run (hoy UTC o --date). No toca THESIS_SPECS ni web_data.json —
+    # el banking pipeline no debe fallar por archivos del daily vecino.
+    if args.banking_only:
+        banking_date = args.date if args.date is not None else datetime.now(timezone.utc).date()
+        print(f"Health check banking-only — contra {banking_date.isoformat()}")
+        print("-" * 60)
+        all_ok = True
+        for spec in BANKING_SPECS:
+            ok, msg = check_thesis_file(spec, banking_date)
+            mark = "OK " if ok else "FAIL"
+            print(f"[{mark}] {spec['prefix']}_{banking_date.isoformat()}.json — {msg}")
+            all_ok = all_ok and ok
+        print("-" * 60)
+        if all_ok:
+            print("Todos los checks pasaron.")
+            return 0
+        print("Uno o mas checks fallaron.")
+        return 1
 
     if args.date is not None:
         web_date = args.date

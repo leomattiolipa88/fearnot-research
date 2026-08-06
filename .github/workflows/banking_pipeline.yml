@@ -77,6 +77,11 @@ jobs:
             echo "Banking data committed"
           fi
 
-      - name: Health check (banking-inclusive)
+      - name: Health check (banking-only)
         if: always()
-        run: python health_check.py --include-banking
+        # --banking-only valida SOLO las dos tesis bancarias del run. No mira
+        # el daily (macro/tech/og + web_data.json): esos son del pipeline vecino
+        # y en el día 3 tipicamente estan desalineados de fecha respecto al
+        # banking. El run del 2026-08-04 con --include-banking dio falsa alarma
+        # exactamente por eso.
+        run: python health_check.py --banking-only

@@ -20,7 +20,7 @@ from pathlib import Path
 
 import anthropic
 
-from config import MODEL, MAX_TOKENS, extract_text
+from config import MODEL, MAX_TOKENS, extract_text, fiscal_year_actual
 from tracker import registrar_senales
 
 DB_PATH = "data/macro.db"
@@ -77,8 +77,10 @@ REGLAS NO NEGOCIABLES:
 
 
 # ----------------- Cargar inputs -----------------
-def cargar_inputs(fiscal_year: int = 2024) -> dict:
+def cargar_inputs(fiscal_year: int = None) -> dict:
     """Carga tesis macro/tecnica (JSON) + fundamentals bancarios (DB)."""
+    if fiscal_year is None:
+        fiscal_year = fiscal_year_actual()
     data_dir = Path("data")
     inputs = {
         "fecha_analisis": date.today().isoformat(),
@@ -258,7 +260,9 @@ def validar_output(output: dict) -> tuple:
 
 
 # ----------------- Main -----------------
-def correr_banking_agent(fiscal_year: int = 2024, max_reintentos: int = 2) -> dict:
+def correr_banking_agent(fiscal_year: int = None, max_reintentos: int = 2) -> dict:
+    if fiscal_year is None:
+        fiscal_year = fiscal_year_actual()
     inputs = cargar_inputs(fiscal_year)
     if not inputs["bancos"]:
         return {"error": "No hay datos en banking_financials. Corre banking_collector.py primero."}
@@ -297,6 +301,7 @@ def correr_banking_agent(fiscal_year: int = 2024, max_reintentos: int = 2) -> di
         elif intento >= max_reintentos:
             output["_validacion_errores"] = errores
 
+    output["modelo"] = MODEL
     return output
 
 
@@ -347,7 +352,7 @@ def adaptar_para_tracker(output: dict) -> dict:
 
 if __name__ == "__main__":
     import sys
-    fy = int(sys.argv[1]) if len(sys.argv) > 1 else 2024
+    fy = int(sys.argv[1]) if len(sys.argv) > 1 else fiscal_year_actual()
     output = correr_banking_agent(fy)
     imprimir_memo(output)
     # Guardar (mismo patron que og_agent)

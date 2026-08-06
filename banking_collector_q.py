@@ -20,6 +20,8 @@ import sqlite3
 from datetime import datetime
 from pathlib import Path
 
+from config import trimestre_actual
+
 DB_PATH = "data/macro.db"
 
 CONCEPTOS_BANCA = [
@@ -137,7 +139,8 @@ def recolectar_todos_q(anio_actual, quarter_actual, n_trimestres=6, db_path=DB_P
 
 if __name__ == "__main__":
     import sys
-    anio = int(sys.argv[1]) if len(sys.argv) > 1 else 2025
-    q = int(sys.argv[2]) if len(sys.argv) > 2 else 3
+    anio_default, q_default = trimestre_actual()
+    anio = int(sys.argv[1]) if len(sys.argv) > 1 else anio_default
+    q = int(sys.argv[2]) if len(sys.argv) > 2 else q_default
     n = int(sys.argv[3]) if len(sys.argv) > 3 else 6
     recolectar_todos_q(anio, q, n)
