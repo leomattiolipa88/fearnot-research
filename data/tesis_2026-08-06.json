@@ -1,0 +1,99 @@
+{
+  "fecha": "2026-08-06",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 68,
+    "razonamiento": "Confirmo el régimen pre-calculado GOLDILOCKS pero con matices. Lado crecimiento: sahm_rule en 0.07 (FRED:SAHMREALTIME, jun-2026) está muy lejos del umbral de recesión de 0.50; unemployment en 4.2% (FRED:UNRATE); jobless_claims en 197.000 (FRED:ICSA) — dato NO fresco, 12 días de antigüedad, lo uso solo como confirmación secundaria. La curva 10Y-3M está positiva en +0.89% (calculado:10Y-3M, hoy), con yield_10y 4.63% (FRED:DGS10) contra yield_3m 3.74% (FRED:DTB3): curva normalizada y con pendiente, típicamente compatible con expansión nominal. Lado liquidez/riesgo: hy_spread en 2.73% (FRED:BAMLH0A0HYM2) es un nivel de compresión extrema — no hay estrés crediticio — y vix en 15.99 (yfinance:^VIX) confirma complacencia. Lado inflación: breakeven_5y5y en 2.26% (FRED:T5YIFR) está anclado cerca del objetivo. PERO hay dos disonancias que impiden confianza >70: (1) michigan_inflation_exp en 4.6% (FRED:MICH, jun-2026) es incompatible con un 'cero señales de inflación' — hay una brecha de 234pb entre la expectativa del consumidor y la del mercado de bonos; (2) tips_yield_10y en 2.40% (FRED:DFII10) es un rendimiento real históricamente restrictivo que, si persiste, erosiona el pilar de 'crecimiento sin costo de capital'. Además, cpi (332.568) y pce_core (130.266) son NIVELES de índice de jun-2026 sin serie histórica en el JSON: no puedo derivar tasa interanual, por lo que mi lectura de inflación descansa sobre breakevens y Michigan, no sobre datos duros. Esa es una limitación real del análisis."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "El trípode de riesgo está intacto y fresco: hy_spread 2.73% (sin estrés de crédito), vix 15.99 (sin demanda de cobertura), yield_curve +0.89% (sin señal de recesión), y sahm_rule 0.07 confirma que el mercado laboral no se está quebrando. SPY en 769.79 (yfinance, 1 día) cotiza en zona de máximos, consistente con los headlines de IBD ('S&P 500 At Highs') y con el reporte del WSJ de beneficios récord en Wall Street. El sesgo es largo pero no agresivo: la combinación de tips_yield_10y 2.40% y yield_10y 4.63% implica una tasa de descuento alta, y hy_spread en 2.73% deja asimetría negativa — desde este nivel el crédito tiene mucho más espacio para ampliar que para comprimir. Long táctico, no de convicción máxima.",
+      "dato_clave": "hy_spread = 2.73% (FRED:BAMLH0A0HYM2, fresco)"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Mismo marco de riesgo que SPY (vix 15.99, hy_spread 2.73%), con un catalizador idiosincrático en el flujo de noticias: Barron's reporta que SpaceX usará exclusivamente hardware de Nvidia en detrimento de AMD, e IBD confirma la divergencia intra-sector (AMD cae, Arista sube). Rebajo la convicción respecto de un largo puro por dos razones: el JSON no contiene ningún indicador específico de tecnología o de earnings agregados, por lo que la señal descansa en noticias y no en datos macro; y tips_yield_10y en 2.40% castiga desproporcionadamente a los activos de duración larga en equity. La rotación descrita en las noticias es intra-índice (ganadores y perdedores), lo que sugiere dispersión más que beta limpia.",
+      "dato_clave": "vix = 15.99 (yfinance:^VIX, fresco, 0 días)"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 83.00 (yfinance, 1 día) refleja yield_10y 4.63% (FRED) / 4.617% (yfinance:^TNX) — dos fuentes independientes que se confirman entre sí, lo que reduce riesgo de dato erróneo. La tesis corta se apoya en: (a) ausencia de catalizador recesivo — sahm_rule 0.07 y unemployment 4.2% no justifican un rally de fuga a la calidad; (b) curva en +0.89% con yield_3m en 3.74%, o sea el mercado ya descuenta política menos restrictiva en el tramo corto, y el bear-steepening es el camino de menor resistencia; (c) michigan_inflation_exp en 4.6% mantiene un riesgo de cola de re-pricing inflacionario en el tramo largo. Contra-argumento honesto: tips_yield_10y en 2.40% ya es un real yield elevado, lo que limita cuánto más pueden subir los nominales sin romper algo. Por eso 6 y no 8.",
+      "dato_clave": "yield_curve = +0.89% con yield_10y 4.63% (bear-steepening en curso)"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 5,
+      "razonamiento": "Señal deliberadamente moderada porque contiene una contradicción interna que no voy a maquillar. GLD en 389.64 (yfinance, 1 día) está en niveles muy elevados AL MISMO TIEMPO que tips_yield_10y está en 2.40% — históricamente el oro sufre con reales altos, así que el modelo clásico oro/reales está roto. La explicación más plausible con los datos disponibles: demanda estructural de reserva/diversificación frente al dólar, corroborada por la fortaleza generalizada de las divisas emergentes (usdcny 6.7379, usdmxn 17.2411, usdbrl 5.1237). El argumento inflacionario secundario viene de michigan_inflation_exp 4.6%, aunque breakeven_5y5y 2.26% lo contradice. Largo estructural de baja convicción: la tendencia manda, pero no tengo un driver macro limpio en el JSON que la explique, y eso me obliga a bajar la convicción.",
+      "dato_clave": "gold (GLD) = 389.64 con tips_yield_10y = 2.40% — divergencia no explicada"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "Señales frontalmente contradictorias, por eso neutral. Del lado bajista del dólar: usdcny en 6.7379 implica un yuan notablemente apreciado, y usdmxn 17.2411 / usdbrl 5.1237 muestran divisas emergentes firmes — patrón clásico de dólar débil y risk-on global, coherente con hy_spread 2.73% y vix 15.99. Del lado alcista: usdjpy en 157.8540 (confirmado por dos campos, usdjpy y usdjpy_mkt, ambos frescos, 0 días) señala un carry trade yen-financiado plenamente activo, sostenido por el diferencial que implica yield_3m 3.74%. El dxy en 99.77 y eurusd en 1.1545 dejan al índice en tierra de nadie. Sin dato de tasas japonesas ni europeas en el JSON no puedo arbitrar la contradicción: convicción insuficiente para direccionalidad.",
+      "dato_clave": "usdjpy = 157.8540 vs usdcny = 6.7379 (dólar fuerte vs JPY, débil vs EM)"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 2,
+      "razonamiento": "Convicción insuficiente. El JSON no contiene ningún dato de precio de crudo, inventarios, ni indicador de energía. Cualquier dirección que emitiera sería inventada. Lo único inferible indirectamente es que breakeven_5y5y en 2.26% está anclado, lo que sugiere que el mercado de bonos no descuenta un shock energético inminente — pero eso es una inferencia de segundo orden, no una señal negociable. Me abstengo.",
+      "dato_clave": "Ausencia de datos de energía en el JSON"
+    }
+  ],
+  "tesis_principal": "El régimen es GOLDILOCKS de manual en la superficie, y el mercado lo está cotizando como tal. Los cuatro sensores de estrés que miro primero están todos en verde y todos frescos: hy_spread en 2.73% (FRED:BAMLH0A0HYM2, 2 días) indica que el crédito de alto rendimiento no percibe riesgo de default; vix en 15.99 (yfinance:^VIX, hoy) indica que nadie está pagando por protección; yield_curve en +0.89% (calculado 10Y-3M, hoy) con yield_10y 4.63% sobre yield_3m 3.74% ha dejado atrás la inversión y tiene pendiente positiva; y sahm_rule en 0.07 (FRED, jun-2026) con unemployment en 4.2% descarta deterioro laboral. SPY en 769.79 en máximos y jobless_claims en 197.000 (dato NO fresco, 12 días — lo señalo explícitamente y le doy peso reducido) completan el cuadro. Las noticias del día refuerzan esta lectura desde el lado de los flujos: el WSJ reporta que los banqueros esperan bonos récord por el auge de beneficios y de colocaciones de acciones, e IBD confirma el S&P 500 en máximos. Esto no es un mercado que tema una recesión.\n\nPero hay tres tensiones que me impiden ir a convicción máxima y que definen el trade real de hoy. Primera: el rendimiento real. tips_yield_10y en 2.40% (FRED:DFII10) es un costo de capital real elevado y sostenido. Una economía puede convivir con eso mientras el crecimiento nominal lo supere, pero es precisamente el mecanismo por el que los ciclos Goldilocks terminan — la restricción monetaria opera con rezago y no aparece en el VIX hasta que ya es tarde. Segunda: la divergencia de expectativas de inflación. breakeven_5y5y en 2.26% dice que el mercado de bonos cree que la inflación está resuelta, mientras michigan_inflation_exp en 4.6% (FRED:MICH, jun-2026) dice que el consumidor no lo cree en absoluto. Una brecha de 234 puntos básicos entre ambas es anómala y hay que vigilar cuál converge hacia cuál — si converge hacia Michigan, el trade corto en TLT se convierte en el mejor del trimestre; si converge hacia el breakeven, mi señal larga en GLD queda expuesta. No puedo resolver esto con los datos disponibles: cpi (332.568) y pce_core (130.266) son niveles de índice de junio sin serie histórica, así que no puedo calcular la tasa interanual real y verificar quién tiene razón. Es una limitación material del análisis de hoy.\n\nTercera y más importante para el riesgo de cola: el complejo de divisas está enviando dos mensajes opuestos. usdjpy en 157.8540 (confirmado por dos campos independientes, ambos con 0 días de antigüedad) es la firma de un carry trade yen-financiado a pleno rendimiento, y eso es exactamente el combustible que explica hy_spread en 2.73% y vix en 15.99 — la liquidez barata de financiación comprime todas las primas de riesgo simultáneamente. Al mismo tiempo, usdcny en 6.7379, usdmxn en 17.2411 y usdbrl en 5.1237 muestran divisas emergentes firmes frente a un dxy de 99.77 y eurusd de 1.1545. La lectura combinada es un dólar que se debilita contra el mundo emergente mientras se fortalece contra el yen: dólar débil por apetito de riesgo, no por debilidad estructural. Esto es constructivo mientras dure, pero crea una vulnerabilidad concreta y bien documentada: cualquier reversión abrupta del yen desmontaría el carry, y el desapalancamiento se transmitiría a crédito y equity con velocidad, desde niveles de spread y volatilidad que no ofrecen colchón alguno. Por eso el posicionamiento del día es largo riesgo con tamaño moderado (SPY 7, QQQ 6), corto duración (TLT 6), largo oro como cobertura de cola (GLD 5, reconociendo que contradice el real yield de 2.40%), y neutral en dólar y energía donde los datos no alcanzan. El régimen es benigno; el precio de ese régimen ya no lo es.",
+  "invalidadores": [
+    "Reversión del carry trade: si usdjpy (hoy 157.8540) se aprecia bruscamente hacia 150 o por debajo, el desapalancamiento forzado del carry yen-financiado invalidaría simultáneamente las señales largas en SPY y QQQ. Este es el invalidador de mayor impacto y menor visibilidad previa.",
+    "Ampliación del crédito: si hy_spread (hoy 2.73%) se abre por encima de 3.50-4.00%, el pilar central del régimen GOLDILOCKS se cae y hay que cerrar todo el riesgo largo de inmediato, independientemente de lo que digan el VIX o el empleo.",
+    "Quiebre del mercado laboral: si sahm_rule (hoy 0.07) sube hacia 0.30-0.50 o unemployment (4.2%) supera el 4.5%, el régimen migra a DESACELERACION y la señal corta en TLT se invierte por completo — pasaría a LONG por fuga a la calidad.",
+    "Convergencia inflacionaria al alza: si breakeven_5y5y (hoy 2.26%) rompe por encima de 2.50% validando el michigan_inflation_exp de 4.6%, el régimen migra a REFLACION o STAGFLATION; refuerza el corto en TLT y el largo en GLD, pero invalida el largo en QQQ por compresión de múltiplos.",
+    "Shock de tasas reales: si tips_yield_10y (hoy 2.40%) supera 2.75%, el costo de capital real quiebra tanto la señal larga en equity como la de oro, que ya cotiza en tensión con ese nivel.",
+    "Ruptura de la complacencia: si vix (hoy 15.99) supera 25 de forma sostenida con SPY (769.79) cediendo desde máximos, la asimetría negativa del posicionamiento largo se materializa sin margen de reacción."
+  ],
+  "alertas": [
+    "DIVERGENCIA CRÍTICA — michigan_inflation_exp en 4.6% (FRED:MICH) contra breakeven_5y5y en 2.26% (FRED:T5YIFR): brecha de 234pb. El régimen pre-calculado reporta 'senales_inflacion: 0', lo cual no captura esta tensión. Discrepo parcialmente del modelo en este punto.",
+    "ANOMALÍA — gold (GLD) en 389.64 coexistiendo con tips_yield_10y en 2.40%. La relación inversa histórica entre oro y rendimientos reales está rota. O el mercado descuenta un riesgo de debasement/reserva que los bonos aún no cotizan, o uno de los dos activos está mal valorado. No tengo datos en el JSON para resolverlo.",
+    "COMPRESIÓN EXTREMA — hy_spread en 2.73% deja asimetría severamente negativa: prácticamente todo el retorno potencial del crédito ya se realizó, y el riesgo de cola no está compensado. Cualquier sorpresa negativa se paga a precio completo.",
+    "CARRY TRADE EXPUESTO — usdjpy en 157.8540 sugiere apalancamiento yen-financiado significativo. La combinación de vix 15.99 + hy_spread 2.73% + usdjpy 157.85 es exactamente la configuración que precedió episodios de desapalancamiento abrupto en el pasado. No es una predicción, es una advertencia de estructura de riesgo.",
+    "SEÑAL DE CONCENTRACIÓN — Bloomberg reporta que el fondo insignia de Citadel subió 5.9% en julio siendo 'uno de los pocos ganadores' de la turbulencia en el hedge fund de IA Situational Awareness. Hay estrés idiosincrático real en el espacio de IA que no aparece en ningún indicador macro del JSON. Vigilar contagio.",
+    "LIMITACIÓN METODOLÓGICA — cpi (332.568) y pce_core (130.266) son niveles de índice de jun-2026, no tasas. Sin serie histórica en el JSON no puedo calcular inflación interanual. Toda mi lectura inflacionaria depende de breakevens y encuestas, que hoy se contradicen entre sí."
+  ],
+  "datos_insuficientes": [
+    "jobless_claims (197.000, FRED:ICSA): es_fresco=false, 12 días de antigüedad. Reduzco su peso como confirmación del mercado laboral; la señal de empleo descansa principalmente en sahm_rule y unemployment.",
+    "cpi (332.568) y pce_core (130.266): datos de jun-2026 con 66 días de antigüedad y expresados como nivel de índice sin serie histórica — imposible derivar tasa interanual. Es la mayor laguna del análisis.",
+    "michigan_inflation_exp (4.6%) y unemployment (4.2%) y sahm_rule (0.07): todos de jun-2026, 66 días de antigüedad. Marcados es_fresco=true por su frecuencia de publicación, pero en términos de ciclo de mercado son lecturas rezagadas.",
+    "Ausencia total de datos de energía/crudo: impide cualquier señal fundamentada en USO.",
+    "Ausencia de indicadores de crecimiento adelantados (ISM, PMI, GDPNow): la clasificación del eje 'crecimiento' del cuadrante se apoya únicamente en empleo y curva, que son rezagados y de mercado respectivamente.",
+    "Ausencia de tasas de política y rendimientos soberanos de Japón y Eurozona: impide arbitrar la contradicción entre usdjpy 157.85 y la fortaleza de las divisas emergentes, y es la razón de la señal NEUTRAL en DXY.",
+    "2 de 25 indicadores no disponibles o no confiables según el encabezado del reporte (23/25 confiables)."
+  ],
+  "eventos_clave": [
+    "[Investor's Business Daily] 'Dow Jones Futures Rise; SpaceX, AMD Dive As Arista, Eli Lilly Jump With S&P 500 At Highs' — Confirma en el flujo de noticias lo que muestra el dato: SPY en 769.79 en zona de máximos con vix en 15.99. Crítico: el titular describe DISPERSIÓN intra-índice (ganadores y perdedores simultáneos), no un rally de beta limpia. Esto respalda un largo en SPY pero advierte que la selección de nombres importa más que la exposición al índice.",
+    "[Barron's] 'Why Nvidia Stock Is the Big Winner From SpaceX Earnings' — Musk anuncia uso exclusivo de hardware Nvidia, en perjuicio de AMD. Impacto concreto: refuerza la concentración del liderazgo del QQQ en un puñado de nombres de IA. Es el catalizador idiosincrático detrás de mi señal larga en QQQ, pero también su principal fragilidad — concentración extrema significa que el índice es tan vulnerable como su nombre dominante.",
+    "[Bloomberg] 'Ken Griffin's Citadel Jumps 6% After Situational Awareness Deal' — Citadel sube 5.9% en julio como 'uno de los pocos ganadores' de la turbulencia en el hedge fund de IA Situational Awareness. Impacto: señal de estrés idiosincrático y transferencia de activos en el espacio de IA que NO se refleja en hy_spread (2.73%) ni en vix (15.99). Es el tipo de dislocación de un solo actor que precede a episodios de desapalancamiento más amplios. Debe monitorearse como riesgo de contagio.",
+    "[The Wall Street Journal] 'Bankers Are Betting on Supersize Bonuses This Year With Profits Surging' — Mercados volátiles y grandes colocaciones de acciones impulsan beneficios en Wall Street. Impacto: confirma condiciones de mercado de capitales abiertas y activas, consistente con hy_spread comprimido en 2.73%. Es evidencia de segundo orden de que la liquidez de financiación corporativa está plenamente disponible — pilar del régimen GOLDILOCKS.",
+    "[CNBC] 'Uber issues weaker-than-expected bookings, earnings forecasts for third quarter' — Guidance del tercer trimestre por debajo de expectativas pese a resultados en línea. Impacto: primera grieta visible en la demanda del consumidor a nivel micro. Contrasta con unemployment en 4.2% y sahm_rule en 0.07, que no muestran deterioro. Si más compañías expuestas al consumidor guían a la baja, sería el canario adelantado de una migración hacia DESACELERACION antes de que los datos macro lo registren.",
+    "[The Wall Street Journal] 'Stock Market Today: Dow Futures Tick Up, SpaceX Stock Slides After Earnings' — Futuros al alza con debilidad idiosincrática en SpaceX. Impacto: coherente con el cuadro de riesgo benigno (vix 15.99); confirma que las caídas de hoy son específicas de compañías y no sistémicas."
+  ],
+  "confianza_general": 67,
+  "metadata": {
+    "timestamp": "2026-08-06T12:27:02.842913",
+    "datos_usados": 23,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
