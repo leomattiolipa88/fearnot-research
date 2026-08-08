@@ -1,0 +1,82 @@
+{
+  "fecha": "2026-08-08",
+  "regimen_credito": {
+    "clasificacion": "EXPANSION",
+    "confianza": 66,
+    "razonamiento": "Los tres universales con datos completos provisionan en niveles NORMALES, no deprimidos ni de estres: cost_of_risk agregado ponderado = 29.304B de provisiones sobre 3.374T de loans_held_for_investment = 0.87% (JPM 0.97%, C 1.30%, BAC 0.48%). Eso no es un sistema que huela recesion (no hay reserve build masivo) ni uno en euforia (no hay releases generalizados: solo GS reporta provision negativa de -1.113B). El dato que define la fase es el apetito de prestamo: loan_to_deposit de 57.3% (JPM), 58.1% (BAC), 52.2% (C) y 64.7% (MS). Los bancos tienen deposito de sobra y NO lo estan desplegando en credito. Regla de Marks: cuando nadie quiere prestar con agresividad, es temprano en el ciclo, no tarde. La combinacion 'provisiones normales + LTD bajo + macro GOLDILOCKS 72% con jobless_claims 199k y sahm_rule 0.07' encaja con EXPANSION de credito temprana-media, no con ciclo tardio. Advertencia estructural: el LTD bajo tambien puede reflejar que el credito riesgoso migro FUERA del balance bancario (private credit / NBFI), en cuyo caso los bancos son un sensor parcialmente ciego del apalancamiento real del sistema. No tengo datos en mis inputs para verificar exposicion a NDFI ni series historicas de LTD, asi que esto queda como hipotesis, no como afirmacion."
+  },
+  "tesis_principal": "Los bancos senalan una economia que funciona, con el freno puesto por ellos mismos. NII agregado del panel (JPM 95.4B + BAC 60.1B + C 59.8B + WFC 47.5B) muestra franquicias de deposito enormes (JPM 2.559T, BAC 2.019T, WFC 1.426T, C 1.404T) que estan financiando securities y liquidez mas que prestamos: ninguno supera 58% de loan_to_deposit entre los universales. Eso es coherente con el 'pero' de la tesis macro del fondo (tasas reales restrictivas): con tasa real alta, el banco cobra por no arriesgar, y el credito bancario no se expande a la velocidad de un ciclo tardio. Del lado de la perdida esperada, la dispersion es la informacion: Citi provisiona 1.30% (mix de tarjetas y EM, el punto de estres del consumidor de gama baja), JPM 0.97% (nivel normalizado, coherente con quien tiene el mayor libro consumer), y BAC 0.48%, menos de la mitad que JPM con un balance de escala comparable. O el mix de BAC es estructuralmente mas seguro, o esta subprovisionando: no tengo net charge-offs, NIM ni cobertura de reservas (LIMITATIONS #14/#16/#17) para dirimirlo, y esa es la incognita mas cara del memo. Conclusion sectorial: el ciclo de credito NO contradice el regimen GOLDILOCKS del fondo; lo confirma con una advertencia de riesgo diferido concentrada en (a) el consumidor tarjeta (visible en Citi) y (b) la calidad de ganancias de GS, que en 2025 sumo 1.113B de resultado por liberar reservas en vez de constituirlas. En fase de EXPANSION lo correcto es estar largo calidad y eficiencia (JPM), no largo riesgo de credito barato.",
+  "senales": [
+    {
+      "activo": "JPM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Universal bank, el unico del panel que combina la mejor eficiencia (efficiency_ratio 52.4% vs 61.7-65.5% del resto de universales) con la provision mas conservadora en terminos relativos dentro de lo normal (cost_of_risk 0.97%, el doble de BAC). Revenue mix balanceado: NII 95.4B + noninterest_income 87.0B, con lo cual no depende solo de la curva. Deposito de 2.559T con LTD de 57.3% = poder de fuego para expandir credito SI el ciclo lo pide, sin necesidad de forzarlo hoy. En fase de EXPANSION con macro GOLDILOCKS, es el vehiculo de calidad. Nota Mayo: noninterest_expense 95.64B ya excede el NII completo (95.44B), o sea que toda la rentabilidad depende del fee income; si los mercados de capitales se enfrian, ese 52.4% de eficiencia se deteriora rapido. No tengo ROTCE ni CET1 para juzgar retorno sobre capital ni exceso de capital."
+    },
+    {
+      "activo": "C",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Universal bank. Contrarian por provisiones: cost_of_risk de 1.30% es el mas alto calculable del panel, 2.7x el de BAC, sobre un libro de 733B. Si el regimen GOLDILOCKS (72%) se sostiene y no hay quiebre del mercado laboral, ese nivel de provision es exceso y termina en releases que apalancan el resultado. Es decir: el riesgo ya esta en el precio del P&L, a diferencia de BAC. Lo que frena la conviccion es la estructura: efficiency_ratio 64.7% (mediocre) y un mix de ingresos desbalanceado (NII 59.8B contra noninterest_income de solo 25.4B), lo que lo hace el mas dependiente de tasas del panel justo cuando la tesis macro habla de tasas reales restrictivas que eventualmente ceden. Ademas es el LTD mas bajo (52.2%): presta menos que nadie y pierde mas por dolar prestado. Sin CET1 ni ROTCE no puedo evaluar la historia de retorno sobre capital."
+    },
+    {
+      "activo": "BAC",
+      "direccion": "NEUTRAL",
+      "conviccion": 6,
+      "razonamiento": "Universal bank con el numero mas lindo y por eso el mas sospechoso (Mayo): cost_of_risk de 0.48% sobre 1.172T de prestamos, la mitad de JPM y un tercio de Citi. En una fase de EXPANSION eso puede ser mix genuinamente mas seguro (hipoteca prime y corporativo IG) o provision insuficiente que difiere perdida a 2027. No puedo distinguirlo: me faltan net charge-offs, cobertura de reservas y NIM (LIMITATIONS #14/#16). Mientras tanto, efficiency_ratio 61.7% es claramente peor que JPM con un modelo parecido, y el LTD de 58.1% sobre 2.019T de depositos significa una franquicia de fondeo excelente subutilizada. NEUTRAL con conviccion alta en el diagnostico, no en la direccion: no me pagan por comprar un cost_of_risk que no puedo auditar."
+    },
+    {
+      "activo": "GS",
+      "direccion": "NEUTRAL",
+      "conviccion": 5,
+      "razonamiento": "Investment bank: cost_of_risk y loan_to_deposit no calculables (loans_held_for_investment = not_found), asi que NO se lee por credito. Se lee por eficiencia y ciclo de mercados: efficiency_ratio 64.4%, con noninterest_income 44.7B contra NII 13.6B, o sea puro fee/trading. El contexto tecnico del fondo (SPY LONG 9/10 sobre dma200 +9.9%, QQQ momentum_12m +26.6%) es un viento de cola directo para ECM/M&A y trading. Lo que me impide poner LONG es la bandera roja de calidad de ganancias: provision_for_credit_losses de -1.113B, una liberacion neta de reservas que suma resultado sin generar caja operativa nueva, y en direccion opuesta a los cuatro bancos comerciales del panel. Sin el desglose del libro de prestamos no puedo saber si es reduccion genuina de exposicion o optimismo contable. Neutral hasta ver la provision volver a territorio positivo."
+    },
+    {
+      "activo": "MS",
+      "direccion": "NEUTRAL",
+      "conviccion": 5,
+      "razonamiento": "Investment bank / wealth. Su cost_of_risk de 0.086% NO es una senal macro: es un libro de 268.7B fuertemente colateralizado (securities-based lending del negocio de wealth), no credito de consumo; leerlo como 'el ciclo esta sanisimo' seria un error de sub-tipo. La senal real es de eficiencia y esta mal: efficiency_ratio 68.4%, el peor del panel, con noninterest_expense de 48.3B sobre un revenue de 70.6B (NII 10.0B + noninterest_income 60.6B). Es el banco mas apalancado a que los mercados sigan arriba y el que menos colchon de costos tiene si corrigen. Ademas tiene el LTD mas alto del panel (64.7%), que en su modelo es normal, no expansion de credito. NEUTRAL: negocio ciclicamente bien posicionado, estructura de costos fragil."
+    },
+    {
+      "activo": "WFC",
+      "direccion": "NEUTRAL",
+      "conviccion": 4,
+      "razonamiento": "Universal bank con el agujero de datos mas relevante del memo: loans_held_for_investment = not_found, por lo tanto cost_of_risk y loan_to_deposit son missing_inputs. Tengo provision_for_credit_losses 3.658B y depositos 1.426T, pero sin el denominador de prestamos NO puedo calcular su cost_of_risk ni compararlo con el 0.87% agregado del panel, y no lo voy a estimar. Lo unico afirmable: efficiency_ratio 65.5%, el peor entre universales, con noninterest_expense 54.8B sobre revenue de 83.7B (NII 47.5B + noninterest_income 36.2B). Eso es un banco caro de operar. NEUTRAL por falta de informacion, no por vista neutra: la conviccion baja refleja la incertidumbre del dato."
+    },
+    {
+      "activo": "NU",
+      "direccion": "NEUTRAL",
+      "conviccion": 1,
+      "razonamiento": "Cobertura nula: los nueve conceptos vienen not_found o missing_inputs. No tengo NII, depositos, prestamos, provisiones ni eficiencia. Un banco digital de EM con credito unsecured en Brasil es exactamente el tipo de balance que NO se puede opinar por analogia con los universales de EEUU: distinto ciclo, distinta moneda, distinto NIM, distinta cost_of_risk estructural. No tengo ese dato y no genero senal. Cualquier posicion en NU debe venir de otro desk, no de este memo."
+    }
+  ],
+  "contradicciones": [
+    "GS libera reservas (provision -1.113B) mientras JPM, C, BAC y WFC constituyen provisiones por 32.96B combinados. Un solo banco del panel esta jugando el ciclo al reves. Sin loans_held_for_investment de GS (not_found) no puedo verificar si es desapalancamiento del libro o optimismo contable, pero el efecto en el P&L de 2025 es +1.113B de resultado sin caja nueva. Bandera de calidad de ganancias.",
+    "BAC tiene cost_of_risk de 0.48% contra 0.97% de JPM con libros de escala comparable (1.172T vs 1.468T). Uno de los dos esta equivocado. Si BAC tiene razon, JPM esta sobreprovisionando y hay upside diferido; si JPM tiene razon, BAC tiene riesgo escondido de ~5.7B en provisiones no constituidas. No tengo net charge-offs ni cobertura de reservas para resolverlo.",
+    "Citi presta menos que nadie (loan_to_deposit 52.2%) y sin embargo pierde mas por dolar prestado (cost_of_risk 1.30%). Prudencia de balance con imprudencia de mix. Sugiere que el riesgo esta concentrado en tarjetas y EM, no en el volumen.",
+    "JPM tiene noninterest_expense (95.640B) marginalmente SUPERIOR a su NII completo (95.443B). Su efficiency_ratio best-in-class de 52.4% existe solo gracias a 87B de noninterest_income. La eficiencia del mejor banco del panel es, en el fondo, una apuesta a que los mercados de capitales sigan pagando.",
+    "Cuatro de los siete bancos tienen loan_to_deposit por debajo del 60% mientras el panel tecnico del fondo muestra SPY +9.9% sobre su dma200 y QQQ con momentum_12m de +26.6%. Hay euforia de precios de activos sin euforia de credito bancario. La lectura honesta es que el apalancamiento del ciclo no esta en estos balances: esta fuera de ellos. Los bancos como sensor tienen un punto ciego y este memo lo hereda.",
+    "MS tiene el peor efficiency_ratio del panel (68.4%) siendo el negocio mas fee-based y menos intensivo en balance. La estructura de compensacion se come el ciclo bueno; en un ciclo malo no queda colchon.",
+    "El banco con el historial regulatorio y de controles internos mas cuestionado del panel (WFC) es justamente aquel cuyo loans_held_for_investment figura como not_found. No afirmo causalidad alguna; lo registro como un hueco de datos que no se puede rellenar con supuestos."
+  ],
+  "eventos_clave": [
+    "Provisiones del proximo trimestre en JPM, BAC y C: si el cost_of_risk agregado del panel se mueve de 0.87% hacia 1.10%+ en dos trimestres consecutivos, la fase deja de ser EXPANSION.",
+    "Net charge-offs de tarjeta de credito (Citi branded cards y JPM card services) como validacion o refutacion del cost_of_risk de 1.30% de Citi.",
+    "Si GS vuelve a provision positiva: seria la confirmacion de que el -1.113B fue un evento puntual y no un cambio de postura sobre el riesgo.",
+    "Trayectoria del loan_to_deposit de los universales: un movimiento desde 52-58% hacia 65%+ acompanado de cost_of_risk cayendo seria el clasico giro EXPANSION -> EUFORIA y obligaria a reclasificar a defensivo.",
+    "Comportamiento de los depositos (JPM 2.559T, BAC 2.019T, WFC 1.426T, C 1.404T) con tasas reales restrictivas: fuga hacia money market funds presiona el NII antes de que se vea en el credito.",
+    "Divulgacion de exposicion bancaria a private credit / NBFI en el proximo 10-Q: es la via por la cual el riesgo que no aparece en el loan_to_deposit vuelve al balance.",
+    "Publicacion de NIM, ROTCE y CET1 en los proximos 10-K/10-Q, que hoy no tengo (LIMITATIONS #14/#16/#17) y que son necesarios para juzgar rentabilidad y colchon de capital."
+  ],
+  "invalidadores": [
+    "cost_of_risk agregado del panel por encima de 1.25% (hoy 0.87%): invalida EXPANSION y mueve la lectura a CONTRACCION temprana.",
+    "Reserve builds simultaneos en JPM, BAC y WFC en un mismo trimestre: es la senal clasica de que los bancos huelen morosidad antes que el dato macro.",
+    "Ruptura del regimen GOLDILOCKS del fondo: jobless_claims (FRED:ICSA) saliendo de 199k hacia 260k+ o sahm_rule (FRED:SAHMREALTIME) desde 0.07 hacia 0.50. Si eso pasa y las provisiones bancarias siguen planas, la lectura correcta pasa a ser 'los bancos estan subprovisionados' y todas las senales LONG de este memo caen.",
+    "Aparicion del dato de loans_held_for_investment de WFC: si su cost_of_risk implicito resulta muy por debajo del 0.87% del panel, WFC pasa de NEUTRAL por falta de datos a sospechoso de subprovision.",
+    "Que BAC reporte un salto de net charge-offs sin haber subido provisiones: confirma que el 0.48% era riesgo diferido y no mix seguro.",
+    "Deterioro del panel tecnico (SPY perdiendo su dma200 de 699.59): golpea directo el noninterest_income de JPM (87.0B), GS (44.7B) y MS (60.6B), que es donde vive la eficiencia del sector. Las senales de GS y MS son las primeras que se invalidan.",
+    "Datos de NU: cualquier fundamental real de NU invalida el conviccion 1 y habilita una lectura de credito EM que hoy no existe en este memo."
+  ],
+  "periodo_analizado": "FY2025",
+  "modelo": "claude-opus-5"
+}
