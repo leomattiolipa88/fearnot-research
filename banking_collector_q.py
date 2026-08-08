@@ -17,7 +17,7 @@ Universo: 7 bancos. Ver sector_mappings/banking.py.
 """
 
 import sqlite3
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 
 from config import trimestre_actual
@@ -32,6 +32,12 @@ CONCEPTOS_BANCA = [
     "noninterest_income",
     "noninterest_expense",
 ]
+
+# Probe-and-fallback: NII es el bellwether porque los 7 bancos lo reportan
+# (universal + investment). Umbral 4/7 = mayoría — evita que 1-2 rezagados
+# congelen el ancla.
+BELLWETHER_PROBE = "net_interest_income"
+COBERTURA_MINIMA_PROBE = 4
 
 
 def init_db(db_path: str = DB_PATH) -> sqlite3.Connection:
@@ -137,10 +143,91 @@ def recolectar_todos_q(anio_actual, quarter_actual, n_trimestres=6, db_path=DB_P
     print("Listo. Serie en banking_financials_q.")
 
 
+# ----------------- Probe-and-fallback del ancla trimestral -----------------
+
+def _ultimo_trimestre_completo_calendario() -> tuple[int, int]:
+    """Último trimestre calendario que YA CERRÓ, sin colchón de presentación.
+    Distinto de config.trimestre_actual() que resta 45 días: este es el punto
+    de partida del probe — le preguntamos a SEC si el frame más nuevo trae
+    data, y bajamos si no."""
+    today = date.today()
+    q = (today.month - 1) // 3 + 1
+    fin_dia = 31 if q in (1, 4) else 30
+    fin_q = date(today.year, q * 3, fin_dia)
+    if today >= fin_q:
+        return (today.year, q)
+    if q == 1:
+        return (today.year - 1, 4)
+    return (today.year, q - 1)
+
+
+def _sondear_cobertura(anio: int, quarter: int) -> int:
+    """Cuenta cuántos de los 7 bancos tienen fact del BELLWETHER (NII) en
+    el frame CY{anio}Q{quarter}. Reusa la maquinaria de frames de
+    financials_extractor_v2 + las mismas tablas GAAP/IFRS que la recolección."""
+    from financials_extractor_v2 import (
+        obtener_cik, obtener_facts, extraer_fact_trimestral_auto,
+    )
+    from sector_router import get_names_for_concept
+    from ifrs_taxonomy import is_ifrs_filer, get_ifrs_names_for_concept
+    from sector_mappings.banking import BANKING_TICKERS
+
+    hits = 0
+    for ticker in sorted(BANKING_TICKERS):
+        cik = obtener_cik(ticker)
+        if cik is None:
+            continue
+        facts = obtener_facts(cik)
+        if facts is None:
+            continue
+        if is_ifrs_filer(ticker):
+            names = get_ifrs_names_for_concept(BELLWETHER_PROBE)
+            taxonomia = "ifrs-full"
+        else:
+            names = get_names_for_concept(BELLWETHER_PROBE, ticker)
+            taxonomia = "us-gaap"
+        if not names:
+            continue
+        val, _ = extraer_fact_trimestral_auto(facts, names, anio, quarter, taxonomia)
+        if val is not None:
+            hits += 1
+    return hits
+
+
+def resolver_ancla_trimestral() -> tuple[int, int]:
+    """Sondea el frame más nuevo en SEC y decide el ancla por cobertura real.
+    Si el probe falla entero (SEC caída, imports rotos), cae al cálculo
+    calendario de config.trimestre_actual() como red de seguridad."""
+    try:
+        anio, q = _ultimo_trimestre_completo_calendario()
+        hits = _sondear_cobertura(anio, q)
+        if hits >= COBERTURA_MINIMA_PROBE:
+            print(f"Probe CY{anio}Q{q}: {hits}/7 bancos → ancla CY{anio}Q{q}")
+            return anio, q
+        prev_q = q - 1
+        prev_a = anio
+        if prev_q == 0:
+            prev_q = 4
+            prev_a = anio - 1
+        hits_prev = _sondear_cobertura(prev_a, prev_q)
+        print(
+            f"Probe CY{anio}Q{q}: {hits}/7 (<{COBERTURA_MINIMA_PROBE}) → "
+            f"fallback CY{prev_a}Q{prev_q}: {hits_prev}/7 → ancla CY{prev_a}Q{prev_q}"
+        )
+        return prev_a, prev_q
+    except Exception as e:
+        anio, q = trimestre_actual()
+        print(f"Probe fallo ({e}); cae a config.trimestre_actual() = CY{anio}Q{q}")
+        return anio, q
+
+
 if __name__ == "__main__":
     import sys
-    anio_default, q_default = trimestre_actual()
-    anio = int(sys.argv[1]) if len(sys.argv) > 1 else anio_default
-    q = int(sys.argv[2]) if len(sys.argv) > 2 else q_default
+    if len(sys.argv) > 2:
+        # Override manual (análisis histórico): requiere anio + quarter juntos.
+        anio = int(sys.argv[1])
+        q = int(sys.argv[2])
+    else:
+        anio, q = resolver_ancla_trimestral()
     n = int(sys.argv[3]) if len(sys.argv) > 3 else 6
     recolectar_todos_q(anio, q, n)

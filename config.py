@@ -38,11 +38,15 @@ def fiscal_year_actual() -> int:
 
 
 def trimestre_actual() -> tuple[int, int]:
-    """Último trimestre calendario cuyos 10-Q ya están presentados.
-    Los bancos presentan ~30-40 días tras el cierre; usamos 45 de
-    colchón: retrocedemos 45 días y tomamos el último trimestre
-    COMPLETO a esa fecha. Refinamiento futuro (TECHNICAL_DEBT):
-    sondear el frame más nuevo y caer al anterior si viene vacío."""
+    """Último trimestre calendario cuyos 10-Q ya están presentados,
+    estimado por calendario: retrocedemos 45 días y tomamos el último
+    trimestre COMPLETO a esa fecha (los bancos presentan ~30-40 días
+    tras el cierre).
+
+    FALLBACK — usado solo si el probe no puede ejecutarse. El path
+    principal ahora es `banking_collector_q.resolver_ancla_trimestral`,
+    que sondea SEC (frame de NII para los 7 bancos) y decide en base a
+    cobertura real, no a un colchón estático."""
     ref = date.today() - timedelta(days=45)
     q_ref = (ref.month - 1) // 3 + 1
     fin_dia = 31 if q_ref in (1, 4) else 30

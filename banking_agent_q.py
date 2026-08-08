@@ -87,11 +87,31 @@ REGLAS NO NEGOCIABLES:
 """
 
 
+# ----------------- Anclaje del ancla en datos -----------------
+def _resolver_trimestre_anclado_en_datos() -> tuple[int, int]:
+    """Ancla el análisis en el trimestre más nuevo presente en la DB
+    (banking_financials_q). Si la tabla está vacía o inaccesible, cae a
+    config.trimestre_actual() como red de seguridad."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        row = conn.execute(
+            "SELECT anio, quarter FROM banking_financials_q "
+            "WHERE quarter IS NOT NULL "
+            "ORDER BY anio DESC, quarter DESC LIMIT 1"
+        ).fetchone()
+        conn.close()
+        if row and row[0] is not None and row[1] is not None:
+            return int(row[0]), int(row[1])
+    except Exception:
+        pass
+    return trimestre_actual()
+
+
 # ----------------- Cargar inputs (trimestral) -----------------
 def cargar_inputs_q(anio_actual: int = None, quarter_actual: int = None) -> dict:
     """Carga tesis macro/tecnica (JSON) + SERIES trimestrales con tendencia (DB)."""
     if anio_actual is None or quarter_actual is None:
-        anio_actual, quarter_actual = trimestre_actual()
+        anio_actual, quarter_actual = _resolver_trimestre_anclado_en_datos()
     data_dir = Path("data")
     inputs = {
         "fecha_analisis": date.today().isoformat(),
@@ -299,7 +319,7 @@ def validar_output(output: dict) -> tuple:
 # ----------------- Main -----------------
 def correr_banking_agent_q(anio_actual: int = None, quarter_actual: int = None, max_reintentos: int = 2) -> dict:
     if anio_actual is None or quarter_actual is None:
-        anio_actual, quarter_actual = trimestre_actual()
+        anio_actual, quarter_actual = _resolver_trimestre_anclado_en_datos()
     inputs = cargar_inputs_q(anio_actual, quarter_actual)
     if not inputs["bancos"]:
         return {"error": "No hay datos en banking_financials_q. Corre banking_collector_q.py primero."}
@@ -387,9 +407,12 @@ def imprimir_memo(output: dict):
 
 if __name__ == "__main__":
     import sys
-    anio_default, q_default = trimestre_actual()
-    anio = int(sys.argv[1]) if len(sys.argv) > 1 else anio_default
-    q = int(sys.argv[2]) if len(sys.argv) > 2 else q_default
+    if len(sys.argv) > 2:
+        # Override manual (análisis histórico): requiere anio + quarter juntos.
+        anio = int(sys.argv[1])
+        q = int(sys.argv[2])
+    else:
+        anio, q = _resolver_trimestre_anclado_en_datos()
     output = correr_banking_agent_q(anio, q)
     imprimir_memo(output)
     from datetime import datetime

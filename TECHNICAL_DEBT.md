@@ -398,3 +398,29 @@ en verde y tesis generadas — sólo que sobre data envejeciendo.
   Requiere una helper en `financials_extractor_v2.py` que responda "el frame
   CY{Y}Q{n} tiene facts para al menos K de los 7 bancos".
 - **Descubierto:** 2026-08-06 (mientras se cerraban los defaults congelados).
+- **RESUELTO 2026-08-07:**
+  - `banking_collector_q.resolver_ancla_trimestral()` sondea NII (bellwether:
+    lo reportan los 7 bancos, universales + investment) en el último trimestre
+    calendario CERRADO. Si ≥4/7 bancos aparecen → ese es el ancla. Si <4 →
+    retrocede un trimestre. Imprime la decisión con la cobertura observada
+    (`Probe CY2026Q2: 6/7 bancos → ancla CY2026Q2` o el fallback y por qué).
+    Reusa `extraer_fact_trimestral_auto` del extractor v2 y las mismas tablas
+    GAAP/IFRS de la recolección — sin código nuevo de parseo.
+  - `config.trimestre_actual()` queda como red de seguridad, invocada solo
+    si el probe no puede ejecutarse (SEC caída, imports rotos). Docstring
+    actualizado.
+  - Los agentes (`banking_agent.py` + `_q.py`) ya no calculan el ancla por
+    calendario ni siquiera para el fallback: leen `MAX(fiscal_year)` /
+    `MAX(anio, quarter)` de la DB (`banking_financials` y
+    `banking_financials_q`) — el análisis se ancla en el dato real presente,
+    no en cuenta de días. Si la tabla está vacía (primera corrida, DB nueva),
+    caen a `fiscal_year_actual()` / `trimestre_actual()` como red de seguridad.
+    `sys.argv` sigue overrideando para análisis históricos.
+  - `banking_agent.py` agrega `"periodo_analizado": "FY{fiscal_year}"` al
+    output (el trimestral ya lo emitía como parte del JSON generado por el
+    modelo; el anual ahora también, agregado post-parse en Python — la web
+    ya puede rotularlo consistente).
+  - Costo del probe: 7 descargas de company facts JSON por invocación (una
+    vez al mes, banking_pipeline). Aceptable — el mismo run va a descargarlos
+    de nuevo en `extraer_serie_trimestral`. Caché in-session es refinamiento
+    futuro si se agrega otro pipeline al mismo runner.

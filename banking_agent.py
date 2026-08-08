@@ -76,11 +76,29 @@ REGLAS NO NEGOCIABLES:
 """
 
 
+# ----------------- Anclaje del ancla en datos -----------------
+def _resolver_fiscal_year_anclado_en_datos() -> int:
+    """Ancla el análisis en el fiscal year más nuevo presente en la DB
+    (banking_financials). Si la tabla está vacía o inaccesible, cae a
+    config.fiscal_year_actual() como red de seguridad."""
+    try:
+        conn = sqlite3.connect(DB_PATH)
+        row = conn.execute(
+            "SELECT MAX(fiscal_year) FROM banking_financials"
+        ).fetchone()
+        conn.close()
+        if row and row[0] is not None:
+            return int(row[0])
+    except Exception:
+        pass
+    return fiscal_year_actual()
+
+
 # ----------------- Cargar inputs -----------------
 def cargar_inputs(fiscal_year: int = None) -> dict:
     """Carga tesis macro/tecnica (JSON) + fundamentals bancarios (DB)."""
     if fiscal_year is None:
-        fiscal_year = fiscal_year_actual()
+        fiscal_year = _resolver_fiscal_year_anclado_en_datos()
     data_dir = Path("data")
     inputs = {
         "fecha_analisis": date.today().isoformat(),
@@ -262,7 +280,7 @@ def validar_output(output: dict) -> tuple:
 # ----------------- Main -----------------
 def correr_banking_agent(fiscal_year: int = None, max_reintentos: int = 2) -> dict:
     if fiscal_year is None:
-        fiscal_year = fiscal_year_actual()
+        fiscal_year = _resolver_fiscal_year_anclado_en_datos()
     inputs = cargar_inputs(fiscal_year)
     if not inputs["bancos"]:
         return {"error": "No hay datos en banking_financials. Corre banking_collector.py primero."}
@@ -301,6 +319,7 @@ def correr_banking_agent(fiscal_year: int = None, max_reintentos: int = 2) -> di
         elif intento >= max_reintentos:
             output["_validacion_errores"] = errores
 
+    output["periodo_analizado"] = f"FY{fiscal_year}"
     output["modelo"] = MODEL
     return output
 
@@ -352,7 +371,7 @@ def adaptar_para_tracker(output: dict) -> dict:
 
 if __name__ == "__main__":
     import sys
-    fy = int(sys.argv[1]) if len(sys.argv) > 1 else fiscal_year_actual()
+    fy = int(sys.argv[1]) if len(sys.argv) > 1 else _resolver_fiscal_year_anclado_en_datos()
     output = correr_banking_agent(fy)
     imprimir_memo(output)
     # Guardar (mismo patron que og_agent)
