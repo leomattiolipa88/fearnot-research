@@ -1,0 +1,94 @@
+{
+  "fecha": "2026-08-13",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 62,
+    "razonamiento": "El bloque de riesgo/crecimiento valida el régimen benigno: HY spread en 2.72% (hy_spread, 2 días de antigüedad) está en zona de complacencia crediticia, VIX en 14.59 (vix, dato de hoy), la curva 10Y-3M está positiva y con pendiente sana en +0.96% (yield_curve = 4.70 de yield_10y menos 3.74 de yield_3m), Sahm Rule en -0.03 (sahm_rule) descarta señal de recesión y el desempleo en 4.1% (unemployment). Las expectativas de inflación de mercado están ancladas: breakeven 5y5y en 2.28 (breakeven_5y5y) y el breakeven 10Y implícito de yield_10y 4.70 menos tips_yield_10y 2.43 da 2.27 — consistente. Reduzco la confianza del 'green' precalculado por tres motivos: (1) el real yield 10Y en 2.43% (tips_yield_10y) es históricamente restrictivo y convive con GLD en 404.92 (gold), una combinación anómala que sugiere prima geopolítica/de debasement más que reflación ordenada; (2) michigan_inflation_exp en 4.6% (dato del 2026-06-01, 73 días de antigüedad — señal rancia) diverge fuertemente de los breakevens de mercado; (3) el cierre del Estrecho de Hormuz reportado por CNBC/IEA es un shock de oferta energética que, si persiste, empuja el cuadrante hacia STAGFLATION sin que los datos duros (cpi del 2026-07-01, pce_core del 2026-06-01) lo hayan capturado todavía."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Crédito y volatilidad confirman apetito por riesgo: hy_spread 2.72% y vix 14.59, con curva positiva (yield_curve +0.96) y sahm_rule -0.03 sin señal recesiva. SPY en 772.49 (spy, 1 día). El freno para no ir a convicción alta es el nivel de tasas: yield_10y 4.70 y real yield 2.43 (tips_yield_10y) comprimen múltiplos, más el riesgo de sorpresa alcista en el CPI de hoy (Bloomberg) y el shock de Hormuz.",
+      "dato_clave": "hy_spread 2.72%"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "El liderazgo sigue siendo el capex de AI: resultados de CoreWeave (Yahoo Finance, +8%) e iniciativa de $250B de Bank of America para data centers/semis/energía (Fox Business) sostienen el flujo. El contexto macro lo permite: vix 14.59, hy_spread 2.72. No tengo un dato específico de QQQ en el JSON — la señal se deriva del régimen y de spy 772.49, por lo que la convicción queda acotada a 6.",
+      "dato_clave": "vix 14.59"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "GLD en 404.92 (gold) se sostiene pese a un real yield de 2.43% (tips_yield_10y), lo que normalmente sería un viento en contra brutal. Esa divergencia indica demanda estructural por cobertura geopolítica (cierre de Hormuz, CNBC/IEA) y fiscal/monetaria. Además funciona como hedge natural contra el escenario que rompería la tesis Goldilocks: un shock de oferta energética que reactive la inflación mientras michigan_inflation_exp ya está en 4.6% (dato rancio, 73 días).",
+      "dato_clave": "gold 404.92 con tips_yield_10y 2.43"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 82.11 (tlt) con yield_10y en 4.70 (FRED, 2 días) y yield_10y_mkt 4.682 (1 día). La curva se está empinando por el lado largo (yield_curve +0.96 con yield_3m 3.74), y sin señal de recesión (sahm_rule -0.03, unemployment 4.1%) no hay catalizador de duración. El riesgo de oferta energética por Hormuz sesga los breakevens al alza desde 2.28 (breakeven_5y5y). Convicción moderada porque un CPI benigno hoy puede dar un rally táctico de bonos.",
+      "dato_clave": "yield_10y 4.70 / yield_curve +0.96"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 99.90 (dxy, hoy) con EURUSD en 1.1539 (eurusd) describe un dólar debilitado en el cruce mayor, pero USD/JPY sigue en 159.29 (usdjpy_mkt, hoy; usdjpy 159.265 de ayer) pese al esfuerzo conjunto US-Japón por fortalecer el yen y con la fractura Bessent-Takaichi reportada por Bloomberg. El carry trade sigue vivo — eso es soporte para riesgo pero es un riesgo latente de unwind. EM cotiza tranquilo: usdbrl 5.1612, usdmxn 17.046, usdcny 6.7317. Señales cruzadas: neutral.",
+      "dato_clave": "usdjpy_mkt 159.29 vs dxy 99.90"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 3,
+      "razonamiento": "Convicción insuficiente: no hay ningún indicador de precio de crudo en el JSON. Las noticias son contradictorias — el IEA proyecta caída de demanda de 1.6 mb/d en 2026 por destrucción de demanda y disrupción de Hormuz (CNBC), mientras la administración Trump afirma que el flujo está normalizado, afirmación cuestionada por CNN. Sin dato duro no tomo dirección.",
+      "dato_clave": "sin dato de crudo en el JSON"
+    }
+  ],
+  "tesis_principal": "El tablero macro de hoy es, en su lectura literal, un Goldilocks de manual. El crédito no muestra estrés alguno: el high yield spread está en 2.72% (hy_spread), un nivel de complacencia total, y el VIX en 14.59 (vix, dato de hoy) confirma que el mercado de opciones no paga por protección. La curva 10Y-3M está positiva en +0.96% (yield_curve, calculada con yield_10y 4.70 y yield_3m 3.74), es decir, ya normalizada tras el ciclo de inversión, y lo hizo por la vía benigna: bull steepening en el corto con el largo firme, no por colapso del extremo largo. El mercado laboral no da señal de quiebre — Sahm Rule en -0.03 (sahm_rule), desempleo en 4.1% (unemployment) y jobless claims en 199.000 (jobless_claims, aunque con 12 días de antigüedad y marcado como no fresco, por lo que le bajo peso). Las expectativas de inflación implícitas están ancladas en 2.28% (breakeven_5y5y), perfectamente consistentes con el breakeven 10Y de 2.27% que se deduce de yield_10y 4.70 menos tips_yield_10y 2.43. Con eso, la asignación por defecto es pro-riesgo: long SPY (772.49) y long QQQ apalancados en el ciclo de capex de AI que hoy revalidan CoreWeave y la iniciativa de $250B de Bank of America.\n\nAhora, hay tres grietas que me impiden subir la confianza por encima de 62. Primera: el real yield 10Y en 2.43% (tips_yield_10y) es un nivel genuinamente restrictivo, y convive con GLD en 404.92 (gold). Esa combinación es anómala — oro fuerte con tasas reales altas normalmente significa que alguien está comprando cobertura contra algo que los breakevens todavía no cotizan (prima geopolítica, riesgo fiscal, o desconfianza en la función de reacción del banco central). Segunda: la divergencia entre michigan_inflation_exp en 4.6% y el breakeven de mercado en 2.28% es de más de dos puntos porcentuales. Aclaro que ese dato de Michigan tiene 73 días de antigüedad (publicación 2026-06-01), así que su valor informativo es limitado, pero la brecha es demasiado grande para ignorarla: el consumidor percibe una inflación que el mercado de bonos no cotiza. Tercera, y la más importante: el cierre del Estrecho de Hormuz. El IEA proyecta una caída de demanda de 1.6 mb/d en 2026 por precios altos y disrupción (CNBC). Un shock de oferta energética es exactamente el vector que traslada un régimen de GOLDILOCKS a STAGFLATION sin pasar por REFLACIÓN, y los datos duros disponibles no lo capturan todavía — el CPI del JSON es de julio (cpi 332.813, 43 días) y el PCE core de junio (pce_core 130.266, 73 días).\n\nEn monedas, la señal de carry sigue encendida y es el pilar silencioso del rally. El USD/JPY está en 159.29 (usdjpy_mkt, dato de hoy) contra 159.265 de ayer (usdjpy): prácticamente sin movimiento pese a que Estados Unidos y Japón mostraron unidad para fortalecer el yen — y Bloomberg reporta que la tensión Bessent-Takaichi sobre el BOJ amenaza esa coordinación. Traducción operativa: el mercado no cree en el rescate del yen, el carry trade sigue financiando activos de riesgo global, y ese es simultáneamente el mayor soporte y el mayor riesgo de cola de la tesis. Un unwind del carry por hawkishness sorpresiva del BOJ es el evento que hace saltar VIX desde 14.59 y HY desde 2.72 al mismo tiempo. El resto del complejo FX está calmo: DXY 99.90 (dxy), EURUSD 1.1539 (eurusd), USDBRL 5.1612, USDMXN 17.046 y USDCNY 6.7317 — sin estrés en emergentes, lo que confirma que la liquidez global está holgada hoy. Posicionamiento: pro-riesgo con sesgo de calidad, short duración vía TLT (82.11) porque no hay narrativa de recesión que justifique el bono largo con nominal en 4.70%, y long oro como el hedge que paga si la pata energética rompe el régimen.",
+  "invalidadores": [
+    "CPI de hoy (evento citado por Bloomberg e Investing.com) sorprende al alza y empuja el breakeven_5y5y por encima de 2.50 desde 2.28: eso valida el canal de traspaso del shock de Hormuz y mata el long SPY/QQQ además de acelerar el short TLT vía repricing hawkish.",
+    "HY spread se amplía desde 2.72% hacia 3.50%+ o VIX rompe 20 desde 14.59: la tesis pro-riesgo se cae de inmediato porque el crédito es la única señal que hoy está sosteniendo el régimen Goldilocks.",
+    "Unwind del carry trade: USD/JPY quiebra por debajo de 152-155 desde 159.29 por intervención efectiva o giro hawkish del BOJ — la fractura Bessent-Takaichi reportada por Bloomberg es el catalizador. Un movimiento así históricamente arrastra SPY y QQQ con correlación 1 y hace irrelevante el resto del análisis.",
+    "El Sahm Rule sube de -0.03 hacia +0.30 o el desempleo pasa de 4.1% a 4.4%+ en la próxima publicación: se pasa de GOLDILOCKS a DESACELERACIÓN, se invierte la señal de TLT (pasaría a LONG) y se corta el long de equities.",
+    "Escalada militar en Hormuz que confirme disrupción de flujo sostenida (contra la versión de la administración Trump cuestionada por CNN): régimen a STAGFLATION, long GLD sube a convicción 9, SPY a SHORT y TLT queda atrapado entre inflación y flight-to-quality."
+  ],
+  "alertas": [
+    "ANOMALÍA PRINCIPAL: GLD en 404.92 (gold) con real yield 10Y en 2.43% (tips_yield_10y). El oro no debería estar ahí con tasas reales tan restrictivas. Alguien está pagando prima por cobertura que los breakevens en 2.28 no reflejan.",
+    "DIVERGENCIA DE EXPECTATIVAS: michigan_inflation_exp 4.6% vs breakeven_5y5y 2.28% — brecha de 232 puntos básicos. El dato de Michigan tiene 73 días de antigüedad, lo que limita su peso, pero la magnitud del gap es material.",
+    "COMPLACENCIA: hy_spread 2.72% y vix 14.59 simultáneamente, con un cierre de Hormuz activo. El mercado está cotizando cero riesgo geopolítico en el crédito y en la volatilidad. Asimetría desfavorable para vender vol.",
+    "CARRY TRADE: USD/JPY en 159.29 (usdjpy_mkt) sin reacción al esfuerzo coordinado US-Japón. La falta de movimiento es en sí misma la alerta — indica que el mercado testea la voluntad de intervención.",
+    "TENSIÓN DE VALUACIÓN: SPY en 772.49 con yield_10y en 4.70 y real yield 2.43. Las tasas están en niveles que históricamente comprimen múltiplos; el equity está resistiendo por earnings de AI, no por descuento de tasas."
+  ],
+  "datos_insuficientes": [
+    "jobless_claims: 199.000 con 12 días de antigüedad y marcado es_fresco=false — no puedo confirmar la salud laboral en tiempo real, reduce confianza en la lectura de crecimiento.",
+    "michigan_inflation_exp: 4.6% con 73 días de antigüedad (publicación 2026-06-01) — señal rancia, no captura el shock de Hormuz.",
+    "pce_core: 130.266 con 73 días de antigüedad y cpi: 332.813 con 43 días — ambos son pre-shock energético, no informan sobre el traspaso actual.",
+    "No hay ningún indicador de precio de petróleo (WTI/Brent) en el JSON pese a que la noticia macro dominante del día es el cierre de Hormuz. Esto es la brecha más grave del dataset y es la razón por la que USO queda en NEUTRAL con convicción 3.",
+    "2 de 25 indicadores del universo no llegaron como confiables (23/25 disponibles) — no puedo evaluar qué señales quedaron fuera del análisis."
+  ],
+  "eventos_clave": [
+    "[CNBC] 'Hormuz closure squeezes global economy as oil demand destruction intensifies, IEA says' — el IEA proyecta caída de demanda de 1.6 mb/d en 2026. Es el vector que puede llevar el régimen de GOLDILOCKS a STAGFLATION; sostiene el long GLD (404.92) y presiona los breakevens desde 2.28.",
+    "[Bloomberg] 'Asian Stocks to Slip With US CPI, Iran in Focus: Markets Wrap' — el CPI de hoy es el evento binario de la sesión. Con breakeven_5y5y en 2.28 y VIX en 14.59, el mercado está posicionado para un dato benigno; una sorpresa al alza es asimétricamente dañina para SPY (772.49) y TLT (82.11).",
+    "[Bloomberg] 'Bessent-Takaichi Split on BOJ Risks Undermining Joint Yen Rescue' — explica por qué USD/JPY sigue clavado en 159.29 (usdjpy_mkt) pese a la coordinación US-Japón. El carry trade sigue financiando el riesgo global; su unwind es el principal riesgo de cola de toda la tesis.",
+    "[Fox Business] 'Bank of America unveils $250B initiative to modernize US infrastructure' + [Yahoo Finance] 'CoreWeave narrows Q2 losses, stock climbs 8%' — confirman que el capex de AI/data centers sigue siendo el motor de earnings que sostiene equities pese a un real yield de 2.43%. Soporte directo del long QQQ.",
+    "[CNN] 'The Trump administration claims oil is flowing normally again. There's just one problem' — contradicción directa con el reporte del IEA (CNBC). La incertidumbre sobre el flujo real de crudo justifica mantener USO en NEUTRAL y expresar la vista energética indirectamente vía oro."
+  ],
+  "confianza_general": 62,
+  "metadata": {
+    "timestamp": "2026-08-13T11:20:58.442956",
+    "datos_usados": 23,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
