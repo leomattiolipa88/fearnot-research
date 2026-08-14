@@ -1,0 +1,99 @@
+{
+  "fecha": "2026-08-14",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 72,
+    "razonamiento": "El bloque de crecimiento/riesgo es inequívocamente expansivo: jobless_claims en 209.000 (FRED:ICSA, 6 días), unemployment en 4.1% (FRED:UNRATE, dato de julio, 44 días), sahm_rule en -0.03 (FRED:SAHMREALTIME) — es decir, cero señal de recesión bajo la regla de Sahm. La liquidez está holgada: hy_spread en 2.71% (FRED:BAMLH0A0HYM2) es un nivel de compresión de ciclo tardío benigno, y vix en 14.50 (yfinance:^VIX, dato de hoy). La curva está positiva y con pendiente sana: yield_curve +0.96% (calculado 10Y-3M, con yield_10y 4.68% y yield_3m 3.72%), lo que descarta el escenario de inversión/recesión inminente. Del lado inflación, las expectativas de mercado están ancladas: breakeven_5y5y en 2.27% (FRED:T5YIFR, 1 día). CAVEAT importante: solo tengo NIVELES de precios (cpi 332.813 de julio; pce_core 130.266 de junio, 74 días), no tasas interanuales, por lo que no puedo afirmar la dirección de la inflación realizada — sobre el momentum inflacionario declaro convicción insuficiente. Dos elementos me impiden dar confianza >75: michigan_inflation_exp en 4.6% (FRED:MICH, dato de junio, 74 días de antigüedad — señal rancia) contrasta fuertemente con el breakeven de 2.27%, y tips_yield_10y en 2.42% es un rendimiento real alto para un régimen Goldilocks puro, más típico de un mercado que exige prima por riesgo fiscal/oferta de duración."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Régimen de crecimiento sin estrés crediticio: hy_spread 2.71% y vix 14.50 confirman que el mercado de riesgo está abierto; jobless_claims 209.000 y sahm_rule -0.03 descartan deterioro laboral. La curva positiva (+0.96%) reduce el riesgo de accidente de refinanciación. SPY en 777.88 (yfinance, 1 día). No subo la convicción por encima de 7 porque el rendimiento real de 2.42% (tips_yield_10y) es un competidor duro para el equity y porque spreads en 2.71% dejan poco colchón ante cualquier sorpresa.",
+      "dato_clave": "hy_spread = 2.71%"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "El flujo de noticias confirma que el ciclo de capex en AI sigue vivo (Cisco: ventas de networking impulsadas por demanda AI, Barron's; Anthropic en conversaciones para comprar Decart por USD 6.000 millones, Bloomberg; el Kospi pasó de bear a bull market en poco más de un mes por el trade de AI, CNBC), y el entorno macro del JSON (vix 14.50, hy_spread 2.71%) lo permite. Rebajo convicción a 6 porque hay señal de 'sell-the-news': Cisco cayó pese a resultados fuertes y Cerebras se desplomó tras un reporte sólido (Barron's) — el mercado ya está pagando la buena noticia. Además, no tengo en el JSON el precio de QQQ, así que la señal se apoya en el régimen y en la noticia, no en el nivel del activo.",
+      "dato_clave": "vix = 14.50 (no hay precio de QQQ en el JSON)"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Con crecimiento sólido (claims 209.000, sahm -0.03) y sin señal de recesión, la duración larga carece de catalizador: yield_10y 4.68% (FRED:DGS10, 2 días) vs yield_10y_mkt 4.641% (yfinance:^TNX, 1 día), y la curva ya está en +0.96% con sesgo de empinamiento. TLT en 82.59. El riesgo de esta señal es simétrico: si el 10Y ya descuenta prima de término elevada (real de 2.42%), gran parte del movimiento puede estar hecho; por eso convicción 5 y no más. Sin datos de subastas ni de posicionamiento en el JSON, no puedo elevarla.",
+      "dato_clave": "tips_yield_10y = 2.42% (real alto)"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "GLD en 398.96 (yfinance, 1 día) es un nivel muy alto que convive con un rendimiento real de 2.42% (tips_yield_10y) — históricamente esa combinación es anómala y sugiere demanda estructural (bancos centrales / cobertura fiscal y geopolítica) más que sensibilidad a tasas. La divergencia entre michigan_inflation_exp 4.6% (rancio, 74 días) y breakeven_5y5y 2.27% describe justamente el tipo de riesgo de cola que el oro cubre. Convicción moderada: es una posición de cobertura, no de convicción direccional pura, y estoy comprando fuerza, no valor.",
+      "dato_clave": "gold (GLD) = 398.96 con tips_yield_10y = 2.42%"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "Señales cruzadas: dxy en 99.70 y eurusd en 1.1562 (ambos de hoy) muestran un dólar sin tendencia clara frente a G10, mientras usdjpy 159.18 (yfinance, hoy) indica un yen extremadamente débil — carry trade plenamente activo y consistente con vix 14.50 y hy_spread 2.71%. Contra EM el dólar está blando: usdmxn 16.999, usdbrl 5.1898, usdcny 6.7307 (todos de hoy), lo que refuerza el apetito por riesgo. Sin niveles previos en el JSON no puedo medir momentum, así que NEUTRAL con convicción baja.",
+      "dato_clave": "usdjpy = 159.18"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 2,
+      "razonamiento": "Convicción insuficiente: el JSON no contiene ningún dato de crudo, energía ni commodities (no hay precio de USO ni de WTI/Brent). El único input es cualitativo — el ataque a terminales de exportación de grano rusas en el Mar Negro (BBC) — que es un riesgo de commodities blandos/logística, no una lectura de oferta de crudo. No emito dirección.",
+      "dato_clave": "sin dato de energía en el JSON"
+    }
+  ],
+  "tesis_principal": "El tablero macro de hoy describe un Goldilocks tardío y caro. El crecimiento no se está rompiendo: jobless_claims en 209.000 (FRED:ICSA, 6 días), unemployment en 4.1% (FRED:UNRATE, julio) y sahm_rule en -0.03 (FRED:SAHMREALTIME) — la regla de Sahm ni siquiera está cerca de dispararse. La curva 10Y-3M está positiva en +0.96% (calculado, con yield_10y 4.68% y yield_3m 3.72%), configuración de curva normalizada que históricamente acompaña expansión, no contracción. La liquidez y el apetito por riesgo son abundantes: hy_spread en 2.71% (FRED:BAMLH0A0HYM2) y vix en 14.50 (yfinance, hoy). Con SPY en 777.88, el equity está haciendo exactamente lo que corresponde a este cuadrante de Dalio: crecimiento arriba, inflación esperada anclada (breakeven_5y5y 2.27%, dato de ayer).\n\nLa parte incómoda de la tesis está en el precio del dinero y en el oro. El rendimiento real a 10 años es 2.42% (tips_yield_10y, FRED:DFII10, 2 días): eso no es una política laxa, es un costo de capital restrictivo que convive con spreads de crédito de 2.71%. Esa combinación —real alto + spread comprimido— significa que el mercado de crédito está asumiendo cero riesgo de default en un contexto de tasas caras; es la asimetría central del régimen. Simultáneamente, GLD cotiza en 398.96 pese a ese real de 2.42%, lo que rompe la relación tradicional oro/tasas reales y apunta a demanda por cobertura fiscal, geopolítica o de reservas oficiales. Y hay una brecha de expectativas que no puedo ignorar: michigan_inflation_exp en 4.6% (FRED:MICH) versus breakeven_5y5y en 2.27% — un abismo de más de 230 puntos básicos entre el consumidor y el mercado. Aclaro explícitamente que el dato de Michigan tiene 74 días de antigüedad (junio) y por lo tanto pesa poco en mi convicción; lo mismo con pce_core 130.266 (junio, 74 días) y cpi 332.813 (julio, 44 días), de los cuales solo tengo niveles y no variaciones interanuales — sobre el momentum inflacionario realizado declaro convicción insuficiente.\n\nEn divisas, la señal más informativa es usdjpy en 159.18 (yfinance, hoy): el carry trade financiado en yenes está plenamente desplegado, lo que es coherente con vix 14.50 y spreads en 2.71%, pero también es el mecanismo de transmisión de cualquier shock — un fortalecimiento abrupto del yen sería el disparador clásico de un desapalancamiento global, como ya se vio en episodios previos. El resto del complejo dólar está mixto: dxy 99.70 y eurusd 1.1562 sin tendencia definida, mientras el bloque EM luce fuerte (usdmxn 16.999, usdbrl 5.1898, usdcny 6.7307, todos de hoy), confirmando risk-on. Del lado de noticias, el motor sigue siendo AI: Cisco reportó un salto de ventas de networking por demanda de AI y Anthropic negocia comprar Decart por USD 6.000 millones (Bloomberg), mientras el Kospi coreano entró en bull market técnico en poco más de un mes por el mismo trade (CNBC). Pero atención a la reacción de precio: tanto Cisco como Cerebras cayeron pese a resultados fuertes (Barron's) — es la firma típica de un posicionamiento saturado. Conclusión operativa: mantengo sesgo LONG en riesgo (SPY, QQQ) con tamaño moderado, SHORT táctico de duración (TLT), y GLD como cobertura estructural del riesgo fiscal/geopolítico que el crédito a 2.71% no está pagando.",
+  "invalidadores": [
+    "Un fortalecimiento abrupto del yen desde usdjpy 159.18 (por ejemplo, hacia la zona de 150 o menos): sería la señal de unwind del carry trade y forzaría a cerrar las posiciones LONG en SPY/QQQ inmediatamente, sin importar el resto del cuadro macro.",
+    "Ampliación de hy_spread desde 2.71% hacia 3.50% o más: la tesis Goldilocks descansa casi por completo en la compresión del crédito; su ruptura invalida las señales de riesgo antes que cualquier dato de actividad.",
+    "Deterioro laboral: jobless_claims saltando de forma sostenida por encima de ~250.000 o sahm_rule cruzando de -0.03 a valores positivos cercanos a 0.50 — eso reclasifica el régimen a DESACELERACIÓN y da vuelta la señal de TLT a LONG.",
+    "Que el próximo dato de Michigan confirme expectativas cercanas a 4.6% Y que breakeven_5y5y se despegue por encima de ~2.60% desde 2.27%: sería el paso de GOLDILOCKS a STAGFLATION, lo que invalida SPY LONG y refuerza GLD.",
+    "Escalada del conflicto en el Mar Negro (BBC: terminales de exportación de grano rusas atacadas) que empuje precios de energía/alimentos: shock de oferta inflacionario que contamina la parte de 'inflación anclada' de la tesis. No tengo datos de commodities en el JSON para monitorearlo, lo que es una vulnerabilidad real de este análisis.",
+    "Un movimiento del yield_10y desde 4.68% hacia 5.00%+ con tips_yield_10y superando ~2.75%: un shock de tasas reales que rompería simultáneamente el LONG de equity y el LONG de oro."
+  ],
+  "alertas": [
+    "DIVERGENCIA CRÍTICA: michigan_inflation_exp 4.6% vs breakeven_5y5y 2.27%. Brecha de más de 230 pb entre expectativas del consumidor y del mercado. Atenuante: el dato de Michigan tiene 74 días (junio) y por eso no lo dejo dominar la tesis, pero si se revalida en la próxima lectura la clasificación GOLDILOCKS queda en duda.",
+    "ANOMALÍA ORO/TASAS REALES: GLD en 398.96 con tips_yield_10y en 2.42% es una combinación históricamente inconsistente. El oro está descontando algo que el crédito (hy_spread 2.71%) no descuenta: riesgo fiscal, geopolítico o de desmonetización. Cuando el oro y el crédito discrepan, el oro suele tener razón primero.",
+    "COMPLACENCIA: vix 14.50 + hy_spread 2.71% simultáneamente implica cobertura barata. Con activos de riesgo LONG, la asimetría favorece comprar protección más que reducir exposición.",
+    "SEÑAL DE AGOTAMIENTO EN AI: Cisco cayó tras un salto de ventas por demanda AI y Cerebras se desplomó pese a un reporte fuerte (ambos Barron's). Precio que no responde a buenas noticias = posicionamiento saturado. Es el principal riesgo idiosincrático del LONG en QQQ.",
+    "DESACOPLE DE FUENTES EN EL 10Y: yield_10y 4.68% (FRED, 2 días) vs yield_10y_mkt 4.641% (yfinance, 1 día). Diferencia de ~4 pb atribuible al desfase de fecha, no a un error, pero significa que la curva calculada de +0.96% puede estar levemente sobreestimada.",
+    "TENSIÓN REGULATORIA EN AI/DATOS: la reacción negativa al uso por parte de Amazon de livestreams de Twitch para entrenar modelos (BBC) es un recordatorio de riesgo regulatorio y de propiedad de datos sobre el trade de AI — de baja intensidad hoy, pero de cola gruesa."
+  ],
+  "datos_insuficientes": [
+    "michigan_inflation_exp (4.6%): 74 días de antigüedad, dato de junio. Marcado es_fresco=true por el sistema, pero para una serie mensual de expectativas es información rancia; reduzco su peso explícitamente.",
+    "pce_core (130.266): 74 días, dato de junio, y solo disponible como NIVEL de índice. Sin la serie histórica no puedo calcular la variación interanual, que es la métrica relevante.",
+    "cpi (332.813): 44 días, dato de julio, también solo como NIVEL. No puedo afirmar nada sobre la tasa de inflación actual — convicción insuficiente sobre el momentum de precios.",
+    "Sin datos de energía/commodities (petróleo, gas, granos): imposible cuantificar el impacto del ataque a terminales del Mar Negro. La señal de USO queda en NEUTRAL por falta de información, no por lectura de mercado.",
+    "Sin precio de QQQ en el JSON: la señal sobre tecnología se apoya en el régimen macro y en noticias, no en el nivel del activo.",
+    "El sistema reporta 24/25 indicadores confiables; el indicador faltante no está identificado en el payload recibido, por lo que no puedo evaluar qué dimensión del análisis queda descubierta.",
+    "Sin datos de política monetaria explícitos (tasa de fed funds, expectativas de recortes) ni de posicionamiento/flujos: la señal SHORT en TLT carece de confirmación por el lado de la política."
+  ],
+  "eventos_clave": [
+    "[Barron's] 'Cisco Networking Sales Surge on AI Demand. Why the Stock Is Down After Earnings' — confirma que el capex en infraestructura de AI sigue robusto (soporte fundamental para QQQ), pero la caída de la acción pese a la sorpresa positiva revela posicionamiento saturado. Es la señal de agotamiento más limpia del día.",
+    "[Barron's] 'Cerebras Stock Plunges After Strong Earnings Report' — segundo caso de 'sell-the-news' en semis/AI en la misma sesión. Dos eventos independientes con la misma firma de precio sugieren rotación dentro del complejo AI, no colapso del tema; justifica bajar la convicción de QQQ de 7 a 6.",
+    "[Bloomberg] 'Anthropic Said in Talks to Buy AI Startup Decart for $6 Billion' — M&A de USD 6.000 millones en AI privada. Consistente con hy_spread en 2.71% y vix en 14.50: el capital de riesgo está abundante y barato. Es evidencia de condiciones financieras laxas que refuerza el LONG en equity.",
+    "[CNBC] 'South Korea's Kospi swings from bear to bull-market territory in just over a month on AI trade' — el trade de AI es global, no solo estadounidense. Coherente con el dólar blando contra EM (usdcny 6.7307, usdmxn 16.999, usdbrl 5.1898) y con el carry activo (usdjpy 159.18). Refuerza el diagnóstico de risk-on amplio.",
+    "[BBC] 'Major Russian grain export terminals hit in Ukraine Black Sea port attack' — riesgo de shock de oferta en alimentos con exportaciones cayendo de ambos lados. Es el principal candidato a romper la parte de 'inflación anclada' de la tesis (breakeven_5y5y 2.27%). No tengo datos de commodities en el JSON para medirlo; queda como invalidador explícito.",
+    "[BBC] 'Twitch faces backlash over Amazon training AI on its users' livestreams' — riesgo regulatorio y de derechos sobre datos de entrenamiento. Impacto de mercado nulo hoy, pero es el tipo de evento que precede a fricción regulatoria sobre las valuaciones de AI."
+  ],
+  "confianza_general": 68,
+  "metadata": {
+    "timestamp": "2026-08-14T11:15:31.391672",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
