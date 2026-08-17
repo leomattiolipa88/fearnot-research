@@ -1,0 +1,97 @@
+{
+  "fecha": "2026-08-17",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 72,
+    "razonamiento": "Crecimiento estable + inflación esperada anclada. Lado laboral/crecimiento: unemployment 4.1% (unemployment, FRED:UNRATE, 47d), sahm_rule en -0.03 (sahm_rule) — lejos del umbral de recesión de +0.50 —, y jobless_claims 209.000 (jobless_claims) aunque con es_fresco=false (9 días), lo que reduce mi confianza en la lectura laboral de alta frecuencia. Lado inflación: breakeven_5y5y en 2.30% (breakeven_5y5y, 3d) prácticamente en target; el breakeven 10y implícito es 4.63% − 2.39% = 2.24% (yield_10y vs tips_yield_10y). Lado liquidez/riesgo: hy_spread 2.71% (hy_spread, 4d) en zona de complacencia, vix 14.95 (vix, 0d), yield_curve +0.92% positiva y con pendiente sana (yield_10y 4.63% vs yield_3m 3.71%). Cero señales de riesgo y cero de inflación en el régimen pre-calculado, consistente con mi lectura independiente. Descuento 28 puntos de confianza por: (a) inflación observada solo disponible como niveles de índice (cpi 332.813 del 2026-07-01 y pce_core 130.266 del 2026-06-01), sin serie previa en el JSON no puedo calcular la variación interanual — la afirmación 'inflación contenida' se apoya en breakevens de mercado, no en el dato duro; (b) michigan_inflation_exp 4.6% (es_fresco=false, 77d) contradice el anclaje de mercado; (c) tips_yield_10y 2.39% es un nivel de tasa real históricamente restrictivo, lo cual es atípico dentro de un Goldilocks puro."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Régimen de crecimiento sin estrés crediticio: hy_spread 2.71% (hy_spread) no muestra deterioro de financiamiento corporativo, vix 14.95 (vix, dato de hoy) implica cobertura barata y flujo vol-target favorable, yield_curve +0.92% (yield_curve) descarta señal de recesión inminente, y sahm_rule -0.03 (sahm_rule) confirma mercado laboral intacto con unemployment 4.1% (unemployment). SPY en 776.34 (spy, 3d de antigüedad — precio no es de hoy, el nivel exacto puede haber cambiado). Limito la convicción a 7 porque tips_yield_10y 2.39% (tips_yield_10y) es un techo de valuación: con tasa real en ese nivel, la expansión de múltiplos es difícil y el rally depende de earnings, no de descuento.",
+      "dato_clave": "hy_spread 2.71% (crédito no confirma ningún deterioro de riesgo)"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Mismo soporte macro que SPY (vix 14.95, hy_spread 2.71%, sahm_rule -0.03) más flujo idiosincrático: Berkshire aumentó su participación en Alphabet en el 2T (Associated Press), señal de que capital 'value' está validando megacap tech a estas valuaciones; y Waymo obtuvo aprobación regulatoria para escalar robotaxis en California incluyendo Sacramento y San Diego (Fox Business), catalizador directo para el complejo Alphabet/autonomía. Convicción menor que SPY porque no tengo el precio de QQQ en el JSON (solo spy 776.34) — la señal es inferida del régimen, no de datos propios del activo — y porque el segmento largo-duration equity es el más sensible a tips_yield_10y 2.39%.",
+      "dato_clave": "vix 14.95 + noticia AP de Berkshire/Alphabet (validación de flujo en megacap)"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "No hay catalizador de duración: yield_10y 4.63% (FRED, 4d) contra yield_10y_mkt 4.696% (3d) muestra que el mercado cotiza tasas MÁS altas que el último print oficial — la presión es al alza en yield y a la baja en TLT, hoy en 82.04 (tlt, 3d). Sin señal de recesión (sahm_rule -0.03, unemployment 4.1%) no hay bid de refugio, y con yield_curve +0.92% el bull-steepening ya ocurrió parcialmente; el riesgo dominante es bear-steepening por prima de plazo, no por inflación (breakeven_5y5y 2.30% está anclado). Convicción solo 5 porque tips_yield_10y 2.39% de tasa real es de por sí restrictivo y ofrece valor de carry: shorts de duración a estos niveles tienen mala relación riesgo/retorno si aparece cualquier dato laboral débil. Preferencia expresada como steepener antes que short outright.",
+      "dato_clave": "yield_10y_mkt 4.696% > yield_10y 4.63% (mercado empujando yields al alza)"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 5,
+      "razonamiento": "Anomalía a favor del oro: GLD en 401.48 (gold, 3d) sostiene niveles récord A PESAR de tips_yield_10y 2.39% (tips_yield_10y), es decir con costo de oportunidad real elevado. Históricamente esa combinación implica un comprador insensible a tasas (bancos centrales / demanda de debasement), lo cual es una señal de fortaleza estructural más que táctica. Soporte adicional: dxy 99.45 (dxy, hoy) por debajo de 100 con EM FX fuerte (usdcny 6.7379, usdmxn 17.0089, usdbrl 5.2265), y prima geopolítica latente por el despliegue de 240+ días del USS Lincoln en el mar de Arabia (Associated Press). Convicción 5 y no más: la señal es contradictoria con la tasa real, y en Goldilocks puro (vix 14.95, hy_spread 2.71%) el oro es la posición con peor momentum relativo frente a equity. Función de la posición: hedge, no motor de retorno.",
+      "dato_clave": "gold 401.48 sosteniéndose con tips_yield_10y en 2.39% (divergencia estructural)"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "El dólar está débil contra todo excepto el yen. dxy 99.45 (dxy, hoy) por debajo del umbral psicológico de 100, eurusd 1.1594 (eurusd, hoy), y sobre todo EM FX inusualmente fuerte: usdcny 6.7379 (usdcny) es un nivel de yuan muy apreciado, usdmxn 17.0089 (usdmxn) y usdbrl 5.2265 (usdbrl) confirman apetito por carry EM — consistente con hy_spread 2.71% y vix 14.95. La divergencia clave: usdjpy 159.19 (usdjpy y usdjpy_mkt, ambos hoy) indica que la debilidad del USD NO es global sino que el yen sigue siendo la moneda de funding; eso es diferencial de política monetaria japonés, no fuerza del dólar. Short DXY se expresa mejor vs EUR y EM que vs JPY.",
+      "dato_clave": "dxy 99.45 con usdcny en 6.7379 (dólar débil vs Asia y EM simultáneamente)"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 2,
+      "razonamiento": "Convicción insuficiente. No hay ningún dato de crudo, inventarios ni curva de energía en el JSON — no puedo hacer ninguna afirmación cuantitativa sobre petróleo. Lo único disponible es cualitativo: la visita del Adm. Brad Cooper al USS Lincoln en el mar de Arabia tras 240+ días de despliegue (Associated Press) mantiene una prima de riesgo geopolítica en Medio Oriente, sesgo asimétrico al alza pero no cuantificable. Me abstengo.",
+      "dato_clave": "ausencia de datos de energía en el JSON"
+    }
+  ],
+  "tesis_principal": "El régimen es Goldilocks con una asterisco importante: tasa real restrictiva. La estructura de crecimiento está intacta — unemployment 4.1% (unemployment), sahm_rule -0.03 (sahm_rule) muy lejos del gatillo recesivo de +0.50, jobless_claims 209.000 (jobless_claims, es_fresco=false a 9 días, señal degradada) — y la estructura de inflación esperada está anclada: breakeven_5y5y 2.30% (breakeven_5y5y) y un breakeven 10y implícito de 2.24% (yield_10y 4.63% menos tips_yield_10y 2.39%). La liquidez es abundante y el precio del riesgo es barato: hy_spread 2.71% (hy_spread) y vix 14.95 (vix). La curva está positiva en +0.92% (yield_curve), con yield_3m 3.71% y yield_10y 4.63%, lo que confirma que el mercado no descuenta ni recesión inmediata ni un ciclo de recortes agresivo. Cero señales de riesgo y cero de inflación. Ese es el caso base y justifica sesgo long equity (SPY 776.34, spy).\n\nLa tensión de la tesis está en el precio del dinero. tips_yield_10y en 2.39% (tips_yield_10y) es una tasa real elevada que actúa como techo mecánico de valuación: en este régimen el retorno de equity tiene que venir de beneficios y no de compresión de descuento, y cualquier activo de duración larga —tanto TLT en 82.04 (tlt) como el tramo más especulativo de tech— queda estructuralmente penalizado. Además el mercado ya está cotizando yields por encima del último dato oficial: yield_10y_mkt 4.696% (3d) contra yield_10y 4.63% (4d), lo que sesga la duración a la baja vía prima de plazo, no vía inflación. Esto es la razón por la cual expreso el trade de bonos como steepener/short táctico de convicción baja (5) en lugar de un short direccional agresivo: a 2.39% real, el carry defiende al bono ante cualquier sorpresa laboral negativa.\n\nEl bloque de divisas es donde hay más información. dxy 99.45 (dxy) por debajo de 100, eurusd 1.1594 (eurusd), y un complejo EM notablemente fuerte con usdcny 6.7379 (usdcny), usdmxn 17.0089 (usdmxn) y usdbrl 5.2265 (usdbrl) — todos datos de hoy, 0 días de antigüedad. Eso dice riesgo global sano y carry EM funcionando, coherente con hy_spread 2.71%. Pero usdjpy 159.19 (usdjpy, usdjpy_mkt) permanece en niveles altos: el yen sigue siendo el funding leg y el carry trade está plenamente abierto y apalancado. Ese es simultáneamente el combustible del régimen y su principal punto de fragilidad — con vix en 14.95 no hay ninguna prima pagada por el riesgo de una reversión de carry. La segunda anomalía a monitorear es la divergencia entre expectativas de inflación: mercado en 2.30% (breakeven_5y5y) contra michigan_inflation_exp 4.6% (es_fresco=false, 77 días) — dato viejo, pero un gap de 230bps entre consumidor y mercado no se resuelve suavemente. Finalmente, GLD en 401.48 (gold) sosteniéndose con tasa real de 2.39% delata un comprador estructural insensible a tasas; lo trato como hedge del régimen, no como expresión de él. El flujo de noticias de hoy es notablemente pobre en contenido macro (headlines dominados por Berkshire/Alphabet, Waymo, Disney Cruise Line), lo cual es en sí mismo información: vacío de catalizadores, coherente con vix 14.95, y típicamente el entorno donde los shocks llegan sin aviso.",
+  "invalidadores": [
+    "hy_spread (hoy 2.71%) ampliándose por encima de ~3.50-4.00%: sería la primera confirmación real de que el ciclo de crédito gira y anularía el long SPY/QQQ de inmediato, independientemente del dato laboral.",
+    "usdjpy (hoy 159.19) cayendo violentamente hacia 150 o por debajo: implicaría unwind del carry trade global, con vix saltando desde 14.95 y liquidación forzada de EM FX (usdmxn 17.0089, usdbrl 5.2265) y equity simultáneamente. Es el riesgo de cola más probable dado el nivel actual.",
+    "sahm_rule (hoy -0.03) subiendo hacia +0.30/+0.50 en el próximo print, o jobless_claims (209.000, dato ya rancio a 9 días) rompiendo por encima de 260-270k: invalida el eje 'crecimiento' del Goldilocks y convierte el short TLT en el peor trade del libro.",
+    "breakeven_5y5y (hoy 2.30%) desanclándose por encima de 2.60% y convergiendo hacia michigan_inflation_exp 4.6%: el régimen migraría a REFLACION/STAGFLATION, forzaría a la Fed a mantener tips_yield_10y por encima de 2.39% real, y rompería la premisa de valuación de equity.",
+    "Escalada militar en Medio Oriente a partir del despliegue del USS Lincoln (Associated Press): shock de oferta energética que no puedo cuantificar porque no tengo ningún dato de crudo en el JSON — sería un punto ciego total de esta tesis y golpearía el eje inflación sin previo aviso."
+  ],
+  "alertas": [
+    "ANOMALÍA CENTRAL: tips_yield_10y 2.39% de tasa real es incompatible con un Goldilocks 'maduro'. O el crecimiento nominal es más fuerte de lo que sugiere unemployment 4.1%, o hay presión de prima de plazo/oferta de Treasuries. En cualquiera de los dos casos, el activo que rompe primero es la duración (tlt 82.04).",
+    "Divergencia de expectativas de inflación de 230bps: breakeven_5y5y 2.30% (fresco, 3d) vs michigan_inflation_exp 4.6% (rancio, 77d). No se puede conciliar con los datos del JSON; trato el breakeven como la señal válida pero es un riesgo latente no valorado.",
+    "vix en 14.95 con hy_spread en 2.71% = complacencia doble. No hay prima de riesgo pagada por nada en el sistema. Convexidad barata: es el momento de comprar protección, no de vender vol.",
+    "usdcny en 6.7379 es un nivel de yuan muy apreciado. Si es política deliberada de Beijing, es señal de estabilidad; si es flujo de capital, es reflación global. No tengo datos en el JSON para distinguir cuál — merece seguimiento porque mueve todo el complejo EM.",
+    "El flujo de noticias de hoy no contiene NINGÚN evento macro de primer orden (headlines: Berkshire, USS Lincoln, Waymo, Disney Cruise). Vacío informativo, no confirmación de calma. No debe leerse como validación de la tesis.",
+    "Los precios de spy 776.34, tlt 82.04 y gold 401.48 tienen 3 días de antigüedad (fecha_publicacion 2026-08-14). Los niveles de entrada citados pueden estar desactualizados aunque los datos sean es_fresco=true."
+  ],
+  "datos_insuficientes": [
+    "jobless_claims: 209.000 con es_fresco=false (9 días, del 2026-08-08). Es mi mejor indicador laboral de alta frecuencia y está rancio — reduce la confiabilidad del pilar 'crecimiento' del régimen.",
+    "michigan_inflation_exp: 4.6% con es_fresco=false (77 días, del 2026-06-01). Inutilizable para decisión táctica; solo lo cito como riesgo cualitativo.",
+    "Inflación observada: cpi 332.813 (2026-07-01) y pce_core 130.266 (2026-06-01) están en el JSON solo como NIVELES de índice, sin serie histórica previa. No puedo calcular variación interanual ni mensual — cualquier afirmación sobre la tasa de inflación actual sería inventada. La lectura de inflación de esta tesis descansa exclusivamente en breakevens de mercado.",
+    "pce_core tiene 77 días de antigüedad (junio) — el indicador preferido de la Fed está efectivamente ciego para este análisis.",
+    "Sin datos de energía/crudo: la señal USO queda sin fundamento cuantitativo y el canal de inflación por oferta no es evaluable.",
+    "Sin datos de actividad adelantada (ISM/PMI, ventas retail, producción industrial) ni de vivienda: el eje 'growth' del cuadrante se sostiene solo en empleo (unemployment 4.1%, sahm_rule -0.03) y en la señal de mercado (yield_curve +0.92%, hy_spread 2.71%).",
+    "Sin precio propio de QQQ en el JSON: la señal LONG QQQ es inferida del régimen y de spy 776.34, no de datos del activo.",
+    "3 de 25 indicadores del universo no llegaron confiables en esta corrida — el análisis está construido sobre 22/25."
+  ],
+  "eventos_clave": [
+    "[Associated Press] Berkshire Hathaway aumentó su participación en Alphabet y en constructoras de vivienda en el 2T, mientras siguió recortando exposición a financieras — Impacto: validación de capital 'value' en megacap tech a valuaciones actuales, soporte de flujo para QQQ; la rotación hacia homebuilders es una apuesta implícita a que las tasas hipotecarias bajan, lo cual choca con tips_yield_10y en 2.39% y yield_10y_mkt en 4.696%; el recorte en financieras es una señal de cautela sobre márgenes de intermediación que conviene monitorear contra hy_spread 2.71%.",
+    "[Associated Press] El Adm. Brad Cooper, máximo comandante de EEUU en Medio Oriente, visitó el portaaviones USS Lincoln en el mar de Arabia, con más de 240 días de despliegue y preocupación por sostenibilidad del mismo — Impacto: mantiene prima de riesgo geopolítica viva en el canal energía y es soporte marginal para GLD en 401.48; no puedo cuantificarlo porque no hay datos de crudo en el JSON, por lo que queda como riesgo de cola no valorado por un vix de 14.95.",
+    "[Fox Business] Waymo recibió aprobación de la CPUC para escalar su servicio de robotaxis en el norte y sur de California, incorporando Sacramento y San Diego — Impacto: catalizador regulatorio concreto para el complejo Alphabet/autonomía, refuerza el long QQQ y coincide con el aumento de posición de Berkshire en Alphabet reportado hoy por AP; efecto sectorial, no macro.",
+    "[wdwnt.com] Nueva clase de barcos de Disney Cruise Line con atrios de ventanales gigantes — Impacto: nulo a nivel macro. Lo cito para ser explícito: el tape de noticias de hoy no tiene contenido macroeconómico de primer orden, y ese vacío de catalizadores es coherente con vix 14.95 (vix) pero NO debe interpretarse como confirmación del régimen GOLDILOCKS."
+  ],
+  "confianza_general": 68,
+  "metadata": {
+    "timestamp": "2026-08-17T10:58:00.002534",
+    "datos_usados": 22,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
