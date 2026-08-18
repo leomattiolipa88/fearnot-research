@@ -1,0 +1,97 @@
+{
+  "fecha": "2026-08-18",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 62,
+    "razonamiento": "El cuadrante de crecimiento se mantiene sólido: unemployment 4.1% (unemployment, FRED:UNRATE), sahm_rule en -0.03 (sahm_rule) — es decir sin señal de recesión —, jobless_claims en 209.000 (jobless_claims, pero es_fresco=false, 10 días de antigüedad, por lo que le bajo peso). La liquidez es abundante: hy_spread en 2.67% (hy_spread) es un nivel de complacencia crediticia, y vix en 15.86 (vix, dato de hoy) confirma ausencia de estrés. La curva está positiva y con pendiente normal: yield_curve +0.97% (calculado 10Y 4.68 - 3M 3.71), lo que descarta el clásico preludio de recesión. En inflación, las expectativas de mercado están ancladas: breakeven_5y5y 2.31% (breakeven_5y5y) y breakeven 10Y implícito ~2.27% (yield_10y 4.68 menos tips_yield_10y 2.41). PERO hay un matiz reflacionario que impide una convicción alta: michigan_inflation_exp en 4.6% (michigan_inflation_exp, es_fresco=false, 78 días) contradice fuertemente los breakevens; el mercado está descontando SUBAS de tasas de la Fed según [Bloomberg] (Goldman dice que esas apuestas son excesivas); el cobre va hacia un récord histórico según [Bloomberg]; y gold en 401.48 (gold, GLD) está en zona récord pese a un real yield de 2.41% (tips_yield_10y) que debería ser hostil al oro. Esa combinación —oro y cobre en récord, real yields altos, apuestas a hikes— es más propia de un Goldilocks tardío con riesgo de migrar a REFLACIÓN que de un Goldilocks estable. Mantengo la clasificación GOLDILOCKS por los datos duros (0 señales de riesgo, 0 de inflación en el régimen pre-calculado) pero con confianza reducida a 62."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "El trípode de riesgo está alineado: hy_spread 2.67% (crédito sin estrés), vix 15.86 (dato de hoy, sin demanda de cobertura) y yield_curve +0.97% con sahm_rule -0.03 y unemployment 4.1% (sin señal de recesión). SPY en 776.34 (spy) — aclaro que ese precio tiene 4 días de antigüedad, así que el nivel puede haber cambiado; la señal es direccional, no de nivel. El principal freno para no ir más arriba de 7 es el costo de capital: tips_yield_10y en 2.41% y yield_10y en 4.68% son un techo estructural para múltiplos, y el mercado descontando hikes ([Investing.com], [Bloomberg]) es un riesgo de repricing. Si Goldman tiene razón y las apuestas hawkish se desarman, es fuel adicional para el equity.",
+      "dato_clave": "hy_spread 2.67%"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "No hay un dato específico de QQQ en el JSON, por lo que esta señal es una extrapolación del complejo de riesgo (vix 15.86, hy_spread 2.67%) y bajo la convicción por eso. El flujo de capital hacia AI sigue intacto según [Financial Times] (Higgsfield valuada en $5.4bn con Goldman e Intel). Contra: el tech de duración larga es el más sensible a tips_yield_10y 2.41% y a yield_10y 4.68%, y el riesgo de 'China shock' vía AI open-source ([Financial Times]) es un riesgo de margen para los incumbentes occidentales. Convicción moderada, no alta.",
+      "dato_clave": "vix 15.86 (proxy de apetito por riesgo; no hay dato directo de QQQ)"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "TLT en 82.04 (tlt, 4 días de antigüedad) con yield_10y en 4.68% (FRED) y yield_10y_mkt 4.696% (yfinance) — ambas fuentes coinciden, lo que da confianza al nivel. La curva ya está positiva en +0.97% (yield_curve) sin recesión a la vista (sahm_rule -0.03, unemployment 4.1%), y el mercado descuenta hikes en vez de cuts ([Investing.com]). En ese contexto no veo el catalizador para un rally de duración: el bull case de TLT requiere deterioro del empleo o ampliación de spreads, y hy_spread en 2.67% dice lo contrario. Riesgo de la señal: si el CPI enfría como sostiene Goldman ([Bloomberg]), el tramo largo podría rebotar.",
+      "dato_clave": "yield_10y 4.68% con yield_curve +0.97%"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "gold (GLD) en 401.48 sostenido a pesar de un real yield de 2.41% (tips_yield_10y) que históricamente sería un viento de frente severo. Cuando el oro ignora los reales altos, la señal suele ser demanda estructural (bancos centrales / hedge fiscal / debasement) más que trade de tasas. Refuerza el sesgo el récord del cobre ([Bloomberg]) como confirmación de tensión en el complejo de materiales reales, y la brecha entre michigan_inflation_exp 4.6% (dato rancio, 78 días) y breakeven_5y5y 2.31%: si la percepción del consumidor tiene razón, el oro es el mejor hedge. Convicción 6 y no más por el precio de 4 días de antigüedad y por el riesgo de que un DXY firme (dxy 99.64) presione.",
+      "dato_clave": "gold 401.48 con tips_yield_10y 2.41%"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "dxy en 99.64 (dato de hoy) con eurusd 1.1578 (dato de hoy) es un dólar en tierra de nadie: por un lado el diferencial de tasas sostiene al USD (yield_3m 3.71%, yield_10y 4.68%) y usdjpy 159.70 (usdjpy y usdjpy_mkt coinciden, dato de hoy) muestra el carry trade en pleno funcionamiento con el yen extremadamente débil. Por el otro, [Bloomberg] señala que las apuestas a hikes de la Fed son excesivas: si se desarman, el USD pierde su principal soporte. Los EM están firmes contra el dólar (usdmxn 17.045, usdbrl 5.20, usdcny 6.7301, todos de hoy), lo que es coherente con un dólar sin tendencia y con apetito por carry. NEUTRAL con sesgo a la baja si el CPI enfría.",
+      "dato_clave": "usdjpy 159.70"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 2,
+      "razonamiento": "Convicción insuficiente: no hay ningún dato de crudo, energía ni inventarios en el JSON. El único input de commodities es una noticia ([Bloomberg] cobre hacia récord en LME por tensión de oferta), que no es transferible mecánicamente al petróleo. No emito dirección con base en inferencia.",
+      "dato_clave": "sin dato disponible en el JSON"
+    }
+  ],
+  "tesis_principal": "El cuerpo de datos duros describe un régimen Goldilocks textual: crecimiento sin fisuras y liquidez abundante. unemployment en 4.1% (unemployment) y sahm_rule en -0.03 (sahm_rule) descartan que el ciclo laboral esté quebrando; jobless_claims en 209.000 apoya la lectura aunque con es_fresco=false (10 días). El canal de crédito, que es el mejor termómetro anticipado de stress, está en modo complacencia: hy_spread 2.67% (hy_spread). El vix en 15.86 (dato de hoy) confirma que nadie está pagando por protección. Y la curva ya no está invertida: yield_curve +0.97%, resultado de yield_10y 4.68% contra yield_3m 3.71% — una pendiente positiva sin recesión previa, que es el patrón de un ciclo que se extiende, no de uno que se apaga. Las expectativas de inflación de mercado están ancladas en breakeven_5y5y 2.31% y en el breakeven 10Y implícito de ~2.27% (yield_10y 4.68 menos tips_yield_10y 2.41). Con este set, la conclusión operativa es simple: risk-on con duración corta.\n\nLa complicación —y la razón por la que mi confianza general es 65 y no 85— es el precio del dinero real y la conducta de los activos reales. tips_yield_10y en 2.41% es un nivel restrictivo en términos históricos, y sin embargo gold (GLD) cotiza en 401.48 (dato de 4 días) y el cobre va hacia un récord histórico en el LME por tensión de oferta prompt ([Bloomberg]). El oro subiendo con reales al 2.41% no es un trade de tasas: es un trade de degradación fiscal/monetaria o de acumulación oficial. A eso se suma la divergencia más incómoda del día: michigan_inflation_exp en 4.6% (rancio, 78 días de antigüedad, por lo que lo trato como señal débil) contra breakeven_5y5y en 2.31%. Un gap de ~230bps entre lo que espera el consumidor y lo que descuenta el mercado de bonos es una asimetría: uno de los dos está mal, y si es el mercado, todo el complejo de duración se repricea.\n\nEl tercer eje es el posicionamiento monetario, y aquí la información viene de las noticias más que de los datos. El mercado está descontando SUBAS de tasas de la Fed — [Investing.com] reporta que esas apuestas se están desinflando y [Bloomberg] cita a Goldman diciendo que siguen siendo demasiado agresivas porque la inflación se está enfriando. Que en un Goldilocks se descuenten hikes en lugar de cuts es la firma de un régimen inflacionariamente frágil, no de uno benigno. En FX, usdjpy en 159.70 (usdjpy y usdjpy_mkt, ambos de hoy, coincidentes) señala un carry trade global apalancado y funcionando a pleno, lo que explica la compresión de hy_spread a 2.67% y el vix en 15.86: hay financiamiento barato en yenes alimentando el riesgo. Ese es simultáneamente el pilar y el punto de fragilidad de todo el cuadro — es el mismo mecanismo que en episodios previos convirtió una sorpresa hawkish del BoJ en un shock de volatilidad global en días. dxy 99.64 y eurusd 1.1578 (ambos de hoy) están neutrales, y los EM firmes (usdmxn 17.045, usdbrl 5.20, usdcny 6.7301) confirman apetito por carry. Conclusión: largo riesgo (SPY 7, QQQ 6), corto duración (TLT 7), largo oro como hedge del escenario reflacionario (GLD 6), dólar neutral, y stop mental en usdjpy.",
+  "invalidadores": [
+    "usdjpy (hoy 159.70) rompiendo con fuerza por debajo de ~155 o intervención/hike sorpresa del BoJ: sería unwind del carry trade y arrastraría hy_spread (2.67%) y vix (15.86) en la dirección opuesta, invalidando simultáneamente las señales LONG SPY y LONG QQQ.",
+    "hy_spread ampliándose desde 2.67% hacia 3.50%+ y/o vix sostenido arriba de 22: rompería el pilar de liquidez de toda la tesis y obligaría a girar de LONG SPY a NEUTRAL y de SHORT TLT a NEUTRAL.",
+    "sahm_rule cruzando a positivo desde -0.03, unemployment subiendo desde 4.1% o jobless_claims (209.000, dato rancio) superando ~250.000: mataría la pata de crecimiento y convertiría el SHORT TLT en el peor trade del libro.",
+    "Confirmación del escenario de hikes de la Fed (contra la visión de Goldman en [Bloomberg]) con yield_10y saliendo de 4.68% hacia 5.00%+ y tips_yield_10y de 2.41% hacia 2.75%+: mejoraría el SHORT TLT pero rompería el LONG SPY/QQQ por de-rating de múltiplos.",
+    "Que el récord del cobre ([Bloomberg]) se traslade a los datos de precios y desancle los breakevens (breakeven_5y5y desde 2.31% hacia 2.60%+, convergiendo hacia michigan_inflation_exp 4.6%): el régimen migraría de GOLDILOCKS a REFLACIÓN/STAGFLATION y habría que rotar de equity a oro y commodities."
+  ],
+  "alertas": [
+    "Divergencia crítica de expectativas de inflación: michigan_inflation_exp 4.6% vs breakeven_5y5y 2.31%. Gap de ~230bps. El dato de Michigan es es_fresco=false (78 días), lo que le quita peso, pero la brecha es demasiado grande para ignorarla.",
+    "Anomalía oro/reales: gold (GLD) en 401.48 con tips_yield_10y en 2.41%. El oro no debería sostenerse en récord con reales tan altos; esto sugiere demanda no sensible a tasas (bancos centrales / hedge fiscal) y es una señal silenciosa de desconfianza en el régimen monetario.",
+    "El mercado descuenta HIKES de la Fed, no cuts ([Investing.com], [Bloomberg]). Eso es disonante con un régimen Goldilocks clasificado con 0 señales de inflación y merece vigilancia: el régimen pre-calculado puede estar sub-detectando presión inflacionaria.",
+    "usdjpy en 159.70 = carry trade crowded. Es el punto único de falla de la calma actual (hy_spread 2.67%, vix 15.86). Cualquier movimiento brusco del yen es un evento sistémico, no un evento de FX.",
+    "Complacencia combinada: hy_spread 2.67% + vix 15.86 simultáneamente en niveles bajos implica muy poca compensación por riesgo. El upside de las señales LONG está limitado por valuación de riesgo, no por macro.",
+    "Los precios de spy (776.34), tlt (82.04) y gold (401.48) tienen 4 días de antigüedad (fecha_publicacion 2026-08-14, fecha_descarga 2026-08-17). Las señales son direccionales; no usar esos niveles como referencia de ejecución.",
+    "Cobre hacia récord por tensión de oferta prompt en el LME ([Bloomberg]): input de costos que puede filtrarse a bienes en 1-2 trimestres. Riesgo latente contra los breakevens anclados en 2.31%."
+  ],
+  "datos_insuficientes": [
+    "jobless_claims: 209.000 con es_fresco=false y 10 días de antigüedad — reduce la capacidad de detectar un giro en tiempo real del mercado laboral, que es justamente lo que invalidaría la tesis.",
+    "michigan_inflation_exp: 4.6% con es_fresco=false y 78 días de antigüedad — señal de inflación de consumidores prácticamente inutilizable para timing; solo se usa como alerta cualitativa.",
+    "3 de 25 indicadores no llegaron como confiables (22/25 disponibles); no puedo identificar cuáles faltan desde el JSON entregado, lo que deja huecos no cuantificados en el cuadro.",
+    "No hay dato de crudo/energía en el JSON: la señal de USO queda en convicción insuficiente (2).",
+    "No hay dato directo de QQQ ni de breadth/concentración del equity: la señal de QQQ es una extrapolación desde vix y hy_spread, con convicción rebajada a 6.",
+    "No hay dato de PMI/ISM ni de ventas retail para confirmar el momentum de crecimiento más allá del empleo; pce_core (130.266, junio) y cpi (332.813, julio) son niveles de índice, no tasas interanuales, así que no puedo calcular la inflación anual con precisión desde este JSON."
+  ],
+  "eventos_clave": [
+    "[Bloomberg] Goldman Says Markets Too Hawkish on Betting Fed Will Hike Rates — el mercado descuenta subas de la Fed y Goldman lo considera excesivo dado que la inflación se enfría. Si Goldman acierta, hay upside para SPY/QQQ y riesgo para el SHORT TLT; el dxy (99.64) perdería soporte de diferencial de tasas. Que se discutan hikes y no cuts es la mayor disonancia con el régimen GOLDILOCKS clasificado.",
+    "[Investing.com] Bets on imminent Fed rate hike fade; retail earnings ahead — la desinflación de las apuestas hawkish es consistente con vix 15.86 y hy_spread 2.67%; los resultados de retail son el próximo test del consumo, la variable que sostiene unemployment 4.1% y sahm_rule -0.03.",
+    "[Bloomberg] Copper Heads Toward Record High on LME as Supply Tensions Build — un spread clave en Londres se abre a niveles extremos por competencia por oferta prompt. Es el argumento más fuerte contra los breakevens anclados en 2.31% (breakeven_5y5y) y refuerza el LONG GLD y el SHORT TLT vía canal de costos.",
+    "[Financial Times] Higgsfield valued at $5.4bn as Goldman and Intel back AI video start-up — confirma que el capital privado sigue financiando AI a valuaciones agresivas, coherente con hy_spread en 2.67% y con la señal LONG QQQ; también es evidencia de apetito por riesgo de duración larga pese a tips_yield_10y 2.41%.",
+    "[Financial Times] The next China shock will come from open-source AI — riesgo estructural de compresión de márgenes para los incumbentes de AI occidentales y de deflación de precios en software/servicios. Es la razón principal por la que QQQ va con convicción 6 y no 8; usdcny en 6.7301 (dato de hoy) muestra un yuan firme, sin señal de devaluación competitiva por ahora."
+  ],
+  "confianza_general": 65,
+  "metadata": {
+    "timestamp": "2026-08-18T10:58:07.643260",
+    "datos_usados": 22,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
