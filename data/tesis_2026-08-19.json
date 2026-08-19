@@ -1,0 +1,96 @@
+{
+  "fecha": "2026-08-19",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 66,
+    "razonamiento": "Los datos de crecimiento/empleo no muestran deterioro: unemployment 4.1% (FRED:UNRATE, 49d), sahm_rule -0.03 (FRED:SAHMREALTIME) — muy lejos del umbral de recesión de +0.50 — y jobless_claims 209.000 (FRED:ICSA, es_fresco=false, 11 días, señal degradada). La liquidez y el crédito están benignos: hy_spread 2.70% (FRED:BAMLH0A0HYM2) y vix 15.83 (yfinance:^VIX, 0d), niveles de complacencia/risk-on. La curva está positiva y con pendiente: yield_curve +1.00 (calculado 10Y 4.72 - 3M 3.72), consistente con un ciclo mid/late sin estrés de funding. Las expectativas de inflación de mercado están ancladas: breakeven_5y5y 2.33% (FRED:T5YIFR, 1d). Eso valida el cuadrante GOLDILOCKS (crecimiento estable + inflación contenida). PERO califico la confianza a 66 y no más alto por tres razones: (1) tips_yield_10y 2.44% (FRED:DFII10) es un real yield claramente restrictivo, incompatible con un Goldilocks 'puro' y hostil para duración y activos de larga duración; (2) michigan_inflation_exp 4.6% (FRED:MICH) contradice el breakeven de 2.33%, pero es_fresco=false (79 días) así que le doy peso bajo; (3) las noticias de hoy (US-Iran, petróleo al alza) introducen un riesgo de migración hacia REFLACION/STAGFLATION vía shock de oferta energética que los indicadores del JSON todavía no capturan (no tengo dato de precio de crudo en el JSON)."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "El crédito manda y está sano: hy_spread 2.70% (FRED:BAMLH0A0HYM2, 2d) no anticipa recesión ni evento de liquidez; vix 15.83 (0d) confirma. Labor market intacto: unemployment 4.1%, sahm_rule -0.03. Curva positiva +1.00 (10Y 4.72 vs 3M 3.72). spy en 767.45 (yfinance:SPY, 1d). Recorto convicción de 8 a 6 por dos frenos: tips_yield_10y 2.44% comprime múltiplos, y los futuros ya caían hoy por tensiones US-Iran y petróleo ([Yahoo Finance]), lo que puede reactivar el canal inflación→tasas. Long táctico, no agresivo.",
+      "dato_clave": "hy_spread 2.70%"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Mismo soporte macro que SPY (hy_spread 2.70%, vix 15.83, sahm_rule -0.03) más el impulso idiosincrático de capex AI: OpenAI anunció un data center de 20 años en Ohio con financiamiento parcialmente garantizado por Nvidia ([Axios]), que sostiene la narrativa de demanda de semis/infra. Aviso: no tengo precio de QQQ en el JSON (solo spy 767.45), así que la señal es de régimen y no de nivel/valuación. El real yield 2.44% (tips_yield_10y) es el riesgo principal para el factor duración-equity: si sube más, QQQ sufre más que SPY.",
+      "dato_clave": "tips_yield_10y 2.44% (riesgo) vs hy_spread 2.70% (soporte)"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "No hay caso para duración larga en este régimen: yield_10y 4.72% (FRED:DGS10, 2d) y yield_10y_mkt 4.706% (yfinance:^TNX, 1d) confirman el nivel; la curva ya está positiva en +1.00 y el bull-steepening por recesión no tiene sustento con sahm_rule -0.03 y unemployment 4.1%. Además el flujo de noticias empuja yields al alza: 'Asian stocks retreat as oil, bond yields revive inflation concerns' ([Investing.com]). tlt 81.66 (1d). Si el breakeven_5y5y (hoy 2.33%) se desancla por petróleo, el tramo largo es el que paga la cuenta. Convicción 6 y no más: con tips_yield_10y ya en 2.44% mucha restricción está en precio y un accidente de crecimiento haría rally violento.",
+      "dato_clave": "yield_10y 4.72% con curva +1.00"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 5,
+      "razonamiento": "Señal deliberadamente moderada porque hay contradicción interna. A favor: cobertura geopolítica ante escalada US-Iran ([Yahoo Finance]) y dxy 99.36 (yfinance:DX-Y.NYB, 0d) sin fortaleza extrema, con eurusd 1.1612. En contra: tips_yield_10y 2.44% es un costo de oportunidad históricamente muy adverso para oro, y gld ya cotiza en 398.55 (1d), es decir, el activo ya descontó mucha prima. Uso GLD como hedge de cola del libro long-equity, no como convicción direccional. No tengo dato de flujos de bancos centrales ni de posicionamiento en el JSON.",
+      "dato_clave": "tips_yield_10y 2.44% vs gld 398.55"
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 4,
+      "razonamiento": "Convicción baja por falta de dato duro: NO hay precio de crudo ni de USO en el JSON, por lo que esta señal se apoya únicamente en noticias ('rising tensions between the US and Iran revived inflation concerns, with elevated oil prices adding pressure' — [Yahoo Finance]; [Investing.com]). El sesgo direccional es al alza por prima de riesgo de oferta, pero el contrapeso es real y también noticioso: China mostró debilidad generalizada en julio con Li Qiang pidiendo más estímulo ([Bloomberg]), lo que golpea la demanda física. Con datos del JSON solamente, esto sería 'convicción insuficiente'; lo dejo en 4 y tamaño mínimo.",
+      "dato_clave": "sin dato de crudo en el JSON — señal 100% noticiosa"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "dxy 99.36 (0d) es un nivel intermedio sin tendencia clara en los datos disponibles. El cross clave está en modo carry-on: usdjpy 159.06 (y usdjpy_mkt 159.06, ambos 0d) refleja diferencial de tasas amplio (3M USA 3.72%) y apetito por riesgo consistente con vix 15.83. Del otro lado, usdcny 6.7252 y usdmxn 17.03, usdbrl 5.2196 muestran EM FX firme, es decir, dólar NO en modo escasez global. Neutral: el dólar tiene fuerzas opuestas — geopolítica (alza) vs EM FX y euro firmes (baja). No hay convicción para direccional.",
+      "dato_clave": "usdjpy 159.06"
+    }
+  ],
+  "tesis_principal": "El cuadrante que describen los datos duros es Goldilocks tardío, no Goldilocks temprano. Del lado del crecimiento, nada se rompe: unemployment 4.1% (FRED:UNRATE), sahm_rule -0.03 (FRED:SAHMREALTIME) y jobless_claims 209.000 (FRED:ICSA, es_fresco=false a 11 días — reduzco peso de esta última). Del lado de la inflación, las expectativas de mercado están ancladas en breakeven_5y5y 2.33% (FRED:T5YIFR, 1 día), con cpi 332.813 (julio) y pce_core 130.266 (junio) que son niveles de índice, no tasas — no puedo inferir de ellos la tasa interanual sin la serie histórica, y no la tengo, así que no voy a afirmar nada sobre el momentum de inflación desde esos dos números. Del lado de la liquidez, todo verde: hy_spread 2.70% (FRED:BAMLH0A0HYM2) y vix 15.83 (yfinance:^VIX, mismo día). La curva 10Y-3M está en +1.00 (yield_10y 4.72% vs yield_3m 3.72%), configuración de desinversión consumada que históricamente coexiste con expansión sin estrés de funding. Ese conjunto justifica estar largo riesgo.\n\nLa grieta de la tesis es el precio del dinero real: tips_yield_10y 2.44% (FRED:DFII10). Un real yield de ese calibre es un régimen de restricción monetaria efectiva y explica simultáneamente por qué tlt cotiza deprimido en 81.66 y por qué no quiero apalancar el long de equity: el múltiplo de spy en 767.45 se sostiene por crédito barato (hy_spread 2.70%) y por el ciclo de capex AI — reforzado hoy por el data center de OpenAI en Ohio con garantía parcial de Nvidia ([Axios]) — más que por descuento de tasas. También hay una divergencia que debo señalar explícitamente: michigan_inflation_exp 4.6% (FRED:MICH) contra breakeven_5y5y 2.33%. Es una brecha enorme entre expectativas del consumidor y del mercado de bonos, pero el dato de Michigan tiene es_fresco=false con 79 días de antigüedad, por lo que lo trato como señal degradada y no como argumento central.\n\nEl vector de cambio de régimen es geopolítico-energético y viene del flujo de noticias, no de los indicadores. Las tensiones US-Iran con petróleo elevado están reactivando el canal inflación→yields ([Yahoo Finance], [Investing.com]), y ese es exactamente el mecanismo que convertiría GOLDILOCKS en STAGFLATION: breakeven_5y5y saliendo de 2.33% hacia arriba con yield_10y perforando 5.00% y sin mejora en crecimiento. En el lado opuesto de la balanza está el shock desinflacionario de China: debilidad generalizada en julio y Li Qiang pidiendo más estímulo ([Bloomberg]), con usdcny en 6.7252 — un yuan firme que no es el comportamiento típico de un China en pánico deflacionario, divergencia que me obliga a bajar la convicción del long de energía. Estructura del libro: long moderado de equity (SPY/QQQ) financiado con short de duración (TLT), hedge de cola en GLD, y micro-exposición long a energía. El riesgo de correlación oculto es usdjpy 159.06: el carry trade está pesado y una reversión súbita del yen suele liquidar simultáneamente equity long y short de bonos.",
+  "invalidadores": [
+    "hy_spread (hoy 2.70%) se amplía por encima de 3.50% en menos de dos semanas: invalida el long de SPY/QQQ inmediatamente, es la señal de crédito que precede al deterioro de equity.",
+    "breakeven_5y5y rompe por encima de 2.60% junto con yield_10y por encima de 5.00% por escalada US-Iran (cierre/amenaza sobre Hormuz): el régimen migra a STAGFLATION, el short de TLT gana pero el long de equity se rompe — habría que voltear el libro a corto de riesgo y largo de energía/oro.",
+    "usdjpy (hoy 159.06) cae por debajo de 150 de forma abrupta: unwind del carry trade global, correlaciones a 1, invalida simultáneamente el long de equity y el short de duración.",
+    "sahm_rule (hoy -0.03) sube por encima de +0.35 en la próxima publicación o jobless_claims (hoy 209.000, dato de 11 días) supera 260.000: se cae el pilar de crecimiento, el short de TLT pasa a ser el peor trade del libro.",
+    "vix (hoy 15.83) por encima de 25 con spy quebrando decisivamente el nivel de 767.45: la complacencia era la tesis, y su ruptura obliga a reducir gross exposure antes de re-analizar."
+  ],
+  "alertas": [
+    "tips_yield_10y en 2.44% es el dato más incómodo del set: es un real yield restrictivo que coexiste con hy_spread de 2.70% y vix de 15.83. Crédito y volatilidad están valuando un mundo mucho más laxo que el que valúa el mercado de TIPS. Una de las dos valuaciones está mal.",
+    "Divergencia de expectativas de inflación: michigan_inflation_exp 4.6% vs breakeven_5y5y 2.33%. Brecha de más de 2 puntos. Michigan tiene es_fresco=false (79 días), así que puede estar reflejando un mundo pasado — pero si la próxima lectura confirma 4.6%+ con petróleo alto, el riesgo de desanclaje es real.",
+    "usdjpy 159.06 con yield_3m USA en 3.72%: el carry sigue siendo el trade más apalancado del sistema y es el canal de contagio más probable ante cualquier shock. Monitorear intervención/retórica del BoJ (no tengo dato de política del BoJ en el JSON).",
+    "Contradicción China: [Bloomberg] reporta debilidad económica generalizada en julio y pedido de estímulo de Li Qiang, pero usdcny está en 6.7252 (yuan firme) y usdbrl 5.2196 / usdmxn 17.03 muestran EM FX sólido. O el mercado espera un estímulo grande y creíble, o el FX no incorporó todavía el deterioro. Riesgo asimétrico para commodities.",
+    "tlt en 81.66 refleja un mercado de bonos largos ya castigado; el short de duración es consenso y por lo tanto vulnerable a un squeeze si aparece cualquier dato débil de empleo.",
+    "No hay dato de petróleo en el set: la variable que hoy mueve el mercado según las noticias es exactamente la que no puedo medir. Esto es un gap material en el análisis de hoy."
+  ],
+  "datos_insuficientes": [
+    "jobless_claims (FRED:ICSA): 209.000 pero es_fresco=false, 11 días de antigüedad — no captura ningún deterioro laboral de las últimas dos semanas.",
+    "michigan_inflation_exp (FRED:MICH): 4.6% con es_fresco=false y 79 días de antigüedad — inutilizable como señal actual, solo como contexto.",
+    "No hay precio de petróleo/WTI/Brent ni de USO en el JSON, siendo el driver principal del flujo de noticias de hoy: la señal de energía es de baja calidad por construcción.",
+    "cpi (332.813, julio) y pce_core (130.266, junio) están como niveles de índice sin serie histórica: no puedo calcular tasas interanuales ni momentum de inflación, así que no baso ninguna afirmación de inflación en ellos.",
+    "No hay precio de QQQ en el set (solo spy 767.45): la señal de QQQ es de régimen y flujo de noticias, no de nivel.",
+    "Faltan indicadores de actividad adelantados (ISM/PMI, retail sales) y datos de política del BoJ/Fed: 3 de 25 series no llegaron confiables, lo que limita el análisis del lado del crecimiento a empleo únicamente."
+  ],
+  "eventos_clave": [
+    "[Yahoo Finance] 'Stock market today: Dow, S&P 500, Nasdaq futures extend losses amid US-Iran tensions' — futuros a la baja con petróleo elevado reactivando el temor inflacionario. Impacto concreto: es el canal que puede empujar yield_10y (4.72%) sobre 5.00% y desanclar breakeven_5y5y (2.33%); favorece el short de TLT pero amenaza el long de SPY/QQQ. Es el evento de mayor impacto potencial del día.",
+    "[Investing.com] 'Asian stocks retreat as oil, bond yields revive inflation concerns — Nikkei, KOSPI lead losses' — confirma que el impulso es global y que el mercado de bonos está liderando. Nikkei liderando pérdidas con usdjpy en 159.06 es la combinación a vigilar: si el yen se fortalece contra un Nikkei débil, es el arranque del unwind del carry.",
+    "[Bloomberg] 'Xi's No. 2 Urges More Support for Economy After Big Growth Slump' — debilidad china generalizada en julio y probable incumplimiento del target anual, con Li Qiang pidiendo estímulo. Impacto concreto: es fuerza desinflacionaria global que compensa parcialmente el shock de petróleo, y limita el upside de commodities cíclicos; a la vez, un paquete de estímulo grande sería catalizador alcista para EM FX (usdcny 6.7252, usdbrl 5.2196) y materiales.",
+    "[Axios] 'OpenAI announces massive data center in Ohio with Nvidia guarantee' — lease de 20 años con financiamiento parcialmente garantizado por Nvidia. Impacto concreto: sostiene el ciclo de capex AI que es el motor real del múltiplo de QQQ/SPY (spy 767.45) en un contexto de real yields restrictivos (tips_yield_10y 2.44%). También es una alerta de calidad crediticia: garantías vendor-financing concentran riesgo en un solo balance.",
+    "[Fox Business] 'Nearly 1M Chrysler, Jeep, Dodge and Ram vehicles recalled over camera glitch' (Stellantis) — impacto macro nulo, ruido idiosincrático de un emisor. Lo listo solo para descartarlo explícitamente y evitar que contamine la lectura de consumo."
+  ],
+  "confianza_general": 64,
+  "metadata": {
+    "timestamp": "2026-08-19T10:57:12.590992",
+    "datos_usados": 22,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
