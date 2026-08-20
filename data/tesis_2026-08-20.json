@@ -1,0 +1,100 @@
+{
+  "fecha": "2026-08-20",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 62,
+    "razonamiento": "Acepto la clasificación GOLDILOCKS pero con confianza moderada, no alta. A favor: desempleo en 4.1% (unemployment, 50d), Sahm Rule en -0.03 (sahm_rule) — lejos del umbral recesivo de +0.50; jobless claims en 209.000 (jobless_claims, es_fresco=false, 12 días) siguen en zona de pleno empleo; HY spread en 2.75% (hy_spread) es un nivel de complacencia crediticia total; VIX en 15.16 (vix); curva 10Y-3M positiva en +1.00% (yield_curve, calculado con yield_10y 4.71 y yield_3m 3.71), es decir bull/bear steepening ya consumado sin recesión. Del lado inflacionario, el breakeven 5y5y en 2.32% (breakeven_5y5y) está esencialmente anclado. El PROBLEMA que impide una confianza >75: el yield real 10Y en 2.41% (tips_yield_10y) es extremadamente restrictivo para un régimen 'goldilocks', TLT en 83.02 (tlt) refleja tasas largas en máximos de varias décadas (confirmado por CNBC), y el oro en 413.84 (gold) cotiza fuerte SIMULTÁNEAMENTE con esos reales altos — combinación históricamente anómala que sugiere prima de riesgo fiscal/soberana y no puro goldilocks. Además Michigan inflation exp en 4.6% (michigan_inflation_exp, es_fresco=false, 80 días) está muy por encima del breakeven de mercado; si ese dato se confirmara actualizado, el cuadrante se desplazaría hacia REFLACIÓN. El CPI solo está disponible como nivel (332.813, 50 días) y PCE core como índice (130.266, 80 días): no puedo calcular variación interanual con los datos entregados, lo que debilita la lectura del eje inflación."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "SPY en 769.06 (spy, 1 día) tras tres sesiones consecutivas de caída según CNBC. La estructura de liquidez sigue benigna: HY spread 2.75% (hy_spread) y VIX 15.16 (vix) no muestran ningún estrés — el crédito NO valida un techo de mercado. Pero el motor de la corrección es de tasas: yield real 10Y en 2.41% (tips_yield_10y) y nominal 4.71% (yield_10y) comprimen múltiplos, y el selloff de semis (KOSPI -5%, Investing.com) golpea al liderazgo del índice. Con crédito tranquilo pero duration de equity castigada, la asimetría de corto plazo es plana: ni comprar la caída con convicción ni vender contra un crédito en 275bp.",
+      "dato_clave": "hy_spread 2.75% vs tips_yield_10y 2.41%"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "SHORT",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "Señal táctica de menor convicción por ausencia de dato propio de QQQ en el JSON (infiero vía spy 769.06 y el contexto de noticias). El vector es claro: el activo más sensible a tasa de descuento enfrenta un yield real de 2.41% (tips_yield_10y) en máximos y un nominal de 4.71% (yield_10y), mientras el flujo de noticias documenta 'chip selloff deepens' con KOSPI -5% (Investing.com) y 'After Painful AI Losses, Indexes Near Key Test' (IBD). Divergencia relevante: VIX 15.16 (vix) no está pricing una dislocación tech, por lo que la cobertura vía opciones es barata y prefiero expresarlo con riesgo definido antes que con short direccional grande.",
+      "dato_clave": "tips_yield_10y 2.41%"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Oro en 413.84 (gold, 1 día) sosteniéndose pese a un yield real de 2.41% (tips_yield_10y) — el modelo clásico oro vs reales está roto, y esa ruptura suele indicar demanda estructural (bancos centrales / hedge fiscal) más que especulativa. Refuerzan: breakeven 5y5y en 2.32% (breakeven_5y5y) contra Michigan inflation exp en 4.6% (michigan_inflation_exp, DATO RANCIO de 80 días — señal degradada), tasas largas en máximos de décadas con TLT en 83.02 (tlt), y DXY en 98.64 (dxy) sin ser un dólar dominante. El oro es la mejor cobertura contra el escenario en que el 'goldilocks' se rompe hacia STAGFLATION o hacia crisis de term premium fiscal.",
+      "dato_clave": "gold 413.84 con tips_yield_10y 2.41%"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "TLT en 83.02 (tlt) con yield 10Y en 4.71% (yield_10y, FRED 18-ago) vs 4.653% en mercado (yield_10y_mkt, 19-ago) — nótese la discrepancia de ~6bp entre fuentes, que sugiere un leve rally intradía y me obliga a bajar convicción. La curva se empinó a +1.00% (yield_curve) sin recesión a la vista (sahm_rule -0.03, unemployment 4.1%), patrón de bear steepening por prima de plazo, no por expectativa de recortes. Con crecimiento estable no hay catalizador de duración; el riesgo del short es que un accidente en tech (KOSPI -5%) genere flight-to-quality. Por eso convicción media: es momentum de term premium, no una tesis de alta calidad.",
+      "dato_clave": "yield_curve +1.00% con sahm_rule -0.03"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "DXY en 98.64 (dxy) es un dólar mediocre pese a un yield 10Y de 4.71% (yield_10y) — divergencia notable: el diferencial de tasas favorece al USD pero el índice no responde, coherente con la hipótesis de prima de riesgo fiscal americana. La foto cruzada es contradictoria: EURUSD 1.1699 (eurusd), USDCNY 6.7215 (usdcny) y USDMXN 16.96 (usdmxn) muestran un dólar DÉBIL contra Europa y EM, mientras USDJPY 158.45 (usdjpy) muestra un dólar MUY fuerte contra el yen. Señales contradictorias entre sí = neutral, convicción baja.",
+      "dato_clave": "dxy 98.64 vs eurusd 1.1699 y usdjpy 158.45"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 2,
+      "razonamiento": "Convicción insuficiente. No hay ningún dato de precio de crudo, inventarios ni curva de futuros en el JSON entregado. El único vínculo es geopolítico vía noticias (ataques ucranianos con drones a un centro logístico cerca de Moscú, AP News), que es un riesgo de oferta al alza, pero no puedo cuantificarlo sin dato de precio. No tomo posición.",
+      "dato_clave": "sin dato disponible en el JSON"
+    }
+  ],
+  "tesis_principal": "El régimen de superficie es GOLDILOCKS y los datos duros lo respaldan: desempleo 4.1% (unemployment), Sahm Rule en -0.03 (sahm_rule), jobless claims 209k (jobless_claims, rancio 12 días), HY spread comprimido en 2.75% (hy_spread), VIX en 15.16 (vix) y curva 10Y-3M positiva en +1.00% (yield_curve, de yield_10y 4.71 y yield_3m 3.71). Las expectativas de inflación de mercado están ancladas: breakeven 5y5y en 2.32% (breakeven_5y5y). Con ese set de datos, el trade obvio sería risk-on apalancado. No lo hago, y la razón es una sola: el precio del dinero real. El yield real a 10 años está en 2.41% (tips_yield_10y), un nivel que históricamente no convive con múltiplos de equity elevados durante mucho tiempo, y TLT en 83.02 (tlt) confirma lo que CNBC reporta como tasas largas en máximos de varias décadas. El empinamiento de la curva no viene de expectativas de recortes (el 3M sigue en 3.71%), viene del extremo largo: es prima de plazo, es decir, el mercado cobrando más por financiar al Tesoro. Ese es un goldilocks con una hipoteca.\n\nLa segunda pata de la tesis es la anomalía del oro. GLD en 413.84 (gold) con reales en 2.41% (tips_yield_10y) rompe la relación inversa canónica. Cuando el oro sube junto con los rendimientos reales, la explicación residual suele ser demanda de cobertura contra el emisor de la moneda de reserva, no contra la inflación cíclica. Esto conecta con el comportamiento del dólar: DXY en 98.64 (dxy) es débil PARA el nivel de tasas que ofrece EE.UU., y las cruzadas lo confirman — EURUSD 1.1699 (eurusd), USDCNY 6.7215 (usdcny, yuan notablemente firme) y USDMXN 16.96 (usdmxn, peso muy fuerte, carry EM intacto). La excepción es el yen: USDJPY en 158.45 (usdjpy / usdjpy_mkt, dato de hoy) mantiene vivo el carry trade global, que es la fuente de financiamiento silenciosa de todo el rally de riesgo. Mientras el yen siga débil y ordenado, la liquidez fluye; un movimiento brusco hacia 160+ con intervención del BoJ sería el detonante clásico de un unwind sincronizado, exactamente el mecanismo de agosto 2024.\n\nEl tercer elemento es la divergencia entre el crédito y las acciones. El equity está corrigiendo — SPY en 769.06 (spy) tras tres sesiones a la baja (CNBC) y un selloff de semiconductores con KOSPI -5% (Investing.com) — pero el crédito no se entera: 2.75% de HY spread (hy_spread) es la definición de complacencia. Históricamente, cuando el equity cae y el crédito no acompaña, la corrección es de rotación/valuación y no de ciclo. Por eso mi postura es NEUTRAL en SPY y no SHORT: vender índice contra un crédito en 275bp y un Sahm en -0.03 es pelear contra el ciclo. La expresión correcta del riesgo es: neutralidad en beta amplia, sesgo bajista táctico en duración de equity (QQQ/semis, donde el shock de tasa reales y el ciclo AI se cruzan), short moderado en duración de bonos por prima de plazo, y largo estructural en oro como cobertura del único escenario que rompe todo — que Michigan inflation exp en 4.6% (michigan_inflation_exp, RANCIO de 80 días) tenga razón y el breakeven de 2.32% esté mal preciado. Advierto además que CPI (332.813, 50 días) y PCE core (130.266, 80 días) vienen como niveles de índice sin variación interanual calculable con los datos entregados: mi lectura del eje inflación descansa en precios de mercado, no en datos oficiales, y eso es una debilidad reconocida de esta tesis.",
+  "invalidadores": [
+    "USDJPY (hoy 158.45) rompe 160 con intervención verbal o directa del BoJ: gatilla unwind del carry trade global, invalida el largo de riesgo implícito en NEUTRAL SPY y probablemente hace rally violento a TLT (mata el short de duración).",
+    "HY spread (hoy 2.75%) se abre por encima de 3.50% junto con VIX (hoy 15.16) sobre 22: el crédito validaría la caída del equity y el régimen migraría de GOLDILOCKS a DESACELERACIÓN — habría que pasar SPY a SHORT y TLT a LONG.",
+    "Yield 10Y (hoy 4.71%) supera 5.00% con el real (tips_yield_10y 2.41%) sobre 2.75%: escenario de crisis de term premium; se rompe la neutralidad en equity hacia abajo, se refuerza el largo en oro y el short en TLT deja de ser táctico para ser estructural.",
+    "Sahm Rule (hoy -0.03) sube por encima de +0.30 o jobless claims (209k, dato rancio de 12 días) superan 260k: el pilar de crecimiento del goldilocks se cae y toda la estructura de señales debe invertirse hacia duración larga.",
+    "El próximo dato de Michigan inflation exp (hoy 4.6%, RANCIO de 80 días) se confirma y el breakeven 5y5y (2.32%) se dispara sobre 2.60%: el cuadrante pasa a REFLACIÓN/STAGFLATION, se cancela la neutralidad en equity y el oro pasa a máxima convicción.",
+    "El selloff de semis (KOSPI -5%, Investing.com) se revierte con guías fuertes y el crédito sigue en 275bp: el short de QQQ queda invalidado y habría que pasar SPY a LONG."
+  ],
+  "alertas": [
+    "ANOMALÍA CENTRAL: oro en 413.84 (gold) subiendo con yield real de 2.41% (tips_yield_10y). Esta correlación positiva rompe el modelo estándar y suele señalar demanda de cobertura soberana/fiscal. Es la señal más importante del tablero de hoy y contradice parcialmente la etiqueta GOLDILOCKS.",
+    "DIVERGENCIA CRÉDITO-EQUITY: HY spread en 2.75% (hy_spread) y VIX en 15.16 (vix) mientras el S&P acumula tres sesiones de caída (CNBC) y KOSPI cae 5% (Investing.com). O el crédito está dormido o la caída del equity es solo rotación. No asumir la segunda opción sin confirmación.",
+    "DISCREPANCIA DE FUENTES EN LA TASA 10Y: yield_10y en 4.71% (FRED, 18-ago) vs yield_10y_mkt en 4.653% (yfinance, 19-ago). ~6bp de diferencia. El yield_curve de +1.00% se calculó con la serie FRED; con el dato de mercado sería ~0.94%. Impacto menor pero relevante para dimensionar el short de TLT.",
+    "BRECHA DE EXPECTATIVAS DE INFLACIÓN: Michigan en 4.6% (michigan_inflation_exp) vs breakeven 5y5y en 2.32% (breakeven_5y5y). 228bp de diferencia entre encuesta de consumidores y mercado. El dato de Michigan tiene 80 días y NO es fresco, pero una brecha de ese tamaño es una bomba latente si converge hacia arriba.",
+    "TLT en 83.02 (tlt) con tasas largas en máximos de varias décadas (CNBC): niveles donde aparecen problemas de colateral, pérdidas mark-to-market en balances bancarios y de aseguradoras. Vigilar cualquier headline de estrés en instituciones con duración larga.",
+    "GEOPOLÍTICA: ataques de drones ucranianos a logística cerca de Moscú (AP News) y llamado a elecciones en Ucrania (CNBC) — riesgo bidireccional sobre energía y activos europeos que NO puedo cuantificar porque no hay dato de crudo en el JSON.",
+    "IPO de Unitree +600% en debut en Shanghái (Financial Times): comportamiento de manía especulativa en un segmento, coexistiendo con selloff de semis. Señal de mercado bifurcado, no de risk-off generalizado."
+  ],
+  "datos_insuficientes": [
+    "jobless_claims: 209.000 con 12 días de antigüedad, es_fresco=false. Es mi indicador de mayor frecuencia sobre el mercado laboral y está desactualizado — reduce la confianza en el pilar 'crecimiento' del régimen.",
+    "michigan_inflation_exp: 4.6% con 80 días de antigüedad, es_fresco=false. Señal de inflación degradada; no la uso como driver, solo como riesgo latente.",
+    "CPI (332.813) y PCE core (130.266) vienen como NIVELES de índice, sin serie previa para calcular variación interanual. No puedo afirmar nada sobre la tasa de inflación actual con estos datos; mi lectura del eje inflación depende de precios de mercado (breakeven_5y5y, tips_yield_10y).",
+    "No hay precio de petróleo ni de commodities energéticos en el JSON: la señal de USO queda sin base y no puedo evaluar el canal inflacionario de oferta pese al riesgo geopolítico en las noticias.",
+    "No hay dato propio de QQQ en el JSON: la señal short en QQQ se infiere de spy (769.06), tips_yield_10y (2.41%) y contexto de noticias. Por eso su convicción está limitada a 5.",
+    "Faltan 3 de 25 indicadores del set completo (22/25 confiables). No hay datos de tasa de política, ISM/PMI ni ventas minoristas: el eje de crecimiento se sostiene solo en empleo, que es indicador rezagado."
+  ],
+  "eventos_clave": [
+    "[CNBC] 'Stock futures are little changed after S&P 500 posts third straight losing day' — confirma que la corrección del equity (spy 769.06) es ordenada y que la caída convive con tasas largas en máximos de décadas (tlt 83.02, yield_10y 4.71%). Es el argumento central para NEUTRAL y no SHORT en SPY: el mercado absorbe el shock de tasas sin pánico (vix 15.16).",
+    "[Investing.com] 'Asian stocks slump as chip selloff deepens; KOSPI plunges 5%' — impacto directo sobre la duración de equity y el complejo AI/semis. Justifica el sesgo SHORT táctico en QQQ. Un -5% en KOSPI es un movimiento de dos desvíos que el VIX en 15.16 (vix) no está reflejando: cobertura barata.",
+    "[Investor's Business Daily] 'Futures: After Painful AI Losses, Indexes Near Key Test' — confirma que el liderazgo del índice está bajo presión técnica. Combinado con un yield real de 2.41% (tips_yield_10y), el múltiplo de las megacaps enfrenta el peor contexto de tasa de descuento del ciclo.",
+    "[Financial Times] 'Chinese humanoid robot maker surges 600% in trading debut' (Unitree, Shanghái) — señal de exceso especulativo localizado y de flujo de capital hacia activos chinos, coherente con USDCNY en 6.7215 (usdcny), un yuan notablemente firme. Divergencia interesante: manía en China simultánea con selloff de semis en Corea (KOSPI -5%), lo que sugiere rotación intra-Asia más que risk-off global.",
+    "[AP News] 'A warehouse burns near Moscow. In Ukraine, drone crews prepare to strike again' — riesgo de oferta energética al alza. No puedo cuantificar el impacto porque el JSON no incluye precio de crudo, pero es un catalizador potencial para romper el breakeven 5y5y de 2.32% (breakeven_5y5y) al alza y validar el largo en oro (gold 413.84).",
+    "[CNBC] 'Zelenskyy faces challenge to his wartime rule as former defense chief calls for election' — incertidumbre política en Ucrania; bidireccional para el riesgo europeo y por extensión para EURUSD en 1.1699 (eurusd). Refuerza mi NEUTRAL en DXY.",
+    "[CNBC] 'Target is set to report earnings before the bell' — lectura del consumidor estadounidense, el pilar del régimen GOLDILOCKS. Con desempleo en 4.1% (unemployment) y Sahm en -0.03 (sahm_rule), un guidance de consumo débil sería la primera grieta real en la tesis de crecimiento."
+  ],
+  "confianza_general": 61,
+  "metadata": {
+    "timestamp": "2026-08-20T10:58:47.108202",
+    "datos_usados": 22,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
