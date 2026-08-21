@@ -1,0 +1,99 @@
+{
+  "fecha": "2026-08-21",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 68,
+    "razonamiento": "El bloque de crecimiento/riesgo confirma Goldilocks: jobless_claims en 206.000 (FRED:ICSA, 6 días), unemployment 4.1% (FRED:UNRATE), sahm_rule en -0.03 (FRED:SAHMREALTIME) — es decir, cero señal de recesión —, hy_spread en 2.73% (FRED:BAMLH0A0HYM2), que es un nivel de crédito claramente relajado, y vix en 15.69 (yfinance:^VIX). La curva 10Y-3M está positiva en +0.94% (calculado:10Y-3M, con yield_10y 4.65% y yield_3m 3.71%), consistente con un ciclo de recortes ya digerido y sin estrés de funding. Del lado inflación, breakeven_5y5y en 2.34% (FRED:T5YIFR, 1 día) está anclado. Recorto confianza desde ~85 a 68 por tres motivos: (1) no tengo series interanuales — cpi 332.813 y pce_core 130.266 son niveles de índice, no tasas, así que no puedo afirmar la trayectoria de inflación con datos propios; (2) michigan_inflation_exp en 4.6% está marcado es_fresco=false (81 días) y contradice fuertemente al breakeven 2.34%; (3) tips_yield_10y en 2.35% (FRED:DFII10) es un real rate restrictivo que no encaja del todo con un Goldilocks 'puro', y sumado al titular de Axios sobre funcionarios de la Fed advirtiendo posibles subas, el sesgo del régimen es hacia REFLACION más que hacia DESACELERACION."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Combinación clásica de risk-on: hy_spread 2.73% (crédito no está descontando ningún accidente), vix 15.69, sahm_rule -0.03 y jobless_claims 206.000. La curva positiva en +0.94% elimina la señal recesiva clásica. SPY cotiza en 762.60 (yfinance:SPY, 1 día). El límite al sizing es el real yield: tips_yield_10y en 2.35% comprime múltiplos y el riesgo de un giro hawkish de la Fed (Axios) es el principal freno, por eso 7 y no 9.",
+      "dato_clave": "hy_spread = 2.73%"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "No tengo precio de QQQ en el JSON, así que la señal es derivada de SPY 762.60 y del entorno de liquidez (vix 15.69, hy_spread 2.73%). El flujo de noticias tech es constructivo (SK Hynix +12% por recompra, CNBC; Apple confirma AirPods con cámara para 2027, Bloomberg), pero el sector es el más sensible a tips_yield_10y 2.35% y a un yield_10y_mkt en 4.696% (yfinance:^TNX) que está por encima del dato FRED de 4.65%. Convicción moderada por falta de dato directo del activo.",
+      "dato_clave": "tips_yield_10y = 2.35% (real rate restrictivo para duration de equity)"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 82.34 (yfinance:TLT) con yield_10y 4.65% (FRED) y yield_10y_mkt 4.696% (más fresco, 1 día) muestra presión alcista en tasas largas. Con la economía sin señal de recesión (sahm_rule -0.03, claims 206k), la curva ya normalizada en +0.94% y funcionarios de la Fed hablando de posibles subas si la inflación persiste (Axios), el carry/roll de la parte larga es pobre. El matiz importante: el WSJ reporta 'Bond Market Steady After Treasury Intervention' — una intervención del Treasury es un evento de estrés y también un potencial piso artificial para bonos largos; eso me impide subir la convicción por encima de 6 y exige stop disciplinado.",
+      "dato_clave": "yield_10y_mkt = 4.696% vs yield_10y (FRED) 4.65%"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "GLD en 415.26 (yfinance:GLD) opera fuerte a pesar de un real yield hostil (tips_yield_10y 2.35%) — esa divergencia suele indicar demanda por cobertura fiscal/geopolítica más que por tasas. Los catalizadores no-macro están presentes: intervención del Treasury en el mercado de bonos (WSJ) y escalada con Irán tras el vencimiento del alto el fuego (BBC). El DXY en 98.605 no está en zona de fortaleza extrema. Riesgo: si la Fed vira hawkish y el real yield sube desde 2.35%, el oro es el activo más vulnerable, por eso 6.",
+      "dato_clave": "gold (GLD) = 415.26 con tips_yield_10y = 2.35%"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "DXY 98.605, EURUSD 1.1707, USDJPY 158.704 (todos yfinance, 0 días de antigüedad). Las fuerzas se cancelan: el diferencial de tasas y el riesgo hawkish (Axios) apoyan al dólar, pero el USD ya está débil contra EUR y contra EM — usdmxn 16.889, usdbrl 5.1931, usdcny 6.7094 — lo que es típico de risk-on con carry trade activo. USDJPY en 158.70 confirma que el carry en yenes sigue plenamente vivo: mientras no haya un desarme abrupto (el escenario de agosto 2024), la liquidez global sigue soportada. Sin datos de tasas japonesas ni de posicionamiento, no tengo edge direccional en el dólar.",
+      "dato_clave": "usdjpy = 158.704"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 2,
+      "razonamiento": "Convicción insuficiente: no hay ningún dato de crudo, inventarios ni energía en el JSON. Cualquier afirmación direccional sería invención. El único input es cualitativo: Trump promete medidas económicas más duras sobre Irán y sus países de apoyo tras el vencimiento del alto el fuego de 60 días (BBC), lo que sesga el riesgo hacia arriba en precio, pero no puedo cuantificarlo con los datos disponibles.",
+      "dato_clave": "sin dato de crudo en el JSON — señal no operable"
+    }
+  ],
+  "tesis_principal": "El tablero macro de hoy es un Goldilocks de manual en el eje crecimiento-riesgo, y un signo de interrogación en el eje inflación. Del lado real: jobless_claims 206.000 (FRED:ICSA), unemployment 4.1% (FRED:UNRATE), sahm_rule -0.03 (FRED:SAHMREALTIME) — negativo, o sea la regla de Sahm ni siquiera se acerca al umbral de recesión. Del lado financiero: hy_spread 2.73% (FRED:BAMLH0A0HYM2) y vix 15.69 (yfinance:^VIX) describen un mercado de crédito y volatilidad completamente relajado. La curva 10Y-3M está en +0.94% (yield_10y 4.65%, yield_3m 3.71%), es decir positiva y con pendiente sana: el mercado ya no descuenta ni inversión ni pánico. SPY en 762.60 refleja exactamente ese entorno. En términos de Dalio, crecimiento estable con inflación esperada anclada (breakeven_5y5y 2.34%, publicado ayer) es el cuadrante donde se compran activos de riesgo con apalancamiento moderado.\n\nAhora, la letra chica, que es donde está el alpha y el riesgo. Primero, no tengo tasas de inflación interanuales: cpi 332.813 y pce_core 130.266 son niveles de índice, y el PCE core tiene 81 días de antigüedad. Segundo, michigan_inflation_exp en 4.6% está marcado es_fresco=false (81 días) y contradice de forma brutal al breakeven_5y5y de 2.34% — una brecha de más de 2 puntos entre expectativas de hogares y expectativas de mercado. Bajo la regla de datos rancios, no baso ninguna señal en el 4.6%, pero lo registro como riesgo latente, porque coincide con dos hechos: el titular de Axios de que funcionarios de la Fed advirtieron que podrían necesitarse subas si la inflación persiste, y con tips_yield_10y en 2.35%, un real rate de 10 años que es abiertamente restrictivo y sugiere que el mercado de bonos ya está pagando una prima por riesgo inflacionario o fiscal. Tercero, el titular del WSJ sobre 'Treasury intervention' es la anomalía más importante del día: en un régimen genuinamente Goldilocks el Tesoro no tiene que intervenir en el mercado de bonos. Eso, con TLT en 82.34 y yield_10y_mkt en 4.696% (por encima del cierre FRED de 4.65%), me dice que la fragilidad del ciclo está en la parte larga de la curva, no en el crédito corporativo ni en el empleo.\n\nEl canal de transmisión a vigilar es el FX. USDJPY en 158.704 (dato de hoy, 0 días) indica que el carry trade en yenes sigue plenamente funcional, y ese es el combustible silencioso del hy_spread en 2.73% y del vix en 15.69. Mientras USDJPY se mantenga elevado y ordenado, la liquidez global sostiene múltiplos. El complemento EM confirma apetito por riesgo: usdmxn 16.889, usdbrl 5.1931, usdcny 6.7094, con DXY en 98.605 y EURUSD en 1.1707 — dólar contenido, no en modo squeeze. La implementación coherente es: long equity (SPY) con tamaño moderado, short duration (TLT) como cobertura del riesgo hawkish/fiscal, y long oro (GLD 415.26) como cobertura contra el escenario que rompe la tesis — reaceleración inflacionaria más estrés fiscal más Irán. Es un barbell deliberado: si el régimen se mantiene, gana el equity; si el régimen muta a REFLACION/STAGFLATION, ganan el short de TLT y el oro. El escenario que me lastima es el opuesto — un shock de crecimiento súbito que dispare TLT y hunda SPY — y es precisamente el que los datos de empleo y crédito de hoy dicen que no está ocurriendo.",
+  "invalidadores": [
+    "Un desarme del carry trade en yenes: si USDJPY (hoy 158.704) cae de forma abrupta y desordenada, la liquidez global se contrae y las señales LONG en SPY/QQQ deben cerrarse de inmediato, sin importar el resto del cuadro.",
+    "Ampliación de hy_spread desde 2.73% hacia 4%+ y/o VIX (15.69) sostenido por encima de 25: sería la confirmación de que el crédito dejó de validar el Goldilocks y que la señal de crédito era complacencia, no salud.",
+    "Que la Fed materialice el aviso del titular de Axios y ponga subas de tasa sobre la mesa formalmente: eso rompería la señal LONG GLD (real yields subiendo desde 2.35%) aunque reforzaría el SHORT TLT, y comprimiría múltiplos en QQQ.",
+    "Nuevos episodios de 'Treasury intervention' (WSJ) o un salto desordenado de yield_10y_mkt (4.696%) por encima de ~5%: pasaría de ser un tema de tasas a un tema de estabilidad financiera, e invalidaría el SHORT TLT táctico por riesgo de política (soporte artificial) mientras golpea al equity.",
+    "Deterioro del empleo: jobless_claims (206.000) subiendo hacia 280k+ o sahm_rule (-0.03) cruzando +0.50 convertiría el régimen en DESACELERACION, invirtiendo la señal de TLT de SHORT a LONG.",
+    "Escalada militar con Irán tras el vencimiento del alto el fuego (BBC): un shock de oferta en crudo desancla el breakeven_5y5y de 2.34% y empuja el régimen hacia STAGFLATION, el cuadrante donde SPY LONG es la peor posición del libro."
+  ],
+  "alertas": [
+    "ANOMALÍA PRINCIPAL: el WSJ reporta que el mercado de bonos se estabilizó 'tras una intervención del Treasury'. Una intervención es incompatible con un régimen Goldilocks limpio y sugiere estrés de absorción de duration que ningún indicador del JSON captura directamente. Es el mayor riesgo no cuantificado del día.",
+    "DIVERGENCIA DE INFLACIÓN: michigan_inflation_exp 4.6% (rancio, 81 días, es_fresco=false) vs breakeven_5y5y 2.34% (fresco, 1 día). Brecha de +2.26 puntos entre hogares y mercado. Opero con el breakeven, pero si el dato de Michigan se refresca cerca de 4.6% el mercado deberá repricear el riesgo inflacionario.",
+    "REAL YIELD RESTRICTIVO: tips_yield_10y en 2.35% es un nivel históricamente incómodo para valuaciones de equity y para el oro. Que GLD esté en 415.26 pese a ese real yield indica que hay un bid no-tasas (fiscal/geopolítico) — señal de que el mercado no cree del todo el relato Goldilocks.",
+    "COMPLACENCIA: hy_spread 2.73% + vix 15.69 es una combinación de asimetría negativa. Poco premio por asumir riesgo y mucho espacio para ampliar. Sizing moderado obligatorio, no máximo.",
+    "El régimen precalculado marca 0 señales de riesgo y 0 de inflación. Mi lectura es que ese scoring subestima el riesgo, porque no incorpora ni el real yield de 2.35% ni el evento de intervención del Treasury. Por eso mi confianza (68) es inferior a la que sugeriría un Goldilocks limpio.",
+    "El titular de Business Insider sobre crecimiento salarial por debajo de la inflación y la referencia de CNBC a una 'economía en K' de cara a resultados de Walmart apuntan a un consumidor bifurcado: el agregado macro (claims 206k, unemployment 4.1%) puede estar ocultando debilidad en el consumidor de bajos ingresos."
+  ],
+  "datos_insuficientes": [
+    "michigan_inflation_exp: 4.6% con es_fresco=false y 81 días de antigüedad. No lo uso como base de ninguna señal; solo como alerta cualitativa.",
+    "pce_core: 130.266 con 81 días de antigüedad y en formato de nivel de índice, no de variación interanual. Imposible determinar la trayectoria de la inflación subyacente con este único punto.",
+    "cpi: 332.813 es un nivel de índice (51 días). Sin serie histórica en el JSON no puedo calcular ni afirmar ninguna tasa interanual de inflación.",
+    "No hay ningún dato de crudo/energía en el JSON, por lo que la señal de USO es no operable (convicción insuficiente) pese al riesgo geopolítico de Irán.",
+    "No hay precio de QQQ ni datos de concentración/breadth del índice; la señal de QQQ es inferida de SPY y del entorno de tasas, no de datos propios del activo.",
+    "El sistema reporta 23/25 fuentes confiables: hay 2 indicadores no presentes en el bloque de datos entregado, cuyo contenido desconozco y que podrían alterar el cuadro.",
+    "No hay dato de tasas de política ni de rendimiento japonés, lo que impide evaluar cuantitativamente la sostenibilidad del carry en USDJPY 158.704."
+  ],
+  "eventos_clave": [
+    "[The Wall Street Journal] 'Stock Market Today: Bond Market Steady After Treasury Intervention, Nasdaq Futures Tick Up' — Es el evento más relevante del día. Una intervención del Tesoro implica que la absorción de duration en el mercado largo está bajo estrés; explica por qué TLT está deprimido en 82.34 y por qué yield_10y_mkt (4.696%) supera al dato FRED (4.65%). Impacto: sostiene mi SHORT TLT en la lógica pero introduce riesgo de política (un soporte oficial puede provocar squeezes al alza en bonos), y es un argumento estructural a favor del oro en 415.26.",
+    "[Axios] 'Fed officials warned rate hikes may be needed if inflation stays high' — Contradice frontalmente la clasificación Goldilocks del régimen precalculado. Impacto: pone piso a la parte corta (yield_3m 3.71%), aplana el potencial de rally en TLT, presiona a QQQ vía real yields (tips_yield_10y 2.35%) y es el principal invalidador de la señal LONG GLD. Reduzco convicción en todas las posiciones sensibles a duration por este titular.",
+    "[BBC News] 'Trump vows tougher economic measures on Iran and supporting countries' tras el vencimiento del alto el fuego de 60 días — Riesgo de shock de oferta en energía. Impacto: es el vector más plausible para desanclar el breakeven_5y5y desde 2.34% y empujar el régimen de GOLDILOCKS hacia STAGFLATION. Justifica mantener GLD como cobertura y explica en parte por qué el oro no cede pese a un real yield de 2.35%.",
+    "[CNBC] 'SK Hynix shares surge over 12% in Seoul after announcing massive stock buyback' — Confirma que el ciclo de capex/memoria de IA sigue generando caja y retornos al accionista. Impacto: soporte para el complejo semiconductores y para QQQ, y consistente con un vix de 15.69 y un hy_spread de 2.73%. Es la pata micro que valida el risk-on del régimen.",
+    "[CNBC] 'Walmart will report second-quarter earnings before the bell — a read on the consumer and the K-shaped economy' — Catalizador del día para verificar si el empleo sólido (claims 206.000, unemployment 4.1%) se traduce en consumo real. Impacto: un guidance débil sería la primera grieta concreta en la tesis Goldilocks y afectaría directamente la señal LONG SPY desde 762.60.",
+    "[Bloomberg] 'Apple's Camera-Equipped AI AirPods Remain on Track for 2027 Despite Video Leak' — Impacto de segundo orden: mantiene intacto el pipeline de hardware de IA de consumo, marginalmente constructivo para el peso de megacaps en SPY/QQQ, sin efecto macro medible."
+  ],
+  "confianza_general": 68,
+  "metadata": {
+    "timestamp": "2026-08-21T10:58:24.408891",
+    "datos_usados": 23,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
