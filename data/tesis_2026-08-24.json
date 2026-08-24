@@ -1,0 +1,97 @@
+{
+  "fecha": "2026-08-24",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 72,
+    "razonamiento": "El cuadrante crecimiento-alto / inflación-contenida se sostiene con datos frescos: desempleo en 4.1% (unemployment, FRED:UNRATE, 54d) con Sahm Rule en -0.03 (sahm_rule) — es decir, cero señal de recesión, ya que el umbral de activación es +0.50. Jobless claims en 206.000 (jobless_claims) refuerzan un mercado laboral firme, aunque el dato tiene es_fresco=false (9 días) y por eso lo pondero menos. Del lado inflación, el breakeven 5y5y está en 2.34% (breakeven_5y5y, dato de 3 días) y el 10Y nominal 4.69% (yield_10y) contra TIPS 10Y 2.35% (tips_yield_10y) implica un breakeven de ~2.34%: expectativas perfectamente ancladas y consistentes entre sí. La liquidez es abundante: HY spread en 2.75% (hy_spread) es territorio de complacencia crediticia, y el VIX en 15.94 (vix, fresco hoy) confirma baja demanda de cobertura. La curva 10Y-3M está positiva en +0.98% (yield_curve, calculado, fresco hoy) — desinvertida y con pendiente positiva, lo que históricamente acompaña expansión tardía, no contracción. El matiz que me impide subir la confianza por encima de 72: el rendimiento real a 10 años de 2.35% (tips_yield_10y) es históricamente restrictivo, y GLD en 423.36 (gold) es incompatible con un Goldilocks 'limpio' — el oro no debería estar en esos niveles con reales al 2.35% salvo que haya una prima de riesgo fiscal/debasement que los breakevens no capturan. Además, michigan_inflation_exp en 4.6% (es_fresco=false, 84 días) contradice frontalmente el 2.34% de mercado; con ese dato rancio no puedo resolver la divergencia, así que la trato como riesgo latente y no como señal operativa."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Régimen Goldilocks con liquidez holgada: HY spread 2.75% (hy_spread) y VIX 15.94 (vix, fresco hoy) describen un entorno donde el crédito no está señalando estrés. Sahm Rule en -0.03 (sahm_rule) y desempleo 4.1% (unemployment) descartan deterioro cíclico inminente. SPY en 765.72 (spy, 3 días de antigüedad). El freno para no ir a 8-9 es el costo de capital: TIPS 10Y en 2.35% (tips_yield_10y) y 10Y de mercado en 4.738% (yield_10y_mkt) comprimen múltiplos, por lo que esto es un long de tendencia, no de expansión de valuación.",
+      "dato_clave": "hy_spread = 2.75%"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "No tengo precio de QQQ en el JSON, por lo que la señal se apoya en el régimen y no en niveles técnicos (limitación explícita). El mismo combo de VIX 15.94 (vix) y HY spread 2.75% (hy_spread) favorece beta alta, y el flujo de capex en IA sigue vivo según WSJ (Nvidia comprometiendo USD 6.000M en una alternativa estadounidense a la IA china). Contra: con reales al 2.35% (tips_yield_10y) la duración de equity es la parte más vulnerable del mercado ante cualquier repunte de yields. Convicción moderada por ausencia del dato de precio.",
+      "dato_clave": "vix = 15.94"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "TLT en 82.05 (tlt, 3 días). El caso bajista de duración: 10Y nominal 4.69% (yield_10y) / 4.738% de mercado (yield_10y_mkt), curva ya positiva en +0.98% (yield_curve) y sin señal recesiva (sahm_rule -0.03, unemployment 4.1%) que fuerce recortes agresivos. Con breakevens anclados en 2.34% (breakeven_5y5y), la presión al alza en yields vendría de term premium/oferta fiscal, no de inflación. Convicción sólo 5 porque el tramo 3M usado en la curva (yield_3m 3.71%) tiene es_fresco=false (5 días) y porque un real yield de 2.35% ya es restrictivo — buena parte del ajuste puede estar hecho.",
+      "dato_clave": "tips_yield_10y = 2.35%"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "GLD en 423.36 (gold) sosteniéndose pese a un rendimiento real de 2.35% (tips_yield_10y) que, en el modelo clásico, debería ser un viento de frente brutal. Esa divergencia es la señal: hay un bid estructural (bancos centrales / prima fiscal) que no se explica por reales ni por breakevens (2.34%, breakeven_5y5y). Además funciona como cobertura barata del riesgo de que michigan_inflation_exp en 4.6% (es_fresco=false, 84 días) sea el dato correcto y los breakevens estén subestimando la inflación. Horizonte trimestral porque es una tesis de flujo estructural, no táctica.",
+      "dato_clave": "gold = 423.36 con tips_yield_10y = 2.35%"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "DXY en 99.00 (dxy, fresco hoy) con EURUSD en 1.1669 (eurusd): el dólar está en zona media, sin tendencia clara. El diferencial de tasas sigue favoreciendo al USD (10Y 4.69%, yield_10y; real 2.35%, tips_yield_10y) y USDJPY en 159.22 (usdjpy) confirma que el carry sigue financiándose en yenes. Pero el complejo EM está firme — USDBRL 5.1372 (usdbrl), USDMXN 16.9454 (usdmxn), USDCNY 6.7221 (usdcny) — lo que es típico de apetito por riesgo y presiona al dólar a la baja. Señales cruzadas: neutral.",
+      "dato_clave": "dxy = 99.00"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 2,
+      "razonamiento": "Convicción insuficiente. No hay ningún dato de crudo, inventarios ni de energía en el JSON. Cualquier direccionalidad sería invención. Me abstengo.",
+      "dato_clave": "no disponible en el JSON"
+    }
+  ],
+  "tesis_principal": "El tablero de hoy describe un Goldilocks tardío y caro. Los cuatro pilares del régimen están alineados: crecimiento sin fisuras (unemployment 4.1%, sahm_rule -0.03, jobless_claims 206k aunque con es_fresco=false), inflación anclada en el mercado (breakeven_5y5y 2.34%, y el spread entre yield_10y 4.69% y tips_yield_10y 2.35% da exactamente el mismo 2.34%), liquidez abundante (hy_spread 2.75%, VIX 15.94) y una curva 10Y-3M ya normalizada en +0.98% (yield_curve) — la desinversión se completó sin recesión, que es el desenlace benigno del ciclo. En ese marco, la asignación por defecto es long riesgo: SPY en 765.72, beta alta vía QQQ, y crédito sin cobertura. Cero señales de riesgo y cero señales de inflación en el régimen precalculado es coherente con lo que veo en los datos.\n\nAhora la parte incómoda, que es donde está el alfa. Un rendimiento real a 10 años de 2.35% (tips_yield_10y) es de los niveles más restrictivos de las últimas dos décadas, y sin embargo el oro cotiza en 423.36 vía GLD (gold) y el HY spread está en 2.75% (hy_spread). Esas tres cosas juntas no son consistentes con el modelo de libro: o el crédito está mal valuado y no cobra prima por un costo de capital real del 2.35%, o el oro está descontando algo que ni los breakevens (2.34%) ni el VIX (15.94) reconocen — típicamente una prima de riesgo fiscal/soberana o una desconfianza en el ancla de política monetaria. La divergencia con michigan_inflation_exp en 4.6% apunta en la misma dirección, pero ese dato tiene 84 días de antigüedad y es_fresco=false, así que no puedo apoyarme en él. Mi lectura: el mercado está largo de complacencia, y la convexidad barata hoy está en oro y en no tener duración larga.\n\nEl eje de transmisión a vigilar es el yen. USDJPY en 159.22 (usdjpy y usdjpy_mkt, ambos frescos de hoy) significa que el carry trade global sigue plenamente financiado, y eso es lo que sostiene simultáneamente el VIX en 15.94, el HY en 2.75% y la fortaleza de EM (USDBRL 5.1372, USDMXN 16.9454, USDCNY 6.7221). El nivel de 160 es psicológicamente relevante por riesgo de intervención/ajuste de política japonesa; un desarme desordenado del carry es el mecanismo por el cual este Goldilocks se rompe en cuestión de días, no de meses — y la nota de Bloomberg sobre inversores minoristas coreanos persiguiendo cupones del 40% en productos estructurados tras un selloff histórico es exactamente el tipo de comportamiento de fin de ciclo que precede a esos episodios. Con DXY en 99.00 (dxy) y EURUSD en 1.1669 (eurusd), el dólar no está dando una señal direccional; el yen sí. Posicionamiento: long riesgo con tamaño moderado, long oro como cobertura de cola no correlacionada, short duración táctico, cero exposición a energía por falta de datos.",
+  "invalidadores": [
+    "USDJPY (159.22 hoy) rompiendo 162 o revirtiendo violentamente hacia 152: cualquiera de los dos extremos implica desarme del carry trade y contagia a SPY, QQQ y EM (USDBRL 5.1372, USDMXN 16.9454) simultáneamente. Es el invalidador de mayor probabilidad y menor aviso previo.",
+    "HY spread (2.75%) ampliando por encima de 3.50%: sería la señal de que el crédito empieza a cobrar el costo de un real yield del 2.35% (tips_yield_10y). Invalidaría los longs de SPY y QQQ antes de que la macro dura lo muestre.",
+    "Yield 10Y (4.69% FRED / 4.738% mercado) superando 5.00% con breakeven estable en ~2.34%: sería un shock de real yield / term premium puro. Mataría el long QQQ y probablemente también el long GLD en el corto plazo, aunque valida el short TLT.",
+    "Sahm Rule (-0.03) saltando por encima de +0.20 en la próxima publicación, o jobless claims (206k, dato rancio de 9 días) superando 260k: rompe el pilar de crecimiento y rota el régimen a DESACELERACIÓN, invirtiendo la señal de TLT de SHORT a LONG.",
+    "Breakeven 5y5y (2.34%) rompiendo por encima de 2.60%, convergiendo hacia el 4.6% de michigan_inflation_exp: reclasificaría el régimen a REFLACIÓN/STAGFLATION y haría insostenible el long de equities junto con el short de duración."
+  ],
+  "alertas": [
+    "ANOMALÍA CENTRAL: GLD en 423.36 (gold) coexistiendo con un rendimiento real a 10 años de 2.35% (tips_yield_10y). El modelo estándar dice que uno de los dos precios está mal. Interpreto que el oro descuenta una prima fiscal/soberana que ni el VIX (15.94) ni el HY spread (2.75%) reconocen.",
+    "DIVERGENCIA DE EXPECTATIVAS: michigan_inflation_exp en 4.6% versus breakeven_5y5y en 2.34%. Un gap de 226bp entre expectativas de consumidores y de mercado. Aviso: el dato de Michigan tiene 84 días y es_fresco=false, por lo que la divergencia puede estar resuelta y yo no lo sé. Es la mayor incógnita del análisis.",
+    "COMPLACENCIA: HY spread en 2.75% (hy_spread) y VIX en 15.94 (vix) al mismo tiempo. La asimetría de estar corto volatilidad o largo crédito basura acá es terrible. Cobertura barata, no venta de vol.",
+    "CARRY EN ZONA DE INTERVENCIÓN: USDJPY en 159.22 (usdjpy, fresco hoy) a menos de 1% del nivel de 160 que históricamente concentra riesgo de acción de política. Riesgo de gap overnight no cubrible.",
+    "COMPORTAMIENTO DE FIN DE CICLO: el reporte de Bloomberg sobre retail coreano persiguiendo cupones del 40% en estructurados post-selloff es un marcador conductual clásico de tolerancia al riesgo excesiva, consistente con el HY en 2.75% y el VIX en 15.94.",
+    "CALIDAD DE DATOS: 21 de 25 indicadores confiables. Cuatro series no disponibles, incluyendo cualquier dato de energía, lo que me obliga a declarar convicción insuficiente en USO."
+  ],
+  "datos_insuficientes": [
+    "michigan_inflation_exp (4.6%): es_fresco=false, 84 días de antigüedad. Impide validar o descartar la divergencia con breakeven_5y5y (2.34%), que es el riesgo latente más importante de la tesis.",
+    "jobless_claims (206.000): es_fresco=false, 9 días. Debilita la confirmación semanal del pilar de crecimiento; dependo de unemployment (54 días) y sahm_rule (54 días), ambos mensuales y rezagados.",
+    "yield_3m (3.71%): es_fresco=false, 5 días. Es un input directo del cálculo de yield_curve (+0.98%), por lo que la pendiente reportada puede estar levemente desactualizada. Reduce la convicción del short TLT.",
+    "pce_core (índice 130.266, publicación del 2026-06-01, 84 días): el deflactor preferido de la Fed llega con casi tres meses de retraso. Sin tasa interanual en el JSON, no puedo cuantificar la inflación subyacente actual y dependo enteramente de los breakevens de mercado.",
+    "Sin datos de crudo, energía ni commodities industriales: imposible evaluar USO y también imposible cruzar el impulso inflacionario por el lado de la oferta.",
+    "Sin precio de QQQ en el JSON: la señal LONG se basa sólo en régimen y liquidez, no en niveles.",
+    "Sin datos de flujos de la Fed (balance, reservas bancarias, RRP): el análisis de liquidez se apoya únicamente en proxies de precio (hy_spread 2.75%, vix 15.94)."
+  ],
+  "eventos_clave": [
+    "[Bloomberg] 'Korean Traders Chase 40% Coupons as Risk Appetite Survives Rout' — inversores minoristas coreanos rotan hacia productos estructurados complejos tras un selloff bursátil histórico. Impacto concreto: confirma que el apetito por riesgo global no se quebró, coherente con el VIX en 15.94 (vix) y el HY spread en 2.75% (hy_spread). Pero los autocallables con cupones del 40% son venta de volatilidad apalancada por parte de manos débiles: si el subyacente rompe barreras, los dealers deben cubrir vendiendo delta, amplificando caídas. Es combustible para un episodio de gap, y refuerza mi preferencia por cobertura vía GLD (423.36) antes que por reducir el long de SPY (765.72).",
+    "[The Wall Street Journal] 'Nvidia Is Spending $6 Billion to Build a Powerful U.S. Alternative to Chinese AI' — capex privado de gran escala en infraestructura de IA doméstica. Impacto concreto: sostiene el pilar de crecimiento del Goldilocks (consistente con unemployment 4.1%) y da soporte fundamental al LONG QQQ. Contrapartida macro: capex financiado en un entorno de real yield del 2.35% (tips_yield_10y) presiona la demanda de crédito y de fondos prestables, argumento estructural a favor del SHORT TLT (82.05).",
+    "[Gizmodo/CNBC] 'Anthropic Is Reportedly Being Upfront With Would-Be Investors About AI Backlash' — el prospecto de IPO dedicaría espacio significativo al riesgo regulatorio y de reputación de la IA. Impacto concreto: primera señal de que el sell-side empieza a precificar riesgo regulatorio en el complejo IA. Es un argumento para mantener la convicción del LONG QQQ en 6 y no en 8; una IPO mal recibida sería un catalizador de rotación fuera de tecnología con la valuación ya tensionada por reales al 2.35%.",
+    "[SFGate] 'Stone Brewing to lay off over 200 as it shuts down Calif. headquarters' — Sapporo USA cierra su sede de Escondido con más de 200 despidos. Impacto concreto: micro, no macro. 200 puestos son ruido frente a jobless_claims de 206.000 (dato con es_fresco=false), y no altera sahm_rule (-0.03). Lo registro como marcador a monitorear: si estos anuncios de consumo discrecional se acumulan, serían el canario del pilar de crecimiento antes de que aparezca en UNRATE (4.1%), que se publica con 54 días de rezago.",
+    "[Fortune] 'Trump's stock disclosure shows more than 1,000 trades in June' — operaciones por entre USD 78,1M y 263,1M según la Oficina de Ética Gubernamental. Impacto concreto: sin efecto direccional sobre precios, pero alimenta la prima de riesgo institucional/fiscal de EE.UU. Es una pieza más del rompecabezas que explica por qué GLD está en 423.36 (gold) pese a un rendimiento real del 2.35% (tips_yield_10y) — la anomalía central de hoy."
+  ],
+  "confianza_general": 70,
+  "metadata": {
+    "timestamp": "2026-08-24T11:04:41.199984",
+    "datos_usados": 21,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
