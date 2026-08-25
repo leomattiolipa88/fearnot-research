@@ -1,0 +1,97 @@
+{
+  "fecha": "2026-08-25",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 63,
+    "razonamiento": "Los indicadores de crecimiento y riesgo son inequívocamente benignos: unemployment en 4.1% (FRED:UNRATE, 55d), sahm_rule en -0.03 (FRED:SAHMREALTIME) es decir muy lejos del umbral de +0.50 de recesión, jobless_claims en 206.000 (FRED:ICSA, es_fresco=false, 10 días de antigüedad — señal degradada), hy_spread en 2.70% (FRED:BAMLH0A0HYM2) que es un nivel de compresión propio de ciclo expansivo, y vix en 15.85 (yfinance:^VIX, 0 días). La yield_curve está en +1.02% (calculado 10Y-3M: 4.74% vs 3.72%), positiva y empinada, sin señal de inversión. Del lado inflacionario, breakeven_5y5y en 2.32% (FRED:T5YIFR, 1 día) está anclado cerca del objetivo. Eso justifica el cuadrante Goldilocks. PERO reduzco la confianza por tres inconsistencias: (1) tips_yield_10y en 2.40% (FRED:DFII10) es un rendimiento real históricamente restrictivo, incompatible con un Goldilocks 'fácil'; (2) GLD en 426.69 (yfinance:GLD) convive con esos reales altos, lo que normalmente no ocurre y sugiere una prima fiscal/de debasement más que un régimen de crecimiento limpio; (3) michigan_inflation_exp en 4.6% (FRED:MICH) contradice el breakeven de 2.32%, aunque el dato tiene es_fresco=false con 85 días de antigüedad y por eso lo pondero bajo. No dispongo de series YoY: cpi (332.813) y pce_core (130.266) están como niveles de índice, no como tasas, por lo que no puedo afirmar la dirección de la inflación corriente."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "El combo hy_spread 2.70% + vix 15.85 + sahm_rule -0.03 + unemployment 4.1% describe un entorno de liquidez y crédito abierto, que históricamente sostiene beta. SPY cotiza en 763.47 (yfinance:SPY, 1 día). Recorto convicción de 8 a 6 por dos motivos: tips_yield_10y en 2.40% es un lastre de valuación real para múltiplos, y el flujo de noticias de hoy [CNBC] reporta futuros a la baja con tecnología débil y dos semanas consecutivas de retroceso en el Dow. Es una señal de régimen, no de momentum.",
+      "dato_clave": "hy_spread 2.70% (FRED:BAMLH0A0HYM2)"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "No tengo un precio de QQQ en el JSON, por lo que la señal se deriva del régimen y no del activo: yield_10y en 4.74% (FRED:DGS10) y tips_yield_10y 2.40% son el peor input posible para el segmento de mayor duración de equity. A eso se suma el titular tier-1 de [CNBC] sobre caída de tecnológicas al inicio de semana y el foco en 'AI trade' de [Investing.com]. Con el resto del cuadro macro benigno (vix 15.85), no hay caso para ir corto: neutral hasta que los reales cedan.",
+      "dato_clave": "tips_yield_10y 2.40% (FRED:DFII10)"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "GLD en 426.69 (yfinance:GLD, 1 día) manteniéndose con tips_yield_10y en 2.40% es la anomalía más informativa del tablero: el oro está ignorando el costo de oportunidad real, lo que apunta a demanda por prima fiscal/geopolítica más que por tasas. Eso se alinea con [Bloomberg] (hedge funds aumentando cortos en dólar antes del plan fiscal de Bessent frente a 'los mayores costos de financiamiento en años') y con [CBS News] (nuevas sanciones a Irán, 'la mayor ofensiva financiera'). DXY en 99.02 (yfinance:DX-Y.NYB) no está fuerte, lo que quita el principal obstáculo.",
+      "dato_clave": "GLD 426.69 vs tips_yield_10y 2.40%"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 82.56 (yfinance:TLT) con yield_10y 4.74% (FRED:DGS10, 4 días) y yield_10y_mkt 4.704% (yfinance:^TNX, 1 día) — el mercado spot está apenas por debajo del cierre FRED, sin señal de rally. La curva 10Y-3M en +1.02% se está empinando por el tramo largo, no por recortes del corto (yield_3m 3.72%), lo cual es el patrón clásico de expansión de prima de término. El catalizador es explícito: [Bloomberg] reporta que Bessent presentará un plan fiscal precisamente para atacar los mayores costos de endeudamiento en años — riesgo de más oferta de duración. Con sahm_rule -0.03 y unemployment 4.1% no hay bid de recesión que compense.",
+      "dato_clave": "yield_curve +1.02% con yield_10y 4.74%"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "DXY en 99.019 y eurusd en 1.1666 (ambos yfinance, 0 días) muestran un dólar sin fuerza pese a un diferencial de tasas favorable (yield_10y 4.74%, yield_3m 3.72%). [Bloomberg] confirma posicionamiento: hedge funds ramp up dollar shorts antes del plan de Bessent. Contrapeso importante que me impide subir la convicción: usdjpy en 159.281 (yfinance, 0 días) indica que el carry trade financiado en yen sigue plenamente vivo — el dólar está fuerte contra el yen aunque débil contra el euro, así que el short DXY es una expresión cruzada (EUR, oro) más que un short USD generalizado. Además el CAD se debilita por guerra comercial según [CNBC], lo que mecánicamente sostiene el índice.",
+      "dato_clave": "DXY 99.019 con usdjpy 159.281"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 3,
+      "razonamiento": "Convicción insuficiente: no hay ningún dato de crudo, energía ni commodities en el JSON. El único input es el flujo de noticias — [CBS News] y [Investing.com] anticipan nuevas sanciones del Tesoro a Irán con retórica de 'D-Day económico', lo que es un sesgo alcista de riesgo de oferta. Sin precio ni curva de futuros no emito dirección.",
+      "dato_clave": "sin dato disponible en el JSON"
+    }
+  ],
+  "tesis_principal": "El tablero describe un Goldilocks de superficie con una tensión fiscal debajo. Del lado real, no hay grieta: unemployment 4.1% (FRED:UNRATE), sahm_rule -0.03 (FRED:SAHMREALTIME) muy por debajo del umbral recesivo, jobless_claims 206.000 (FRED:ICSA, dato con 10 días y es_fresco=false), hy_spread 2.70% (FRED:BAMLH0A0HYM2) en zona de complacencia crediticia y vix 15.85 (yfinance:^VIX). La curva 10Y-3M está en +1.02% (4.74% menos 3.72%), positiva y empinada — el mercado no está descontando contracción. Del lado de precios, el breakeven_5y5y en 2.32% (FRED:T5YIFR, 1 día) está anclado. Con cero señales de riesgo y cero señales inflacionarias, el clasificador de régimen entrega GOLDILOCKS y no tengo evidencia dura para rechazarlo.\n\nLa incomodidad está en el precio del dinero a largo plazo. tips_yield_10y en 2.40% (FRED:DFII10) es un rendimiento real restrictivo, y sin embargo GLD cotiza en 426.69 (yfinance:GLD) y TLT está deprimido en 82.56. Cuando el oro sube con reales altos y la curva se empina desde el tramo largo, la lectura correcta no es 'crecimiento nominal fuerte' sino 'prima de término y prima fiscal en expansión'. El contexto de noticias lo valida: [Bloomberg] reporta que los hedge funds están ampliando cortos en dólar a la espera del plan fiscal de Scott Bessent para lidiar con los mayores costos de endeudamiento en años, y DXY en 99.019 con eurusd en 1.1666 confirma que el dólar no logra capitalizar un diferencial de tasas que en teoría le es favorable. Esa combinación — deuda cara, dólar sin bid, oro en máximos — es la firma de un régimen donde el activo libre de riesgo está bajo escrutinio.\n\nEn FX, la señal más limpia es usdjpy en 159.281 (yfinance, 0 días): el carry trade financiado en yen sigue intacto y es el principal proveedor de liquidez marginal para activos de riesgo. Mientras ese par no rompa a la baja de forma violenta, el hy_spread de 2.70% y el vix de 15.85 tienen soporte estructural. Los EM se ven ordenados y consistentes con esa liquidez: usdbrl 5.154, usdmxn 16.9435, usdcny 6.7078 (todos yfinance, 0 días), sin stress de moneda emergente. La conclusión operativa: mantener beta larga pero pagar por la cobertura correcta — largo oro y corto duración larga son la misma operación expresada dos veces (la operación 'fiscal'), mientras que el largo SPY es la operación 'ciclo'. El riesgo que no aparece en ningún número del JSON es la geopolítica: [CBS News] anticipa sanciones a Irán descritas por el propio Bessent como 'la mayor ofensiva financiera', y [CNBC] describe una guerra comercial abierta entre Ottawa y Washington con el dólar canadiense cayendo. Ninguno de esos dos vectores está reflejado todavía en un VIX de 15.85.",
+  "invalidadores": [
+    "hy_spread rompiendo por encima de ~3.50-4.00% desde 2.70%: sería la señal de que el crédito deja de convalidar el Goldilocks e invalida de inmediato el largo SPY y el corto TLT (el bid de refugio volvería a la duración).",
+    "usdjpy quebrando fuerte a la baja desde 159.281 (apreciación abrupta del yen): implicaría unwind del carry trade, que es el escenario que rompe simultáneamente vix 15.85 y hy_spread 2.70%. Es el riesgo de cola número uno de esta tesis.",
+    "sahm_rule girando desde -0.03 hacia +0.30/+0.50 o jobless_claims escalando materialmente por encima de 206.000 en las próximas publicaciones: invalidaría el cuadrante de crecimiento y daría vuelta la señal de TLT de SHORT a LONG.",
+    "El plan fiscal de Bessent ([Bloomberg]) siendo recibido como creíblemente consolidador en lugar de expansivo: comprimiría la prima de término, haría rallear TLT desde 82.56 y quitaría el sustento al largo GLD y al short DXY simultáneamente. Es el invalidador cruzado de tres de mis cinco señales.",
+    "breakeven_5y5y saliendo de 2.32% hacia 2.60%+ junto con una revalidación del michigan_inflation_exp de 4.6%: movería el régimen de GOLDILOCKS hacia REFLACIÓN o STAGFLATION y obligaría a rotar de SPY hacia commodities/oro puro.",
+    "Escalada de las sanciones a Irán ([CBS News]) con shock de crudo: importaría inflación de oferta sobre un VIX de 15.85 que no la tiene descontada, y golpearía la tesis de equity larga."
+  ],
+  "alertas": [
+    "ANOMALÍA CENTRAL: GLD en 426.69 con tips_yield_10y en 2.40%. El oro no debería estar en estos niveles con reales tan altos; la divergencia sugiere prima de debasement/fiscal o compra oficial, no un trade de tasas. Es la señal más importante del día y la razón por la que no clasifico este régimen como Goldilocks 'puro'.",
+    "COMPLACENCIA: vix 15.85 y hy_spread 2.70% conviven con dos titulares tier-1 de riesgo binario — guerra comercial EEUU-Canadá ([CNBC]) y sanciones a Irán descritas como la 'mayor ofensiva financiera' ([CBS News]). El mercado no está cobrando prima por ninguno de los dos.",
+    "DIVERGENCIA DE EXPECTATIVAS DE INFLACIÓN: michigan_inflation_exp 4.6% vs breakeven_5y5y 2.32%. Son 228 puntos básicos de diferencia entre la encuesta al consumidor y el mercado. El dato de Michigan tiene 85 días y es_fresco=false, por lo que lo trato como ruido, pero si se confirma en la próxima lectura es un problema para el largo SPY.",
+    "DESACOPLE DEL DÓLAR: DXY 99.019 débil contra euro (eurusd 1.1666) pero fuerte contra yen (usdjpy 159.281). Un dólar que no se aprecia con yield_10y en 4.74% es una señal de que el capital extranjero está exigiendo compensación adicional por riesgo fiscal estadounidense.",
+    "yield_10y de FRED (4.74%, 4 días) vs yield_10y_mkt de mercado (4.704%, 1 día): discrepancia de 3.6pb entre fuentes por desfase de fecha. Menor, pero cualquier conclusión de nivel exacto en la curva debe tomarse con ese margen.",
+    "Tecnología en retroceso ([CNBC]: dos semanas consecutivas de caída en el Dow, futuros a la baja hoy) mientras el régimen macro sigue verde. Vigilar si es rotación interna o el inicio de una desconexión entre el índice y los fundamentos macro."
+  ],
+  "datos_insuficientes": [
+    "michigan_inflation_exp: 4.6% con 85 días de antigüedad y es_fresco=false. No puedo usarlo para afirmar el estado actual de las expectativas de inflación del consumidor; degradé su peso en la clasificación de régimen.",
+    "jobless_claims: 206.000 con 10 días y es_fresco=false. Es mi indicador de mayor frecuencia sobre el mercado laboral y está rancio, lo que reduce mi capacidad de detectar un giro cíclico temprano.",
+    "cpi (332.813, 55 días) y pce_core (130.266, 85 días) están expresados como niveles de índice, no como variaciones interanuales. No puedo afirmar si la inflación está acelerando o desacelerando; toda mi lectura inflacionaria descansa en breakeven_5y5y (2.32%) y tips_yield_10y (2.40%).",
+    "No hay datos de crudo, commodities ni energía en el JSON, pese a que las sanciones a Irán son un evento de alto impacto hoy. La señal USO queda sin fundamento cuantitativo.",
+    "No hay precio de QQQ ni ningún indicador de amplitud/concentración de mercado, lo que limita el análisis del riesgo tech mencionado por [CNBC].",
+    "No hay datos de PMI, ISM ni ventas minoristas: la evaluación de crecimiento descansa exclusivamente en el mercado laboral (unemployment, sahm_rule) y en el crédito (hy_spread)."
+  ],
+  "eventos_clave": [
+    "[Bloomberg] 'Hedge Funds Ramp Up Dollar Shorts Ahead of Bessent's Fiscal Plan' — Es el evento estructural del día. Explica por qué DXY está en 99.019 y eurusd en 1.1666 pese a un yield_10y de 4.74%, por qué TLT está deprimido en 82.56 con la curva empinada en +1.02%, y por qué GLD sostiene 426.69 con reales de 2.40%. Los tres precios cuentan la misma historia: prima de riesgo fiscal estadounidense. Refuerza SHORT TLT, SHORT DXY y LONG GLD.",
+    "[CNBC] 'Stock futures slip as tech shares fall to start the week' — Segunda semana consecutiva de retroceso en el Dow (-0.8%). Contradice parcialmente el hy_spread de 2.70% y el vix de 15.85: el crédito no ve problema pero el equity de duración larga sí lo ve, consistente con tips_yield_10y en 2.40%. Es la razón por la que mantengo QQQ en NEUTRAL y SPY en convicción 6 y no 8.",
+    "[CBS News] 'U.S. Treasury to unveil new Iran sanctions after Trump warned of economic D-Day for Tehran' — Bessent la describe como la 'mayor ofensiva financiera' de la historia. Riesgo de oferta energética no descontado en un VIX de 15.85. Vector alcista para GLD (ya en 426.69) y riesgo latente de inflación importada que golpearía el breakeven_5y5y de 2.32% y, por transitividad, el largo SPY.",
+    "[CNBC] 'Canadian dollar slides as Ottawa and Washington head for all-out trade war' — Guerra comercial abierta con el principal socio comercial. Mecánicamente sostiene DXY en 99.019 (contrapeso a mi short) y es un shock de oferta negativo para el crecimiento norteamericano que todavía no aparece ni en unemployment 4.1% ni en el sahm_rule de -0.03. Aumenta el riesgo de que el próximo dato laboral sorprenda hacia abajo.",
+    "[Investing.com] 'AI trade in focus, Iran sanctions loom' — Confirma que el mercado está operando dos temas simultáneos: concentración en AI y geopolítica energética. Ninguno de los dos es capturable con los indicadores del JSON, lo que justifica bajar mi confianza general por debajo de 70 pese a tener 22/25 datos válidos y frescos."
+  ],
+  "confianza_general": 64,
+  "metadata": {
+    "timestamp": "2026-08-25T11:00:16.473476",
+    "datos_usados": 22,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
