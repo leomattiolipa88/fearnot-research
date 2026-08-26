@@ -1,0 +1,98 @@
+{
+  "fecha": "2026-08-26",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 66,
+    "razonamiento": "Los datos de crecimiento no muestran estrés: desempleo en 4.1% (unemployment, FRED:UNRATE, 56 días), Sahm Rule en -0.03 (sahm_rule) — muy lejos del umbral de 0.50 de recesión — y jobless claims en 206k (jobless_claims), aunque este último es_fresco=false (11 días), por lo que le doy peso reducido. La liquidez es abundante y el crédito no muestra fisuras: HY spread en 2.69% (hy_spread) es un nivel de ciclo tardío benigno, y el VIX en 15.69 (vix) confirma complacencia/calma. Las expectativas de inflación de mercado están ancladas: breakeven 5y5y en 2.33% (breakeven_5y5y) y el breakeven 10y implícito de yield_10y 4.70% menos tips_yield_10y 2.38% da ~2.32%. La curva 10Y-3M está positiva y empinada en +0.98% (yield_curve), señal de que el ciclo de inversión quedó atrás. PERO hay dos matices que me impiden dar confianza >70: (1) el real yield 10Y en 2.38% (tips_yield_10y) es históricamente restrictivo y convive con GLD en 428.07 (gold), una combinación anómala que sugiere prima de riesgo fiscal/debasement más que Goldilocks puro; (2) michigan_inflation_exp en 4.6% (es_fresco=false, 86 días) contradice fuertemente el breakeven de mercado. El empinamiento con 3M en 3.72% (yield_3m) y 10Y en 4.70% parece bear steepening por term premium, no bull steepening por recorte de crecimiento — eso es reflación incipiente dentro de un envoltorio Goldilocks."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Régimen de crecimiento sin estrés crediticio: hy_spread 2.69% y vix 15.69 son condiciones de risk-on; sahm_rule -0.03 y unemployment 4.1% descartan recesión inminente. SPY en 765.91 (spy, 1 día). El freno es la tasa: yield_10y 4.70% y real yield 2.38% (tips_yield_10y) comprimen múltiplos, y esta semana hay doble evento binario (earnings de Nvidia + reporte de inflación, per CNBC). Long táctico pero con tamaño reducido por event risk; no subo la convicción por encima de 6 con VIX tan bajo (poca prima de protección descontada).",
+      "dato_clave": "hy_spread 2.69%"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 4,
+      "razonamiento": "No tengo dato de QQQ en el JSON — solo spy 765.91 (spy) como proxy de beta. El evento dominante de la semana es idiosincrático (earnings de Nvidia, CNBC/Yahoo Finance), no macro, y con real yield en 2.38% (tips_yield_10y) la duration de equity está expuesta. Convicción insuficiente para direccionalidad semanal: neutral hasta que pase el evento.",
+      "dato_clave": "tips_yield_10y 2.38%"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 83.47 (tlt) refleja un 10Y en 4.70% (yield_10y, FRED, 2 días) — nota que yield_10y_mkt marca 4.639% (1 día), es decir un rally de ~6bp más reciente, divergencia menor pero la señalo. La curva se empina vía tramo largo (+0.98%, yield_curve) con 3M en 3.72% (yield_3m): eso es term premium, no expectativa de recortes. Con crecimiento intacto (sahm_rule -0.03) y crédito apretado (hy_spread 2.69%), no hay bid de flight-to-quality para el largo plazo. Riesgo de la señal: un PCE frío esta semana rallea bonos; por eso 6 y no 8.",
+      "dato_clave": "yield_curve +0.98%"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "GLD en 428.07 (gold) es el dato más informativo del tablero: el oro sostiene niveles extremos DESPITE un real yield 10Y de 2.38% (tips_yield_10y), lo que rompe la relación histórica inversa. Eso implica demanda no sensible a tasa (bancos centrales, hedge de debasement/fiscal) y prima geopolítica activa — EE.UU. escalando presión sobre Irán con amenaza de sanciones secundarias a compradores de crudo (AP, CNN). Con DXY en 99.02 (dxy) por debajo de 100 y EURUSD en 1.1666 (eurusd), el dólar no ofrece contraviento. Es la mejor cobertura contra el escenario en que el michigan_inflation_exp 4.6% (rancio) tenga razón sobre el breakeven_5y5y 2.33%.",
+      "dato_clave": "gold 428.07 con tips_yield_10y 2.38%"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "Señales contradictorias. A favor del dólar: yield_10y 4.70% y curva empinada dan carry nominal alto, y USDJPY en 159.09 (usdjpy/usdjpy_mkt) muestra que el carry trade financiado en yenes sigue plenamente vivo. En contra: DXY en 99.02 (dxy) es un nivel débil en términos históricos, EURUSD 1.1666 (eurusd) firme, USDCNY 6.7086 (usdcny) con yuan fuerte, USDMXN 16.927 (usdmxn) y USDBRL 5.148 (usdbrl) mostrando EM/carry FX sólidos. El dólar pierde contra todo menos el yen: eso es apetito de riesgo global, no fortaleza USD. Neutral con sesgo bajista leve.",
+      "dato_clave": "dxy 99.02 vs usdjpy 159.09"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 3,
+      "razonamiento": "No hay precio de crudo en el JSON — convicción insuficiente para una señal direccional basada en datos. El único input es noticioso: AP reporta que el petróleo CAYÓ pese al endurecimiento de EE.UU. sobre Irán, y CNN detalla la amenaza de Bessent de 'D-Day económico' a compradores de crudo iraní (principalmente China). Esa divergencia precio/noticia sugiere mercado bien abastecido, pero la distribución es asimétrica al alza si hay escalada. Sin dato duro, me abstengo.",
+      "dato_clave": "sin dato de crudo en el JSON"
+    }
+  ],
+  "tesis_principal": "El tablero describe un régimen Goldilocks tardío pero con una grieta de term premium debajo. Del lado del crecimiento, no hay nada roto: unemployment 4.1% (unemployment), sahm_rule en -0.03 (sahm_rule) —lectura que descarta recesión en curso— y jobless_claims 206k (jobless_claims, es_fresco=false, 11 días, por lo que reduzco su peso). Del lado de la liquidez, el mercado está en modo abundancia: hy_spread en 2.69% (hy_spread) es de los niveles más apretados del ciclo y vix en 15.69 (vix) confirma que nadie está pagando por protección. Esa combinación —crédito barato, volatilidad baja, empleo estable— es el sustrato clásico de un rally de risk assets, y es coherente con SPY en 765.91 (spy) y con las bolsas europeas y asiáticas al alza (AP).\n\nLa grieta está en la estructura de tasas y en el oro. La curva 10Y-3M está en +0.98% (yield_curve) con 3M en 3.72% (yield_3m) y 10Y en 4.70% (yield_10y; yield_10y_mkt algo menor, 4.639%). Ese empinamiento no viene de un tramo corto colapsando por expectativas de recorte agresivo, sino de un tramo largo caro en términos de prima: el real yield 10Y está en 2.38% (tips_yield_10y), un nivel genuinamente restrictivo, y TLT en 83.47 (tlt) refleja el castigo acumulado a la duration. Lo anómalo es que con real yields en 2.38% el oro debería estar bajo presión, y sin embargo GLD cotiza en 428.07 (gold). Cuando el oro ignora el costo de oportunidad real, típicamente está descontando riesgo fiscal, debasement o geopolítica —y hoy tenemos las tres: escalada de EE.UU. sobre Irán con amenaza de sanciones secundarias (AP, CNN). Leo el oro como el activo que está diciendo la verdad incómoda que ni el VIX ni los spreads quieren decir.\n\nEn monedas, la señal más importante es USDJPY en 159.09 (usdjpy y usdjpy_mkt coinciden, ambos frescos): el carry trade financiado en yenes está plenamente operativo, y eso es a la vez el combustible del risk-on global y su principal punto de fragilidad —cualquier unwind desordenado transmite estrés a equities y EM en 48 horas. El resto del complejo FX confirma apetito de riesgo, no fortaleza del dólar: DXY 99.02 (dxy), EURUSD 1.1666 (eurusd), USDCNY 6.7086 (usdcny), USDMXN 16.927 (usdmxn), USDBRL 5.148 (usdbrl). Sobre inflación, los mercados están anclados —breakeven_5y5y 2.33% (breakeven_5y5y), breakeven 10Y implícito ~2.32%— pero michigan_inflation_exp marca 4.6% (es_fresco=false, 86 días de antigüedad): esa brecha de más de 200bp entre expectativa de consumidor y de mercado es el riesgo no descontado. El posicionamiento resultante: long risk con tamaño moderado (SPY), short duration (TLT), y long oro como cobertura del escenario donde el ancla de expectativas se suelta. El reporte de inflación de esta semana (CNBC) es el árbitro.",
+  "invalidadores": [
+    "Reporte de inflación de esta semana (CNBC) sorprende al alza y el breakeven_5y5y rompe por encima de 2.60% desde 2.33%: eso valida el michigan_inflation_exp de 4.6% y mueve el régimen de GOLDILOCKS a REFLACION/STAGFLATION — invalida el long SPY, refuerza el short TLT y el long GLD.",
+    "HY spread se amplía por encima de 3.50% desde 2.69% (hy_spread) y/o VIX supera 22 desde 15.69 (vix): sería la señal de que la liquidez se está cerrando y toda la tesis de risk-on cae. Es mi invalidador más limpio y observable a diario.",
+    "USDJPY rompe 162-165 desde 159.09 (usdjpy) provocando intervención del MoF/BoJ, o se aprecia violentamente bajo 152: cualquiera de los dos extremos implica unwind del carry trade y contagio a equities y EM (USDMXN 16.927, USDBRL 5.148 se moverían primero).",
+    "Escalada real con Irán tras la amenaza de 'D-Day económico' de Bessent a los compradores de crudo (CNN/AP): un shock de oferta de petróleo invalida el Goldilocks por el canal de inflación de commodities y de destrucción de demanda simultáneamente. Hoy el crudo BAJA pese a la noticia, lo cual es la evidencia contraria — si eso se revierte, cambio el régimen.",
+    "El 10Y supera 5.00% desde 4.70% (yield_10y) con real yield sobre 2.70% (tips_yield_10y): a ese nivel la restricción monetaria muerde el múltiplo de equity y el short TLT deja de ser un trade de carry para volverse un trade de crisis — cerraría el long SPY antes que el short TLT.",
+    "Nvidia decepciona en earnings (CNBC/Yahoo Finance): riesgo idiosincrático pero con beta sistémica dada la concentración del índice; no invalida el régimen macro pero sí el timing del long SPY."
+  ],
+  "alertas": [
+    "ANOMALÍA CENTRAL: GLD en 428.07 (gold) coexistiendo con un real yield 10Y de 2.38% (tips_yield_10y). Históricamente incompatible. O el oro está descontando algo que el mercado de bonos aún no (riesgo fiscal/inflación/geopolítica), o hay una compresión de prima pendiente en el oro. Lo trato como señal de riesgo de cola, no como ruido.",
+    "DIVERGENCIA DE EXPECTATIVAS DE INFLACIÓN: michigan_inflation_exp 4.6% vs breakeven_5y5y 2.33%. Brecha de +227bp. El dato de Michigan tiene es_fresco=false (86 días), así que su valor informativo está degradado, pero si el reporte de inflación de esta semana confirma la lectura del consumidor, el reprecio en la curva sería violento.",
+    "COMPLACENCIA: la combinación vix 15.69 + hy_spread 2.69% deja cero colchón de valuación de riesgo. La protección está barata; es un buen momento para comprar convexidad, no para vender volatilidad.",
+    "CARRY TRADE: usdjpy 159.09 es un nivel donde históricamente aparece riesgo de intervención verbal o efectiva. Es el canal de transmisión más rápido de un shock global hacia SPY y EM FX.",
+    "DIVERGENCIA PRECIO/NOTICIA EN CRUDO: EE.UU. endurece la presión sobre Irán (AP, CNN) y el petróleo cae. Eso sugiere mercado sobreabastecido o escepticismo sobre el enforcement de las sanciones secundarias a China. Riesgo asimétrico al alza no descontado.",
+    "SEÑAL DE MANÍA MARGINAL: Bitcoin en máximo de tres meses en $80,000 (Bloomberg) con liquidación de miles de millones en shorts apalancados, y Unitree cayendo ~45% post-IPO alimentando temores de burbuja en China (Yahoo Finance). No están en mi JSON de indicadores, pero describen un mercado de apetito por riesgo especulativo bifurcado — coherente con hy_spread 2.69% y vix 15.69.",
+    "DISCREPANCIA MENOR DE DATOS: yield_10y (FRED) 4.70% vs yield_10y_mkt (yfinance) 4.639% — 6bp de diferencia explicable por 1 día de desfase de publicación. No cambia la tesis pero lo dejo asentado."
+  ],
+  "datos_insuficientes": [
+    "jobless_claims: 206,000 con es_fresco=false (11 días de antigüedad). Es mi indicador de crecimiento de mayor frecuencia y está rancio; reduce mi capacidad de detectar deterioro laboral en tiempo real y baja la confianza en la pata 'growth' del régimen.",
+    "michigan_inflation_exp: 4.6% con es_fresco=false (86 días de antigüedad). Contradice al breakeven_5y5y (2.33%) pero no puedo darle peso completo por su antigüedad. Es la mayor fuente de incertidumbre del análisis.",
+    "pce_core: marcado es_valido/es_fresco=true pero con fecha_publicacion 2026-06-01 y 86 días de antigüedad — es un dato de junio. Para el métrica que la Fed mira, estoy operando con información de hace casi tres meses; por eso el reporte de inflación de esta semana es el evento dominante.",
+    "cpi: 332.813 con 56 días de antigüedad (julio). Sin la serie histórica en el JSON no puedo calcular la variación interanual, así que no hago ninguna afirmación sobre la tasa de inflación actual.",
+    "3 de 25 indicadores no llegaron al set confiable (22/25 disponibles). No sé cuáles son, lo cual introduce un sesgo desconocido — descuento ~5 puntos de confianza general por esto.",
+    "Sin precio de crudo (USO/WTI/Brent) ni de QQQ en el JSON: dos de las señales solicitadas quedan con convicción baja por falta de dato duro, no por análisis."
+  ],
+  "eventos_clave": [
+    "[Associated Press] 'World shares mostly gain and oil prices slip as the US raises pressure on Iran' — Confirma el risk-on global que leo en vix 15.69 y hy_spread 2.69%. Lo relevante es la divergencia: el crudo CAE pese a la escalada geopolítica, lo que sugiere mercado bien abastecido y quita presión inflacionaria de corto plazo por el canal de energía. Favorable al escenario Goldilocks y al long SPY.",
+    "[CNN] 'The US says it'll crack down on countries doing business with Iran' — Bessent promete un 'D-Day económico' a los compradores de crudo iraní, apuntando principalmente a China. Riesgo de cola de dos vías: shock de oferta de petróleo (inflacionario, invalida Goldilocks) y fricción comercial EE.UU.-China. Vigilar USDCNY, hoy en 6.7086 (usdcny) — un yuan que se debilite bruscamente desde acá sería la señal de que Beijing responde. Es el principal soporte fundamental de mi long GLD en 428.07 (gold).",
+    "[CNBC] 'Stock futures are flat as investors await Nvidia earnings, inflation report due later this week' — Doble evento binario. El reporte de inflación es el árbitro directo del conflicto entre breakeven_5y5y 2.33% y michigan_inflation_exp 4.6%. Justifica que mantenga el long SPY en convicción 6 y no más alto, y que ponga QQQ en NEUTRAL para el horizonte semanal.",
+    "[Bloomberg] 'Bitcoin Reaches Three-Month High of $80,000 as Momentum Returns' — Liquidación forzada de miles de millones en posiciones apalancadas cortas. Confirma que la liquidez global está en modo expansivo y valida la lectura de hy_spread 2.69% y vix 15.69. Es un termómetro de apetito especulativo: si BTC se da vuelta violentamente, suele anticipar deterioro en el crédito de alto beta.",
+    "[Yahoo Finance] 'China robot maker Unitree's post-listing slump sparks bubble fears' — Caída de ~45% desde el debut tras quintuplicarse. Señal de que hay bolsones de excesos ya corrigiendo en el complejo tecnológico asiático. No cambia el régimen, pero es evidencia de que el risk-on no es homogéneo y de que hay riesgo de rotación brusca dentro de tech antes de los earnings de Nvidia."
+  ],
+  "confianza_general": 64,
+  "metadata": {
+    "timestamp": "2026-08-26T11:01:45.722387",
+    "datos_usados": 22,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
