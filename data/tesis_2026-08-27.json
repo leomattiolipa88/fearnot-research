@@ -1,0 +1,96 @@
+{
+  "fecha": "2026-08-27",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 68,
+    "razonamiento": "El bloque de crecimiento/riesgo es inequívocamente sano: jobless_claims en 203.000 (FRED:ICSA, 5 días), unemployment en 4,1% (FRED:UNRATE), sahm_rule en -0,03 (FRED:SAHMREALTIME) — es decir, cero señal de recesión —, hy_spread en 2,67% (FRED:BAMLH0A0HYM2), un nivel de compresión extrema que indica cero estrés crediticio, y vix en 14,51 (yfinance:^VIX). La curva 10Y-3M está positiva en +0,96% (calculado: yield_10y 4,66 vs yield_3m 3,70), consistente con un ciclo de expansión con Fed que ya recortó en la parte corta. Las expectativas de inflación de largo plazo están ancladas: breakeven_5y5y en 2,33% (FRED:T5YIFR). Eso valida el régimen GOLDILOCKS pre-calculado (0 señales de riesgo, 0 de inflación). El descuento de confianza (68 y no 85) viene de tres tensiones: (1) tips_yield_10y en 2,34% es un rendimiento real históricamente restrictivo que no encaja con una expansión relajada; (2) el titular de CNBC sobre el PCE de julio mostrando 'sticky inflation' con yields subiendo sugiere un sesgo reflacionario/stagflacionario en el margen que los indicadores mensuales del JSON (pce_core 130,658 y cpi 332,813, ambos con 57 días de antigüedad, publicados 2026-07-01) no capturan todavía; (3) esos índices son NIVELES, no tasas interanuales, por lo que NO puedo calcular la inflación efectiva desde este JSON — convicción insuficiente para afirmar la dirección exacta del componente inflación. Conclusión: GOLDILOCKS con tilt reflacionario en el borde derecho del cuadrante."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "La liquidez es el argumento dominante: hy_spread en 2,67% (FRED:BAMLH0A0HYM2, 1 día) y vix en 14,51 (yfinance:^VIX, 0 días) describen un mercado sin estrés de financiamiento, y el crédito high yield suele liderar al equity en los quiebres — hoy no muestra ninguno. El fondo macro lo respalda: jobless_claims 203k, sahm_rule -0,03, curva positiva en +0,96%. SPY en 771,10 (yfinance:SPY). Recorto de 8 a 6 por dos razones concretas: yield_10y_mkt en 4,672% (yfinance:^TNX) subiendo contra tips_yield_10y en 2,34% comprime múltiplos, y el titular de MarketWatch de hoy ('Dow off 140 points... as bond yields rise; PCE inflation data ticks higher') confirma que el mercado ya está pagando ese costo. Long con tamaño reducido, no agresivo.",
+      "dato_clave": "hy_spread = 2,67% (FRED:BAMLH0A0HYM2)"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "El macro apoyaría un long (vix 14,51, hy_spread 2,67%), pero esta noche hay un evento binario que domina cualquier señal macro semanal: los resultados de Nvidia post-cierre ([WSJ] 'Nvidia Earnings Live: Investors Brace for AI Chip Giant's Q2 Results'). Con la concentración actual del índice, el resultado de una sola compañía determina el retorno semanal del QQQ más que la curva o el crédito. No es prudente tomar dirección en el horizonte semanal antes del print — convicción insuficiente para direccionalidad táctica. En horizonte mensual el sesgo subyacente sigue siendo alcista y la señal de Salesforce (+14% por crecimiento AI y la participación en Anthropic, CNBC) muestra que la monetización de AI se está filtrando a earnings reales fuera de los semis.",
+      "dato_clave": "vix = 14,51 (yfinance:^VIX) — bajo, no descuenta el riesgo de evento de esta noche"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Es la señal más limpia del día. TLT en 83,13 (yfinance:TLT) con yield_10y en 4,66% (FRED:DGS10) y yield_10y_mkt en 4,672% (yfinance:^TNX) — el mercado cotiza por encima del cierre oficial de ayer, o sea presión vendedora hoy. La curva se está empinando por bear-steepening: 10Y 4,66% vs 3M 3,70% da +0,96%, y el impulso viene del extremo largo. Sin recesión a la vista (sahm_rule -0,03, jobless_claims 203k, unemployment 4,1%) no hay bid de flight-to-quality, y el flujo de noticias confirma el catalizador: el PCE de julio 'ticks higher' (MarketWatch) y 'sticky inflation' (CNBC), lo que reduce la probabilidad de recortes agresivos que son lo único que rescataría al extremo largo. El único contraargumento es que tips_yield_10y en 2,34% ya es un real yield alto y eventualmente atrae compradores de valor.",
+      "dato_clave": "yield_10y_mkt = 4,672% vs yield_10y (FRED) 4,66% — presión al alza intradía"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "GLD en 422,60 (yfinance:GLD) sostenido a pesar de un tips_yield_10y de 2,34% (FRED:DFII10) y un dxy de 99,15 (yfinance:DX-Y.NYB) — dos vientos en contra clásicos que el oro está ignorando. Esa divergencia es la información: cuando el oro sube con reales altos, el driver no es la tasa sino demanda estructural (bancos centrales / prima fiscal / debasement). Se refuerza con usdjpy en 159,38 (yfinance:USDJPY=X), que indica carry trade yen activo y liquidez global amplia. Horizonte trimestral, no semanal: si el mercado revalúa al alza la trayectoria de la Fed tras el PCE pegajoso, el oro puede corregir primero antes de retomar. Convicción moderada por el conflicto directo con el real yield.",
+      "dato_clave": "gold = 422,60 sosteniéndose con tips_yield_10y = 2,34%"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "dxy en 99,15 (yfinance:DX-Y.NYB) con eurusd en 1,1656 (yfinance:EURUSD=X): dólar en zona media sin tendencia definida. Hay señales cruzadas: el diferencial de tasas favorece al USD (yield_10y 4,66% subiendo, PCE pegajoso reduce recortes), pero el apetito de riesgo global (hy_spread 2,67%, vix 14,51) y las divisas EM firmes — usdbrl 5,1616, usdmxn 16,9705, usdcny 6,7193 (todas yfinance, 0 días) — apuntan a un dólar contenido. usdjpy en 159,38 es la excepción: yen débil aislado, no fortaleza generalizada del dólar. Señales contradictorias ⇒ neutral con convicción baja.",
+      "dato_clave": "dxy = 99,146 con usdmxn 16,97 y usdbrl 5,16 (EM firmes)"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 2,
+      "razonamiento": "Convicción insuficiente. El JSON no contiene ningún dato de crudo, ni WTI, ni Brent, ni inventarios, ni ningún proxy de energía. Cualquier dirección que emitiera sobre USO sería inventada. Se puede inferir indirectamente un contexto de demanda sana (jobless_claims 203k, sahm_rule -0,03) y un dólar neutro (dxy 99,15), pero eso no es base para una posición direccional en commodities.",
+      "dato_clave": "ausencia de datos de crudo en el JSON"
+    }
+  ],
+  "tesis_principal": "El régimen es GOLDILOCKS pero en su versión tardía y frágil, no en la versión cómoda. Los cuatro pilares de crecimiento están intactos y son verificables: jobless_claims en 203.000 (FRED:ICSA, publicado 2026-08-22), unemployment en 4,1% (FRED:UNRATE), sahm_rule en -0,03 (FRED:SAHMREALTIME) — el indicador de recesión en tiempo real está literalmente en territorio negativo — y una curva 10Y-3M positiva en +0,96% (yield_10y 4,66% menos yield_3m 3,70%). El bloque de liquidez es todavía más contundente: hy_spread en 2,67% (FRED:BAMLH0A0HYM2) es un nivel de complacencia crediticia, y vix en 14,51 (yfinance:^VIX) confirma que nadie está pagando por protección. En este entorno el activo de riesgo tiene el viento a favor por default: SPY en 771,10 (yfinance:SPY). Cero señales de riesgo y cero señales de inflación en el módulo de régimen.\n\nLa tensión está en el precio del dinero, y ahí es donde se juega el trade del día. yield_10y en 4,66% (FRED:DGS10) con el mercado marcando 4,672% en yield_10y_mkt (yfinance:^TNX) implica que la parte larga está subiendo mientras el 3M está en 3,70% — un bear-steepening, no un bull-steepening. Descomponiendo: tips_yield_10y en 2,34% (FRED:DFII10) y breakeven_5y5y en 2,33% (FRED:T5YIFR). Es decir, el movimiento de tasas NO es por expectativas de inflación desancladas — el 5y5y en 2,33% está perfectamente anclado cerca del objetivo — sino por rendimiento real y prima de término. Un real yield de 2,34% es restrictivo y es el principal riesgo latente para la valuación del equity, especialmente en el segmento de duración larga (tech). El flujo de noticias de hoy explica el catalizador inmediato: CNBC reporta 'S&P 500 little changed after PCE report shows sticky inflation' y MarketWatch describe 'Dow off 140 points... as bond yields rise; PCE inflation data ticks higher in July'. Advertencia metodológica explícita: pce_core en el JSON es 130,658 y cpi es 332,813, ambos NIVELES de índice publicados 2026-07-01 con 57 días de antigüedad — no puedo derivar la tasa interanual desde este JSON, por lo que la lectura de 'sticky' proviene de las noticias, no de mis datos duros. Reduzco confianza en el eje inflación por esa razón.\n\nEn divisas, la señal estructural es usdjpy en 159,38 (yfinance:USDJPY=X, confirmado por usdjpy_mkt idéntico). Un yen en ese nivel significa que el carry trade sigue plenamente financiado y es la fuente silenciosa de liquidez que sostiene tanto el hy_spread de 2,67% como el vix de 14,51. Es también el punto de fractura del sistema: un unwind del carry por sorpresa hawkish del BoJ replicaría el shock de agosto 2024 y golpearía simultáneamente todas las posiciones long de riesgo. El resto del complejo FX está tranquilo y confirma apetito de riesgo global: dxy 99,146, eurusd 1,1656, usdbrl 5,1616, usdmxn 16,9705, usdcny 6,7193 (todos yfinance, 0 días de antigüedad). La anomalía a monitorear es gold/GLD en 422,60 sosteniéndose con un real yield de 2,34% y un dólar en 99,15 — históricamente esa combinación debería presionar al oro; que no lo haga sugiere un bid estructural (bancos centrales / cobertura fiscal) que no aparece en ninguna serie de este JSON. Posicionamiento resultante: long moderado de riesgo (SPY), short duración larga (TLT como la expresión más limpia), long oro con horizonte trimestral, y neutral táctico en QQQ hasta que pase el evento Nvidia de esta noche.",
+  "invalidadores": [
+    "Nvidia decepciona esta noche ([WSJ] 'Investors Brace for AI Chip Giant's Q2 Results') y arrastra al complejo AI: dado el peso del sector en el índice, un gap bajista invalida la señal LONG en SPY independientemente de que hy_spread (2,67%) y vix (14,51) sigan sanos. El crédito reaccionaría con rezago, no me avisaría a tiempo.",
+    "hy_spread se amplía por encima de ~3,50-4,00% desde el 2,67% actual (FRED:BAMLH0A0HYM2). Es mi indicador maestro de régimen: si el crédito se rompe, el diagnóstico GOLDILOCKS se cae entero y hay que invertir SPY a SHORT y TLT a LONG simultáneamente.",
+    "Unwind del carry trade del yen: usdjpy (159,38) cayendo bruscamente hacia 150 o menos por acción del BoJ. Eso drenaría la liquidez que sostiene el vix en 14,51 y golpearía SPY, GLD y EM (usdbrl 5,16, usdmxn 16,97) a la vez — es el riesgo de correlación-a-uno de esta tesis.",
+    "Deterioro del mercado laboral: jobless_claims (203.000) rompiendo por encima de 260-280k de forma sostenida, o sahm_rule (-0,03) girando por encima de +0,50. Eso movería el régimen a DESACELERACIÓN, invalidaría el SHORT TLT (pasaría a LONG por flight-to-quality) y el LONG SPY.",
+    "Desanclaje de expectativas: breakeven_5y5y (2,33%) rompiendo por encima de 2,60-2,70%. Con el PCE ya reportado como pegajoso, eso movería el régimen hacia STAGFLATION, invalidaría el LONG SPY pero reforzaría el SHORT TLT y el LONG GLD.",
+    "yield_10y (4,66%) superando 5,00% de forma desordenada: sería un shock de tasas que valida el SHORT TLT pero destruye el LONG SPY y probablemente también el LONG GLD vía real yields."
+  ],
+  "alertas": [
+    "DIVERGENCIA GLD/REALES: gold en 422,60 (yfinance:GLD) coexistiendo con tips_yield_10y en 2,34% (FRED:DFII10) y dxy en 99,15. Esta combinación no es normal — históricamente reales altos presionan al oro. Implica un comprador insensible al precio (bancos centrales) o una prima de riesgo fiscal/soberana que ningún indicador de este JSON captura. Es una señal de advertencia sobre la calidad del régimen GOLDILOCKS.",
+    "COMPLACENCIA MEDIBLE: hy_spread 2,67% + vix 14,51 la noche previa al evento de earnings de mayor peso del índice. El mercado no está pagando prima por el riesgo de evento. Asimetría desfavorable para vender volatilidad y favorable para comprar protección barata.",
+    "BEAR-STEEPENING, NO BULL-STEEPENING: la curva en +0,96% se está empinando por el extremo largo (yield_10y_mkt 4,672% vs yield_10y FRED 4,66%), no por recortes en el corto (yield_3m 3,70%). Un empinamiento por prima de término es una señal de calidad de régimen mucho peor que uno por expectativas de flexibilización.",
+    "CONTRADICCIÓN INDICADOR vs NOTICIA: el módulo de régimen reporta 0 señales de inflación, pero dos fuentes tier-1 (CNBC, MarketWatch) reportan hoy PCE de julio al alza y 'sticky inflation'. Los datos de inflación del JSON (pce_core, cpi) tienen 57 días de antigüedad y son niveles de índice, no tasas — el módulo de régimen probablemente está sub-detectando el componente inflacionario. Peso esta divergencia como un tilt reflacionario no capturado.",
+    "michigan_inflation_exp en 4,6% (FRED:MICH) es un nivel muy elevado y en fuerte conflicto con breakeven_5y5y de 2,33%. Pero el dato tiene es_fresco=false (87 días, publicado 2026-06-01), así que le asigno peso bajo. Si se confirmara con un dato fresco, sería el argumento más fuerte a favor de STAGFLATION."
+  ],
+  "datos_insuficientes": [
+    "michigan_inflation_exp: 4,6% con es_fresco=false y 87 días de antigüedad (publicado 2026-06-01, FRED:MICH). No lo uso para direccionalidad; solo como flag de riesgo.",
+    "cpi (332,813) y pce_core (130,658): válidos y marcados como frescos, pero con 57 días de antigüedad y expresados como NIVELES de índice. Sin la serie histórica no puedo calcular tasas interanuales ni mensuales — no puedo cuantificar la inflación efectiva desde este JSON. Esta es la mayor limitación del análisis de hoy y la razón principal del descuento de confianza en el eje inflación.",
+    "Ausencia total de datos de commodities: no hay WTI, Brent, cobre ni ningún proxy de energía. La señal sobre USO es necesariamente neutral por falta de datos, no por convicción.",
+    "unemployment (4,1%) y sahm_rule (-0,03) también tienen 57 días de antigüedad (publicados 2026-07-01). El único dato laboral verdaderamente reciente es jobless_claims (203k, 5 días). Un deterioro laboral iniciado en agosto no sería visible en este dataset.",
+    "No hay datos de spreads investment grade, condiciones de crédito bancario, ni PMIs. La evaluación de crecimiento descansa casi enteramente sobre el mercado laboral y el hy_spread.",
+    "No hay serie histórica de ningún indicador — solo niveles puntuales. Toda inferencia de momentum (ej. 'yields subiendo') se apoya en la comparación yield_10y_mkt 4,672% vs yield_10y FRED 4,66% y en las noticias, no en datos históricos del JSON."
+  ],
+  "eventos_clave": [
+    "[CNBC] 'S&P 500 is little changed after PCE report shows sticky inflation; Nvidia earnings on deck' — El PCE pegajoso es el catalizador directo del bear-steepening que veo en los datos: sostiene yield_10y en 4,66% y tips_yield_10y en 2,34%, reduce la probabilidad de recortes agresivos y es el sustento fundamental del SHORT TLT (83,13). Que el S&P quede plano ante inflación pegajosa muestra que el equity todavía prioriza el crecimiento sobre las tasas — una postura que solo aguanta mientras hy_spread siga en 2,67%.",
+    "[MarketWatch] 'Dow off 140 points, S&P 500 y Nasdaq lower as bond yields rise; PCE inflation data ticks higher in July' — Confirmación de mecanismo: la caída del equity hoy es impulsada por tasas, no por crédito. Mientras el driver sea tasas y no spreads, la corrección es de múltiplo (contenible); si el hy_spread se sumara al movimiento desde 2,67%, cambiaría de naturaleza. Es exactamente el riesgo que me lleva a bajar la convicción del LONG SPY a 6.",
+    "[WSJ] 'Nvidia Earnings Live: Investors Brace for AI Chip Giant's Q2 Results' — Evento binario post-cierre y la razón por la que pongo QQQ en NEUTRAL semanal. Con vix en 14,51 el mercado no está descontando cola de riesgo; un miss generaría un repricing violento de la duración de equity justo cuando tips_yield_10y está en 2,34%. Es el invalidador #1 de corto plazo de esta tesis.",
+    "[CNBC] 'Salesforce stock jumps 14% on AI growth and Anthropic investment gain' — Impacto alto y positivo para el pilar de crecimiento: muestra que la monetización de AI se traduce en beneficios reales fuera de los semiconductores. Da soporte micro al LONG SPY (771,10) y sugiere que el trade de AI se está ampliando más allá de la concentración en chips — mitiga parcialmente, no elimina, el riesgo de evento Nvidia.",
+    "[BBC News] 'Meta agrees to pay up to $18bn to settle claims its platforms harm children' — Impacto idiosincrático, no macro. Relevante como recordatorio de riesgo regulatorio/legal en megacaps con peso en índices; una cifra de esta magnitud no mueve hy_spread (2,67%) ni vix (14,51), pero establece un precedente de costo regulatorio para el sector que pesa sobre las valuaciones de plataformas en horizonte trimestral."
+  ],
+  "confianza_general": 64,
+  "metadata": {
+    "timestamp": "2026-08-27T20:40:49.461967",
+    "datos_usados": 23,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
