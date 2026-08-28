@@ -1,0 +1,87 @@
+{
+  "fecha": "2026-08-28",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 78,
+    "razonamiento": "La curva manda: WTI calendar 6m en +6.72 USD (backwardation de ~8% sobre un spot de 83.44) es estructura de escasez fisica real, no de posicionamiento. El barril prompt vale mas que el diferido, o sea que hay competencia por moleculas hoy. Lo confirma el downstream: refinery utilization 97.4% (EIA 2026-08-21) es correr al maximo tecnico, y aun asi el distillate inventory esta en 103.391 MMbbl, nivel historicamente bajo para fines de agosto, con Heating Oil a 4.2421 USD/gal y crack 3-2-1 en 61.29 USD/bbl (MUY_FUERTE). Es decir: el sistema de refinacion global esta al limite y no alcanza a cubrir la demanda de destilados. La capa geopolitica agrega prima de oferta: seis meses de guerra Iran-US/Israel, Iran fijando condiciones para reabrir Hormuz (Reuters 27-ago) y OPEC+ perdiendo capacidad de arbitrar el mercado. El matiz que impide subir la confianza mas alto: crude inventory en 428.910 MMbbl no es un nivel de crisis, y los flujos por Hormuz estan 'subiendo levemente' con los Gulf producers acelerando exportaciones. La tightness esta concentrada en productos y en prima de riesgo, no en un vaciamiento del crudo americano. Macro GOLDILOCKS (68%) con jobless claims 203k y HY spread 2.63% sostiene la demanda: no hay destruccion de demanda a la vista."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 62,
+    "razonamiento": "Natgas storage Lower 48 en 3.184 Bcf al 21-ago con precio en 2.881 USD/MMBtu. El nivel de almacenamiento es holgado para la fecha y el precio lo esta reflejando: es un mercado sin urgencia fisica, en plena ventana de inyeccion y sin demanda de calefaccion. La divergencia con el crudo (WTI 83.44, crack 61) es sana y esperable: el gas americano sigue siendo un mercado local donde el LNG exporta pero no alcanza para tensionar el balance en shoulder season. No lo clasifico OVERSUPPLIED porque 2.88 ya es un precio deprimido que castiga produccion asociada marginal y porque la asimetria de invierno (primer frente frio) es siempre alcista. No tengo la curva forward de natgas ni el diferencial vs promedio de 5 anios ni datos de feedgas a LNG, lo que limita la precision."
+  },
+  "regimen_lpg": {
+    "clasificacion": "BALANCED",
+    "confianza": 40,
+    "razonamiento": "DATA LIMITADA - lo digo explicitamente. El unico dato duro que tengo es propane/propylene inventory USA en 109.483 MMbbl al 21-ago, que es un nivel comodo/amplio para fines de agosto en plena temporada de construccion de stocks pre-invierno. No tengo Saudi CP, no tengo FEI Asia, no tengo diferencial Mont Belvieu-FEI, no tengo freight VLGC ni datos de exportaciones LPG US Gulf. Sin el arb transpacifico y sin freight no puedo determinar si el barril americano esta siendo jalado por Asia o si se esta acumulando en casa. Con lo que tengo: oferta domestica amplia (produccion asociada de NGL sostenida con crudo a 83 y gas a 2.88), demanda estacional aun no activada. BALANCED con confianza baja por definicion. Sesgo cualitativo: si el complejo de destilados esta tan tight, el propano suele beneficiarse por sustitucion en heating residencial en invierno, pero eso es tesis, no dato."
+  },
+  "tesis_principal": "La historia de esta semana no es el crudo, es el destilado. Tenemos refinerias corriendo a 97.4% de utilizacion -practicamente el techo fisico del sistema- y aun asi los inventarios de destilado estan en 103.391 MMbbl, con Heating Oil a 4.2421 USD/gal y un crack 3-2-1 de 61.29 USD/bbl. Eso no es una disrupcion operacional (una disrupcion daria crack alto CON utilizacion baja); es demanda real excediendo la capacidad maxima de conversion global. Las noticias lo corroboran: 'Diesel Stress Rises as Canada Oil Exports to Fall Near Term'. La perdida de crudo pesado canadiense afecta desproporcionadamente el rendimiento de destilado medio en refinerias del Midwest y Gulf Coast. Y estamos entrando a septiembre-octubre, temporada de mantenimiento de refinerias, cuando la utilizacion tiene que bajar de 97.4% por fuerza. Si la demanda no cede, los destilados se tensionan mas, no menos.\n\nEn el crudo, la estructura de curva (backwardation 6.72 a 6 meses) dice tightness inequivoca, pero los inventarios de crudo en 428.910 MMbbl no dicen crisis. Leo esa aparente contradiccion asi: la escasez esta en el barril entregable hoy y en la prima de riesgo geopolitico de Hormuz, no en un agotamiento estructural del pool americano. Seis meses de guerra Iran, Iran fijando condiciones para reabrir el Estrecho, OPEC+ perdiendo influencia frente a China como comprador marginal - todo eso es prima de oferta legitima. Pero Bloomberg reporta flujos por Hormuz subiendo levemente y los productores del Golfo acelerando exportaciones, y hay senales diplomaticas (visitas de Qatar, Oman, Pakistan; analisis de 'stalemate costoso'). Esa es la vulnerabilidad del trade: el crudo carga prima que los flujos fisicos aun no validan del todo. Por eso mi conviccion en crudo plano es alta pero no maxima, y prefiero expresar la tightness donde el dato fisico es incontestable: destilados y refinacion.\n\nEl contexto macro GOLDILOCKS (68%) con jobless claims 203k, unemployment 4.1%, sahm -0.03 y HY spread 2.63% es exactamente el ambiente que sostiene demanda energetica: sin recesion no hay destruccion de demanda de diesel ni de jet. Y lo tecnico coincide: USO a +22.63% sobre su DMA200 con momentum 12M de +72.38%, la mayor sobreextension del universo del fondo. Eso es confirmacion de tendencia y a la vez la advertencia: entramos tarde a un movimiento maduro, con la prima geopolitica como el componente mas fragil del precio. Estructura preferida: largo el spread de refinacion y destilados sobre largo crudo plano. Natgas queda fuera del trade -3.184 Bcf de storage y 2.881 USD no ofrecen asimetria en shoulder season- y LPG no lo puedo dimensionar sin CP saudi, FEI y freight.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Es la expresion mas directa de la unica dislocacion fisica incontestable del memo. Crack 3-2-1 en 61.29 USD/bbl (MUY_FUERTE) con utilizacion 97.4%: VLO esta capturando margen record sobre volumen maximo, la combinacion mas rentable posible para un refinador puro. Distillate en 103.391 MMbbl garantiza que el margen no se comprime por sobreoferta de producto. El riesgo es que a 352.36 mucho de esto ya esta en precio; no tengo DMA200 de VLO para medir sobreextension."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Integrada con exposicion simultanea a upstream (backwardation 6.72, WTI 83.44) y downstream (crack 61.29, utilizacion 97.4%) - el perfil ideal para este regimen especifico donde ambos segmentos ganan a la vez. Precio 156.71. No tengo guidance de produccion ni datos de capex/breakeven para afinar la conviccion."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Misma logica de integrada que XOM: captura upstream con crudo a 83.44 y downstream con crack 61.29. Precio 201.86. Conviccion pareja con XOM por falta de datos diferenciadores (no tengo mix de produccion, exposicion a Venezuela/Kazajistan ni datos de refinacion propia por region)."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Upstream puro y apalancado: mayor beta al precio del crudo que las integradas, lo que la hace la mejor expresion equity de un WTI sostenido sobre 80. Backwardation de 6.72 favorece a productores que venden prompt. Precio 59.10. Contrapartida y razon de no subir a 7: si la prima Hormuz se desarma con un acuerdo de reapertura, OXY cae mas rapido que XOM o CVX por su apalancamiento operativo y de balance."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Productor shale con exposicion directa a WTI 83.44 y curva backwardated. Precio 143.35. Advertencia que impide mas conviccion: EOG tiene exposicion relevante a gas natural asociado, y natgas a 2.881 con storage en 3.184 Bcf es un lastre sobre el realized price del barril equivalente. El componente liquido manda, pero el gas resta."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Beta alta a Brent (88.29) desde Vaca Muerta con estructura de costos favorable, en un regimen de crudo tight. Precio 70.14. Conviccion limitada a lean debil por razones honestas de data: no tengo datos de produccion de la compania, ni del diferencial de crudo Medanito vs Brent, ni de capacidad de evacuacion por oleoducto, ni del riesgo cambiario/regulatorio argentino, que en esta accion historicamente domina sobre el precio del barril."
+    }
+  ],
+  "eventos_clave": [
+    "Iran prepara lista de condiciones para reabrir el Estrecho de Hormuz tras pedido de mediadores (Rezaei, Reuters 27-ago): primera senal concreta de negociabilidad del choke point que sostiene la prima de riesgo del Brent",
+    "Estres de diesel en aumento con exportaciones de crudo canadiense proyectadas a la baja en el corto plazo: golpea directo al rendimiento de destilado medio con distillate inventory ya en 103.391 MMbbl",
+    "Flujos de crudo por Hormuz subiendo mientras los productores del Golfo aceleran exportaciones (Bloomberg, 27-ago): la realidad fisica contradice parcialmente la narrativa de cierre",
+    "OPEC+ pierde influencia sobre el mercado petrolero a seis meses de la guerra de Iran, con China ganando poder como comprador marginal (Reuters 27-ago): cambia el mecanismo de formacion de precio y reduce la utilidad de leer decisiones OPEC como senal",
+    "Senales de desescalada diplomatica Iran-US con visitas de funcionarios de Qatar, Oman y Pakistan, y analisis convergiendo en 'stalemate costoso' como endgame: el principal riesgo bajista para la prima geopolitica en el precio actual"
+  ],
+  "contradicciones_observadas": "Primera y la mas explotable: crack 3-2-1 en 61.29 USD/bbl (MUY_FUERTE) CON refinery utilization en 97.4%. La regla de manual dice que crack alto + utilizacion baja = disrupcion operacional (transitorio, se cierra cuando vuelven las unidades). Aca tenemos crack alto + utilizacion en el techo fisico, lo que significa que el margen NO es un artefacto de oferta caida sino demanda genuina que excede la capacidad maxima de conversion. Ese margen no se cierra con reparaciones - solo se cierra con destruccion de demanda o con capacidad nueva. Coherente con macro GOLDILOCKS. Es la senal mas limpia del memo.\n\nSegunda: backwardation de 6.72 USD a 6 meses (escasez severa del prompt) conviviendo con crude inventory de 428.910 MMbbl, que no es un nivel de estres. Si el crudo estuviera realmente vaciandose, veriamos ambos. Mi lectura: la backwardation esta siendo generada por (a) demanda de refineria al maximo tirando del barril prompt y (b) prima de riesgo Hormuz que penaliza tener barriles diferidos con transito incierto - no por agotamiento de inventario. Implicacion practica: si Hormuz se destraba, el componente (b) se evapora rapido y la curva se aplana bastante antes de que los inventarios se muevan.\n\nTercera: la narrativa dice cierre de Hormuz e Iran amenaza 'cierre real', pero los datos de trafico muestran flujos subiendo levemente y Gulf producers acelerando exportaciones. El mercado esta pagando por una interrupcion que fisicamente aun no ocurrio. Es prima de opcion, no de escasez realizada.\n\nCuarta: divergencia interna del complejo. Crudo a 83.44 en backwardation severa y destilados en estres, contra natgas a 2.881 con 3.184 Bcf de storage. No es contradiccion economica (son mercados separados por logistica) pero desmiente cualquier tesis de 'crisis energetica generalizada'. Es una crisis de destilados, no de energia.\n\nQuinta: dentro del propio barril de productos, distillate 103.391 MMbbl (tight) vs gasoline 206.842 MMbbl (comodo). El crack agregado esconde que toda la fortaleza es HO. Eso hace del spread HO/RBOB un trade mas limpio que el crack plano.",
+  "invalidadores": [
+    "Acuerdo de reapertura de Hormuz o desescalada formal Iran-US/Israel. Trigger cuantitativo: WTI calendar 6m colapsando de +6.72 a menos de +3.00 USD. Eso significaria que la tightness era prima geopolitica y no fisica, e invalida los longs de crudo plano (WTI, BRENT) y los upstream apalancados (OXY, EOG, VIST). Los refinadores sobrevivirian mejor porque su margen viene del lado producto, e incluso se beneficiarian de feedstock mas barato.",
+    "Compresion del crack 3-2-1 desde 61.29 hacia zona de 30-35 USD/bbl, y/o reconstruccion del distillate inventory desde 103.391 hacia arriba de 115.000 Mbbl en reportes EIA sucesivos. Cualquiera de las dos invalida la tesis central del memo y obliga a liquidar VLO, CRAK y HEATING_OIL de inmediato.",
+    "Caida de refinery utilization desde 97.4% ACOMPANIADA de crack en descenso. Esa combinacion especifica -menos volumen Y menos margen- es la firma de destruccion de demanda, no de mantenimiento estacional (el mantenimiento da menos volumen pero crack estable o al alza). Seria la senal mas temprana de que el diagnostico fisico esta equivocado.",
+    "Quiebre del regimen macro GOLDILOCKS: jobless claims saliendo de 203k hacia arriba de 260k, HY spread ampliando de 2.63% sobre 4.00%, o sahm_rule cruzando por encima de cero. La demanda de diesel es el proxy ciclico mas puro que existe; si el macro se rompe, el crack de destilado se rompe primero y mas rapido que el precio del crudo.",
+    "Reversion tecnica de USO desde +22.63% sobre DMA200: el nivel de sobreextension es el mayor del universo del fondo y una compresion hacia la media implicaria un movimiento del orden de -18% en el subyacente, suficiente para arrasar cualquier long de equity energetica independientemente de la tesis fisica.",
+    "Natgas: acumulacion de storage por encima de 3.184 Bcf a ritmo superior al estacional con precio perforando 2.70 confirmaria OVERSUPPLIED y obligaria a revisar la senal NEUTRAL hacia SHORT, ademas de castigar el realized price de EOG."
+  ],
+  "data_gaps": "Criticos y que cambiarian conclusiones: (1) NO tengo el dato de la semana anterior de EIA, por lo tanto no puedo calcular draw vs build - estoy leyendo niveles absolutos, no flujos, y el flujo es lo que mueve el precio. (2) NO tengo promedios de 5 anios para ninguna serie EIA; mis calificaciones de 'bajo' para distillate y 'holgado' para natgas storage son juicio sectorial, no comparacion estadistica verificada. (3) NO tengo estructura de curva del Brent - solo tengo el calendar spread de WTI 6m; asumir que Brent esta igual de backwardated es inferencia, no dato. (4) LPG practicamente a ciegas: no tengo Saudi Contract Price, no tengo FEI Asia, no tengo diferencial Mont Belvieu-FEI ni freight VLGC; sin el arbitraje transpacifico no puedo dimensionar el pull asiatico sobre el barril americano. Por eso la confianza del regimen LPG es 40. (5) No tengo curva forward de natgas, feedgas a LNG ni pronosticos meteorologicos. (6) No tengo DMA200 ni momentum de ninguna equity energetica individual (XOM, CVX, OXY, VLO, EOG, VIST, XLE, CRAK) - solo de USO; toda validacion tecnica de las equities es por proxy. (7) No tengo rig counts, produccion US de crudo, ni stocks de Cushing (clave para entender la backwardation del WTI especificamente). (8) No tengo calendario de mantenimiento de refinerias para septiembre-octubre, que es el driver estacional mas relevante de mi tesis de destilados. (9) No tengo cifras de spare capacity de OPEC+ ni de volumenes exactos que transitan Hormuz - toda la evaluacion geopolitica es cualitativa a partir de titulares. (10) Para VIST: no tengo produccion, diferencial Medanito-Brent, capacidad de evacuacion ni contexto macro argentino.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'BRENT'",
+    "Senal 2: activo invalido 'WTI'",
+    "Senal 3: activo invalido 'HEATING_OIL'",
+    "Senal 5: activo invalido 'CRAK'",
+    "Senal 6: activo invalido 'XLE'",
+    "Senal 12: activo invalido 'GASOLINA'",
+    "Senal 13: activo invalido 'NATGAS'"
+  ],
+  "metadata": {
+    "timestamp": "2026-08-28T21:18:23.555903",
+    "modelo": "claude-opus-5"
+  }
+}

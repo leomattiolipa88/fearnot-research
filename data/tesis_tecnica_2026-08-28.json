@@ -1,0 +1,84 @@
+{
+  "fecha": "2026-08-28",
+  "regimen_macro_aplicado": "GOLDILOCKS",
+  "contexto_tecnico_global": "El tape es constructivo: VIX spot en 14.43 vs VIX 3M en 17.48 (vix_term_struct = CONTANGO_FUERTE), lo que descarta stress agudo y habilita risk-on, con VRP en +79.96 (seguro sobrepagado, lectura bullish para equities segun Bollerslev et al. 2009) y breadth en 76.0% de miembros sobre su 200DMA (pct_sobre_200), por encima del umbral de 70% que confirma amplitud de tendencia. En options flow, el spread VIX 6M (20.30) vs VIX 9D (11.22) es de +9.08 puntos, muy por encima del umbral de 5: hay miedo ESTRUCTURAL claramente superior al inmediato, es decir alguien esta pagando cobertura lejana mientras el front-end esta dormido. Esa lectura convive con un VIX IV percentile de solo 2.8 (vix_iv_pct), es decir el VIX esta en el 3% mas bajo de su rango de 1 año: complacencia extrema en el corto plazo. Esta DIVERGENCIA (IV percentile en minimos anuales pero curva 9D-6M muy empinada) es la señal mas importante del snapshot: el mercado esta barato para cubrirse a 1-2 semanas y caro a 6 meses, lo que sugiere mantener las señales LONG de momentum pero financiar convexidad barata en el front-end en lugar de aumentar sizing bruto.",
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 8,
+      "razonamiento": "Precio 769.35 vs dma200 707.42, +8.75% sobre la media (pct_sobre_dma), estado SOBRE_DMA: zona habilitada para LONG bajo la regla universal de Tudor Jones. Momentum 12M +19.87% (momentum_12m) con vol_12m de solo 12.79%, dando momentum_ajust de 1.554, por encima del umbral +1.5 de Barroso & Santa-Clara: momentum fuerte y de alta calidad (el mejor ratio riesgo/retorno del universo). Breadth de 76.0% sobre 200DMA confirma que la tendencia es amplia y no de 5 nombres.",
+      "indicador_clave": "momentum_ajust = 1.554 (el unico activo del universo sobre el umbral 1.5 con vol baja)",
+      "interaccion_macro": "GOLDILOCKS es el regimen donde Cooper, Gutierrez y Hameed (2004) documentan momentum positivo en UP markets (+0.93%/mes): full sizing sin recorte. El VRP de +79.96 y el contango fuerte refuerzan la exposicion beta."
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "Precio 716.43 vs dma200 654.19, +9.51% sobre la media (pct_sobre_dma), estado SOBRE_DMA: zona habilitada. Momentum 12M +24.75% (momentum_12m) superior al de SPY, pero vol_12m de 19.60% deja el momentum_ajust en 1.263, es decir dentro de la banda ambigua (-0.5 a +1.5) de Barroso & Santa-Clara. Es decir: mas retorno pero peor ajuste por riesgo que SPY, por lo que la conviccion es un escalon menor pese al mayor momentum nominal.",
+      "indicador_clave": "momentum_ajust = 1.263 (por debajo del umbral 1.5 pese a momentum_12m superior)",
+      "interaccion_macro": "En GOLDILOCKS el equity momentum funciona a full sizing, pero dado que el ratio ajustado no supera 1.5 preferimos expresar el beta principal via SPY y QQQ como satelite, no como core."
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Precio 129.70 vs dma200 105.77: +22.63% sobre la media (pct_sobre_dma), la mayor sobreextension del universo. Momentum 12M de +72.38% (momentum_12m) con vol_12m de 48.22% da momentum_ajust de 1.501, apenas sobre el umbral de +1.5: trend fuerte, pero la volatilidad es 3.8x la de SPY y el precio esta muy alejado de la media, lo que eleva el riesgo de reversion mecanica. Tendencia habilitada por la regla del 200DMA, pero sizing debe ser reducido por vol.",
+      "indicador_clave": "pct_sobre_dma = +22.63% (sobreextension) combinado con momentum_ajust 1.501",
+      "interaccion_macro": "En GOLDILOCKS el commodity momentum no es el trade preferido (eso seria REFLACION o STAGFLATION); la señal se mantiene por trend-following puro, con horizonte acortado a MENSUAL y tamaño reducido. Un USO subiendo 72% en 12M es ademas un riesgo latente de mutar el regimen macro hacia stagflation."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Precio 408.89 vs dma200 414.79: -1.42% BAJO la media (pct_sobre_dma) y cruce_dma marcado como CRUCE_BAJISTA. Bajo la regla universal de Tudor Jones esto es zona prohibida para LONG y el cruce bajista obliga a salir sin excepciones, aunque el momentum_12m siga siendo +29.79%. El momentum_ajust de 1.027 (vol_12m 29.02%) esta en banda ambigua y no compensa la ruptura de tendencia. No pasamos a SHORT porque el momentum de 12M sigue positivo y el cruce es reciente/marginal (-1.42%): es una señal de salida, no de reversion.",
+      "indicador_clave": "cruce_dma = CRUCE_BAJISTA con precio bajo dma200",
+      "interaccion_macro": "GOLDILOCKS es hostil al oro como refugio: con VIX 14.43 en contango fuerte y breadth 76%, el capital rota hacia riesgo. Ademas DXY en CRUCE_ALCISTA es viento de frente adicional para GLD."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Precio 82.88 vs dma200 85.02, -2.51% (pct_sobre_dma) con cruce_dma en BAJO_DMA: zona prohibida para LONG. Sin embargo el momentum_12m es de apenas -0.63% y el momentum_ajust de -0.066 (vol_12m 9.47%) esta dentro de la banda ambigua (-0.5 a +1.5), lejos del umbral de -0.5 que habilitaria SHORT con conviccion. Tecnicamente es un activo sin tendencia: bajo su media pero sin momentum bajista real.",
+      "indicador_clave": "momentum_ajust = -0.066 (ausencia total de tendencia) con precio BAJO_DMA",
+      "interaccion_macro": "En GOLDILOCKS la duracion larga no es necesaria como hedge (el hedge lo da el VRP positivo y el contango); no hay razon para pagar carry negativo de tendencia. Se mantiene fuera del portafolio hasta recuperar la 200DMA."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 4,
+      "razonamiento": "Precio 99.68 vs dma200 99.17: solo +0.51% sobre la media (pct_sobre_dma) con cruce_dma en CRUCE_ALCISTA. El cruce alcista es tecnicamente la señal de compra mas fuerte del framework, pero aqui esta desmentido por el momentum: momentum_12m de +1.91% con vol_12m 5.31% da momentum_ajust de 0.36, muy dentro de la zona ambigua. Es un cruce marginal (medio punto porcentual sobre la media) sin fuerza de tendencia detras, por lo que la conviccion es baja.",
+      "indicador_clave": "conflicto entre cruce_dma = CRUCE_ALCISTA y momentum_ajust = 0.36",
+      "interaccion_macro": "En GOLDILOCKS un dolar fortaleciendose es el principal factor de riesgo silencioso: presiona commodities (USO) y oro (GLD, ya en cruce bajista). Se monitorea como indicador de regimen mas que como trade."
+    }
+  ],
+  "alertas_tecnicas": [
+    "DIVERGENCIA CENTRAL DEL SNAPSHOT: VIX IV percentile en 2.8 (percentil 3 de 1 año, complacencia extrema) contra un spread VIX 6M (20.30) - VIX 9D (11.22) de +9.08 puntos, muy sobre el umbral de 5. Miedo estructural a 6 meses coexistiendo con cero miedo inmediato: la cobertura de front-end esta regalada y conviene comprarla mientras se mantienen los LONG.",
+    "CRUCE_BAJISTA reciente en GLD (precio 408.89 vs dma200 414.79, -1.42%) pese a momentum_12m de +29.79%: primera fractura de tendencia en un activo que venia liderando. Divergencia clasica precio vs momentum que suele preceder correcciones mayores o consolidacion larga.",
+    "USO sobreextendido en +22.63% sobre su 200DMA con vol_12m de 48.22%: riesgo elevado de reversion mecanica a la media. Cualquier LONG debe estar dimensionado por vol, no por convicion direccional.",
+    "CRUCE_ALCISTA en DXY (99.68 vs 99.17) coincidiendo con el cruce bajista de GLD: consistente con rotacion desde metales hacia dolar. Si DXY acelera, presiona tambien a USO.",
+    "Breadth en 76.0% (pct_sobre_200) esta sobre el umbral de 70% que confirma tendencia, pero cerca del techo historico: es zona de confirmacion, no de compra contrarian. Un deterioro hacia 60-65% seria la primera señal de agotamiento.",
+    "VRP en +79.96 es una lectura extremadamente alta; es bullish per se, pero combinada con VIX IV percentile 2.8 el margen de mejora de las condiciones de volatilidad es practicamente nulo. La asimetria del riesgo de vol es hacia arriba."
+  ],
+  "invalidadores_tecnicos": [
+    "SPY perdiendo su 200DMA (707.42) o momentum_ajust cayendo por debajo de +1.0 desde el actual 1.554: se cancela la señal core LONG y se pasa a NEUTRAL en todo el bloque equity.",
+    "Inversion del term structure de VIX a BACKWARDATION (vix_spot > vix_3m, hoy 14.43 vs 17.48) o spread VIX 9D-6M colapsando a negativo: stress agudo, recortar todo el risk-on de inmediato sin esperar confirmacion de precio.",
+    "VRP girando a negativo desde el actual +79.96: eliminaria el soporte principal del sesgo bullish en equities segun Bollerslev et al. 2009.",
+    "Breadth (pct_sobre_200) cayendo por debajo de 70% y sobre todo perdiendo 50%: la tendencia dejaria de estar confirmada por amplitud y las señales LONG de SPY/QQQ pasan a media conviccion.",
+    "GLD recuperando y cerrando sobre su 200DMA (414.79): invalidaria el CRUCE_BAJISTA y devolveria el LONG con momentum_12m de +29.79% detras; simetricamente, GLD extendiendo bajo 400 con DXY acelerando confirmaria SHORT.",
+    "USO perdiendo la 200DMA (105.77) o cerrando el gap de +22.63% de sobreextension de golpe: se cancela la señal de commodity trend y aumenta la probabilidad de transicion de regimen macro."
+  ],
+  "confianza_general": 74,
+  "metadata": {
+    "timestamp": "2026-08-28T21:15:36.340730",
+    "modelo": "claude-opus-5",
+    "activos_analizados": 6,
+    "regimen_macro": "GOLDILOCKS"
+  }
+}

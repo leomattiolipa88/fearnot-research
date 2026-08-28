@@ -1,0 +1,96 @@
+{
+  "fecha": "2026-08-28",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 68,
+    "razonamiento": "El bloque de crecimiento/riesgo es inequívocamente benigno: jobless_claims en 203.000 (FRED:ICSA, 6 días), unemployment 4.1% (FRED:UNRATE) y sahm_rule en -0.03 (FRED:SAHMREALTIME), es decir, cero señal de recesión. La liquidez está holgada: hy_spread en 2.63% (FRED:BAMLH0A0HYM2, 1 día) es un nivel de compresión propio de fase expansiva, y vix en 14.43 (yfinance:^VIX) confirma ausencia de estrés. La curva se desinvirtió y está positiva en +0.98% (calculado 10Y-3M), con yield_3m 3.69% vs yield_10y 4.67%, consistente con un ciclo de recortes ya digerido y crecimiento nominal sostenido. Las expectativas de inflación de mercado están ancladas: breakeven_5y5y en 2.32% (FRED:T5YIFR). Rebajo la confianza desde 85 a 68 por tres divergencias: (1) michigan_inflation_exp en 4.2% (FRED:MICH, dato de 2026-07-01, 58 días de antigüedad) contradice fuertemente el breakeven de 2.32%; (2) tips_yield_10y en 2.34% es un real yield restrictivo que no encaja con un Goldilocks puro; (3) gold (GLD) en 408.89 conviviendo con real yields de 2.34% sugiere una bid estructural por debasement/riesgo fiscal que el régimen pre-calculado no captura. Además, todo el bloque de inflación y empleo duro (cpi 332.813, pce_core 130.658, unemployment, sahm_rule, michigan) tiene fecha de publicación 2026-07-01: son datos de hace ~2 meses y no reflejan agosto."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Régimen de crecimiento sin estrés crediticio: hy_spread 2.63% y vix 14.43 son la combinación históricamente más favorable para beta larga. El mercado laboral no se rompe (jobless_claims 203.000, sahm_rule -0.03) y la curva positiva en +0.98% descarta el escenario de inversión pre-recesiva. SPY en 769.35 (yfinance) con momentum reforzado por el beat de Nvidia reportado por MarketWatch. Limito la convicción a 7 y no más alto porque tips_yield_10y en 2.34% y yield_10y_mkt en 4.72% son un techo de valuación real: el equity está pagando múltiplos contra un costo de capital real elevado, y el discurso de Warsh en Jackson Hole es un riesgo de evento no cubierto por los datos.",
+      "dato_clave": "hy_spread = 2.63% (FRED:BAMLH0A0HYM2)"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "Mismo soporte macro que SPY (vix 14.43, hy_spread 2.63%) más un catalizador idiosincrático confirmado por noticia: MarketWatch reporta que Nasdaq y S&P suben en rally liderado por tech tras el beat de Nvidia y el salto de Salesforce. Advertencia: no tengo un dato de precio de QQQ en el JSON — la señal se infiere del régimen y de SPY 769.35, no de una serie propia, por eso la convicción no supera 6. El riesgo específico es regulatorio/fiscal: Ars Technica reporta un plan de Trump de gravar chips/data centers, que golpearía directo al capex del complejo AI.",
+      "dato_clave": "vix = 14.43 (yfinance:^VIX)"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 82.88 (yfinance) con yield_10y_mkt en 4.72% (yfinance:^TNX) por encima del cierre oficial yield_10y 4.67% (FRED:DGS10, 1 día): el largo sigue presionado. La curva se empinó a +0.98% con el 3m en 3.69%, patrón de bear steepening/term premium, no de flight-to-quality. Con jobless_claims en 203.000 y sahm_rule en -0.03 no hay caso cíclico para duración, y con Kevin Warsh —de perfil histórico hawkish— presentando su framework en Jackson Hole (CNBC), el riesgo de cola en el tramo largo es al alza en tasas. Convicción 6 y no más: tips_yield_10y 2.34% es un real yield ya alto que atrae compradores de valor.",
+      "dato_clave": "yield_curve = +0.98% (calculado 10Y-3M)"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 5,
+      "razonamiento": "GLD en 408.89 (yfinance) sostenido a pesar de un real yield de 2.34% (FRED:DFII10) — esto rompe la correlación clásica oro/tasas reales e implica un bid no financiero (reservas de bancos centrales, cobertura fiscal/debasement). Soporte adicional del lado de expectativas domésticas: michigan_inflation_exp 4.2% muy por encima del breakeven_5y5y de 2.32%. Convicción baja (5) porque la señal es contradictoria por construcción: si Warsh valida un sesgo hawkish y el real yield sube desde 2.34%, el trade sufre; y el dato de Michigan tiene 58 días de antigüedad, lo que reduce su peso.",
+      "dato_clave": "tips_yield_10y = 2.34% vs GLD 408.89"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "dxy en 99.68 y eurusd en 1.1587 (yfinance) muestran un dólar en zona media sin tendencia clara. El diferencial de tasas favorece al USD (yield_10y_mkt 4.72%, yield_3m 3.69%) y usdjpy en 160.04 confirma que el carry trade financiado en yen sigue plenamente activo — lo cual es a la vez soporte del USD y la principal fuente de riesgo de unwind del sistema. Los EM cambiarios están tranquilos: usdbrl 5.1875, usdmxn 17.03, usdcny 6.7208, consistente con apetito por riesgo. Sin catalizador direccional propio, neutral.",
+      "dato_clave": "usdjpy = 160.04 (yfinance:USDJPY=X)"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 1,
+      "razonamiento": "No hay ningún dato de crudo, WTI, Brent ni USO en el JSON entregado. Convicción insuficiente: no emito dirección sobre energía sin serie de precio ni inventarios.",
+      "dato_clave": "sin dato disponible"
+    }
+  ],
+  "tesis_principal": "El mapa de hoy es un Goldilocks tardío con una anomalía de tasas reales. En el eje crecimiento, no hay grieta: jobless_claims 203.000 (FRED:ICSA), unemployment 4.1% (FRED:UNRATE), sahm_rule -0.03 (FRED:SAHMREALTIME). En el eje liquidez, el sistema está claramente en risk-on: hy_spread 2.63% (FRED:BAMLH0A0HYM2) y vix 14.43 (yfinance:^VIX) son niveles que históricamente no coexisten con un techo de mercado inmediato. La curva 10Y-3M en +0.98% (yield_10y 4.67% vs yield_3m 3.69%) ya no manda señal recesiva; manda señal de reflación nominal y term premium. Sobre esa base, SPY en 769.35 tiene el viento de cola del régimen y un catalizador de earnings — MarketWatch reporta el rally tech post-Nvidia.\n\nLa incomodidad está en el precio del dinero. tips_yield_10y en 2.34% (FRED:DFII10) es un rendimiento real históricamente restrictivo, y yield_10y_mkt en 4.72% (yfinance:^TNX) cotiza por encima del cierre oficial de 4.67%, es decir, el mercado está empujando el tramo largo al alza mientras el 3m se queda en 3.69%: bear steepening. Con TLT en 82.88 la duración larga sigue siendo el activo perdedor del régimen. Lo verdaderamente notable es que GLD, en 408.89, no se rompe frente a un real yield de 2.34% — la relación inversa clásica está suspendida. Eso, sumado a michigan_inflation_exp en 4.2% (FRED:MICH) contra un breakeven_5y5y de apenas 2.32% (FRED:T5YIFR), sugiere que el hogar medio y el comprador estructural de oro no creen del todo la historia de inflación anclada que sí cotiza el mercado de bonos. Aclaro que Michigan, CPI (332.813), pce_core (130.658), unemployment y sahm_rule son todos datos con fecha 2026-07-01, 58 días de antigüedad: describen julio, no agosto.\n\nEn monedas, usdjpy en 160.04 es la variable de sistema más importante del tablero. A ese nivel el carry financiado en yen está en pleno funcionamiento y es la contraparte silenciosa del vix en 14.43 y del hy_spread en 2.63%. Los cruces EM confirman calma (usdbrl 5.1875, usdmxn 17.03, usdcny 6.7208) y el dólar está lateral (dxy 99.68, eurusd 1.1587). Conclusión operativa: seguir largo beta con tamaño moderado, corto duración larga, y tratar al oro como cobertura de cola contra el escenario de que el mercado esté subestimando la inflación (Michigan 4.2%) o el término fiscal. El evento binario del calendario es el discurso de Kevin Warsh en Jackson Hole (CNBC): un framework hawkish o una redefinición del objetivo de inflación mueve simultáneamente TLT, GLD y el carry en yen, y por eso ninguna señal individual merece convicción por encima de 7 hoy.",
+  "invalidadores": [
+    "hy_spread ampliándose desde 2.63% hacia 3.5%+ en cuestión de días: sería la primera señal real de que la liquidez se cierra e invalidaría de inmediato el LONG SPY y LONG QQQ.",
+    "Warsh en Jackson Hole (CNBC) presentando un framework más hawkish de lo esperado o cuestionando el objetivo de 2%: empujaría yield_10y_mkt desde 4.72% al alza, golpearía equity y podría romper la anomalía alcista del oro vía tips_yield_10y por encima de 2.34%.",
+    "Unwind del carry: usdjpy quebrando a la baja desde 160.04 de forma abrupta (movimientos >3% en pocas sesiones). Históricamente arrastra vix desde 14.43 hacia 25+ y anula toda la tesis de beta larga.",
+    "Un jobless_claims por encima de ~250.000 o un salto del sahm_rule desde -0.03 hacia 0.30+ en la próxima publicación: reclasificaría el régimen de GOLDILOCKS a DESACELERACIÓN e invertiría la señal en TLT.",
+    "Materialización del impuesto a chips/data centers reportado por Ars Technica: golpe directo al capex del complejo AI que sostiene el rally de QQQ/SPY, con impacto asimétrico sobre el liderazgo del índice.",
+    "Convergencia al alza del breakeven_5y5y desde 2.32% hacia el 4.2% que marca michigan_inflation_exp: sería la transición a STAGFLATION y forzaría cerrar SPY largo y aumentar GLD."
+  ],
+  "alertas": [
+    "Divergencia mayor: michigan_inflation_exp 4.2% (FRED:MICH) vs breakeven_5y5y 2.32% (FRED:T5YIFR). Un gap de ~190pb entre la expectativa del hogar y la del mercado de bonos. Uno de los dos está equivocado y la resolución es direccional para todo el portafolio.",
+    "Anomalía de correlación: GLD en 408.89 sostenido con tips_yield_10y en 2.34%. El oro no debería estar en estos niveles con real yields tan altos; implica un comprador insensible al costo de oportunidad (bancos centrales / cobertura fiscal). Es la señal más incómoda del tablero dentro de un régimen 'verde'.",
+    "usdjpy en 160.04 es el nivel donde históricamente aparece riesgo de intervención verbal o efectiva del MoF japonés. Riesgo de gap nocturno no cubierto por ningún indicador del JSON.",
+    "Toda la data macro dura (cpi, pce_core, unemployment, sahm_rule, michigan_inflation_exp) tiene fecha de publicación 2026-07-01 — 58 días. El sistema las marca es_fresco=true, pero operativamente describen julio. El régimen 'GOLDILOCKS' pre-calculado con 0 señales de riesgo y 0 de inflación descansa parcialmente sobre información de dos meses atrás.",
+    "vix en 14.43 con hy_spread en 2.63% simultáneamente: complacencia en ambos mercados. La cobertura de cola está barata; no es momento de vender volatilidad.",
+    "Discrepancia menor pero relevante entre yield_10y FRED 4.67% (cierre 27/08) y yield_10y_mkt 4.72% (^TNX, 28/08): el tramo largo se movió ~5pb al alza hoy, en la sesión previa/durante Jackson Hole."
+  ],
+  "datos_insuficientes": [
+    "No hay ningún dato de petróleo (WTI/Brent/USO) en el JSON — la señal de USO queda sin convicción.",
+    "No hay serie propia de QQQ; la señal en QQQ se infiere de SPY 769.35 y del régimen, no de un precio verificado.",
+    "El sistema reporta 24/25 datos confiables pero no identifica cuál es el faltante — no puedo evaluar el impacto de esa ausencia.",
+    "cpi (332.813), pce_core (130.658), unemployment (4.1%), sahm_rule (-0.03) y michigan_inflation_exp (4.2%) tienen 58 días de antigüedad (publicación 2026-07-01); reduzco el peso de todo el bloque inflación/empleo duro.",
+    "No hay datos de ISM, retail sales, ni de tasa de política de la Fed en el JSON para triangular el nivel de restricción monetaria."
+  ],
+  "eventos_clave": [
+    "[CNBC] 'Fed Chairman Kevin Warsh delivers his key Jackson Hole speech Friday' — evento binario del día. Los presidentes de la Fed usan este discurso para fijar framework de política. Con la curva ya positiva en +0.98% y el real yield en 2.34%, un tono hawkish empuja yield_10y_mkt por encima de 4.72%, presiona TLT (82.88) y comprime múltiplos en SPY (769.35). Es el principal riesgo de evento no reflejado en los indicadores.",
+    "[MarketWatch] 'S&P 500 y Nasdaq suben en rally tech tras el beat de Nvidia; Dow sube con Salesforce' — explica por qué SPY está en 769.35 con vix en 14.43. El motor del índice sigue siendo earnings de mega-cap tech, no expansión macro amplia; esto hace que el rally sea más frágil a shocks idiosincráticos del sector que lo que sugiere el hy_spread de 2.63%.",
+    "[Ars Technica] 'AI industry says Trump plans to tax chips in the single dumbest way imaginable' — un impuesto a chips/data centers atacaría el capex que sostiene el liderazgo de QQQ. Riesgo directo sobre la señal LONG QQQ; es la razón por la que la mantengo en convicción 6 y no 8.",
+    "[Financial Times] 'Headless software signals further AI-led shake-up' — cambio estructural en el modelo de negocio SaaS. Implica dispersión creciente dentro del sector tecnológico: favorece expresión vía índice (QQQ/SPY) por sobre nombres individuales de software.",
+    "[The Information] 'Anthropic considera permitir venta de acciones a accionistas en su IPO' — señal de apertura de la ventana de IPOs, coherente con hy_spread en 2.63% y vix en 14.43. Confirma que el canal de riesgo primario está abierto; su cierre sería una alerta temprana de deterioro de liquidez."
+  ],
+  "confianza_general": 66,
+  "metadata": {
+    "timestamp": "2026-08-28T21:14:30.200230",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
