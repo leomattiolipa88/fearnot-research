@@ -1,0 +1,86 @@
+{
+  "fecha": "2026-09-01",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 82,
+    "razonamiento": "El spread calendario WTI 6m esta en +8.79 USD (BACKWARDATION), es decir ~10% del flat price de 87.82. Una curva asi de invertida no se sostiene con especulacion: implica que el barril prompt vale mucho mas que el diferido, que nadie quiere pagar storage y que el mercado fisico esta racionando barriles disponibles ahora. Se refuerza con utilizacion de refinerias en 97.4% (EIA 2026-08-21), nivel de correr al maximo, lo que significa demanda de crudo por parte del sistema de refino en pico. Del lado geopolitico, el input de noticias reporta ataques cruzados EEUU-Iran en el Estrecho de Ormuz tras una pausa de un mes (NPR, 31-ago), interceptacion de un drone irani sobre aguas de EAU, y Arabia Saudita reruteando exportaciones por amenazas al shipping en el Mar Rojo: eso es friccion de flujo fisico real, no titular. Matiz importante que baja mi confianza de 90 a 82: el inventario de crudo USA en 428.9 MMbbl (EIA 2026-08-21) NO luce escaso en absoluto; no tengo el 5-year average en mis inputs para comparar, pero es un nivel que en terminos absolutos parece comodo. Es decir, el tightness esta concentrado en el waterborne/geopolitico y sobre todo en productos, no en el crudo domestico USA. Segundo matiz: hay un titular contradictorio (Naturalnews, 30-ago) sobre diplomaticos de EEUU regresando a embajadas en Medio Oriente 'signaling reduced risk of renewed war', lo que sugiere que parte de la prima de guerra es reversible."
+  },
+  "regimen_natgas": {
+    "clasificacion": "OVERSUPPLIED",
+    "confianza": 58,
+    "razonamiento": "Storage Lower 48 en 3,184 Bcf al 2026-08-21 con precio en 2.88 USD/MMBtu. No tengo el 5-year average ni el ritmo de inyeccion semanal en mis inputs, pero la combinacion nivel alto de almacenamiento a fines de agosto + precio deprimido en pleno shock geopolitico de crudo es la senal clave: mientras WTI cotiza a 87.82 con backwardation extrema y crack de 63 USD, el gas de Henry Hub no participa del rally. El ratio oil/gas ~30:1 en energia equivalente es una desconexion total. Eso dice que el gas americano esta aislado del shock (es un mercado domestico, no waterborne) y que la oferta de shale cubre comodamente la demanda de verano mas LNG feedgas. Confianza moderada (58) y no mas: la temporada de inyeccion termina, entramos a heating season, el precio absoluto ya es bajo y un invierno frio o una escalada que afecte LNG global puede revertir esto rapido. No tengo datos de LNG feedgas, produccion seca ni curva forward de HH."
+  },
+  "regimen_lpg": {
+    "clasificacion": "BALANCED",
+    "confianza": 40,
+    "razonamiento": "Data explicitamente limitada: el unico dato duro que tengo es propane/propylene inventory USA en 109,483 Mbbl al 2026-08-21. NO tengo Saudi CP, NO tengo FEI Asia, NO tengo el spread Mt Belvieu-FEI, NO tengo freight rates VLGC, NO tengo volumenes de exportacion de LPG desde la Costa del Golfo. Sin el arb US-Asia y sin freight no puedo determinar tightness real de LPG, que es un mercado de arbitraje maritimo por definicion. Con lo que tengo: 109.5 MMbbl de propano a fines de agosto, con la temporada de build todavia corriendo hacia el pico de octubre-noviembre, parece un nivel comodo/adecuado, no escaso. Contra eso juega que la utilizacion de refino en 97.4% y el NGL asociado del shale sostienen oferta, mientras las disrupciones de shipping en Mar Rojo y Ormuz (rerouteo saudi reportado) encarecen el freight y pueden apretar el balance asiatico via tonne-miles. Neto: BALANCED con confianza baja. Clasificacion a revisar apenas tenga CP saudi y FEI."
+  },
+  "tesis_principal": "La lectura central de esta semana es que NO estamos ante un shock de crudo, estamos ante un shock de PRODUCTOS REFINADOS montado sobre una prima de guerra en el crudo. El crack 3:2:1 esta en 63.53 USD/bbl. Eso no es 'fuerte', eso es nivel de crisis: en un mercado normal el 3:2:1 vive entre 15 y 25. Desagregando con los precios de mis inputs: gasolina RB a 3.1007 USD/gal = ~130.2 USD/bbl, crack gasolina ~42.4 sobre WTI 87.82; heating oil a 4.607 USD/gal = ~193.5 USD/bbl, crack destilado ~105.7 USD/bbl. El margen de destilado es el que esta roto. Y el inventario de destilado en 103,391 Mbbl (EIA 2026-08-21) contra gasolina en 206,842 Mbbl muestra la asimetria: el barril de diesel/jet es el escaso del complejo. Con refinerias corriendo a 97.4% de utilizacion, no hay capacidad ociosa para responder: el sistema ya esta al maximo y aun asi no logra reconstruir stocks de destilado. Ese es el hecho fisico dominante del memo.\n\nEl crudo confirma tightness por curva pero no por inventario domestico. Backwardation de 8.79 USD a 6 meses es una senal fisica potente (nadie almacena, todos quieren el barril prompt), y esta alimentada por eventos de flujo: ataques cruzados EEUU-Iran en Ormuz tras un mes de pausa, drone irani interceptado sobre aguas de EAU, y Arabia Saudita reruteando exportaciones por amenazas de shipping en el Mar Rojo. Rerutear significa mas tonne-miles, mas dias de transito, menos barriles disponibles en cada ventana de entrega: tightness real aunque la produccion global no caiga un solo barril. Pero el crudo USA en 428.9 MMbbl no valida escasez domestica, y el Brent-WTI en 4.50 USD (92.32 vs 87.82) es amplio pero no dislocado: la prima esta en el barril seaborne expuesto a Ormuz, no en el barril de Cushing. Contra la tesis alcista juegan dos cosas: (a) el titular de diplomaticos americanos regresando a embajadas de Medio Oriente, que sugiere que Washington no anticipa escalada mayor, y (b) las noticias de oferta futura (deal Venezuela, reservas del Lejano Oriente ruso) que son irrelevantes a 3 meses pero pesan sobre el diferido y ayudan a explicar la propia backwardation.\n\nEl overlay macro del fondo es coherente y me da permiso para estar largo el complejo: REFLACION 62%, unemployment 4.1%, sahm_rule -0.03, HY spread 2.60% en compresion extrema, curva 10Y-3M en +0.98% empinandose. Eso es demanda energetica sostenida, no destruccion de demanda; y reflacion es exactamente el regimen donde el crack alto se sostiene porque el consumidor final absorbe el precio. El tecnico lo confirma con USO LONG 9/10 a +28.65% sobre su dma200, aunque ese mismo dato es la advertencia: estar 28% sobre la media movil es entrar tarde en el crudo flat price. Por eso mi expresion preferida no es el barril, es el MARGEN: refinacion (VLO, CRAK) y destilado (HO) capturan la dislocacion real con menos exposicion a un desarme de prima de guerra, porque si hay de-escalacion el crudo cae mas rapido que el crack cuando el inventario de destilado sigue en 103 MMbbl y las refinerias entran a temporada de turnaround de otoño. El natgas queda explicitamente fuera del trade: 3,184 Bcf de storage y 2.88 USD dicen que el shock es de liquidos, no de BTUs, y no promedio ambos mercados.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 8,
+      "razonamiento": "Expresion mas directa del hecho fisico dominante: crack 3:2:1 en 63.53 USD/bbl con utilizacion de refino en 97.4%. La combinacion margen record + plantas corriendo a full es maxima generacion de caja: no es un crack alto por outage (donde nadie captura el margen), es un crack alto con volumen corriendo. Valero es refinador puro, sin exposicion upstream que sufra si el crudo corrige, y ademas se beneficia si el crudo cae con el crack sostenido. Precio 361.22. No tengo guidance de la compania, capture rates ni calendario de turnarounds de otoño."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Precio 163.25. Integrado con downstream y quimica relevante, lo que le da captura del crack 3:2:1 en 63.53 ademas del barril a 87.82/92.32. Perfil defensivo dentro del sector: si la prima de guerra se desarma, el segmento de refino amortigua. Sin datos de produccion, breakevens ni guidance en mis inputs, la conviccion se apoya solo en el regimen sectorial y el macro."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Precio 209.09. Misma logica integrada que XOM con backwardation +8.79 y crack 63.53. Nota especifica: los titulares sobre el deal de Venezuela (Forbes, TheStreet, Business Insider, 30-31 ago) son relevantes para operadores con presencia historica en el pais, pero mis propios inputs enfatizan que 'Venezuela needs years of investment' y que las reservas 'won't materialize overnight'. No lo cuento como catalizador de corto plazo ni tengo confirmacion de la exposicion especifica de CVX en el deal."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Precio 60.95. Alta beta al WTI (87.82) por perfil upstream concentrado, lo que corta en las dos direcciones: captura mas si la backwardation de 8.79 persiste, pierde mas si el titular de de-escalacion (diplomaticos USA regresando a Medio Oriente) desarma la prima de guerra. Sin exposicion downstream no participa del crack de 63.53, que es la parte mas solida de mi tesis. Lean direccional debil, no mas."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Precio 147.65. E&P puro, se beneficia del crudo con backwardation +8.79 y del macro REFLACION, pero su mix incluye gas natural donde clasifico OVERSUPPLIED (storage 3,184 Bcf, HH 2.88). Esa mezcla diluye la tesis. Ademas, sin exposicion a refino queda fuera del trade central del memo (crack 63.53). Lean debil."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 4,
+      "razonamiento": "Precio 75.23. Vaca Muerta con realizaciones ligadas a Brent (92.32) y perfil de crecimiento de produccion, coherente con el regimen TIGHT_BACKWARDATED. Pero es la senal con mas ruido idiosincratico del tablero: no tengo ningun dato de mis inputs sobre produccion de la compania, capacidad de evacuacion, precios domesticos argentinos, riesgo cambiario ni riesgo pais. Conviccion 4 refleja que la tesis es puramente por correlacion al Brent, no por analisis del activo."
+    }
+  ],
+  "eventos_clave": [
+    "Ataques cruzados EEUU-Iran en el Estrecho de Ormuz tras pausa de un mes desde el 29 de julio, con represalias iranies contra objetivos americanos en EAU y Jordania (NPR, 31-ago): friccion directa sobre el chokepoint de transito de crudo mas importante del mundo",
+    "Arabia Saudita reruteando exportaciones de crudo por amenazas al shipping en el Mar Rojo (30-ago): mas tonne-miles y mas dias de transito = menos barriles disponibles por ventana de entrega, tightness fisica sin caida de produccion",
+    "EAU intercepta drone irani sobre sus aguas territoriales (31-ago): la disrupcion se extiende del Estrecho al Golfo Persico, incrementando primas de seguro y riesgo de transito",
+    "Contra-senal de de-escalacion: diplomaticos de EEUU regresando a embajadas y consulados en Medio Oriente reducidos durante la guerra con Iran (30-ago), sugiriendo que Washington no anticipa escalada mayor - riesgo directo a la prima de guerra en el crudo",
+    "Narrativa de oferta futura: deal de EEUU sobre petroleo venezolano (Forbes/TheStreet/Business Insider) con analistas advirtiendo que requiere años de inversion, mas anuncio de Rosnedra sobre reservas del Lejano Oriente ruso comparables a las mayores cuencas del mundo - irrelevante para el balance de 3 meses pero presiona el extremo diferido de la curva y contribuye a la propia backwardation"
+  ],
+  "contradicciones_observadas": "Cuatro dislocaciones concretas. (1) La mas importante: crack 3:2:1 en 63.53 USD/bbl CON utilizacion de refinerias en 97.4%. Normalmente un crack de crisis viene acompañado de utilizacion colapsada (outage, incendio, turnaround forzado). Aca las plantas corren a full y aun asi el margen es de crisis: eso significa que el deficit no es de capacidad de refino domestica sino de disponibilidad global de producto, y que los refinadores americanos estan capturando integramente ese margen con volumen maximo. Es la configuracion mas rentable posible para un refinador y es exactamente donde apunto (VLO, CRAK). (2) Crudo USA en 428.9 MMbbl - nivel que no luce escaso - conviviendo con backwardation de 8.79 USD a 6 meses. Los inventarios domesticos dicen 'comodo', la curva dice 'desesperado'. La reconciliacion fisica es que el tightness esta en el barril waterborne expuesto a Ormuz y Mar Rojo, no en el barril de tanque americano; y ademas el extremo diferido esta siendo presionado por la narrativa de oferta futura (Venezuela, Rusia). (3) Asimetria brutal dentro de productos: destilado en 103,391 Mbbl versus gasolina en 206,842 Mbbl, con crack de destilado (~105.7) casi 2.5x el de gasolina (~42.4). El complejo refinado no esta tight en promedio, esta tight en el barril medio. Promediar aca destruye la señal. (4) Divergencia total oil vs gas: WTI 87.82 con curva invertida contra HH en 2.88 con 3,184 Bcf en storage. El shock es de liquidos y geopolitico, no energetico generalizado. Esto es un argumento fuerte para NO comprar 'energia' como bloque y si discriminar por producto.",
+  "invalidadores": [
+    "Colapso del crack 3:2:1 desde 63.53 hacia debajo de 30 USD/bbl, o reconstruccion del inventario de destilado desde 103,391 Mbbl hacia arriba en semanas consecutivas: invalida directamente las senales de VLO, CRAK y HEATING_OIL, que son el nucleo del memo",
+    "Aplanamiento del calendario WTI 6m desde +8.79 hacia debajo de +3.00, o flip a contango: seria la confirmacion fisica de que el mercado dejo de racionar barril prompt y que la prima de guerra se desarmo. Se dispararia mas rapido si se confirma la linea de de-escalacion que ya insinua el retorno de diplomaticos americanos a Medio Oriente y se restablece el transito normal por Ormuz y Mar Rojo",
+    "Quiebre del regimen macro REFLACION hacia deterioro de crecimiento: ampliacion del HY spread desde 2.60% hacia arriba de 4.00%, sahm_rule cruzando desde -0.03 hacia 0.50, o jobless_claims saliendo de 203k hacia arriba de 300k. En ese escenario la demanda de destilado (proxy industrial y de transporte) colapsa primero y toda la tesis de margen se cae, independientemente de la geopolitica",
+    "Riesgo tecnico de entrada: USO ya opera +28.65% sobre su dma200 (136.89 vs 106.41). Una reversion a la media de esa magnitud, aun sin cambio en el fundamental fisico, invalida las expresiones de flat price (WTI, BRENT, OXY, EOG, VIST) antes que las de margen",
+    "Caida de la utilizacion de refino desde 97.4% hacia debajo de 90% por entrada masiva a turnarounds de otoño: reduciria el volumen sobre el que VLO y CRAK capturan el margen, aunque paradojicamente apretaria mas el crack. Vigilar como cambio de mix del trade, no como invalidacion total"
+  ],
+  "data_gaps": "Faltantes que limitan materialmente el analisis. CRUDO: no tengo inventario de Cushing (clave para validar la backwardation de 8.79), no tengo 5-year averages de ninguna serie EIA (por lo tanto no puedo decir si 428.9 MMbbl de crudo, 103.4 de destilado o 3,184 Bcf de gas estan por encima o por debajo de lo normal - lo infiero por relaciones internas y por precio, no por serie historica), no tengo produccion domestica USA ni niveles de SPR, no tengo la curva forward del Brent (solo el calendario WTI), no tengo cifras de produccion OPEC+ ni spare capacity ni el resultado de la ultima reunion, no tengo volumenes de transito reales por Ormuz. LPG: es el bloque mas ciego - sin Saudi CP, sin FEI Asia, sin spread Mt Belvieu-FEI, sin freight VLGC y sin exportaciones de LPG desde el Golfo no puedo determinar tightness real; mi clasificacion BALANCED se apoya en un unico dato (109,483 Mbbl de propano) y por eso la confianza es 40. GAS: sin produccion seca, sin LNG feedgas, sin curva forward HH y sin pronosticos de HDD/CDD. FLETES: sin rates de VLCC/LR2/MR no puedo cuantificar cuanto del crack de 63.53 es escasez de producto y cuanto es costo de arbitraje encarecido por el rerouteo. CORPORATIVO: cero datos fundamentales de XOM, CVX, OXY, VLO, EOG y especialmente VIST (produccion, breakevens, capture rates, hedges, guidance). POSICIONAMIENTO: sin datos CFTC de net length no puedo evaluar cuan consensuado esta el long energia, lo cual es critico dado que el crudo ya esta 28.65% sobre su dma200.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'WTI'",
+    "Senal 2: activo invalido 'BRENT'",
+    "Senal 3: activo invalido 'HEATING_OIL'",
+    "Senal 4: activo invalido 'GASOLINA'",
+    "Senal 5: activo invalido 'NATGAS'",
+    "Senal 7: activo invalido 'CRAK'",
+    "Senal 8: activo invalido 'XLE'"
+  ],
+  "metadata": {
+    "timestamp": "2026-09-01T15:13:06.633207",
+    "modelo": "claude-opus-5"
+  }
+}

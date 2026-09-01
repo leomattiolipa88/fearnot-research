@@ -1,0 +1,97 @@
+{
+  "fecha": "2026-09-01",
+  "regimen": {
+    "clasificacion": "REFLACION",
+    "confianza": 62,
+    "razonamiento": "Disiento parcialmente del régimen pre-calculado (GOLDILOCKS, 0 señales de riesgo, 0 de inflación). El bloque de CRECIMIENTO sí es sólido: unemployment 4.1% (FRED:UNRATE), sahm_rule en -0.03 (FRED:SAHMREALTIME, muy lejos del umbral 0.50 de recesión), jobless_claims 203k (FRED:ICSA, aunque es_fresco=false, 10 días de antigüedad → menor peso), hy_spread en 2.60% (FRED:BAMLH0A0HYM2, spreads históricamente comprimidos = sin estrés crediticio) y yield_curve en +0.98% (calculado 10Y-3M, positiva y empinada). Pero el bloque de INFLACIÓN/TASAS ya no es benigno: yield_10y_mkt en 4.766% (yfinance:^TNX) contra un yield_10y de FRED de 4.67% del 27-ago (es_fresco=false) → el mercado empujó el largo ~10bp en pocos días; tips_yield_10y en 2.42% (FRED:DFII10) es un rendimiento real restrictivo; michigan_inflation_exp en 4.2% (FRED:MICH) está muy por encima del target, aunque con 62 días de antigüedad. El breakeven_5y5y en 2.32% (FRED:T5YIFR) sigue anclado, lo que evita clasificar STAGFLATION. Combinado con el shock de oferta energética (AP: ataque de EEUU a lanzaderas iraníes en el Estrecho de Ormuz, petróleo en alza) y con el giro hawkish de la Fed bajo Warsh (Bloomberg / Investing.com: ~60% de probabilidad de SUBA de tasas antes de fin de año), el cuadro es crecimiento firme + presión inflacionaria al alza = REFLACION con cola de STAGFLATION, no Goldilocks. El régimen automático marca 0 señales de inflación porque los indicadores duros de precios (cpi 332.813, pce_core 130.658, ambos del 1-jul) tienen 62 días de rezago y no capturan el shock de petróleo de hoy."
+  },
+  "senales": [
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Bear steepening en curso: yield_10y_mkt 4.766% (yfinance:^TNX) vs yield_10y FRED 4.67% del 27-ago (es_fresco=false), con tips_yield_10y en 2.42% (FRED:DFII10). TLT cotiza en 82.09 (yfinance:TLT), consistente con tasas largas altas. El catalizador es doble: (1) el mercado descuenta ~60% de probabilidad de SUBA de la Fed tras el discurso de Warsh (Bloomberg, Investing.com), lo que es incompatible con duración larga; (2) el FT reporta yields japoneses en máximos de tres décadas con el yen pasado ¥160 — usdjpy en 160.07 (yfinance:USDJPY=X) —, lo que reduce el bid japonés estructural por Treasuries y presiona el largo global. El shock de oferta de petróleo (AP, Ormuz) agrega prima inflacionaria al term premium. Riesgo de la señal: un flight-to-quality geopolítico severo podría comprimir yields nominales temporalmente.",
+      "dato_clave": "tips_yield_10y = 2.42% (FRED:DFII10) + yield_10y_mkt 4.766%"
+    },
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "Convicción limitada por datos: NO hay precio de petróleo ni de USO en el JSON, así que esta señal se apoya exclusivamente en noticias, no en indicadores verificados. AP News reporta ataque de fuerzas estadounidenses a lanzaderas iraníes en el Estrecho de Ormuz con suba fuerte del crudo; Investing.com confirma el alza de precios del petróleo. El Estrecho de Ormuz es el cuello de botella de ~20% del crudo marítimo mundial, por lo que la prima de riesgo tiende a expandirse mientras dure la escalada. Consistente con el resto del cuadro: régimen reflacionario y breakeven_5y5y en 2.32% (FRED:T5YIFR) que aún no incorporó el shock. Sin dato de precio en el JSON, no subo la convicción por encima de 5 y el horizonte es táctico.",
+      "dato_clave": "Sin dato en JSON — señal basada solo en noticias (AP: Ormuz). breakeven_5y5y 2.32% como referencia de que la prima aún no está descontada"
+    },
+    {
+      "activo": "SPY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "Tensión clara entre posicionamiento y catalizadores. A favor del riesgo: vix en 15.33 (yfinance:^VIX, régimen de baja volatilidad), hy_spread en 2.60% (FRED:BAMLH0A0HYM2, sin estrés de crédito), sahm_rule -0.03 y unemployment 4.1% (sin señal de recesión), SPY en 763.50 (yfinance:SPY). En contra: futuros cayendo por el shock de Ormuz (AP), ~60% de probabilidad de suba de tasas (Investing.com/Bloomberg) y tips_yield_10y 2.42% que comprime múltiplos. Un VIX de 15.33 con un shock geopolítico activo y riesgo de hike es complacencia: la asimetría de corto plazo es negativa, pero los fundamentals de crecimiento y crédito no justifican un short direccional. Neutral con sesgo a comprar volatilidad / reducir beta.",
+      "dato_clave": "vix = 15.33 (yfinance:^VIX) frente a hy_spread 2.60%"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "SHORT",
+      "horizonte": "SEMANAL",
+      "conviccion": 5,
+      "razonamiento": "El Nasdaq es la parte del equity más sensible a la duración: con tips_yield_10y en 2.42% (FRED:DFII10) y yield_10y_mkt en 4.766% (yfinance:^TNX), un repricing hacia suba de Fed (Bloomberg: Warsh pledge anti-inflación) golpea desproporcionadamente a los múltiplos largos. Añade riesgo idiosincrático la advertencia del BoE (CNBC: Bailey sobre modelos frontera de IA y riesgo cibernético sistémico), que puede introducir prima regulatoria sobre el complejo AI. Convicción moderada: no hay dato de QQQ en el JSON (solo SPY 763.50), la señal es relativa/derivada y el crédito sigue sano (hy_spread 2.60%).",
+      "dato_clave": "tips_yield_10y = 2.42% (FRED:DFII10) — sin precio de QQQ en el JSON"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "dxy en 99.59 (yfinance:DX-Y.NYB) con eurusd 1.1601 (yfinance:EURUSD=X) y usdjpy 160.07 (yfinance:USDJPY=X). El diferencial de tasas se mueve a favor del dólar: mercado con ~60% de probabilidad de HIKE de la Fed (Investing.com) mientras el FT documenta al yen debilitado más allá de ¥160 pese a las apuestas de tightening del BoJ. Sumado a un shock de oferta energética (AP: Ormuz), el USD suele capturar bid de refugio y de términos de intercambio. Los EM cambiarios están tranquilos —usdbrl 5.1446, usdmxn 16.955, usdcny 6.7088 (yfinance)—, lo que indica que el fortalecimiento del USD todavía no es disruptivo; ese es justamente el margen para que continúe.",
+      "dato_clave": "usdjpy = 160.07 (yfinance:USDJPY=X)"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "Señales contradictorias, convicción baja deliberadamente. GLD en 399.88 (yfinance:GLD) tras la caída de más de 3% del viernes reportada por Bloomberg por las apuestas de suba de la Fed. En contra del oro: tips_yield_10y en 2.42% (FRED:DFII10) es un costo de oportunidad real elevado, y un DXY en 99.59 al alza. A favor: escalada militar en Ormuz (AP) y michigan_inflation_exp en 4.2% (FRED:MICH, 62 días de antigüedad → señal degradada). Con el driver de tasas reales y el driver geopolítico apuntando en direcciones opuestas, declaro convicción insuficiente para tomar dirección; solo se justifica como cobertura de cola geopolítica, no como posición direccional.",
+      "dato_clave": "tips_yield_10y 2.42% vs GLD 399.88 — divergencia sin resolver"
+    }
+  ],
+  "tesis_principal": "El motor de crecimiento sigue funcionando y esa es la parte menos discutible del cuadro: unemployment en 4.1% (FRED:UNRATE), sahm_rule en -0.03 (FRED:SAHMREALTIME) muy por debajo del umbral recesivo de 0.50, jobless_claims en 203.000 (FRED:ICSA, con la advertencia de que es_fresco=false, 10 días de rezago), hy_spread en 2.60% (FRED:BAMLH0A0HYM2) en niveles de compresión extrema y yield_curve en +0.98% (calculado 10Y-3M), positiva y empinándose. No hay ninguna señal de contracción crediticia ni laboral. Sobre eso, SPY cotiza en 763.50 (yfinance:SPY) con vix en 15.33 (yfinance:^VIX). El sistema pre-calculado leyó esto como GOLDILOCKS y, mirando solo el crecimiento, tiene razón.\n\nEl problema está en el eje de precios y tasas, donde el régimen pre-calculado no tiene información fresca. cpi 332.813 y pce_core 130.658 son ambos del 1-jul (62 días de antigüedad) y michigan_inflation_exp en 4.2% (FRED:MICH) tiene el mismo rezago pero ya muestra expectativas de consumidor desancladas respecto del target. El mercado, en cambio, sí está repricing en vivo: yield_10y_mkt en 4.766% (yfinance:^TNX) contra el 4.67% que reporta FRED al 27-ago (es_fresco=false), y tips_yield_10y en 2.42% (FRED:DFII10) — un rendimiento real claramente restrictivo. La narrativa que lo explica es doble y viene de las noticias: Bloomberg reporta que el compromiso antiinflacionario del presidente de la Fed, Kevin Warsh, disparó apuestas de SUBA de tasas antes de fin de año (Investing.com las cuantifica en ~60%), y el FT documenta que tras Jackson Hole los bonos japoneses y el yen quedaron bajo presión, con yields nipones en máximos de tres décadas y el yen quebrando ¥160 — usdjpy en 160.07 (yfinance:USDJPY=X). Este segundo punto importa más de lo que parece: si el carry trade en yen se desarma con tasas japonesas subiendo, se retira un comprador estructural de duración global y se amplifica el bear steepening en Treasuries. El breakeven_5y5y en 2.32% (FRED:T5YIFR) todavía está anclado, y ese es el único ancla que impide llamar a esto STAGFLATION.\n\nEncima de esto cae un shock de oferta puro: AP News reporta que fuerzas estadounidenses atacaron lanzaderas iraníes en el Estrecho de Ormuz, con futuros del S&P y del Dow cayendo y petróleo en alza fuerte. Un shock energético en un régimen donde la Fed ya viró hawkish es la peor combinación posible para la duración y para los múltiplos largos, porque comprime el crecimiento real y sube la inflación headline simultáneamente, dejando a la Fed sin espacio para rescatar al mercado. La conclusión operativa: mantener el sesgo constructivo sobre el ciclo (crédito y empleo lo respaldan) pero expresarlo SIN duración —short TLT en 82.09 (yfinance:TLT)—, long USD con dxy en 99.59 y eurusd en 1.1601, exposición táctica a energía, y reducir beta en equity de alto múltiplo. El punto más peligroso del tablero es la desconexión entre vix 15.33 y hy_spread 2.60% (mercado descontando cero riesgo) frente a una escalada militar activa y 60% de probabilidad de hike: la volatilidad está barata en términos de la información disponible.",
+  "invalidadores": [
+    "Desescalada rápida en el Estrecho de Ormuz con retroceso del petróleo a niveles pre-ataque: invalidaría el long USO, quitaría la prima inflacionaria del term premium y devolvería el cuadro a GOLDILOCKS puro, reduciendo la convicción del short TLT.",
+    "Que la Fed (Warsh) module el mensaje y las odds de suba caigan de ~60% a menos de 25% (Investing.com/Bloomberg como referencia): eso comprimiría el yield_10y_mkt (hoy 4.766%) y el tips_yield_10y (hoy 2.42%), invalidando short TLT, short QQQ y long DXY simultáneamente.",
+    "Intervención del BoJ o tightening agresivo que revierta usdjpy 160.07 hacia 150 o menos: dispararía un desarme desordenado del carry trade que, en su primera fase, es risk-off global y golpea el long DXY y la neutralidad en SPY (habría que pasar a SHORT).",
+    "Un hy_spread que se abra por encima de 3.5-4.0% desde el 2.60% actual (FRED:BAMLH0A0HYM2) o un vix sostenido sobre 25 desde 15.33: eso rompería la tesis de crecimiento firme y transformaría el régimen en DESACELERACION, invirtiendo la señal de TLT a LONG.",
+    "Que el próximo dato de empleo lleve el sahm_rule de -0.03 hacia arriba de 0.30 o que jobless_claims (hoy 203k, dato rancio de 10 días) supere las 260k: invalidaría el pilar de crecimiento sobre el que se apoya toda la tesis reflacionaria."
+  ],
+  "alertas": [
+    "COMPLACENCIA: vix en 15.33 (yfinance:^VIX) y hy_spread en 2.60% (FRED:BAMLH0A0HYM2) conviven con una acción militar activa de EEUU en el Estrecho de Ormuz (AP News) y ~60% de probabilidad de suba de la Fed (Investing.com). El mercado de volatilidad no está descontando ninguno de los dos eventos. Asimetría negativa de corto plazo.",
+    "DIVERGENCIA RÉGIMEN vs MERCADO: el régimen pre-calculado marca 0 señales de inflación, pero se apoya en cpi (332.813) y pce_core (130.658) del 1-jul, ambos con 62 días de rezago. El mercado ya subió el yield_10y_mkt a 4.766%. El clasificador automático está estructuralmente ciego al shock de hoy.",
+    "TASAS REALES RESTRICTIVAS: tips_yield_10y en 2.42% (FRED:DFII10). Sostenido en ese nivel, es un nivel que históricamente estresa refinanciación corporativa e inmobiliario comercial, y hoy no se refleja en absoluto en el hy_spread de 2.60%. Vigilar esa desconexión.",
+    "CARRY TRADE YEN: usdjpy en 160.07 (yfinance:USDJPY=X) con yields japoneses en máximos de tres décadas según FT. Es el nivel donde históricamente aparece riesgo de intervención verbal o efectiva. Un movimiento brusco a la baja en USDJPY es la principal fuente de riesgo de liquidez global no descontada.",
+    "ORO vs TASAS REALES: GLD en 399.88 (yfinance:GLD) tras caer >3% (Bloomberg) es incompatible con un tips_yield_10y de 2.42% en un modelo tradicional. O el oro tiene un bid estructural no explicado por tasas reales (bancos centrales/geopolítica), o le queda corrección. No resuelvo la ambigüedad: convicción insuficiente.",
+    "RIESGO SISTÉMICO NUEVO: el gobernador del BoE (CNBC) advierte que los modelos frontera de IA elevan materialmente el riesgo cibernético del sistema financiero. No es tradeable hoy, pero es una fuente de riesgo de cola que no está en ningún indicador del JSON."
+  ],
+  "datos_insuficientes": [
+    "jobless_claims (FRED:ICSA): es_fresco=false, 10 días de antigüedad. Reduce la confianza en la lectura de crecimiento en tiempo real.",
+    "yield_10y (FRED:DGS10, 4.67%) y yield_3m (FRED:DTB3, 3.69%): ambos es_fresco=false con 5 días de rezago. El yield_curve de +0.98% se calcula sobre esos datos rancios; con el yield_10y_mkt de hoy en 4.766% la curva real probablemente está más empinada (~+1.08%). Trato el nivel de la curva como aproximado.",
+    "cpi (332.813) y pce_core (130.658): 62 días de antigüedad. No capturan ningún efecto del shock energético de hoy. La lectura de inflación es esencialmente prospectiva/de mercado, no observada.",
+    "michigan_inflation_exp (4.2%): 62 días de antigüedad. Es la señal más alarmante del set de inflación pero también una de las más rancias — la pondero a la baja.",
+    "unemployment (4.1%) y sahm_rule (-0.03): 62 días de antigüedad. El pilar de crecimiento de la tesis descansa sobre datos laborales de julio.",
+    "No hay precio de petróleo/USO, ni de QQQ, ni de VIX term structure, ni de ISM/PMI, ni de agregados de liquidez (M2/reservas Fed) en el JSON. Las señales de USO y QQQ se emiten con convicción reducida por esa razón.",
+    "4 de 25 indicadores del universo no están disponibles/confiables hoy (21/25 confiables), lo que impone un techo a la confianza general."
+  ],
+  "eventos_clave": [
+    "[Associated Press] 'US futures fall and oil prices surge after US hits Iranian sites in the Strait of Hormuz' — Shock de oferta energética en el cuello de botella petrolero más importante del mundo. Impacto: alza de la prima de riesgo en crudo (long USO táctico), presión inflacionaria headline que refuerza el short TLT vía term premium, y bid defensivo para el USD (dxy 99.59). Contradice directamente el vix de 15.33.",
+    "[Bloomberg] 'Gold Steadies After Tumbling as Warsh Spurs Fed Rate-Hike Bets' — El presidente de la Fed Kevin Warsh comprometió pelear la inflación, disparando apuestas de SUBA de tasas antes de fin de año. Impacto: es el driver principal del yield_10y_mkt en 4.766% y del tips_yield_10y en 2.42%; explica la caída >3% del oro (GLD 399.88) y sostiene el long DXY. Es el evento macro más importante del día.",
+    "[Investing.com] 'Wall Street futures fall as Middle East flare-up and 60% Fed hike odds' — Cuantifica el repricing: ~60% de probabilidad de hike. Impacto: combinación tóxica para duración y para múltiplos largos (short TLT, short QQQ); justifica pasar SPY a NEUTRAL pese a hy_spread de 2.60% y sahm_rule de -0.03.",
+    "[Financial Times] 'Japanese bonds and yen come under pressure after Jackson Hole meeting' — Yen debilitado más allá de ¥160 (usdjpy 160.07) y yields japoneses en máximos de tres décadas. Impacto: retiro del comprador estructural japonés de Treasuries, lo que amplifica el bear steepening global y refuerza el short TLT; simultáneamente es el mayor riesgo de cola si el carry trade se desarma de golpe.",
+    "[CNBC] 'Bank of England chief warns new AI models threaten global financial stability' — Bailey advierte que la IA frontera eleva materialmente el riesgo cibernético sistémico. Impacto: prima regulatoria/de riesgo incremental sobre el complejo AI, factor secundario que suma al short táctico de QQQ. No tiene traducción numérica en ningún indicador del JSON."
+  ],
+  "confianza_general": 63,
+  "metadata": {
+    "timestamp": "2026-09-01T15:06:07.866606",
+    "datos_usados": 21,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
