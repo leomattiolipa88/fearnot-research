@@ -1,0 +1,96 @@
+{
+  "fecha": "2026-09-02",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 62,
+    "razonamiento": "Crecimiento sólido con inflación de mercado anclada, pero con un sesgo reflacionario incómodo. Del lado del crecimiento: unemployment 4.1% (FRED:UNRATE), sahm_rule en -0.03 (FRED:SAHMREALTIME, muy lejos del umbral de 0.50 de recesión) y jobless_claims en 203.000 (FRED:ICSA, aunque con 11 días de antigüedad y marcado es_fresco=false, por lo que le bajo peso). Del lado de la liquidez/riesgo: hy_spread en 2.65% (FRED:BAMLH0A0HYM2) es un nivel de compresión propio de fin de ciclo benigno, y vix en 15.53 (yfinance:^VIX) confirma ausencia de estrés. La curva 10Y-3M está en +0.97% (calculado:10Y-3M, con yield_10y 4.75% y yield_3m 3.78%), positiva y con pendiente — no hay señal de inversión recesiva. Del lado inflacionario, las expectativas de mercado están contenidas: breakeven_5y5y 2.33% (FRED:T5YIFR) y un breakeven 10Y implícito de ~2.31% (yield_10y 4.75 menos tips_yield_10y 2.44). PERO hay dos grietas que impiden confianza alta: michigan_inflation_exp en 4.2% (FRED:MICH) está muy por encima del breakeven de mercado, y el titular de CNBC con Barr diciendo que apoyaría una suba de tasas si la inflación no cede. Además tips_yield_10y en 2.44% es un rendimiento real restrictivo. Por eso valido el régimen GOLDILOCKS pre-calculado pero con confianza moderada y sesgo hacia REFLACION, no hacia DESACELERACION."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "El régimen de riesgo sigue habilitado: hy_spread 2.65% (FRED:BAMLH0A0HYM2) es crédito barato y funcionando, vix 15.53 (yfinance:^VIX) sin cobertura defensiva y sahm_rule -0.03 (FRED:SAHMREALTIME) descarta recesión inminente. SPY en 765.65 (yfinance:SPY). Lo que me impide ir a 8+ es el costo de descuento: tips_yield_10y 2.44% (FRED:DFII10) y yield_10y_mkt 4.788% (yfinance:^TNX) son un viento de frente de valuación, y el comentario de Barr (CNBC) sobre una posible suba abre una cola izquierda que el VIX no está cobrando.",
+      "dato_clave": "hy_spread 2.65% (FRED:BAMLH0A0HYM2)"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "TLT en 81.89 (yfinance:TLT) con yield_10y de FRED en 4.75% (dato del 31/08) contra yield_10y_mkt en 4.788% (yfinance:^TNX, hoy): la tasa sigue subiendo en el margen. Con crecimiento intacto (unemployment 4.1%, sahm_rule -0.03), curva ya positiva en +0.97% (calculado:10Y-3M) y un gobernador de la Fed hablando de SUBIR y no de bajar (CNBC/Barr), el bid de duración no tiene catalizador. El riesgo de la posición es que un shock de crecimiento la invalide rápido.",
+      "dato_clave": "yield_10y_mkt 4.788% vs yield_10y 4.75% (subiendo)"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 6,
+      "razonamiento": "GLD en 402.19 (yfinance:GLD) sostenido A PESAR de un rendimiento real de 2.44% (FRED:DFII10) — históricamente ese nivel de tasa real debería castigar al oro. Esa divergencia sugiere un bid estructural (reservas oficiales / hedge de debasement) que no depende del ciclo de tasas. Además, michigan_inflation_exp en 4.2% (FRED:MICH) muy por encima del breakeven_5y5y de 2.33% (FRED:T5YIFR) indica que el consumidor no cree en la desinflación, y el DXY en 99.56 (yfinance:DX-Y.NYB) no está en zona de fortaleza extrema. Es mi hedge natural contra el escenario en que Barr tenga razón y el régimen mute a STAGFLATION.",
+      "dato_clave": "GLD 402.19 con tips_yield_10y 2.44% (divergencia)"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 4,
+      "razonamiento": "Señales cruzadas. A favor del dólar: retórica hawkish de la Fed (CNBC/Barr) y un yield_3m de 3.78% (FRED:DTB3) que sostiene el carry. En contra: DXY en 99.55 (yfinance:DX-Y.NYB) por debajo de 100 y eurusd en 1.1596 (yfinance:EURUSD=X) mostrando euro firme; usdcny 6.7072, usdmxn 16.99 y usdbrl 5.105 (yfinance) muestran EM FX fuerte, típico de apetito de riesgo, no de escasez de dólares. Sin datos de tasas ex-US en el JSON, no tengo convicción direccional.",
+      "dato_clave": "dxy 99.558 con eurusd 1.1596"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "LONG",
+      "horizonte": "SEMANAL",
+      "conviccion": 4,
+      "razonamiento": "Convicción reducida por dato faltante: el JSON no contiene precio de QQQ ni de ningún índice tech, así que sólo puedo inferir por proxy desde spy 765.65 (yfinance:SPY) y vix 15.53 (yfinance:^VIX). El régimen de liquidez con hy_spread 2.65% favorece duración de equity, pero tips_yield_10y en 2.44% (FRED:DFII10) es exactamente el factor que castiga a los múltiplos largos, y el titular de Yahoo Finance sobre estacionalidad adversa de septiembre para software agrega ruido. Señal táctica de baja convicción.",
+      "dato_clave": "spy 765.65 como proxy (no hay dato de QQQ en el JSON)"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 2,
+      "razonamiento": "Convicción insuficiente: no hay ningún dato de precio de crudo, inventarios ni energía en el JSON. Los únicos inputs son cualitativos (acuerdo Trump-Venezuela según Washington Post, con impacto de oferta a años vista; y la Tormenta Tropical Edouard acercándose a Texas/Louisiana según AP, que es riesgo de refinación/producción del Golfo). Sin dato numérico no emito dirección.",
+      "dato_clave": "sin dato de crudo en el JSON — convicción insuficiente"
+    }
+  ],
+  "tesis_principal": "El mercado está descontando un aterrizaje suave casi perfecto y los datos duros del JSON lo respaldan: unemployment 4.1% (FRED:UNRATE), sahm_rule -0.03 (FRED:SAHMREALTIME), jobless_claims 203.000 (FRED:ICSA — dato NO fresco, 11 días), hy_spread comprimido en 2.65% (FRED:BAMLH0A0HYM2) y vix en 15.53 (yfinance:^VIX). La curva 10Y-3M está normalizada en +0.97% (calculado:10Y-3M, yield_10y 4.75% vs yield_3m 3.78%), lo que históricamente marca la salida de la fase de inversión sin recesión materializada. Con SPY en 765.65 (yfinance:SPY) y crédito en mínimos de spread, el camino de menor resistencia para el equity sigue siendo arriba. Ese es el caso base y por eso mantengo GOLDILOCKS.\n\nAhora, la incomodidad. Esta es una Goldilocks cara. El rendimiento real a 10 años está en 2.44% (FRED:DFII10) y el nominal de mercado en 4.788% (yfinance:^TNX, por encima del 4.75% de FRED del 31/08): la tasa de descuento está subiendo mientras los spreads de crédito bajan, una combinación que comprime la prima de riesgo del equity a niveles donde cualquier sorpresa duele el doble. En paralelo hay una brecha inflacionaria enorme entre lo que cotiza el mercado — breakeven_5y5y 2.33% (FRED:T5YIFR), breakeven 10Y implícito ~2.31% — y lo que percibe el consumidor: michigan_inflation_exp 4.2% (FRED:MICH). El titular de CNBC sobre el gobernador Barr diciendo que apoyaría una SUBA de tasas si la inflación no cede valida el lado del consumidor, no el del bono, y es la noticia estructuralmente más relevante del día: un mercado que descuenta cortes no está posicionado para una Fed que discute hikes.\n\nEl termómetro que vigilo es el FX. USDJPY en 158.75 (yfinance:USDJPY=X, confirmado por usdjpy_mkt 158.75) indica que el carry trade global está plenamente desplegado y funcionando — es la fuente de liquidez marginal que sostiene el hy_spread en 2.65% y el vix en 15.53. Lo confirma el EM FX fuerte: usdmxn 16.99, usdbrl 5.105, usdcny 6.7072 (yfinance), con un dxy contenido en 99.56 y eurusd en 1.1596. Mientras el yen siga débil, la tesis pro-riesgo aguanta. La anomalía que no cierra es GLD en 402.19 (yfinance:GLD) con tasas reales al 2.44%: alguien está pagando caro un seguro contra debasement o contra un error de política de la Fed en un mundo supuestamente Goldilocks. Por eso la cartera es: LONG equity con convicción moderada, SHORT duración vía TLT (81.89), y LONG oro como cobertura del escenario de mutación a STAGFLATION.",
+  "invalidadores": [
+    "hy_spread (FRED:BAMLH0A0HYM2) supera 3.50% desde el 2.65% actual: sería el fin del régimen de liquidez benigna e invalida simultáneamente el LONG SPY y el LONG QQQ.",
+    "USDJPY (yfinance:USDJPY=X) rompe por debajo de ~152 desde 158.75: unwind del carry trade japonés, que típicamente arrastra vix por encima de 22 y golpea todos los activos de riesgo antes de que los datos macro se deterioren.",
+    "La Fed concreta el escenario de Barr (CNBC) y sube tasas o el yield_3m (FRED:DTB3) sube desde 3.78% aplanando/invirtiendo la curva de +0.97%: eso mata el LONG SPY y mata también el SHORT TLT en la parte larga si la suba mata el crecimiento.",
+    "sahm_rule (FRED:SAHMREALTIME) salta de -0.03 hacia 0.50 o jobless_claims (FRED:ICSA) supera 260.000 desde 203.000: el régimen muta a DESACELERACION, se invierte el SHORT TLT a LONG y se corta el equity.",
+    "breakeven_5y5y (FRED:T5YIFR) rompe por encima de 2.60% desde 2.33% convergiendo hacia el michigan_inflation_exp de 4.2%: confirmaría desanclaje de expectativas y mutación a STAGFLATION — sobrevive el LONG GLD, muere todo lo demás."
+  ],
+  "alertas": [
+    "DIVERGENCIA PRINCIPAL: GLD en 402.19 (yfinance:GLD) sostenido con tips_yield_10y en 2.44% (FRED:DFII10). Una tasa real de 2.44% debería ser letal para el oro. Que no lo sea implica un comprador insensible al precio (bancos centrales / hedge de credibilidad fiscal-monetaria). Es la señal que más contradice el rótulo GOLDILOCKS.",
+    "BRECHA DE EXPECTATIVAS: michigan_inflation_exp 4.2% (FRED:MICH) vs breakeven_5y5y 2.33% (FRED:T5YIFR). Casi 190 pb de diferencia entre el consumidor y el mercado de bonos. Uno de los dos está muy equivocado y el titular de Barr (CNBC) sugiere que la Fed le está prestando atención al primero.",
+    "RIESGO NO COTIZADO: el régimen pre-calculado reporta senales_riesgo=0 y senales_inflacion=0, un cero absoluto que en sí mismo es sospechoso. Con hy_spread en 2.65% y vix en 15.53 no hay colchón de valuación: cualquier shock se paga a precio completo. Recomiendo comprar convexidad barata mientras el VIX esté por debajo de 16.",
+    "TASAS SUBIENDO INTRADÍA: yield_10y_mkt 4.788% (yfinance:^TNX, hoy) por encima del yield_10y de FRED en 4.75% (31/08). Movimiento pequeño pero direccionalmente consistente con la lectura hawkish de Barr.",
+    "RIESGO OPERATIVO/ENERGÍA: la Tormenta Tropical Edouard acercándose a Texas y Louisiana (AP) amenaza infraestructura de refinación del Golfo. No puedo cuantificarlo porque no hay dato de crudo en el JSON, pero es un riesgo alcista de corto plazo para gasolina que chocaría con la narrativa desinflacionaria.",
+    "El régimen pre-calculado no incorpora headlines: la retórica de suba de tasas de un gobernador de la Fed es un input que ningún indicador del JSON captura todavía."
+  ],
+  "datos_insuficientes": [
+    "jobless_claims (FRED:ICSA, 203.000): es_fresco=false, 11 días de antigüedad. Es mi indicador de mayor frecuencia sobre el mercado laboral y está ciego — reduzco explícitamente el peso de la señal de crecimiento por esto.",
+    "cpi (FRED:CPIAUCSL, 332.813), pce_core (FRED:PCEPILFE, 130.658), michigan_inflation_exp (FRED:MICH, 4.2), unemployment (FRED:UNRATE, 4.1) y sahm_rule (FRED:SAHMREALTIME, -0.03): todos con fecha de publicación 2026-07-01 y 63 días de antigüedad. Están marcados es_fresco=true por ser series mensuales, pero operativamente el panorama inflacionario y laboral que estoy usando es de hace dos meses.",
+    "No hay ningún dato de precio de petróleo, inventarios de crudo ni gas natural en el JSON: la señal de USO queda sin convicción.",
+    "No hay dato de QQQ ni de índices tech en el JSON: la señal de QQQ es por proxy desde SPY y por eso lleva convicción 4.",
+    "El header indica 23/25 indicadores confiables — hay 2 indicadores no provistos en el JSON que no puedo identificar ni evaluar.",
+    "No hay datos de tasas ni curvas fuera de EE.UU. (BoJ, ECB), lo que limita el análisis del USDJPY 158.75 a lectura de precio y no de diferencial de tasas."
+  ],
+  "eventos_clave": [
+    "[CNBC] Fed Governor Barr says he'll support rate hike if inflation doesn't ease — El evento macro más importante del día. Un gobernador de la Fed hablando de SUBIR tasas con yield_3m en 3.78% (FRED:DTB3) es un shock de repricing para la parte corta de la curva. Refuerza directamente el SHORT TLT (81.89) y es la principal amenaza al LONG SPY (765.65): valida el michigan_inflation_exp de 4.2% (FRED:MICH) contra el breakeven_5y5y de 2.33% (FRED:T5YIFR).",
+    "[Associated Press] Shein's shares fall after Hong Kong trading debut — Debut fallido, cotizando ~10% por debajo del precio inicial. Señal de apetito de riesgo selectivo: el mercado sigue comprando índice (vix 15.53, hy_spread 2.65%) pero castiga emisión primaria con riesgo geopolítico/China. Consistente con usdcny estable en 6.7072 (yfinance) — no es un evento de estrés macro chino, es idiosincrático de valuación.",
+    "[The Washington Post] Trump said his deal with Venezuela would lower gas prices. Will it? — El propio artículo señala que la producción tardaría años en escalar. Impacto: es un titular desinflacionario sin contenido desinflacionario de corto plazo. No modifica mi lectura del breakeven_5y5y en 2.33% y refuerza mi decisión de dejar USO en NEUTRAL por falta de datos.",
+    "[Associated Press] Tropical Storm Edouard could reach hurricane strength as it approaches Texas and Louisiana — Riesgo directo sobre refinación del Golfo de México. Un shock de precios de combustible sería exactamente el catalizador que le da la razón a Barr y empuja el michigan_inflation_exp (4.2%) todavía más arriba. Es el invalidador de cola más subestimado del día.",
+    "[Yahoo Finance] Software stocks crushed chips in August. History says September gets tougher — Contexto de rotación y estacionalidad adversa tras el segundo mejor mes del software desde 2002. Justifica reducir convicción táctica en QQQ a 4 en un entorno donde tips_yield_10y en 2.44% (FRED:DFII10) presiona múltiplos de duración larga."
+  ],
+  "confianza_general": 61,
+  "metadata": {
+    "timestamp": "2026-09-02T14:38:25.025920",
+    "datos_usados": 23,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
