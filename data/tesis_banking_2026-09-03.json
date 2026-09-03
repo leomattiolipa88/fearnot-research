@@ -1,0 +1,86 @@
+{
+  "fecha": "2026-09-03",
+  "regimen_credito": {
+    "clasificacion": "EXPANSION",
+    "confianza": 62,
+    "razonamiento": "Los balances bancarios describen una EXPANSION madura y defensiva, no una euforia crediticia. Dos hechos dominan: (1) el apetito de prestamo esta anormalmente bajo — loan_to_deposit de 0.522 en C, 0.573 en JPM, 0.581 en BAC (calculated_from_loans_and_deposits) y 0.647 en MS. Ningun universal supera el 60%: los bancos tienen depositos (JPM 2.56T, BAC 2.02T, WFC 1.43T, C 1.40T, todos direct) que NO estan convirtiendo en credito. En la logica de Marks, esto es lo contrario de tarde-en-el-ciclo: nadie esta prestando sin miedo. (2) Las provisiones NO estan colapsadas donde importa: JPM cost_of_risk 0.97% y C 1.30% (calculated_from_provisions_and_loans) son niveles normalizados-a-conservadores, con 14.2bn y 9.5bn de provision_for_credit_losses (direct) respectivamente. Eso no es complacencia. La complacencia esta focalizada, no generalizada: BAC en 0.48% (2.7x menos que C), MS en 0.086% y GS con provision NEGATIVA de -1.113bn (direct), es decir liberacion de reservas. Conclusion: fase de expansion sin boom de credito bancario, con bolsones de sub-provisionamiento. NO clasifico EUFORIA porque el loan_to_deposit lo prohibe; NO clasifico CONTRACCION porque las provisiones de JPM/C son estables en nivel alto, no en escalada visible (no tengo la serie trimestral para medir la DERIVADA — limitacion critica de este memo: solo tengo el corte FY2025).",
+    "confianza_nota": "62 y no mas alto porque me falta la serie temporal de provisiones (solo tengo FY2025), y porque WFC y NU no aportan cost_of_risk ni loan_to_deposit (missing_inputs / not_found), o sea 2 de 7 sensores estan ciegos."
+  },
+  "tesis_principal": "Los bancos senalan una economia que aguanta pero a la que ellos no le quieren prestar. El mensaje mas fuerte del sector no es el nivel de provisiones sino el loan_to_deposit de 0.52-0.58 en los universales: hay una montana de depositos sin desplegar. Eso es coherente con el regimen macro del fondo (REFLACION/GOLDILOCKS: VIX 14.96, jobless claims 206k, desempleo 4.1%, Sahm -0.03) solo en apariencia. La contradiccion de fondo es esta: el HY spread esta en 2.66% — euforia crediticia plena en mercados de capitales — mientras los balances bancarios estan en modo defensivo. Las dos cosas no pueden ser ciertas sobre el mismo riesgo. La lectura mas probable es que el riesgo de credito marginal MIGRO fuera del sistema regulado (private credit, mercados publicos de HY), lo que degrada al cost_of_risk bancario como indicador adelantado: los bancos ya no son el prestamista marginal, asi que sus provisiones no van a oler la recesion primero. Es una hipotesis estructural, no un dato de mis inputs — pero si es correcta, el sector deja de ser el sensor confiable que fue en 2007 y en 2019. Para el posicionamiento: en REFLACION con curva presionando al alza (TLT bajo su 200DMA) y mercados de capitales abiertos (VIX 15, HY 266bp), el sub-tipo que gana es el fee-driven (GS 77% de ingresos no-interes, MS 86%) y el universal con eficiencia real (JPM 52.4%). El riesgo diferido esta en BAC (cost_of_risk 0.48%, el mas bajo de los universales, sobre un libro de 1.17T) y en MS (0.086% con el loan_to_deposit MAS ALTO del grupo, 0.647, y colateral valuado a mercado). Ninguna de estas conclusiones puede validarse con capital ni retorno: NO tengo ROTCE, NIM ni CET1/Tier1 (LIMITATIONS #14/#16/#17). Eso significa que no puedo juzgar si el balance sostiene el buyback ni si el NII esta comprimido por un libro de securities de bajo cupon.",
+  "senales": [
+    {
+      "activo": "JPM",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Universal bank. Es el unico del grupo con eficiencia estructuralmente superior: efficiency_ratio 0.524 (calculated) vs 0.617-0.684 del resto — una brecha de 9 a 16 puntos que no se explica por ciclo sino por escala y mix. Provisiona honestamente: cost_of_risk 0.97% con 14.2bn de provision (direct), el numero mas creible del sector junto al de C. loan_to_deposit 0.573 sobre 2.56T de depositos = la mayor polvora seca del sistema para desplegar si la reflacion continua. En REFLACION gana por los dos lados: NII 95.4bn con curva al alza y fees 87.0bn con mercados abiertos. Mayo caveat que limita la conviccion a 7 y no 8: el noninterest_expense (95.6bn) se come literalmente TODO el net interest income (95.4bn) — la ganancia entera vive de la linea de fees, que es la mas ciclica. Y sin ROTCE ni CET1 no puedo verificar si el retorno sobre capital justifica el multiplo."
+    },
+    {
+      "activo": "GS",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Investment bank: el cost_of_risk casi no aplica (loans_held_for_investment not_found, loan_to_deposit missing_inputs) y no debe leerse como banca comercial. Se lee por mix y eficiencia: 44.7bn de noninterest_income vs 13.6bn de NII (direct) = 77% fee-driven, el perfil que mejor capitaliza este regimen concreto (VIX 14.96, HY 266bp, SPY sobre 200DMA con momentum 12M +19.66%): ventanas de emision abiertas, M&A financiable, trading con vol contenida. Techo de conviccion en 6 por dos motivos Mayo: (a) la provision es NEGATIVA (-1.113bn, direct) — una liberacion de reservas no es poder de generacion de ganancias, es maquillaje de EPS de una sola vez, y no puedo verificar si responde a una reduccion genuina de riesgo o a la salida de un negocio de consumo (hipotesis, no dato de mis inputs); (b) efficiency_ratio 0.644 es mediocre para un banco que factura 58.3bn de ingresos en el mejor entorno de mercado imaginable. Si con VIX 15 no puedes bajar del 64%, el apalancamiento operativo funciona al reves cuando el ciclo gire."
+    },
+    {
+      "activo": "MS",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Investment bank, el mas fee-dependiente del grupo: 60.6bn noninterest_income vs 10.0bn NII (direct) = 86%. Eso lo hace la expresion mas pura de LONG mercados de capitales dentro del sector, coherente con la senal tecnica LONG de SPY/QQQ. Pero es la conviccion mas baja del bloque fee por dos razones concretas: (1) efficiency_ratio 0.684 (calculated) es el PEOR de los siete — 16 puntos por encima de JPM, en la cima del ciclo de mercado; (2) cost_of_risk de 0.086% (calculated) coexiste con el loan_to_deposit MAS ALTO del grupo (0.647). El banco con mas balance prestado por dolar de deposito es el que menos provisiona. Eso solo se sostiene si el colateral (tipicamente credito respaldado por activos financieros en wealth management) mantiene su valor — es decir, es una posicion apalancada al precio de las acciones disfrazada de libro de credito sano. Funciona en REFLACION; es el primer libro en fallar si VIX pasa 25."
+    },
+    {
+      "activo": "C",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "Universal bank y el sensor de credito mas honesto del panel: cost_of_risk 1.30% (calculated), 2.7x el de BAC, con 9.5bn de provision (direct) sobre 733bn de prestamos. En la logica de Marks eso es una ventaja, no un defecto: si el ciclo se deteriora, C ya tiene el golpe reconocido; si la reflacion aguanta, el exceso de reserva se convierte en liberacion. Ademas es el loan_to_deposit mas bajo del sistema (0.522) = maxima opcionalidad de crecimiento. Lo que frena la conviccion en 5: (a) efficiency_ratio 0.647, mal para una estructura que lleva anos prometiendo simplificacion, y con la peor diversificacion del grupo (noninterest_income 25.4bn = solo 30% de 85.2bn de ingresos), o sea depende del NII justo cuando el ciclo de tasas es incierto; (b) sin ROTCE no puedo distinguir 'banco barato que converge' de 'banco barato porque no gana su costo de capital' — que es exactamente la pregunta de los ultimos quince anos y no la puedo responder con estos datos."
+    },
+    {
+      "activo": "BAC",
+      "direccion": "NEUTRAL",
+      "conviccion": 5,
+      "razonamiento": "Universal bank y el numero mas sospechoso del memo. cost_of_risk de 0.477% (calculated) sobre 1.17T de prestamos: la mitad del de JPM (0.97%) y un tercio del de C (1.30%), con franquicias de consumo/comercial que se superponen. Escepticismo Mayo: en expansion madura, un cost_of_risk que es el mas bajo del grupo no es evidencia de mejor suscripcion, es una hipotesis de provisionamiento insuficiente hasta que se demuestre lo contrario — y no puedo demostrarlo porque no tengo ACL/prestamos ni net charge-offs en mis inputs. Segundo problema: NII de 60.1bn sobre 2.02T de depositos = ~2.98% de rendimiento, contra 3.73% de JPM y 4.26% de C sobre bases mas chicas. BAC tiene el mejor pasivo del sistema y lo monetiza peor que sus pares, lo que apunta a un libro de activos de bajo cupon — pero eso NO lo puedo confirmar: NIM no esta disponible (LIMITATIONS #16) ni el impacto de AOCI. Con efficiency_ratio 0.617 (segundo mejor, pero 9 puntos detras de JPM), la tesis es 'balance enorme, monetizacion mediocre, provision optimista'. NEUTRAL: no lo pongo SHORT porque el regimen macro es benigno y la subvaluacion del NII se revierte con curva mas empinada; no lo pongo LONG porque el riesgo de credito diferido no esta pagado."
+    },
+    {
+      "activo": "WFC",
+      "direccion": "NEUTRAL",
+      "conviccion": 3,
+      "razonamiento": "Universal bank con datos mutilados: loans_held_for_investment es not_found, por lo tanto cost_of_risk y loan_to_deposit vienen missing_inputs. NO tengo el dato — no lo invento y no lo aproximo. Lo que si tengo: 3.658bn de provision (direct) sin denominador, 1.43T de depositos (direct), NII 47.5bn y el peor efficiency_ratio de los universales, 0.655 (calculated), 13 puntos por detras de JPM. Con los dos indicadores centrales del ciclo de credito ciegos en este nombre, la unica postura intelectualmente honesta es NEUTRAL con conviccion 3. Requiere parse de 10-K para opinar."
+    },
+    {
+      "activo": "NU",
+      "direccion": "NEUTRAL",
+      "conviccion": 1,
+      "razonamiento": "Digital EM. TODOS los conceptos vienen not_found o missing_inputs: sin depositos, sin prestamos, sin NII, sin provisiones, sin efficiency_ratio. No tengo un solo dato. No puedo opinar sobre el ciclo de credito brasileno ni sobre credito unsecured con esta informacion, y cualquier afirmacion sobre NIM alto o calidad de cartera seria invencion. Cobertura nula — el Synthesizer debe tratar este nombre como no cubierto por el banking desk."
+    }
+  ],
+  "contradicciones": [
+    "LA GRANDE: HY spread en 2.66% (euforia crediticia en mercados de capitales) vs loan_to_deposit de 0.52-0.58 en los universales (aversion al prestamo en balances regulados). El mismo riesgo de credito no puede estar simultaneamente sobrepagado y desdenado. Lectura: el credito riesgoso migro fuera del perimetro bancario, y por lo tanto el cost_of_risk bancario perdio poder predictivo como leading indicator de recesion. Hipotesis estructural, no dato de mis inputs.",
+    "Dispersion de cost_of_risk de 2.7x entre BAC (0.477%) y C (1.296%) con JPM en el medio (0.968%). Tres universales de escala similar no pueden tener riesgos tan distintos; o el mix de BAC es radicalmente menos riesgoso, o BAC esta subprovisionando. No puedo adjudicar: no tengo ACL/loans ni net charge-offs en los inputs.",
+    "GS reporta provision NEGATIVA de -1.113bn (direct) — liberacion de reservas — en una fase de expansion madura. Liberar reservas infla la ganancia sin generar ingreso. Al mismo tiempo su efficiency_ratio es 0.644 en el mejor entorno de mercado posible (VIX 15). Calidad de ganancia cuestionable.",
+    "MS tiene el loan_to_deposit MAS ALTO del grupo (0.647) y el cost_of_risk MAS BAJO de los que se pueden calcular (0.086%). El mas apalancado en credito es el que menos provisiona. Solo es consistente si el colateral es financiero y se supone liquido — o sea, riesgo de mercado contabilizado como riesgo de credito nulo.",
+    "JPM: noninterest_expense 95.64bn > net_interest_income 95.44bn. El gasto operativo consume el 100% del margen de intermediacion; toda la ganancia depende de los 87bn de fees, la linea mas ciclica. El banco 'mas eficiente' del sector sigue necesitando el ciclo de mercado para ganar dinero.",
+    "C genera NII de 59.79bn, practicamente identico al de BAC (60.10bn), con 615bn MENOS de depositos (1.40T vs 2.02T). O C cobra spreads muy superiores o presta a riesgo materialmente mayor — su cost_of_risk de 1.30% sugiere lo segundo. Espejo del problema: la franquicia de depositos de BAC subrinde.",
+    "Cinco de seis bancos con dato tienen efficiency_ratio entre 0.617 y 0.684 en un regimen de VIX 15, desempleo 4.1% y mercados en maximos. Si no se logra apalancamiento operativo AHORA, el ratio se deteriora violentamente cuando caiga la linea de ingresos. Un efficiency_ratio que solo mejora por recorte de costos y no por crecimiento de ingresos es fragil (Mayo).",
+    "El regimen macro del fondo esta declarado como REFLACION con 60% de confianza pero apoyado en un clasificador que marca GOLDILOCKS con CERO senales de riesgo. Cero senales activadas en ciclo maduro es en si mismo una senal de complacencia del tablero, no de salud. Los bancos, con su loan_to_deposit deprimido, se comportan como si no creyeran en el cero."
+  ],
+  "eventos_clave": [
+    "Direccion (no nivel) del cost_of_risk trimestral en BAC: si converge hacia 0.7-1.0% en los proximos dos trimestres, confirma que el 0.477% era provision insuficiente y no calidad de suscripcion.",
+    "Trayectoria del loan_to_deposit agregado de los universales: un giro desde 0.52-0.58 hacia 0.65+ marcaria el inicio del tramo de confianza (y el paso de EXPANSION a EUFORIA, lo que obligaria a REBAJAR el sector, no a subirlo).",
+    "Reservas: builds vs releases. GS con provision negativa y MS en 0.086% son los dos candidatos a un giro brusco. Un build inesperado en cualquiera de los dos es senal de ciclo, no de contabilidad.",
+    "Net charge-offs y morosidad de tarjeta en JPM/C/BAC — es la linea donde el consumidor aparece primero. Hoy no la tengo en los inputs.",
+    "Reservas de CRE en los universales: no tengo el desglose y es el bolson donde el riesgo diferido se acumula sin aparecer en el cost_of_risk agregado.",
+    "Costo de depositos y evolucion del NII con TLT bajo su 200DMA: si las tasas largas siguen subiendo, JPM y C se benefician; si el mercado gira a recortes, el NII de 95bn de JPM y 60bn de BAC se comprime.",
+    "Mix de ingresos de GS/MS trimestre a trimestre: si el fee-driven se sostiene con HY en 266bp, la tesis LONG del sub-tipo IB se valida; si depende de trading, la calidad baja.",
+    "Publicacion de 10-K/10-Q para capturar ROTCE, NIM y CET1/Tier1 — sin esas tres metricas todo este memo opina sobre ingresos y riesgo, pero no sobre retorno ni sobre capacidad de absorber perdidas."
+  ],
+  "invalidadores": [
+    "HY spread saliendo de 2.66% hacia 350-400bp: invalida el diagnostico de EXPANSION y obliga a reclasificar a CONTRACCION antes de que las provisiones bancarias lo muestren (justamente porque el riesgo esta fuera del perimetro bancario).",
+    "Jobless claims sostenidamente por encima de 250k (hoy 206k) o Sahm rule cruzando +0.5 (hoy -0.03): rompe el regimen macro del fondo y convierte los cost_of_risk bajos de BAC/MS/GS en riesgo diferido explicito.",
+    "Cost_of_risk subiendo dos trimestres consecutivos en tres o mas universales: pasaje de EXPANSION a fase de deterioro; en ese escenario el LONG a C mejora relativamente (ya provisionado) y el NEUTRAL de BAC pasa a SHORT.",
+    "loan_to_deposit del grupo superando ~0.65 de forma generalizada con provisiones planas: gatillo de EUFORIA — 'cuando todos prestan sin miedo, es tarde'. Reclasificar y recortar convicciones LONG.",
+    "VIX sostenido sobre 25 o SPY perdiendo su 200DMA (709.29): invalida especificamente los LONG de GS (77% fee) y MS (86% fee), y ademas ataca el colateral que justifica el cost_of_risk de 0.086% de MS.",
+    "Aparicion del dato de CET1/Tier1: si el capital de algun nombre esta cerca de minimos regulatorios, el buyback y la tesis de retorno de capital se caen aunque el cost_of_risk se vea bien. Hoy es un agujero abierto (LIMITATIONS #17).",
+    "Aparicion de loans_held_for_investment de WFC: permitiria calcular su cost_of_risk y loan_to_deposit y podria mover la senal de NEUTRAL/3 en cualquier direccion.",
+    "Datos de NU: cualquier informacion de provisiones y NIM cambiaria de 'no cubierto' a opinable; hoy la senal NEUTRAL/1 es puramente una declaracion de ignorancia, no una tesis."
+  ],
+  "periodo_analizado": "FY2025",
+  "modelo": "claude-opus-5"
+}
