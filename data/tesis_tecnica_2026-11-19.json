@@ -1,0 +1,87 @@
+{
+  "fecha": "2026-11-19",
+  "regimen_macro_aplicado": "REFLACION",
+  "contexto_tecnico_global": "El mercado esta en modo stress tactico: VIX spot en 27.75 vs VIX 3M en 26.48 confirma BACKWARDATION (vix_term_struct), lo que historicamente obliga a recortar exposicion risk-on direccional aunque suela coincidir con suelos de corto plazo. El VRP esta en +270.68 (vrp), fuertemente positivo: el seguro esta sobrepagado, sesgo constructivo para equities a horizonte mensual una vez que la vol realizada comprima. La breadth esta en 58% de miembros sobre 200DMA (pct_sobre_200), zona normal (30-70%) pero divergente con SPY que acaba de hacer CRUCE_BAJISTA, es decir el indice rompe antes que la mayoria de sus componentes: debilidad concentrada en mega-caps mas que deterioro generalizado. En options flow, el spread VIX 9D (28.64) menos VIX 6M (26.29) es de +2.35 puntos: curva invertida pero con magnitud moderada, el miedo es INMEDIATO y no estructural (nadie esta pagando proteccion masiva a 6 meses); y el VIX IV percentile a 1 ano esta en 98.4 (vix_iv_pct), es decir el VIX esta practicamente en el techo de su rango anual, zona >70 que historicamente es contrarian-buy, no contrarian-sell. La divergencia clave: IV percentile extremo (98.4) con spread 9D-6M chico (+2.35) sugiere panico de corto plazo sobre una estructura de riesgo largo que no se rompio todavia.",
+  "senales": [
+    {
+      "activo": "USO",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 8,
+      "razonamiento": "Unico activo con las tres condiciones alineadas: precio 137.91 sobre 200DMA de 128.88 (+7.01% pct_sobre_dma, SOBRE_DMA), momentum_12m de +94.57% y momentum ajustado por vol de 1.854 (momentum_ajust), por encima del umbral de 1.5 de Barroso & Santa-Clara para momentum fuerte con alta conviccion. La vol_12m de 51.0 es alta, por lo que el sizing debe ser inverso a la vol: conviccion direccional alta, tamano de posicion chico.",
+      "indicador_clave": "momentum_ajust 1.854 con precio sobre 200DMA",
+      "interaccion_macro": "REFLACION es el regimen de maxima eficacia para commodity momentum (Cooper et al.). El regimen no diluye la senal: la amplifica. Esta es la expresion tecnica mas limpia del regimen macro actual."
+    },
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "Precio 80.25 bajo 200DMA de 82.64 (-2.89% pct_sobre_dma, BAJO_DMA) con momentum_12m negativo de -5.47% y momentum_ajust de -0.564, por debajo del umbral de -0.5 que habilita SHORT segun el framework. Es el unico activo que cumple simultaneamente precio bajo 200DMA Y momentum ajustado en zona bajista. La vol_12m de 9.7 es la mas baja del universo, lo que permite sizing mayor para el mismo riesgo.",
+      "indicador_clave": "momentum_ajust -0.564 por debajo de -0.5 con confirmacion de 200DMA",
+      "interaccion_macro": "REFLACION implica presion al alza en breakevens y yields nominales; el short de duracion es la expresion macro-tecnica coherente. El regimen refuerza la senal tecnica en lugar de contradecirla."
+    },
+    {
+      "activo": "SPY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "CRUCE_BAJISTA registrado (cruce_dma) con precio 719.24 vs 200DMA 730.22, solo -1.50% abajo (pct_sobre_dma). La regla universal de Tudor Jones prohibe LONG bajo la 200DMA y manda salir sin excepciones ante cruce bajista. Pero el momentum_ajust sigue en +0.703 (zona ambigua entre -0.5 y +1.5) con momentum_12m de +9.71% y vol_12m de solo 13.82, y la breadth en 58% no confirma colapso estructural. No hay base para SHORT: hay base para FLAT. El VRP de +270.68 y el VIX IV percentile en 98.4 avisan que shortear aca es vender seguro en el techo del rango.",
+      "indicador_clave": "cruce_dma = CRUCE_BAJISTA (manda salir) vs momentum_ajust +0.703 (no habilita short)",
+      "interaccion_macro": "En REFLACION el equity momentum generico no es el trade preferido (lo son commodities y carry). El regimen ademas no justifica recomprar el dip de indice: mandata rotar ese riesgo hacia real assets."
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Precio 648.46 bajo 200DMA de 682.02 (-4.92% pct_sobre_dma, BAJO_DMA): zona prohibida para LONG. Pero el momentum_12m sigue positivo en +8.61% y el momentum_ajust en +0.398 cae en zona ambigua (-0.5 a +1.5), por lo que tampoco habilita SHORT con conviccion. La vol_12m de 21.63 es 1.6x la de SPY, y QQQ esta -4.92% bajo su 200DMA contra -1.50% de SPY: el liderazgo tech es el epicentro de la debilidad actual, consistente con la divergencia breadth 58% vs indice roto.",
+      "indicador_clave": "BAJO_DMA -4.92% con momentum_ajust +0.398 en zona ambigua",
+      "interaccion_macro": "REFLACION penaliza duracion-equity (growth/tech descuenta flujos lejanos). El regimen inclina esta NEUTRAL hacia el lado bajista y desaconseja cualquier intento de bottom-fishing en el liderazgo anterior."
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Precio 103.85 sobre 200DMA de 99.98 (+3.87% pct_sobre_dma, SOBRE_DMA): zona habilitada para LONG. Pero el momentum_ajust de 0.688 (momentum_12m +3.61% sobre vol_12m 5.25) esta en zona ambigua, muy lejos del +1.5 que exige conviccion alta. Es un trend valido pero de baja energia; funciona mejor como cobertura del libro que como posicion de alfa.",
+      "indicador_clave": "SOBRE_DMA +3.87% con momentum_ajust 0.688 (ambiguo)",
+      "interaccion_macro": "Hay tension interna: un DXY firme es historicamente un viento en contra para commodities, y el trade de maxima conviccion del libro es LONG USO (momentum_ajust 1.854). El dolar fuerte aca se explica mejor por el stress de VIX en backwardation que por el regimen REFLACION. Mantener sizing chico y tratarlo como hedge, no como conviccion macro."
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 5,
+      "razonamiento": "Precio 336.43 contra 200DMA de 406.43: -17.22% abajo (pct_sobre_dma), la lectura mas extrema de todo el universo, con momentum_12m de -10.28%. La regla de Tudor Jones prohibe LONG de forma absoluta. Sin embargo el momentum_ajust es -0.354, que NO cruza el umbral de -0.5 para SHORT (la vol_12m de 29.02 diluye el momentum negativo), y una desviacion de -17% respecto de la media de 200 dias es una sobreextension estadistica que hace del short tardio un trade de pobre risk/reward. Flat es la lectura honesta.",
+      "indicador_clave": "pct_sobre_dma -17.22% (sobreextension bajista) con momentum_ajust -0.354 fuera de zona short",
+      "interaccion_macro": "Anomalia a vigilar: REFLACION normalmente es amigable para metales, pero el tape dice lo contrario de forma violenta (-17.22% bajo 200DMA). Cuando el precio contradice al regimen, manda el precio. No forzar el long tematico; esperar recuperacion de la 200DMA para re-evaluar."
+    }
+  ],
+  "alertas_tecnicas": [
+    "CRUCE_BAJISTA fresco en SPY (precio 719.24 vs 200DMA 730.22, -1.50%): senal de salida sin excepciones segun regla universal. Es el evento tecnico mas importante del snapshot.",
+    "VIX IV percentile en 98.4 (vix_iv_pct): el VIX esta en el techo de su rango de 1 ano. Zona >70 es historicamente contrarian-buy, no momento para agregar shorts de equity ni comprar proteccion cara.",
+    "Divergencia de options flow: spread VIX 9D (28.64) - VIX 6M (26.29) de solo +2.35 puntos. Curva invertida pero sin panico estructural; el miedo esta concentrado en las proximas 2 semanas, no en los proximos 6 meses.",
+    "Divergencia breadth vs indice: 58% de miembros sobre 200DMA (pct_sobre_200, zona normal) mientras SPY rompe su propia 200DMA. El dano esta concentrado en mega-caps (QQQ -4.92% bajo DMA vs SPY -1.50%), no es deterioro de mercado amplio.",
+    "GLD a -17.22% bajo su 200DMA: sobreextension bajista extrema con riesgo de reversion violenta. No perseguir el short a estos niveles.",
+    "USO en momentum_ajust 1.854 con vol_12m de 51.0: senal fuerte pero la volatilidad mas alta del universo. El riesgo no es la direccion, es el sizing.",
+    "Tension interna del libro: LONG DXY (+3.87% sobre DMA) y LONG USO (+7.01% sobre DMA) son historicamente correlacion negativa. Una de las dos tendencias va a ceder.",
+    "VRP en +270.68 con VIX en backwardation: combinacion inusual. Seguro extremadamente sobrepagado en medio de stress de curva, tipico de capitulacion de corto plazo."
+  ],
+  "invalidadores_tecnicos": [
+    "SPY recupera y cierra sostenidamente sobre 730.22 (200DMA): el CRUCE_BAJISTA se anula, la NEUTRAL de SPY pasa a LONG y la postura defensiva general queda invalidada.",
+    "USO pierde la 200DMA de 128.88: se cae el unico LONG de alta conviccion del libro y el regimen REFLACION pierde su confirmacion tecnica principal.",
+    "TLT recupera 82.64 (200DMA) y/o el momentum_ajust sube por encima de -0.5: el SHORT de duracion queda sin soporte tecnico y habria que revisar la tesis de reflacion.",
+    "VIX term structure vuelve a CONTANGO_NORMAL con VIX spot bajando por debajo de 26.48 (VIX 3M): se levanta la restriccion risk-off y se puede reconstruir exposicion direccional en equities.",
+    "El spread VIX 9D - VIX 6M se amplia mas alla de +5 o se profundiza la inversion en todo el espectro: el miedo pasa de tactico a estructural y habria que recortar riesgo bruto en todo el libro, incluido USO.",
+    "Breadth (pct_sobre_200) cae por debajo de 30% desde el 58% actual: el deterioro deja de estar concentrado en mega-caps y pasa a ser sistemico; todas las senales NEUTRAL migran a SHORT.",
+    "GLD recupera su 200DMA de 406.43 o el momentum_ajust cae por debajo de -0.5: cualquiera de los dos resuelve la NEUTRAL de oro hacia LONG o SHORT respectivamente."
+  ],
+  "confianza_general": 64,
+  "metadata": {
+    "timestamp": "2026-11-19T19:08:23.210004",
+    "modelo": "claude-opus-5",
+    "activos_analizados": 6,
+    "regimen_macro": "REFLACION"
+  }
+}

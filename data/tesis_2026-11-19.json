@@ -1,0 +1,87 @@
+{
+  "fecha": "2026-11-19",
+  "regimen": {
+    "clasificacion": "REFLACION",
+    "confianza": 68,
+    "razonamiento": "Disiento parcialmente del régimen pre-calculado (GOLDILOCKS). El lado crecimiento sí es sólido: jobless_claims en 203.000 (FRED:ICSA, 5 días), unemployment 4.1% (FRED:UNRATE, 49 días), sahm_rule en 0.00 (FRED:SAHMREALTIME) y hy_spread en 3.47% (FRED:BAMLH0A0HYM2) — crédito sin estrés, cero señal de recesión. Pero el lado inflación/tasas no es benigno: yield_10y en 5.10% (FRED:DGS10) con yield_3m en 4.15% (FRED:DTB3) y yield_curve en +0.95 (calculado:10Y-3M) describe un bear steepening; el tips_yield_10y en 2.89% (FRED:DFII10) es un nivel de tasa real restrictivo. Con breakeven_5y5y en apenas 2.15% (FRED:T5YIFR), el mercado NO está pricing una espiral inflacionaria: el movimiento de tasas es prima de plazo + Fed hawkish, no expectativas desancladas. La nota de CNBC sobre Waller y un posible alza de 50pb refuerza el sesgo reflacionario/hawkish. El michigan_inflation_exp de 4.6% (FRED:MICH) apunta en la misma dirección pero es_fresco=false (79 días), así que le asigno peso bajo. Crecimiento firme + política monetaria endureciéndose por inflación = REFLACION con riesgo de deriva a STAGFLATION si el mercado laboral cede."
+  },
+  "senales": [
+    {
+      "activo": "TLT",
+      "direccion": "SHORT",
+      "horizonte": "MENSUAL",
+      "conviccion": 7,
+      "razonamiento": "yield_10y en 5.10% (FRED:DGS10) y yield_10y_mkt en 5.052% (yfinance:^TNX, hoy) con tips_yield_10y en 2.89% (FRED:DFII10): la parte larga está siendo repreciada por prima de plazo y por un Fed que, según CNBC (Waller), evalúa 'shockear' con +50pb. TLT en 80.24 (yfinance:TLT) ya refleja mucho daño, pero sin señal de recesión (sahm_rule 0.0, claims 203k) falta el catalizador de duration bid. El breakeven_5y5y en 2.15% dice que el alza es real, no inflacionaria, lo que normalmente no se revierte rápido.",
+      "dato_clave": "tips_yield_10y = 2.89% (FRED:DFII10)"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "SHORT",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "QQQ en 648.85 (yfinance:QQQ) enfrenta la peor combinación para activos de duration larga: tasa libre de riesgo a 10 años en 5.10% (FRED:DGS10), tasa real en 2.89% (FRED:DFII10) y vix en 27.48 (yfinance:^VIX) — volatilidad alta, no complaciente. Bloomberg y CNBC reportan que el rally post-earnings de Nvidia se desinfló y el Dow cayó 600 puntos, señal de que el mercado exige pruebas de durabilidad del trade de AI. Táctico y de riesgo acotado: hy_spread en 3.47% no confirma estrés sistémico, por eso no subo convicción.",
+      "dato_clave": "vix = 27.48 (yfinance:^VIX) vs yield_10y 5.10%"
+    },
+    {
+      "activo": "SPY",
+      "direccion": "NEUTRAL",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "Señales genuinamente cruzadas. A favor: hy_spread en 3.47% (FRED:BAMLH0A0HYM2) indica crédito sano, jobless_claims 203k y sahm_rule 0.0 descartan recesión inminente; SPY en 719.55 (yfinance:SPY) cerca de máximos. En contra: vix en 27.48 (yfinance:^VIX) es inconsistente con un mercado en tendencia tranquila, y un Fed que discute +50pb (CNBC/Waller) comprime múltiplos. Mientras el crédito no se abra, no hay caso para short de índice; mientras el VIX no baje de ~20, tampoco para long agresivo. Neutral con sesgo de cobertura.",
+      "dato_clave": "hy_spread = 3.47% (FRED:BAMLH0A0HYM2) vs vix 27.48"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 6,
+      "razonamiento": "dxy en 103.84 (yfinance:DX-Y.NYB) con yield_3m en 4.15% (FRED:DTB3) y riesgo de alza de 50pb (CNBC/Waller) implica diferencial de tasas ampliándose a favor del USD. usdjpy en 159.76 (yfinance:USDJPY=X) confirma carry trade USD/JPY plenamente activo; eurusd en 1.0981 (yfinance:EURUSD=X) sin momentum de euro. Riesgo asimétrico: niveles de 160 en USDJPY son zona histórica de intervención del MoF japonés, lo que podría provocar un retroceso violento del dólar — por eso convicción 6 y no 8.",
+      "dato_clave": "usdjpy = 159.76 (yfinance:USDJPY=X)"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "NEUTRAL",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 5,
+      "razonamiento": "GLD en 336.64 (yfinance:GLD) sostenido pese a tips_yield_10y en 2.89% (FRED:DFII10) y dxy en 103.84 — una divergencia notable, ya que tasas reales de ~2.9% históricamente son el peor entorno para el oro. Esto sugiere un bid estructural (reservas oficiales/debasement/cobertura de cola) que no puedo cuantificar con los datos del JSON: convicción insuficiente para direccionalidad. Lo mantengo como cobertura de portafolio, no como posición de expresión macro.",
+      "dato_clave": "gold = 336.64 (yfinance:GLD) vs tips_yield_10y 2.89%"
+    }
+  ],
+  "tesis_principal": "El régimen es de reflación con tasas restrictivas, no de Goldilocks. La economía real no muestra fisuras: jobless_claims en 203.000 (FRED:ICSA, 5 días de antigüedad) es un nivel de pleno empleo, unemployment en 4.1% (FRED:UNRATE) y sahm_rule en 0.00 (FRED:SAHMREALTIME) descartan la activación de la regla de recesión, y el hy_spread en 3.47% (FRED:BAMLH0A0HYM2) confirma que el canal de crédito está abierto y que no hay repricing de riesgo de default. Ese es el ancla alcista del mercado y la razón por la que SPY cotiza en 719.55 y QQQ en 648.85 (yfinance) pese al ruido.\n\nEl problema está en el precio del dinero. El yield_10y está en 5.10% (FRED:DGS10, 2 días) y el yield_10y_mkt en 5.052% (yfinance:^TNX, hoy), con yield_3m en 4.15% (FRED:DTB3) y una yield_curve de +0.95 (calculado:10Y-3M): curva positiva pero empinándose por el extremo largo, el patrón clásico de prima de plazo y de un banco central que perdió credibilidad desinflacionaria. El tips_yield_10y en 2.89% (FRED:DFII10) es la variable más importante del día: una tasa real cercana a 3% es un freno mecánico sobre valuaciones de duration larga y sobre vivienda y capex. Lo interesante es que el breakeven_5y5y está en apenas 2.15% (FRED:T5YIFR) — las expectativas de inflación de mercado siguen ancladas. Es decir, el alza de yields no es una historia de inflación descontrolada sino de oferta de bonos, prima de plazo y riesgo de un Fed que, según CNBC, con Waller hablando de 'shockear' con +50pb, podría volver a subir tasas. El michigan_inflation_exp de 4.6% (FRED:MICH) apoyaría la narrativa hawkish pero tiene es_fresco=false (79 días), así que explícitamente le bajo peso.\n\nEn divisas, el dólar está firme pero no eufórico: dxy en 103.84 (yfinance:DX-Y.NYB), eurusd en 1.0981, usdcny en 6.6828, usdmxn en 19.048 y usdbrl en 5.9149 — ningún signo de estrés en emergentes, lo cual es coherente con el hy_spread comprimido. La señal crítica es usdjpy en 159.76 (yfinance:USDJPY=X): el carry trade yen está completamente extendido y en zona donde históricamente aparece intervención o jawboning. Un unwind de ese carry, combinado con un vix ya en 27.48 (yfinance:^VIX), sería el mecanismo de transmisión más rápido hacia una caída de QQQ y una compresión violenta del hy_spread. Esa es la cola de riesgo del día, y explica por qué, pese a un fondo macro sano, el libro debe estar corto duration (TLT en 80.24), corto táctico de tech, largo dólar moderado y neutral en oro — donde GLD en 336.64 contra tasas reales de 2.89% es una anomalía que no puedo explicar con los datos disponibles.",
+  "invalidadores": [
+    "Que la Fed NO valide el sesgo de Waller (CNBC) y en cambio señale pausa o recortes: colapsaría el short TLT y el long DXY, y revertiría el short QQQ. Observar yield_3m (FRED:DTB3) rompiendo por debajo de 4.00%.",
+    "Que el hy_spread (hoy 3.47%, FRED:BAMLH0A0HYM2) se abra por encima de ~4.50%: eso invalida el 'crecimiento sano' y mueve el régimen de REFLACION a DESACELERACION, cambiando TLT de short a long.",
+    "Intervención del MoF/BoJ en USDJPY desde 159.76 (yfinance:USDJPY=X) o alza sorpresiva de la BoJ: unwind del carry trade, DXY long se da vuelta y la volatilidad en QQQ se dispara más allá del escenario táctico.",
+    "Deterioro del mercado laboral: jobless_claims (203k, FRED:ICSA) sostenidamente por encima de ~260k o sahm_rule (0.00, FRED:SAHMREALTIME) activándose sobre 0.50 — invalida toda la pata de crecimiento y convierte el short TLT en la peor posición del libro.",
+    "Que el breakeven_5y5y (2.15%, FRED:T5YIFR) se desancle hacia 2.60%+: ahí la tesis pasa de 'tasas reales altas' a 'inflación desanclada', lo que haría de GLD un long de convicción alta en lugar de neutral."
+  ],
+  "alertas": [
+    "ANOMALÍA PRINCIPAL: gold/GLD en 336.64 (yfinance:GLD) sostenido con tips_yield_10y en 2.89% (FRED:DFII10). Tasas reales de ~3% deberían castigar al oro; que no lo hagan sugiere un comprador insensible al precio (bancos centrales) o cobertura de cola fiscal/geopolítica. No tengo datos en el JSON para resolverlo — lo trato como señal de que el mercado teme algo que no está en los precios de bonos.",
+    "DIVERGENCIA: vix en 27.48 (yfinance:^VIX) con hy_spread en 3.47% (FRED:BAMLH0A0HYM2). Volatilidad de equity en modo estrés pero crédito en modo complacencia. Históricamente converge una de las dos; si converge el crédito hacia el VIX, el riesgo es mucho mayor que lo que el régimen pre-calculado 'GOLDILOCKS' sugiere.",
+    "El régimen pre-calculado dice GOLDILOCKS con senales_inflacion=0, pero no captura que yield_10y está en 5.10% ni que la Fed discute subir 50pb (CNBC). Marco esa clasificación como incompleta.",
+    "usdjpy en 159.76: nivel de alerta de intervención. Es el principal canal de contagio hacia equities globales vía unwind de carry.",
+    "Riesgo de concentración AI: Bloomberg reporta que el rally post-earnings de Nvidia se desinfló y CNBC que el Dow cayó 600 puntos. Un índice sostenido por pocas megacaps con tasa real en 2.89% es frágil.",
+    "pce_core (130.902, FRED:PCEPILFE) tiene 79 días y cpi (337.476, FRED:CPIAUCSL) 49 días: ambos son válidos pero son fotos viejas. La inflación actual la estoy infiriendo de la reacción de la Fed, no de datos duros recientes."
+  ],
+  "datos_insuficientes": [
+    "michigan_inflation_exp = 4.6% (FRED:MICH) con es_fresco=false y 79 días de antigüedad — reduzco su peso en la clasificación de régimen pese a que apoya la tesis reflacionaria.",
+    "USO / petróleo: no hay ningún dato de energía en el JSON. Convicción insuficiente para emitir señal sobre crudo; omitido deliberadamente del libro.",
+    "pce_core (79 días) y cpi (49 días): válidos pero rezagados; no permiten medir el momentum inflacionario de las últimas semanas, que es precisamente lo que estaría motivando el sesgo hawkish de la Fed.",
+    "No hay datos de PMI, ventas minoristas ni producción industrial: la pata de 'crecimiento' del cuadrante se apoya casi enteramente en el mercado laboral (claims, unemployment, sahm_rule) y en el crédito (hy_spread).",
+    "No hay serie de Fed Funds ni de expectativas de tasa implícitas: el riesgo de +50pb lo infiero del titular de CNBC, no de un indicador del JSON."
+  ],
+  "eventos_clave": [
+    "[CNBC] 'Fed's Waller says central bank may need to shock people with half-point rate hike' — impacto directo y de mayor jerarquía del día: valida el yield_3m en 4.15% (FRED:DTB3) como piso y no techo, sostiene el bear steepening con yield_10y en 5.10%, y es el ancla del short TLT y del long DXY. Si el resto del FOMC no acompaña, esta tesis pierde su pilar principal.",
+    "[Bloomberg] 'Stocks Fall as Nvidia's Earnings Rally Sputters' — el mercado dejó de pagar por el trade de AI sin pruebas adicionales; explica el vix en 27.48 (yfinance:^VIX) pese a crédito sano, y justifica el short táctico de QQQ desde 648.85.",
+    "[CNBC] 'Dow slides 600 points, Nasdaq seesaws as Nvidia earnings bounce fizzles' — confirma rotación/desapalancamiento intradía en megacaps; SPY en 719.55 aguanta mejor que la tech, lo que refuerza mantener SPY NEUTRAL y expresar el riesgo vía QQQ, no vía índice amplio.",
+    "[Financial Times] 'US tech outages blamed on rush to fix bugs found by AI' (Microsoft, JPMorgan, FAA) — riesgo operacional/sistémico no priceado en el hy_spread de 3.47%; es exactamente el tipo de evento que puede cerrar la divergencia VIX-crédito desde el lado equivocado.",
+    "[BBC News] 'Carney looks to China as Trump tariffs squeeze Canada's car industry' — el canal tarifario sigue activo como impulso de costos, consistente con la presión inflacionaria que motiva el sesgo hawkish; vigilar usdcny en 6.6828 (yfinance:USDCNY=X) como termómetro de represalia/devaluación china."
+  ],
+  "confianza_general": 68,
+  "metadata": {
+    "timestamp": "2026-11-19T19:07:07.210791",
+    "datos_usados": 24,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
