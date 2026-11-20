@@ -1,0 +1,87 @@
+{
+  "fecha": "2026-11-20",
+  "regimen_oil": {
+    "clasificacion": "TIGHT_BACKWARDATED",
+    "confianza": 72,
+    "razonamiento": "La curva WTI muestra backwardation de +4.65 USD a 6 meses (~5.6% del flat price de 82.94), estructura que solo se sostiene cuando el barril prompt vale mas que el almacenado, es decir, cuando hay competencia fisica por barriles disponibles hoy. El lado producto confirma: el crack 321 en 39.69 USD/bbl esta en 'MUY_FUERTE', y desagregandolo con los precios spot que tengo, el crack de destilados es ~78 USD/bbl (HO 3.8313/gal x 42 = 160.91 vs WTI 82.94) contra solo ~20.5 USD/bbl de gasolina (RB 2.4639 x 42 = 103.48). Ese nivel de crack de destilado no es un mercado balanceado: es escasez fisica de diesel/jet. El inventario de destilados en 104.901 MMbbl (EIA 2026-11-13) es bajo en terminos absolutos y se da CON refinerias corriendo a 95.7% de utilizacion, un nivel casi de pico operativo para noviembre, cuando normalmente se sale de mantenimiento. Es decir: el sistema de refinacion de EEUU esta a maxima capacidad y aun asi no logra reconstruir stock de destilados. El driver geopolitico es consistente: el bloqueo de puertos iranies por parte de EEUU y la disrupcion post-guerra con Iran ya reordeno flujos (India subio compras saudies a ~790 kb/d y bajo UAE a 612 kb/d, segun Economic Times), lo que implica barriles y productos iranies fuera del mercado seaborne. Matiz honesto que baja mi confianza de 85 a 72: el inventario de crudo en 417.797 MMbbl no es un nivel de panico y no tengo la variacion semana a semana ni el promedio de 5 anos para saber si estamos en draw o en build. La tightness verificable esta en PRODUCTOS y en la CURVA, no necesariamente en el crudo fisico de Cushing/PADD3. Ademas el acuerdo EEUU-Venezuela (partnership militar + oil deal tras la captura de Maduro) es un factor bajista de oferta a 6-18 meses que el mercado todavia no descuenta."
+  },
+  "regimen_natgas": {
+    "clasificacion": "BALANCED",
+    "confianza": 52,
+    "razonamiento": "El storage de Lower 48 esta en 3.882 Bcf al 2026-11-13, un nivel holgado en terminos absolutos para mediados de noviembre: entrar al invierno cerca de 3.9 Tcf implica un colchon de oferta considerable y limita el riesgo de squeeze estructural. El precio de 3.65 USD/MMBtu no es ni deprimido ni de panico, lo que es coherente con un mercado abastecido pero con prima de riesgo climatico. No tengo el dato de inyeccion/retiro semanal, ni el promedio de 5 anos, ni pronosticos de HDD, ni feedgas de LNG, que son los tres inputs que realmente deciden el invierno del gas. Sin eso, clasificar TIGHT u OVERSUPPLIED seria inventar. El sesgo que si puedo defender es bajista-neutral: 3.882 Bcf de arranque invernal + ausencia de evidencia de demanda extrema = poca razon fisica para pagar prima. La demanda estructural (India/IEA, electrificacion, LNG) es tesis multianual, no un driver de la proxima semana."
+  },
+  "regimen_lpg": {
+    "clasificacion": "OVERSUPPLIED",
+    "confianza": 45,
+    "razonamiento": "Data explicitamente limitada: el unico dato duro que tengo es el inventario de propano/propileno de EEUU en 104.211 MMbbl (EIA 2026-11-13), que es un nivel alto en terminos absolutos, cerca de la zona de maximos historicos de la serie. No tengo Saudi CP, no tengo Mont Belvieu, no tengo FEI Asia, no tengo el spread FEI-MB que define el arbitraje de exportacion, y no tengo freight VLGC - es decir, no puedo medir la economia real del arb trans-Pacifico, que es lo que determina si el barril americano se exporta o se acumula. Las 'noticias LPG' del feed son ruido irrelevante (camping stoves, tiny houses, prepping), no aportan nada sectorial. Clasifico OVERSUPPLIED con confianza baja (45) apoyandome unicamente en el stock domestico elevado, con el caveat de que un invierno frio en el Midwest o un pull asiatico fuerte puede revertir esto rapido. Si el NGL se mueve con el crudo via backwardation, el sesgo bajista de LPG es menos solido de lo que el inventario sugiere."
+  },
+  "tesis_principal": "La historia de esta semana no es el crudo: es el BARRIL DESBALANCEADO. El crack 321 en 39.69 USD/bbl es 'MUY_FUERTE', pero cuando se abre, casi todo el valor viene de destilados (~78 USD/bbl de crack de heating oil) contra una gasolina mediocre (~20.5 USD/bbl). Eso, combinado con utilizacion de refinerias en 95.7% - un nivel casi maximo para noviembre - y stock de destilados en solo 104.901 MMbbl, dice algo muy concreto fisicamente: el sistema de refinacion occidental esta corriendo a tope y aun asi no puede cubrir la demanda de medios destilados. La explicacion mas coherente con las noticias es perdida de capacidad/flujos del lado de Iran (bloqueo de puertos por EEUU, guerra que ya reordeno el patron de importacion de India hacia Arabia Saudita) mas la permanencia de la fractura rusa (el 'peace declaration' Trump-Xi-Putin explicitamente dejo afuera Iran y Ucrania, o sea cero alivio de sanciones a la vista). Cuando la escasez esta en capacidad de conversion y no en crudo bruto, el dinero esta en refinadores y en el producto, no tanto en el flat price.\n\nDel lado del crudo, la curva valida tightness: +4.65 USD de backwardation a 6 meses en WTI es estructura de mercado apretado, y Brent a 89.31 contra WTI 82.94 (diferencial 6.37) refleja que la prima de riesgo esta en el barril seaborne, que es el expuesto al Golfo Persico. Pero soy honesto sobre la asimetria: el inventario de crudo de 417.797 MMbbl no es extremo, y no tengo la delta semanal ni el promedio de 5 anos para confirmar draw. Mas importante, hay un factor bajista emergente que el mercado todavia no pricea: la normalizacion EEUU-Venezuela tras la captura de Maduro, con acuerdo militar y 'oil deal' firmado por Hegseth en Caracas. Barriles pesados venezolanos volviendo al mercado es exactamente el crudo que las refinerias del Golfo de EEUU quieren para maximizar rendimiento de destilado - bajista para el crack y para el flat price con lag de meses, no de dias.\n\nEl encaje macro es favorable y refuerza el lado largo tactico. El fondo lee GOLDILOCKS al 58% con jobless claims en 203.000, unemployment 4.1%, Sahm rule 0.00 y curva 10Y-3M en +0.91%: no hay destruccion de demanda energetica a la vista, y una curva empinada con crecimiento firme es el regimen donde el consumo de diesel (freight, industria) se sostiene. El tecnico tambien alinea: USO es el unico activo del fondo con todas las senales prendidas (LONG 8/10, precio 137.99 vs 200DMA 129.18, +6.82%, momentum ajustado 1.899). La advertencia es que SPY (-4.03% vs 200DMA) y QQQ (-9.01%) estan bajo su media de 200 dias, o sea que las EQUITIES energeticas cargan beta de un mercado accionario danado aunque el fisico este apretado. Conclusion operativa: preferir exposicion al fisico/producto (heating oil, crack, refinadores puros) sobre beta de equity generalista, con sizing moderado porque el crack de destilado ya esta en nivel historicamente extremo y comprar extremos es comprar reversion.",
+  "senales": [
+    {
+      "activo": "VLO",
+      "direccion": "LONG",
+      "conviccion": 7,
+      "razonamiento": "Refinador puro, es la expresion mas directa del dato mas fuerte del memo: crack 321 en 39.69 ('MUY_FUERTE') con crack de destilado implicito de ~78 USD/bbl y utilizacion del sistema en 95.7%. Valero es pesado en destilado y Gulf Coast, exactamente donde esta el margen. A 340.29 el precio ya refleja parte de esto, por eso 7 y no 8: estoy comprando margenes en nivel historicamente extremo, con riesgo de mean reversion si vuelve producto iranie/ruso al mercado."
+    },
+    {
+      "activo": "XOM",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Integrada a 161.17: captura upstream (backwardation +4.65, Brent 89.31) y downstream (crack 39.69) simultaneamente, que es exactamente el regimen actual. El modelo integrado es el menos vulnerable a que el margen rote de un segmento al otro. Techo en la conviccion por el contexto de equities: SPY esta -4.03% bajo su 200DMA, hay beta de mercado adversa que no controlo."
+    },
+    {
+      "activo": "CVX",
+      "direccion": "LONG",
+      "conviccion": 6,
+      "razonamiento": "Integrada a 209.91 con la misma logica dual que XOM. Factor adicional potencial: la normalizacion EEUU-Venezuela (acuerdo militar + 'oil deal' anunciado por Hegseth en Caracas, 18-19/11) historicamente beneficia a las majors americanas con activos legacy en el pais - aclaro que NO tengo confirmacion de contratos especificos de Chevron en ese acuerdo, es inferencia, no dato. Sin esa pata, el caso es equivalente al de XOM."
+    },
+    {
+      "activo": "OXY",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "A 54.19 es la beta alta al WTI del grupo: si el flat price se sostiene en 82.94 con backwardation de +4.65, OXY apalanca mas que XOM/CVX. Pero es tambien la que mas sufre si Venezuela y OPEC+ agregan barriles. No tengo datos de su balance ni de hedging, asi que no puedo cuantificar el apalancamiento operativo. Lean direccional, no setup."
+    },
+    {
+      "activo": "EOG",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "A 150.81, productor E&P que se beneficia del crudo apretado, pero tiene exposicion relevante a gas natural, donde mi lectura es BALANCED con sesgo bajista (storage 3.882 Bcf al 13/11, holgado para la fecha). Mezcla de un viento de cola (crudo) con uno neutro/contrario (gas) = conviccion moderada."
+    },
+    {
+      "activo": "VIST",
+      "direccion": "LONG",
+      "conviccion": 5,
+      "razonamiento": "A 50.42, Vaca Muerta es crecimiento de produccion con costo bajo y se apalanca a Brent 89.31. Pero suma dos riesgos que no son energeticos: riesgo pais argentino y el viento en contra del dolar (el fondo tiene DXY LONG, precio 103.83 sobre 200DMA 100.01), que historicamente penaliza equity EM. No tengo datos operativos de la compania (produccion, evacuacion por Vaca Muerta Sur), asi que mantengo lean debil."
+    }
+  ],
+  "eventos_clave": [
+    "Bloqueo de puertos iranies por EEUU en curso, con Teheran desafiante y efecto 'too early to determine' (Al Jazeera, 19/11): es la fuente mas probable de la escasez de destilado y de la backwardation de +4.65 en WTI",
+    "Acuerdo EEUU-Venezuela tras la captura de Maduro: partnership militar, intercambio de inteligencia y 'oil deal' firmado por Hegseth en Caracas (18-19/11) - oferta pesada latente, el factor bajista estructural que el mercado aun no descuenta",
+    "Declaracion de paz Trump-Xi-Putin en APEC deja EXPLICITAMENTE afuera Iran y Ucrania (AP, 19/11): no hay alivio de sanciones a la vista ni para crudo ruso ni para el iranie, la fractura de flujos se mantiene",
+    "Reordenamiento confirmado de importaciones de India: Arabia Saudita sube a ~790 kb/d y supera a UAE (612 kb/d), con Rusia manteniendo el liderazgo, tras la disrupcion de la guerra con Iran (Economic Times, 19/11)",
+    "EIA 2026-11-13: refinerias al 95.7% de utilizacion con destilados en solo 104.901 MMbbl y crack 321 en 39.69 - maxima capacidad de conversion corriendo sin poder reconstruir stock de medios"
+  ],
+  "contradicciones_observadas": "Primera y mas importante: utilizacion de refinerias en 95.7% (nivel casi maximo, inusual para noviembre) convive con inventario de destilados de apenas 104.901 MMbbl y un crack de destilado implicito de ~78 USD/bbl. Si el sistema corre a tope y igual no acumula, la escasez no es de crudo sino de CAPACIDAD DE CONVERSION GLOBAL - coherente con refinacion iranie y rusa fuera del mercado accesible. Eso significa que el margen, no el flat price, es donde esta el dinero.\n\nSegunda: la curva esta en backwardation fuerte (+4.65 a 6m) pero el inventario de crudo de 417.797 MMbbl no luce escaso. El mercado esta pagando prima por riesgo FUTURO de oferta (Iran) mas que por escasez presente de crudo fisico en EEUU. Esa es una backwardation de prima geopolitica, mas fragil que una de draw sostenido - se puede desarmar en dias con una noticia.\n\nTercera: dentro del mismo barril, destilado (~78) contra gasolina (~20.5) es una divergencia enorme. Historicamente estos spreads intra-barril convergen; lo que no se si convergen por gasolina subiendo (refinadores rotan yield al destilado y desabastecen gasolina) o por destilado cayendo. Esa es la dislocacion operativa mas interesante de la semana.\n\nCuarta: se esta normalizando Venezuela (oferta nueva, bajista) al mismo tiempo que el crudo cotiza con backwardation marcada. O el mercado no cree en la velocidad del retorno venezolano, o esta todo concentrado en Iran. Asimetria a vigilar.\n\nQuinta, cross-asset: el macro del fondo dice GOLDILOCKS con DXY fuerte (103.83 sobre 200DMA) y oro colapsado (-20.78% bajo su 200DMA) - un setup desinflacionario/dolar fuerte que normalmente es ADVERSO para commodities. Que el crudo este backwardated y el crack en extremo a pesar de ese backdrop refuerza que esto es un shock de oferta fisica puro, no un trade de inflacion.",
+  "invalidadores": [
+    "Que la backwardation de WTI 6m se comprima por debajo de +2.00 USD o flipee a contango: seria la senal de que la tightness fisica/prima geopolitica se desarmo y toda la pata LONG crudo (WTI, BRENT, OXY, EOG, VIST) pierde su fundamento",
+    "Que el crack 321 caiga por debajo de ~25 USD/bbl o que el inventario de destilados se recupere por encima de ~115-120 MMbbl en 2-3 reportes EIA consecutivos: mata la tesis central de escasez de capacidad y las posiciones en VLO, CRAK y HEATING_OIL",
+    "Levantamiento o perforacion del bloqueo a Iran / acuerdo que reintegre crudo y productos iranies al mercado seaborne: es el evento binario que reintroduce la oferta faltante de golpe y revierte simultaneamente flat price y cracks",
+    "Que el 'oil deal' EEUU-Venezuela se materialice con ramp-up de produccion mas rapido de lo esperado, o que OPEC+ anuncie incremento de cuotas: oferta incremental de crudo pesado justo en el segmento que alimenta destilado - doble golpe a precio y margen",
+    "Que el inventario de crudo de EEUU construya de forma sostenida por encima de ~440 MMbbl o que la utilizacion de refinerias caiga de 95.7% a menos de 90% sin recuperacion del crack: indicaria destruccion de demanda y no disrupcion de oferta",
+    "Ruptura del regimen GOLDILOCKS del fondo (claims rompiendo decididamente por encima de 260k, Sahm rule activandose sobre 0.50) o deterioro adicional del equity (SPY profundizando bajo 200DMA): invalida la pata de equities energeticas (XLE, XOM, CVX, VLO) aunque el fisico siga apretado"
+  ],
+  "data_gaps": "Criticos para subir conviccion: (1) No tengo la variacion semana-a-semana de NINGUN inventario EIA ni los promedios de 5 anos - solo niveles absolutos de un solo corte (2026-11-13), asi que no puedo afirmar 'draw' o 'build', que es el corazon del analisis de balance fisico. (2) Falta data de demanda: product supplied de gasolina y destilado, exportaciones de crudo y productos de EEUU. (3) Cero data de curva Brent - solo tengo el calendar 6m de WTI, no puedo comparar estructura entre benchmarks. (4) LPG practicamente a ciegas: sin Saudi CP, sin Mont Belvieu, sin FEI Asia, sin spread FEI-MB, sin freight VLGC, no puedo evaluar el arbitraje de exportacion ni el regimen real; el inventario de propano solo (104.211 MMbbl) es insuficiente. (5) Natural gas sin pronostico de HDD, sin feedgas de LNG y sin inyeccion/retiro semanal: imposible tomar direccion. (6) Sin decision de cuota OPEC+ mas reciente ni niveles de spare capacity saudita - es el dato que define si la prima iranie es sostenible. (7) Sin cuantificacion de barriles iranies efectivamente fuera del mercado por el bloqueo. (8) Sin terminos del 'oil deal' Venezuela (volumenes, timeline, companias involucradas) - no puedo calibrar el riesgo bajista ni validar si CVX tiene upside especifico. (9) Sin 200DMA ni momentum de los equities energeticos individuales (XOM, CVX, VLO, OXY, EOG, VIST, XLE, CRAK), solo tengo el de USO, asi que no puedo aplicar el filtro de tendencia del fondo a la pata de acciones. (10) Sin posicionamiento CFTC, no se si el trade largo de crudo ya esta sobrepoblado.",
+  "advertencias_validacion": [
+    "Senal 1: activo invalido 'BRENT'",
+    "Senal 2: activo invalido 'WTI'",
+    "Senal 4: activo invalido 'CRAK'",
+    "Senal 5: activo invalido 'HEATING_OIL'",
+    "Senal 7: activo invalido 'XLE'",
+    "Senal 12: activo invalido 'GASOLINA'",
+    "Senal 13: activo invalido 'NATGAS'"
+  ],
+  "metadata": {
+    "timestamp": "2026-11-20T18:48:25.120270",
+    "modelo": "claude-opus-5"
+  }
+}

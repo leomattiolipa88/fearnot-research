@@ -1,0 +1,97 @@
+{
+  "fecha": "2026-11-20",
+  "regimen": {
+    "clasificacion": "GOLDILOCKS",
+    "confianza": 58,
+    "razonamiento": "El crecimiento sigue firme: jobless_claims en 203.000 (FRED:ICSA, 6 días), unemployment en 4.1% (FRED:UNRATE) y sahm_rule en 0.00 (FRED:SAHMREALTIME) — cero señal de recesión. La curva está positiva y empinada en +0.91% (calculado 10Y-3M), consistente con reaceleración y no con inversión. Las expectativas de inflación de mercado están ancladas: breakeven_5y5y en 2.10% (FRED:T5YIFR). El crédito no muestra estrés: hy_spread en 3.52% (FRED:BAMLH0A0HYM2), nivel históricamente comprimido. Eso valida el tag GOLDILOCKS del régimen pre-calculado. PERO acepto solo confianza media por tres fricciones: (1) VIX en 31.84 (yfinance:^VIX) es incompatible con un Goldilocks puro y es la única señal de riesgo que marca el régimen; (2) tips_yield_10y en 2.88% (FRED:DFII10) implica una tasa real restrictiva con yield_10y en 5.07% (FRED:DGS10) — condiciones financieras duras que eventualmente muerden el ciclo; (3) michigan_inflation_exp en 4.7% (FRED:MICH) contradice frontalmente el breakeven de 2.10%, o sea hay desanclaje a nivel hogares que el mercado no está pricing. Si el VIX alto se contagia al crédito (hy_spread > 4.5%), el régimen rota a DESACELERACIÓN rápido."
+  },
+  "senales": [
+    {
+      "activo": "SPY",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "Divergencia clave del día: VIX en 31.84 (yfinance:^VIX) señala pánico de equity, pero hy_spread en 3.52% (FRED:BAMLH0A0HYM2) dice que el crédito no valida ese miedo. Históricamente, cuando la vol de equity sube sin acompañamiento del crédito, el shock es idiosincrático (tech/posicionamiento) y no sistémico — eso argumenta contra vender pánico con SPY en 700.88 (yfinance:SPY). Pero tampoco compro: tips_yield_10y en 2.88% (FRED:DFII10) es un techo duro para múltiplos. Macro de fondo sano (jobless_claims 203k, sahm_rule 0.0) pero sin catalizador alcista limpio. Me quedo plano y espero confirmación del crédito.",
+      "dato_clave": "hy_spread 3.52% vs VIX 31.84 — divergencia crédito/equity"
+    },
+    {
+      "activo": "QQQ",
+      "direccion": "SHORT",
+      "horizonte": "SEMANAL",
+      "conviccion": 6,
+      "razonamiento": "QQQ en 620.67 (yfinance:QQQ) enfrenta el peor combo: tasa real de 2.88% (FRED:DFII10) penaliza activos de duración larga de flujo, y el yield_10y en 5.07% (FRED:DGS10) no da alivio. El flujo de noticias confirma deterioro del liderazgo: Nvidia en racha de cinco días a la baja pese a resultados fuertes, con investigaciones de export controls abiertas (Investor's Business Daily), y el IPO de Anthropic a $83 (WSJ) drena liquidez y re-precia el complejo AI. El VIX en 31.84 es consistente con un desarme de posicionamiento concentrado en megacaps. Short táctico, no estructural — el macro (sahm_rule 0.0) no respalda una tesis de colapso.",
+      "dato_clave": "tips_yield_10y 2.88% (tasa real restrictiva sobre duración de equity)"
+    },
+    {
+      "activo": "TLT",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "TLT en 81.32 (yfinance:TLT) con yield_10y en 5.07% (FRED:DGS10) y una tasa real de 2.88% (FRED:DFII10) ofrece el mejor carry real en años. Además hay divergencia de precio relevante: yield_10y_mkt en 4.944% (yfinance:^TNX, hoy) está ~13bp por debajo del dato FRED del 18-nov — el mercado ya está comprando duración, probablemente como hedge del VIX en 31.84. Convicción solo 5 porque hay dos contras serias: la curva se está empinando (+0.91%, calculado 10Y-3M) con yield_3m en 4.16% (FRED:DTB3), y michigan_inflation_exp en 4.7% (FRED:MICH) deja abierto el riesgo de prima por inflación. Long de valor, no de momentum.",
+      "dato_clave": "tips_yield_10y 2.88% — real yield en zona de valor histórico"
+    },
+    {
+      "activo": "GLD",
+      "direccion": "LONG",
+      "horizonte": "TRIMESTRAL",
+      "conviccion": 7,
+      "razonamiento": "GLD en 321.52 (yfinance:GLD) se sostiene alto A PESAR de dos vientos en contra que normalmente lo hundirían: tasa real de 2.88% (FRED:DFII10) y dxy en 103.83 (yfinance:DX-Y.NYB). Que el oro no ceda con ese combo es evidencia de una puja estructural (bancos centrales / debasement / geopolítica) que domina el modelo tradicional real-rate. El catalizador táctico está vivo: Putin promete respuesta 'mucho más dolorosa' por los ataques al puente de Crimea (BBC), y el VIX en 31.84 añade demanda de cobertura. Es la señal con menos contradicciones internas del tablero.",
+      "dato_clave": "GLD 321.52 resistiendo con tips_yield_10y 2.88% y dxy 103.83"
+    },
+    {
+      "activo": "DXY",
+      "direccion": "LONG",
+      "horizonte": "MENSUAL",
+      "conviccion": 5,
+      "razonamiento": "dxy en 103.83 (yfinance:DX-Y.NYB) con eurusd en 1.0972 (yfinance:EURUSD=X) y un diferencial de tasas a favor del USD (yield_10y 5.07%, yield_3m 4.16%) favorece al dólar, reforzado por el VIX en 31.84 que típicamente genera bid de refugio. El EM complex no muestra estrés: usdbrl 5.9488, usdmxn 19.0808, usdcny 6.6612 — no hay fuga desordenada. Convicción limitada a 5 por el riesgo asimétrico en usdjpy 158.85 (yfinance:USDJPY=X): ese nivel es zona histórica de intervención del MoF japonés, y un unwind de carry golpearía al índice y correlacionaría con un spike adicional del VIX.",
+      "dato_clave": "usdjpy 158.85 — carry trade estirado, riesgo de intervención"
+    },
+    {
+      "activo": "USO",
+      "direccion": "NEUTRAL",
+      "horizonte": "SEMANAL",
+      "conviccion": 1,
+      "razonamiento": "Convicción insuficiente. No hay ningún indicador de crudo, energía ni commodities en el JSON de datos confiables. La única noticia clasificada bajo 'COMMODITIES Y GEOPOLÍTICA' es irrelevante para el activo (artículo de salud del Washington Post). La escalada Rusia-Ucrania (BBC) es un riesgo alcista de oferta pero no puedo cuantificarlo sin precio. No tomo posición.",
+      "dato_clave": "sin dato — ningún indicador de energía en el JSON"
+    }
+  ],
+  "tesis_principal": "El tablero macro de hoy describe una economía real sana atrapada dentro de un mercado nervioso. El lado del crecimiento es inequívocamente sólido: jobless_claims en 203.000 (FRED:ICSA, 6 días de antigüedad) está en zona de pleno empleo, unemployment en 4.1% (FRED:UNRATE) y sahm_rule en 0.00 (FRED:SAHMREALTIME) descartan el inicio de recesión bajo la métrica más confiable de timing. La curva 10Y-3M en +0.91% (calculado) está positiva y con pendiente, lo que es típico de un ciclo medio o de reaceleración, no de un techo. El crédito confirma: hy_spread en 3.52% (FRED:BAMLH0A0HYM2) es de los niveles más comprimidos del ciclo — el mercado de bonos basura, que suele oler problemas antes que el equity, no ve nada. Del lado micro, Walmart batió el Q3 y volvió a subir el guidance 2026 (Yahoo Finance), consistente con un consumidor que aguanta. Eso justifica el tag GOLDILOCKS.\n\nLa tensión está en el precio del dinero y en la vol. yield_10y en 5.07% (FRED:DGS10) con tips_yield_10y en 2.88% (FRED:DFII10) implica una tasa real restrictiva que no es sostenible indefinidamente para activos de duración: TLT está en 81.32 (yfinance:TLT), deprimido, y QQQ en 620.67 (yfinance:QQQ) cotiza con el múltiplo más expuesto a esa tasa. Al mismo tiempo, el VIX en 31.84 (yfinance:^VIX) es la gran anomalía del día, porque convive con spreads de crédito de 3.52%. Esa divergencia es la información más valiosa que tengo: el miedo está concentrado en equity, específicamente en el complejo AI — Nvidia cae cinco sesiones seguidas pese a resultados fuertes, con investigaciones sobre export controls abiertas (IBD), mientras el IPO de Anthropic se fija en $83 y empieza a cotizar hoy (WSJ), absorbiendo liquidez y forzando un re-pricing relativo de todo el sector. Leo esto como un shock de posicionamiento, no de ciclo. Por eso estoy short QQQ táctico pero neutral SPY: vender el índice entero contra un crédito que no se mueve es pelear con el macro.\n\nEl tercer eje es la inflación y las monedas, y acá hay una contradicción que no puedo resolver con los datos. breakeven_5y5y en 2.10% (FRED:T5YIFR) dice que el mercado cree que la Fed ganó. michigan_inflation_exp en 4.7% (FRED:MICH, dato de octubre) dice que los hogares no. Una de las dos está mal, y la asimetría favorece cubrirse: por eso GLD en 321.52 (yfinance:GLD) es mi mejor señal — está aguantando alto contra una tasa real de 2.88% y un dxy de 103.83 (yfinance:DX-Y.NYB), lo que solo se explica por demanda estructural o geopolítica, con Putin prometiendo represalias 'mucho más dolorosas' tras los ataques al puente de Crimea (BBC). En FX, el dólar está sostenido por diferencial de tasas (yield_3m 4.16%, FRED:DTB3) y por el bid de refugio del VIX, con eurusd en 1.0972. El punto frágil es usdjpy en 158.85 (yfinance:USDJPY=X): ese nivel es combustible para el carry global, y es exactamente donde el MoF ha intervenido históricamente. Un unwind de yen ahí, con el VIX ya en 31.84, sería el canal más rápido para convertir un susto de equity en un evento de liquidez verdadero. Advertencia metodológica: pce_core (FRED:PCEPILFE) es de septiembre (80 días) y cpi (FRED:CPIAUCSL) de octubre (50 días) — ambos marcados válidos y frescos por el sistema, pero mi lectura inflacionaria está operando con rezago real.",
+  "invalidadores": [
+    "hy_spread rompe por encima de 4.5% (FRED:BAMLH0A0HYM2) — eso significa que el crédito valida el VIX de 31.84, muere la divergencia que sostiene mi neutral en SPY y rota el régimen a DESACELERACIÓN: pasaría a short SPY y long TLT agresivo.",
+    "usdjpy (yfinance:USDJPY=X) rompe violentamente por debajo de 152 desde 158.85 — señal de intervención del MoF o unwind de carry; invalida el long DXY y dispara un shock de liquidez global que golpearía QQQ y GLD de forma indiscriminada en las primeras 48hs.",
+    "El próximo dato de jobless_claims sale por encima de 260.000 desde 203.000 (FRED:ICSA) o sahm_rule (FRED:SAHMREALTIME) se despega de 0.00 — invalida el pilar de crecimiento del GOLDILOCKS y convierte el long TLT en la única posición correcta del libro.",
+    "breakeven_5y5y (FRED:T5YIFR) sube de 2.10% hacia 2.60%+ convergiendo con el michigan_inflation_exp de 4.7% (FRED:MICH) — se resuelve la contradicción del lado equivocado, el régimen es STAGFLATION, muere el long TLT y el long GLD se vuelve convicción 9.",
+    "VIX colapsa de 31.84 a <20 con yield_10y (FRED:DGS10) manteniéndose en 5.07% — significa que el susto era puramente de posicionamiento AI y el short QQQ queda atrapado contra un squeeze; cerraría el short en el primer cierre bajo 22.",
+    "Escalada militar Rusia-Ucrania que afecte flujos energéticos tras las amenazas de Putin (BBC) — no tengo dato de crudo en el JSON para monitorearlo, lo que es un punto ciego operativo grave de esta tesis."
+  ],
+  "alertas": [
+    "ANOMALÍA PRINCIPAL: VIX en 31.84 (yfinance:^VIX) con hy_spread en 3.52% (FRED:BAMLH0A0HYM2). Esta combinación es rara y no persiste: o el crédito se abre o la vol colapsa. Es el trade de convergencia más limpio del tablero si tuviera instrumentos de vol.",
+    "CONTRADICCIÓN DE EXPECTATIVAS: michigan_inflation_exp 4.7% (FRED:MICH) vs breakeven_5y5y 2.10% (FRED:T5YIFR) — gap de 260bp entre hogares y mercado. Históricamente el mercado gana, pero el riesgo de cola está mal valuado.",
+    "DIVERGENCIA DE DATOS DE TASAS: yield_10y 5.07% (FRED:DGS10, 18-nov) vs yield_10y_mkt 4.944% (yfinance:^TNX, hoy). Son ~13bp de diferencia por desfase de fecha. El cálculo de yield_curve (+0.91%) usa el dato FRED; con el dato de mercado la curva real hoy estaría más cerca de +0.78%. No cambia el signo pero sí la magnitud del empinamiento.",
+    "TASA REAL EN 2.88% (FRED:DFII10): nivel históricamente restrictivo. Mientras el empleo aguante nadie lo nota, pero es el mecanismo por el cual este GOLDILOCKS se rompe con rezago de 2-3 trimestres.",
+    "RIESGO DE INFRAESTRUCTURA: el Washington Post reporta apagones recurrentes con 'explicaciones escasas' y población preparándose para colapso de sistemas. No tiene lectura en ningún indicador del JSON, pero es un riesgo de cola no priceado que podría explicar parte del VIX en 31.84.",
+    "CONCENTRACIÓN AI: Nvidia cae cinco días seguidos pese a buenos resultados (IBD) mientras Anthropic sale a bolsa hoy a $83 (WSJ). El liderazgo del índice está rotando o quebrándose — QQQ en 620.67 es el vehículo más expuesto."
+  ],
+  "datos_insuficientes": [
+    "No hay NINGÚN indicador de petróleo/energía/commodities en el JSON — la señal USO queda sin fundamento cuantificable pese a tener riesgo geopolítico activo (BBC/Putin-Crimea).",
+    "pce_core (FRED:PCEPILFE) tiene 80 días de antigüedad (dato de septiembre 2026). Está marcado es_fresco=true por el sistema, pero para la métrica de inflación preferida de la Fed es un rezago material: no puedo evaluar la tendencia inflacionaria actual con él.",
+    "cpi (FRED:CPIAUCSL) con 50 días de antigüedad (octubre 2026) y michigan_inflation_exp (FRED:MICH) también con 50 días — toda mi lectura de inflación dura es retrospectiva; dependo del breakeven_5y5y (1 día) como único input inflacionario en tiempo real.",
+    "unemployment (FRED:UNRATE) y sahm_rule (FRED:SAHMREALTIME) con 50 días — el único dato laboral de alta frecuencia es jobless_claims (6 días). Mi convicción en 'no hay recesión' descansa casi enteramente en esa única serie.",
+    "No hay datos de PMI, ISM, ni ventas minoristas — no puedo validar el momentum de crecimiento más allá del mercado laboral y el earnings call de Walmart.",
+    "No hay dato de IG spread ni de condiciones financieras agregadas para cross-checkear la divergencia VIX/HY."
+  ],
+  "eventos_clave": [
+    "[The Wall Street Journal] Anthropic IPO: acción fijada en $83, comienza a cotizar hoy — evento de absorción de liquidez en el complejo AI. Fuerza re-pricing relativo de las megacaps ya listadas y es consistente con la presión sobre QQQ en 620.67 y con el VIX en 31.84. Los IPOs de alto perfil en sectores calientes suelen marcar techos locales de sentimiento.",
+    "[Investor's Business Daily] Nvidia cae tras resultados excelentes, en racha de cinco sesiones negativas, con investigaciones sobre export controls y sobre el ex-CEO Jensen Huang — el líder del mercado no responde a buenas noticias, señal clásica de agotamiento de posicionamiento. Es la explicación más directa del VIX en 31.84 sin contagio al hy_spread de 3.52%: el miedo es sectorial, no sistémico. Sustenta el short QQQ y el neutral SPY.",
+    "[Yahoo Finance] Walmart supera expectativas del Q3 y vuelve a elevar el guidance 2026 antes de la temporada navideña — valida por el lado micro lo que dicen jobless_claims en 203.000 y unemployment en 4.1%: el consumidor estadounidense sigue gastando. Es el ancla del pilar de crecimiento del régimen GOLDILOCKS y el principal argumento contra vender equity de forma agresiva.",
+    "[BBC News] Putin promete una respuesta 'mucho más dolorosa' tras los ataques ucranianos al puente de Crimea — prima de riesgo geopolítico al alza. Explica por qué GLD sostiene 321.52 a pesar de una tasa real de 2.88% y un dxy de 103.83, condiciones que normalmente presionarían al oro. Riesgo alcista para energía que no puedo cuantificar por falta de datos.",
+    "[The Washington Post] Apagones recurrentes y fallas de sistemas mayores sin explicación clara; parte de la población se abastece ante emergencias — riesgo de cola de infraestructura no reflejado en ningún indicador del JSON. Posible contribuyente al VIX en 31.84 y a la demanda de refugio en GLD; vigilar si escala hacia disrupción de actividad económica real."
+  ],
+  "confianza_general": 62,
+  "metadata": {
+    "timestamp": "2026-11-20T18:44:07.081659",
+    "datos_usados": 25,
+    "datos_totales": 25,
+    "validacion_ok": true
+  }
+}
